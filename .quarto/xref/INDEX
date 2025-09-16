@@ -1,0 +1,26 @@
+{
+  "about.qmd": {
+    "about.html": "105e3b0e"
+  },
+  "blog.qmd": {
+    "blog.html": "db21c8ce"
+  },
+  "index.qmd": {
+    "index.html": "00e868a3"
+  },
+  "portfolio.qmd": {
+    "portfolio.html": "916e483e"
+  },
+  "posts/index.qmd": {
+    "index.html": "a1442c7a"
+  },
+  "services.qmd": {
+    "services.html": "0c281f78"
+  },
+  "posts/Geodataviz/index.qmd": {
+    "index.html": "573cf11a"
+  },
+  "posts/2025-09-16-welcome-post/index.qmd": {
+    "index.html": "b5d62ca9"
+  }
+}

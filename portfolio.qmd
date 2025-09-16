@@ -1,0 +1,20 @@
+---
+title: "Portofolio Proyek"
+---
+
+Berikut adalah beberapa proyek yang menyoroti keahlian saya dalam analisis data geologi dan pengembangan aplikasi.
+
+### GeoDataViz: Aplikasi R Shiny
+
+**GeoDataViz** adalah sebuah *workbench open-source* untuk visualisasi, analisis, dan validasi data geologi, khususnya data lubang bor. Proyek ini bertujuan untuk mempromosikan solusi berbasis R untuk tugas-tugas geologi sehari-hari.
+
+-   **Teknologi:** R, R Shiny, `tidyverse`, `sf`, `ggplot2`
+-   **Fitur Utama:** Visualisasi 3D interaktif, analisis statistik, dan validasi data QA/QC.
+
+### Evaluasi Sumber Daya PT Aega Prima
+
+Sebagai *Competent Person (CP)*, saya terlibat dalam sesi evaluator dan penandatanganan dokumen sumber daya dan cadangan untuk PT Aega Prima, memastikan kepatuhan terhadap standar pelaporan nasional.
+
+### Pengembangan Dashboard Grade Control
+
+Merancang dan mengembangkan modul pelatihan serta *dashboard* interaktif untuk proses *grade control* dan *quality control*, bertujuan untuk meningkatkan akurasi dan efisiensi di lapangan.

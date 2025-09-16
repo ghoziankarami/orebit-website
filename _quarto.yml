@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Orebit | Geospatial & Data Solutions"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: services.qmd
+        text: Services
+      - href: portfolio.qmd
+        text: Portfolio
+      - href: blog.qmd
+        text: Blog
+      - href: about.qmd
+        text: About
+    right:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/ghoziankarami/
+      - icon: github
+        href: https://github.com/ghoziank # Ganti dengan username GitHub Anda
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

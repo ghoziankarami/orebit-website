@@ -1,0 +1,19 @@
+---
+title: "Layanan Konsultansi"
+---
+
+Sebagai seorang praktisi industri dan *Certified Competent Person (CP)*, saya menyediakan layanan konsultansi yang berfokus pada integritas data, efisiensi, dan solusi modern.
+
+Layanan utama yang ditawarkan meliputi:
+
+* **Estimasi Cadangan dan Sumber Daya Mineral**
+    * Evaluasi dan pelaporan sesuai standar KCMI/JORC. Sebagai CP, saya dapat menandatangani dokumen evaluasi cadangan.
+
+* **Geostatistik Terapan dan AI**
+    * Analisis data eksplorasi, pemodelan variogram, dan aplikasi *machine learning* untuk augmentasi data geologi.
+
+* **Geospatial & Environmental Monitoring**
+    * Analisis spasial menggunakan GIS, pengolahan data UAV, dan pemantauan lingkungan untuk operasi tambang.
+
+* **Pengembangan SOP dan Pelatihan**
+    * Pembuatan *Standard Operating Procedures* (SOP), *flowchart*, dan modul pelatihan untuk *grade control* dan QA/QC.

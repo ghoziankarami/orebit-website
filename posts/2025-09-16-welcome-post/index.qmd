@@ -1,0 +1,38 @@
+---
+title: "Selamat Datang di Orebit: Analisis Data Geologi dengan R"
+author: "Ghozian Islam Karami"
+date: "2025-09-16"
+categories: [R, Geostatistik, Visualisasi]
+---
+
+Selamat datang di blog Orebit!
+
+Sebagai postingan pertama, saya ingin menunjukkan kekuatan Quarto dalam menyajikan analisis data yang dinamis. Di bawah ini adalah contoh sederhana bagaimana kita bisa mengeksekusi kode R untuk memvisualisasikan data geologi langsung di dalam artikel ini.
+
+Kita akan membuat plot sederhana yang menunjukkan hubungan antara kedalaman lubang bor dan kadar emas (Au).
+
+```{r}
+#| label: fig-gold-grade
+#| fig-cap: "Hubungan antara kedalaman dan kadar emas (Au) dari data simulasi."
+#| warning: false
+#| message: false
+
+library(ggplot2)
+
+# Membuat data simulasi
+set.seed(42)
+data_bor <- data.frame(
+  kedalaman_m = 1:150,
+  kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2)
+)
+
+# Membuat plot
+ggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) +
+  geom_line(color = "gray50") +
+  geom_point(color = "darkgoldenrod", alpha = 0.8) +
+  labs(
+    title = "Profil Kadar Emas (Au) vs. Kedalaman",
+    x = "Kedalaman (meter)",
+    y = "Kadar Emas (g/t)"
+  ) +
+  theme_minimal()
