@@ -2,7 +2,7 @@
 title: "Tentang Saya"
 ---
 
-![](https://i.imgur.com/example.png) Saya **Ghozian Islam Karami**, seorang Senior Geologist & Geospatial Specialist dengan pengalaman lebih dari satu dekade di industri pertambangan, khususnya eksplorasi timah lepas pantai.
+Saya **Ghozian Islam Karami**, seorang Senior Geologist & Geospatial Specialist dengan pengalaman lebih dari satu dekade di industri pertambangan, khususnya eksplorasi timah lepas pantai.
 
 Saya memegang gelar **MS dalam Geological Sciences** dari King Fahd University of Petroleum and Minerals (KFUPM) dan Sarjana Geologi dari Universitas Padjadjaran. Sebagai **Certified BNSP Competent Person (CP)**, saya memiliki wewenang untuk mengevaluasi dan menandatangani dokumen estimasi cadangan mineral.
 

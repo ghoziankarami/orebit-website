@@ -3,34 +3,44 @@ project:
   output-dir: _site
 
 website:
-  title: "Orebit | Geospatial & Data Solutions"
-  favicon: Logo.png  # Ikon untuk tab browser
+  # INI KUNCINYA: Judul di sini akan menjadi tagline di navbar
+  title: "Mengintegrasikan Geologi dan Sains Data" 
+  favicon: Logo.png
   
   navbar:
-    logo: Logo.png  # Pastikan nama file logo sama persis
-    left:
-      - href: index.qmd
-        text: Home
-      - href: services.qmd
-        text: Services
-      - href: portfolio.qmd
-        text: Portfolio
-      - href: blog.qmd
-        text: Blog
-      - href: about.qmd
-        text: About
+    logo: Logo.png
+    # Kita tidak menggunakan 'title: false' agar tagline di atas bisa muncul
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/ghoziankarami/
       - icon: github
         href: https://github.com/ghoziankarami
-        
+  
+  sidebar:
+    - id: main_nav
+      title: "Navigation"
+      style: "docked"
+      background: "light"
+      contents:
+        - href: index.qmd
+          text: "Home"
+        - href: about.qmd
+          text: "About Me"
+        - section: "Professional"
+          contents:
+            - href: services.qmd
+              text: "Services"
+            - href: portfolio.qmd
+              text: "Portfolio"
+        - href: blog.qmd
+          text: "Blog Posts"
+            
   page-footer:
     left: "&copy; 2025, Ghozian Islam Karami. All rights reserved."
     right: 
       - text: "Dibuat dengan Quarto"
         href: https://quarto.org/
-
+        
 format:
   html:
     theme: theme.scss
