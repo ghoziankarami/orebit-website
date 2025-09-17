@@ -1,9 +1,10 @@
 ---
-title: "Blog"
+title: "Blog Teknis"
 listing:
   contents: posts
   sort: "date desc"
   type: default
-  categories: true
-page-layout: full
+  categories: true # WAJIB 'false' agar tidak konflik dengan sidebar kiri
+# Hapus 'page-layout: full' untuk memberi ruang pada sidebar
+
 ---

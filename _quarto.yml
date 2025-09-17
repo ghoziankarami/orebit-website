@@ -3,43 +3,46 @@ project:
   output-dir: _site
 
 website:
-  # INI KUNCINYA: Judul di sini akan menjadi tagline di navbar
-  title: "Mengintegrasikan Geologi dan Sains Data" 
+  title: "Orebit.id"
   favicon: Logo.png
   
   navbar:
-    logo: Logo.png
-    # Kita tidak menggunakan 'title: false' agar tagline di atas bisa muncul
-    right:
-      - icon: linkedin
-        href: https://www.linkedin.com/in/ghoziankarami/
-      - icon: github
-        href: https://github.com/ghoziankarami
+    # Navbar sekarang hanya untuk logo dan tagline Anda
+    logo: Logo.Png
+    left:
+      - href: index.qmd
+        text: Home
+      - href: services.qmd
+        text: Services
+      - href: portfolio.qmd
+        text: Portfolio
+      - href: about.qmd
+        text: About
   
   sidebar:
     - id: main_nav
-      title: "Navigation"
+      title: "Navigasi Utama"
       style: "docked"
       background: "light"
       contents:
         - href: index.qmd
           text: "Home"
-        - href: about.qmd
-          text: "About Me"
-        - section: "Professional"
+        - section: "Blog Posts" 
           contents:
-            - href: services.qmd
-              text: "Services"
-            - href: portfolio.qmd
-              text: "Portfolio"
-        - href: blog.qmd
-          text: "Blog Posts"
+            # --- DAFTAR MANUAL POSTINGAN ANDA DIMULAI DI SINI ---
+            - href: posts/2025-09-16-welcome-post/index.qmd
+              text: "Welcome Post" # Ganti dengan judul postingan Anda
+            - href: posts/Geodataviz/index.qmd
+              text: "Visualisasi GeoDataViz" # Ganti dengan judul postingan Anda
+            # Nanti jika ada postingan baru, tambahkan di baris selanjutnya
             
   page-footer:
     left: "&copy; 2025, Ghozian Islam Karami. All rights reserved."
     right: 
-      - text: "Dibuat dengan Quarto"
-        href: https://quarto.org/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/ghoziankarami/
+      - icon: github
+        href: https://github.com/ghoziankarami
         
 format:
   html:

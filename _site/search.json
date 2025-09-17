@@ -4,25 +4,26 @@
     "href": "services.html",
     "title": "Layanan Konsultansi",
     "section": "",
-    "text": "Sebagai seorang praktisi industri dan Certified Competent Person (CP), saya menyediakan layanan konsultansi yang berfokus pada integritas data, efisiensi, dan solusi modern.\nLayanan utama yang ditawarkan meliputi:\n\nEstimasi Cadangan dan Sumber Daya Mineral\n\nEvaluasi dan pelaporan sesuai standar KCMI/JORC. Sebagai CP, saya dapat menandatangani dokumen evaluasi cadangan.\n\nGeostatistik Terapan dan AI\n\nAnalisis data eksplorasi, pemodelan variogram, dan aplikasi machine learning untuk augmentasi data geologi.\n\nGeospatial & Environmental Monitoring\n\nAnalisis spasial menggunakan GIS, pengolahan data UAV, dan pemantauan lingkungan untuk operasi tambang.\n\nPengembangan SOP dan Pelatihan\n\nPembuatan Standard Operating Procedures (SOP), flowchart, dan modul pelatihan untuk grade control dan QA/QC.",
-    "crumbs": [
-      "Professional",
-      "Services"
-    ]
+    "text": "Sebagai seorang praktisi industri dan Certified Competent Person (CP), saya menyediakan layanan konsultansi yang berfokus pada integritas data, efisiensi, dan solusi modern.\nLayanan utama yang ditawarkan meliputi:\n\nEstimasi Cadangan dan Sumber Daya Mineral\n\nEvaluasi dan pelaporan sesuai standar KCMI/JORC. Sebagai CP, saya dapat menandatangani dokumen evaluasi cadangan.\n\nGeostatistik Terapan dan AI\n\nAnalisis data eksplorasi, pemodelan variogram, dan aplikasi machine learning untuk augmentasi data geologi.\n\nGeospatial & Environmental Monitoring\n\nAnalisis spasial menggunakan GIS, pengolahan data UAV, dan pemantauan lingkungan untuk operasi tambang.\n\nPengembangan SOP dan Pelatihan\n\nPembuatan Standard Operating Procedures (SOP), flowchart, dan modul pelatihan untuk grade control dan QA/QC."
   },
   {
     "objectID": "posts/2025-09-16-welcome-post/index.html",
     "href": "posts/2025-09-16-welcome-post/index.html",
     "title": "Visualisasi Plot Interaktif",
     "section": "",
-    "text": "Selamat datang di blog Orebit!\nSebagai postingan pertama, saya ingin menunjukkan kekuatan Quarto dalam menyajikan analisis data yang dinamis. Di bawah ini adalah contoh sederhana bagaimana kita bisa mengeksekusi kode R untuk memvisualisasikan data geologi langsung di dalam artikel ini.\nKita akan membuat plot sederhana yang menunjukkan hubungan antara kedalaman lubang bor dan kadar emas (Au).\n#| label: fig-gold-grade #| fig-cap: “Hubungan antara kedalaman dan kadar emas (Au) dari data simulasi.” #| warning: false #| message: false\nlibrary(ggplot2)\n\nMembuat data simulasi\nset.seed(42) data_bor &lt;- data.frame( kedalaman_m = 1:150, kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2) )\n\n\nMembuat plot\nggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) + geom_line(color = “gray50”) + geom_point(color = “darkgoldenrod”, alpha = 0.8) + labs( title = “Profil Kadar Emas (Au) vs. Kedalaman”, x = “Kedalaman (meter)”, y = “Kadar Emas (g/t)” ) + theme_minimal()"
+    "text": "Selamat datang di blog Orebit!\nSebagai postingan pertama, saya ingin menunjukkan kekuatan Quarto dalam menyajikan analisis data yang dinamis. Di bawah ini adalah contoh sederhana bagaimana kita bisa mengeksekusi kode R untuk memvisualisasikan data geologi langsung di dalam artikel ini.\nKita akan membuat plot sederhana yang menunjukkan hubungan antara kedalaman lubang bor dan kadar emas (Au).\n#| label: fig-gold-grade #| fig-cap: “Hubungan antara kedalaman dan kadar emas (Au) dari data simulasi.” #| warning: false #| message: false\nlibrary(ggplot2)\n\nMembuat data simulasi\nset.seed(42) data_bor &lt;- data.frame( kedalaman_m = 1:150, kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2) )\n\n\nMembuat plot\nggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) + geom_line(color = “gray50”) + geom_point(color = “darkgoldenrod”, alpha = 0.8) + labs( title = “Profil Kadar Emas (Au) vs. Kedalaman”, x = “Kedalaman (meter)”, y = “Kadar Emas (g/t)” ) + theme_minimal()",
+    "crumbs": [
+      "Home",
+      "Blog Posts",
+      "Welcome Post"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Mengintegrasikan Geologi dan Sains Data",
+    "title": "Orebit.id",
     "section": "",
-    "text": "Solusi Inovatif untuk Eksplorasi dan Pemodelan Sumber Daya Mineral\nSelamat datang di Orebit, hub digital di mana geologi, geostatistik, dan analisis data bertemu. Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan lebih dari 10 tahun pengalaman dalam eksplorasi mineral dan pemodelan sumber daya.\nDi sini, saya berbagi wawasan, proyek, dan solusi—baik menggunakan software industri maupun advokasi solusi berbasis open-source dengan R.\nJelajahi situs ini untuk menemukan: * Layanan Konsultansi yang saya tawarkan, mulai dari estimasi sumber daya hingga pengembangan SOP. * Portofolio Proyek yang menampilkan aplikasi dan analisis yang telah saya kerjakan. * Blog Teknis berisi tutorial dan studi kasus mengenai aplikasi R dalam geologi.",
+    "text": "Solusi Inovatif untuk Eksplorasi dan Pemodelan Sumber Daya Mineral\n\nSelamat datang di Orebit, hub digital di mana geologi, geostatistik, dan analisis data bertemu. Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan lebih dari 10 tahun pengalaman dalam eksplorasi mineral dan pemodelan sumber daya.\nDi sini, saya berbagi wawasan, proyek, dan solusi—baik menggunakan software industri maupun advokasi solusi berbasis open-source dengan R.\nJelajahi situs ini untuk menemukan: * Layanan Konsultansi yang saya tawarkan, mulai dari estimasi sumber daya hingga pengembangan SOP. * Portolio Proyek yang menampilkan aplikasi dan analisis yang telah saya kerjakan. * Blog Teknis berisi tutorial dan studi kasus mengenai aplikasi R dalam geologi.",
     "crumbs": [
       "Home"
     ]
@@ -32,37 +33,32 @@
     "href": "about.html",
     "title": "Tentang Saya",
     "section": "",
-    "text": "Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan pengalaman lebih dari satu dekade di industri pertambangan, khususnya eksplorasi timah lepas pantai.\nSaya memegang gelar MS dalam Geological Sciences dari King Fahd University of Petroleum and Minerals (KFUPM) dan Sarjana Geologi dari Universitas Padjadjaran. Sebagai Certified BNSP Competent Person (CP), saya memiliki wewenang untuk mengevaluasi dan menandatangani dokumen estimasi cadangan mineral.\nKeahlian Teknis:\n\nSoftware Propietary: Micromine, Net-Promine, SGEMS\nOpen-Source Advocate: Pengguna aktif R untuk alur kerja geologi (tidyverse, sf, tmap, gstat)\nSpesialisasi: Geostatistik, GIS, pemodelan sumber daya, dan pengembangan SOP QA/QC.\n\nSaya bersemangat dalam memadukan fondasi ilmu geologi dengan kekuatan analisis data modern untuk memecahkan masalah di industri sumber daya mineral.",
-    "crumbs": [
-      "About Me"
-    ]
+    "text": "Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan pengalaman lebih dari satu dekade di industri pertambangan, khususnya eksplorasi timah lepas pantai.\nSaya memegang gelar MS dalam Geological Sciences dari King Fahd University of Petroleum and Minerals (KFUPM) dan Sarjana Geologi dari Universitas Padjadjaran. Sebagai Certified BNSP Competent Person (CP), saya memiliki wewenang untuk mengevaluasi dan menandatangani dokumen estimasi cadangan mineral.\nKeahlian Teknis:\n\nSoftware Propietary: Micromine, Net-Promine, SGEMS\nOpen-Source Advocate: Pengguna aktif R untuk alur kerja geologi (tidyverse, sf, tmap, gstat)\nSpesialisasi: Geostatistik, GIS, pemodelan sumber daya, dan pengembangan SOP QA/QC.\n\nSaya bersemangat dalam memadukan fondasi ilmu geologi dengan kekuatan analisis data modern untuk memecahkan masalah di industri sumber daya mineral."
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Blog",
+    "title": "Blog Teknis",
     "section": "",
-    "text": "Memvisualisasikan Data Geologi dengan GeoDataViz\n\n\n\nR\n\nShiny\n\nGeologi\n\n\n\n\n\n\n\n\n\nSep 17, 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nVisualisasi Plot Interaktif\n\n\n\nR\n\nPlotly\n\nAu\n\n\n\n\n\n\n\n\n\nSep 16, 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Blog Posts"
-    ]
+    "text": "Memvisualisasikan Data Geologi dengan GeoDataViz\n\n\n\nR\n\nShiny\n\nGeologi\n\n\n\n\n\n\n\n\n\nSep 17, 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nVisualisasi Plot Interaktif\n\n\n\nR\n\nPlotly\n\nAu\n\n\n\n\n\n\n\n\n\nSep 16, 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "portfolio.html",
     "href": "portfolio.html",
     "title": "Portofolio Proyek",
     "section": "",
-    "text": "Berikut adalah beberapa proyek yang menyoroti keahlian saya dalam analisis data geologi dan pengembangan aplikasi.\n\nGeoDataViz: Aplikasi R Shiny\nGeoDataViz adalah sebuah workbench open-source untuk visualisasi, analisis, dan validasi data geologi, khususnya data lubang bor. Proyek ini bertujuan untuk mempromosikan solusi berbasis R untuk tugas-tugas geologi sehari-hari.\n\nTeknologi: R, R Shiny, tidyverse, sf, ggplot2\nFitur Utama: Visualisasi 3D interaktif, analisis statistik, dan validasi data QA/QC.\n\n\n\nEvaluasi Sumber Daya PT Aega Prima\nSebagai Competent Person (CP), saya terlibat dalam sesi evaluator dan penandatanganan dokumen sumber daya dan cadangan untuk PT Aega Prima, memastikan kepatuhan terhadap standar pelaporan nasional.\n\n\nPengembangan Dashboard Grade Control\nMerancang dan mengembangkan modul pelatihan serta dashboard interaktif untuk proses grade control dan quality control, bertujuan untuk meningkatkan akurasi dan efisiensi di lapangan.",
-    "crumbs": [
-      "Professional",
-      "Portfolio"
-    ]
+    "text": "Berikut adalah beberapa proyek yang menyoroti keahlian saya dalam analisis data geologi dan pengembangan aplikasi.\n\nGeoDataViz: Aplikasi R Shiny\nGeoDataViz adalah sebuah workbench open-source untuk visualisasi, analisis, dan validasi data geologi, khususnya data lubang bor. Proyek ini bertujuan untuk mempromosikan solusi berbasis R untuk tugas-tugas geologi sehari-hari.\n\nTeknologi: R, R Shiny, tidyverse, sf, ggplot2\nFitur Utama: Visualisasi 3D interaktif, analisis statistik, dan validasi data QA/QC.\n\n\n\nEvaluasi Sumber Daya PT Aega Prima\nSebagai Competent Person (CP), saya terlibat dalam sesi evaluator dan penandatanganan dokumen sumber daya dan cadangan untuk PT Aega Prima, memastikan kepatuhan terhadap standar pelaporan nasional.\n\n\nPengembangan Dashboard Grade Control\nMerancang dan mengembangkan modul pelatihan serta dashboard interaktif untuk proses grade control dan quality control, bertujuan untuk meningkatkan akurasi dan efisiensi di lapangan."
   },
   {
     "objectID": "posts/Geodataviz/index.html",
     "href": "posts/Geodataviz/index.html",
     "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
     "section": "",
-    "text": "Ini adalah contoh bagaimana kita bisa menjalankan kode R langsung di dalam postingan blog untuk membuat visualisasi data geologi yang dinamis.\n\n# 1. Muat paket yang dibutuhkan\nlibrary(ggplot2)\nlibrary(plotly)\n\n# 2. Membuat data simulasi (sama seperti sebelumnya)\nset.seed(42)\ndata_bor &lt;- data.frame(\n  kedalaman_m = 1:150,\n  kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2)\n)\n\n# 3. Buat objek plot ggplot dan simpan ke dalam variabel 'p'\np &lt;- ggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) +\n  geom_line(color = \"gray50\") +\n  geom_point(color = \"darkgoldenrod\", alpha = 0.8) +\n  labs(\n    title = \"Profil Kadar Emas (Au) vs. Kedalaman\",\n    x = \"Kedalaman (meter)\",\n    y = \"Kadar Emas (g/t)\"\n  ) +\n  theme_minimal()\n\n# 4. Ubah objek ggplot 'p' menjadi plot interaktif\nggplotly(p)\n\n\n\n\n\n\n\nFigure 1: Plot interaktif hubungan antara kedalaman dan kadar emas. Coba hover di atas titik atau zoom."
+    "text": "Ini adalah contoh bagaimana kita bisa menjalankan kode R langsung di dalam postingan blog untuk membuat visualisasi data geologi yang dinamis.\n\n# 1. Muat paket yang dibutuhkan\nlibrary(ggplot2)\nlibrary(plotly)\n\n# 2. Membuat data simulasi (sama seperti sebelumnya)\nset.seed(42)\ndata_bor &lt;- data.frame(\n  kedalaman_m = 1:150,\n  kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2)\n)\n\n# 3. Buat objek plot ggplot dan simpan ke dalam variabel 'p'\np &lt;- ggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) +\n  geom_line(color = \"gray50\") +\n  geom_point(color = \"darkgoldenrod\", alpha = 0.8) +\n  labs(\n    title = \"Profil Kadar Emas (Au) vs. Kedalaman\",\n    x = \"Kedalaman (meter)\",\n    y = \"Kadar Emas (g/t)\"\n  ) +\n  theme_minimal()\n\n# 4. Ubah objek ggplot 'p' menjadi plot interaktif\nggplotly(p)\n\n\n\n\n\n\n\nFigure 1: Plot interaktif hubungan antara kedalaman dan kadar emas. Coba hover di atas titik atau zoom.",
+    "crumbs": [
+      "Home",
+      "Blog Posts",
+      "Visualisasi GeoDataViz"
+    ]
   }
 ]

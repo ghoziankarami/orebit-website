@@ -110,3 +110,14 @@ pre {
   font-weight: 400; /* Font weight normal, tidak tebal */
   margin-left: 0.5em; /* Memberi sedikit jarak dari logo */
 }
+
+/* 9. Kustomisasi Ikon Sosial di Footer */
+.page-footer .nav-link {
+  font-size: 1.4em; /* Membuat ikon 40% lebih besar */
+  padding: 0 0.5em; /* Memberi jarak horizontal antar ikon */
+}
+
+/* Memberi jarak pada tombol postingan di homepage */
+.btn-primary {
+  margin-bottom: 1.5rem;
+}

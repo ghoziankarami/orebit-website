@@ -1,8 +1,10 @@
 ---
-# Kita hapus semua dari sini: title, subtitle, dan title-block-banner
+# Header YAML ini dibiarkan kosong
 ---
 
 ### Solusi Inovatif untuk Eksplorasi dan Pemodelan Sumber Daya Mineral
+
+<hr>
 
 Selamat datang di **Orebit**, hub digital di mana geologi, geostatistik, dan analisis data bertemu. Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan lebih dari 10 tahun pengalaman dalam eksplorasi mineral dan pemodelan sumber daya.
 
@@ -10,5 +12,5 @@ Di sini, saya berbagi wawasan, proyek, dan solusi—baik menggunakan *software* 
 
 Jelajahi situs ini untuk menemukan:
 * **[Layanan Konsultansi](./services.qmd)** yang saya tawarkan, mulai dari estimasi sumber daya hingga pengembangan SOP.
-* **[Portofolio Proyek](./portfolio.qmd)** yang menampilkan aplikasi dan analisis yang telah saya kerjakan.
+* **[Portolio Proyek](./portfolio.qmd)** yang menampilkan aplikasi dan analisis yang telah saya kerjakan.
 * **[Blog Teknis](./blog.qmd)** berisi tutorial dan studi kasus mengenai aplikasi R dalam geologi.
