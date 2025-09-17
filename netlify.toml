@@ -1,10 +1,9 @@
 [build]
-# Perintah 'paksa' untuk mengunduh & menjalankan Quarto yang sudah terbukti berhasil
-command = "cd .. && wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.550/quarto-1.4.550-linux-amd64.tar.gz && tar -zxvf quarto-1.4.550-linux-amd64.tar.gz && ./quarto-1.4.550/bin/quarto render repo"
-
-# Alamat publish yang benar untuk perintah di atas
-publish = "repo/_site"
+command = "quarto render"
+publish = "_site"
 
 [build.environment]
-# Variabel ini memastikan R terinstal SEBELUM perintah di atas dijalankan
+# Dua baris ini memberitahu Netlify untuk menginstal Quarto dan R
+# sebelum menjalankan perintah 'command'.
+QUARTO_VERSION = "1.4.550"
 R_VERSION = "4.3.2"
