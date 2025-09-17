@@ -1,3 +1,7 @@
 [build]
-command = "cd .. && wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.550/quarto-1.4.550-linux-amd64.tar.gz && tar -zxvf quarto-1.4.550-linux-amd64.tar.gz && ./quarto-1.4.550/bin/quarto render repo"
+command = "quarto render"
 publish = "_site"
+
+[build.environment]
+QUARTO_VERSION = "1.4.550"
+R_VERSION = "4.3.2"
