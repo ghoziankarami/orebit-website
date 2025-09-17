@@ -4,7 +4,10 @@ project:
 
 website:
   title: "Orebit | Geospatial & Data Solutions"
+  favicon: Logo.png  # Ikon untuk tab browser
+  
   navbar:
+    logo: Logo.png  # Pastikan nama file logo sama persis
     left:
       - href: index.qmd
         text: Home
@@ -20,10 +23,16 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/ghoziankarami/
       - icon: github
-        href: https://github.com/ghoziank # Ganti dengan username GitHub Anda
+        href: https://github.com/ghoziankarami
+        
+  page-footer:
+    left: "&copy; 2025, Ghozian Islam Karami. All rights reserved."
+    right: 
+      - text: "Dibuat dengan Quarto"
+        href: https://quarto.org/
 
 format:
   html:
-    theme: cosmo
+    theme: theme.scss
     css: styles.css
     toc: true

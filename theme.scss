@@ -1,0 +1,33 @@
+/*-- File Tema Kustom untuk Orebit.id (Versi Quarto Terbaru) --*/
+
+/*-- scss:defaults --*/
+// Lapisan ini berisi semua definisi variabel SASS.
+// Quarto akan menggunakan ini untuk menimpa nilai default Bootstrap.
+
+// 1. Variabel Palet Warna Orebit
+$biru-aksen:    #3498db; // Aksen & Link
+$biru-tua:      #34495e; // Judul
+$navy-gelap:    #212529; // Teks Utama
+$putih-bersih:  #ffffff; // Latar Belakang
+
+// 2. Variabel Bootstrap yang Di-override
+$primary:       $biru-aksen;
+$body-bg:       $putih-bersih;
+$body-color:    $navy-gelap;
+$headings-color: $biru-tua;
+$link-color:    $primary;
+
+// 3. Variabel Font
+$font-family-sans-serif: 'Lato', sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 700;
+
+
+/*-- scss:rules --*/
+// Lapisan ini berisi aturan CSS biasa atau impor font.
+
+// 4. Impor Font dari Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap');
+
+// Anda tidak perlu lagi menulis @import "bootstrap/scss/bootstrap";
+// Quarto akan menanganinya secara otomatis setelah melihat lapisan di atas.

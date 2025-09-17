@@ -1,1 +1,83 @@
-/* css styles */
+/*-- File CSS Kustom untuk Orebit.id --*/
+
+/* 1. Impor Font Tambahan untuk Blok Kode */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+/* 2. Gaya Umum & Tata Letak */
+html {
+  scroll-behavior: smooth; /* Membuat scroll pada halaman menjadi lebih halus */
+}
+
+body {
+  line-height: 1.7; /* Menambah jarak antar baris tulisan agar lebih mudah dibaca */
+  -webkit-font-smoothing: antialiased; /* Membuat font terlihat lebih tajam di beberapa browser */
+}
+
+/* Membatasi lebar konten agar tidak terlalu melebar di layar besar */
+.main-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3. Navbar & Header */
+.navbar-brand img {
+  max-height: 40px; /* Mengatur agar logo di navbar tidak terlalu besar */
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar {
+  border-bottom: 1px solid #e0e0e0; /* Menambah garis tipis di bawah navbar */
+}
+
+.nav-link:hover {
+  color: var(--bs-primary) !important; /* Mengubah warna link saat disentuh mouse, mengambil warna primer dari tema */
+}
+
+/* 4. Tipografi & Elemen Konten */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility; /* Membuat judul terlihat lebih baik */
+}
+
+/* Memberi gaya pada kutipan (blockquote) agar menonjol */
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  font-style: italic;
+  color: #6c757d;
+}
+
+/* 5. Gaya untuk Postingan Blog */
+
+/* Mengatur tampilan blok kode agar terlihat profesional */
+pre, code {
+  font-family: 'Fira Code', monospace; /* Menggunakan font khusus untuk kode */
+  background-color: #f8f9fa; /* Latar belakang abu-abu sangat muda */
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto; /* Memungkinkan scroll horizontal jika kode terlalu panjang */
+}
+
+/* Mengatur metadata postingan (author, date) */
+.quarto-title-meta-heading {
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #6c757d;
+  text-transform: uppercase;
+}
+
+/* 6. Footer (Bagian Bawah Website) */
+.page-footer {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9em;
+  color: #6c757d;
+}
