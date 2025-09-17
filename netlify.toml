@@ -1,9 +1,6 @@
 [build]
-command = "quarto render"
-publish = "_site"
+# KOSONGKAN command agar Netlify tidak melakukan build
+command = ""
 
-[build.environment]
-# Dua baris ini memberitahu Netlify untuk menginstal Quarto dan R
-# sebelum menjalankan perintah 'command'.
-QUARTO_VERSION = "1.4.550"
-R_VERSION = "4.3.2"
+# Beritahu Netlify untuk langsung mempublikasikan folder _site
+publish = "_site"
