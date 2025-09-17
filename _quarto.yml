@@ -7,42 +7,45 @@ website:
   favicon: Logo.png
   
   navbar:
-    # Navbar sekarang hanya untuk logo dan tagline Anda
-    logo: Logo.Png
+    logo: Logo.png
     left:
       - href: index.qmd
         text: Home
+      - href: about.qmd
+        text: About
       - href: services.qmd
         text: Services
       - href: portfolio.qmd
         text: Portfolio
-      - href: about.qmd
-        text: About
-  
-  sidebar:
-    - id: main_nav
-      title: "Navigasi Utama"
-      style: "docked"
-      background: "light"
-      contents:
-        - href: index.qmd
-          text: "Home"
-        - section: "Blog Posts" 
-          contents:
-            # --- DAFTAR MANUAL POSTINGAN ANDA DIMULAI DI SINI ---
-            - href: posts/2025-09-16-welcome-post/index.qmd
-              text: "Welcome Post" # Ganti dengan judul postingan Anda
-            - href: posts/Geodataviz/index.qmd
-              text: "Visualisasi GeoDataViz" # Ganti dengan judul postingan Anda
-            # Nanti jika ada postingan baru, tambahkan di baris selanjutnya
-            
-  page-footer:
-    left: "&copy; 2025, Ghozian Islam Karami. All rights reserved."
-    right: 
+      - href: blog.qmd
+        text: Blog
+    right:
       - icon: linkedin
         href: https://www.linkedin.com/in/ghoziankarami/
       - icon: github
         href: https://github.com/ghoziankarami
+      - icon: search
+        href: "#" # Placeholder untuk fitur search nanti
+            
+  page-footer:
+    left: "&copy; 2025, Ghozian Islam Karami. All rights reserved."
+
+  # Sidebar global yang akan digunakan oleh blog
+  sidebar:
+    - id: blog-sidebar
+      title: "Blog Navigation"
+      style: "docked"
+      background: "light"
+      collapse-level: 1
+      contents:
+        - section: "Recent Posts"
+          contents:
+            - text: "Memvisualisasikan Data Geologi dengan GeoDataViz"
+              href: posts/Geodataviz/index.qmd
+            - text: "Selamat Datang di Blog Orebit"
+              href: posts/2025-09-16-welcome-post/index.qmd
+            - text: "Test Post - Blog Orebit"
+              href: posts/test-post/index.qmd
         
 format:
   html:

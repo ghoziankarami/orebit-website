@@ -2,40 +2,151 @@
 title: "Memvisualisasikan Data Geologi dengan GeoDataViz"
 author: "Ghozian Islam Karami"
 date: "2025-09-17"
-categories: [R, Shiny, Geologi]
+categories: [R, Shiny, Visualisasi, Tools]
+description: "Panduan lengkap menggunakan aplikasi GeoDataViz untuk analisis dan visualisasi data lubang bor"
+page-layout: article
+sidebar: blog-sidebar
+
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    toc: true
+    toc-location: right
 ---
 
-Ini adalah contoh bagaimana kita bisa menjalankan kode R langsung di dalam postingan blog untuk membuat visualisasi data geologi yang dinamis.
+## Pengenalan GeoDataViz {#introduction}
+
+**GeoDataViz** adalah aplikasi R Shiny yang saya kembangkan sebagai *workbench* open-source untuk visualisasi, analisis, dan validasi data geologi. Aplikasi ini dirancang khusus untuk menangani data lubang bor dan memberikan insights yang valuable untuk decision-making di lapangan.
+
+## Fitur Utama {#features}
+
+### 1. Upload dan Validasi Data
+- Import data dari berbagai format (CSV, Excel)
+- Validasi otomatis struktur data
+- Deteksi anomali dalam dataset
+
+### 2. Visualisasi 3D Interaktif
+- Plot lubang bor dalam ruang 3D
+- Kontrol interaktif untuk rotasi dan zoom
+- Color coding berdasarkan parameter geologi
+
+### 3. Analisis Statistik
+- Distribusi kadar mineral
+- Korelasi antar variabel
+- Summary statistics per domain geologi
+
+## Demo Visualisasi Interaktif {#demo}
+
+Mari kita buat contoh visualisasi interaktif yang menunjukkan kekuatan R dalam analisis data geologi:
 
 ```{r}
-#| label: fig-plot-interaktif
-#| fig-cap: "Plot interaktif hubungan antara kedalaman dan kadar emas. Coba hover di atas titik atau zoom."
-#| echo: true
+#| label: fig-interactive-plot
+#| fig-cap: "Plot interaktif hubungan kedalaman vs kadar emas. Hover untuk detail!"
 #| warning: false
 #| message: false
 
-# 1. Muat paket yang dibutuhkan
-library(ggplot2)
 library(plotly)
+library(dplyr)
 
-# 2. Membuat data simulasi (sama seperti sebelumnya)
-set.seed(42)
-data_bor <- data.frame(
-  kedalaman_m = 1:150,
-  kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2)
+# Simulasi data lubang bor yang lebih kompleks
+set.seed(456)
+complex_data <- tibble(
+  drill_hole = rep(paste0("DDH-", 1:5), each = 30),
+  depth_m = rep(seq(0, 145, by = 5), 5),
+  au_gt = abs(rnorm(150, mean = 1.2, sd = 0.8)) + 
+          ifelse(depth_m > 50 & depth_m < 100, 2, 0),
+  rock_type = sample(c("Waste", "Low Grade", "High Grade"), 150, 
+                     replace = TRUE, prob = c(0.4, 0.4, 0.2)),
+  recovery_pct = 85 + rnorm(150, 0, 5)
 )
 
-# 3. Buat objek plot ggplot dan simpan ke dalam variabel 'p'
-p <- ggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) +
-  geom_line(color = "gray50") +
-  geom_point(color = "darkgoldenrod", alpha = 0.8) +
+# Buat plot interaktif
+p <- complex_data %>%
+  ggplot(aes(x = depth_m, y = au_gt, color = rock_type, size = recovery_pct)) +
+  geom_point(alpha = 0.7) +
+  scale_color_manual(values = c("Waste" = "#FF6B6B", 
+                                "Low Grade" = "#FFE66D", 
+                                "High Grade" = "#4ECDC4")) +
+  scale_size_continuous(range = c(2, 8)) +
   labs(
-    title = "Profil Kadar Emas (Au) vs. Kedalaman",
-    x = "Kedalaman (meter)",
-    y = "Kadar Emas (g/t)"
+    title = "Analisis Kadar Emas vs Kedalaman (Multi-Hole)",
+    x = "Kedalaman (m)",
+    y = "Kadar Emas (g/t)",
+    color = "Tipe Batuan",
+    size = "Recovery (%)"
   ) +
-  theme_minimal()
+  theme_minimal() +
+  facet_wrap(~drill_hole, scales = "free")
 
-# 4. Ubah objek ggplot 'p' menjadi plot interaktif
-ggplotly(p)
+# Konversi ke plotly untuk interaktivitas
+ggplotly(p, tooltip = c("x", "y", "colour", "size"))
 ```
+
+## Workflow Analisis Data {#workflow}
+
+### Step 1: Data Import dan Cleaning
+```{r}
+#| label: data-cleaning
+#| echo: true
+#| eval: false
+
+# Contoh workflow data cleaning
+library(tidyverse)
+
+# Import data
+raw_data <- read_csv("drill_data.csv")
+
+# Basic cleaning
+clean_data <- raw_data %>%
+  # Remove outliers
+  filter(grade > 0, grade < 50) %>%
+  # Standardize naming
+  rename_with(tolower) %>%
+  # Handle missing values
+  drop_na(critical_columns)
+```
+
+### Step 2: Exploratory Data Analysis
+```{r}
+#| label: histogram-analysis
+#| fig-cap: "Distribusi kadar emas menunjukkan karakteristik log-normal"
+#| warning: false
+
+# Analisis distribusi kadar
+complex_data %>%
+  ggplot(aes(x = au_gt, fill = rock_type)) +
+  geom_histogram(bins = 30, alpha = 0.7, position = "identity") +
+  scale_fill_manual(values = c("Waste" = "#FF6B6B", 
+                               "Low Grade" = "#FFE66D", 
+                               "High Grade" = "#4ECDC4")) +
+  labs(
+    title = "Distribusi Kadar Emas per Tipe Batuan",
+    x = "Kadar Emas (g/t)",
+    y = "Frekuensi",
+    fill = "Tipe Batuan"
+  ) +
+  theme_minimal() +
+  facet_wrap(~rock_type, scales = "free_y")
+```
+
+## Best Practices {#best-practices}
+
+1. **Selalu validasi data** sebelum analisis
+2. **Gunakan visualisasi interaktif** untuk eksplorasi
+3. **Dokumentasikan semua asumsi** dalam analysis
+4. **Version control** untuk reproducibility
+
+## Kesimpulan {#conclusion}
+
+GeoDataViz memberikan platform yang powerful untuk analisis data geologi dengan pendekatan modern. Kombinasi R, Shiny, dan visualisasi interaktif memungkinkan geologist untuk:
+
+- Mengidentifikasi pola dengan lebih cepat
+- Membuat keputusan berbasis data
+- Mengkomunikasikan hasil dengan efektif
+
+Tertarik untuk mencoba? Hubungi saya untuk akses ke aplikasi atau konsultasi!
+
+---
+
+*Next post: Geostatistik dengan R - Dari Variogram hingga Kriging* 📊⛏️

@@ -134,7 +134,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -142,8 +142,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Logo.Png" alt="" class="navbar-logo light-content">
-    <img src="./Logo.Png" alt="" class="navbar-logo dark-content">
+    <img src="./Logo.png" alt="" class="navbar-logo light-content">
+    <img src="./Logo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Orebit.id</span>
@@ -156,8 +156,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./services.html"> 
@@ -168,8 +172,25 @@ window.Quarto = {
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ghoziankarami"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="./#"> <i class="bi bi-search" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -177,16 +198,79 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Blog Teknis</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Recent Posts</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./posts/Geodataviz/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Memvisualisasikan Data Geologi dengan GeoDataViz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./posts/2025-09-16-welcome-post/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selamat Datang di Blog Orebit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./posts/test-post/index.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Post - Blog Orebit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QXU=">Au <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VvbG9naQ==">Geologi <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxvdGx5">Plotly <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U2hpbnk=">Shiny <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R2VvbG9naQ==">Geologi <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U2hpbnk=">Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VG9vbHM=">Tools <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VmlzdWFsaXNhc2k=">Visualisasi <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div><div class="quarto-margin-footer"><div class="margin-footer-item">
+<section id="categories" class="level3">
+<h3 data-anchor-id="categories">Categories</h3>
+<p>Jelajahi postingan berdasarkan topik:</p>
+<div class="category-list">
+
+</div>
+<hr>
+</section>
+<section id="about-this-blog" class="level3">
+<h3 data-anchor-id="about-this-blog">About This Blog</h3>
+<p>Blog teknis yang membahas aplikasi R dalam geologi, geostatistik, dan analisis data mineral.</p>
+</section>
+</div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -195,7 +279,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -207,16 +291,49 @@ window.Quarto = {
 </header>
 
 
+<div class="blog-intro">
+<p>Selamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.</p>
+<p>Gunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.</p>
+</div>
+<div class="blog-intro">
+<p>Selamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.</p>
+<p>Gunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.</p>
+</div>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-date-sort" data-direction="asc">
+        Date - Oldest
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Date - Newest
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Author
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UiUyQ1NoaW55JTJDR2VvbG9naQ==" data-listing-date-sort="1758042000000" data-listing-file-modified-sort="1758091969277" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="147">
+<div class="quarto-post image-right" data-index="0" data-categories="UiUyQ1NoaW55JTJDVmlzdWFsaXNhc2klMkNUb29scw==" data-listing-date-sort="1758042000000" data-listing-file-modified-sort="1758104218268" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="697">
 <div class="thumbnail"><a href="./posts/Geodataviz/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\Geodataviz\index_files\figure-html\histogram-analysis-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -229,17 +346,19 @@ window.Quarto = {
 
 <div class="listing-category" onclick="window.quartoListingCategory('U2hpbnk='); return false;">Shiny</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('R2VvbG9naQ=='); return false;">Geologi</div>
+<div class="listing-category" onclick="window.quartoListingCategory('VmlzdWFsaXNhc2k='); return false;">Visualisasi</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VG9vbHM='); return false;">Tools</div>
 
 </div>
 <div class="delink listing-description"><a href="./posts/Geodataviz/index.html" class="no-external">
-Ini adalah contoh bagaimana kita bisa menjalankan kode R langsung di dalam postingan blog untuk membuat visualisasi data geologi yang dinamis.
+<p>Panduan lengkap menggunakan aplikasi GeoDataViz untuk analisis dan visualisasi data lubang bor</p>
 </a></div>
 </div>
 <div class="metadata">
 <a href="./posts/Geodataviz/index.html" class="no-external">
 <div class="listing-date">
-Sep 17, 2025
+17 September 2025
 </div>
 <div class="listing-author">
 Ghozian Islam Karami
@@ -247,33 +366,33 @@ Ghozian Islam Karami
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="UiUyQ1Bsb3RseSUyQ0F1" data-listing-date-sort="1757955600000" data-listing-file-modified-sort="1758096933813" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="147">
+<div class="quarto-post image-right" data-index="1" data-categories="V2VsY29tZSUyQ1IlMkNHZW9sb2dp" data-listing-date-sort="1757955600000" data-listing-file-modified-sort="1758104202213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="356">
 <div class="thumbnail"><a href="./posts/2025-09-16-welcome-post/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<p class="card-img-top"><img src="posts\2025-09-16-welcome-post\index_files\figure-html\fig-welcome-plot-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/2025-09-16-welcome-post/index.html" class="no-external">Visualisasi Plot Interaktif</a>
+<a href="./posts/2025-09-16-welcome-post/index.html" class="no-external">Selamat Datang di Blog Orebit</a>
 </h3>
 <div class="listing-categories">
 
+<div class="listing-category" onclick="window.quartoListingCategory('V2VsY29tZQ=='); return false;">Welcome</div>
+
 <div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('UGxvdGx5'); return false;">Plotly</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXU='); return false;">Au</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R2VvbG9naQ=='); return false;">Geologi</div>
 
 </div>
 <div class="delink listing-description"><a href="./posts/2025-09-16-welcome-post/index.html" class="no-external">
-Selamat datang di blog Orebit!
+<p>Postingan pembuka untuk blog teknis Orebit yang membahas integrasi R dalam workflow geologi</p>
 </a></div>
 </div>
 <div class="metadata">
 <a href="./posts/2025-09-16-welcome-post/index.html" class="no-external">
 <div class="listing-date">
-Sep 16, 2025
+16 September 2025
 </div>
 <div class="listing-author">
 Ghozian Islam Karami
@@ -693,20 +812,7 @@ Ghozian Islam Karami
       &nbsp;
     </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/">
-      <i class="bi bi-linkedin" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ghoziankarami">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
+      &nbsp;
     </div>
   </div>
 </footer>

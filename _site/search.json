@@ -9,13 +9,61 @@
   {
     "objectID": "posts/2025-09-16-welcome-post/index.html",
     "href": "posts/2025-09-16-welcome-post/index.html",
-    "title": "Visualisasi Plot Interaktif",
+    "title": "Selamat Datang di Blog Orebit",
     "section": "",
-    "text": "Selamat datang di blog Orebit!\nSebagai postingan pertama, saya ingin menunjukkan kekuatan Quarto dalam menyajikan analisis data yang dinamis. Di bawah ini adalah contoh sederhana bagaimana kita bisa mengeksekusi kode R untuk memvisualisasikan data geologi langsung di dalam artikel ini.\nKita akan membuat plot sederhana yang menunjukkan hubungan antara kedalaman lubang bor dan kadar emas (Au).\n#| label: fig-gold-grade #| fig-cap: “Hubungan antara kedalaman dan kadar emas (Au) dari data simulasi.” #| warning: false #| message: false\nlibrary(ggplot2)\n\nMembuat data simulasi\nset.seed(42) data_bor &lt;- data.frame( kedalaman_m = 1:150, kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2) )\n\n\nMembuat plot\nggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) + geom_line(color = “gray50”) + geom_point(color = “darkgoldenrod”, alpha = 0.8) + labs( title = “Profil Kadar Emas (Au) vs. Kedalaman”, x = “Kedalaman (meter)”, y = “Kadar Emas (g/t)” ) + theme_minimal()",
+    "text": "Selamat datang di blog teknis Orebit! Sebagai seorang Senior Geologist dengan pengalaman lebih dari 10 tahun, saya sangat antusias untuk berbagi pengetahuan dan pengalaman dalam memadukan ilmu geologi dengan kekuatan analisis data modern.",
     "crumbs": [
       "Home",
-      "Blog Posts",
-      "Welcome Post"
+      "Recent Posts",
+      "Selamat Datang di Blog Orebit"
+    ]
+  },
+  {
+    "objectID": "posts/2025-09-16-welcome-post/index.html#welcome",
+    "href": "posts/2025-09-16-welcome-post/index.html#welcome",
+    "title": "Selamat Datang di Blog Orebit",
+    "section": "",
+    "text": "Selamat datang di blog teknis Orebit! Sebagai seorang Senior Geologist dengan pengalaman lebih dari 10 tahun, saya sangat antusias untuk berbagi pengetahuan dan pengalaman dalam memadukan ilmu geologi dengan kekuatan analisis data modern.",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Selamat Datang di Blog Orebit"
+    ]
+  },
+  {
+    "objectID": "posts/2025-09-16-welcome-post/index.html#content",
+    "href": "posts/2025-09-16-welcome-post/index.html#content",
+    "title": "Selamat Datang di Blog Orebit",
+    "section": "Apa yang Akan Anda Temukan?",
+    "text": "Apa yang Akan Anda Temukan?\nDi blog ini, Anda akan menemukan:\n\nTutorial praktis menggunakan R untuk analisis data geologi\nStudi kasus dari proyek-proyek nyata di lapangan\nTips dan trik untuk geostatistik dan pemodelan sumber daya\nReview tools open-source untuk geologi",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Selamat Datang di Blog Orebit"
+    ]
+  },
+  {
+    "objectID": "posts/2025-09-16-welcome-post/index.html#example",
+    "href": "posts/2025-09-16-welcome-post/index.html#example",
+    "title": "Selamat Datang di Blog Orebit",
+    "section": "Contoh Visualisasi Data",
+    "text": "Contoh Visualisasi Data\nSebagai pembuka, mari kita lihat contoh sederhana visualisasi data geologi menggunakan R:\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Simulasi data lubang bor\nset.seed(123)\ndrill_data &lt;- tibble(\n  depth_m = seq(0, 100, by = 2),\n  grade_pct = 2 + 0.5 * sin(depth_m / 10) + rnorm(51, 0, 0.3),\n  rock_type = sample(c(\"Overburden\", \"Ore Zone\", \"Host Rock\"), 51, \n                     replace = TRUE, prob = c(0.2, 0.5, 0.3))\n)\n\n# Buat plot\nggplot(drill_data, aes(x = depth_m, y = grade_pct, color = rock_type)) +\n  geom_line(alpha = 0.7) +\n  geom_point(size = 2, alpha = 0.8) +\n  scale_color_manual(values = c(\"Overburden\" = \"#8B4513\", \n                                \"Ore Zone\" = \"#FFD700\", \n                                \"Host Rock\" = \"#708090\")) +\n  labs(\n    title = \"Profil Kadar Mineral vs Kedalaman\",\n    x = \"Kedalaman (m)\",\n    y = \"Kadar (%)\",\n    color = \"Jenis Batuan\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\nFigure 1: Contoh visualisasi hubungan kedalaman vs kadar mineral",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Selamat Datang di Blog Orebit"
+    ]
+  },
+  {
+    "objectID": "posts/2025-09-16-welcome-post/index.html#start",
+    "href": "posts/2025-09-16-welcome-post/index.html#start",
+    "title": "Selamat Datang di Blog Orebit",
+    "section": "Mari Mulai Eksplorasi!",
+    "text": "Mari Mulai Eksplorasi!\nSaya berharap blog ini dapat menjadi sumber inspirasi dan pembelajaran bagi para praktisi geologi yang ingin mengintegrasikan pendekatan data-driven dalam pekerjaan mereka.\nJangan lupa untuk menjelajahi portofolio proyek saya dan layanan konsultansi yang tersedia!\n\nHappy coding and happy geology! 🔍⛏️📊",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Selamat Datang di Blog Orebit"
     ]
   },
   {
@@ -23,10 +71,7 @@
     "href": "index.html",
     "title": "Orebit.id",
     "section": "",
-    "text": "Solusi Inovatif untuk Eksplorasi dan Pemodelan Sumber Daya Mineral\n\nSelamat datang di Orebit, hub digital di mana geologi, geostatistik, dan analisis data bertemu. Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan lebih dari 10 tahun pengalaman dalam eksplorasi mineral dan pemodelan sumber daya.\nDi sini, saya berbagi wawasan, proyek, dan solusi—baik menggunakan software industri maupun advokasi solusi berbasis open-source dengan R.\nJelajahi situs ini untuk menemukan: * Layanan Konsultansi yang saya tawarkan, mulai dari estimasi sumber daya hingga pengembangan SOP. * Portolio Proyek yang menampilkan aplikasi dan analisis yang telah saya kerjakan. * Blog Teknis berisi tutorial dan studi kasus mengenai aplikasi R dalam geologi.",
-    "crumbs": [
-      "Home"
-    ]
+    "text": "Solusi Inovatif untuk Eksplorasi dan Pemodelan Sumber Daya Mineral\n\nSelamat datang di Orebit, hub digital di mana geologi, geostatistik, dan analisis data bertemu. Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan lebih dari 10 tahun pengalaman dalam eksplorasi mineral dan pemodelan sumber daya.\nDi sini, saya berbagi wawasan, proyek, dan solusi—baik menggunakan software industri maupun advokasi solusi berbasis open-source dengan R.\nJelajahi situs ini untuk menemukan: * Layanan Konsultansi yang saya tawarkan, mulai dari estimasi sumber daya hingga pengembangan SOP. * Portolio Proyek yang menampilkan aplikasi dan analisis yang telah saya kerjakan. * Blog Teknis berisi tutorial dan studi kasus mengenai aplikasi R dalam geologi."
   },
   {
     "objectID": "about.html",
@@ -40,7 +85,7 @@
     "href": "blog.html",
     "title": "Blog Teknis",
     "section": "",
-    "text": "Memvisualisasikan Data Geologi dengan GeoDataViz\n\n\n\nR\n\nShiny\n\nGeologi\n\n\n\n\n\n\n\n\n\nSep 17, 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nVisualisasi Plot Interaktif\n\n\n\nR\n\nPlotly\n\nAu\n\n\n\n\n\n\n\n\n\nSep 16, 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\nNo matching items"
+    "text": "Selamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.\nGunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.\n\n\nSelamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.\nGunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMemvisualisasikan Data Geologi dengan GeoDataViz\n\n\n\nR\n\nShiny\n\nVisualisasi\n\nTools\n\n\n\nPanduan lengkap menggunakan aplikasi GeoDataViz untuk analisis dan visualisasi data lubang bor\n\n\n\n\n\n17 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nSelamat Datang di Blog Orebit\n\n\n\nWelcome\n\nR\n\nGeologi\n\n\n\nPostingan pembuka untuk blog teknis Orebit yang membahas integrasi R dalam workflow geologi\n\n\n\n\n\n16 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "portfolio.html",
@@ -54,11 +99,83 @@
     "href": "posts/Geodataviz/index.html",
     "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
     "section": "",
-    "text": "Ini adalah contoh bagaimana kita bisa menjalankan kode R langsung di dalam postingan blog untuk membuat visualisasi data geologi yang dinamis.\n\n# 1. Muat paket yang dibutuhkan\nlibrary(ggplot2)\nlibrary(plotly)\n\n# 2. Membuat data simulasi (sama seperti sebelumnya)\nset.seed(42)\ndata_bor &lt;- data.frame(\n  kedalaman_m = 1:150,\n  kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2)\n)\n\n# 3. Buat objek plot ggplot dan simpan ke dalam variabel 'p'\np &lt;- ggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) +\n  geom_line(color = \"gray50\") +\n  geom_point(color = \"darkgoldenrod\", alpha = 0.8) +\n  labs(\n    title = \"Profil Kadar Emas (Au) vs. Kedalaman\",\n    x = \"Kedalaman (meter)\",\n    y = \"Kadar Emas (g/t)\"\n  ) +\n  theme_minimal()\n\n# 4. Ubah objek ggplot 'p' menjadi plot interaktif\nggplotly(p)\n\n\n\n\n\n\n\nFigure 1: Plot interaktif hubungan antara kedalaman dan kadar emas. Coba hover di atas titik atau zoom.",
+    "text": "GeoDataViz adalah aplikasi R Shiny yang saya kembangkan sebagai workbench open-source untuk visualisasi, analisis, dan validasi data geologi. Aplikasi ini dirancang khusus untuk menangani data lubang bor dan memberikan insights yang valuable untuk decision-making di lapangan.",
     "crumbs": [
       "Home",
-      "Blog Posts",
-      "Visualisasi GeoDataViz"
+      "Recent Posts",
+      "Memvisualisasikan Data Geologi dengan GeoDataViz"
+    ]
+  },
+  {
+    "objectID": "posts/Geodataviz/index.html#introduction",
+    "href": "posts/Geodataviz/index.html#introduction",
+    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "section": "",
+    "text": "GeoDataViz adalah aplikasi R Shiny yang saya kembangkan sebagai workbench open-source untuk visualisasi, analisis, dan validasi data geologi. Aplikasi ini dirancang khusus untuk menangani data lubang bor dan memberikan insights yang valuable untuk decision-making di lapangan.",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Memvisualisasikan Data Geologi dengan GeoDataViz"
+    ]
+  },
+  {
+    "objectID": "posts/Geodataviz/index.html#features",
+    "href": "posts/Geodataviz/index.html#features",
+    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "section": "Fitur Utama",
+    "text": "Fitur Utama\n\n1. Upload dan Validasi Data\n\nImport data dari berbagai format (CSV, Excel)\nValidasi otomatis struktur data\nDeteksi anomali dalam dataset\n\n\n\n2. Visualisasi 3D Interaktif\n\nPlot lubang bor dalam ruang 3D\nKontrol interaktif untuk rotasi dan zoom\nColor coding berdasarkan parameter geologi\n\n\n\n3. Analisis Statistik\n\nDistribusi kadar mineral\nKorelasi antar variabel\nSummary statistics per domain geologi",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Memvisualisasikan Data Geologi dengan GeoDataViz"
+    ]
+  },
+  {
+    "objectID": "posts/Geodataviz/index.html#demo",
+    "href": "posts/Geodataviz/index.html#demo",
+    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "section": "Demo Visualisasi Interaktif",
+    "text": "Demo Visualisasi Interaktif\nMari kita buat contoh visualisasi interaktif yang menunjukkan kekuatan R dalam analisis data geologi:\n\nlibrary(plotly)\nlibrary(dplyr)\n\n# Simulasi data lubang bor yang lebih kompleks\nset.seed(456)\ncomplex_data &lt;- tibble(\n  drill_hole = rep(paste0(\"DDH-\", 1:5), each = 30),\n  depth_m = rep(seq(0, 145, by = 5), 5),\n  au_gt = abs(rnorm(150, mean = 1.2, sd = 0.8)) + \n          ifelse(depth_m &gt; 50 & depth_m &lt; 100, 2, 0),\n  rock_type = sample(c(\"Waste\", \"Low Grade\", \"High Grade\"), 150, \n                     replace = TRUE, prob = c(0.4, 0.4, 0.2)),\n  recovery_pct = 85 + rnorm(150, 0, 5)\n)\n\n# Buat plot interaktif\np &lt;- complex_data %&gt;%\n  ggplot(aes(x = depth_m, y = au_gt, color = rock_type, size = recovery_pct)) +\n  geom_point(alpha = 0.7) +\n  scale_color_manual(values = c(\"Waste\" = \"#FF6B6B\", \n                                \"Low Grade\" = \"#FFE66D\", \n                                \"High Grade\" = \"#4ECDC4\")) +\n  scale_size_continuous(range = c(2, 8)) +\n  labs(\n    title = \"Analisis Kadar Emas vs Kedalaman (Multi-Hole)\",\n    x = \"Kedalaman (m)\",\n    y = \"Kadar Emas (g/t)\",\n    color = \"Tipe Batuan\",\n    size = \"Recovery (%)\"\n  ) +\n  theme_minimal() +\n  facet_wrap(~drill_hole, scales = \"free\")\n\n# Konversi ke plotly untuk interaktivitas\nggplotly(p, tooltip = c(\"x\", \"y\", \"colour\", \"size\"))\n\n\n\n\n\n\n\nFigure 1: Plot interaktif hubungan kedalaman vs kadar emas. Hover untuk detail!",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Memvisualisasikan Data Geologi dengan GeoDataViz"
+    ]
+  },
+  {
+    "objectID": "posts/Geodataviz/index.html#workflow",
+    "href": "posts/Geodataviz/index.html#workflow",
+    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "section": "Workflow Analisis Data",
+    "text": "Workflow Analisis Data\n\nStep 1: Data Import dan Cleaning\n\n# Contoh workflow data cleaning\nlibrary(tidyverse)\n\n# Import data\nraw_data &lt;- read_csv(\"drill_data.csv\")\n\n# Basic cleaning\nclean_data &lt;- raw_data %&gt;%\n  # Remove outliers\n  filter(grade &gt; 0, grade &lt; 50) %&gt;%\n  # Standardize naming\n  rename_with(tolower) %&gt;%\n  # Handle missing values\n  drop_na(critical_columns)\n\n\n\nStep 2: Exploratory Data Analysis\n\n# Analisis distribusi kadar\ncomplex_data %&gt;%\n  ggplot(aes(x = au_gt, fill = rock_type)) +\n  geom_histogram(bins = 30, alpha = 0.7, position = \"identity\") +\n  scale_fill_manual(values = c(\"Waste\" = \"#FF6B6B\", \n                               \"Low Grade\" = \"#FFE66D\", \n                               \"High Grade\" = \"#4ECDC4\")) +\n  labs(\n    title = \"Distribusi Kadar Emas per Tipe Batuan\",\n    x = \"Kadar Emas (g/t)\",\n    y = \"Frekuensi\",\n    fill = \"Tipe Batuan\"\n  ) +\n  theme_minimal() +\n  facet_wrap(~rock_type, scales = \"free_y\")\n\n\n\n\nDistribusi kadar emas menunjukkan karakteristik log-normal",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Memvisualisasikan Data Geologi dengan GeoDataViz"
+    ]
+  },
+  {
+    "objectID": "posts/Geodataviz/index.html#best-practices",
+    "href": "posts/Geodataviz/index.html#best-practices",
+    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "section": "Best Practices",
+    "text": "Best Practices\n\nSelalu validasi data sebelum analisis\nGunakan visualisasi interaktif untuk eksplorasi\nDokumentasikan semua asumsi dalam analysis\nVersion control untuk reproducibility",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Memvisualisasikan Data Geologi dengan GeoDataViz"
+    ]
+  },
+  {
+    "objectID": "posts/Geodataviz/index.html#conclusion",
+    "href": "posts/Geodataviz/index.html#conclusion",
+    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "section": "Kesimpulan",
+    "text": "Kesimpulan\nGeoDataViz memberikan platform yang powerful untuk analisis data geologi dengan pendekatan modern. Kombinasi R, Shiny, dan visualisasi interaktif memungkinkan geologist untuk:\n\nMengidentifikasi pola dengan lebih cepat\nMembuat keputusan berbasis data\nMengkomunikasikan hasil dengan efektif\n\nTertarik untuk mencoba? Hubungi saya untuk akses ke aplikasi atau konsultasi!\n\nNext post: Geostatistik dengan R - Dari Variogram hingga Kriging 📊⛏️",
+    "crumbs": [
+      "Home",
+      "Recent Posts",
+      "Memvisualisasikan Data Geologi dengan GeoDataViz"
     ]
   }
 ]

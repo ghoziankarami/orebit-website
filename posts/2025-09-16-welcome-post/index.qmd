@@ -1,38 +1,78 @@
 ---
-title: "Visualisasi Plot Interaktif"
+title: "Selamat Datang di Blog Orebit"
 author: "Ghozian Islam Karami"
 date: "2025-09-16"
-categories: [R, Plotly, Au]
+categories: [Welcome, R, Geologi]
+description: "Postingan pembuka untuk blog teknis Orebit yang membahas integrasi R dalam workflow geologi"
+page-layout: article
+sidebar: blog-sidebar
+
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    toc: true
+    toc-location: right
 ---
 
-Selamat datang di blog Orebit!
+## Selamat Datang! {#welcome}
 
-Sebagai postingan pertama, saya ingin menunjukkan kekuatan Quarto dalam menyajikan analisis data yang dinamis. Di bawah ini adalah contoh sederhana bagaimana kita bisa mengeksekusi kode R untuk memvisualisasikan data geologi langsung di dalam artikel ini.
+Selamat datang di blog teknis **Orebit**! Sebagai seorang Senior Geologist dengan pengalaman lebih dari 10 tahun, saya sangat antusias untuk berbagi pengetahuan dan pengalaman dalam memadukan ilmu geologi dengan kekuatan analisis data modern.
 
-Kita akan membuat plot sederhana yang menunjukkan hubungan antara kedalaman lubang bor dan kadar emas (Au).
+## Apa yang Akan Anda Temukan? {#content}
+
+Di blog ini, Anda akan menemukan:
+
+- **Tutorial praktis** menggunakan R untuk analisis data geologi
+- **Studi kasus** dari proyek-proyek nyata di lapangan
+- **Tips dan trik** untuk geostatistik dan pemodelan sumber daya
+- **Review tools** open-source untuk geologi
+
+## Contoh Visualisasi Data {#example}
+
+Sebagai pembuka, mari kita lihat contoh sederhana visualisasi data geologi menggunakan R:
 
 ```{r}
-#| label: fig-gold-grade
-#| fig-cap: "Hubungan antara kedalaman dan kadar emas (Au) dari data simulasi."
+#| label: fig-welcome-plot
+#| fig-cap: "Contoh visualisasi hubungan kedalaman vs kadar mineral"
 #| warning: false
 #| message: false
 
 library(ggplot2)
+library(dplyr)
 
-# Membuat data simulasi
-set.seed(42)
-data_bor <- data.frame(
-  kedalaman_m = 1:150,
-  kadar_au_gt = round(rnorm(150, mean = 1.5, sd = 0.5) + (1:150) * 0.01, 2)
+# Simulasi data lubang bor
+set.seed(123)
+drill_data <- tibble(
+  depth_m = seq(0, 100, by = 2),
+  grade_pct = 2 + 0.5 * sin(depth_m / 10) + rnorm(51, 0, 0.3),
+  rock_type = sample(c("Overburden", "Ore Zone", "Host Rock"), 51, 
+                     replace = TRUE, prob = c(0.2, 0.5, 0.3))
 )
 
-# Membuat plot
-ggplot(data_bor, aes(x = kedalaman_m, y = kadar_au_gt)) +
-  geom_line(color = "gray50") +
-  geom_point(color = "darkgoldenrod", alpha = 0.8) +
+# Buat plot
+ggplot(drill_data, aes(x = depth_m, y = grade_pct, color = rock_type)) +
+  geom_line(alpha = 0.7) +
+  geom_point(size = 2, alpha = 0.8) +
+  scale_color_manual(values = c("Overburden" = "#8B4513", 
+                                "Ore Zone" = "#FFD700", 
+                                "Host Rock" = "#708090")) +
   labs(
-    title = "Profil Kadar Emas (Au) vs. Kedalaman",
-    x = "Kedalaman (meter)",
-    y = "Kadar Emas (g/t)"
+    title = "Profil Kadar Mineral vs Kedalaman",
+    x = "Kedalaman (m)",
+    y = "Kadar (%)",
+    color = "Jenis Batuan"
   ) +
-  theme_minimal()
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Mari Mulai Eksplorasi! {#start}
+
+Saya berharap blog ini dapat menjadi sumber inspirasi dan pembelajaran bagi para praktisi geologi yang ingin mengintegrasikan pendekatan data-driven dalam pekerjaan mereka.
+
+Jangan lupa untuk menjelajahi [portofolio proyek](../../portfolio.qmd) saya dan [layanan konsultansi](../../services.qmd) yang tersedia!
+
+---
+
+*Happy coding and happy geology!* 🔍⛏️📊

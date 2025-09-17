@@ -1,0 +1,11 @@
+# Metadata umum untuk semua postingan
+sidebar: blog-sidebar
+page-layout: article
+
+# Format default untuk postingan
+format:
+  html:
+    toc: true
+    toc-location: right
+    code-fold: false
+    code-tools: true

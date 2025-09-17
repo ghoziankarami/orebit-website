@@ -1,10 +1,43 @@
 ---
 title: "Blog Teknis"
+page-layout: full
+sidebar: blog-sidebar
+
 listing:
-  contents: posts
+  contents: "posts"
   sort: "date desc"
   type: default
-  categories: true # WAJIB 'false' agar tidak konflik dengan sidebar kiri
-# Hapus 'page-layout: full' untuk memberi ruang pada sidebar
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  feed: true
+  page-size: 10
+  date-format: "DD MMMM YYYY"
 
+margin-footer: |
+  ### Categories
+  
+  Jelajahi postingan berdasarkan topik:
+  
+  <div class="category-list">
+  <!-- Kategori akan di-generate otomatis oleh Quarto -->
+  </div>
+  
+  ---
+  
+  ### About This Blog
+  
+  Blog teknis yang membahas aplikasi R dalam geologi, geostatistik, dan analisis data mineral.
 ---
+
+::: {.blog-intro}
+Selamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.
+
+Gunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.
+:::
+
+::: {.blog-intro}
+Selamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.
+
+Gunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.
+:::

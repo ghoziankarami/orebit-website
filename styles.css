@@ -11,6 +11,8 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Container utama untuk halaman non-blog */
 .main-container {
   max-width: 900px;
   margin-left: auto;
@@ -24,12 +26,12 @@ body {
   margin-right: 10px;
 }
 .navbar {
-  border-bottom: 1px solid #dee2e6; /* Garis bawah navbar lebih terlihat */
+  border-bottom: 1px solid #dee2e6;
 }
 
 /* 4. Tipografi & Elemen Konten */
 h1, h2 {
-  border-bottom: 1px solid #dee2e6; /* Garis bawah untuk judul utama */
+  border-bottom: 1px solid #dee2e6;
   padding-bottom: 0.5em;
   margin-top: 1.5em;
 }
@@ -43,7 +45,7 @@ blockquote {
 /* 5. Gaya untuk Postingan Blog */
 pre, code {
   font-family: 'Fira Code', monospace;
-  background-color: #f8f9fa; /* Latar blok kode disamakan dengan sidebar */
+  background-color: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 4px;
 }
@@ -52,7 +54,7 @@ pre {
   overflow-x: auto;
 }
 
-/* 6. Footer (Bagian Bawah Website) */
+/* 6. Footer */
 .page-footer {
   border-top: 1px solid #dee2e6;
   padding-top: 1.5rem;
@@ -63,61 +65,269 @@ pre {
   color: #6c757d;
 }
 
-/* 7. GAYA TEMA DOKUMENTASI QUARTO BARU */
-/* ==================================== */
+/* 7. SIDEBAR STYLING - Enhanced untuk Blog */
+/* ======================================= */
 
-/* Mengatur latar belakang sidebar */
+/* Sidebar container styling */
 .sidebar-container {
   background-color: #f8f9fa !important;
+  border-right: 1px solid #dee2e6;
+  min-height: calc(100vh - 60px);
 }
 
-/* Mengatur judul utama sidebar (misal: "Navigation") */
+/* Sidebar title styling */
 .sidebar-title {
-  font-size: 0.9em;
-  font-weight: 700;
-  text-transform: uppercase; /* Membuatnya huruf kapital */
-  letter-spacing: 0.05rem; /* Menambah jarak antar huruf */
-  padding-top: 1rem;
-}
-
-/* Mengatur judul seksi (sub-folder) */
-.sidebar-section-title {
-  font-size: 0.9em;
+  font-size: 0.95em;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
+  padding: 1rem 1rem 0.5rem 1rem;
+  color: #495057;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 0.5rem;
 }
 
-/* Mengatur teks link navigasi di sidebar */
+/* Section titles dalam sidebar */
+.sidebar-section-title {
+  font-size: 0.85em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: #6c757d;
+  padding: 0.75rem 1rem 0.25rem 1rem;
+  margin-top: 1rem;
+}
+
+/* Individual sidebar items */
+.sidebar-item {
+  margin-bottom: 0.25rem;
+}
+
 .sidebar-item-text {
-  font-size: 0.95em;
+  font-size: 0.9em;
+  padding: 0.5rem 1rem;
+  display: block;
+  color: #495057;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.2s ease;
 }
 
-/* Mengatur gaya link yang sedang aktif atau di-hover */
-.sidebar-item.active > .sidebar-item-container > .sidebar-item-text,
-.sidebar-item-container:hover .sidebar-item-text {
+/* Active dan hover states */
+.sidebar-item.active .sidebar-item-text,
+.sidebar-item-text:hover {
   color: var(--bs-primary) !important;
+  background-color: rgba(75, 72, 150, 0.1);
 }
 
-/* Memberi garis di sebelah kiri link yang aktif */
 .sidebar-item.active {
-  border-left: 2px solid var(--bs-primary);
+  border-left: 3px solid var(--bs-primary);
+  background-color: rgba(75, 72, 150, 0.05);
 }
-/* 8. Kustomisasi Tagline di Navbar */
+
+/* 8. LAYOUT 3 KOLOM UNTUK BLOG */
+/* ============================= */
+
+/* Override default Quarto layout untuk blog */
+.page-layout-full.page-sidebar .page-columns {
+  display: grid;
+  grid-template-columns: 280px 1fr 250px;
+  grid-template-areas: "sidebar content margin";
+  gap: 2rem;
+  max-width: none;
+  width: 100%;
+}
+
+/* Sidebar kiri */
+.page-layout-full.page-sidebar .sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+/* Konten utama */  
+.page-layout-full.page-sidebar .content {
+  grid-area: content;
+  min-width: 0;
+  max-width: none;
+}
+
+/* Margin kanan */
+.page-layout-full.page-sidebar .margin-sidebar {
+  grid-area: margin;
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+/* 9. RESPONSIVE DESIGN */
+/* =================== */
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .page-layout-full.page-sidebar .page-columns {
+    grid-template-columns: 250px 1fr 200px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .page-layout-full.page-sidebar .page-columns {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas: 
+      "sidebar content"
+      "margin content";
+  }
+  
+  .page-layout-full.page-sidebar .margin-sidebar {
+    grid-area: margin;
+    position: static;
+    margin-top: 2rem;
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-layout-full.page-sidebar .page-columns {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "content"
+      "margin"
+      "sidebar";
+    gap: 1rem;
+  }
+  
+  .page-layout-full.page-sidebar .sidebar,
+  .page-layout-full.page-sidebar .margin-sidebar {
+    position: static;
+    height: auto;
+    max-height: none;
+  }
+  
+  .sidebar-container {
+    min-height: auto;
+  }
+}
+
+/* 10. BLOG-SPECIFIC ENHANCEMENTS */
+/* ============================== */
+
+/* Blog intro section */
+.blog-intro {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Listing items styling */
+.quarto-listing .list .list-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quarto-listing .list .list-item:last-child {
+  border-bottom: none;
+}
+
+/* Category badges */
+.quarto-category {
+  background-color: var(--bs-primary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8em;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.quarto-category:hover {
+  background-color: #3a3570;
+  color: white;
+  text-decoration: none;
+}
+
+/* 11. NAVBAR CUSTOMIZATION */
+/* ======================== */
 
 .navbar-title {
-  font-size: 1.1em; /* Sedikit lebih kecil dari judul halaman biasa */
-  font-weight: 400; /* Font weight normal, tidak tebal */
-  margin-left: 0.5em; /* Memberi sedikit jarak dari logo */
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-left: 0.5em;
 }
 
-/* 9. Kustomisasi Ikon Sosial di Footer */
+/* Social icons in footer */
 .page-footer .nav-link {
-  font-size: 1.4em; /* Membuat ikon 40% lebih besar */
-  padding: 0 0.5em; /* Memberi jarak horizontal antar ikon */
+  font-size: 1.4em;
+  padding: 0 0.5em;
 }
 
-/* Memberi jarak pada tombol postingan di homepage */
+/* Button spacing */
 .btn-primary {
   margin-bottom: 1.5rem;
+}
+
+/* 12. MARGIN SIDEBAR STYLING */
+/* ========================== */
+
+/* Margin content styling */
+.margin-sidebar {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.margin-sidebar h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+/* Category list styling */
+.quarto-listing-category {
+  margin-bottom: 0.5rem;
+}
+
+.quarto-listing-category a {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin: 0.1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+  color: #495057;
+  text-decoration: none;
+  font-size: 0.85em;
+  transition: all 0.2s ease;
+}
+
+.quarto-listing-category a:hover {
+  background-color: var(--bs-primary);
+  color: white;
+  border-color: var(--bs-primary);
+}
+
+/* Listing metadata */
+.listing-item .listing-categories {
+  margin-top: 0.5rem;
+}
+
+.listing-item .listing-categories .listing-category {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
 }
