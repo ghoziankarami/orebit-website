@@ -1,48 +1,329 @@
-/*-- File Tema Kustom untuk Orebit.id (Gaya Dokumentasi Quarto) --*/
+/*-- Orebit.id Modern Theme - Extracted from Logo Colors --*/
 
 /*-- scss:defaults --*/
-// 1. Variabel Palet Warna
-$quarto-purple:    #4B4896;
-$light-gray:       #f8f9fa;
-$dark-text:        #212529;
-$white-bg:         #ffffff;
-$logo-bg-color:    #F5F1E8;       // Warna latar navbar dari logo
-$orebit-dark-blue: #2E3A45;       // << WARNA BARU DARI TEKS LOGO "Orebit"
 
-// 2. Variabel Bootstrap yang Di-override
-$primary:       $quarto-purple;
-$body-bg:       $white-bg;
-$body-color:    $dark-text;
-$headings-color:$dark-text;
-$link-color:    $primary;
+// 1. Color Palette dari Logo Banner
+$orebit-dark: #2E3A45;        // Warna teks "Orebit" (dark teal)
+$orebit-blue: #1E6CB8;        // Warna biru dari logo dan ".id"  
+$orebit-light-blue: #4A9EE7;  // Biru terang dari pixel elements
+$orebit-accent: #7FB3E0;      // Biru pastel untuk highlights
+$orebit-cream: #F5F1E8;       // Background cream dari logo
+$orebit-gray: #6C757D;        // Gray untuk secondary text
 
-// 3. Variabel Font
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// 2. Bootstrap Variable Overrides
+$primary:       $orebit-blue;
+$secondary:     $orebit-accent;
+$dark:          $orebit-dark;
+$light:         $orebit-cream;
+
+// Background & Text
+$body-bg:       #ffffff;
+$body-color:    $orebit-dark;
+$text-muted:    $orebit-gray;
+
+// Links
+$link-color:                $orebit-blue;
+$link-hover-color:          $orebit-light-blue;
+$link-decoration:           none;
+
+// Navbar colors
+$navbar-light-bg:           $orebit-cream;
+$navbar-light-color:        $orebit-dark;
+$navbar-light-hover-color:  $orebit-blue;
+$navbar-light-active-color: $orebit-blue;
+$navbar-light-brand-color:  $orebit-dark;
+
+// Typography
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace:  'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+$headings-color:       $orebit-dark;
 $headings-font-weight: 600;
+$headings-line-height: 1.3;
 
+// Component variables
+$border-color:         #E5E7EB;
+$border-radius:        0.5rem;
+$box-shadow:           0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$box-shadow-lg:        0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+// Card variables
+$card-border-color:    $border-color;
+$card-box-shadow:      $box-shadow;
+$card-border-radius:   $border-radius;
 
 /*-- scss:rules --*/
-// Aturan untuk Navbar
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+// 1. NAVBAR STYLING - Logo Color Based
 .navbar {
-  background-color: $logo-bg-color;
-  border-bottom: 1px solid #e0dccd !important;
+  background: linear-gradient(135deg, $orebit-cream 0%, lighten($orebit-cream, 2%) 100%);
+  border-bottom: 1px solid rgba($orebit-dark, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 0;
+  transition: all 0.3s ease;
+  
+  .navbar-brand img {
+    max-height: 45px;
+    width: auto;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  .navbar-nav {
+    .nav-link {
+      color: $orebit-dark !important;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      margin: 0 0.25rem;
+      border-radius: $border-radius;
+      transition: all 0.3s ease;
+      position: relative;
+      
+      &:hover, &:focus {
+        color: $orebit-blue !important;
+        background-color: rgba($orebit-blue, 0.08);
+        transform: translateY(-1px);
+      }
+      
+      &.active {
+        color: $orebit-blue !important;
+        background-color: rgba($orebit-blue, 0.12);
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 20px;
+          height: 2px;
+          background: $orebit-blue;
+          border-radius: 1px;
+        }
+      }
+    }
+    
+    // Social icons styling  
+    .nav-link > .bi {
+      color: $orebit-dark !important;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover > .bi {
+      color: $orebit-blue !important;
+      transform: scale(1.1);
+    }
+  }
+  
+  // Mobile hamburger
+  .navbar-toggler {
+    border: none !important;
+    padding: 0.25rem 0.5rem;
+    
+    &:focus {
+      box-shadow: none;
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='#{$orebit-dark}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      transition: transform 0.3s ease;
+    }
+    
+    &:not(.collapsed) .navbar-toggler-icon {
+      transform: rotate(90deg);
+    }
+  }
 }
 
-// Aturan baru untuk warna teks di navbar
-.navbar-nav .nav-link, .navbar-nav .nav-link.active {
-  color: $orebit-dark-blue !important; // Menerapkan warna biru tua
-  font-weight: 500; // Opsional: Menebalkan teks agar lebih mudah dibaca
+// Scrolled navbar effect
+.navbar.scrolled {
+  background: rgba(245, 241, 232, 0.95);
+  box-shadow: $box-shadow;
 }
 
-// Aturan saat kursor mouse di atas link (hover)
-.navbar-nav .nav-link:hover {
-  color: lighten($orebit-dark-blue, 30%) !important; // Membuat warna sedikit lebih terang saat disentuh kursor
+// 2. TYPOGRAPHY IMPROVEMENTS
+body {
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-// Aturan untuk ikon di kanan navbar (LinkedIn, GitHub)
-.navbar-nav .nav-item .nav-link > .bi {
-    color: $orebit-dark-blue !important; // Menyamakan warna ikon
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  
+  &:first-child {
+    margin-top: 0;
+  }
 }
-.navbar-nav .nav-item .nav-link:hover > .bi {
-    color: lighten($orebit-dark-blue, 30%) !important; // Efek hover untuk ikon
+
+h1, h2 {
+  border-bottom: 2px solid rgba($orebit-blue, 0.2);
+  padding-bottom: 0.5em;
+}
+
+// 3. MODERN COMPONENTS
+.btn {
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: $border-radius;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, $orebit-blue 0%, $orebit-light-blue 100%);
+  border: none;
+  
+  &:hover {
+    background: linear-gradient(135deg, darken($orebit-blue, 5%) 0%, $orebit-blue 100%);
+  }
+}
+
+.btn-secondary {
+  background: $orebit-accent;
+  border: none;
+  color: white;
+  
+  &:hover {
+    background: darken($orebit-accent, 10%);
+    color: white;
+  }
+}
+
+// 4. CARDS & CONTENT BLOCKS
+.card {
+  border: 1px solid $border-color;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+blockquote {
+  border-left: 4px solid $orebit-blue;
+  background: rgba($orebit-blue, 0.05);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 $border-radius $border-radius 0;
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// 5. CODE BLOCKS
+pre, code {
+  font-family: $font-family-monospace;
+  border-radius: $border-radius;
+}
+
+pre {
+  background: #1e1e1e;
+  color: #ffffff;
+  padding: 1.5rem;
+  overflow-x: auto;
+  border: none;
+  
+  code {
+    background: transparent;
+    color: inherit;
+    border: none;
+    padding: 0;
+  }
+}
+
+code {
+  background: rgba($orebit-blue, 0.1);
+  color: $orebit-blue;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.9em;
+}
+
+// 6. RESPONSIVE TABLE
+.table {
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  
+  th {
+    background: $orebit-blue;
+    color: white;
+    font-weight: 600;
+    border: none;
+  }
+}
+
+// 7. FOOTER
+.page-footer {
+  background: linear-gradient(135deg, $orebit-dark 0%, lighten($orebit-dark, 10%) 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  
+  a {
+    color: $orebit-accent;
+    
+    &:hover {
+      color: $orebit-light-blue;
+    }
+  }
+}
+
+// 8. MODERN ANIMATIONS
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// 9. ACCESSIBILITY IMPROVEMENTS
+:focus {
+  outline: 2px solid $orebit-blue;
+  outline-offset: 2px;
+}
+
+// Skip to content link
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: $orebit-blue;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: $border-radius;
+  z-index: 1000;
+  
+  &:focus {
+    top: 6px;
+  }
 }

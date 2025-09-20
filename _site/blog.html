@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.21">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Technical insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis">
 
-<title>Technical Blog – Geology, Digitized</title>
+<title>Technical Blog – Orebit.id - Geology, Digitized</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-005b5759ee58ae52afa33ce9dd72c615.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-994cf0db48f4e0698177d116ae03ed5a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b605a1c1282757ae165695d083d4237b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -58,17 +59,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Tidak ada hasil",
+    "search-matching-documents-text": "dokumen cocok",
+    "search-copy-link-title": "Salin tautan untuk mencari",
+    "search-hide-matches-text": "Sembunyikan kecocokan lainnya",
+    "search-more-match-text": "kecocokan lainnya di dokumen ini",
+    "search-more-matches-text": "kecocokan lainnya di dokumen ini",
+    "search-clear-button-title": "Hapus",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Batal",
+    "search-submit-button-title": "Kirim",
+    "search-label": "Mencari"
   }
 }</script>
 <script>
@@ -81,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-categories','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
@@ -100,9 +101,33 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -132,6 +157,16 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
+<link rel="alternate" type="application/rss+xml" title="Orebit.id Technical Blog" href="blog.xml" data-external="1"><meta property="og:title" content="Orebit.id - Geology, Digitized">
+<meta property="og:description" content="Professional geological consulting and data analysis services">
+<meta property="og:image" content="https://orebit.netlify.app/Logo_banner.png">
+<meta property="og:site_name" content="Orebit.id - Geology, Digitized">
+<meta property="og:image:height" content="428">
+<meta property="og:image:width" content="1335">
+<meta name="twitter:title" content="Technical Blog – Orebit.id - Geology, Digitized">
+<meta name="twitter:description" content="Technical insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis">
+<meta name="twitter:image" content="https://orebit.netlify.app/posts/Drillhole Data Preprocessing/preprocessing-workflow.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -146,8 +181,8 @@ window.Quarto = {
     <img src="./Logo_banner.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Mencari"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alihkan navigasi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -175,19 +210,19 @@ window.Quarto = {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn Profile">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ghoziankarami"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ghoziankarami"> <i class="bi bi-github" role="img" aria-label="GitHub Profile">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="./#"> <i class="bi bi-search" role="img">
+  <li class="nav-item">
+    <a class="nav-link" href="mailto:ghozian@orebit.id"> <i class="bi bi-envelope" role="img">
 </i> 
-<span class="menu-text"></span></a>
+<span class="menu-text">Contact</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -201,19 +236,37 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGF0YS1TY2llbmNl">Data-Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RURB">EDA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VvRGF0YVZpeg==">GeoDataViz <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R2VvbG9neQ==">Geology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2Vvc3RhdGlzdGljcw==">Geostatistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3Blbi1Tb3VyY2U=">Open-Source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlcHJvY2Vzc2luZw==">Preprocessing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ui1TaGlueQ==">R-Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzb3VyY2UtRXN0aW1hdGlvbg==">Resource-Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div><div class="quarto-margin-footer"><div class="margin-footer-item">
+    <h5 class="quarto-listing-category-title">Kategori</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Semua <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGF0YS1TY2llbmNl">Data-Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RURB">EDA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VvRGF0YVZpeg==">GeoDataViz <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R2VvbG9neQ==">Geology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2Vvc3RhdGlzdGljcw==">Geostatistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3Blbi1Tb3VyY2U=">Open-Source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlcHJvY2Vzc2luZw==">Preprocessing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ui1TaGlueQ==">R-Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzb3VyY2UtRXN0aW1hdGlvbg==">Resource-Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div><div class="quarto-margin-footer"><div class="margin-footer-item">
 <section id="categories" class="level3">
-<h3 data-anchor-id="categories">Categories</h3>
+<h3 data-anchor-id="categories">📂 Categories</h3>
 <p>Explore posts by topic:</p>
-<div class="category-list">
+<div class="category-grid">
 
 </div>
 <hr>
 </section>
-<section id="about-this-blog" class="level3">
-<h3 data-anchor-id="about-this-blog">About This Blog</h3>
-<p>Technical blog covering R applications in geology, geostatistics, and mineral data analysis.</p>
+<section id="popular-topics" class="level3">
+<h3 data-anchor-id="popular-topics">📊 Popular Topics</h3>
+<ul>
+<li><a href=".\blog/categories/geostatistics">Geostatistics with R</a></li>
+<li><a href=".\blog/categories/visualization">Data Visualization</a></li>
+<li><a href=".\blog/categories/resources">Mineral Resources</a></li>
+<li><a href=".\blog/categories/shiny">Quarto &amp; R Shiny</a></li>
+</ul>
+<hr>
+</section>
+<section id="quick-links" class="level3">
+<h3 data-anchor-id="quick-links">🔗 Quick Links</h3>
+<ul>
+<li><a href=".\blog/index.xml">RSS Feed</a></li>
+<li><a href=".\blog/categories">All Categories</a></li>
+<li><a href=".\blog/archive">Archive</a></li>
+</ul>
+<hr>
+</section>
+<section id="feedback" class="level3">
+<h3 data-anchor-id="feedback">💬 Feedback</h3>
+<p>Have suggestions for topics? <a href="mailto:ghozian@orebit.id">Contact me</a> or connect on <a href="https://linkedin.com/in/ghoziankarami">LinkedIn</a>.</p>
 </section>
 </div></div></div>
 <!-- main -->
@@ -222,8 +275,14 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Technical Blog</h1>
+<p class="subtitle lead">R Applications in Geology &amp; Geostatistics</p>
 </div>
 
+<div>
+  <div class="description">
+    Technical insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis
+  </div>
+</div>
 
 
 <div class="quarto-title-meta column-page-left">
@@ -238,32 +297,290 @@ window.Quarto = {
 </header>
 
 
-<div class="blog-intro">
-<p>Welcome to the Orebit technical blog! Here I share insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis.</p>
-<p>Use the sidebar on the left for post navigation, or explore by category in the right panel.</p>
+<section id="technical-blog" class="level1 blog-hero">
+<h1>Technical Blog</h1>
+<p>Welcome to my technical blog where I share insights, tutorials, and case studies on <strong>R applications in geology</strong>, <strong>geostatistics</strong>, and <strong>mineral data analysis</strong>.</p>
+<p>Whether you’re a geoscientist looking to modernize your workflow or a data analyst exploring geological applications, you’ll find practical examples and real-world solutions here.</p>
+<div class="blog-stats">
+<div class="stat-item">
+<p><strong>50+</strong> <span>Technical Posts</span></p>
 </div>
+<div class="stat-item">
+<p><strong>10K+</strong> <span>Monthly Readers</span></p>
+</div>
+<div class="stat-item">
+<p><strong>8</strong> <span>Core Topics</span></p>
+</div>
+</div>
+</section>
+<hr>
+<section id="what-youll-find-here" class="level2">
+<h2 class="anchored" data-anchor-id="what-youll-find-here">🎯 What You’ll Find Here</h2>
+<div class="topic-grid">
+<section id="data-analysis" class="level3 topic-card">
+<h3 class="anchored" data-anchor-id="data-analysis">📊 Data Analysis</h3>
+<p>R workflows for geological datasets, statistical modeling, and exploratory data analysis techniques.</p>
+</section>
+<section id="spatial-analysis" class="level3 topic-card">
+<h3 class="anchored" data-anchor-id="spatial-analysis">🗺️ Spatial Analysis</h3>
+<p>GIS operations, spatial interpolation, and geological mapping using modern R packages.</p>
+</section>
+<section id="visualization" class="level3 topic-card">
+<h3 class="anchored" data-anchor-id="visualization">📈 Visualization</h3>
+<p>Creating compelling charts, maps, and interactive dashboards for geological data presentation.</p>
+</section>
+<section id="tool-development" class="level3 topic-card">
+<h3 class="anchored" data-anchor-id="tool-development">🔧 Tool Development</h3>
+<p>Building R packages, Shiny applications, and custom functions for geological workflows.</p>
+</section>
+<section id="case-studies" class="level3 topic-card">
+<h3 class="anchored" data-anchor-id="case-studies">🏭 Case Studies</h3>
+<p>Real-world applications from mining projects, resource estimation, and exploration programs.</p>
+</section>
+<section id="tutorials" class="level3 topic-card">
+<h3 class="anchored" data-anchor-id="tutorials">🎓 Tutorials</h3>
+<p>Step-by-step guides for implementing geological analysis techniques in R.</p>
+</section>
+</div>
+<hr>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">🚀 Getting Started</h2>
+<p>New to R or geological data analysis? Start with these foundational posts:</p>
+<ol type="1">
+<li><strong><a href=".\posts/r-setup-geology">Setting up R for Geological Work</a></strong> - Essential packages and workflows</li>
+<li><strong><a href=".\posts/first-drillhole-analysis">Your First Drillhole Analysis</a></strong> - Basic data loading and visualization<br>
+</li>
+<li><strong><a href=".\posts/geostatistics-intro">Introduction to Geostatistics in R</a></strong> - Variogram modeling basics</li>
+<li><strong><a href=".\posts/geological-mapping">Creating Geological Maps</a></strong> - Spatial visualization techniques</li>
+</ol>
+<hr>
+</section>
+<section id="stay-updated" class="level2">
+<h2 class="anchored" data-anchor-id="stay-updated">📬 Stay Updated</h2>
+<div class="subscribe-section">
+<section id="rss-feed" class="level3 subscribe-card">
+<h3 class="anchored" data-anchor-id="rss-feed">🔔 RSS Feed</h3>
+<p>Subscribe to get notified of new posts automatically in your feed reader.</p>
+<p><a href=".\blog/index.xml" class="btn btn-primary" target="_blank">Subscribe to RSS</a></p>
+</section>
+<section id="linkedin-updates" class="level3 subscribe-card">
+<h3 class="anchored" data-anchor-id="linkedin-updates">💼 LinkedIn Updates</h3>
+<p>Follow me on LinkedIn for post announcements and geological insights.</p>
+<p><a href="https://linkedin.com/in/ghoziankarami" class="btn btn-secondary" target="_blank">Follow on LinkedIn</a></p>
+</section>
+</div>
+<hr>
+<style>
+/* Enhanced Blog Styling */
+.blog-hero {
+  background: linear-gradient(135deg, #1E6CB8 0%, #4A9EE7 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.blog-hero h1 {
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.blog-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-item span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.topic-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.topic-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1E6CB8;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.subscribe-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.subscribe-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.subscribe-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2E3A45;
+  border: none;
+}
+
+/* Category grid in sidebar */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .blog-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .blog-stats {
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 0.75rem 1rem;
+  }
+  
+  .topic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .subscribe-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Custom listing styles */
+.quarto-listing .list .list-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.quarto-listing .list .list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.listing-item .listing-title {
+  color: #1E6CB8;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.listing-item .listing-title:hover {
+  color: #4A9EE7;
+}
+
+.listing-item .listing-description {
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.listing-item .listing-date {
+  color: #9CA3AF;
+  font-size: 0.9rem;
+}
+
+.listing-categories .listing-category {
+  background: linear-gradient(135deg, #1E6CB8, #4A9EE7);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.listing-categories .listing-category:hover {
+  transform: scale(1.05);
+  color: white;
+}
+</style>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
+    <select id="listing-listing-sort" class="form-select" aria-label="Urut berdasar" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Urut berdasar</option>
       <option value="index" data-direction="asc">Default</option>
       <option value="listing-title" data-direction="asc">
-        Title
+        Judul
       </option>
       <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
+        Tanggal - Paling lama
       </option>
       <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
+        Tanggal - Paling baru
       </option>
       <option value="listing-author" data-direction="asc">
-        Author
+        Penulis
       </option>
     </select>
   </div>
@@ -276,7 +593,7 @@ window.Quarto = {
 <div class="quarto-post image-right" data-index="0" data-categories="R2VvRGF0YVZpeiUyQ1ByZXByb2Nlc3NpbmclMkNSZXNvdXJjZS1Fc3RpbWF0aW9uJTJDR2Vvc3RhdGlzdGljcw==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758378812711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1073">
 <div class="thumbnail"><a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/Drillhole Data Preprocessing/preprocessing-workflow.png" class="thumbnail-image">
+<img loading="lazy" src="./posts/Drillhole Data Preprocessing/preprocessing-workflow.png" class="thumbnail-image" style="height: 200px;">
 
 </a></div>
 <div class="body">
@@ -312,7 +629,7 @@ Ghozian Islam Karami
 <div class="quarto-post image-right" data-index="1" data-categories="R2VvRGF0YVZpeiUyQ0VEQSUyQ1ItU2hpbnklMkNUdXRvcmlhbA==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758378798387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="933">
 <div class="thumbnail"><a href="./posts/EDA with GeoDataViz/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/EDA with GeoDataViz/eda-workflow.png" class="thumbnail-image">
+<img loading="lazy" src="./posts/EDA with GeoDataViz/eda-workflow.png" class="thumbnail-image" style="height: 200px;">
 
 </a></div>
 <div class="body">
@@ -348,7 +665,7 @@ Ghozian Islam Karami
 <div class="quarto-post image-right" data-index="2" data-categories="V2VsY29tZSUyQ09wZW4tU291cmNlJTJDR2VvbG9neSUyQ0RhdGEtU2NpZW5jZQ==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758383797606" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="932">
 <div class="thumbnail"><a href="./posts/Welcome to Orebit/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/Welcome to Orebit/welcome-banner.png" class="thumbnail-image">
+<img loading="lazy" src="./posts/Welcome to Orebit/welcome-banner.png" class="thumbnail-image" style="height: 200px;">
 
 </a></div>
 <div class="body">
@@ -382,7 +699,7 @@ Ghozian Islam Karami
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
+<div class="listing-no-matching d-none">Tidak ada yang cocok</div>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -409,12 +726,12 @@ Ghozian Islam Karami
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Disalin!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Disalin!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -456,7 +773,7 @@ Ghozian Islam Karami
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/orebit\.netlify\.app\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -787,18 +1104,20 @@ Ghozian Islam Karami
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025, Ghozian Islam Karami. All rights reserved.</p>
+<p>© 2025 <a href="https://orebit.netlify.app">Orebit.id</a> by Ghozian Islam Karami<br>
+All rights reserved.</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
-    </div>
+<p>Built with <a href="https://quarto.org">Quarto</a> &amp; ❤️</p>
+</div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
   </div>
 </footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

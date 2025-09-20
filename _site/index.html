@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.21">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.">
 
-<title>GeoDataViz: Elevate Your Geological Workflow – Geology, Digitized</title>
+<title>GeoDataViz: Elevate Your Geological Workflow – Orebit.id - Geology, Digitized</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-005b5759ee58ae52afa33ce9dd72c615.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-994cf0db48f4e0698177d116ae03ed5a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b605a1c1282757ae165695d083d4237b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -56,25 +57,48 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Tidak ada hasil",
+    "search-matching-documents-text": "dokumen cocok",
+    "search-copy-link-title": "Salin tautan untuk mencari",
+    "search-hide-matches-text": "Sembunyikan kecocokan lainnya",
+    "search-more-match-text": "kecocokan lainnya di dokumen ini",
+    "search-more-matches-text": "kecocokan lainnya di dokumen ini",
+    "search-clear-button-title": "Hapus",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Batal",
+    "search-submit-button-title": "Kirim",
+    "search-label": "Mencari"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Orebit.id - Geology, Digitized">
+<meta property="og:description" content="Professional geological consulting and data analysis services">
+<meta property="og:image" content="https://orebit.netlify.app/Logo_banner.png">
+<meta property="og:site_name" content="Orebit.id - Geology, Digitized">
+<meta property="og:image:height" content="428">
+<meta property="og:image:width" content="1335">
+<meta name="twitter:title" content="GeoDataViz: Elevate Your Geological Workflow – Orebit.id - Geology, Digitized">
+<meta name="twitter:description" content="An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.">
+<meta name="twitter:image" content="https://orebit.netlify.app/images/plot-contoh.png">
+<meta name="twitter:image:alt" content="Statistical analysis interface showing comprehensive EDA tools">
+<meta name="twitter:image-height" content="1367">
+<meta name="twitter:image-width" content="2110">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,8 +110,8 @@ ul.task-list li input[type="checkbox"] {
     <img src="./Logo_banner.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Mencari"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alihkan navigasi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -115,19 +139,19 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn Profile">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ghoziankarami"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ghoziankarami"> <i class="bi bi-github" role="img" aria-label="GitHub Profile">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="./#"> <i class="bi bi-search" role="img">
+  <li class="nav-item">
+    <a class="nav-link" href="mailto:ghozian@orebit.id"> <i class="bi bi-envelope" role="img">
 </i> 
-<span class="menu-text"></span></a>
+<span class="menu-text">Contact</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -137,21 +161,27 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">GeoDataViz: Elevate Your Geological Workflow</h1>
+<p class="subtitle lead">Modern geological data analysis and visualization platform</p>
+</div>
+
+<div>
+  <div class="description">
+    An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.
+  </div>
 </div>
 
 
-
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -163,94 +193,244 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="geodataviz-elevate-your-geological-workflow" class="level1 hero-section">
+<h1>GeoDataViz: Elevate Your Geological Workflow</h1>
 <p>An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.</p>
-<div style="margin-top: 20px; margin-bottom: 40px; text-align: center;">
-<p><a href="https://github.com/ghoziankarami/geodataviz" class="btn btn-primary" role="button" target="_blank"><i class="fab fa-github"></i> View on GitHub</a> <a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-secondary" role="button" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a></p>
+<div class="hero-buttons">
+<p><a href="https://github.com/ghoziankarami/geodataviz" class="btn btn-primary" target="_blank" rel="noopener"> <i class="fab fa-github"></i> View on GitHub </a> <a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-secondary" target="_blank" rel="noopener"> <i class="fas fa-external-link-alt"></i> Live Demo </a></p>
 </div>
+</section>
 <hr>
 <section id="core-features" class="level2">
 <h2 class="anchored" data-anchor-id="core-features">Core Features</h2>
-<div class="columns">
-<div class="column" style="width:33%;">
-<section id="statistical-analysis" class="level3">
+<div class="grid grid-3">
+<section id="statistical-analysis" class="level3 feature-card">
 <h3 class="anchored" data-anchor-id="statistical-analysis"><i class="fas fa-chart-line"></i> Statistical Analysis</h3>
-<p>Perform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools.</p>
+<p>Perform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools and automated reporting capabilities.</p>
 </section>
-</div><div class="column" style="width:33%;">
-<section id="d-visualization" class="level3">
+<section id="d-visualization" class="level3 feature-card">
 <h3 class="anchored" data-anchor-id="d-visualization"><i class="fas fa-cube"></i> 3D Visualization</h3>
-<p>Create interactive 3D plots and geological models to visualize your exploration data dynamically.</p>
+<p>Create interactive 3D plots and geological models to visualize your exploration data dynamically with real-time manipulation controls.</p>
 </section>
-</div><div class="column" style="width:33%;">
-<section id="data-validation" class="level3">
+<section id="data-validation" class="level3 feature-card">
 <h3 class="anchored" data-anchor-id="data-validation"><i class="fas fa-check-circle"></i> Data Validation</h3>
-<p>Comprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow.</p>
+<p>Comprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow with automated flagging systems.</p>
 </section>
-</div>
 </div>
 <hr>
 </section>
 <section id="project-roadmap" class="level2">
 <h2 class="anchored" data-anchor-id="project-roadmap">Project Roadmap</h2>
-<p>GeoDataViz is available as a full-featured local version and a live web demo. I’m now focused on future development for a Pro version.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<section id="open-source-version-current" class="level4">
-<h4 class="anchored" data-anchor-id="open-source-version-current">Open Source Version (Current)</h4>
+<div class="grid grid-2">
+<section id="open-source-version-current" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="open-source-version-current"><i class="fab fa-osi"></i> Open Source Version (Current)</h4>
 <ul>
-<li>Complete drillhole visualization</li>
-<li>Statistical analysis tools</li>
-<li>Interactive 3D plotting</li>
-<li>Data validation &amp; QA/QC</li>
+<li>✅ Complete drillhole visualization</li>
+<li>✅ Statistical analysis tools<br>
+</li>
+<li>✅ Interactive 3D plotting</li>
+<li>✅ Data validation &amp; QA/QC</li>
+<li>✅ Export capabilities</li>
+<li>✅ Cross-platform compatibility</li>
 </ul>
 </section>
-</div><div class="column" style="width:50%;">
-<section id="advanced-features-pro-version" class="level4">
-<h4 class="anchored" data-anchor-id="advanced-features-pro-version">Advanced Features (Pro Version)</h4>
+<section id="advanced-features-pro-version" class="level4 feature-card">
+<h4 class="anchored" data-anchor-id="advanced-features-pro-version"><i class="fas fa-rocket"></i> Advanced Features (Pro Version)</h4>
 <ul>
-<li>Automated reporting system</li>
-<li>Resource estimation modules</li>
-<li>Pit optimization tools</li>
-<li>Advanced geostatistics</li>
+<li>🚀 Automated reporting system</li>
+<li>🚀 Resource estimation modules</li>
+<li>🚀 Pit optimization tools</li>
+<li>🚀 Advanced geostatistics</li>
+<li>🚀 Machine learning integration</li>
+<li>🚀 Cloud deployment options</li>
 </ul>
 </section>
-</div>
 </div>
 <hr>
 </section>
 <section id="application-showcase" class="level2">
 <h2 class="anchored" data-anchor-id="application-showcase">Application Showcase</h2>
-<p>See how GeoDataViz transforms raw geological data into actionable insights.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img src="images/plot-contoh.png" class="img-fluid" alt="Statistical Plots"> <strong>Statistical Plots:</strong> Comprehensive EDA tools for geological data.</p>
-</div><div class="column" style="width:50%;">
-<p><img src="images/map-contoh.png" class="img-fluid" alt="3D Visualization"> <strong>3D Visualization:</strong> Interactive drillhole and geological modeling.</p>
+<div class="grid grid-2">
+<div class="showcase-item">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/plot-contoh.png" class="img-responsive img-fluid figure-img" alt="Statistical analysis interface showing comprehensive EDA tools"></p>
+<figcaption>Statistical Analysis Dashboard</figcaption>
+</figure>
+</div>
+<p><strong>Statistical Analysis Dashboard</strong><br>
+Comprehensive exploratory data analysis tools designed specifically for geological datasets with automated statistical reporting.</p>
+</div>
+<div class="showcase-item">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/map-contoh.png" class="img-responsive img-fluid figure-img" alt="3D geological model with interactive controls"></p>
+<figcaption>Interactive 3D Visualization</figcaption>
+</figure>
+</div>
+<p><strong>Interactive 3D Visualization</strong><br>
+Advanced drillhole and geological modeling with real-time manipulation, cross-sections, and dynamic filtering capabilities.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="technical-stack-integration" class="level2">
+<h2 class="anchored" data-anchor-id="technical-stack-integration">Technical Stack &amp; Integration</h2>
+<div class="tech-grid">
+<div class="tech-item">
+<p><strong>R Ecosystem</strong> - Shiny for web applications - tidyverse for data manipulation - sf for spatial operations - plotly for interactive plots</p>
+</div>
+<div class="tech-item">
+<p><strong>Geological Packages</strong> - gstat for geostatistics - sp for spatial analysis - rgl for 3D graphics - Custom geological functions</p>
+</div>
+<div class="tech-item">
+<p><strong>Performance</strong> - Optimized rendering - Lazy loading - Efficient memory usage - Responsive design</p>
+</div>
+<div class="tech-item">
+<p><strong>Integration</strong> - Import from multiple formats - Export to industry standards - API connectivity ready - Extensible architecture</p>
 </div>
 </div>
 <hr>
 </section>
 <section id="about-this-project" class="level2">
 <h2 class="anchored" data-anchor-id="about-this-project">About This Project</h2>
-<p>GeoDataViz emerged from a vision to promote <strong>open-source solutions</strong> in the geological community. This project is part of my advocacy for making powerful geological tools accessible to everyone. By integrating popular R packages, GeoDataViz aims to become the go-to <em>workbench</em> for geoscientists worldwide.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<section id="follow-on-linkedin" class="level3">
-<h3 class="anchored" data-anchor-id="follow-on-linkedin"><i class="fab fa-linkedin"></i> Follow on LinkedIn</h3>
-<p>Stay updated with the latest developments and geological insights.</p>
-<p><a href="https://www.linkedin.com/in/ghoziankarami/" class="btn btn-primary" target="_blank">My Profile</a></p>
+<div class="about-project">
+<p>GeoDataViz emerged from a vision to promote <strong>open-source solutions</strong> in the geological community. This project represents my commitment to democratizing access to powerful geological analysis tools.</p>
+<p>By integrating popular R packages with modern web technologies, GeoDataViz aims to become the go-to <em>workbench</em> for geoscientists worldwide. The platform bridges the gap between traditional geological software and modern data science approaches.</p>
+<p><strong>Key Principles:</strong> - Open source accessibility - Industry-standard compliance<br>
+- User-centric design - Continuous community feedback - Performance optimization</p>
+</div>
+<hr>
 </section>
-</div><div class="column" style="width:50%;">
-<section id="contribute-on-github" class="level3">
-<h3 class="anchored" data-anchor-id="contribute-on-github"><i class="fab fa-github"></i> Contribute on GitHub</h3>
-<p>Join the community, report issues, or contribute to development.</p>
-<p><a href="https://github.com/ghoziankarami/geodataviz" class="btn btn-primary" target="_blank">Repository</a></p>
+<section id="get-involved" class="level2">
+<h2 class="anchored" data-anchor-id="get-involved">Get Involved</h2>
+<div class="grid grid-2">
+<section id="professional-network" class="level3 involvement-card">
+<h3 class="anchored" data-anchor-id="professional-network"><i class="fab fa-linkedin"></i> Professional Network</h3>
+<p>Connect with me on LinkedIn for the latest developments, geological insights, and industry discussions.</p>
+<p><a href="https://www.linkedin.com/in/ghoziankarami/" class="btn btn-primary" target="_blank" rel="noopener">Connect on LinkedIn</a></p>
+</section>
+<section id="open-source-community" class="level3 involvement-card">
+<h3 class="anchored" data-anchor-id="open-source-community"><i class="fab fa-github"></i> Open Source Community</h3>
+<p>Join our growing community on GitHub. Contribute code, report issues, request features, or simply star the repository.</p>
+<p><a href="https://github.com/ghoziankarami/geodataviz" class="btn btn-primary" target="_blank" rel="noopener">View Repository</a></p>
 </section>
 </div>
-</div>
-
-
+<hr>
 </section>
+<section id="ready-to-transform-your-geological-workflow" class="level2 cta-section">
+<h2 class="anchored" data-anchor-id="ready-to-transform-your-geological-workflow">Ready to Transform Your Geological Workflow?</h2>
+<p>Experience the power of modern geological data analysis. Try GeoDataViz today and discover how open-source tools can revolutionize your exploration projects.</p>
+<div class="cta-buttons">
+<p><a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener"> <i class="fas fa-play"></i> Try Live Demo </a> <a href="./services" class="btn btn-secondary btn-lg"> <i class="fas fa-handshake"></i> Consulting Services </a></p>
+</div>
+</section>
+<style>
+/* Custom styles for homepage */
+.hero-section {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.tech-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tech-item strong {
+  display: block;
+  color: #1E6CB8;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.showcase-item {
+  text-align: center;
+}
+
+.showcase-item img {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.about-project {
+  background: linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid #1E6CB8;
+}
+
+.involvement-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.involvement-card:hover {
+  transform: translateY(-2px);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #2E3A45 0%, #374151 100%);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  margin: 3rem 0;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .cta-section {
+    padding: 2rem 1rem;
+  }
+}
+</style>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -278,12 +458,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Disalin!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Disalin!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -325,7 +505,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/orebit\.netlify\.app\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -656,18 +836,20 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025, Ghozian Islam Karami. All rights reserved.</p>
+<p>© 2025 <a href="https://orebit.netlify.app">Orebit.id</a> by Ghozian Islam Karami<br>
+All rights reserved.</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
-    </div>
+<p>Built with <a href="https://quarto.org">Quarto</a> &amp; ❤️</p>
+</div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
   </div>
 </footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

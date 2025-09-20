@@ -102,7 +102,28 @@
     "href": "blog.html",
     "title": "Technical Blog",
     "section": "",
-    "text": "Welcome to the Orebit technical blog! Here I share insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis.\nUse the sidebar on the left for post navigation, or explore by category in the right panel.\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz\n\n\n\nGeoDataViz\n\nPreprocessing\n\nResource-Estimation\n\nGeostatistics\n\n\n\nMaster the art of drillhole data preprocessing using GeoDataViz. Learn compositing strategies, domain optimization, and data conditioning techniques for accurate resource estimation.\n\n\n\n\n\n20 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory Data Analysis with GeoDataViz: A Comprehensive Guide\n\n\n\nGeoDataViz\n\nEDA\n\nR-Shiny\n\nTutorial\n\n\n\nLearn how to perform comprehensive exploratory data analysis on geological datasets using GeoDataViz before moving to resource estimation.\n\n\n\n\n\n20 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science\n\n\n\nWelcome\n\nOpen-Source\n\nGeology\n\nData-Science\n\n\n\nWelcome to the Orebit technical blog. Learn about our mission to democratize geological data analysis through open-source solutions and modern data science techniques.\n\n\n\n\n\n20 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to my technical blog where I share insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis.\nWhether you’re a geoscientist looking to modernize your workflow or a data analyst exploring geological applications, you’ll find practical examples and real-world solutions here.\n\n\n50+ Technical Posts\n\n\n10K+ Monthly Readers\n\n\n8 Core Topics"
+  },
+  {
+    "objectID": "blog.html#what-youll-find-here",
+    "href": "blog.html#what-youll-find-here",
+    "title": "Technical Blog",
+    "section": "🎯 What You’ll Find Here",
+    "text": "🎯 What You’ll Find Here\n\n\n📊 Data Analysis\nR workflows for geological datasets, statistical modeling, and exploratory data analysis techniques.\n\n\n🗺️ Spatial Analysis\nGIS operations, spatial interpolation, and geological mapping using modern R packages.\n\n\n📈 Visualization\nCreating compelling charts, maps, and interactive dashboards for geological data presentation.\n\n\n🔧 Tool Development\nBuilding R packages, Shiny applications, and custom functions for geological workflows.\n\n\n🏭 Case Studies\nReal-world applications from mining projects, resource estimation, and exploration programs.\n\n\n🎓 Tutorials\nStep-by-step guides for implementing geological analysis techniques in R."
+  },
+  {
+    "objectID": "blog.html#getting-started",
+    "href": "blog.html#getting-started",
+    "title": "Technical Blog",
+    "section": "🚀 Getting Started",
+    "text": "🚀 Getting Started\nNew to R or geological data analysis? Start with these foundational posts:\n\nSetting up R for Geological Work - Essential packages and workflows\nYour First Drillhole Analysis - Basic data loading and visualization\n\nIntroduction to Geostatistics in R - Variogram modeling basics\nCreating Geological Maps - Spatial visualization techniques"
+  },
+  {
+    "objectID": "blog.html#stay-updated",
+    "href": "blog.html#stay-updated",
+    "title": "Technical Blog",
+    "section": "📬 Stay Updated",
+    "text": "📬 Stay Updated\n\n\n🔔 RSS Feed\nSubscribe to get notified of new posts automatically in your feed reader.\nSubscribe to RSS\n\n\n💼 LinkedIn Updates\nFollow me on LinkedIn for post announcements and geological insights.\nFollow on LinkedIn"
   },
   {
     "objectID": "about.html",
@@ -116,35 +137,56 @@
     "href": "index.html",
     "title": "GeoDataViz: Elevate Your Geological Workflow",
     "section": "",
-    "text": "An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform."
+    "text": "An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.\n\n  View on GitHub    Live Demo"
   },
   {
     "objectID": "index.html#core-features",
     "href": "index.html#core-features",
     "title": "GeoDataViz: Elevate Your Geological Workflow",
     "section": "Core Features",
-    "text": "Core Features\n\n\n\n Statistical Analysis\nPerform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools.\n\n\n\n 3D Visualization\nCreate interactive 3D plots and geological models to visualize your exploration data dynamically.\n\n\n\n Data Validation\nComprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow."
+    "text": "Core Features\n\n\n Statistical Analysis\nPerform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools and automated reporting capabilities.\n\n\n 3D Visualization\nCreate interactive 3D plots and geological models to visualize your exploration data dynamically with real-time manipulation controls.\n\n\n Data Validation\nComprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow with automated flagging systems."
   },
   {
     "objectID": "index.html#project-roadmap",
     "href": "index.html#project-roadmap",
     "title": "GeoDataViz: Elevate Your Geological Workflow",
     "section": "Project Roadmap",
-    "text": "Project Roadmap\nGeoDataViz is available as a full-featured local version and a live web demo. I’m now focused on future development for a Pro version.\n\n\n\nOpen Source Version (Current)\n\nComplete drillhole visualization\nStatistical analysis tools\nInteractive 3D plotting\nData validation & QA/QC\n\n\n\n\nAdvanced Features (Pro Version)\n\nAutomated reporting system\nResource estimation modules\nPit optimization tools\nAdvanced geostatistics"
+    "text": "Project Roadmap\n\n\n Open Source Version (Current)\n\n✅ Complete drillhole visualization\n✅ Statistical analysis tools\n\n✅ Interactive 3D plotting\n✅ Data validation & QA/QC\n✅ Export capabilities\n✅ Cross-platform compatibility\n\n\n\n Advanced Features (Pro Version)\n\n🚀 Automated reporting system\n🚀 Resource estimation modules\n🚀 Pit optimization tools\n🚀 Advanced geostatistics\n🚀 Machine learning integration\n🚀 Cloud deployment options"
   },
   {
     "objectID": "index.html#application-showcase",
     "href": "index.html#application-showcase",
     "title": "GeoDataViz: Elevate Your Geological Workflow",
     "section": "Application Showcase",
-    "text": "Application Showcase\nSee how GeoDataViz transforms raw geological data into actionable insights.\n\n\n Statistical Plots: Comprehensive EDA tools for geological data.\n\n 3D Visualization: Interactive drillhole and geological modeling."
+    "text": "Application Showcase\n\n\n\n\n\nStatistical Analysis Dashboard\n\n\nStatistical Analysis Dashboard\nComprehensive exploratory data analysis tools designed specifically for geological datasets with automated statistical reporting.\n\n\n\n\n\nInteractive 3D Visualization\n\n\nInteractive 3D Visualization\nAdvanced drillhole and geological modeling with real-time manipulation, cross-sections, and dynamic filtering capabilities."
+  },
+  {
+    "objectID": "index.html#technical-stack-integration",
+    "href": "index.html#technical-stack-integration",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
+    "section": "Technical Stack & Integration",
+    "text": "Technical Stack & Integration\n\n\nR Ecosystem - Shiny for web applications - tidyverse for data manipulation - sf for spatial operations - plotly for interactive plots\n\n\nGeological Packages - gstat for geostatistics - sp for spatial analysis - rgl for 3D graphics - Custom geological functions\n\n\nPerformance - Optimized rendering - Lazy loading - Efficient memory usage - Responsive design\n\n\nIntegration - Import from multiple formats - Export to industry standards - API connectivity ready - Extensible architecture"
   },
   {
     "objectID": "index.html#about-this-project",
     "href": "index.html#about-this-project",
     "title": "GeoDataViz: Elevate Your Geological Workflow",
     "section": "About This Project",
-    "text": "About This Project\nGeoDataViz emerged from a vision to promote open-source solutions in the geological community. This project is part of my advocacy for making powerful geological tools accessible to everyone. By integrating popular R packages, GeoDataViz aims to become the go-to workbench for geoscientists worldwide.\n\n\n\n Follow on LinkedIn\nStay updated with the latest developments and geological insights.\nMy Profile\n\n\n\n Contribute on GitHub\nJoin the community, report issues, or contribute to development.\nRepository"
+    "text": "About This Project\n\nGeoDataViz emerged from a vision to promote open-source solutions in the geological community. This project represents my commitment to democratizing access to powerful geological analysis tools.\nBy integrating popular R packages with modern web technologies, GeoDataViz aims to become the go-to workbench for geoscientists worldwide. The platform bridges the gap between traditional geological software and modern data science approaches.\nKey Principles: - Open source accessibility - Industry-standard compliance\n- User-centric design - Continuous community feedback - Performance optimization"
+  },
+  {
+    "objectID": "index.html#get-involved",
+    "href": "index.html#get-involved",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
+    "section": "Get Involved",
+    "text": "Get Involved\n\n\n Professional Network\nConnect with me on LinkedIn for the latest developments, geological insights, and industry discussions.\nConnect on LinkedIn\n\n\n Open Source Community\nJoin our growing community on GitHub. Contribute code, report issues, request features, or simply star the repository.\nView Repository"
+  },
+  {
+    "objectID": "index.html#ready-to-transform-your-geological-workflow",
+    "href": "index.html#ready-to-transform-your-geological-workflow",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
+    "section": "Ready to Transform Your Geological Workflow?",
+    "text": "Ready to Transform Your Geological Workflow?\nExperience the power of modern geological data analysis. Try GeoDataViz today and discover how open-source tools can revolutionize your exploration projects.\n\n  Try Live Demo    Consulting Services"
   },
   {
     "objectID": "posts/Drillhole Data Preprocessing/index.html",

@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Orebit.id Technical Blog</title>
+<link>https://orebit.netlify.app/blog.html</link>
+<atom:link href="https://orebit.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Latest posts on geological data analysis and R programming</description>
+<generator>quarto-1.8.21</generator>
+<lastBuildDate>Fri, 19 Sep 2025 17:00:00 GMT</lastBuildDate>
+<item>
+  <title>Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz</title>
+  <dc:creator>Ghozian Islam Karami</dc:creator>
+  <link>https://orebit.netlify.app/posts/Drillhole Data Preprocessing/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>After completing exploratory data analysis (EDA), the next critical step is data preprocessing—transforming your raw drillhole data into a format suitable for resource estimation. This process significantly impacts the quality and reliability of your final resource model.</p>
+<p>GeoDataViz provides advanced tools for data preprocessing, from automated compositing to sophisticated domain analysis. This guide covers essential preprocessing techniques that will prepare your data for accurate resource estimation.</p>
+</section>
+<section id="the-preprocessing-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="the-preprocessing-pipeline">The Preprocessing Pipeline</h2>
+<p>Data preprocessing in geological contexts involves several key steps:</p>
+<ol type="1">
+<li><strong>Data Cleaning and Validation</strong></li>
+<li><strong>Geological Domain Definition</strong></li>
+<li><strong>Sample Compositing</strong></li>
+<li><strong>Outlier Treatment</strong></li>
+<li><strong>Data Transformation</strong></li>
+<li><strong>Statistical Validation</strong></li>
+</ol>
+<p>Let’s explore each step using GeoDataViz capabilities.</p>
+</section>
+<section id="data-cleaning-and-validation" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning-and-validation">1. Data Cleaning and Validation</h2>
+<section id="automated-data-quality-checks" class="level3">
+<h3 class="anchored" data-anchor-id="automated-data-quality-checks">Automated Data Quality Checks</h3>
+<p>GeoDataViz performs comprehensive quality checks that identify:</p>
+<p><strong>Sample Interval Issues:</strong> - Overlapping intervals that create double-counting - Gaps in sampling that require handling strategies - Inconsistent sample lengths that affect estimation</p>
+<p><strong>Coordinate System Problems:</strong> - Inconsistent coordinate references between holes - Elevation discrepancies that affect 3D modeling - Survey closure errors that impact hole positioning</p>
+<p><strong>Assay Data Quality:</strong> - Below detection limit values requiring substitution - Missing assays that need interpolation or flagging - Duplicate samples for precision assessment</p>
+</section>
+<section id="data-conditioning-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="data-conditioning-strategies">Data Conditioning Strategies</h3>
+<p><strong>Missing Data Handling:</strong></p>
+<pre><code>- Geological interpolation for short gaps
+- Statistical imputation using nearby samples
+- Flagging of extensive missing intervals
+- Alternative sampling strategies for future programs</code></pre>
+<p><strong>Detection Limit Treatment:</strong></p>
+<pre><code>- Half detection limit substitution
+- Distributional approaches using fitted distributions
+- Conditional simulation for realistic value ranges
+- Impact assessment on resource estimates</code></pre>
+</section>
+</section>
+<section id="geological-domain-definition" class="level2">
+<h2 class="anchored" data-anchor-id="geological-domain-definition">2. Geological Domain Definition</h2>
+<section id="statistical-domain-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-domain-analysis">Statistical Domain Analysis</h3>
+<p>GeoDataViz provides tools for objective domain boundary definition:</p>
+<p><strong>Lithological Domain Assessment:</strong> - Grade distribution comparison between rock types - Statistical tests for population differences (t-tests, ANOVA) - Contact analysis using transitional statistics - Boundary optimization using grade continuity</p>
+<p><strong>Structural Domain Analysis:</strong> - Grade trend analysis along structural orientations - Fault and fracture impact on grade continuity - Fold-related grade distribution patterns - Alteration zone influence on mineralization</p>
+</section>
+<section id="advanced-domain-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-domain-optimization">Advanced Domain Optimization</h3>
+<p><strong>Multivariate Analysis:</strong> - Principal component analysis for complex geology - Cluster analysis for natural population identification<br>
+- Discriminant analysis for boundary refinement - Machine learning approaches for domain recognition</p>
+<p><strong>Contact Analysis Tools:</strong> - Hard boundary identification using grade contrasts - Soft boundary modeling for gradational contacts - Transition zone characterization - Boundary uncertainty assessment</p>
+</section>
+</section>
+<section id="sample-compositing-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="sample-compositing-strategies">3. Sample Compositing Strategies</h2>
+<section id="composite-length-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="composite-length-optimization">Composite Length Optimization</h3>
+<p>Selecting appropriate composite length is crucial for resource estimation:</p>
+<p><strong>Length Selection Criteria:</strong> - Geological unit thickness consideration - Sampling interval harmonization - Estimation block size compatibility - Geostatistical range relationships</p>
+<p><strong>GeoDataViz Compositing Features:</strong></p>
+<pre><code>- Automated composite length testing
+- Visual comparison of different lengths
+- Statistical impact assessment
+- Geological boundary preservation</code></pre>
+</section>
+<section id="advanced-compositing-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-compositing-techniques">Advanced Compositing Techniques</h3>
+<p><strong>Geological Compositing:</strong> - Respecting geological boundaries - Variable length compositing by domain - Contact-aware compositing strategies - Weighted averaging by sample quality</p>
+<p><strong>Temporal Compositing:</strong> - Campaign-based composite analysis - Temporal trend assessment - Batch effect evaluation - Long-term data consistency checks</p>
+</section>
+</section>
+<section id="outlier-treatment-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="outlier-treatment-strategies">4. Outlier Treatment Strategies</h2>
+<section id="outlier-identification-methods" class="level3">
+<h3 class="anchored" data-anchor-id="outlier-identification-methods">Outlier Identification Methods</h3>
+<p>GeoDataViz implements multiple outlier detection approaches:</p>
+<p><strong>Statistical Methods:</strong> - Interquartile Range (IQR) method - Standard deviation multiples (Z-score) - Modified Z-score for skewed distributions - Percentile-based thresholds</p>
+<p><strong>Spatial Methods:</strong> - Neighborhood analysis for spatial outliers - Local grade distribution comparison - Distance-weighted outlier scoring - Geological context consideration</p>
+</section>
+<section id="treatment-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="treatment-approaches">Treatment Approaches</h3>
+<p><strong>Conservative Strategies:</strong></p>
+<pre><code>- Top-cutting using statistical thresholds
+- Indicator variable creation for high grades
+- Separate estimation for outlier populations
+- Conditional simulation for grade uncertainty</code></pre>
+<p><strong>Geological Approaches:</strong></p>
+<pre><code>- Domain-specific outlier treatment
+- Geological control consideration
+- Structural context evaluation
+- Alteration intensity correlation</code></pre>
+</section>
+</section>
+<section id="data-transformation-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="data-transformation-techniques">5. Data Transformation Techniques</h2>
+<section id="distribution-normalization" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-normalization">Distribution Normalization</h3>
+<p>Many geostatistical techniques assume normal distributions:</p>
+<p><strong>Transformation Methods Available:</strong> - Log-normal transformation for positively skewed data - Box-Cox transformation for flexible distribution shaping - Normal score transformation for general normalization - Indicator transformation for categorical analysis</p>
+<p><strong>Transformation Assessment:</strong></p>
+<pre><code>- Pre/post transformation distribution comparison
+- Normality testing (Shapiro-Wilk, Anderson-Darling)
+- Spatial continuity preservation evaluation
+- Back-transformation validation</code></pre>
+</section>
+<section id="multi-element-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="multi-element-considerations">Multi-Element Considerations</h3>
+<p><strong>Correlated Element Treatment:</strong> - Principal component analysis - Independent component analysis - Canonical correlation analysis - Multi-element compositional data analysis</p>
+</section>
+</section>
+<section id="statistical-validation" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-validation">6. Statistical Validation</h2>
+<section id="preprocessing-impact-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="preprocessing-impact-assessment">Preprocessing Impact Assessment</h3>
+<p>GeoDataViz provides tools to evaluate preprocessing impact:</p>
+<p><strong>Before/After Comparisons:</strong> - Statistical parameter changes - Distribution shape modifications - Spatial continuity alterations - Geological interpretation consistency</p>
+<p><strong>Validation Metrics:</strong></p>
+<pre><code>- Grade-tonnage curve stability
+- Spatial continuity preservation
+- Geological contact sharpness
+- Estimation variance validation</code></pre>
+</section>
+</section>
+<section id="practical-preprocessing-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="practical-preprocessing-workflow">Practical Preprocessing Workflow</h2>
+<section id="phase-1-initial-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-initial-assessment">Phase 1: Initial Assessment</h3>
+<pre><code>1. Import and validate raw drillhole data
+2. Perform comprehensive quality checks
+3. Identify and flag data quality issues
+4. Create initial geological interpretation</code></pre>
+</section>
+<section id="phase-2-domain-development" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-domain-development">Phase 2: Domain Development</h3>
+<pre><code>1. Statistical analysis of geological units
+2. Contact analysis and boundary optimization
+3. Structural control assessment
+4. Multi-element correlation analysis</code></pre>
+</section>
+<section id="phase-3-compositing-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-compositing-strategy">Phase 3: Compositing Strategy</h3>
+<pre><code>1. Composite length optimization testing
+2. Geological boundary preservation
+3. Statistical impact assessment
+4. Final composite generation</code></pre>
+</section>
+<section id="phase-4-data-conditioning" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-data-conditioning">Phase 4: Data Conditioning</h3>
+<pre><code>1. Outlier identification and treatment
+2. Data transformation assessment
+3. Missing data handling
+4. Quality assurance validation</code></pre>
+</section>
+<section id="phase-5-final-validation" class="level3">
+<h3 class="anchored" data-anchor-id="phase-5-final-validation">Phase 5: Final Validation</h3>
+<pre><code>1. Comprehensive statistical review
+2. Geological consistency check
+3. Spatial continuity validation
+4. Resource estimation readiness assessment</code></pre>
+</section>
+</section>
+<section id="common-preprocessing-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="common-preprocessing-challenges">Common Preprocessing Challenges</h2>
+<section id="challenge-1-complex-geological-boundaries" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-1-complex-geological-boundaries">Challenge 1: Complex Geological Boundaries</h3>
+<p><strong>Issue:</strong> Gradational contacts between geological domains <strong>Solution:</strong> - Use soft boundary modeling approaches - Implement transitional zone analysis - Apply distance-weighted domain assignment - Consider geological uncertainty in estimation</p>
+</section>
+<section id="challenge-2-variable-sample-quality" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-2-variable-sample-quality">Challenge 2: Variable Sample Quality</h3>
+<p><strong>Issue:</strong> Mixed drilling methods with different sample qualities <strong>Solution:</strong> - Weight samples by quality metrics - Separate analysis by drilling method - Apply method-specific composite strategies - Include quality indicators in estimation</p>
+</section>
+<section id="challenge-3-sparse-drilling-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-3-sparse-drilling-patterns">Challenge 3: Sparse Drilling Patterns</h3>
+<p><strong>Issue:</strong> Irregular hole spacing affecting continuity analysis <strong>Solution:</strong> - Use directional continuity analysis - Apply sparse data geostatistical methods - Consider data augmentation techniques - Implement uncertainty quantification</p>
+</section>
+<section id="challenge-4-multi-element-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-4-multi-element-correlation">Challenge 4: Multi-Element Correlation</h3>
+<p><strong>Issue:</strong> Complex relationships between multiple elements <strong>Solution:</strong> - Apply multivariate geostatistical methods - Use independent component analysis - Implement co-kriging strategies - Consider geological controls on correlation</p>
+</section>
+</section>
+<section id="integration-with-resource-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-resource-estimation">Integration with Resource Estimation</h2>
+<p>Proper preprocessing directly improves:</p>
+<p><strong>Estimation Accuracy:</strong> - Reduced bias from poor data quality - Improved spatial continuity modeling - Better geological domain representation - Enhanced outlier treatment</p>
+<p><strong>Model Reliability:</strong> - Consistent data support across estimation domain - Appropriate statistical distributions for kriging - Preserved geological relationships - Quantified uncertainty parameters</p>
+<p><strong>Practical Applications:</strong> - Grade control model accuracy - Long-term mine planning reliability - Resource classification confidence - Economic evaluation precision</p>
+</section>
+<section id="quality-assurance-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="quality-assurance-checklist">Quality Assurance Checklist</h2>
+<p>Before proceeding to resource estimation, ensure:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Data Quality:</strong> All critical data issues resolved</label></li>
+<li><label><input type="checkbox"><strong>Geological Consistency:</strong> Domain boundaries geologically reasonable</label></li>
+<li><label><input type="checkbox"><strong>Statistical Validity:</strong> Distributions appropriate for chosen methods</label></li>
+<li><label><input type="checkbox"><strong>Spatial Continuity:</strong> Preserved through preprocessing steps</label></li>
+<li><label><input type="checkbox"><strong>Documentation:</strong> All processing steps recorded and justified</label></li>
+<li><label><input type="checkbox"><strong>Validation:</strong> Independent check of processing results</label></li>
+</ul>
+</section>
+<section id="advanced-features-in-geodataviz-pro" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-features-in-geodataviz-pro">Advanced Features in GeoDataViz Pro</h2>
+<p>The upcoming Pro version will include:</p>
+<p><strong>Automated Preprocessing Workflows:</strong> - AI-driven domain boundary optimization - Automated composite length selection - Intelligent outlier detection - Adaptive transformation selection</p>
+<p><strong>Advanced Analytics:</strong> - Machine learning domain recognition - Uncertainty quantification tools - Batch processing capabilities - Integration with estimation software</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Effective drillhole data preprocessing is fundamental to reliable resource estimation. GeoDataViz provides comprehensive tools to transform raw geological data into estimation-ready datasets while preserving geological relationships and quantifying uncertainty.</p>
+<p>The investment in thorough preprocessing pays significant dividends in improved resource model accuracy, reduced estimation bias, and enhanced confidence in mining decisions.</p>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>In our upcoming posts, we’ll explore:</p>
+<ol type="1">
+<li><strong>“Variogram Modeling with GeoDataViz”</strong> - Advanced spatial continuity analysis</li>
+<li><strong>“Resource Estimation Workflows”</strong> - From preprocessing to final models</li>
+<li><strong>“Uncertainty Quantification Techniques”</strong> - Managing estimation risk</li>
+</ol>
+<hr>
+<p><em>Questions about preprocessing workflows or need specific guidance for your project? Connect with me on <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn</a> or contribute to <a href="https://github.com/ghoziankarami/geodataviz">GeoDataViz development</a>.</em></p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>GeoDataViz</category>
+  <category>Preprocessing</category>
+  <category>Resource-Estimation</category>
+  <category>Geostatistics</category>
+  <guid>https://orebit.netlify.app/posts/Drillhole Data Preprocessing/</guid>
+  <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
+  <media:content url="https://orebit.netlify.app/posts/Drillhole Data Preprocessing/preprocessing-workflow.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide</title>
+  <dc:creator>Ghozian Islam Karami</dc:creator>
+  <link>https://orebit.netlify.app/posts/EDA with GeoDataViz/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Exploratory Data Analysis (EDA) is the crucial first step in any geological data analysis workflow, especially before resource estimation. GeoDataViz provides a comprehensive suite of tools to understand your drillhole data thoroughly, identify data quality issues, and gain insights that will inform your subsequent modeling decisions.</p>
+<p>In this guide, we’ll walk through a complete EDA workflow using GeoDataViz, covering everything from basic statistics to advanced spatial analysis.</p>
+</section>
+<section id="why-eda-matters-in-geological-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="why-eda-matters-in-geological-data-analysis">Why EDA Matters in Geological Data Analysis</h2>
+<p>Before diving into resource estimation or geostatistical modeling, understanding your data is paramount. Poor EDA can lead to:</p>
+<ul>
+<li><strong>Biased resource estimates</strong> due to unrecognized data quality issues</li>
+<li><strong>Inappropriate modeling assumptions</strong> that don’t reflect data reality<br>
+</li>
+<li><strong>Missed geological insights</strong> that could improve estimation accuracy</li>
+<li><strong>Inadequate sampling protocols</strong> for future drilling programs</li>
+</ul>
+</section>
+<section id="getting-started-with-geodataviz" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-geodataviz">Getting Started with GeoDataViz</h2>
+<section id="loading-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="loading-your-data">Loading Your Data</h3>
+<p>GeoDataViz supports multiple data formats commonly used in geological projects:</p>
+<ul>
+<li><strong>CSV files</strong> with collar, survey, and assay tables</li>
+<li><strong>Excel workbooks</strong> with multiple sheets</li>
+<li><strong>Database connections</strong> for enterprise environments</li>
+</ul>
+<p>The application automatically validates data structure and provides immediate feedback on potential issues.</p>
+</section>
+<section id="data-structure-validation" class="level3">
+<h3 class="anchored" data-anchor-id="data-structure-validation">Data Structure Validation</h3>
+<p>Upon loading, GeoDataViz performs comprehensive checks:</p>
+<ol type="1">
+<li><strong>Collar Table Validation</strong>
+<ul>
+<li>Coordinate system verification</li>
+<li>Duplicate hole identification</li>
+<li>Missing coordinate detection</li>
+</ul></li>
+<li><strong>Survey Table Checks</strong>
+<ul>
+<li>Azimuth and dip range validation</li>
+<li>Survey interval consistency</li>
+<li>Desurveying accuracy assessment</li>
+</ul></li>
+<li><strong>Assay Table Analysis</strong>
+<ul>
+<li>Sample interval validation</li>
+<li>Overlapping intervals detection</li>
+<li>Missing assay identification</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="core-eda-components-in-geodataviz" class="level2">
+<h2 class="anchored" data-anchor-id="core-eda-components-in-geodataviz">Core EDA Components in GeoDataViz</h2>
+<section id="statistical-summary-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-summary-dashboard">1. Statistical Summary Dashboard</h3>
+<p>The statistical dashboard provides immediate insights into your dataset:</p>
+<p><strong>Univariate Statistics:</strong> - Distribution analysis with histograms and box plots - Outlier identification using multiple methods (IQR, z-score, modified z-score) - Summary statistics including percentiles, skewness, and kurtosis</p>
+<p><strong>Key Insights to Look For:</strong> - <strong>Highly skewed distributions</strong> may require transformation - <strong>Multiple populations</strong> might indicate different geological domains - <strong>Outliers</strong> could represent high-grade zones or assay errors</p>
+</section>
+<section id="spatial-data-exploration" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-data-exploration">2. Spatial Data Exploration</h3>
+<p>Understanding spatial relationships is crucial for resource modeling:</p>
+<p><strong>Collar Map Analysis:</strong> - Interactive map showing drill hole locations - Color-coding by various attributes (depth, target, campaign) - Spatial clustering identification - Coverage assessment for different geological zones</p>
+<p><strong>3D Visualization:</strong> - Interactive 3D plots of drill hole traces - Grade distribution along hole paths - Geological unit visualization in 3D space - Cross-sectional analysis tools</p>
+</section>
+<section id="grade-continuity-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="grade-continuity-analysis">3. Grade Continuity Analysis</h3>
+<p>Before resource estimation, understanding grade continuity is essential:</p>
+<p><strong>Downhole Grade Plots:</strong> - Individual hole grade profiles - Identification of high-grade zones - Assessment of grade continuity along holes - Detection of potential geological boundaries</p>
+<p><strong>Composite Analysis:</strong> - Evaluation of different compositing lengths - Assessment of sample support effects - Optimization of composite intervals for estimation</p>
+</section>
+<section id="data-quality-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="data-quality-assessment">4. Data Quality Assessment</h3>
+<p>GeoDataViz provides comprehensive QA/QC tools:</p>
+<p><strong>Assay Quality Checks:</strong> - Detection of negative assays - Identification of below detection limit values - Assessment of assay precision through duplicates - Evaluation of analytical accuracy through standards</p>
+<p><strong>Sampling Quality Review:</strong> - Sample recovery analysis - Core loss assessment - Sample interval consistency checks - Identification of preferential sampling</p>
+</section>
+</section>
+<section id="advanced-eda-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-eda-techniques">Advanced EDA Techniques</h2>
+<section id="geological-domain-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="geological-domain-analysis">Geological Domain Analysis</h3>
+<p>Understanding geological controls on mineralization:</p>
+<p><strong>Lithology Analysis:</strong> - Grade distribution by rock type - Statistical comparison between domains - Spatial distribution of geological units - Contact analysis between domains</p>
+<p><strong>Structural Analysis:</strong> - Grade trends along structural orientations - Fault and fracture impact assessment - Fold axis influence on grade distribution</p>
+</section>
+<section id="geostatistical-preliminary-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="geostatistical-preliminary-analysis">Geostatistical Preliminary Analysis</h3>
+<p>Preparing for resource estimation:</p>
+<p><strong>Variogram Analysis Preview:</strong> - Experimental variogram calculation - Directional continuity assessment - Anisotropy identification - Range estimation for different directions</p>
+<p><strong>Contact Analysis:</strong> - Hard vs.&nbsp;soft boundary identification - Transition zone characterization - Domain boundary optimization</p>
+</section>
+</section>
+<section id="practical-workflow-example" class="level2">
+<h2 class="anchored" data-anchor-id="practical-workflow-example">Practical Workflow Example</h2>
+<section id="step-1-data-import-and-validation" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-data-import-and-validation">Step 1: Data Import and Validation</h3>
+<pre><code>1. Load collar, survey, and assay files
+2. Review data validation report
+3. Address any critical data issues
+4. Set coordinate system and units</code></pre>
+</section>
+<section id="step-2-initial-statistical-review" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-initial-statistical-review">Step 2: Initial Statistical Review</h3>
+<pre><code>1. Generate univariate statistics for all elements
+2. Identify and investigate outliers
+3. Assess data distributions
+4. Flag potential data entry errors</code></pre>
+</section>
+<section id="step-3-spatial-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-spatial-analysis">Step 3: Spatial Analysis</h3>
+<pre><code>1. Create collar location map
+2. Generate 3D drill hole visualization
+3. Assess spatial coverage and drilling density
+4. Identify potential spatial biases</code></pre>
+</section>
+<section id="step-4-grade-distribution-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-grade-distribution-analysis">Step 4: Grade Distribution Analysis</h3>
+<pre><code>1. Create downhole grade plots
+2. Analyze grade continuity patterns
+3. Identify high-grade zones
+4. Assess geological controls</code></pre>
+</section>
+<section id="step-5-domain-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-domain-analysis">Step 5: Domain Analysis</h3>
+<pre><code>1. Statistical analysis by geological domain
+2. Contact analysis between domains
+3. Assessment of domain boundaries
+4. Optimization of domain definitions</code></pre>
+</section>
+</section>
+<section id="key-outputs-for-resource-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="key-outputs-for-resource-estimation">Key Outputs for Resource Estimation</h2>
+<p>After completing EDA in GeoDataViz, you should have:</p>
+<ol type="1">
+<li><strong>Clean, validated dataset</strong> ready for modeling</li>
+<li><strong>Understanding of grade distributions</strong> and appropriate transformations</li>
+<li><strong>Identified geological domains</strong> with statistical justification</li>
+<li><strong>Preliminary continuity assessment</strong> to guide variogram modeling</li>
+<li><strong>Data quality metrics</strong> to inform estimation parameters</li>
+<li><strong>Spatial bias assessment</strong> for sampling strategy optimization</li>
+</ol>
+</section>
+<section id="best-practices-and-common-pitfalls" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices-and-common-pitfalls">Best Practices and Common Pitfalls</h2>
+<section id="best-practices" class="level3">
+<h3 class="anchored" data-anchor-id="best-practices">Best Practices:</h3>
+<ul>
+<li><strong>Start with data validation</strong> - don’t proceed with poor quality data</li>
+<li><strong>Use multiple visualization methods</strong> - different plots reveal different insights</li>
+<li><strong>Document all observations</strong> - maintain detailed EDA notes</li>
+<li><strong>Iterate and refine</strong> - EDA is an iterative process</li>
+</ul>
+</section>
+<section id="common-pitfalls" class="level3">
+<h3 class="anchored" data-anchor-id="common-pitfalls">Common Pitfalls:</h3>
+<ul>
+<li><strong>Rushing through EDA</strong> - inadequate exploration leads to poor models</li>
+<li><strong>Ignoring spatial patterns</strong> - geology is inherently spatial</li>
+<li><strong>Over-relying on statistics</strong> - geological knowledge is crucial</li>
+<li><strong>Skipping domain analysis</strong> - geological domains control mineralization</li>
+</ul>
+</section>
+</section>
+<section id="integration-with-resource-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-resource-estimation">Integration with Resource Estimation</h2>
+<p>The insights gained from EDA directly inform:</p>
+<ul>
+<li><strong>Estimation methodology selection</strong> (kriging, inverse distance, etc.)</li>
+<li><strong>Search parameters</strong> based on continuity analysis<br>
+</li>
+<li><strong>Geological domain boundaries</strong> for separate estimation</li>
+<li><strong>Outlier treatment strategies</strong> based on geological understanding</li>
+<li><strong>Composite length optimization</strong> for appropriate support</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Comprehensive EDA using GeoDataViz sets the foundation for successful resource estimation. By thoroughly understanding your data’s characteristics, spatial distribution, and geological controls, you can make informed decisions about estimation parameters and methodologies.</p>
+<p>The time invested in thorough EDA pays dividends in more accurate, geologically reasonable resource models that better serve mining decision-making processes.</p>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>In our next post, we’ll dive deeper into <strong>“Pre-Processing Drillhole Data for Resource Estimation”</strong>, covering advanced techniques for data preparation, compositing strategies, and domain optimization using GeoDataViz.</p>
+<hr>
+<p><em>Have questions about EDA workflows or GeoDataViz features? Feel free to reach out or contribute to the <a href="https://github.com/ghoziankarami/geodataviz">GeoDataViz GitHub repository</a>.</em></p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>GeoDataViz</category>
+  <category>EDA</category>
+  <category>R-Shiny</category>
+  <category>Tutorial</category>
+  <guid>https://orebit.netlify.app/posts/EDA with GeoDataViz/</guid>
+  <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
+  <media:content url="https://orebit.netlify.app/posts/EDA with GeoDataViz/eda-workflow.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science</title>
+  <dc:creator>Ghozian Islam Karami</dc:creator>
+  <link>https://orebit.netlify.app/posts/Welcome to Orebit/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="welcome-to-a-new-chapter-in-geological-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="welcome-to-a-new-chapter-in-geological-data-analysis">Welcome to a New Chapter in Geological Data Analysis</h2>
+<p>Hello and welcome to the Orebit technical blog! I’m Ghozian Islam Karami, and I’m excited to share this journey with you as we explore the intersection of traditional geological expertise and modern data science techniques.</p>
+</section>
+<section id="who-am-i" class="level2">
+<h2 class="anchored" data-anchor-id="who-am-i">Who Am I?</h2>
+<p>I’m a Senior Geologist and Geospatial Specialist with over a decade of experience in the mining industry, particularly in offshore tin exploration and resource evaluation. As a <strong>Certified Competent Person (CP)</strong> and advocate for open-source solutions, I believe in the transformative power of combining geological wisdom with cutting-edge data analysis tools.</p>
+<p>My journey has taken me from traditional geological fieldwork to developing sophisticated data analysis workflows using R, Python, and modern visualization techniques. This blog is where I share these experiences, insights, and tools with the broader geological community.</p>
+</section>
+<section id="what-youll-find-here" class="level2">
+<h2 class="anchored" data-anchor-id="what-youll-find-here">What You’ll Find Here</h2>
+<p>This blog focuses on <strong>practical applications</strong> of data science in geology, with particular emphasis on:</p>
+<section id="exploratory-data-analysis-eda" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-data-analysis-eda">🔍 <strong>Exploratory Data Analysis (EDA)</strong></h3>
+<ul>
+<li>Advanced techniques for understanding geological datasets</li>
+<li>Statistical approaches to data validation and quality control</li>
+<li>Visualization strategies for complex geological relationships</li>
+</ul>
+</section>
+<section id="geostatistics-and-resource-modeling" class="level3">
+<h3 class="anchored" data-anchor-id="geostatistics-and-resource-modeling">📊 <strong>Geostatistics and Resource Modeling</strong></h3>
+<ul>
+<li>Modern approaches to variogram modeling and kriging</li>
+<li>Integration of machine learning with traditional geostatistics</li>
+<li>Uncertainty quantification in resource estimation</li>
+</ul>
+</section>
+<section id="open-source-tool-development" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-tool-development">🛠️ <strong>Open-Source Tool Development</strong></h3>
+<ul>
+<li>Deep dives into GeoDataViz development and features</li>
+<li>R packages for geological applications</li>
+<li>Workflow automation and best practices</li>
+</ul>
+</section>
+<section id="industry-applications" class="level3">
+<h3 class="anchored" data-anchor-id="industry-applications">💡 <strong>Industry Applications</strong></h3>
+<ul>
+<li>Case studies from real mining projects</li>
+<li>Best practice guides for geological workflows</li>
+<li>Integration of proprietary and open-source software</li>
+</ul>
+</section>
+</section>
+<section id="the-open-source-mission" class="level2">
+<h2 class="anchored" data-anchor-id="the-open-source-mission">The Open-Source Mission</h2>
+<p>One of my core beliefs is that <strong>geological analysis tools should be accessible to everyone</strong>. The mining industry has long relied on expensive proprietary software, creating barriers for smaller companies, consultants, and researchers in developing countries.</p>
+<p>Through projects like <strong>GeoDataViz</strong>, I’m working to democratize access to advanced geological analysis capabilities. This isn’t about replacing established tools, but rather providing alternatives and pushing the industry toward more transparent, reproducible workflows.</p>
+</section>
+<section id="why-this-blog-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-blog-matters">Why This Blog Matters</h2>
+<p>The geological community often works in silos, with valuable knowledge trapped in proprietary systems or internal company workflows. This blog aims to:</p>
+<ul>
+<li><strong>Share Knowledge Openly:</strong> Make advanced geological techniques accessible to all</li>
+<li><strong>Bridge Communities:</strong> Connect traditional geologists with data scientists</li>
+<li><strong>Promote Best Practices:</strong> Establish standards for reproducible geological analysis</li>
+<li><strong>Foster Innovation:</strong> Encourage development of new analytical approaches</li>
+</ul>
+</section>
+<section id="what-makes-this-different" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-this-different">What Makes This Different</h2>
+<p>Unlike purely academic resources or vendor-specific tutorials, this blog focuses on <strong>practical, real-world applications</strong>. Every post is grounded in actual mining industry experience and tested workflows.</p>
+<p>You’ll find: - <strong>Working code examples</strong> that you can adapt for your projects - <strong>Step-by-step tutorials</strong> with real geological datasets - <strong>Critical evaluations</strong> of different analytical approaches - <strong>Honest discussions</strong> of limitations and challenges</p>
+</section>
+<section id="the-geodataviz-story" class="level2">
+<h2 class="anchored" data-anchor-id="the-geodataviz-story">The GeoDataViz Story</h2>
+<p>Central to this blog is <strong>GeoDataViz</strong>, my open-source R Shiny application for geological data analysis. Born from frustration with expensive, inflexible commercial tools, GeoDataViz represents a vision of:</p>
+<ul>
+<li><strong>Transparent workflows</strong> where every step is visible and modifiable</li>
+<li><strong>Modern visualization</strong> using the latest web technologies</li>
+<li><strong>Integration capabilities</strong> that work with existing industry standards</li>
+<li><strong>Community-driven development</strong> guided by user needs</li>
+</ul>
+<section id="current-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="current-capabilities">Current Capabilities</h3>
+<ul>
+<li>Comprehensive drillhole data visualization</li>
+<li>Advanced statistical analysis and validation</li>
+<li>Interactive 3D geological modeling</li>
+<li>Automated report generation</li>
+</ul>
+</section>
+<section id="future-vision" class="level3">
+<h3 class="anchored" data-anchor-id="future-vision">Future Vision</h3>
+<p>The upcoming <strong>Pro version</strong> will include: - Advanced resource estimation modules - Pit optimization tools - Machine learning integration - Enterprise-grade deployment options</p>
+</section>
+</section>
+<section id="who-should-read-this-blog" class="level2">
+<h2 class="anchored" data-anchor-id="who-should-read-this-blog">Who Should Read This Blog</h2>
+<p>This content is designed for:</p>
+<ul>
+<li><strong>Geologists</strong> looking to modernize their analytical workflows</li>
+<li><strong>Data scientists</strong> entering the mining industry</li>
+<li><strong>Mining engineers</strong> seeking better data integration</li>
+<li><strong>Students</strong> learning geological data analysis</li>
+<li><strong>Consultants</strong> needing cost-effective analysis tools</li>
+<li><strong>Researchers</strong> working on geological applications</li>
+</ul>
+</section>
+<section id="getting-involved" class="level2">
+<h2 class="anchored" data-anchor-id="getting-involved">Getting Involved</h2>
+<p>This is meant to be a <strong>community effort</strong>. I encourage you to:</p>
+<section id="share-your-experiences" class="level3">
+<h3 class="anchored" data-anchor-id="share-your-experiences">📝 <strong>Share Your Experiences</strong></h3>
+<ul>
+<li>Comment on posts with your own insights</li>
+<li>Suggest topics you’d like to see covered</li>
+<li>Share alternative approaches and solutions</li>
+</ul>
+</section>
+<section id="contribute-to-development" class="level3">
+<h3 class="anchored" data-anchor-id="contribute-to-development">🔧 <strong>Contribute to Development</strong></h3>
+<ul>
+<li>Try out GeoDataViz and provide feedback</li>
+<li>Contribute code or documentation improvements</li>
+<li>Report bugs or suggest new features</li>
+</ul>
+</section>
+<section id="spread-the-word" class="level3">
+<h3 class="anchored" data-anchor-id="spread-the-word">🌐 <strong>Spread the Word</strong></h3>
+<ul>
+<li>Share posts that you find valuable</li>
+<li>Connect with me on <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn</a></li>
+<li>Follow the project on <a href="https://github.com/ghoziankarami/geodataviz">GitHub</a></li>
+</ul>
+</section>
+</section>
+<section id="whats-coming-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-coming-next">What’s Coming Next</h2>
+<p>Over the coming weeks and months, expect detailed posts covering:</p>
+<ol type="1">
+<li><strong>“Exploratory Data Analysis with GeoDataViz”</strong> - A comprehensive guide to understanding your geological data</li>
+<li><strong>“Pre-Processing Drillhole Data for Resource Estimation”</strong> - Advanced techniques for data preparation</li>
+<li><strong>“Variogram Modeling in Practice”</strong> - Beyond textbook examples to real-world applications</li>
+<li><strong>“Integration Workflows”</strong> - Connecting open-source and proprietary tools</li>
+<li><strong>“Machine Learning Applications in Geology”</strong> - Practical AI applications for geological problems</li>
+</ol>
+</section>
+<section id="a-personal-note" class="level2">
+<h2 class="anchored" data-anchor-id="a-personal-note">A Personal Note</h2>
+<p>Starting this blog represents more than just sharing technical knowledge—it’s about building a community that values transparency, accessibility, and innovation in geological analysis. The mining industry faces unprecedented challenges, from declining ore grades to increased environmental scrutiny. Meeting these challenges requires not just better technology, but better ways of sharing knowledge and collaborating.</p>
+<p>I believe that open-source approaches, combined with traditional geological expertise, offer a path forward that benefits everyone—from individual consultants to major mining companies, from developed nations to emerging economies.</p>
+</section>
+<section id="stay-connected" class="level2">
+<h2 class="anchored" data-anchor-id="stay-connected">Stay Connected</h2>
+<p>This journey is just beginning, and I’d love to have you along for the ride. Here’s how to stay connected:</p>
+<ul>
+<li><strong>Subscribe to updates</strong> through your preferred RSS reader</li>
+<li><strong>Follow on LinkedIn</strong> for industry insights and networking</li>
+<li><strong>Star the GitHub repository</strong> to track GeoDataViz development</li>
+<li><strong>Join the conversation</strong> in the comments section of each post</li>
+</ul>
+</section>
+<section id="final-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="final-thoughts">Final Thoughts</h2>
+<p>The intersection of geology and data science is rich with possibilities. Traditional geological knowledge provides the foundation, while modern analytical techniques offer new ways to extract insights from complex datasets.</p>
+<p>Together, we can build tools and workflows that make geological analysis more accessible, more accurate, and more valuable for decision-making in the mining industry.</p>
+<p>Thank you for joining me on this journey. I look forward to sharing insights, learning from your experiences, and building something meaningful together.</p>
+<hr>
+<p><em>Ready to dive in? explore the <a href="https://geodataviz.shinyapps.io/geodataviz/">GeoDataViz live demo</a>.</em></p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Welcome</category>
+  <category>Open-Source</category>
+  <category>Geology</category>
+  <category>Data-Science</category>
+  <guid>https://orebit.netlify.app/posts/Welcome to Orebit/</guid>
+  <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
+  <media:content url="https://orebit.netlify.app/posts/Welcome to Orebit/welcome-banner.png" medium="image" type="image/png"/>
+</item>
+</channel>
+</rss>

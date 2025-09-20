@@ -1,6 +1,186 @@
-[build]
-# KOSONGKAN command agar Netlify tidak melakukan build
-command = ""
+# Netlify Configuration for Orebit.id
+# Optimized for Performance & SEO
 
-# Beritahu Netlify untuk langsung mempublikasikan folder _site
-publish = "_site"
+[build]
+  # No build command - using pre-built _site folder
+  command = ""
+  publish = "_site"
+  
+  # Environment variables
+  environment = { NODE_VERSION = "18" }
+
+# Build settings
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Headers for performance and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+    # Performance headers
+    X-DNS-Prefetch-Control = "on"
+    
+    # Cache control for HTML files
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Static assets caching
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# RSS feed headers
+[[headers]]
+  for = "/blog/index.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+# Redirects
+[[redirects]]
+  from = "/geodataviz"
+  to = "https://geodataviz.shinyapps.io/geodataviz/"
+  status = 302
+  force = false
+
+[[redirects]]
+  from = "/github"
+  to = "https://github.com/ghoziankarami"
+  status = 302
+  force = false
+
+[[redirects]]
+  from = "/linkedin"
+  to = "https://www.linkedin.com/in/ghoziankarami/"
+  status = 302
+  force = false
+
+# Contact form redirects
+[[redirects]]
+  from = "/contact"
+  to = "mailto:ghozian@orebit.id"
+  status = 302
+  force = false
+
+# Legacy URL redirects (if any old URLs need redirecting)
+[[redirects]]
+  from = "/old-blog/*"
+  to = "/blog/:splat"
+  status = 301
+
+# 404 handling
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Edge functions (for advanced features - commented out for now)
+# [[edge_functions]]
+#   function = "search"
+#   path = "/api/search"
+
+# Functions (for serverless functions - future use)
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Plugin configurations
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+  
+  [plugins.inputs]
+    buildDir = "_site"
+    exclude = [
+      "/**/admin/**",
+      "/**/.quarto/**"
+    ]
+
+# Performance optimizations
+[context.production.environment]
+  NODE_ENV = "production"
+  HUGO_ENV = "production"
+
+# Branch deploys (for testing)
+[context.branch-deploy]
+  command = ""
+  publish = "_site"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"
+
+# Deploy previews
+[context.deploy-preview]
+  command = ""
+  publish = "_site"
+
+# Local development
+[context.dev]
+  command = "quarto preview"
+  port = 4200
+  publish = "_site"
+  targetPort = 4200
+
+# Forms handling (if you add contact forms)
+[forms]
+  # Example contact form
+  # [forms.contact]
+  #   name = "contact"
+  #   action = "/thank-you"
+  #   method = "POST"
+  #   honeypot = "bot-field"
+
+# Analytics and monitoring
+[analytics]
+  provider = "google"
+  # Add your Google Analytics ID in the _quarto.yml file
+
+# Split testing (for A/B tests - future use)
+# [split_testing]
+#   [split_testing.experiments.hero-cta]
+#     buckets = ["original", "variant1"]
+#     cookie_name = "nf_ab_hero_cta"
+
+# Large Media (for Git LFS - if needed for large images)
+# [large_media]
+#   lfs = true
