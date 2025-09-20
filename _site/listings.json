@@ -2,8 +2,9 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/Geodataviz/index.html",
-      "/posts/2025-09-16-welcome-post/index.html"
+      "/posts/Drillhole Data Preprocessing/index.html",
+      "/posts/EDA with GeoDataViz/index.html",
+      "/posts/Welcome to Orebit/index.html"
     ]
   }
 ]

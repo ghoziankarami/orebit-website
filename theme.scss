@@ -1,26 +1,48 @@
 /*-- File Tema Kustom untuk Orebit.id (Gaya Dokumentasi Quarto) --*/
 
 /*-- scss:defaults --*/
-// Lapisan ini berisi semua definisi variabel SASS.
-
-// 1. Variabel Palet Warna Baru (Gaya Quarto)
-$quarto-purple: #4B4896;   // Warna aksen utama
-$light-gray:    #f8f9fa;   // Latar belakang sidebar & blok kode
-$dark-text:     #212529;   // Teks utama
-$white-bg:      #ffffff;   // Latar belakang konten
+// 1. Variabel Palet Warna
+$quarto-purple:    #4B4896;
+$light-gray:       #f8f9fa;
+$dark-text:        #212529;
+$white-bg:         #ffffff;
+$logo-bg-color:    #F5F1E8;       // Warna latar navbar dari logo
+$orebit-dark-blue: #2E3A45;       // << WARNA BARU DARI TEKS LOGO "Orebit"
 
 // 2. Variabel Bootstrap yang Di-override
 $primary:       $quarto-purple;
 $body-bg:       $white-bg;
 $body-color:    $dark-text;
-$headings-color:$dark-text; // Judul dibuat sama dengan teks agar bersih
+$headings-color:$dark-text;
 $link-color:    $primary;
 
-// 3. Variabel Font (Menggunakan System Font Stack)
+// 3. Variabel Font
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$headings-font-weight: 600; // Judul sedikit lebih tebal
+$headings-font-weight: 600;
 
 
 /*-- scss:rules --*/
-// Lapisan ini berisi aturan CSS biasa.
-// Kita biarkan kosong karena penyesuaian detail akan ada di styles.css
+// Aturan untuk Navbar
+.navbar {
+  background-color: $logo-bg-color;
+  border-bottom: 1px solid #e0dccd !important;
+}
+
+// Aturan baru untuk warna teks di navbar
+.navbar-nav .nav-link, .navbar-nav .nav-link.active {
+  color: $orebit-dark-blue !important; // Menerapkan warna biru tua
+  font-weight: 500; // Opsional: Menebalkan teks agar lebih mudah dibaca
+}
+
+// Aturan saat kursor mouse di atas link (hover)
+.navbar-nav .nav-link:hover {
+  color: lighten($orebit-dark-blue, 30%) !important; // Membuat warna sedikit lebih terang saat disentuh kursor
+}
+
+// Aturan untuk ikon di kanan navbar (LinkedIn, GitHub)
+.navbar-nav .nav-item .nav-link > .bi {
+    color: $orebit-dark-blue !important; // Menyamakan warna ikon
+}
+.navbar-nav .nav-item .nav-link:hover > .bi {
+    color: lighten($orebit-dark-blue, 30%) !important; // Efek hover untuk ikon
+}

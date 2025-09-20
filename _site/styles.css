@@ -21,12 +21,14 @@ body {
 
 /* 3. Navbar & Header */
 .navbar-brand img {
-  max-height: 40px;
+  max-height: 55px; /* << NAIKKAN UKURAN LOGO DARI 40px MENJADI 55px */
   width: auto;
   margin-right: 10px;
 }
 .navbar {
   border-bottom: 1px solid #dee2e6;
+  padding-top: 0.5rem;    /* << TAMBAHKAN PADDING ATAS */
+  padding-bottom: 0.5rem; /* << TAMBAHKAN PADDING BAWAH */
 }
 
 /* 4. Tipografi & Elemen Konten */

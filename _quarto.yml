@@ -3,11 +3,11 @@ project:
   output-dir: _site
 
 website:
-  title: "Orebit.id"
-  favicon: Logo.png
+  title: "Geology, Digitized"
+  favicon: Logo_favicon.png
   
   navbar:
-    logo: Logo.png
+    logo: Logo_banner.png
     left:
       - href: index.qmd
         text: Home
@@ -25,27 +25,12 @@ website:
       - icon: github
         href: https://github.com/ghoziankarami
       - icon: search
-        href: "#" # Placeholder untuk fitur search nanti
+        href: "#" # Placeholder for future search feature
             
   page-footer:
     left: "&copy; 2025, Ghozian Islam Karami. All rights reserved."
 
-  # Sidebar global yang akan digunakan oleh blog
-  sidebar:
-    - id: blog-sidebar
-      title: "Blog Navigation"
-      style: "docked"
-      background: "light"
-      collapse-level: 1
-      contents:
-        - section: "Recent Posts"
-          contents:
-            - text: "Memvisualisasikan Data Geologi dengan GeoDataViz"
-              href: posts/Geodataviz/index.qmd
-            - text: "Selamat Datang di Blog Orebit"
-              href: posts/2025-09-16-welcome-post/index.qmd
-            - text: "Test Post - Blog Orebit"
-              href: posts/test-post/index.qmd
+  
         
 format:
   html:

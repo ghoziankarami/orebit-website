@@ -1,20 +1,59 @@
 ---
-title: "Portofolio Proyek"
+title: "Project Portfolio"
 ---
 
-Berikut adalah beberapa proyek yang menyoroti keahlian saya dalam analisis data geologi dan pengembangan aplikasi.
+Here are some key projects that showcase my expertise in geological data analysis and application development.
 
-### GeoDataViz: Aplikasi R Shiny
+### GeoDataViz: R Shiny Application
 
-**GeoDataViz** adalah sebuah *workbench open-source* untuk visualisasi, analisis, dan validasi data geologi, khususnya data lubang bor. Proyek ini bertujuan untuk mempromosikan solusi berbasis R untuk tugas-tugas geologi sehari-hari.
+**GeoDataViz** is an open-source *workbench* for geological data visualization, analysis, and validation, specifically designed for drillhole data. This project aims to promote R-based solutions for everyday geological tasks.
 
--   **Teknologi:** R, R Shiny, `tidyverse`, `sf`, `ggplot2`
--   **Fitur Utama:** Visualisasi 3D interaktif, analisis statistik, dan validasi data QA/QC.
+-   **Technology Stack:** R, R Shiny, `tidyverse`, `sf`, `ggplot2`, `plotly`
+-   **Key Features:** Interactive 3D visualization, statistical analysis, and comprehensive QA/QC data validation.
+-   **Impact:** Democratizing access to advanced geological data analysis tools
 
-### Evaluasi Sumber Daya PT Aega Prima
+**Project Highlights:**
+- Full-featured local version with comprehensive drillhole analysis
+- Live web demo for easy access and testing
+- Integration with popular R geological packages
+- Future Pro version planned with automated reporting and resource estimation
 
-Sebagai *Competent Person (CP)*, saya terlibat dalam sesi evaluator dan penandatanganan dokumen sumber daya dan cadangan untuk PT Aega Prima, memastikan kepatuhan terhadap standar pelaporan nasional.
+### PT Aega Prima Resource Evaluation
 
-### Pengembangan Dashboard Grade Control
+As **Competent Person (CP)**, I participated in the evaluation and signing of resource and reserve documents for PT Aega Prima, ensuring compliance with national reporting standards and industry best practices.
 
-Merancang dan mengembangkan modul pelatihan serta *dashboard* interaktif untuk proses *grade control* dan *quality control*, bertujuan untuk meningkatkan akurasi dan efisiensi di lapangan.
+**Responsibilities:**
+- Resource model validation and QA/QC
+- Geostatistical analysis and variogram modeling  
+- Compliance review according to KCMI standards
+- Technical report preparation and documentation
+
+### Grade Control Dashboard Development
+
+Designed and developed interactive training modules and dashboards for grade control and quality control processes, aimed at improving field accuracy and operational efficiency.
+
+**Technical Implementation:**
+- Interactive R Shiny dashboards for real-time monitoring
+- Automated data validation and flagging systems
+- Statistical process control charts and alerts
+- Mobile-responsive design for field operations
+
+### Offshore Tin Exploration Projects
+
+Led multiple offshore tin exploration projects involving advanced geostatistical modeling and resource estimation.
+
+**Key Achievements:**
+- Implemented advanced sampling strategies for marine environments
+- Developed custom geostatistical models for placer deposits
+- Integrated geophysical and geological data for improved resource confidence
+- Established QA/QC protocols for offshore drilling programs
+
+### Open-Source Geological Tools
+
+Actively contributing to the open-source geological community through various R packages and tools.
+
+**Contributions:**
+- Development of specialized geological analysis functions
+- Tutorial content for R in geology applications
+- Community engagement through technical blogs and presentations
+- Advocacy for open-source adoption in geological workflows

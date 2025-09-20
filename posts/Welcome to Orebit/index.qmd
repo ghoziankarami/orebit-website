@@ -1,0 +1,156 @@
+---
+title: "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science"
+author: "Ghozian Islam Karami"
+date: "2025-09-20"
+categories: [Welcome, Open-Source, Geology, Data-Science]
+description: "Welcome to the Orebit technical blog. Learn about our mission to democratize geological data analysis through open-source solutions and modern data science techniques."
+image: "welcome-banner.png"
+---
+
+## Welcome to a New Chapter in Geological Data Analysis
+
+Hello and welcome to the Orebit technical blog! I'm Ghozian Islam Karami, and I'm excited to share this journey with you as we explore the intersection of traditional geological expertise and modern data science techniques.
+
+## Who Am I?
+
+I'm a Senior Geologist and Geospatial Specialist with over a decade of experience in the mining industry, particularly in offshore tin exploration and resource evaluation. As a **Certified Competent Person (CP)** and advocate for open-source solutions, I believe in the transformative power of combining geological wisdom with cutting-edge data analysis tools.
+
+My journey has taken me from traditional geological fieldwork to developing sophisticated data analysis workflows using R, Python, and modern visualization techniques. This blog is where I share these experiences, insights, and tools with the broader geological community.
+
+## What You'll Find Here
+
+This blog focuses on **practical applications** of data science in geology, with particular emphasis on:
+
+### 🔍 **Exploratory Data Analysis (EDA)**
+- Advanced techniques for understanding geological datasets
+- Statistical approaches to data validation and quality control
+- Visualization strategies for complex geological relationships
+
+### 📊 **Geostatistics and Resource Modeling**
+- Modern approaches to variogram modeling and kriging
+- Integration of machine learning with traditional geostatistics
+- Uncertainty quantification in resource estimation
+
+### 🛠️ **Open-Source Tool Development**
+- Deep dives into GeoDataViz development and features
+- R packages for geological applications
+- Workflow automation and best practices
+
+### 💡 **Industry Applications**
+- Case studies from real mining projects
+- Best practice guides for geological workflows
+- Integration of proprietary and open-source software
+
+## The Open-Source Mission
+
+One of my core beliefs is that **geological analysis tools should be accessible to everyone**. The mining industry has long relied on expensive proprietary software, creating barriers for smaller companies, consultants, and researchers in developing countries.
+
+Through projects like **GeoDataViz**, I'm working to democratize access to advanced geological analysis capabilities. This isn't about replacing established tools, but rather providing alternatives and pushing the industry toward more transparent, reproducible workflows.
+
+## Why This Blog Matters
+
+The geological community often works in silos, with valuable knowledge trapped in proprietary systems or internal company workflows. This blog aims to:
+
+- **Share Knowledge Openly:** Make advanced geological techniques accessible to all
+- **Bridge Communities:** Connect traditional geologists with data scientists
+- **Promote Best Practices:** Establish standards for reproducible geological analysis
+- **Foster Innovation:** Encourage development of new analytical approaches
+
+## What Makes This Different
+
+Unlike purely academic resources or vendor-specific tutorials, this blog focuses on **practical, real-world applications**. Every post is grounded in actual mining industry experience and tested workflows.
+
+You'll find:
+- **Working code examples** that you can adapt for your projects
+- **Step-by-step tutorials** with real geological datasets
+- **Critical evaluations** of different analytical approaches
+- **Honest discussions** of limitations and challenges
+
+## The GeoDataViz Story
+
+Central to this blog is **GeoDataViz**, my open-source R Shiny application for geological data analysis. Born from frustration with expensive, inflexible commercial tools, GeoDataViz represents a vision of:
+
+- **Transparent workflows** where every step is visible and modifiable
+- **Modern visualization** using the latest web technologies
+- **Integration capabilities** that work with existing industry standards
+- **Community-driven development** guided by user needs
+
+### Current Capabilities
+- Comprehensive drillhole data visualization
+- Advanced statistical analysis and validation
+- Interactive 3D geological modeling
+- Automated report generation
+
+### Future Vision
+The upcoming **Pro version** will include:
+- Advanced resource estimation modules
+- Pit optimization tools
+- Machine learning integration
+- Enterprise-grade deployment options
+
+## Who Should Read This Blog
+
+This content is designed for:
+
+- **Geologists** looking to modernize their analytical workflows
+- **Data scientists** entering the mining industry
+- **Mining engineers** seeking better data integration
+- **Students** learning geological data analysis
+- **Consultants** needing cost-effective analysis tools
+- **Researchers** working on geological applications
+
+## Getting Involved
+
+This is meant to be a **community effort**. I encourage you to:
+
+### 📝 **Share Your Experiences**
+- Comment on posts with your own insights
+- Suggest topics you'd like to see covered
+- Share alternative approaches and solutions
+
+### 🔧 **Contribute to Development**
+- Try out GeoDataViz and provide feedback
+- Contribute code or documentation improvements
+- Report bugs or suggest new features
+
+### 🌐 **Spread the Word**
+- Share posts that you find valuable
+- Connect with me on [LinkedIn](https://www.linkedin.com/in/ghoziankarami/)
+- Follow the project on [GitHub](https://github.com/ghoziankarami/geodataviz)
+
+## What's Coming Next
+
+Over the coming weeks and months, expect detailed posts covering:
+
+1. **"Exploratory Data Analysis with GeoDataViz"** - A comprehensive guide to understanding your geological data
+2. **"Pre-Processing Drillhole Data for Resource Estimation"** - Advanced techniques for data preparation
+3. **"Variogram Modeling in Practice"** - Beyond textbook examples to real-world applications
+4. **"Integration Workflows"** - Connecting open-source and proprietary tools
+5. **"Machine Learning Applications in Geology"** - Practical AI applications for geological problems
+
+## A Personal Note
+
+Starting this blog represents more than just sharing technical knowledge—it's about building a community that values transparency, accessibility, and innovation in geological analysis. The mining industry faces unprecedented challenges, from declining ore grades to increased environmental scrutiny. Meeting these challenges requires not just better technology, but better ways of sharing knowledge and collaborating.
+
+I believe that open-source approaches, combined with traditional geological expertise, offer a path forward that benefits everyone—from individual consultants to major mining companies, from developed nations to emerging economies.
+
+## Stay Connected
+
+This journey is just beginning, and I'd love to have you along for the ride. Here's how to stay connected:
+
+- **Subscribe to updates** through your preferred RSS reader
+- **Follow on LinkedIn** for industry insights and networking
+- **Star the GitHub repository** to track GeoDataViz development
+- **Join the conversation** in the comments section of each post
+
+## Final Thoughts
+
+The intersection of geology and data science is rich with possibilities. Traditional geological knowledge provides the foundation, while modern analytical techniques offer new ways to extract insights from complex datasets. 
+
+Together, we can build tools and workflows that make geological analysis more accessible, more accurate, and more valuable for decision-making in the mining industry.
+
+Thank you for joining me on this journey. I look forward to sharing insights, learning from your experiences, and building something meaningful together.
+
+---
+
+*Ready to dive in? Check out our first technical post: ["Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide"](../eda-geodataviz-guide/index.qmd) or explore the [GeoDataViz live demo](https://geodataviz.shinyapps.io/geodataviz/).*

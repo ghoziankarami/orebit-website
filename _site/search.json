@@ -2,180 +2,337 @@
   {
     "objectID": "services.html",
     "href": "services.html",
-    "title": "Layanan Konsultansi",
+    "title": "Consulting Services",
     "section": "",
-    "text": "Sebagai seorang praktisi industri dan Certified Competent Person (CP), saya menyediakan layanan konsultansi yang berfokus pada integritas data, efisiensi, dan solusi modern.\nLayanan utama yang ditawarkan meliputi:\n\nEstimasi Cadangan dan Sumber Daya Mineral\n\nEvaluasi dan pelaporan sesuai standar KCMI/JORC. Sebagai CP, saya dapat menandatangani dokumen evaluasi cadangan.\n\nGeostatistik Terapan dan AI\n\nAnalisis data eksplorasi, pemodelan variogram, dan aplikasi machine learning untuk augmentasi data geologi.\n\nGeospatial & Environmental Monitoring\n\nAnalisis spasial menggunakan GIS, pengolahan data UAV, dan pemantauan lingkungan untuk operasi tambang.\n\nPengembangan SOP dan Pelatihan\n\nPembuatan Standard Operating Procedures (SOP), flowchart, dan modul pelatihan untuk grade control dan QA/QC."
+    "text": "As a practicing industry professional and Certified Competent Person (CP), I provide consulting services focused on data integrity, efficiency, and modern solutions.\nMy core services include:\n\nMineral Resource and Reserve Estimation\n\nEvaluation and reporting according to KCMI/JORC standards. As a CP, I can sign off on reserve evaluation documents.\n\nApplied Geostatistics and AI\n\nExploration data analysis, variogram modeling, and machine learning applications for geological data augmentation.\n\nGeospatial & Environmental Monitoring\n\nSpatial analysis using GIS, UAV data processing, and environmental monitoring for mining operations.\n\nSOP Development and Training\n\nDevelopment of Standard Operating Procedures (SOPs), flowcharts, and training modules for grade control and QA/QC processes.\n\nDigital Transformation\n\nImplementation of modern data workflows, dashboard development, and integration of open-source tools in geological workflows.\n\n\nService Approach:\nI combine traditional geological expertise with modern data science techniques to deliver practical, efficient solutions. My approach emphasizes:\n\nOpen-Source Integration: Leveraging powerful R packages and open-source tools alongside proprietary software\nData Quality Focus: Ensuring robust QA/QC procedures throughout the workflow\nPractical Solutions: Delivering actionable insights that drive business decisions\nKnowledge Transfer: Training teams to maintain and expand upon implemented solutions"
   },
   {
-    "objectID": "posts/2025-09-16-welcome-post/index.html",
-    "href": "posts/2025-09-16-welcome-post/index.html",
-    "title": "Selamat Datang di Blog Orebit",
+    "objectID": "posts/EDA with GeoDataViz/index.html",
+    "href": "posts/EDA with GeoDataViz/index.html",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
     "section": "",
-    "text": "Selamat datang di blog teknis Orebit! Sebagai seorang Senior Geologist dengan pengalaman lebih dari 10 tahun, saya sangat antusias untuk berbagi pengetahuan dan pengalaman dalam memadukan ilmu geologi dengan kekuatan analisis data modern.",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Selamat Datang di Blog Orebit"
-    ]
+    "text": "Exploratory Data Analysis (EDA) is the crucial first step in any geological data analysis workflow, especially before resource estimation. GeoDataViz provides a comprehensive suite of tools to understand your drillhole data thoroughly, identify data quality issues, and gain insights that will inform your subsequent modeling decisions.\nIn this guide, we’ll walk through a complete EDA workflow using GeoDataViz, covering everything from basic statistics to advanced spatial analysis."
   },
   {
-    "objectID": "posts/2025-09-16-welcome-post/index.html#welcome",
-    "href": "posts/2025-09-16-welcome-post/index.html#welcome",
-    "title": "Selamat Datang di Blog Orebit",
+    "objectID": "posts/EDA with GeoDataViz/index.html#introduction",
+    "href": "posts/EDA with GeoDataViz/index.html#introduction",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
     "section": "",
-    "text": "Selamat datang di blog teknis Orebit! Sebagai seorang Senior Geologist dengan pengalaman lebih dari 10 tahun, saya sangat antusias untuk berbagi pengetahuan dan pengalaman dalam memadukan ilmu geologi dengan kekuatan analisis data modern.",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Selamat Datang di Blog Orebit"
-    ]
+    "text": "Exploratory Data Analysis (EDA) is the crucial first step in any geological data analysis workflow, especially before resource estimation. GeoDataViz provides a comprehensive suite of tools to understand your drillhole data thoroughly, identify data quality issues, and gain insights that will inform your subsequent modeling decisions.\nIn this guide, we’ll walk through a complete EDA workflow using GeoDataViz, covering everything from basic statistics to advanced spatial analysis."
   },
   {
-    "objectID": "posts/2025-09-16-welcome-post/index.html#content",
-    "href": "posts/2025-09-16-welcome-post/index.html#content",
-    "title": "Selamat Datang di Blog Orebit",
-    "section": "Apa yang Akan Anda Temukan?",
-    "text": "Apa yang Akan Anda Temukan?\nDi blog ini, Anda akan menemukan:\n\nTutorial praktis menggunakan R untuk analisis data geologi\nStudi kasus dari proyek-proyek nyata di lapangan\nTips dan trik untuk geostatistik dan pemodelan sumber daya\nReview tools open-source untuk geologi",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Selamat Datang di Blog Orebit"
-    ]
+    "objectID": "posts/EDA with GeoDataViz/index.html#why-eda-matters-in-geological-data-analysis",
+    "href": "posts/EDA with GeoDataViz/index.html#why-eda-matters-in-geological-data-analysis",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Why EDA Matters in Geological Data Analysis",
+    "text": "Why EDA Matters in Geological Data Analysis\nBefore diving into resource estimation or geostatistical modeling, understanding your data is paramount. Poor EDA can lead to:\n\nBiased resource estimates due to unrecognized data quality issues\nInappropriate modeling assumptions that don’t reflect data reality\n\nMissed geological insights that could improve estimation accuracy\nInadequate sampling protocols for future drilling programs"
   },
   {
-    "objectID": "posts/2025-09-16-welcome-post/index.html#example",
-    "href": "posts/2025-09-16-welcome-post/index.html#example",
-    "title": "Selamat Datang di Blog Orebit",
-    "section": "Contoh Visualisasi Data",
-    "text": "Contoh Visualisasi Data\nSebagai pembuka, mari kita lihat contoh sederhana visualisasi data geologi menggunakan R:\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Simulasi data lubang bor\nset.seed(123)\ndrill_data &lt;- tibble(\n  depth_m = seq(0, 100, by = 2),\n  grade_pct = 2 + 0.5 * sin(depth_m / 10) + rnorm(51, 0, 0.3),\n  rock_type = sample(c(\"Overburden\", \"Ore Zone\", \"Host Rock\"), 51, \n                     replace = TRUE, prob = c(0.2, 0.5, 0.3))\n)\n\n# Buat plot\nggplot(drill_data, aes(x = depth_m, y = grade_pct, color = rock_type)) +\n  geom_line(alpha = 0.7) +\n  geom_point(size = 2, alpha = 0.8) +\n  scale_color_manual(values = c(\"Overburden\" = \"#8B4513\", \n                                \"Ore Zone\" = \"#FFD700\", \n                                \"Host Rock\" = \"#708090\")) +\n  labs(\n    title = \"Profil Kadar Mineral vs Kedalaman\",\n    x = \"Kedalaman (m)\",\n    y = \"Kadar (%)\",\n    color = \"Jenis Batuan\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\nFigure 1: Contoh visualisasi hubungan kedalaman vs kadar mineral",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Selamat Datang di Blog Orebit"
-    ]
+    "objectID": "posts/EDA with GeoDataViz/index.html#getting-started-with-geodataviz",
+    "href": "posts/EDA with GeoDataViz/index.html#getting-started-with-geodataviz",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Getting Started with GeoDataViz",
+    "text": "Getting Started with GeoDataViz\n\nLoading Your Data\nGeoDataViz supports multiple data formats commonly used in geological projects:\n\nCSV files with collar, survey, and assay tables\nExcel workbooks with multiple sheets\nDatabase connections for enterprise environments\n\nThe application automatically validates data structure and provides immediate feedback on potential issues.\n\n\nData Structure Validation\nUpon loading, GeoDataViz performs comprehensive checks:\n\nCollar Table Validation\n\nCoordinate system verification\nDuplicate hole identification\nMissing coordinate detection\n\nSurvey Table Checks\n\nAzimuth and dip range validation\nSurvey interval consistency\nDesurveying accuracy assessment\n\nAssay Table Analysis\n\nSample interval validation\nOverlapping intervals detection\nMissing assay identification"
   },
   {
-    "objectID": "posts/2025-09-16-welcome-post/index.html#start",
-    "href": "posts/2025-09-16-welcome-post/index.html#start",
-    "title": "Selamat Datang di Blog Orebit",
-    "section": "Mari Mulai Eksplorasi!",
-    "text": "Mari Mulai Eksplorasi!\nSaya berharap blog ini dapat menjadi sumber inspirasi dan pembelajaran bagi para praktisi geologi yang ingin mengintegrasikan pendekatan data-driven dalam pekerjaan mereka.\nJangan lupa untuk menjelajahi portofolio proyek saya dan layanan konsultansi yang tersedia!\n\nHappy coding and happy geology! 🔍⛏️📊",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Selamat Datang di Blog Orebit"
-    ]
+    "objectID": "posts/EDA with GeoDataViz/index.html#core-eda-components-in-geodataviz",
+    "href": "posts/EDA with GeoDataViz/index.html#core-eda-components-in-geodataviz",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Core EDA Components in GeoDataViz",
+    "text": "Core EDA Components in GeoDataViz\n\n1. Statistical Summary Dashboard\nThe statistical dashboard provides immediate insights into your dataset:\nUnivariate Statistics: - Distribution analysis with histograms and box plots - Outlier identification using multiple methods (IQR, z-score, modified z-score) - Summary statistics including percentiles, skewness, and kurtosis\nKey Insights to Look For: - Highly skewed distributions may require transformation - Multiple populations might indicate different geological domains - Outliers could represent high-grade zones or assay errors\n\n\n2. Spatial Data Exploration\nUnderstanding spatial relationships is crucial for resource modeling:\nCollar Map Analysis: - Interactive map showing drill hole locations - Color-coding by various attributes (depth, target, campaign) - Spatial clustering identification - Coverage assessment for different geological zones\n3D Visualization: - Interactive 3D plots of drill hole traces - Grade distribution along hole paths - Geological unit visualization in 3D space - Cross-sectional analysis tools\n\n\n3. Grade Continuity Analysis\nBefore resource estimation, understanding grade continuity is essential:\nDownhole Grade Plots: - Individual hole grade profiles - Identification of high-grade zones - Assessment of grade continuity along holes - Detection of potential geological boundaries\nComposite Analysis: - Evaluation of different compositing lengths - Assessment of sample support effects - Optimization of composite intervals for estimation\n\n\n4. Data Quality Assessment\nGeoDataViz provides comprehensive QA/QC tools:\nAssay Quality Checks: - Detection of negative assays - Identification of below detection limit values - Assessment of assay precision through duplicates - Evaluation of analytical accuracy through standards\nSampling Quality Review: - Sample recovery analysis - Core loss assessment - Sample interval consistency checks - Identification of preferential sampling"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Orebit.id",
-    "section": "",
-    "text": "Solusi Inovatif untuk Eksplorasi dan Pemodelan Sumber Daya Mineral\n\nSelamat datang di Orebit, hub digital di mana geologi, geostatistik, dan analisis data bertemu. Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan lebih dari 10 tahun pengalaman dalam eksplorasi mineral dan pemodelan sumber daya.\nDi sini, saya berbagi wawasan, proyek, dan solusi—baik menggunakan software industri maupun advokasi solusi berbasis open-source dengan R.\nJelajahi situs ini untuk menemukan: * Layanan Konsultansi yang saya tawarkan, mulai dari estimasi sumber daya hingga pengembangan SOP. * Portolio Proyek yang menampilkan aplikasi dan analisis yang telah saya kerjakan. * Blog Teknis berisi tutorial dan studi kasus mengenai aplikasi R dalam geologi."
+    "objectID": "posts/EDA with GeoDataViz/index.html#advanced-eda-techniques",
+    "href": "posts/EDA with GeoDataViz/index.html#advanced-eda-techniques",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Advanced EDA Techniques",
+    "text": "Advanced EDA Techniques\n\nGeological Domain Analysis\nUnderstanding geological controls on mineralization:\nLithology Analysis: - Grade distribution by rock type - Statistical comparison between domains - Spatial distribution of geological units - Contact analysis between domains\nStructural Analysis: - Grade trends along structural orientations - Fault and fracture impact assessment - Fold axis influence on grade distribution\n\n\nGeostatistical Preliminary Analysis\nPreparing for resource estimation:\nVariogram Analysis Preview: - Experimental variogram calculation - Directional continuity assessment - Anisotropy identification - Range estimation for different directions\nContact Analysis: - Hard vs. soft boundary identification - Transition zone characterization - Domain boundary optimization"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Tentang Saya",
-    "section": "",
-    "text": "Saya Ghozian Islam Karami, seorang Senior Geologist & Geospatial Specialist dengan pengalaman lebih dari satu dekade di industri pertambangan, khususnya eksplorasi timah lepas pantai.\nSaya memegang gelar MS dalam Geological Sciences dari King Fahd University of Petroleum and Minerals (KFUPM) dan Sarjana Geologi dari Universitas Padjadjaran. Sebagai Certified BNSP Competent Person (CP), saya memiliki wewenang untuk mengevaluasi dan menandatangani dokumen estimasi cadangan mineral.\nKeahlian Teknis:\n\nSoftware Propietary: Micromine, Net-Promine, SGEMS\nOpen-Source Advocate: Pengguna aktif R untuk alur kerja geologi (tidyverse, sf, tmap, gstat)\nSpesialisasi: Geostatistik, GIS, pemodelan sumber daya, dan pengembangan SOP QA/QC.\n\nSaya bersemangat dalam memadukan fondasi ilmu geologi dengan kekuatan analisis data modern untuk memecahkan masalah di industri sumber daya mineral."
+    "objectID": "posts/EDA with GeoDataViz/index.html#practical-workflow-example",
+    "href": "posts/EDA with GeoDataViz/index.html#practical-workflow-example",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Practical Workflow Example",
+    "text": "Practical Workflow Example\n\nStep 1: Data Import and Validation\n1. Load collar, survey, and assay files\n2. Review data validation report\n3. Address any critical data issues\n4. Set coordinate system and units\n\n\nStep 2: Initial Statistical Review\n1. Generate univariate statistics for all elements\n2. Identify and investigate outliers\n3. Assess data distributions\n4. Flag potential data entry errors\n\n\nStep 3: Spatial Analysis\n1. Create collar location map\n2. Generate 3D drill hole visualization\n3. Assess spatial coverage and drilling density\n4. Identify potential spatial biases\n\n\nStep 4: Grade Distribution Analysis\n1. Create downhole grade plots\n2. Analyze grade continuity patterns\n3. Identify high-grade zones\n4. Assess geological controls\n\n\nStep 5: Domain Analysis\n1. Statistical analysis by geological domain\n2. Contact analysis between domains\n3. Assessment of domain boundaries\n4. Optimization of domain definitions"
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog Teknis",
-    "section": "",
-    "text": "Selamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.\nGunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.\n\n\nSelamat datang di blog teknis Orebit! Di sini saya berbagi wawasan, tutorial, dan studi kasus mengenai aplikasi R dalam geologi, geostatistik, dan analisis data mineral.\nGunakan sidebar di sebelah kiri untuk navigasi postingan, atau jelajahi berdasarkan kategori di panel sebelah kanan.\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMemvisualisasikan Data Geologi dengan GeoDataViz\n\n\n\nR\n\nShiny\n\nVisualisasi\n\nTools\n\n\n\nPanduan lengkap menggunakan aplikasi GeoDataViz untuk analisis dan visualisasi data lubang bor\n\n\n\n\n\n17 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nSelamat Datang di Blog Orebit\n\n\n\nWelcome\n\nR\n\nGeologi\n\n\n\nPostingan pembuka untuk blog teknis Orebit yang membahas integrasi R dalam workflow geologi\n\n\n\n\n\n16 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/EDA with GeoDataViz/index.html#key-outputs-for-resource-estimation",
+    "href": "posts/EDA with GeoDataViz/index.html#key-outputs-for-resource-estimation",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Key Outputs for Resource Estimation",
+    "text": "Key Outputs for Resource Estimation\nAfter completing EDA in GeoDataViz, you should have:\n\nClean, validated dataset ready for modeling\nUnderstanding of grade distributions and appropriate transformations\nIdentified geological domains with statistical justification\nPreliminary continuity assessment to guide variogram modeling\nData quality metrics to inform estimation parameters\nSpatial bias assessment for sampling strategy optimization"
+  },
+  {
+    "objectID": "posts/EDA with GeoDataViz/index.html#best-practices-and-common-pitfalls",
+    "href": "posts/EDA with GeoDataViz/index.html#best-practices-and-common-pitfalls",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Best Practices and Common Pitfalls",
+    "text": "Best Practices and Common Pitfalls\n\nBest Practices:\n\nStart with data validation - don’t proceed with poor quality data\nUse multiple visualization methods - different plots reveal different insights\nDocument all observations - maintain detailed EDA notes\nIterate and refine - EDA is an iterative process\n\n\n\nCommon Pitfalls:\n\nRushing through EDA - inadequate exploration leads to poor models\nIgnoring spatial patterns - geology is inherently spatial\nOver-relying on statistics - geological knowledge is crucial\nSkipping domain analysis - geological domains control mineralization"
+  },
+  {
+    "objectID": "posts/EDA with GeoDataViz/index.html#integration-with-resource-estimation",
+    "href": "posts/EDA with GeoDataViz/index.html#integration-with-resource-estimation",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Integration with Resource Estimation",
+    "text": "Integration with Resource Estimation\nThe insights gained from EDA directly inform:\n\nEstimation methodology selection (kriging, inverse distance, etc.)\nSearch parameters based on continuity analysis\n\nGeological domain boundaries for separate estimation\nOutlier treatment strategies based on geological understanding\nComposite length optimization for appropriate support"
+  },
+  {
+    "objectID": "posts/EDA with GeoDataViz/index.html#conclusion",
+    "href": "posts/EDA with GeoDataViz/index.html#conclusion",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Conclusion",
+    "text": "Conclusion\nComprehensive EDA using GeoDataViz sets the foundation for successful resource estimation. By thoroughly understanding your data’s characteristics, spatial distribution, and geological controls, you can make informed decisions about estimation parameters and methodologies.\nThe time invested in thorough EDA pays dividends in more accurate, geologically reasonable resource models that better serve mining decision-making processes."
+  },
+  {
+    "objectID": "posts/EDA with GeoDataViz/index.html#next-steps",
+    "href": "posts/EDA with GeoDataViz/index.html#next-steps",
+    "title": "Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide",
+    "section": "Next Steps",
+    "text": "Next Steps\nIn our next post, we’ll dive deeper into “Pre-Processing Drillhole Data for Resource Estimation”, covering advanced techniques for data preparation, compositing strategies, and domain optimization using GeoDataViz.\n\nHave questions about EDA workflows or GeoDataViz features? Feel free to reach out or contribute to the GeoDataViz GitHub repository."
   },
   {
     "objectID": "portfolio.html",
     "href": "portfolio.html",
-    "title": "Portofolio Proyek",
+    "title": "Project Portfolio",
     "section": "",
-    "text": "Berikut adalah beberapa proyek yang menyoroti keahlian saya dalam analisis data geologi dan pengembangan aplikasi.\n\nGeoDataViz: Aplikasi R Shiny\nGeoDataViz adalah sebuah workbench open-source untuk visualisasi, analisis, dan validasi data geologi, khususnya data lubang bor. Proyek ini bertujuan untuk mempromosikan solusi berbasis R untuk tugas-tugas geologi sehari-hari.\n\nTeknologi: R, R Shiny, tidyverse, sf, ggplot2\nFitur Utama: Visualisasi 3D interaktif, analisis statistik, dan validasi data QA/QC.\n\n\n\nEvaluasi Sumber Daya PT Aega Prima\nSebagai Competent Person (CP), saya terlibat dalam sesi evaluator dan penandatanganan dokumen sumber daya dan cadangan untuk PT Aega Prima, memastikan kepatuhan terhadap standar pelaporan nasional.\n\n\nPengembangan Dashboard Grade Control\nMerancang dan mengembangkan modul pelatihan serta dashboard interaktif untuk proses grade control dan quality control, bertujuan untuk meningkatkan akurasi dan efisiensi di lapangan."
+    "text": "Here are some key projects that showcase my expertise in geological data analysis and application development.\n\nGeoDataViz: R Shiny Application\nGeoDataViz is an open-source workbench for geological data visualization, analysis, and validation, specifically designed for drillhole data. This project aims to promote R-based solutions for everyday geological tasks.\n\nTechnology Stack: R, R Shiny, tidyverse, sf, ggplot2, plotly\nKey Features: Interactive 3D visualization, statistical analysis, and comprehensive QA/QC data validation.\nImpact: Democratizing access to advanced geological data analysis tools\n\nProject Highlights: - Full-featured local version with comprehensive drillhole analysis - Live web demo for easy access and testing - Integration with popular R geological packages - Future Pro version planned with automated reporting and resource estimation\n\n\nPT Aega Prima Resource Evaluation\nAs Competent Person (CP), I participated in the evaluation and signing of resource and reserve documents for PT Aega Prima, ensuring compliance with national reporting standards and industry best practices.\nResponsibilities: - Resource model validation and QA/QC - Geostatistical analysis and variogram modeling\n- Compliance review according to KCMI standards - Technical report preparation and documentation\n\n\nGrade Control Dashboard Development\nDesigned and developed interactive training modules and dashboards for grade control and quality control processes, aimed at improving field accuracy and operational efficiency.\nTechnical Implementation: - Interactive R Shiny dashboards for real-time monitoring - Automated data validation and flagging systems - Statistical process control charts and alerts - Mobile-responsive design for field operations\n\n\nOffshore Tin Exploration Projects\nLed multiple offshore tin exploration projects involving advanced geostatistical modeling and resource estimation.\nKey Achievements: - Implemented advanced sampling strategies for marine environments - Developed custom geostatistical models for placer deposits - Integrated geophysical and geological data for improved resource confidence - Established QA/QC protocols for offshore drilling programs\n\n\nOpen-Source Geological Tools\nActively contributing to the open-source geological community through various R packages and tools.\nContributions: - Development of specialized geological analysis functions - Tutorial content for R in geology applications - Community engagement through technical blogs and presentations - Advocacy for open-source adoption in geological workflows"
   },
   {
-    "objectID": "posts/Geodataviz/index.html",
-    "href": "posts/Geodataviz/index.html",
-    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Technical Blog",
     "section": "",
-    "text": "GeoDataViz adalah aplikasi R Shiny yang saya kembangkan sebagai workbench open-source untuk visualisasi, analisis, dan validasi data geologi. Aplikasi ini dirancang khusus untuk menangani data lubang bor dan memberikan insights yang valuable untuk decision-making di lapangan.",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Memvisualisasikan Data Geologi dengan GeoDataViz"
-    ]
+    "text": "Welcome to the Orebit technical blog! Here I share insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis.\nUse the sidebar on the left for post navigation, or explore by category in the right panel.\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz\n\n\n\nGeoDataViz\n\nPreprocessing\n\nResource-Estimation\n\nGeostatistics\n\n\n\nMaster the art of drillhole data preprocessing using GeoDataViz. Learn compositing strategies, domain optimization, and data conditioning techniques for accurate resource estimation.\n\n\n\n\n\n20 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory Data Analysis with GeoDataViz: A Comprehensive Guide\n\n\n\nGeoDataViz\n\nEDA\n\nR-Shiny\n\nTutorial\n\n\n\nLearn how to perform comprehensive exploratory data analysis on geological datasets using GeoDataViz before moving to resource estimation.\n\n\n\n\n\n20 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science\n\n\n\nWelcome\n\nOpen-Source\n\nGeology\n\nData-Science\n\n\n\nWelcome to the Orebit technical blog. Learn about our mission to democratize geological data analysis through open-source solutions and modern data science techniques.\n\n\n\n\n\n20 September 2025\n\n\nGhozian Islam Karami\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/Geodataviz/index.html#introduction",
-    "href": "posts/Geodataviz/index.html#introduction",
-    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
     "section": "",
-    "text": "GeoDataViz adalah aplikasi R Shiny yang saya kembangkan sebagai workbench open-source untuk visualisasi, analisis, dan validasi data geologi. Aplikasi ini dirancang khusus untuk menangani data lubang bor dan memberikan insights yang valuable untuk decision-making di lapangan.",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Memvisualisasikan Data Geologi dengan GeoDataViz"
-    ]
+    "text": "I am Ghozian Islam Karami, a Senior Geologist & Geospatial Specialist with over a decade of experience in the mining industry, particularly in offshore tin exploration and resource evaluation.\nI hold a Master of Science in Geological Sciences from King Fahd University of Petroleum and Minerals (KFUPM) and a Bachelor’s degree in Geology from Universitas Padjadjaran. As a Certified BNSP Competent Person (CP), I am authorized to evaluate and sign off on mineral resource estimation documents.\nTechnical Expertise:\n\nProprietary Software: Micromine, Net-Promine, SGEMS\nOpen-Source Advocate: Active R user for geological workflows (tidyverse, sf, tmap, gstat)\nSpecializations: Geostatistics, GIS, resource modeling, and QA/QC SOP development.\n\nI am passionate about bridging traditional geological foundations with the power of modern data analysis to solve complex problems in the mineral resources industry.\nProfessional Certifications:\n\nCompetent Person (CP) - BNSP Certified for Resource Estimation\nSenior Geologist - Indonesian Geologist Association (PERHAPI)\nGeostatistics & Resource Modeling - Various international certifications\n\nCurrent Focus:\nMy current work involves developing open-source geological tools, particularly GeoDataViz, to democratize access to advanced geological analysis capabilities. I believe in the power of open-source solutions to transform how geoscientists approach data analysis and visualization."
   },
   {
-    "objectID": "posts/Geodataviz/index.html#features",
-    "href": "posts/Geodataviz/index.html#features",
-    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
-    "section": "Fitur Utama",
-    "text": "Fitur Utama\n\n1. Upload dan Validasi Data\n\nImport data dari berbagai format (CSV, Excel)\nValidasi otomatis struktur data\nDeteksi anomali dalam dataset\n\n\n\n2. Visualisasi 3D Interaktif\n\nPlot lubang bor dalam ruang 3D\nKontrol interaktif untuk rotasi dan zoom\nColor coding berdasarkan parameter geologi\n\n\n\n3. Analisis Statistik\n\nDistribusi kadar mineral\nKorelasi antar variabel\nSummary statistics per domain geologi",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Memvisualisasikan Data Geologi dengan GeoDataViz"
-    ]
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": " GeoDataViz: Elevate Your Geological Workflow",
+    "section": "",
+    "text": "An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.\n  \n    \n       View on GitHub\n    \n    \n       Live Demo"
   },
   {
-    "objectID": "posts/Geodataviz/index.html#demo",
-    "href": "posts/Geodataviz/index.html#demo",
-    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
-    "section": "Demo Visualisasi Interaktif",
-    "text": "Demo Visualisasi Interaktif\nMari kita buat contoh visualisasi interaktif yang menunjukkan kekuatan R dalam analisis data geologi:\n\nlibrary(plotly)\nlibrary(dplyr)\n\n# Simulasi data lubang bor yang lebih kompleks\nset.seed(456)\ncomplex_data &lt;- tibble(\n  drill_hole = rep(paste0(\"DDH-\", 1:5), each = 30),\n  depth_m = rep(seq(0, 145, by = 5), 5),\n  au_gt = abs(rnorm(150, mean = 1.2, sd = 0.8)) + \n          ifelse(depth_m &gt; 50 & depth_m &lt; 100, 2, 0),\n  rock_type = sample(c(\"Waste\", \"Low Grade\", \"High Grade\"), 150, \n                     replace = TRUE, prob = c(0.4, 0.4, 0.2)),\n  recovery_pct = 85 + rnorm(150, 0, 5)\n)\n\n# Buat plot interaktif\np &lt;- complex_data %&gt;%\n  ggplot(aes(x = depth_m, y = au_gt, color = rock_type, size = recovery_pct)) +\n  geom_point(alpha = 0.7) +\n  scale_color_manual(values = c(\"Waste\" = \"#FF6B6B\", \n                                \"Low Grade\" = \"#FFE66D\", \n                                \"High Grade\" = \"#4ECDC4\")) +\n  scale_size_continuous(range = c(2, 8)) +\n  labs(\n    title = \"Analisis Kadar Emas vs Kedalaman (Multi-Hole)\",\n    x = \"Kedalaman (m)\",\n    y = \"Kadar Emas (g/t)\",\n    color = \"Tipe Batuan\",\n    size = \"Recovery (%)\"\n  ) +\n  theme_minimal() +\n  facet_wrap(~drill_hole, scales = \"free\")\n\n# Konversi ke plotly untuk interaktivitas\nggplotly(p, tooltip = c(\"x\", \"y\", \"colour\", \"size\"))\n\n\n\n\n\n\n\nFigure 1: Plot interaktif hubungan kedalaman vs kadar emas. Hover untuk detail!",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Memvisualisasikan Data Geologi dengan GeoDataViz"
-    ]
+    "objectID": "index.html#about-this-project",
+    "href": "index.html#about-this-project",
+    "title": " GeoDataViz: Elevate Your Geological Workflow",
+    "section": "About This Project",
+    "text": "About This Project\nGeoDataViz emerged from a vision to promote open-source solutions in the geological community. This project is part of my advocacy for making powerful geological tools accessible to everyone. By integrating popular R packages, GeoDataViz aims to become the go-to workbench for geoscientists worldwide.\n\n\n\n Follow on LinkedIn\nStay updated with the latest developments and geological insights. My Profile\n\n\n Contribute on GitHub\nJoin the community, report issues, or contribute to development. Repository"
   },
   {
-    "objectID": "posts/Geodataviz/index.html#workflow",
-    "href": "posts/Geodataviz/index.html#workflow",
-    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
-    "section": "Workflow Analisis Data",
-    "text": "Workflow Analisis Data\n\nStep 1: Data Import dan Cleaning\n\n# Contoh workflow data cleaning\nlibrary(tidyverse)\n\n# Import data\nraw_data &lt;- read_csv(\"drill_data.csv\")\n\n# Basic cleaning\nclean_data &lt;- raw_data %&gt;%\n  # Remove outliers\n  filter(grade &gt; 0, grade &lt; 50) %&gt;%\n  # Standardize naming\n  rename_with(tolower) %&gt;%\n  # Handle missing values\n  drop_na(critical_columns)\n\n\n\nStep 2: Exploratory Data Analysis\n\n# Analisis distribusi kadar\ncomplex_data %&gt;%\n  ggplot(aes(x = au_gt, fill = rock_type)) +\n  geom_histogram(bins = 30, alpha = 0.7, position = \"identity\") +\n  scale_fill_manual(values = c(\"Waste\" = \"#FF6B6B\", \n                               \"Low Grade\" = \"#FFE66D\", \n                               \"High Grade\" = \"#4ECDC4\")) +\n  labs(\n    title = \"Distribusi Kadar Emas per Tipe Batuan\",\n    x = \"Kadar Emas (g/t)\",\n    y = \"Frekuensi\",\n    fill = \"Tipe Batuan\"\n  ) +\n  theme_minimal() +\n  facet_wrap(~rock_type, scales = \"free_y\")\n\n\n\n\nDistribusi kadar emas menunjukkan karakteristik log-normal",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Memvisualisasikan Data Geologi dengan GeoDataViz"
-    ]
+    "objectID": "posts/Drillhole Data Preprocessing/index.html",
+    "href": "posts/Drillhole Data Preprocessing/index.html",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "",
+    "text": "After completing exploratory data analysis (EDA), the next critical step is data preprocessing—transforming your raw drillhole data into a format suitable for resource estimation. This process significantly impacts the quality and reliability of your final resource model.\nGeoDataViz provides advanced tools for data preprocessing, from automated compositing to sophisticated domain analysis. This guide covers essential preprocessing techniques that will prepare your data for accurate resource estimation."
   },
   {
-    "objectID": "posts/Geodataviz/index.html#best-practices",
-    "href": "posts/Geodataviz/index.html#best-practices",
-    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
-    "section": "Best Practices",
-    "text": "Best Practices\n\nSelalu validasi data sebelum analisis\nGunakan visualisasi interaktif untuk eksplorasi\nDokumentasikan semua asumsi dalam analysis\nVersion control untuk reproducibility",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Memvisualisasikan Data Geologi dengan GeoDataViz"
-    ]
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#introduction",
+    "href": "posts/Drillhole Data Preprocessing/index.html#introduction",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "",
+    "text": "After completing exploratory data analysis (EDA), the next critical step is data preprocessing—transforming your raw drillhole data into a format suitable for resource estimation. This process significantly impacts the quality and reliability of your final resource model.\nGeoDataViz provides advanced tools for data preprocessing, from automated compositing to sophisticated domain analysis. This guide covers essential preprocessing techniques that will prepare your data for accurate resource estimation."
   },
   {
-    "objectID": "posts/Geodataviz/index.html#conclusion",
-    "href": "posts/Geodataviz/index.html#conclusion",
-    "title": "Memvisualisasikan Data Geologi dengan GeoDataViz",
-    "section": "Kesimpulan",
-    "text": "Kesimpulan\nGeoDataViz memberikan platform yang powerful untuk analisis data geologi dengan pendekatan modern. Kombinasi R, Shiny, dan visualisasi interaktif memungkinkan geologist untuk:\n\nMengidentifikasi pola dengan lebih cepat\nMembuat keputusan berbasis data\nMengkomunikasikan hasil dengan efektif\n\nTertarik untuk mencoba? Hubungi saya untuk akses ke aplikasi atau konsultasi!\n\nNext post: Geostatistik dengan R - Dari Variogram hingga Kriging 📊⛏️",
-    "crumbs": [
-      "Home",
-      "Recent Posts",
-      "Memvisualisasikan Data Geologi dengan GeoDataViz"
-    ]
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#the-preprocessing-pipeline",
+    "href": "posts/Drillhole Data Preprocessing/index.html#the-preprocessing-pipeline",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "The Preprocessing Pipeline",
+    "text": "The Preprocessing Pipeline\nData preprocessing in geological contexts involves several key steps:\n\nData Cleaning and Validation\nGeological Domain Definition\nSample Compositing\nOutlier Treatment\nData Transformation\nStatistical Validation\n\nLet’s explore each step using GeoDataViz capabilities."
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#data-cleaning-and-validation",
+    "href": "posts/Drillhole Data Preprocessing/index.html#data-cleaning-and-validation",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "1. Data Cleaning and Validation",
+    "text": "1. Data Cleaning and Validation\n\nAutomated Data Quality Checks\nGeoDataViz performs comprehensive quality checks that identify:\nSample Interval Issues: - Overlapping intervals that create double-counting - Gaps in sampling that require handling strategies - Inconsistent sample lengths that affect estimation\nCoordinate System Problems: - Inconsistent coordinate references between holes - Elevation discrepancies that affect 3D modeling - Survey closure errors that impact hole positioning\nAssay Data Quality: - Below detection limit values requiring substitution - Missing assays that need interpolation or flagging - Duplicate samples for precision assessment\n\n\nData Conditioning Strategies\nMissing Data Handling:\n- Geological interpolation for short gaps\n- Statistical imputation using nearby samples\n- Flagging of extensive missing intervals\n- Alternative sampling strategies for future programs\nDetection Limit Treatment:\n- Half detection limit substitution\n- Distributional approaches using fitted distributions\n- Conditional simulation for realistic value ranges\n- Impact assessment on resource estimates"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#geological-domain-definition",
+    "href": "posts/Drillhole Data Preprocessing/index.html#geological-domain-definition",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "2. Geological Domain Definition",
+    "text": "2. Geological Domain Definition\n\nStatistical Domain Analysis\nGeoDataViz provides tools for objective domain boundary definition:\nLithological Domain Assessment: - Grade distribution comparison between rock types - Statistical tests for population differences (t-tests, ANOVA) - Contact analysis using transitional statistics - Boundary optimization using grade continuity\nStructural Domain Analysis: - Grade trend analysis along structural orientations - Fault and fracture impact on grade continuity - Fold-related grade distribution patterns - Alteration zone influence on mineralization\n\n\nAdvanced Domain Optimization\nMultivariate Analysis: - Principal component analysis for complex geology - Cluster analysis for natural population identification\n- Discriminant analysis for boundary refinement - Machine learning approaches for domain recognition\nContact Analysis Tools: - Hard boundary identification using grade contrasts - Soft boundary modeling for gradational contacts - Transition zone characterization - Boundary uncertainty assessment"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#sample-compositing-strategies",
+    "href": "posts/Drillhole Data Preprocessing/index.html#sample-compositing-strategies",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "3. Sample Compositing Strategies",
+    "text": "3. Sample Compositing Strategies\n\nComposite Length Optimization\nSelecting appropriate composite length is crucial for resource estimation:\nLength Selection Criteria: - Geological unit thickness consideration - Sampling interval harmonization - Estimation block size compatibility - Geostatistical range relationships\nGeoDataViz Compositing Features:\n- Automated composite length testing\n- Visual comparison of different lengths\n- Statistical impact assessment\n- Geological boundary preservation\n\n\nAdvanced Compositing Techniques\nGeological Compositing: - Respecting geological boundaries - Variable length compositing by domain - Contact-aware compositing strategies - Weighted averaging by sample quality\nTemporal Compositing: - Campaign-based composite analysis - Temporal trend assessment - Batch effect evaluation - Long-term data consistency checks"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#outlier-treatment-strategies",
+    "href": "posts/Drillhole Data Preprocessing/index.html#outlier-treatment-strategies",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "4. Outlier Treatment Strategies",
+    "text": "4. Outlier Treatment Strategies\n\nOutlier Identification Methods\nGeoDataViz implements multiple outlier detection approaches:\nStatistical Methods: - Interquartile Range (IQR) method - Standard deviation multiples (Z-score) - Modified Z-score for skewed distributions - Percentile-based thresholds\nSpatial Methods: - Neighborhood analysis for spatial outliers - Local grade distribution comparison - Distance-weighted outlier scoring - Geological context consideration\n\n\nTreatment Approaches\nConservative Strategies:\n- Top-cutting using statistical thresholds\n- Indicator variable creation for high grades\n- Separate estimation for outlier populations\n- Conditional simulation for grade uncertainty\nGeological Approaches:\n- Domain-specific outlier treatment\n- Geological control consideration\n- Structural context evaluation\n- Alteration intensity correlation"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#data-transformation-techniques",
+    "href": "posts/Drillhole Data Preprocessing/index.html#data-transformation-techniques",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "5. Data Transformation Techniques",
+    "text": "5. Data Transformation Techniques\n\nDistribution Normalization\nMany geostatistical techniques assume normal distributions:\nTransformation Methods Available: - Log-normal transformation for positively skewed data - Box-Cox transformation for flexible distribution shaping - Normal score transformation for general normalization - Indicator transformation for categorical analysis\nTransformation Assessment:\n- Pre/post transformation distribution comparison\n- Normality testing (Shapiro-Wilk, Anderson-Darling)\n- Spatial continuity preservation evaluation\n- Back-transformation validation\n\n\nMulti-Element Considerations\nCorrelated Element Treatment: - Principal component analysis - Independent component analysis - Canonical correlation analysis - Multi-element compositional data analysis"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#statistical-validation",
+    "href": "posts/Drillhole Data Preprocessing/index.html#statistical-validation",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "6. Statistical Validation",
+    "text": "6. Statistical Validation\n\nPreprocessing Impact Assessment\nGeoDataViz provides tools to evaluate preprocessing impact:\nBefore/After Comparisons: - Statistical parameter changes - Distribution shape modifications - Spatial continuity alterations - Geological interpretation consistency\nValidation Metrics:\n- Grade-tonnage curve stability\n- Spatial continuity preservation\n- Geological contact sharpness\n- Estimation variance validation"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#practical-preprocessing-workflow",
+    "href": "posts/Drillhole Data Preprocessing/index.html#practical-preprocessing-workflow",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "Practical Preprocessing Workflow",
+    "text": "Practical Preprocessing Workflow\n\nPhase 1: Initial Assessment\n1. Import and validate raw drillhole data\n2. Perform comprehensive quality checks\n3. Identify and flag data quality issues\n4. Create initial geological interpretation\n\n\nPhase 2: Domain Development\n1. Statistical analysis of geological units\n2. Contact analysis and boundary optimization\n3. Structural control assessment\n4. Multi-element correlation analysis\n\n\nPhase 3: Compositing Strategy\n1. Composite length optimization testing\n2. Geological boundary preservation\n3. Statistical impact assessment\n4. Final composite generation\n\n\nPhase 4: Data Conditioning\n1. Outlier identification and treatment\n2. Data transformation assessment\n3. Missing data handling\n4. Quality assurance validation\n\n\nPhase 5: Final Validation\n1. Comprehensive statistical review\n2. Geological consistency check\n3. Spatial continuity validation\n4. Resource estimation readiness assessment"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#common-preprocessing-challenges",
+    "href": "posts/Drillhole Data Preprocessing/index.html#common-preprocessing-challenges",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "Common Preprocessing Challenges",
+    "text": "Common Preprocessing Challenges\n\nChallenge 1: Complex Geological Boundaries\nIssue: Gradational contacts between geological domains Solution: - Use soft boundary modeling approaches - Implement transitional zone analysis - Apply distance-weighted domain assignment - Consider geological uncertainty in estimation\n\n\nChallenge 2: Variable Sample Quality\nIssue: Mixed drilling methods with different sample qualities Solution: - Weight samples by quality metrics - Separate analysis by drilling method - Apply method-specific composite strategies - Include quality indicators in estimation\n\n\nChallenge 3: Sparse Drilling Patterns\nIssue: Irregular hole spacing affecting continuity analysis Solution: - Use directional continuity analysis - Apply sparse data geostatistical methods - Consider data augmentation techniques - Implement uncertainty quantification\n\n\nChallenge 4: Multi-Element Correlation\nIssue: Complex relationships between multiple elements Solution: - Apply multivariate geostatistical methods - Use independent component analysis - Implement co-kriging strategies - Consider geological controls on correlation"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#integration-with-resource-estimation",
+    "href": "posts/Drillhole Data Preprocessing/index.html#integration-with-resource-estimation",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "Integration with Resource Estimation",
+    "text": "Integration with Resource Estimation\nProper preprocessing directly improves:\nEstimation Accuracy: - Reduced bias from poor data quality - Improved spatial continuity modeling - Better geological domain representation - Enhanced outlier treatment\nModel Reliability: - Consistent data support across estimation domain - Appropriate statistical distributions for kriging - Preserved geological relationships - Quantified uncertainty parameters\nPractical Applications: - Grade control model accuracy - Long-term mine planning reliability - Resource classification confidence - Economic evaluation precision"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#quality-assurance-checklist",
+    "href": "posts/Drillhole Data Preprocessing/index.html#quality-assurance-checklist",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "Quality Assurance Checklist",
+    "text": "Quality Assurance Checklist\nBefore proceeding to resource estimation, ensure:\n\nData Quality: All critical data issues resolved\nGeological Consistency: Domain boundaries geologically reasonable\nStatistical Validity: Distributions appropriate for chosen methods\nSpatial Continuity: Preserved through preprocessing steps\nDocumentation: All processing steps recorded and justified\nValidation: Independent check of processing results"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#advanced-features-in-geodataviz-pro",
+    "href": "posts/Drillhole Data Preprocessing/index.html#advanced-features-in-geodataviz-pro",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "Advanced Features in GeoDataViz Pro",
+    "text": "Advanced Features in GeoDataViz Pro\nThe upcoming Pro version will include:\nAutomated Preprocessing Workflows: - AI-driven domain boundary optimization - Automated composite length selection - Intelligent outlier detection - Adaptive transformation selection\nAdvanced Analytics: - Machine learning domain recognition - Uncertainty quantification tools - Batch processing capabilities - Integration with estimation software"
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#conclusion",
+    "href": "posts/Drillhole Data Preprocessing/index.html#conclusion",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "Conclusion",
+    "text": "Conclusion\nEffective drillhole data preprocessing is fundamental to reliable resource estimation. GeoDataViz provides comprehensive tools to transform raw geological data into estimation-ready datasets while preserving geological relationships and quantifying uncertainty.\nThe investment in thorough preprocessing pays significant dividends in improved resource model accuracy, reduced estimation bias, and enhanced confidence in mining decisions."
+  },
+  {
+    "objectID": "posts/Drillhole Data Preprocessing/index.html#next-steps",
+    "href": "posts/Drillhole Data Preprocessing/index.html#next-steps",
+    "title": "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz",
+    "section": "Next Steps",
+    "text": "Next Steps\nIn our upcoming posts, we’ll explore:\n\n“Variogram Modeling with GeoDataViz” - Advanced spatial continuity analysis\n“Resource Estimation Workflows” - From preprocessing to final models\n“Uncertainty Quantification Techniques” - Managing estimation risk\n\n\nQuestions about preprocessing workflows or need specific guidance for your project? Connect with me on LinkedIn or contribute to GeoDataViz development."
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html",
+    "href": "posts/Welcome to Orebit/index.html",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "",
+    "text": "Hello and welcome to the Orebit technical blog! I’m Ghozian Islam Karami, and I’m excited to share this journey with you as we explore the intersection of traditional geological expertise and modern data science techniques."
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#welcome-to-a-new-chapter-in-geological-data-analysis",
+    "href": "posts/Welcome to Orebit/index.html#welcome-to-a-new-chapter-in-geological-data-analysis",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "",
+    "text": "Hello and welcome to the Orebit technical blog! I’m Ghozian Islam Karami, and I’m excited to share this journey with you as we explore the intersection of traditional geological expertise and modern data science techniques."
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#who-am-i",
+    "href": "posts/Welcome to Orebit/index.html#who-am-i",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "Who Am I?",
+    "text": "Who Am I?\nI’m a Senior Geologist and Geospatial Specialist with over a decade of experience in the mining industry, particularly in offshore tin exploration and resource evaluation. As a Certified Competent Person (CP) and advocate for open-source solutions, I believe in the transformative power of combining geological wisdom with cutting-edge data analysis tools.\nMy journey has taken me from traditional geological fieldwork to developing sophisticated data analysis workflows using R, Python, and modern visualization techniques. This blog is where I share these experiences, insights, and tools with the broader geological community."
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#what-youll-find-here",
+    "href": "posts/Welcome to Orebit/index.html#what-youll-find-here",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "What You’ll Find Here",
+    "text": "What You’ll Find Here\nThis blog focuses on practical applications of data science in geology, with particular emphasis on:\n\n🔍 Exploratory Data Analysis (EDA)\n\nAdvanced techniques for understanding geological datasets\nStatistical approaches to data validation and quality control\nVisualization strategies for complex geological relationships\n\n\n\n📊 Geostatistics and Resource Modeling\n\nModern approaches to variogram modeling and kriging\nIntegration of machine learning with traditional geostatistics\nUncertainty quantification in resource estimation\n\n\n\n🛠️ Open-Source Tool Development\n\nDeep dives into GeoDataViz development and features\nR packages for geological applications\nWorkflow automation and best practices\n\n\n\n💡 Industry Applications\n\nCase studies from real mining projects\nBest practice guides for geological workflows\nIntegration of proprietary and open-source software"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#the-open-source-mission",
+    "href": "posts/Welcome to Orebit/index.html#the-open-source-mission",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "The Open-Source Mission",
+    "text": "The Open-Source Mission\nOne of my core beliefs is that geological analysis tools should be accessible to everyone. The mining industry has long relied on expensive proprietary software, creating barriers for smaller companies, consultants, and researchers in developing countries.\nThrough projects like GeoDataViz, I’m working to democratize access to advanced geological analysis capabilities. This isn’t about replacing established tools, but rather providing alternatives and pushing the industry toward more transparent, reproducible workflows."
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#why-this-blog-matters",
+    "href": "posts/Welcome to Orebit/index.html#why-this-blog-matters",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "Why This Blog Matters",
+    "text": "Why This Blog Matters\nThe geological community often works in silos, with valuable knowledge trapped in proprietary systems or internal company workflows. This blog aims to:\n\nShare Knowledge Openly: Make advanced geological techniques accessible to all\nBridge Communities: Connect traditional geologists with data scientists\nPromote Best Practices: Establish standards for reproducible geological analysis\nFoster Innovation: Encourage development of new analytical approaches"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#what-makes-this-different",
+    "href": "posts/Welcome to Orebit/index.html#what-makes-this-different",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "What Makes This Different",
+    "text": "What Makes This Different\nUnlike purely academic resources or vendor-specific tutorials, this blog focuses on practical, real-world applications. Every post is grounded in actual mining industry experience and tested workflows.\nYou’ll find: - Working code examples that you can adapt for your projects - Step-by-step tutorials with real geological datasets - Critical evaluations of different analytical approaches - Honest discussions of limitations and challenges"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#the-geodataviz-story",
+    "href": "posts/Welcome to Orebit/index.html#the-geodataviz-story",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "The GeoDataViz Story",
+    "text": "The GeoDataViz Story\nCentral to this blog is GeoDataViz, my open-source R Shiny application for geological data analysis. Born from frustration with expensive, inflexible commercial tools, GeoDataViz represents a vision of:\n\nTransparent workflows where every step is visible and modifiable\nModern visualization using the latest web technologies\nIntegration capabilities that work with existing industry standards\nCommunity-driven development guided by user needs\n\n\nCurrent Capabilities\n\nComprehensive drillhole data visualization\nAdvanced statistical analysis and validation\nInteractive 3D geological modeling\nAutomated report generation\n\n\n\nFuture Vision\nThe upcoming Pro version will include: - Advanced resource estimation modules - Pit optimization tools - Machine learning integration - Enterprise-grade deployment options"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#who-should-read-this-blog",
+    "href": "posts/Welcome to Orebit/index.html#who-should-read-this-blog",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "Who Should Read This Blog",
+    "text": "Who Should Read This Blog\nThis content is designed for:\n\nGeologists looking to modernize their analytical workflows\nData scientists entering the mining industry\nMining engineers seeking better data integration\nStudents learning geological data analysis\nConsultants needing cost-effective analysis tools\nResearchers working on geological applications"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#getting-involved",
+    "href": "posts/Welcome to Orebit/index.html#getting-involved",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "Getting Involved",
+    "text": "Getting Involved\nThis is meant to be a community effort. I encourage you to:\n\n📝 Share Your Experiences\n\nComment on posts with your own insights\nSuggest topics you’d like to see covered\nShare alternative approaches and solutions\n\n\n\n🔧 Contribute to Development\n\nTry out GeoDataViz and provide feedback\nContribute code or documentation improvements\nReport bugs or suggest new features\n\n\n\n🌐 Spread the Word\n\nShare posts that you find valuable\nConnect with me on LinkedIn\nFollow the project on GitHub"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#whats-coming-next",
+    "href": "posts/Welcome to Orebit/index.html#whats-coming-next",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "What’s Coming Next",
+    "text": "What’s Coming Next\nOver the coming weeks and months, expect detailed posts covering:\n\n“Exploratory Data Analysis with GeoDataViz” - A comprehensive guide to understanding your geological data\n“Pre-Processing Drillhole Data for Resource Estimation” - Advanced techniques for data preparation\n“Variogram Modeling in Practice” - Beyond textbook examples to real-world applications\n“Integration Workflows” - Connecting open-source and proprietary tools\n“Machine Learning Applications in Geology” - Practical AI applications for geological problems"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#a-personal-note",
+    "href": "posts/Welcome to Orebit/index.html#a-personal-note",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "A Personal Note",
+    "text": "A Personal Note\nStarting this blog represents more than just sharing technical knowledge—it’s about building a community that values transparency, accessibility, and innovation in geological analysis. The mining industry faces unprecedented challenges, from declining ore grades to increased environmental scrutiny. Meeting these challenges requires not just better technology, but better ways of sharing knowledge and collaborating.\nI believe that open-source approaches, combined with traditional geological expertise, offer a path forward that benefits everyone—from individual consultants to major mining companies, from developed nations to emerging economies."
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#stay-connected",
+    "href": "posts/Welcome to Orebit/index.html#stay-connected",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "Stay Connected",
+    "text": "Stay Connected\nThis journey is just beginning, and I’d love to have you along for the ride. Here’s how to stay connected:\n\nSubscribe to updates through your preferred RSS reader\nFollow on LinkedIn for industry insights and networking\nStar the GitHub repository to track GeoDataViz development\nJoin the conversation in the comments section of each post"
+  },
+  {
+    "objectID": "posts/Welcome to Orebit/index.html#final-thoughts",
+    "href": "posts/Welcome to Orebit/index.html#final-thoughts",
+    "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
+    "section": "Final Thoughts",
+    "text": "Final Thoughts\nThe intersection of geology and data science is rich with possibilities. Traditional geological knowledge provides the foundation, while modern analytical techniques offer new ways to extract insights from complex datasets.\nTogether, we can build tools and workflows that make geological analysis more accessible, more accurate, and more valuable for decision-making in the mining industry.\nThank you for joining me on this journey. I look forward to sharing insights, learning from your experiences, and building something meaningful together.\n\nReady to dive in? Check out our first technical post: “Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide” or explore the GeoDataViz live demo."
   }
 ]

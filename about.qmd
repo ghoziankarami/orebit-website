@@ -1,15 +1,25 @@
 ---
-title: "Tentang Saya"
+title: "About Me"
 ---
 
-Saya **Ghozian Islam Karami**, seorang Senior Geologist & Geospatial Specialist dengan pengalaman lebih dari satu dekade di industri pertambangan, khususnya eksplorasi timah lepas pantai.
+I am **Ghozian Islam Karami**, a Senior Geologist & Geospatial Specialist with over a decade of experience in the mining industry, particularly in offshore tin exploration and resource evaluation.
 
-Saya memegang gelar **MS dalam Geological Sciences** dari King Fahd University of Petroleum and Minerals (KFUPM) dan Sarjana Geologi dari Universitas Padjadjaran. Sebagai **Certified BNSP Competent Person (CP)**, saya memiliki wewenang untuk mengevaluasi dan menandatangani dokumen estimasi cadangan mineral.
+I hold a **Master of Science in Geological Sciences** from King Fahd University of Petroleum and Minerals (KFUPM) and a Bachelor's degree in Geology from Universitas Padjadjaran. As a **Certified BNSP Competent Person (CP)**, I am authorized to evaluate and sign off on mineral resource estimation documents.
 
-**Keahlian Teknis:**
+**Technical Expertise:**
 
--   **Software Propietary:** Micromine, Net-Promine, SGEMS
--   **Open-Source Advocate:** Pengguna aktif R untuk alur kerja geologi (`tidyverse`, `sf`, `tmap`, `gstat`)
--   **Spesialisasi:** Geostatistik, GIS, pemodelan sumber daya, dan pengembangan SOP QA/QC.
+-   **Proprietary Software:** Micromine, Net-Promine, SGEMS
+-   **Open-Source Advocate:** Active R user for geological workflows (`tidyverse`, `sf`, `tmap`, `gstat`)
+-   **Specializations:** Geostatistics, GIS, resource modeling, and QA/QC SOP development.
 
-Saya bersemangat dalam memadukan fondasi ilmu geologi dengan kekuatan analisis data modern untuk memecahkan masalah di industri sumber daya mineral.
+I am passionate about bridging traditional geological foundations with the power of modern data analysis to solve complex problems in the mineral resources industry.
+
+**Professional Certifications:**
+
+- **Competent Person (CP)** - BNSP Certified for Resource Estimation
+- **Senior Geologist** - Indonesian Geologist Association (PERHAPI)
+- **Geostatistics & Resource Modeling** - Various international certifications
+
+**Current Focus:**
+
+My current work involves developing open-source geological tools, particularly **GeoDataViz**, to democratize access to advanced geological analysis capabilities. I believe in the power of open-source solutions to transform how geoscientists approach data analysis and visualization.

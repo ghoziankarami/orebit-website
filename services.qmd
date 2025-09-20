@@ -1,19 +1,31 @@
 ---
-title: "Layanan Konsultansi"
+title: "Consulting Services"
 ---
 
-Sebagai seorang praktisi industri dan *Certified Competent Person (CP)*, saya menyediakan layanan konsultansi yang berfokus pada integritas data, efisiensi, dan solusi modern.
+As a practicing industry professional and **Certified Competent Person (CP)**, I provide consulting services focused on data integrity, efficiency, and modern solutions.
 
-Layanan utama yang ditawarkan meliputi:
+My core services include:
 
-* **Estimasi Cadangan dan Sumber Daya Mineral**
-    * Evaluasi dan pelaporan sesuai standar KCMI/JORC. Sebagai CP, saya dapat menandatangani dokumen evaluasi cadangan.
+* **Mineral Resource and Reserve Estimation**
+    * Evaluation and reporting according to KCMI/JORC standards. As a CP, I can sign off on reserve evaluation documents.
 
-* **Geostatistik Terapan dan AI**
-    * Analisis data eksplorasi, pemodelan variogram, dan aplikasi *machine learning* untuk augmentasi data geologi.
+* **Applied Geostatistics and AI**
+    * Exploration data analysis, variogram modeling, and machine learning applications for geological data augmentation.
 
 * **Geospatial & Environmental Monitoring**
-    * Analisis spasial menggunakan GIS, pengolahan data UAV, dan pemantauan lingkungan untuk operasi tambang.
+    * Spatial analysis using GIS, UAV data processing, and environmental monitoring for mining operations.
 
-* **Pengembangan SOP dan Pelatihan**
-    * Pembuatan *Standard Operating Procedures* (SOP), *flowchart*, dan modul pelatihan untuk *grade control* dan QA/QC.
+* **SOP Development and Training**
+    * Development of Standard Operating Procedures (SOPs), flowcharts, and training modules for grade control and QA/QC processes.
+
+* **Digital Transformation**
+    * Implementation of modern data workflows, dashboard development, and integration of open-source tools in geological workflows.
+
+**Service Approach:**
+
+I combine traditional geological expertise with modern data science techniques to deliver practical, efficient solutions. My approach emphasizes:
+
+- **Open-Source Integration:** Leveraging powerful R packages and open-source tools alongside proprietary software
+- **Data Quality Focus:** Ensuring robust QA/QC procedures throughout the workflow
+- **Practical Solutions:** Delivering actionable insights that drive business decisions
+- **Knowledge Transfer:** Training teams to maintain and expand upon implemented solutions
