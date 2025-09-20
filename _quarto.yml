@@ -8,6 +8,7 @@ website:
   
   navbar:
     logo: Logo_banner.png
+    title: false
     left:
       - href: index.qmd
         text: Home
@@ -25,15 +26,14 @@ website:
       - icon: github
         href: https://github.com/ghoziankarami
       - icon: search
-        href: "#" # Placeholder for future search feature
+        href: "#" 
             
   page-footer:
     left: "&copy; 2025, Ghozian Islam Karami. All rights reserved."
 
-  
-        
 format:
   html:
     theme: theme.scss
+    # DAFTARKAN KEDUA FILE CSS DI SINI
     css: styles.css
     toc: true

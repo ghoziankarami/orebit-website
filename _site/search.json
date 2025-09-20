@@ -114,16 +114,37 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": " GeoDataViz: Elevate Your Geological Workflow",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
     "section": "",
-    "text": "An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.\n  \n    \n       View on GitHub\n    \n    \n       Live Demo"
+    "text": "An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform."
+  },
+  {
+    "objectID": "index.html#core-features",
+    "href": "index.html#core-features",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
+    "section": "Core Features",
+    "text": "Core Features\n\n\n\n Statistical Analysis\nPerform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools.\n\n\n\n 3D Visualization\nCreate interactive 3D plots and geological models to visualize your exploration data dynamically.\n\n\n\n Data Validation\nComprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow."
+  },
+  {
+    "objectID": "index.html#project-roadmap",
+    "href": "index.html#project-roadmap",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
+    "section": "Project Roadmap",
+    "text": "Project Roadmap\nGeoDataViz is available as a full-featured local version and a live web demo. I’m now focused on future development for a Pro version.\n\n\n\nOpen Source Version (Current)\n\nComplete drillhole visualization\nStatistical analysis tools\nInteractive 3D plotting\nData validation & QA/QC\n\n\n\n\nAdvanced Features (Pro Version)\n\nAutomated reporting system\nResource estimation modules\nPit optimization tools\nAdvanced geostatistics"
+  },
+  {
+    "objectID": "index.html#application-showcase",
+    "href": "index.html#application-showcase",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
+    "section": "Application Showcase",
+    "text": "Application Showcase\nSee how GeoDataViz transforms raw geological data into actionable insights.\n\n\n Statistical Plots: Comprehensive EDA tools for geological data.\n\n 3D Visualization: Interactive drillhole and geological modeling."
   },
   {
     "objectID": "index.html#about-this-project",
     "href": "index.html#about-this-project",
-    "title": " GeoDataViz: Elevate Your Geological Workflow",
+    "title": "GeoDataViz: Elevate Your Geological Workflow",
     "section": "About This Project",
-    "text": "About This Project\nGeoDataViz emerged from a vision to promote open-source solutions in the geological community. This project is part of my advocacy for making powerful geological tools accessible to everyone. By integrating popular R packages, GeoDataViz aims to become the go-to workbench for geoscientists worldwide.\n\n\n\n Follow on LinkedIn\nStay updated with the latest developments and geological insights. My Profile\n\n\n Contribute on GitHub\nJoin the community, report issues, or contribute to development. Repository"
+    "text": "About This Project\nGeoDataViz emerged from a vision to promote open-source solutions in the geological community. This project is part of my advocacy for making powerful geological tools accessible to everyone. By integrating popular R packages, GeoDataViz aims to become the go-to workbench for geoscientists worldwide.\n\n\n\n Follow on LinkedIn\nStay updated with the latest developments and geological insights.\nMy Profile\n\n\n\n Contribute on GitHub\nJoin the community, report issues, or contribute to development.\nRepository"
   },
   {
     "objectID": "posts/Drillhole Data Preprocessing/index.html",
@@ -333,6 +354,6 @@
     "href": "posts/Welcome to Orebit/index.html#final-thoughts",
     "title": "Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science",
     "section": "Final Thoughts",
-    "text": "Final Thoughts\nThe intersection of geology and data science is rich with possibilities. Traditional geological knowledge provides the foundation, while modern analytical techniques offer new ways to extract insights from complex datasets.\nTogether, we can build tools and workflows that make geological analysis more accessible, more accurate, and more valuable for decision-making in the mining industry.\nThank you for joining me on this journey. I look forward to sharing insights, learning from your experiences, and building something meaningful together.\n\nReady to dive in? Check out our first technical post: “Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide” or explore the GeoDataViz live demo."
+    "text": "Final Thoughts\nThe intersection of geology and data science is rich with possibilities. Traditional geological knowledge provides the foundation, while modern analytical techniques offer new ways to extract insights from complex datasets.\nTogether, we can build tools and workflows that make geological analysis more accessible, more accurate, and more valuable for decision-making in the mining industry.\nThank you for joining me on this journey. I look forward to sharing insights, learning from your experiences, and building something meaningful together.\n\nReady to dive in? explore the GeoDataViz live demo."
   }
 ]

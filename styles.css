@@ -21,15 +21,26 @@ body {
 
 /* 3. Navbar & Header */
 .navbar-brand img {
-  max-height: 55px; /* << NAIKKAN UKURAN LOGO DARI 40px MENJADI 55px */
+  max-height: 55px;
   width: auto;
   margin-right: 10px;
 }
 .navbar {
   border-bottom: 1px solid #dee2e6;
-  padding-top: 0.5rem;    /* << TAMBAHKAN PADDING ATAS */
-  padding-bottom: 0.5rem; /* << TAMBAHKAN PADDING BAWAH */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
+
+/* Aturan baru untuk mengubah warna ikon menu (hamburger) di mobile */
+.navbar-toggler {
+  border-color: transparent !important; /* Menghilangkan border di sekitar tombol */
+}
+
+.navbar-toggler-icon {
+  /* Mengganti ikon default (putih/abu-abu) dengan SVG baru yang warnanya biru tua (#2E3A45) */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232E3A45' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
 
 /* 4. Tipografi & Elemen Konten */
 h1, h2 {
@@ -150,7 +161,7 @@ pre {
   overflow-y: auto;
 }
 
-/* Konten utama */  
+/* Konten utama */
 .page-layout-full.page-sidebar .content {
   grid-area: content;
   min-width: 0;
@@ -181,11 +192,11 @@ pre {
 @media (max-width: 992px) {
   .page-layout-full.page-sidebar .page-columns {
     grid-template-columns: 220px 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "sidebar content"
       "margin content";
   }
-  
+
   .page-layout-full.page-sidebar .margin-sidebar {
     grid-area: margin;
     position: static;
@@ -199,20 +210,20 @@ pre {
 @media (max-width: 768px) {
   .page-layout-full.page-sidebar .page-columns {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "content"
       "margin"
       "sidebar";
     gap: 1rem;
   }
-  
+
   .page-layout-full.page-sidebar .sidebar,
   .page-layout-full.page-sidebar .margin-sidebar {
     position: static;
     height: auto;
     max-height: none;
   }
-  
+
   .sidebar-container {
     min-height: auto;
   }
@@ -269,6 +280,11 @@ pre {
   font-size: 1.1em;
   font-weight: 400;
   margin-left: 0.5em;
+}
+
+/* Paksa sembunyikan placeholder judul yang kosong untuk menghilangkan spasi sisa */
+.navbar-title {
+  display: none !important;
 }
 
 /* Social icons in footer */

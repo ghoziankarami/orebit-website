@@ -153,4 +153,4 @@ Thank you for joining me on this journey. I look forward to sharing insights, le
 
 ---
 
-*Ready to dive in? Check out our first technical post: ["Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide"](../eda-geodataviz-guide/index.qmd) or explore the [GeoDataViz live demo](https://geodataviz.shinyapps.io/geodataviz/).*
+*Ready to dive in? explore the [GeoDataViz live demo](https://geodataviz.shinyapps.io/geodataviz/).*

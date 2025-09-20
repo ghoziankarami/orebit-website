@@ -1,127 +1,98 @@
 ---
+title: "GeoDataViz: Elevate Your Geological Workflow"
 toc: false
-format:
-  html:
-    css: [styles.css, custom-landing.css]
-    theme: theme.scss
-about:
-  id: homepage-about
-  template: broadside
-  image: "Logo.png"
 ---
 
-```{=html}
-<div class="hero-section">
-  <h1><i class="fab fa-r-project"></i> GeoDataViz: Elevate Your Geological Workflow</h1>
-  <p>An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.</p>
-  <div class="hero-buttons">
-    <a href="https://github.com/ghoziankarami/geodataviz" class="cta-button primary" target="_blank">
-      <i class="fab fa-github"></i> View on GitHub
-    </a>
-    <a href="https://geodataviz.shinyapps.io/geodataviz/" class="cta-button secondary" target="_blank">
-      <i class="fas fa-external-link-alt"></i> Live Demo
-    </a>
-  </div>
+An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.
+
+<div style="margin-top: 20px; margin-bottom: 40px; text-align: center;">
+<a href="https://github.com/ghoziankarami/geodataviz" class="btn btn-primary" role="button" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+<a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-secondary" role="button" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
 </div>
 
-<section id="features" class="feature-section">
-  <div class="container">
-    <h2 class="section-title">Core Features</h2>
-    <div class="feature-grid">
-      <div class="feature-item">
-        <div class="feature-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3>Statistical Analysis</h3>
-        <p>Perform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">
-          <i class="fas fa-cube"></i>
-        </div>
-        <h3>3D Visualization</h3>
-        <p>Create interactive 3D plots and geological models to visualize your exploration data dynamically.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">
-          <i class="fas fa-check-circle"></i>
-        </div>
-        <h3>Data Validation</h3>
-        <p>Comprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow.</p>
-      </div>
-    </div>
-  </div>
-</section>
+---
 
-<section id="roadmap" class="roadmap-section">
-  <div class="container">
-    <h2 class="section-title">Project Roadmap</h2>
-    <p class="section-subtitle">GeoDataViz is available as a full-featured local version and a live web demo. I'm now focused on future development for a Pro version.</p>
-    <div class="roadmap-grid">
-      <div class="roadmap-item current">
-        <div class="roadmap-badge">Current</div>
-        <h4>Open Source Version</h4>
-        <ul>
-          <li>Complete drillhole visualization</li>
-          <li>Statistical analysis tools</li>
-          <li>Interactive 3D plotting</li>
-          <li>Data validation & QA/QC</li>
-        </ul>
-      </div>
-      <div class="roadmap-item future">
-        <div class="roadmap-badge">Pro Version</div>
-        <h4>Advanced Features</h4>
-        <ul>
-          <li>Automated reporting system</li>
-          <li>Resource estimation modules</li>
-          <li>Pit optimization tools</li>
-          <li>Advanced geostatistics</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+## Core Features
 
-<section id="gallery" class="gallery-section">
-  <div class="container">
-    <h2 class="section-title">Application Showcase</h2>
-    <p class="section-subtitle">See how GeoDataViz transforms raw geological data into actionable insights.</p>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="images/plot-contoh.png" class="img-fluid" alt="Geological plot example">
-        <div class="gallery-caption">
-          <h4>Statistical Plots</h4>
-          <p>Comprehensive EDA tools for geological data</p>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/map-contoh.png" class="img-fluid" alt="Geological map example">
-        <div class="gallery-caption">
-          <h4>3D Visualization</h4>
-          <p>Interactive drillhole and geological modeling</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-```
+::: {.columns}
+::: {.column width="33%"}
+### <i class="fas fa-chart-line"></i> Statistical Analysis
+
+Perform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools.
+:::
+::: {.column width="33%"}
+### <i class="fas fa-cube"></i> 3D Visualization
+
+Create interactive 3D plots and geological models to visualize your exploration data dynamically.
+:::
+::: {.column width="33%"}
+### <i class="fas fa-check-circle"></i> Data Validation
+
+Comprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow.
+:::
+:::
+
+---
+
+## Project Roadmap
+
+GeoDataViz is available as a full-featured local version and a live web demo. I'm now focused on future development for a Pro version.
+
+::: {.columns}
+::: {.column width="50%"}
+#### Open Source Version (Current)
+
+* Complete drillhole visualization
+* Statistical analysis tools
+* Interactive 3D plotting
+* Data validation & QA/QC
+:::
+::: {.column width="50%"}
+#### Advanced Features (Pro Version)
+
+* Automated reporting system
+* Resource estimation modules
+* Pit optimization tools
+* Advanced geostatistics
+:::
+:::
+
+---
+
+## Application Showcase
+
+See how GeoDataViz transforms raw geological data into actionable insights.
+
+::: {.columns}
+::: {.column width="50%"}
+![Statistical Plots](images/plot-contoh.png)
+**Statistical Plots:** Comprehensive EDA tools for geological data.
+:::
+::: {.column width="50%"}
+![3D Visualization](images/map-contoh.png)
+**3D Visualization:** Interactive drillhole and geological modeling.
+:::
+:::
+
+---
 
 ## About This Project
 
 GeoDataViz emerged from a vision to promote **open-source solutions** in the geological community. This project is part of my advocacy for making powerful geological tools accessible to everyone. By integrating popular R packages, GeoDataViz aims to become the go-to *workbench* for geoscientists worldwide.
 
-::: {.connect-section}
-::: {.connect-grid}
-::: {.connect-item}
+::: {.columns}
+::: {.column width="50%"}
 ### <i class="fab fa-linkedin"></i> Follow on LinkedIn
+
 Stay updated with the latest developments and geological insights.
+
 [My Profile](https://www.linkedin.com/in/ghoziankarami/){.btn .btn-primary target="_blank"}
 :::
-
-::: {.connect-item}
+::: {.column width="50%"}
 ### <i class="fab fa-github"></i> Contribute on GitHub
+
 Join the community, report issues, or contribute to development.
+
 [Repository](https://github.com/ghoziankarami/geodataviz){.btn .btn-primary target="_blank"}
-:::
 :::
 :::
