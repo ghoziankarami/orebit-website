@@ -1,200 +1,62 @@
-/*-- Orebit.id Modern CSS - Responsive & Performance Optimized --*/
+/*-- Orebit.id Clean Mobile Implementation --*/
 
-/* 1. MODERN CSS RESETS & BASE */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+/* BASE STYLES */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Account for fixed navbar */
 }
 
 body {
-  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeReadability;
 }
 
-/* 2. LAYOUT CONTAINERS */
+/* NAVBAR - REMOVE ALL CONFLICTING OVERRIDES */
+.navbar {
+  /* Let theme.scss handle all navbar styling */
+}
+
+/* CRITICAL: Remove all previous mobile navbar overrides that conflict */
+/* This ensures theme.scss has full control */
+
+/* MOBILE-SPECIFIC FIXES - Only Essential Overrides */
+@media (max-width: 991.98px) {
+  /* Ensure proper navbar structure on mobile */
+  .navbar {
+    flex-wrap: wrap !important;
+  }
+  
+  /* Force navbar collapse to behave correctly */
+  .navbar-collapse {
+    flex-basis: 100% !important;
+    flex-grow: 1 !important;
+  }
+  
+  /* Ensure toggler has proper Bootstrap classes */
+  .navbar-toggler {
+    display: block !important;
+  }
+  
+  /* Remove any custom hamburger animations that interfere */
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* CONTENT LAYOUT */
 .main-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Content spacing */
 .content {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-/* 3. NAVBAR ENHANCEMENTS - Mobile Visibility Fix */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1030;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Enhanced hamburger menu visibility */
-.navbar-toggler {
-  position: relative;
-  background: rgba(30, 108, 184, 0.1) !important;
-  border: 2px solid #1E6CB8 !important;
-  border-radius: 6px !important;
-  padding: 8px 10px !important;
-  transition: all 0.3s ease !important;
-}
-
-.navbar-toggler:hover {
-  background: rgba(30, 108, 184, 0.2) !important;
-  border-color: #1548a0 !important;
-  transform: scale(1.05);
-}
-
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 3px rgba(30, 108, 184, 0.25) !important;
-  outline: none !important;
-}
-
-/* Custom hamburger icon with better visibility */
-.navbar-toggler-icon {
-  background: none !important;
-  position: relative;
-  width: 22px !important;
-  height: 22px !important;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after,
-.navbar-toggler-icon {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 3px;
-  background: #1E6CB8;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.navbar-toggler-icon::before {
-  top: -7px;
-}
-
-.navbar-toggler-icon::after {
-  bottom: -7px;
-}
-
-/* Animated hamburger to X */
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  background: transparent;
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-  transform: rotate(-45deg);
-  bottom: 0;
-}
-
-/* Search icon enhancement */
-.navbar-nav .nav-link[href="#"] {
-  position: relative;
-  background: rgba(30, 108, 184, 0.1);
-  border-radius: 6px;
-  margin: 0 0.25rem;
-  padding: 0.5rem !important;
-  transition: all 0.3s ease;
-}
-
-.navbar-nav .nav-link[href="#"]:hover {
-  background: rgba(30, 108, 184, 0.2);
-  transform: scale(1.05);
-}
-
-.navbar-nav .nav-link[href="#"] > .bi::before {
-  color: #1E6CB8 !important;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Navbar scroll effect */
-.navbar.scrolled {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* Logo responsive sizing - Enhanced for mobile */
-.navbar-brand {
-  position: relative;
-}
-
-.navbar-brand img {
-  max-height: 50px;
-  width: auto;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
-
-/* Mobile-specific navbar layout - Fix overlap */
-@media (max-width: 991px) {
-  .navbar {
-    padding: 0.75rem 1rem;
-    position: relative;
-  }
-  
-  .navbar-brand {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    margin: 0 !important;
-    z-index: 999; /* Ensure logo stays behind navbar collapse */
-  }
-  
-  .navbar-brand img {
-    max-height: 60px !important; /* Lebih besar di mobile */
-  }
-  
-  .navbar-toggler {
-    position: relative;
-    z-index: 1001;
-    margin-left: 0;
-  }
-  
-  .navbar-nav {
-    margin-right: 0;
-  }
-  
-  /* Fix navbar collapse positioning */
-  .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #F5F1E8;
-    border-top: 1px solid rgba(46, 58, 69, 0.1);
-    z-index: 1000;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Ensure navbar items don't overlap with centered logo */
-  .navbar-nav .nav-item:last-child {
-    margin-right: 0;
-  }
-}
-
-/* 4. MODERN GRID SYSTEM */
+/* MODERN GRID COMPONENTS */
 .grid {
   display: grid;
   gap: 2rem;
@@ -208,17 +70,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* 5. CARD COMPONENTS */
+/* FEATURE CARDS */
 .feature-card {
   background: white;
   border-radius: 0.75rem;
   padding: 2rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   border: 1px solid #f3f4f6;
   position: relative;
   overflow: hidden;
@@ -238,30 +96,17 @@ body {
 
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card:hover::before {
   transform: scaleX(1);
 }
 
-.feature-card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #2E3A45;
-}
-
-.feature-card p {
-  margin-bottom: 0;
-  color: #6B7280;
-  line-height: 1.6;
-}
-
-/* 6. BLOG LAYOUT - ADVANCED 3-COLUMN */
+/* BLOG LAYOUT */
 .page-layout-full.has-sidebar {
   display: grid;
-  grid-template-areas: 
-    "sidebar content margin";
+  grid-template-areas: "sidebar content margin";
   grid-template-columns: 280px 1fr 250px;
   gap: 2rem;
   max-width: 1400px;
@@ -276,14 +121,11 @@ body {
   height: fit-content;
   max-height: calc(100vh - 120px);
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #D1D5DB #F9FAFB;
 }
 
 .page-layout-full.has-sidebar .content {
   grid-area: content;
-  min-width: 0; /* Prevent grid blowout */
-  max-width: none;
+  min-width: 0;
 }
 
 .page-layout-full.has-sidebar .margin-sidebar {
@@ -293,11 +135,63 @@ body {
   height: fit-content;
   max-height: calc(100vh - 120px);
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #D1D5DB #F9FAFB;
 }
 
-/* 7. SIDEBAR STYLING */
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1200px) {
+  .page-layout-full.has-sidebar {
+    grid-template-columns: 250px 1fr 200px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .page-layout-full.has-sidebar {
+    grid-template-areas: "content content" "sidebar margin";
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .page-layout-full.has-sidebar .sidebar,
+  .page-layout-full.has-sidebar .margin-sidebar {
+    position: static;
+    max-height: none;
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-layout-full.has-sidebar {
+    grid-template-areas: "content" "sidebar" "margin";
+    grid-template-columns: 1fr;
+  }
+  
+  .grid,
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .main-container {
+    padding: 0 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-container {
+    padding: 0 0.5rem;
+  }
+  
+  .content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* SIDEBAR COMPONENTS */
 .sidebar-container {
   background: #FAFBFC;
   border-radius: 0.75rem;
@@ -313,150 +207,9 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-.sidebar-item {
-  border-bottom: 1px solid #F3F4F6;
-}
-
-.sidebar-item:last-child {
-  border-bottom: none;
-}
-
-.sidebar-item-text {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: #4B5563;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-  border-left: 3px solid transparent;
-}
-
-.sidebar-item-text:hover,
-.sidebar-item.active .sidebar-item-text {
-  background: rgba(30, 108, 184, 0.05);
-  color: #1E6CB8;
-  border-left-color: #1E6CB8;
-  transform: translateX(4px);
-}
-
-/* 8. MARGIN SIDEBAR (TOC & CATEGORIES) */
-.margin-sidebar {
-  font-size: 0.85rem;
-}
-
-.margin-sidebar h3 {
-  color: #2E3A45;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #E5E7EB;
-}
-
-.margin-sidebar .toc-item {
-  margin-bottom: 0.25rem;
-}
-
-.margin-sidebar .toc-item a {
-  color: #6B7280;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
-  display: block;
-  transition: all 0.2s ease;
-}
-
-.margin-sidebar .toc-item a:hover {
-  background: rgba(30, 108, 184, 0.1);
-  color: #1E6CB8;
-}
-
-/* 9. RESPONSIVE BREAKPOINTS */
-/* Tablet Large */
-@media (max-width: 1200px) {
-  .page-layout-full.has-sidebar {
-    grid-template-columns: 250px 1fr 200px;
-    gap: 1.5rem;
-  }
-  
-  .main-container {
-    padding: 0 0.75rem;
-  }
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-  .page-layout-full.has-sidebar {
-    grid-template-areas:
-      "content content"
-      "sidebar margin";
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  
-  .page-layout-full.has-sidebar .sidebar,
-  .page-layout-full.has-sidebar .margin-sidebar {
-    position: static;
-    max-height: none;
-  }
-  
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-  
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile Large */
-@media (max-width: 768px) {
-  .page-layout-full.has-sidebar {
-    grid-template-areas:
-      "content"
-      "sidebar"
-      "margin";
-    grid-template-columns: 1fr;
-  }
-  
-  .grid,
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .feature-card {
-    padding: 1.5rem;
-  }
-  
-  .main-container {
-    padding: 0 0.5rem;
-  }
-  
-  .content {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-  .feature-card {
-    padding: 1rem;
-  }
-  
-  .navbar-nav .nav-link {
-    padding: 0.75rem 1rem;
-    text-align: center;
-  }
-}
-
-/* 10. BLOG SPECIFIC COMPONENTS */
+/* BLOG SPECIFIC */
 .blog-intro {
   background: linear-gradient(135deg, #F8FAFC 0%, #EDF2F7 100%);
   border: 1px solid #E2E8F0;
@@ -465,69 +218,13 @@ body {
   margin-bottom: 2rem;
 }
 
-.post-card {
-  background: white;
-  border: 1px solid #E5E7EB;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.post-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.post-meta {
-  color: #6B7280;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-}
-
-.category-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #1E6CB8, #4A9EE7);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-decoration: none;
-  margin-right: 0.5rem;
-  margin-bottom: 0.25rem;
-  transition: all 0.2s ease;
-}
-
-.category-badge:hover {
-  transform: scale(1.05);
-  color: white;
-  text-decoration: none;
-}
-
-/* 11. PERFORMANCE OPTIMIZATIONS */
+/* PERFORMANCE OPTIMIZATIONS */
 img {
   max-width: 100%;
   height: auto;
-  loading: lazy;
 }
 
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* 12. PRINT STYLES */
+/* PRINT STYLES */
 @media print {
   .navbar,
   .page-footer,
@@ -536,71 +233,29 @@ img {
     display: none !important;
   }
   
-  .main-container {
-    max-width: none;
-    padding: 0;
-  }
-  
   body {
     font-size: 12pt;
     line-height: 1.4;
   }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
   
-  h1, h2, h3, h4, h5, h6 {
-    break-after: avoid;
+  html {
+    scroll-behavior: auto;
   }
 }
 
-/* 13. ACCESSIBILITY ENHANCEMENTS */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* High contrast mode support */
+/* HIGH CONTRAST MODE */
 @media (prefers-contrast: high) {
   .feature-card {
     border: 2px solid #000;
   }
-  
-  .btn {
-    border: 2px solid currentColor;
-  }
-}
-
-/* 14. LOADING & ERROR STATES */
-.loading {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #f3f3f3;
-  border-top: 2px solid #1E6CB8;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.error-message {
-  background: #FEE2E2;
-  border: 1px solid #FECACA;
-  color: #B91C1C;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-}
-
-/* 15. DARK MODE PREPARATION */
-@media (prefers-color-scheme: dark) {
-  /* Reserved for future dark mode implementation */
 }

@@ -1,228 +1,190 @@
-/*-- Orebit.id Modern Theme - Extracted from Logo Colors --*/
+/*-- Orebit.id Complete Mobile Fix --*/
 
 /*-- scss:defaults --*/
 
-// 1. Color Palette dari Logo Banner
-$orebit-dark: #2E3A45;        // Warna teks "Orebit" (dark teal)
-$orebit-blue: #1E6CB8;        // Warna biru dari logo dan ".id"  
-$orebit-light-blue: #4A9EE7;  // Biru terang dari pixel elements
-$orebit-accent: #7FB3E0;      // Biru pastel untuk highlights
-$orebit-cream: #F5F1E8;       // Background cream dari logo
-$orebit-gray: #6C757D;        // Gray untuk secondary text
+// Color Palette dari Logo Banner
+$orebit-dark: #2E3A45;
+$orebit-blue: #1E6CB8;
+$orebit-light-blue: #4A9EE7;
+$orebit-accent: #7FB3E0;
+$orebit-cream: #F5F1E8;
+$orebit-gray: #6C757D;
 
-// 2. Bootstrap Variable Overrides
-$primary:       $orebit-blue;
-$secondary:     $orebit-accent;
-$dark:          $orebit-dark;
-$light:         $orebit-cream;
-
-// Background & Text
-$body-bg:       #ffffff;
-$body-color:    $orebit-dark;
-$text-muted:    $orebit-gray;
-
-// Links
-$link-color:                $orebit-blue;
-$link-hover-color:          $orebit-light-blue;
-$link-decoration:           none;
+// Bootstrap Variable Overrides
+$primary: $orebit-blue;
+$secondary: $orebit-accent;
+$dark: $orebit-dark;
+$light: $orebit-cream;
+$body-bg: #ffffff;
+$body-color: $orebit-dark;
+$link-color: $orebit-blue;
 
 // Navbar colors
-$navbar-light-bg:           $orebit-cream;
-$navbar-light-color:        $orebit-dark;
-$navbar-light-hover-color:  $orebit-blue;
-$navbar-light-active-color: $orebit-blue;
-$navbar-light-brand-color:  $orebit-dark;
+$navbar-light-bg: $orebit-cream;
+$navbar-light-color: $orebit-dark;
 
 // Typography
-$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-monospace:  'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-
-$headings-color:       $orebit-dark;
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$headings-color: $orebit-dark;
 $headings-font-weight: 600;
-$headings-line-height: 1.3;
-
-// Component variables
-$border-color:         #E5E7EB;
-$border-radius:        0.5rem;
-$box-shadow:           0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-$box-shadow-lg:        0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
-// Card variables
-$card-border-color:    $border-color;
-$card-box-shadow:      $box-shadow;
-$card-border-radius:   $border-radius;
+$border-radius: 0.5rem;
 
 /*-- scss:rules --*/
 
-// Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-// 1. NAVBAR STYLING - Logo Color Based
+// NAVBAR COMPLETE MOBILE FIX
 .navbar {
   background: linear-gradient(135deg, $orebit-cream 0%, lighten($orebit-cream, 2%) 100%);
   border-bottom: 1px solid rgba($orebit-dark, 0.1);
-  backdrop-filter: blur(10px);
   padding: 0.75rem 0;
-  transition: all 0.3s ease;
   
-  .navbar-brand {
-    margin-right: auto;
-    margin-left: auto;
+  // MOBILE NAVBAR LAYOUT FIX
+  @media (max-width: 991.98px) {
+    position: relative;
     
-    @media (max-width: 991px) {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 50%;
-      transform: translate(-50%, -50%);
+    // Logo centering for mobile
+    .navbar-brand {
+      position: absolute !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      z-index: 999;
+      
+      img {
+        max-height: 55px !important;
+      }
     }
     
-    img {
-      max-height: 45px;
-      width: auto;
-      transition: transform 0.3s ease;
+    // Hamburger positioning
+    .navbar-toggler {
+      position: relative;
+      z-index: 1001;
+      order: 1;
+      margin-left: 0;
+    }
+    
+    // Right items positioning  
+    .navbar-nav {
+      order: 3;
+      margin-left: auto;
+    }
+    
+    // CRITICAL: Navbar collapse positioning
+    .navbar-collapse {
+      position: absolute !important;
+      top: 100% !important;
+      left: 0 !important;
+      right: 0 !important;
+      background: $orebit-cream !important;
+      border-top: 1px solid rgba($orebit-dark, 0.1) !important;
+      z-index: 998 !important; // Below logo
+      padding: 1rem !important;
+      margin-top: 0.25rem !important;
+      border-radius: 0 0 12px 12px !important;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
       
-      @media (max-width: 991px) {
-        max-height: 55px; // Lebih besar di mobile
-      }
+      // Override any conflicting styles
+      width: 100% !important;
+      display: none !important;
       
-      &:hover {
-        transform: scale(1.05);
+      &.show {
+        display: block !important;
       }
     }
   }
   
+  // Desktop navbar
+  @media (min-width: 992px) {
+    .navbar-brand img {
+      max-height: 45px;
+    }
+  }
+  
+  // HAMBURGER ICON FIX - Force Three Lines Default
+  .navbar-toggler {
+    border: none !important;
+    background: transparent !important;
+    padding: 0.375rem 0.5rem;
+    
+    &:focus {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+    
+    &:hover {
+      background: rgba($orebit-blue, 0.1) !important;
+    }
+    
+    // CRITICAL: Force correct hamburger states
+    .navbar-toggler-icon {
+      width: 24px;
+      height: 24px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 0.3s ease;
+      
+      // Default state: THREE LINES (when collapsed)
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+    
+    // When menu is CLOSED (collapsed) - THREE LINES
+    &.collapsed .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+    
+    // When menu is OPEN (not collapsed) - X
+    &:not(.collapsed) .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M6 6l18 18M6 24l18-18'/%3e%3c/svg%3e") !important;
+    }
+  }
+  
+  // NAVBAR LINKS STYLING
   .navbar-nav {
     .nav-link {
       color: $orebit-dark !important;
       font-weight: 500;
-      font-size: 0.95rem;
       padding: 0.5rem 1rem;
       margin: 0 0.25rem;
       border-radius: $border-radius;
       transition: all 0.3s ease;
-      position: relative;
       
       &:hover, &:focus {
         color: $orebit-blue !important;
         background-color: rgba($orebit-blue, 0.08);
-        transform: translateY(-1px);
       }
       
       &.active {
         color: $orebit-blue !important;
         background-color: rgba($orebit-blue, 0.12);
-        
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: -8px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 20px;
-          height: 2px;
-          background: $orebit-blue;
-          border-radius: 1px;
-        }
       }
     }
     
-    // Social icons styling - semua icon biru, style default
+    // ALL ICONS - Consistent Blue Styling
     .nav-link > .bi {
       color: $orebit-blue !important;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-      font-weight: 600;
+      font-size: 1.2rem !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
     }
     
     .nav-link:hover > .bi {
       color: $orebit-light-blue !important;
-      transform: scale(1.1);
-    }
-  }
-  
-  // Mobile hamburger - Fix default state dan overlap
-  .navbar-toggler {
-    border: none !important;
-    padding: 0.5rem 0.625rem;
-    background: transparent;
-    border-radius: $border-radius;
-    
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
-    
-    &:hover {
-      background: rgba($orebit-blue, 0.1);
-    }
-    
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-      width: 24px;
-      height: 24px;
-      transition: all 0.3s ease;
-    }
-    
-    // Default state: show three lines (collapsed)
-    &.collapsed .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    }
-    
-    // Show X only when NOT collapsed (menu open)
-    &:not(.collapsed) .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M6 6l18 18M6 24l18-18'/%3e%3c/svg%3e") !important;
-    }
-    
-    // Remove active state borders
-    &.active,
-    &:active {
-      background: rgba($orebit-blue, 0.15);
-      border: none !important;
+      transform: scale(1.05);
     }
   }
 }
 
-// Scrolled navbar effect
-.navbar.scrolled {
-  background: rgba(245, 241, 232, 0.95);
-  box-shadow: $box-shadow;
-}
-
-// 2. TYPOGRAPHY IMPROVEMENTS
+// GENERAL IMPROVEMENTS
 body {
   line-height: 1.6;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-  
-  &:first-child {
-    margin-top: 0;
-  }
 }
 
 h1, h2 {
   border-bottom: 2px solid rgba($orebit-blue, 0.2);
   padding-bottom: 0.5em;
-}
-
-// 3. MODERN COMPONENTS
-.btn {
-  font-weight: 500;
-  padding: 0.625rem 1.25rem;
-  border-radius: $border-radius;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: $box-shadow-lg;
-  }
 }
 
 .btn-primary {
@@ -231,139 +193,6 @@ h1, h2 {
   
   &:hover {
     background: linear-gradient(135deg, darken($orebit-blue, 5%) 0%, $orebit-blue 100%);
-  }
-}
-
-.btn-secondary {
-  background: $orebit-accent;
-  border: none;
-  color: white;
-  
-  &:hover {
-    background: darken($orebit-accent, 10%);
-    color: white;
-  }
-}
-
-// 4. CARDS & CONTENT BLOCKS
-.card {
-  border: 1px solid $border-color;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  
-  &:hover {
     transform: translateY(-2px);
-    box-shadow: $box-shadow-lg;
-  }
-}
-
-blockquote {
-  border-left: 4px solid $orebit-blue;
-  background: rgba($orebit-blue, 0.05);
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 0 $border-radius $border-radius 0;
-  
-  p:last-child {
-    margin-bottom: 0;
-  }
-}
-
-// 5. CODE BLOCKS
-pre, code {
-  font-family: $font-family-monospace;
-  border-radius: $border-radius;
-}
-
-pre {
-  background: #1e1e1e;
-  color: #ffffff;
-  padding: 1.5rem;
-  overflow-x: auto;
-  border: none;
-  
-  code {
-    background: transparent;
-    color: inherit;
-    border: none;
-    padding: 0;
-  }
-}
-
-code {
-  background: rgba($orebit-blue, 0.1);
-  color: $orebit-blue;
-  padding: 0.2rem 0.4rem;
-  font-size: 0.9em;
-}
-
-// 6. RESPONSIVE TABLE
-.table {
-  border-radius: $border-radius;
-  overflow: hidden;
-  box-shadow: $box-shadow;
-  
-  th {
-    background: $orebit-blue;
-    color: white;
-    font-weight: 600;
-    border: none;
-  }
-}
-
-// 7. FOOTER
-.page-footer {
-  background: linear-gradient(135deg, $orebit-dark 0%, lighten($orebit-dark, 10%) 100%);
-  color: white;
-  padding: 2rem 0;
-  margin-top: 3rem;
-  
-  a {
-    color: $orebit-accent;
-    
-    &:hover {
-      color: $orebit-light-blue;
-    }
-  }
-}
-
-// 8. MODERN ANIMATIONS
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-// 9. ACCESSIBILITY IMPROVEMENTS
-:focus {
-  outline: 2px solid $orebit-blue;
-  outline-offset: 2px;
-}
-
-// Skip to content link
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: $orebit-blue;
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  border-radius: $border-radius;
-  z-index: 1000;
-  
-  &:focus {
-    top: 6px;
   }
 }
