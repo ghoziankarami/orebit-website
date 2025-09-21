@@ -42,7 +42,6 @@ website:
       - icon: search
         href: "#"
         aria-label: "Search"
-        id: "search-toggle"
             
   page-footer:
     left: |

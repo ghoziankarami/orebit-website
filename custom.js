@@ -181,8 +181,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Enhanced search functionality
-        const searchToggle = document.querySelector('#search-toggle');
+        // Enhanced search functionality - remove custom ID
+        const searchToggle = document.querySelector('a[href="#"]:has(.bi-search)');
         if (searchToggle) {
             searchToggle.addEventListener('click', function(e) {
                 e.preventDefault();
