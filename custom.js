@@ -147,12 +147,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 7. ENHANCED MOBILE MENU
-    // =======================
+    // 7. ENHANCED MOBILE MENU - Fixed Visibility Issues
+    // =================================================
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
     
     if (navbarToggler && navbarCollapse) {
+        // Enhanced hamburger menu functionality
+        navbarToggler.addEventListener('click', function() {
+            // Add active class for styling
+            this.classList.toggle('active');
+            
+            // Ensure proper ARIA attributes
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+        });
+        
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
@@ -170,6 +180,125 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+        
+        // Enhanced search functionality
+        const searchToggle = document.querySelector('#search-toggle');
+        if (searchToggle) {
+            searchToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Toggle search modal or dropdown
+                toggleSearchModal();
+            });
+        }
+    }
+    
+    // Search modal functionality
+    function toggleSearchModal() {
+        // Create search modal if it doesn't exist
+        let searchModal = document.querySelector('#search-modal');
+        
+        if (!searchModal) {
+            searchModal = document.createElement('div');
+            searchModal.id = 'search-modal';
+            searchModal.innerHTML = `
+                <div class="search-modal-overlay">
+                    <div class="search-modal-content">
+                        <div class="search-modal-header">
+                            <h3>Search Orebit.id</h3>
+                            <button class="search-modal-close" aria-label="Close search">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="search-modal-body">
+                            <input type="text" class="search-input" placeholder="Search posts, topics, or content..." autocomplete="off">
+                            <div class="search-results"></div>
+                        </div>
+                        <div class="search-modal-footer">
+                            <small>Press ESC to close</small>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(searchModal);
+            
+            // Add event listeners for search modal
+            const closeBtn = searchModal.querySelector('.search-modal-close');
+            const overlay = searchModal.querySelector('.search-modal-overlay');
+            const searchInput = searchModal.querySelector('.search-input');
+            
+            closeBtn.addEventListener('click', () => hideSearchModal());
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) hideSearchModal();
+            });
+            
+            // Search input functionality
+            searchInput.addEventListener('input', debounce(function(e) {
+                performAdvancedSearch(e.target.value);
+            }, 300));
+        }
+        
+        // Show modal
+        searchModal.style.display = 'block';
+        searchModal.classList.add('show');
+        searchModal.querySelector('.search-input').focus();
+    }
+    
+    function hideSearchModal() {
+        const searchModal = document.querySelector('#search-modal');
+        if (searchModal) {
+            searchModal.classList.remove('show');
+            setTimeout(() => {
+                searchModal.style.display = 'none';
+            }, 300);
+        }
+    }
+    
+    function performAdvancedSearch(query) {
+        const searchResults = document.querySelector('.search-results');
+        if (!searchResults) return;
+        
+        if (query.length < 2) {
+            searchResults.innerHTML = '';
+            return;
+        }
+        
+        // Show loading
+        searchResults.innerHTML = '<div class="search-loading"><div class="loading-spinner"></div> Searching...</div>';
+        
+        // Simulate search (replace with actual search implementation)
+        setTimeout(() => {
+            const mockResults = [
+                { title: 'Introduction to Geostatistics in R', url: '/posts/geostatistics-intro', type: 'Blog Post' },
+                { title: 'GeoDataViz User Guide', url: '/portfolio#geodataviz', type: 'Project' },
+                { title: 'About Ghozian Islam Karami', url: '/about', type: 'Page' }
+            ].filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase())
+            );
+            
+            if (mockResults.length > 0) {
+                searchResults.innerHTML = mockResults.map(result => `
+                    <div class="search-result-item">
+                        <h4><a href="${result.url}">${result.title}</a></h4>
+                        <span class="search-result-type">${result.type}</span>
+                    </div>
+                `).join('');
+            } else {
+                searchResults.innerHTML = '<div class="search-no-results">No results found for "' + query + '"</div>';
+            }
+        }, 500);
+    }
+    
+    // Debounce function for search
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
     }
     
     // 8. PERFORMANCE MONITORING
@@ -374,7 +503,313 @@ window.orebitUtils = orebitUtils;
 // 14. CSS-IN-JS STYLES FOR DYNAMIC COMPONENTS
 // ===========================================
 const dynamicStyles = `
-/* Copy button styles */
+/* Enhanced Mobile Navbar & Search Styles */
+.navbar-toggler {
+    background: rgba(30, 108, 184, 0.1) !important;
+    border: 2px solid #1E6CB8 !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    width: 44px !important;
+    height: 44px !important;
+}
+
+.navbar-toggler:hover {
+    background: rgba(30, 108, 184, 0.2) !important;
+    border-color: #1548a0 !important;
+    transform: scale(1.05) !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(30, 108, 184, 0.25) !important;
+    outline: none !important;
+}
+
+.navbar-toggler:active,
+.navbar-toggler.active {
+    background: rgba(30, 108, 184, 0.3) !important;
+    transform: scale(0.95) !important;
+}
+
+/* Custom Hamburger Animation */
+.navbar-toggler-icon {
+    background: none !important;
+    position: relative !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: block !important;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 24px !important;
+    height: 3px !important;
+    background: #1E6CB8 !important;
+    border-radius: 2px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    left: 0 !important;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px !important;
+}
+
+.navbar-toggler-icon::after {
+    bottom: -8px !important;
+}
+
+.navbar-toggler-icon {
+    background: #1E6CB8 !important;
+    height: 3px !important;
+    border-radius: 2px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Animated state when menu is open */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent !important;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg) !important;
+    top: 0 !important;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg) !important;
+    bottom: 0 !important;
+}
+
+/* Enhanced Search Icon */
+.navbar-nav .nav-link#search-toggle {
+    background: rgba(30, 108, 184, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    margin: 0 0.25rem !important;
+    transition: all 0.3s ease !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.navbar-nav .nav-link#search-toggle:hover {
+    background: rgba(30, 108, 184, 0.2) !important;
+    transform: scale(1.05) !important;
+}
+
+.navbar-nav .nav-link#search-toggle > .bi {
+    color: #1E6CB8 !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+}
+
+/* Search Modal Styles */
+#search-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#search-modal.show {
+    opacity: 1;
+}
+
+.search-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: 5rem;
+}
+
+.search-modal-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.search-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #E5E7EB;
+    background: linear-gradient(135deg, #1E6CB8, #4A9EE7);
+    color: white;
+}
+
+.search-modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.search-modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.search-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-modal-body {
+    padding: 1.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.search-input:focus {
+    border-color: #1E6CB8;
+    box-shadow: 0 0 0 3px rgba(30, 108, 184, 0.1);
+}
+
+.search-results {
+    min-height: 100px;
+}
+
+.search-result-item {
+    padding: 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: #F8FAFC;
+    border-color: #1E6CB8;
+}
+
+.search-result-item h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.search-result-item a {
+    color: #1E6CB8;
+    text-decoration: none;
+}
+
+.search-result-item a:hover {
+    text-decoration: underline;
+}
+
+.search-result-type {
+    display: inline-block;
+    background: #E5E7EB;
+    color: #6B7280;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.search-loading,
+.search-no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #6B7280;
+}
+
+.search-modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #E5E7EB;
+    background: #F8FAFC;
+    text-align: center;
+}
+
+.search-modal-footer small {
+    color: #6B7280;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Mobile optimizations for search */
+@media (max-width: 768px) {
+    .search-modal-overlay {
+        padding: 1rem;
+        padding-top: 2rem;
+    }
+    
+    .search-modal-content {
+        max-height: 90vh;
+    }
+    
+    .search-modal-header,
+    .search-modal-body {
+        padding: 1rem;
+    }
+    
+    .search-input {
+        font-size: 1rem;
+        padding: 0.875rem;
+    }
+}
+
+/* Force visibility on all screen sizes */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .navbar-nav .nav-link#search-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
 .copy-btn {
     position: absolute;
     top: 0.75rem;

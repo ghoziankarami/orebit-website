@@ -123,22 +123,40 @@ $card-border-radius:   $border-radius;
     }
   }
   
-  // Mobile hamburger
+  // Mobile hamburger - Enhanced visibility
   .navbar-toggler {
-    border: none !important;
-    padding: 0.25rem 0.5rem;
+    border: 2px solid $orebit-blue !important;
+    padding: 0.375rem 0.625rem;
+    background: rgba($orebit-blue, 0.1);
+    border-radius: $border-radius;
     
     &:focus {
-      box-shadow: none;
+      box-shadow: 0 0 0 2px rgba($orebit-blue, 0.25);
+      border-color: $orebit-blue !important;
+    }
+    
+    &:hover {
+      background: rgba($orebit-blue, 0.15);
+      border-color: darken($orebit-blue, 10%) !important;
     }
     
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='#{$orebit-dark}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-      transition: transform 0.3s ease;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      width: 20px;
+      height: 20px;
+      transition: all 0.3s ease;
     }
     
     &:not(.collapsed) .navbar-toggler-icon {
       transform: rotate(90deg);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M6 6l18 18M6 24l18-18'/%3e%3c/svg%3e") !important;
+    }
+    
+    // Active state
+    &.active,
+    &:active {
+      background: rgba($orebit-blue, 0.2);
+      border-color: $orebit-blue !important;
     }
   }
 }

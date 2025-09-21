@@ -39,9 +39,10 @@ website:
       - icon: github
         href: https://github.com/ghoziankarami
         aria-label: "GitHub Profile"
-      - text: "Contact"
-        href: "mailto:ghozian@orebit.id"
-        icon: envelope
+      - icon: search
+        href: "#"
+        aria-label: "Search"
+        id: "search-toggle"
             
   page-footer:
     left: |

@@ -32,12 +32,97 @@ body {
   padding-bottom: 2rem;
 }
 
-/* 3. NAVBAR ENHANCEMENTS */
+/* 3. NAVBAR ENHANCEMENTS - Mobile Visibility Fix */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1030;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced hamburger menu visibility */
+.navbar-toggler {
+  position: relative;
+  background: rgba(30, 108, 184, 0.1) !important;
+  border: 2px solid #1E6CB8 !important;
+  border-radius: 6px !important;
+  padding: 8px 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-toggler:hover {
+  background: rgba(30, 108, 184, 0.2) !important;
+  border-color: #1548a0 !important;
+  transform: scale(1.05);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(30, 108, 184, 0.25) !important;
+  outline: none !important;
+}
+
+/* Custom hamburger icon with better visibility */
+.navbar-toggler-icon {
+  background: none !important;
+  position: relative;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 3px;
+  background: #1E6CB8;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -7px;
+}
+
+.navbar-toggler-icon::after {
+  bottom: -7px;
+}
+
+/* Animated hamburger to X */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* Search icon enhancement */
+.navbar-nav .nav-link[href="#"] {
+  position: relative;
+  background: rgba(30, 108, 184, 0.1);
+  border-radius: 6px;
+  margin: 0 0.25rem;
+  padding: 0.5rem !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link[href="#"]:hover {
+  background: rgba(30, 108, 184, 0.2);
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link[href="#"] > .bi::before {
+  color: #1E6CB8 !important;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 /* Navbar scroll effect */
