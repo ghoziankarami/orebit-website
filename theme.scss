@@ -65,13 +65,30 @@ $card-border-radius:   $border-radius;
   padding: 0.75rem 0;
   transition: all 0.3s ease;
   
-  .navbar-brand img {
-    max-height: 45px;
-    width: auto;
-    transition: transform 0.3s ease;
+  .navbar-brand {
+    margin-right: auto;
+    margin-left: auto;
     
-    &:hover {
-      transform: scale(1.05);
+    @media (max-width: 991px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    img {
+      max-height: 45px;
+      width: auto;
+      transition: transform 0.3s ease;
+      
+      @media (max-width: 991px) {
+        max-height: 55px; // Lebih besar di mobile
+      }
+      
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
   
@@ -110,53 +127,71 @@ $card-border-radius:   $border-radius;
       }
     }
     
-    // Social icons styling  
+    // Social icons styling dengan warna yang jelas
     .nav-link > .bi {
-      color: $orebit-dark !important;
-      font-size: 1.1rem;
+      color: $orebit-blue !important;
+      font-size: 1.2rem;
       transition: all 0.3s ease;
+      font-weight: 600;
     }
     
     .nav-link:hover > .bi {
-      color: $orebit-blue !important;
+      color: $orebit-light-blue !important;
       transform: scale(1.1);
+    }
+    
+    // Search icon khusus - pastikan warna biru
+    .nav-link#search-toggle > .bi {
+      color: $orebit-blue !important;
+      font-size: 1.3rem !important;
+      font-weight: 700 !important;
+    }
+    
+    .nav-link#search-toggle:hover > .bi {
+      color: $orebit-light-blue !important;
     }
   }
   
-  // Mobile hamburger - Enhanced visibility
+  // Mobile hamburger - Simplified without border
   .navbar-toggler {
-    border: 2px solid $orebit-blue !important;
-    padding: 0.375rem 0.625rem;
-    background: rgba($orebit-blue, 0.1);
+    border: none !important;
+    padding: 0.5rem 0.625rem;
+    background: transparent;
     border-radius: $border-radius;
     
     &:focus {
-      box-shadow: 0 0 0 2px rgba($orebit-blue, 0.25);
-      border-color: $orebit-blue !important;
+      box-shadow: none;
+      outline: none;
     }
     
     &:hover {
-      background: rgba($orebit-blue, 0.15);
-      border-color: darken($orebit-blue, 10%) !important;
+      background: rgba($orebit-blue, 0.1);
     }
     
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       transition: all 0.3s ease;
     }
     
-    &:not(.collapsed) .navbar-toggler-icon {
-      transform: rotate(90deg);
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M6 6l18 18M6 24l18-18'/%3e%3c/svg%3e") !important;
+    // Default state: always show three lines
+    &.collapsed .navbar-toggler-icon,
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
     }
     
-    // Active state
+    // Only show X when expanded
+    &:not(.collapsed) .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23#{str-slice(#{$orebit-blue}, 2)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M6 6l18 18M6 24l18-18'/%3e%3c/svg%3e") !important;
+      transform: rotate(180deg);
+    }
+    
+    // Remove active state borders
     &.active,
     &:active {
-      background: rgba($orebit-blue, 0.2);
-      border-color: $orebit-blue !important;
+      background: rgba($orebit-blue, 0.15);
+      border: none !important;
     }
   }
 }

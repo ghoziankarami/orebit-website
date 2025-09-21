@@ -503,84 +503,46 @@ window.orebitUtils = orebitUtils;
 // 14. CSS-IN-JS STYLES FOR DYNAMIC COMPONENTS
 // ===========================================
 const dynamicStyles = `
-/* Enhanced Mobile Navbar & Search Styles */
+/* Enhanced Mobile Navbar & Search Styles - Clean Design */
 .navbar-toggler {
-    background: rgba(30, 108, 184, 0.1) !important;
-    border: 2px solid #1E6CB8 !important;
-    border-radius: 8px !important;
-    padding: 10px !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    position: relative !important;
-    width: 44px !important;
-    height: 44px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 8px !important;
+  transition: all 0.3s ease !important;
 }
 
 .navbar-toggler:hover {
-    background: rgba(30, 108, 184, 0.2) !important;
-    border-color: #1548a0 !important;
-    transform: scale(1.05) !important;
+  background: rgba(30, 108, 184, 0.1) !important;
 }
 
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(30, 108, 184, 0.25) !important;
-    outline: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-.navbar-toggler:active,
-.navbar-toggler.active {
-    background: rgba(30, 108, 184, 0.3) !important;
-    transform: scale(0.95) !important;
-}
-
-/* Custom Hamburger Animation */
-.navbar-toggler-icon {
-    background: none !important;
-    position: relative !important;
-    width: 24px !important;
-    height: 24px !important;
-    display: block !important;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: '' !important;
+/* Mobile logo centering */
+@media (max-width: 991px) {
+  .navbar {
+    position: relative;
+  }
+  
+  .navbar-brand {
     position: absolute !important;
-    width: 24px !important;
-    height: 3px !important;
-    background: #1E6CB8 !important;
-    border-radius: 2px !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    left: 0 !important;
-}
-
-.navbar-toggler-icon::before {
-    top: -8px !important;
-}
-
-.navbar-toggler-icon::after {
-    bottom: -8px !important;
-}
-
-.navbar-toggler-icon {
-    background: #1E6CB8 !important;
-    height: 3px !important;
-    border-radius: 2px !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-/* Animated state when menu is open */
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background: transparent !important;
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    transform: rotate(45deg) !important;
-    top: 0 !important;
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transform: rotate(-45deg) !important;
-    bottom: 0 !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+  
+  .navbar-brand img {
+    max-height: 60px !important;
+  }
+  
+  .navbar-toggler {
+    z-index: 1001;
+    margin-left: 0;
+  }
 }
 
 /* Enhanced Search Icon */
