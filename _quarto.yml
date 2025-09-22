@@ -7,7 +7,7 @@ project:
 
 website:
   title: "Orebit.id - Geology, Digitized"
-  site-url: https://orebit.netlify.app/
+  site-url: https://orebit.id/
   favicon: Logo_favicon.png
   description: "Professional geological consulting, data analysis, and open-source tools by Ghozian Islam Karami"
   
@@ -45,7 +45,7 @@ website:
             
   page-footer:
     left: |
-      © 2025 [Orebit.id](https://orebit.netlify.app) by Ghozian Islam Karami  
+      © 2025 [Orebit.id](https://orebit.id) by Ghozian Islam Karami  
       All rights reserved.
     center: |
       Built with [Quarto](https://quarto.org) & ❤️

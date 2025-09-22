@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Orebit.id Technical Blog</title>
-<link>https://orebit.netlify.app/blog.html</link>
-<atom:link href="https://orebit.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
+<link>https://orebit.id/blog.html</link>
+<atom:link href="https://orebit.id/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Latest posts on geological data analysis and R programming</description>
 <generator>quarto-1.8.21</generator>
 <lastBuildDate>Fri, 19 Sep 2025 17:00:00 GMT</lastBuildDate>
 <item>
   <title>Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz</title>
   <dc:creator>Ghozian Islam Karami</dc:creator>
-  <link>https://orebit.netlify.app/posts/Drillhole Data Preprocessing/</link>
+  <link>https://orebit.id/posts/Drillhole Data Preprocessing/</link>
   <description><![CDATA[ 
 
 
@@ -254,14 +254,14 @@
   <category>Preprocessing</category>
   <category>Resource-Estimation</category>
   <category>Geostatistics</category>
-  <guid>https://orebit.netlify.app/posts/Drillhole Data Preprocessing/</guid>
+  <guid>https://orebit.id/posts/Drillhole Data Preprocessing/</guid>
   <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
-  <media:content url="https://orebit.netlify.app/posts/Drillhole Data Preprocessing/preprocessing-workflow.png" medium="image" type="image/png"/>
+  <media:content url="https://orebit.id/posts/Drillhole Data Preprocessing/preprocessing-workflow.png" medium="image" type="image/png"/>
 </item>
 <item>
   <title>Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide</title>
   <dc:creator>Ghozian Islam Karami</dc:creator>
-  <link>https://orebit.netlify.app/posts/EDA with GeoDataViz/</link>
+  <link>https://orebit.id/posts/EDA with GeoDataViz/</link>
   <description><![CDATA[ 
 
 
@@ -466,14 +466,14 @@
   <category>EDA</category>
   <category>R-Shiny</category>
   <category>Tutorial</category>
-  <guid>https://orebit.netlify.app/posts/EDA with GeoDataViz/</guid>
+  <guid>https://orebit.id/posts/EDA with GeoDataViz/</guid>
   <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
-  <media:content url="https://orebit.netlify.app/posts/EDA with GeoDataViz/eda-workflow.png" medium="image" type="image/png"/>
+  <media:content url="https://orebit.id/posts/EDA with GeoDataViz/eda-workflow.png" medium="image" type="image/png"/>
 </item>
 <item>
   <title>Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science</title>
   <dc:creator>Ghozian Islam Karami</dc:creator>
-  <link>https://orebit.netlify.app/posts/Welcome to Orebit/</link>
+  <link>https://orebit.id/posts/Welcome to Orebit/</link>
   <description><![CDATA[ 
 
 
@@ -651,9 +651,9 @@
   <category>Open-Source</category>
   <category>Geology</category>
   <category>Data-Science</category>
-  <guid>https://orebit.netlify.app/posts/Welcome to Orebit/</guid>
+  <guid>https://orebit.id/posts/Welcome to Orebit/</guid>
   <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
-  <media:content url="https://orebit.netlify.app/posts/Welcome to Orebit/welcome-banner.png" medium="image" type="image/png"/>
+  <media:content url="https://orebit.id/posts/Welcome to Orebit/welcome-banner.png" medium="image" type="image/png"/>
 </item>
 </channel>
 </rss>

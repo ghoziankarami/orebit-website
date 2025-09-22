@@ -1,1 +1,1 @@
-Sitemap: https://orebit.netlify.app/sitemap.xml
+Sitemap: https://orebit.id/sitemap.xml
