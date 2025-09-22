@@ -160,13 +160,13 @@ Deploy previews
 [context.deploy-preview]
 command = ""
 publish = "_site"
+targetPort = 4200
 
 Local development
 [context.dev]
 command = "quarto preview"
 port = 4200
 publish = "_site"
-targetPort = 4200
 
 Forms handling (if you add contact forms)
 [forms]
