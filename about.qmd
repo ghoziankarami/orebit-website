@@ -1,25 +1,57 @@
 ---
-title: "About Me"
+title: "About"
 ---
 
-I am **Ghozian Islam Karami**, a Senior Geologist & Geospatial Specialist with over a decade of experience in the mining industry, particularly in offshore tin exploration and resource evaluation.
+I am **Ghozian Islam Karami**, and this is my story of bridging traditional geological expertise with the transformative power of open-source data science.
 
-I hold a **Master of Science in Geological Sciences** from King Fahd University of Petroleum and Minerals (KFUPM) and a Bachelor's degree in Geology from Universitas Padjadjaran. As a **Certified BNSP Competent Person (CP)**, I am authorized to evaluate and sign off on mineral resource estimation documents.
+## The Practitioner Behind the Vision
 
-**Technical Expertise:**
+With over a decade of hands-on experience in the mining industry—particularly in offshore tin exploration and resource evaluation—I've witnessed firsthand the challenges that geoscientists face when working with complex geological data. As a **Senior Geologist & Geospatial Specialist** and **Certified BNSP Competent Person (CP)**, I've not only evaluated and signed off on mineral resource estimation documents but also lived through the frustrations of expensive, inflexible proprietary software that often creates more barriers than solutions.
 
--   **Proprietary Software:** Micromine, Net-Promine, SGEMS
--   **Open-Source Advocate:** Active R user for geological workflows (`tidyverse`, `sf`, `tmap`, `gstat`)
--   **Specializations:** Geostatistics, GIS, resource modeling, and QA/QC SOP development.
+My academic foundation includes a **Master of Science in Geological Sciences** from King Fahd University of Petroleum and Minerals (KFUPM) and a Bachelor's degree in Geology from Universitas Padjadjaran. But more importantly, my expertise has been forged in the field—from analyzing drillhole data in remote offshore environments to developing quality control protocols that ensure reliable resource estimates.
 
-I am passionate about bridging traditional geological foundations with the power of modern data analysis to solve complex problems in the mineral resources industry.
+## The Open-Source Catalyst
+
+What drives me is a fundamental belief: **every geoscientist should have access to powerful, transparent analytical tools—regardless of budget constraints or geographical location.** Too many talented professionals in smaller companies, consulting practices, or developing regions are held back by software licensing costs that can exceed $50,000 annually.
+
+This conviction led me to become an active advocate for open-source solutions in geology. I've mastered the R ecosystem (`tidyverse`, `sf`, `tmap`, `gstat`) not just as an alternative to proprietary software, but as a superior approach that offers transparency, reproducibility, and unlimited customization potential.
+
+## Technical Expertise That Delivers Results
+
+**Core Competencies:**
+- **Geostatistics & Resource Modeling:** Advanced variogram modeling, kriging techniques, and uncertainty quantification
+- **Data Science Integration:** R programming, statistical analysis, and machine learning applications in geology
+- **Quality Assurance Systems:** SOP development for exploration and grade control workflows
+- **Geospatial Analysis:** GIS integration, spatial interpolation, and 3D geological modeling
 
 **Professional Certifications:**
-
-- **Competent Person (CP)** - BNSP Certified for Resource Estimation
+- **Competent Person (CP)** - BNSP Certified for Resource Estimation (authorized to evaluate and sign off on mineral resource documents)
 - **Senior Geologist** - Indonesian Geologist Association (PERHAPI)
-- **Geostatistics & Resource Modeling** - Various international certifications
+- **Advanced Geostatistics & Resource Modeling** - Multiple international certifications
 
-**Current Focus:**
+**Software Proficiency:**
+- **Traditional Tools:** Micromine, Net-Promine, SGEMS
+- **Open-Source Mastery:** R ecosystem, Python for geological applications, QGIS
+- **Development Platforms:** R Shiny, web application development, database management
 
-My current work involves developing open-source geological tools, particularly **GeoDataViz**, to democratize access to advanced geological analysis capabilities. I believe in the power of open-source solutions to transform how geoscientists approach data analysis and visualization.
+## The Vision in Action
+
+My current focus centers on **GeoDataViz**—an open-source R Shiny application that embodies everything I believe about democratizing geological analysis. This isn't just another software project; it's a proof-of-concept that demonstrates how practitioner-built tools can deliver enterprise-level capabilities while remaining completely accessible and transparent.
+
+GeoDataViz represents the first tangible step toward my larger vision: **establishing open and transparent tools as the standard for every professional to unlock the full potential of their data.**
+
+## Why This Matters
+
+The geological community faces unprecedented challenges—declining ore grades, increased environmental scrutiny, and growing demands for transparency in resource reporting. Meeting these challenges requires not just better technology, but fundamentally different approaches to how we analyze, validate, and communicate our findings.
+
+By providing **practical, practitioner-built workflows and expert guidance**, I'm enabling geoscientists and mining engineers to confidently transform complex geological data into reliable, actionable intelligence. This isn't about replacing established methods—it's about enhancing them with modern data science techniques that any professional can access and modify.
+
+## The Broader Impact
+
+Through this platform, I'm building more than just software—I'm fostering a community where geological knowledge is shared openly, where analytical methods are transparent and reproducible, and where innovation comes from practitioners solving real-world problems.
+
+Every blog post, every line of code, and every tutorial serves the ultimate goal: **catalyzing a data-driven transformation in geoscience** where open-source solutions become the foundation for more accurate, reliable, and accessible geological analysis.
+
+---
+
+*Ready to join this transformation? Explore [GeoDataViz](https://geodataviz.shinyapps.io/geodataviz/), follow my insights on [LinkedIn](https://www.linkedin.com/in/ghoziankarami/), or contribute to the future of geological data science on [GitHub](https://github.com/ghoziankarami/geodataviz).*

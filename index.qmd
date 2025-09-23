@@ -1,173 +1,219 @@
 ---
-title: "GeoDataViz: Elevate Your Geological Workflow"
-subtitle: "Modern geological data analysis and visualization platform"
-description: "An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform."
+title: "Transforming Geological Data Analysis Through Open-Source Innovation"
+subtitle: "Empowering geoscientists with practical, transparent tools for reliable data-driven decisions"
+description: "Professional geological consulting, advanced data analysis workflows, and open-source tools by Ghozian Islam Karami - bridging traditional geology with modern data science."
 toc: false
 page-layout: full
 title-block-banner: false
 ---
 
 ::: {.hero-section}
-# GeoDataViz: Elevate Your Geological Workflow
+# Transforming Geological Data Analysis Through Open-Source Innovation
 
-An open-source R Shiny application designed to streamline geological data visualization, analysis, and validation—all from one powerful platform.
+**Empowering geoscientists and mining engineers with practical, practitioner-built workflows and expert guidance—enabling you to confidently transform complex geological data into reliable, actionable intelligence.**
 
 <div class="hero-buttons">
-<a href="https://github.com/ghoziankarami/geodataviz" class="btn btn-primary" target="_blank" rel="noopener">
-  <i class="fab fa-github"></i> View on GitHub
+<a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary" target="_blank" rel="noopener">
+  <i class="fas fa-play"></i> Experience GeoDataViz
 </a>
-<a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-secondary" target="_blank" rel="noopener">
-  <i class="fas fa-external-link-alt"></i> Live Demo
+<a href="/blog" class="btn btn-secondary">
+  <i class="fas fa-book"></i> Explore The Library
 </a>
 </div>
 :::
 
 ---
 
-## Core Features
+## Our Vision: Catalyzing Industry-Wide Transformation
+
+**"To be the catalyst for a data-driven transformation in geoscience, establishing open and transparent tools as the standard for every professional to unlock the full potential of their data."**
+
+The geological community stands at a critical juncture. While the industry demands increasingly sophisticated analysis to tackle declining ore grades and complex geological environments, powerful analytical tools remain locked behind expensive licenses, creating artificial barriers that divide professionals based on budget rather than expertise.
+
+This divide isn't just limiting individual careers—it's constraining our entire industry's ability to innovate and solve complex geological challenges.
+
+---
+
+## Our Mission: Practical Empowerment Through Expert Guidance
+
+**"To empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence."**
+
+Every feature, every tutorial, and every line of code serves this mission. As a **Certified Competent Person** with over a decade of mining industry experience, I've witnessed firsthand the challenges that geoscientists face when working with complex geological data. This platform bridges that gap through:
+
+- **Practitioner-built solutions** tested in real mining projects
+- **Transparent methodologies** where every analytical step is visible and modifiable
+- **Expert guidance** based on actual resource evaluation experience
+- **Accessible tools** that deliver enterprise-level capabilities without enterprise-level costs
+
+---
+
+## The Complete Geological Data Analysis Ecosystem
+
+### The Library: Your Comprehensive Knowledge Hub
+
+**Deep-dive, professional-grade articles** that serve as permanent references for geological data analysis techniques. Each post is designed to be the definitive guide on its topic:
+
+<div class="featured-posts">
+<div class="post-card">
+#### [Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation](/posts/welcome-post/)
+Discover the vision behind this comprehensive geological data analysis ecosystem and how practitioner-built solutions are transforming the industry.
+</div>
+
+<div class="post-card">
+#### [Mastering Exploratory Data Analysis with GeoDataViz](/posts/eda-geodataviz/)
+The complete professional guide to understanding geological datasets before modeling—covering everything from data validation through preliminary geostatistical analysis.
+</div>
+
+<div class="post-card">
+#### [Pre-Processing Drillhole Data for Resource Estimation](/posts/preprocessing-drillhole-data/)
+Advanced professional techniques for transforming raw geological data into estimation-ready datasets, including compositing strategies and domain optimization.
+</div>
+</div>
+
+### The Workbench: GeoDataViz in Action
+
+<div class="grid grid-2">
+<div class="workbench-description">
+**GeoDataViz** serves as the tangible proof-of-concept that demonstrates open-source solutions can deliver enterprise-level geological analysis capabilities. Built by a practicing geologist for real-world geological challenges, it embodies our core philosophy of transparency, accessibility, and practicality.
+
+**Current Open-Source Capabilities:**
+- Complete drillhole data visualization and analysis
+- Advanced statistical tools with geological context
+- Interactive 3D plotting and cross-sections
+- Comprehensive QA/QC and data validation
+- Export capabilities for reports and presentations
+
+**Coming in GeoDataViz Pro:**
+- Automated resource estimation modules
+- Advanced geostatistical analysis and variogram modeling
+- Machine learning integration for pattern recognition
+- Enterprise deployment options and cloud integration
+</div>
+
+<div class="workbench-demo">
+![Advanced Statistical Dashboard](images/plot-contoh.png){fig-alt="Comprehensive geological data analysis interface" .img-responsive}
+
+**Experience the transformation firsthand** with real geological datasets showcasing the full range of analytical capabilities available to modern geoscientists.
+
+[Try Interactive Demo](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-primary target="_blank" rel="noopener"}
+</div>
+</div>
+
+### The Professional Stage: Industry Leadership
+
+Follow my [LinkedIn profile](https://www.linkedin.com/in/ghoziankarami/) for:
+- **Industry insights** and professional discussions
+- **Real-world case studies** connecting theory with practice
+- **Professional networking** with geological data analysis experts
+- **Career development** guidance for modern geoscientists
+
+### The Visual Classroom: Accessible Learning
+
+Join [@orebit.id](https://instagram.com/orebit.id) for:
+- **Bite-sized tutorials** breaking down complex geological concepts
+- **Visual step-by-step guides** for GeoDataViz features
+- **Student-friendly content** making advanced techniques accessible
+- **Quick reference materials** for daily geological work
+
+---
+
+## Why Open-Source Geological Analysis Matters
+
+**Professional Independence**
+Maintain complete control over your analytical workflows without vendor lock-in or feature limitations imposed by commercial software.
+
+**Scientific Transparency**
+Every analytical step is visible and modifiable, ensuring your work meets the highest standards of scientific rigor and professional accountability.
+
+**Cost-Effective Excellence**
+Access enterprise-level capabilities without the burden of expensive licensing fees that can exclude smaller firms and individual practitioners.
+
+**Community-Driven Innovation**
+Benefit from continuous improvements driven by real user needs rather than corporate development cycles, with direct input from practicing geoscientists.
+
+**Future-Proof Technology**
+Open-source solutions evolve with your needs and integrate seamlessly with emerging technologies and industry standards.
+
+---
+
+## The Technology Behind the Transformation
+
+<div class="tech-showcase">
+<div class="tech-column">
+**Modern R Ecosystem**
+- Shiny framework for responsive web applications
+- tidyverse for efficient data manipulation
+- sf and sp for advanced spatial operations
+- plotly for interactive visualizations
+
+**Geological Specialization**
+- gstat for comprehensive geostatistical analysis
+- Custom functions built from field experience
+- Industry-standard data format integration
+- Advanced spatial interpolation capabilities
+</div>
+
+<div class="tech-column">
+**Performance & Reliability**
+- Optimized rendering for large datasets
+- Efficient memory management
+- Responsive design for field/office use
+- Robust error handling and validation
+
+**Enterprise Integration**
+- Multi-format data import capabilities
+- Export to geological software standards
+- API-ready architecture
+- Extensible framework for customization
+</div>
+</div>
+
+---
+
+## Professional Development Through Advanced Capabilities
+
+**Technical Excellence**
+- Identify and resolve data quality issues that compromise resource estimates
+- Integrate geological knowledge with advanced statistical methods
+- Quantify and manage uncertainty throughout analytical workflows
+- Handle complex geological datasets that challenge standard approaches
+
+**Professional Credibility**
+- Documentation standards meeting international resource reporting requirements
+- Methodology transparency enabling independent technical reviews
+- Integration of geological knowledge with quantitative analysis
+- Ability to explain complex analytical decisions to diverse audiences
+
+**Economic Impact**
+- Prevent costly resource estimation errors through proper data conditioning
+- Optimize geological domain boundaries enhancing estimate accuracy
+- Improve resource classification confidence through appropriate statistical treatment
+- Manage risk through comprehensive uncertainty quantification
+
+---
+
+## Join the Data-Driven Transformation
 
 <div class="grid grid-3">
-<div class="feature-card">
-### <i class="fas fa-chart-line"></i> Statistical Analysis
-
-Perform rapid statistical and geostatistical analysis on drillhole data with built-in validation tools and automated reporting capabilities.
-</div>
-
-<div class="feature-card">
-### <i class="fas fa-cube"></i> 3D Visualization
-
-Create interactive 3D plots and geological models to visualize your exploration data dynamically with real-time manipulation controls.
-</div>
-
-<div class="feature-card">
-### <i class="fas fa-check-circle"></i> Data Validation
-
-Comprehensive QA/QC tools to ensure data quality and accuracy throughout your workflow with automated flagging systems.
-</div>
-</div>
-
----
-
-## Project Roadmap
-
-<div class="grid grid-2">
-<div class="feature-card">
-#### <i class="fab fa-osi"></i> Open Source Version (Current)
-
-* ✅ Complete drillhole visualization
-* ✅ Statistical analysis tools  
-* ✅ Interactive 3D plotting
-* ✅ Data validation & QA/QC
-* ✅ Export capabilities
-* ✅ Cross-platform compatibility
-</div>
-
-<div class="feature-card">
-#### <i class="fas fa-rocket"></i> Advanced Features (Pro Version)
-
-* 🚀 Automated reporting system
-* 🚀 Resource estimation modules
-* 🚀 Pit optimization tools
-* 🚀 Advanced geostatistics
-* 🚀 Machine learning integration
-* 🚀 Cloud deployment options
-</div>
-</div>
-
----
-
-## Application Showcase
-
-<div class="grid grid-2">
-<div class="showcase-item">
-![Statistical Analysis Dashboard](images/plot-contoh.png){fig-alt="Statistical analysis interface showing comprehensive EDA tools" .img-responsive}
-
-**Statistical Analysis Dashboard**  
-Comprehensive exploratory data analysis tools designed specifically for geological datasets with automated statistical reporting.
-</div>
-
-<div class="showcase-item">
-![Interactive 3D Visualization](images/map-contoh.png){fig-alt="3D geological model with interactive controls" .img-responsive}
-
-**Interactive 3D Visualization**  
-Advanced drillhole and geological modeling with real-time manipulation, cross-sections, and dynamic filtering capabilities.
-</div>
-</div>
-
----
-
-## Technical Stack & Integration
-
-<div class="tech-grid">
-<div class="tech-item">
-**R Ecosystem**
-- Shiny for web applications
-- tidyverse for data manipulation
-- sf for spatial operations
-- plotly for interactive plots
-</div>
-
-<div class="tech-item">
-**Geological Packages**
-- gstat for geostatistics
-- sp for spatial analysis
-- rgl for 3D graphics
-- Custom geological functions
-</div>
-
-<div class="tech-item">
-**Performance**
-- Optimized rendering
-- Lazy loading
-- Efficient memory usage
-- Responsive design
-</div>
-
-<div class="tech-item">
-**Integration**
-- Import from multiple formats
-- Export to industry standards
-- API connectivity ready
-- Extensible architecture
-</div>
-</div>
-
----
-
-## About This Project
-
-::: {.about-project}
-GeoDataViz emerged from a vision to promote **open-source solutions** in the geological community. This project represents my commitment to democratizing access to powerful geological analysis tools.
-
-By integrating popular R packages with modern web technologies, GeoDataViz aims to become the go-to *workbench* for geoscientists worldwide. The platform bridges the gap between traditional geological software and modern data science approaches.
-
-**Key Principles:**
-- Open source accessibility
-- Industry-standard compliance  
-- User-centric design
-- Continuous community feedback
-- Performance optimization
-:::
-
----
-
-## Get Involved
-
-<div class="grid grid-2">
 <div class="involvement-card">
-### <i class="fab fa-linkedin"></i> Professional Network
+### Experience the Technology
+See GeoDataViz capabilities with real geological datasets through our interactive demo platform.
 
-Connect with me on LinkedIn for the latest developments, geological insights, and industry discussions.
-
-[Connect on LinkedIn](https://www.linkedin.com/in/ghoziankarami/){.btn .btn-primary target="_blank" rel="noopener"}
+[Try GeoDataViz](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-primary target="_blank" rel="noopener"}
 </div>
 
 <div class="involvement-card">
-### <i class="fab fa-github"></i> Open Source Community
+### Connect Professionally
+Join a growing network of geological professionals embracing open-source solutions for advanced analysis.
 
-Join our growing community on GitHub. Contribute code, report issues, request features, or simply star the repository.
+[LinkedIn Network](https://www.linkedin.com/in/ghoziankarami/){.btn .btn-primary target="_blank" rel="noopener"}
+</div>
 
-[View Repository](https://github.com/ghoziankarami/geodataviz){.btn .btn-primary target="_blank" rel="noopener"}
+<div class="involvement-card">
+### Contribute to Innovation
+Help shape the future of geological data analysis through community-driven development and feedback.
+
+[GitHub Community](https://github.com/ghoziankarami/geodataviz){.btn .btn-primary target="_blank" rel="noopener"}
 </div>
 </div>
 
@@ -176,14 +222,16 @@ Join our growing community on GitHub. Contribute code, report issues, request fe
 ::: {.cta-section}
 ## Ready to Transform Your Geological Workflow?
 
-Experience the power of modern geological data analysis. Try GeoDataViz today and discover how open-source tools can revolutionize your exploration projects.
+**The future of geological data analysis is open, transparent, and accessible to every professional.** Whether you're an individual consultant, part of a small exploration company, or leading analysis teams at major mining operations, our ecosystem provides the capabilities you need to excel in today's demanding geological environment.
+
+Join the growing community of geoscientists who are leveraging practitioner-built tools to deliver more accurate, reliable results while maintaining complete analytical transparency.
 
 <div class="cta-buttons">
 <a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-  <i class="fas fa-play"></i> Try Live Demo
+  <i class="fas fa-rocket"></i> Start Your Transformation
 </a>
-<a href="/services" class="btn btn-secondary btn-lg">
-  <i class="fas fa-handshake"></i> Consulting Services
+<a href="/blog" class="btn btn-secondary btn-lg">
+  <i class="fas fa-book"></i> Explore The Library
 </a>
 </div>
 :::
@@ -206,43 +254,83 @@ Experience the power of modern geological data analysis. Try GeoDataViz today an
   flex-wrap: wrap;
 }
 
-.tech-grid {
+.featured-posts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
 }
 
-.tech-item {
+.post-card {
   background: white;
   padding: 1.5rem;
   border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.tech-item strong {
-  display: block;
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.post-card h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
   color: #1E6CB8;
+  border: none;
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
 }
 
-.showcase-item {
+.post-card h4 a {
+  color: #1E6CB8;
+  text-decoration: none;
+}
+
+.post-card h4 a:hover {
+  color: #4A9EE7;
+}
+
+.workbench-description, .workbench-demo {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.workbench-demo {
   text-align: center;
 }
 
-.showcase-item img {
+.workbench-demo img {
   border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
 
-.about-project {
-  background: linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%);
+.tech-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.tech-column {
+  background: white;
   padding: 2rem;
   border-radius: 0.75rem;
-  border-left: 4px solid #1E6CB8;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tech-column strong {
+  display: block;
+  color: #1E6CB8;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(30, 108, 184, 0.2);
 }
 
 .involvement-card {
@@ -257,6 +345,12 @@ Experience the power of modern geological data analysis. Try GeoDataViz today an
 
 .involvement-card:hover {
   transform: translateY(-2px);
+}
+
+.involvement-card h3 {
+  color: #1E6CB8;
+  margin-bottom: 1rem;
+  border: none;
 }
 
 .cta-section {
@@ -289,6 +383,10 @@ Experience the power of modern geological data analysis. Try GeoDataViz today an
   
   .cta-section {
     padding: 2rem 1rem;
+  }
+  
+  .tech-showcase {
+    grid-template-columns: 1fr;
   }
 }
 </style>

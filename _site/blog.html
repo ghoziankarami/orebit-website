@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Technical insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis">
+<meta name="description" content="Professional-grade technical insights, complete workflows, and expert guidance on geological data analysis, geostatistics, and open-source tools for geoscientists and mining engineers">
 
-<title>Technical Blog – Orebit.id - Geology, Digitized</title>
+<title>The Library – Orebit.id - Geology, Digitized</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,15 +36,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-eb52693c68d8f3a3be811ab34c09ecd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c9d727f6a8a715f4dc96fce94e903c6e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,7 +139,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -157,14 +156,14 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Orebit.id Technical Blog" href="blog.xml" data-external="1"><meta property="og:title" content="Orebit.id - Geology, Digitized">
+<link rel="alternate" type="application/rss+xml" title="The Library - Orebit.id Technical Resources" href="blog.xml" data-external="1"><meta property="og:title" content="Orebit.id - Geology, Digitized">
 <meta property="og:description" content="Professional geological consulting and data analysis services">
 <meta property="og:image" content="https://orebit.id/Logo_banner.png">
 <meta property="og:site_name" content="Orebit.id - Geology, Digitized">
 <meta property="og:image:height" content="428">
 <meta property="og:image:width" content="1335">
-<meta name="twitter:title" content="Technical Blog – Orebit.id - Geology, Digitized">
-<meta name="twitter:description" content="Technical insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis">
+<meta name="twitter:title" content="The Library – Orebit.id - Geology, Digitized">
+<meta name="twitter:description" content="Professional-grade technical insights, complete workflows, and expert guidance on geological data analysis, geostatistics, and open-source tools for geoscientists and mining engineers">
 <meta name="twitter:image" content="https://orebit.id/posts/Drillhole Data Preprocessing/preprocessing-workflow.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -177,8 +176,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Logo_banner.png" alt="" class="navbar-logo light-content">
-    <img src="./Logo_banner.png" alt="" class="navbar-logo dark-content">
+    <img src="./Logo_banner.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Mencari"></div>
@@ -236,37 +234,32 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Kategori</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Semua <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGF0YS1TY2llbmNl">Data-Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RURB">EDA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VvRGF0YVZpeg==">GeoDataViz <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R2VvbG9neQ==">Geology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2Vvc3RhdGlzdGljcw==">Geostatistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3Blbi1Tb3VyY2U=">Open-Source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlcHJvY2Vzc2luZw==">Preprocessing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ui1TaGlueQ==">R-Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzb3VyY2UtRXN0aW1hdGlvbg==">Resource-Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div><div class="quarto-margin-footer"><div class="margin-footer-item">
-<section id="categories" class="level3">
-<h3 data-anchor-id="categories">📂 Categories</h3>
-<p>Explore posts by topic:</p>
-<div class="category-grid">
-
-</div>
-<hr>
-</section>
-<section id="popular-topics" class="level3">
-<h3 data-anchor-id="popular-topics">📊 Popular Topics</h3>
+    <h5 class="quarto-listing-category-title">Kategori</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Semua <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGF0YS1TY2llbmNl">Data-Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RURB">EDA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VvRGF0YVZpeg==">GeoDataViz <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R2VvbG9neQ==">Geology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2Vvc3RhdGlzdGljcw==">Geostatistics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="T3Blbi1Tb3VyY2U=">Open-Source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlcHJvY2Vzc2luZw==">Preprocessing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzb3VyY2UtRXN0aW1hdGlvbg==">Resource-Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div><div class="quarto-margin-footer"><div class="margin-footer-item">
+<section id="categories" class="level2">
+<h2 data-anchor-id="categories">Categories</h2>
+<p>Explore by technical focus:</p>
 <ul>
-<li><a href=".\blog/categories/geostatistics">Geostatistics with R</a></li>
-<li><a href=".\blog/categories/visualization">Data Visualization</a></li>
-<li><a href=".\blog/categories/resources">Mineral Resources</a></li>
-<li><a href=".\blog/categories/shiny">Quarto &amp; R Shiny</a></li>
+<li><a href=".\blog/categories/eda">Exploratory Data Analysis</a></li>
+<li><a href=".\blog/categories/resource-estimation">Resource Estimation</a></li>
+<li><a href=".\blog/categories/geostatistics">Geostatistics</a></li>
+<li><a href=".\blog/categories/geodataviz">GeoDataViz Tutorials</a></li>
+<li><a href=".\blog/categories/open-source">Open-Source Tools</a></li>
+<li><a href=".\blog/categories/workflows">Professional Workflows</a></li>
 </ul>
 <hr>
 </section>
-<section id="quick-links" class="level3">
-<h3 data-anchor-id="quick-links">🔗 Quick Links</h3>
+<section id="quick-access" class="level2">
+<h2 data-anchor-id="quick-access">Quick Access</h2>
 <ul>
 <li><a href=".\blog/index.xml">RSS Feed</a></li>
 <li><a href=".\blog/categories">All Categories</a></li>
-<li><a href=".\blog/archive">Archive</a></li>
+<li><a href="https://github.com/ghoziankarami/geodataviz">GitHub Repository</a></li>
 </ul>
 <hr>
 </section>
-<section id="feedback" class="level3">
-<h3 data-anchor-id="feedback">💬 Feedback</h3>
-<p>Have suggestions for topics? <a href="mailto:ghozian@orebit.id">Contact me</a> or connect on <a href="https://linkedin.com/in/ghoziankarami">LinkedIn</a>.</p>
+<section id="professional-network" class="level2">
+<h2 data-anchor-id="professional-network">Professional Network</h2>
+<p>Connect for industry insights and networking: - <a href="https://linkedin.com/in/ghoziankarami">LinkedIn Profile</a> - <a href="https://instagram.com/orebit.id">Visual Tutorials</a></p>
 </section>
 </div></div></div>
 <!-- main -->
@@ -274,13 +267,13 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Technical Blog</h1>
-<p class="subtitle lead">R Applications in Geology &amp; Geostatistics</p>
+<h1 class="title">The Library</h1>
+<p class="subtitle lead">Comprehensive Geological Data Analysis Resources</p>
 </div>
 
 <div>
   <div class="description">
-    Technical insights, tutorials, and case studies on R applications in geology, geostatistics, and mineral data analysis
+    Professional-grade technical insights, complete workflows, and expert guidance on geological data analysis, geostatistics, and open-source tools for geoscientists and mining engineers
   </div>
 </div>
 
@@ -297,83 +290,166 @@ window.Quarto = {
 </header>
 
 
-<section id="technical-blog" class="level1 blog-hero">
-<h1>Technical Blog</h1>
-<p>Welcome to my technical blog where I share insights, tutorials, and case studies on <strong>R applications in geology</strong>, <strong>geostatistics</strong>, and <strong>mineral data analysis</strong>.</p>
-<p>Whether you’re a geoscientist looking to modernize your workflow or a data analyst exploring geological applications, you’ll find practical examples and real-world solutions here.</p>
-<div class="blog-stats">
-<div class="stat-item">
-<p><strong>50+</strong> <span>Technical Posts</span></p>
-</div>
-<div class="stat-item">
-<p><strong>10K+</strong> <span>Monthly Readers</span></p>
-</div>
-<div class="stat-item">
-<p><strong>8</strong> <span>Core Topics</span></p>
-</div>
+<section id="the-library-where-geological-expertise-meets-data-science-excellence" class="level1 library-hero">
+<h1>The Library: Where Geological Expertise Meets Data Science Excellence</h1>
+<p><strong>Comprehensive, professional-grade resources for geological data analysis.</strong> Each article serves as a definitive reference, providing the depth and practical guidance you need to confidently transform complex geological data into reliable, actionable intelligence.</p>
+<div class="mission-statement">
+<p><strong>“To empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence.”</strong></p>
 </div>
 </section>
 <hr>
-<section id="what-youll-find-here" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-find-here">🎯 What You’ll Find Here</h2>
-<div class="topic-grid">
-<section id="data-analysis" class="level3 topic-card">
-<h3 class="anchored" data-anchor-id="data-analysis">📊 Data Analysis</h3>
-<p>R workflows for geological datasets, statistical modeling, and exploratory data analysis techniques.</p>
+<section id="featured-professional-guides" class="level2">
+<h2 class="anchored" data-anchor-id="featured-professional-guides">Featured Professional Guides</h2>
+<div class="featured-guides">
+<section id="welcome-to-the-library-where-geological-expertise-meets-open-source-innovation" class="level3 guide-card primary">
+<h3 class="anchored" data-anchor-id="welcome-to-the-library-where-geological-expertise-meets-open-source-innovation"><a href=".\posts/welcome-post/">Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation</a></h3>
+<p><strong>The Foundation of Our Mission</strong><br>
+Discover the comprehensive ecosystem designed to democratize advanced geological analysis. Learn how practitioner-built solutions are transforming the industry by establishing open and transparent tools as the standard for every professional.</p>
+<p><em>Categories: Welcome, Open-Source, Data-Science</em></p>
 </section>
-<section id="spatial-analysis" class="level3 topic-card">
-<h3 class="anchored" data-anchor-id="spatial-analysis">🗺️ Spatial Analysis</h3>
-<p>GIS operations, spatial interpolation, and geological mapping using modern R packages.</p>
+<section id="mastering-exploratory-data-analysis-with-geodataviz" class="level3 guide-card">
+<h3 class="anchored" data-anchor-id="mastering-exploratory-data-analysis-with-geodataviz"><a href=".\posts/eda-geodataviz/">Mastering Exploratory Data Analysis with GeoDataViz</a></h3>
+<p><strong>The Complete Professional Guide</strong><br>
+Master comprehensive EDA techniques specifically designed for geological datasets. Learn professional-grade methods for data validation, spatial analysis, and geological insight extraction before resource estimation.</p>
+<p><em>Categories: GeoDataViz, EDA, Geostatistics, Tutorial</em></p>
 </section>
-<section id="visualization" class="level3 topic-card">
-<h3 class="anchored" data-anchor-id="visualization">📈 Visualization</h3>
-<p>Creating compelling charts, maps, and interactive dashboards for geological data presentation.</p>
-</section>
-<section id="tool-development" class="level3 topic-card">
-<h3 class="anchored" data-anchor-id="tool-development">🔧 Tool Development</h3>
-<p>Building R packages, Shiny applications, and custom functions for geological workflows.</p>
-</section>
-<section id="case-studies" class="level3 topic-card">
-<h3 class="anchored" data-anchor-id="case-studies">🏭 Case Studies</h3>
-<p>Real-world applications from mining projects, resource estimation, and exploration programs.</p>
-</section>
-<section id="tutorials" class="level3 topic-card">
-<h3 class="anchored" data-anchor-id="tutorials">🎓 Tutorials</h3>
-<p>Step-by-step guides for implementing geological analysis techniques in R.</p>
+<section id="pre-processing-drillhole-data-for-resource-estimation" class="level3 guide-card">
+<h3 class="anchored" data-anchor-id="pre-processing-drillhole-data-for-resource-estimation"><a href=".\posts/preprocessing-drillhole-data/">Pre-Processing Drillhole Data for Resource Estimation</a></h3>
+<p><strong>Advanced Professional Techniques</strong><br>
+Transform raw geological data into estimation-ready datasets using sophisticated compositing strategies, domain optimization, and data conditioning methods that ensure accurate resource estimation.</p>
+<p><em>Categories: GeoDataViz, Preprocessing, Resource-Estimation, Geostatistics</em></p>
 </section>
 </div>
 <hr>
 </section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">🚀 Getting Started</h2>
-<p>New to R or geological data analysis? Start with these foundational posts:</p>
-<ol type="1">
-<li><strong><a href=".\posts/r-setup-geology">Setting up R for Geological Work</a></strong> - Essential packages and workflows</li>
-<li><strong><a href=".\posts/first-drillhole-analysis">Your First Drillhole Analysis</a></strong> - Basic data loading and visualization<br>
-</li>
-<li><strong><a href=".\posts/geostatistics-intro">Introduction to Geostatistics in R</a></strong> - Variogram modeling basics</li>
-<li><strong><a href=".\posts/geological-mapping">Creating Geological Maps</a></strong> - Spatial visualization techniques</li>
-</ol>
+<section id="the-complete-geological-analysis-ecosystem" class="level2">
+<h2 class="anchored" data-anchor-id="the-complete-geological-analysis-ecosystem">The Complete Geological Analysis Ecosystem</h2>
+<section id="the-library-you-are-here" class="level3">
+<h3 class="anchored" data-anchor-id="the-library-you-are-here">The Library (You Are Here)</h3>
+<p><strong>Comprehensive Technical Resources</strong><br>
+Deep-dive, professional-grade articles that serve as permanent references for geological data analysis techniques. Each post is designed to be the definitive guide on its topic—from basic exploratory data analysis to advanced geostatistical modeling.</p>
+</section>
+<section id="the-workbench" class="level3">
+<h3 class="anchored" data-anchor-id="the-workbench">The Workbench</h3>
+<p><strong>GeoDataViz Interactive Platform</strong><br>
+Experience these concepts in action through our open-source R Shiny application. The entire analytical workflow discussed in Library posts can be performed interactively using our comprehensive geological analysis platform.</p>
+<p><a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary" target="_blank" rel="noopener">Experience GeoDataViz</a></p>
+</section>
+<section id="the-professional-stage" class="level3">
+<h3 class="anchored" data-anchor-id="the-professional-stage">The Professional Stage</h3>
+<p><strong>Industry Leadership &amp; Networking</strong><br>
+Follow <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn insights</a> for professional discussions, real-world case studies, and career development guidance in modern geological data analysis.</p>
+</section>
+<section id="the-visual-classroom" class="level3">
+<h3 class="anchored" data-anchor-id="the-visual-classroom">The Visual Classroom</h3>
+<p><strong>Accessible Learning Materials</strong><br>
+Join <a href="https://instagram.com/orebit.id"><span class="citation" data-cites="orebit.id">@orebit.id</span></a> for bite-sized, visual tutorials that make complex geological concepts accessible through compelling graphics and step-by-step visual guides.</p>
 <hr>
 </section>
-<section id="stay-updated" class="level2">
-<h2 class="anchored" data-anchor-id="stay-updated">📬 Stay Updated</h2>
-<div class="subscribe-section">
-<section id="rss-feed" class="level3 subscribe-card">
-<h3 class="anchored" data-anchor-id="rss-feed">🔔 RSS Feed</h3>
-<p>Subscribe to get notified of new posts automatically in your feed reader.</p>
-<p><a href=".\blog/index.xml" class="btn btn-primary" target="_blank">Subscribe to RSS</a></p>
 </section>
-<section id="linkedin-updates" class="level3 subscribe-card">
-<h3 class="anchored" data-anchor-id="linkedin-updates">💼 LinkedIn Updates</h3>
-<p>Follow me on LinkedIn for post announcements and geological insights.</p>
-<p><a href="https://linkedin.com/in/ghoziankarami" class="btn btn-secondary" target="_blank">Follow on LinkedIn</a></p>
+<section id="professional-development-focus-areas" class="level2">
+<h2 class="anchored" data-anchor-id="professional-development-focus-areas">Professional Development Focus Areas</h2>
+</section>
+<div class="focus-areas">
+<section id="data-analysis-mastery" class="level2 focus-card">
+<h2 class="anchored" data-anchor-id="data-analysis-mastery">Data Analysis Mastery</h2>
+<p>Advanced techniques for understanding geological datasets, identifying data quality issues that compromise estimates, and extracting insights that inform sampling strategies.</p>
+<p><strong>Key Topics:</strong> - Comprehensive exploratory data analysis workflows - Statistical validation and quality control protocols<br>
+- Multi-element correlation and geochemical analysis - Spatial bias identification and correction methods</p>
+</section>
+<section id="geostatistical-excellence" class="level2 focus-card">
+<h2 class="anchored" data-anchor-id="geostatistical-excellence">Geostatistical Excellence</h2>
+<p>Practical applications of variogram modeling, kriging techniques, and uncertainty quantification—moving beyond textbook examples to handle complex spatial relationships in real geological environments.</p>
+<p><strong>Key Topics:</strong> - Advanced variogram modeling and validation - Kriging optimization for complex geological domains - Uncertainty quantification and risk assessment - Multi-element co-estimation strategies</p>
+</section>
+<section id="resource-estimation-workflows" class="level2 focus-card">
+<h2 class="anchored" data-anchor-id="resource-estimation-workflows">Resource Estimation Workflows</h2>
+<p>Complete methodologies from raw drillhole data through final resource models, including domain analysis, data preprocessing, estimation parameter selection, and model validation.</p>
+<p><strong>Key Topics:</strong> - Domain optimization and boundary analysis - Composite length selection and validation - Search parameter optimization strategies - Model validation and uncertainty assessment</p>
+</section>
+<section id="open-source-integration" class="level2 focus-card">
+<h2 class="anchored" data-anchor-id="open-source-integration">Open-Source Integration</h2>
+<p>Practical approaches for integrating open-source tools with existing proprietary software environments, enabling transition to more transparent, cost-effective analytical workflows.</p>
+<p><strong>Key Topics:</strong> - R ecosystem mastery for geological applications - GeoDataViz advanced features and customization - Workflow automation and best practices - Integration strategies with industry software</p>
 </section>
 </div>
 <hr>
+<section id="why-the-library-matters-for-your-professional-development" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-library-matters-for-your-professional-development">Why The Library Matters for Your Professional Development</h2>
+<p><strong>Comprehensive Coverage</strong><br>
+Each article provides complete, professional-grade coverage of its topic—not superficial overviews, but definitive resources that serve as permanent professional references.</p>
+<p><strong>Real-World Application</strong><br>
+Every technique has been tested in actual mining projects by a <strong>Certified Competent Person</strong> with over a decade of resource evaluation experience.</p>
+<p><strong>Transparent Methodology</strong><br>
+Complete visibility into every analytical step with no proprietary black boxes—essential for meeting modern standards of scientific reproducibility.</p>
+<p><strong>Cost-Effective Excellence</strong><br>
+Access to enterprise-level analytical knowledge without expensive training courses or consulting fees.</p>
+<p><strong>Professional Credibility</strong><br>
+Documentation standards and methodological rigor that meet international resource reporting requirements.</p>
+<hr>
+</section>
+<section id="content-strategy-maximizing-your-learning" class="level2">
+<h2 class="anchored" data-anchor-id="content-strategy-maximizing-your-learning">Content Strategy: Maximizing Your Learning</h2>
+<section id="the-content-recycling-approach" class="level3">
+<h3 class="anchored" data-anchor-id="the-content-recycling-approach">The Content Recycling Approach</h3>
+<p>Each comprehensive Library article becomes the foundation for targeted learning across our ecosystem:</p>
+<ul>
+<li><strong>LinkedIn insights</strong> highlighting key professional applications</li>
+<li><strong>Instagram tutorials</strong> breaking techniques into visual, step-by-step guides</li>
+<li><strong>GeoDataViz implementations</strong> providing immediate hands-on experience</li>
+</ul>
+<p>This integrated approach ensures you can access geological expertise tailored to your specific learning style and professional needs.</p>
+</section>
+<section id="recommended-learning-path" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-learning-path">Recommended Learning Path</h3>
+<p><strong>Foundation Level:</strong> 1. <a href=".\posts/welcome-post/">Welcome to The Library</a> - Understanding the ecosystem 2. <a href=".\posts/eda-geodataviz/">Mastering Exploratory Data Analysis</a> - Building analytical foundations</p>
+<p><strong>Professional Application:</strong> 3. <a href=".\posts/preprocessing-drillhole-data/">Pre-Processing Drillhole Data</a> - Data conditioning mastery</p>
+<p><strong>Advanced Specialization:</strong> - Upcoming: Variogram modeling and spatial continuity analysis - Upcoming: Resource estimation workflows and validation - Upcoming: Integration strategies for complex geological environments</p>
+<hr>
+</section>
+</section>
+<section id="join-the-professional-community" class="level2">
+<h2 class="anchored" data-anchor-id="join-the-professional-community">Join the Professional Community</h2>
+<div class="community-grid">
+<section id="technical-discussion" class="level3 community-card">
+<h3 class="anchored" data-anchor-id="technical-discussion">Technical Discussion</h3>
+<p>Engage with comprehensive technical content and contribute to professional discussions about geological data analysis best practices.</p>
+<p><strong>Participate:</strong> Comment on articles, suggest topics, share your own experiences</p>
+</section>
+<section id="professional-networking" class="level3 community-card">
+<h3 class="anchored" data-anchor-id="professional-networking">Professional Networking</h3>
+<p>Connect with geological professionals embracing open-source solutions and advanced analytical methods.</p>
+<p><strong>Connect:</strong> <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn Professional Network</a></p>
+</section>
+<section id="development-contribution" class="level3 community-card">
+<h3 class="anchored" data-anchor-id="development-contribution">Development Contribution</h3>
+<p>Shape the future of geological data analysis tools through community-driven development and feedback.</p>
+<p><strong>Contribute:</strong> <a href="https://github.com/ghoziankarami/geodataviz">GeoDataViz GitHub Repository</a></p>
+</section>
+<section id="visual-learning" class="level3 community-card">
+<h3 class="anchored" data-anchor-id="visual-learning">Visual Learning</h3>
+<p>Access bite-sized, visual tutorials that make complex geological concepts immediately applicable.</p>
+<p><strong>Follow:</strong> <a href="https://instagram.com/orebit.id">Instagram <span class="citation" data-cites="orebit.id">@orebit.id</span></a></p>
+</section>
+</div>
+<hr>
+</section>
+<section id="stay-updated-with-professional-geological-analysis" class="level2 subscribe-section">
+<h2 class="anchored" data-anchor-id="stay-updated-with-professional-geological-analysis">Stay Updated with Professional Geological Analysis</h2>
+<section id="rss-feed" class="level3">
+<h3 class="anchored" data-anchor-id="rss-feed">RSS Feed</h3>
+<p>Subscribe for automatic notifications of new professional resources and comprehensive guides.</p>
+<p><a href=".\blog/index.xml" class="btn btn-primary" target="_blank">Subscribe to Feed</a></p>
+</section>
+<section id="professional-updates" class="level3">
+<h3 class="anchored" data-anchor-id="professional-updates">Professional Updates</h3>
+<p>Follow for industry insights, case studies, and professional development guidance.</p>
+<p><a href="https://linkedin.com/in/ghoziankarami" class="btn btn-secondary" target="_blank">LinkedIn Updates</a></p>
+</section>
+</section>
 <style>
-/* Enhanced Blog Styling */
-.blog-hero {
+/* Enhanced Library Styling */
+.library-hero {
   background: linear-gradient(135deg, #1E6CB8 0%, #4A9EE7 100%);
   color: white;
   padding: 3rem 2rem;
@@ -382,132 +458,178 @@ window.Quarto = {
   text-align: center;
 }
 
-.blog-hero h1 {
+.library-hero h1 {
   border: none;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 
-.blog-stats {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  text-align: center;
+.mission-statement {
   background: rgba(255, 255, 255, 0.1);
-  padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-top: 2rem;
   backdrop-filter: blur(10px);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.stat-item strong {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.stat-item span {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.topic-grid {
+.featured-guides {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
   margin: 2rem 0;
 }
 
-.topic-card {
+.guide-card {
   background: white;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
 
-.topic-card:hover {
+.guide-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
-.topic-card h3 {
+.guide-card.primary {
+  border-left: 4px solid #1E6CB8;
+}
+
+.guide-card h3 {
   margin-top: 0;
   margin-bottom: 1rem;
   color: #1E6CB8;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
 
-.subscribe-section {
+.guide-card h3 a {
+  color: #1E6CB8;
+  text-decoration: none;
+}
+
+.guide-card h3 a:hover {
+  color: #4A9EE7;
+}
+
+.guide-card strong {
+  color: #2E3A45;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.focus-areas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
 }
 
-.subscribe-card {
+.focus-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.focus-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1E6CB8;
+  border: none;
+  font-size: 1.3rem;
+}
+
+.focus-card strong {
+  color: #2E3A45;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.community-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-2px);
+}
+
+.community-card h3 {
+  color: #1E6CB8;
+  margin-bottom: 1rem;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.subscribe-section {
   background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
   padding: 2rem;
   border-radius: 0.75rem;
-  border: 1px solid #e2e8f0;
   text-align: center;
+  margin: 3rem 0;
 }
 
-.subscribe-card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
+.subscribe-section h2 {
   color: #2E3A45;
+  margin-bottom: 2rem;
   border: none;
 }
 
-/* Category grid in sidebar */
-.category-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
+.subscribe-section h3 {
+  color: #1E6CB8;
+  margin-bottom: 1rem;
+  border: none;
+  font-size: 1.1rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .blog-hero {
+  .library-hero {
     padding: 2rem 1rem;
   }
   
-  .blog-hero h1 {
-    font-size: 2rem;
+  .library-hero h1 {
+    font-size: 1.8rem;
   }
   
-  .blog-stats {
-    gap: 1rem;
-  }
-  
-  .stat-item {
-    padding: 0.75rem 1rem;
-  }
-  
-  .topic-grid {
+  .featured-guides,
+  .focus-areas {
     grid-template-columns: 1fr;
   }
   
-  .subscribe-section {
-    grid-template-columns: 1fr;
+  .community-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
-/* Custom listing styles */
+/* Listing customization */
 .quarto-listing .list .list-item {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
@@ -521,7 +643,9 @@ window.Quarto = {
 .listing-item .listing-title {
   color: #1E6CB8;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
 
 .listing-item .listing-title:hover {
@@ -548,7 +672,7 @@ window.Quarto = {
   font-weight: 500;
   text-decoration: none;
   margin-right: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   display: inline-block;
   transition: all 0.2s ease;
 }
@@ -561,7 +685,6 @@ window.Quarto = {
 
 
 
-</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
@@ -590,7 +713,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="R2VvRGF0YVZpeiUyQ1ByZXByb2Nlc3NpbmclMkNSZXNvdXJjZS1Fc3RpbWF0aW9uJTJDR2Vvc3RhdGlzdGljcw==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758378812711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1073">
+<div class="quarto-post image-right" data-index="0" data-categories="R2VvRGF0YVZpeiUyQ1ByZXByb2Nlc3NpbmclMkNSZXNvdXJjZS1Fc3RpbWF0aW9uJTJDR2Vvc3RhdGlzdGljcw==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758607433266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2014">
 <div class="thumbnail"><a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/Drillhole Data Preprocessing/preprocessing-workflow.png" class="thumbnail-image" style="height: 200px;">
@@ -598,7 +721,7 @@ window.Quarto = {
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz</a>
+<a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz</a>
 </h3>
 <div class="listing-categories">
 
@@ -612,7 +735,7 @@ window.Quarto = {
 
 </div>
 <div class="delink listing-description"><a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">
-<p>Master the art of drillhole data preprocessing using GeoDataViz. Learn compositing strategies, domain optimization, and data conditioning techniques for accurate resource estimation.</p>
+<p>Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation.</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -626,7 +749,7 @@ Ghozian Islam Karami
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="R2VvRGF0YVZpeiUyQ0VEQSUyQ1ItU2hpbnklMkNUdXRvcmlhbA==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758378798387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="933">
+<div class="quarto-post image-right" data-index="1" data-categories="R2VvRGF0YVZpeiUyQ0VEQSUyQ0dlb3N0YXRpc3RpY3MlMkNUdXRvcmlhbA==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758607402339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1859">
 <div class="thumbnail"><a href="./posts/EDA with GeoDataViz/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/EDA with GeoDataViz/eda-workflow.png" class="thumbnail-image" style="height: 200px;">
@@ -634,7 +757,7 @@ Ghozian Islam Karami
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/EDA with GeoDataViz/index.html" class="no-external">Exploratory Data Analysis with GeoDataViz: A Comprehensive Guide</a>
+<a href="./posts/EDA with GeoDataViz/index.html" class="no-external">Mastering Exploratory Data Analysis with GeoDataViz: The Complete Professional Guide</a>
 </h3>
 <div class="listing-categories">
 
@@ -642,13 +765,13 @@ Ghozian Islam Karami
 
 <div class="listing-category" onclick="window.quartoListingCategory('RURB'); return false;">EDA</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Ui1TaGlueQ=='); return false;">R-Shiny</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R2Vvc3RhdGlzdGljcw=='); return false;">Geostatistics</div>
 
 <div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
 
 </div>
 <div class="delink listing-description"><a href="./posts/EDA with GeoDataViz/index.html" class="no-external">
-<p>Learn how to perform comprehensive exploratory data analysis on geological datasets using GeoDataViz before moving to resource estimation.</p>
+<p>Master comprehensive exploratory data analysis on geological datasets using GeoDataViz. Learn professional-grade techniques for data validation, spatial analysis, and geological insight extraction before resource estimation.</p>
 </a></div>
 </div>
 <div class="metadata">
@@ -662,7 +785,7 @@ Ghozian Islam Karami
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="V2VsY29tZSUyQ09wZW4tU291cmNlJTJDR2VvbG9neSUyQ0RhdGEtU2NpZW5jZQ==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758383797606" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="932">
+<div class="quarto-post image-right" data-index="2" data-categories="V2VsY29tZSUyQ09wZW4tU291cmNlJTJDR2VvbG9neSUyQ0RhdGEtU2NpZW5jZQ==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758607380014" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1590">
 <div class="thumbnail"><a href="./posts/Welcome to Orebit/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/Welcome to Orebit/welcome-banner.png" class="thumbnail-image" style="height: 200px;">
@@ -670,7 +793,7 @@ Ghozian Islam Karami
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/Welcome to Orebit/index.html" class="no-external">Welcome to Orebit Blog: Bridging Traditional Geology with Modern Data Science</a>
+<a href="./posts/Welcome to Orebit/index.html" class="no-external">Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation</a>
 </h3>
 <div class="listing-categories">
 
@@ -684,7 +807,7 @@ Ghozian Islam Karami
 
 </div>
 <div class="delink listing-description"><a href="./posts/Welcome to Orebit/index.html" class="no-external">
-<p>Welcome to the Orebit technical blog. Learn about our mission to democratize geological data analysis through open-source solutions and modern data science techniques.</p>
+<p>Welcome to Orebit’s comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges.</p>
 </a></div>
 </div>
 <div class="metadata">

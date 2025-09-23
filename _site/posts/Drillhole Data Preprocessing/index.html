@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ghozian Islam Karami">
 <meta name="dcterms.date" content="2025-09-20">
-<meta name="description" content="Master the art of drillhole data preprocessing using GeoDataViz. Learn compositing strategies, domain optimization, and data conditioning techniques for accurate resource estimation.">
+<meta name="description" content="Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation.">
 
-<title>Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz – Orebit.id - Geology, Digitized</title>
+<title>Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz – Orebit.id - Geology, Digitized</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,15 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../Logo_favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-eb52693c68d8f3a3be811ab34c09ecd6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c9d727f6a8a715f4dc96fce94e903c6e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,8 +123,8 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <meta property="og:description" content="Professional geological consulting and data analysis services">
 <meta property="og:image" content="https://orebit.id/posts/Drillhole Data Preprocessing/preprocessing-workflow.png">
 <meta property="og:site_name" content="Orebit.id - Geology, Digitized">
-<meta name="twitter:title" content="Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz – Orebit.id - Geology, Digitized">
-<meta name="twitter:description" content="Master the art of drillhole data preprocessing using GeoDataViz. Learn compositing strategies, domain optimization, and data conditioning techniques for accurate resource estimation.">
+<meta name="twitter:title" content="Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz – Orebit.id - Geology, Digitized">
+<meta name="twitter:description" content="Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation.">
 <meta name="twitter:image" content="https://orebit.id/posts/Drillhole Data Preprocessing/preprocessing-workflow.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -138,8 +137,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../Logo_banner.png" alt="" class="navbar-logo light-content">
-    <img src="../../Logo_banner.png" alt="" class="navbar-logo dark-content">
+    <img src="../../Logo_banner.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Mencari"></div>
@@ -201,57 +199,42 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
     <h2 id="toc-title">Di halaman ini</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#the-preprocessing-pipeline" id="toc-the-preprocessing-pipeline" class="nav-link" data-scroll-target="#the-preprocessing-pipeline">The Preprocessing Pipeline</a></li>
-  <li><a href="#data-cleaning-and-validation" id="toc-data-cleaning-and-validation" class="nav-link" data-scroll-target="#data-cleaning-and-validation">1. Data Cleaning and Validation</a>
+  <li><a href="#the-critical-bridge-between-data-and-reliable-estimates" id="toc-the-critical-bridge-between-data-and-reliable-estimates" class="nav-link active" data-scroll-target="#the-critical-bridge-between-data-and-reliable-estimates">The Critical Bridge Between Data and Reliable Estimates</a></li>
+  <li><a href="#the-high-cost-of-inadequate-preprocessing" id="toc-the-high-cost-of-inadequate-preprocessing" class="nav-link" data-scroll-target="#the-high-cost-of-inadequate-preprocessing">The High Cost of Inadequate Preprocessing</a></li>
+  <li><a href="#the-geodataviz-professional-preprocessing-framework" id="toc-the-geodataviz-professional-preprocessing-framework" class="nav-link" data-scroll-target="#the-geodataviz-professional-preprocessing-framework">The GeoDataViz Professional Preprocessing Framework</a>
   <ul class="collapse">
-  <li><a href="#automated-data-quality-checks" id="toc-automated-data-quality-checks" class="nav-link" data-scroll-target="#automated-data-quality-checks">Automated Data Quality Checks</a></li>
-  <li><a href="#data-conditioning-strategies" id="toc-data-conditioning-strategies" class="nav-link" data-scroll-target="#data-conditioning-strategies">Data Conditioning Strategies</a></li>
+  <li><a href="#phase-1-advanced-data-conditioning" id="toc-phase-1-advanced-data-conditioning" class="nav-link" data-scroll-target="#phase-1-advanced-data-conditioning"><strong>Phase 1: Advanced Data Conditioning</strong></a></li>
+  <li><a href="#phase-2-geological-domain-optimization" id="toc-phase-2-geological-domain-optimization" class="nav-link" data-scroll-target="#phase-2-geological-domain-optimization"><strong>Phase 2: Geological Domain Optimization</strong></a></li>
+  <li><a href="#phase-3-composite-optimization-strategy" id="toc-phase-3-composite-optimization-strategy" class="nav-link" data-scroll-target="#phase-3-composite-optimization-strategy"><strong>Phase 3: Composite Optimization Strategy</strong></a></li>
+  <li><a href="#phase-4-outlier-treatment-strategy" id="toc-phase-4-outlier-treatment-strategy" class="nav-link" data-scroll-target="#phase-4-outlier-treatment-strategy"><strong>Phase 4: Outlier Treatment Strategy</strong></a></li>
+  <li><a href="#phase-5-data-transformation-optimization" id="toc-phase-5-data-transformation-optimization" class="nav-link" data-scroll-target="#phase-5-data-transformation-optimization"><strong>Phase 5: Data Transformation Optimization</strong></a></li>
+  <li><a href="#phase-6-multi-element-coordination" id="toc-phase-6-multi-element-coordination" class="nav-link" data-scroll-target="#phase-6-multi-element-coordination"><strong>Phase 6: Multi-Element Coordination</strong></a></li>
   </ul></li>
-  <li><a href="#geological-domain-definition" id="toc-geological-domain-definition" class="nav-link" data-scroll-target="#geological-domain-definition">2. Geological Domain Definition</a>
+  <li><a href="#practical-implementation-workflow" id="toc-practical-implementation-workflow" class="nav-link" data-scroll-target="#practical-implementation-workflow">Practical Implementation Workflow</a>
   <ul class="collapse">
-  <li><a href="#statistical-domain-analysis" id="toc-statistical-domain-analysis" class="nav-link" data-scroll-target="#statistical-domain-analysis">Statistical Domain Analysis</a></li>
-  <li><a href="#advanced-domain-optimization" id="toc-advanced-domain-optimization" class="nav-link" data-scroll-target="#advanced-domain-optimization">Advanced Domain Optimization</a></li>
+  <li><a href="#phase-1-comprehensive-data-assessment" id="toc-phase-1-comprehensive-data-assessment" class="nav-link" data-scroll-target="#phase-1-comprehensive-data-assessment"><strong>Phase 1: Comprehensive Data Assessment</strong></a></li>
+  <li><a href="#phase-2-domain-conditioning" id="toc-phase-2-domain-conditioning" class="nav-link" data-scroll-target="#phase-2-domain-conditioning"><strong>Phase 2: Domain Conditioning</strong></a></li>
+  <li><a href="#phase-3-composite-strategy-implementation" id="toc-phase-3-composite-strategy-implementation" class="nav-link" data-scroll-target="#phase-3-composite-strategy-implementation"><strong>Phase 3: Composite Strategy Implementation</strong></a></li>
+  <li><a href="#phase-4-advanced-data-conditioning" id="toc-phase-4-advanced-data-conditioning" class="nav-link" data-scroll-target="#phase-4-advanced-data-conditioning"><strong>Phase 4: Advanced Data Conditioning</strong></a></li>
+  <li><a href="#phase-5-validation-and-documentation" id="toc-phase-5-validation-and-documentation" class="nav-link" data-scroll-target="#phase-5-validation-and-documentation"><strong>Phase 5: Validation and Documentation</strong></a></li>
   </ul></li>
-  <li><a href="#sample-compositing-strategies" id="toc-sample-compositing-strategies" class="nav-link" data-scroll-target="#sample-compositing-strategies">3. Sample Compositing Strategies</a>
+  <li><a href="#critical-quality-assurance-checkpoints" id="toc-critical-quality-assurance-checkpoints" class="nav-link" data-scroll-target="#critical-quality-assurance-checkpoints">Critical Quality Assurance Checkpoints</a>
   <ul class="collapse">
-  <li><a href="#composite-length-optimization" id="toc-composite-length-optimization" class="nav-link" data-scroll-target="#composite-length-optimization">Composite Length Optimization</a></li>
-  <li><a href="#advanced-compositing-techniques" id="toc-advanced-compositing-techniques" class="nav-link" data-scroll-target="#advanced-compositing-techniques">Advanced Compositing Techniques</a></li>
+  <li><a href="#data-integrity-verification" id="toc-data-integrity-verification" class="nav-link" data-scroll-target="#data-integrity-verification"><strong>Data Integrity Verification</strong></a></li>
+  <li><a href="#professional-standards-compliance" id="toc-professional-standards-compliance" class="nav-link" data-scroll-target="#professional-standards-compliance"><strong>Professional Standards Compliance</strong></a></li>
   </ul></li>
-  <li><a href="#outlier-treatment-strategies" id="toc-outlier-treatment-strategies" class="nav-link" data-scroll-target="#outlier-treatment-strategies">4. Outlier Treatment Strategies</a>
+  <li><a href="#advanced-preprocessing-challenges-and-solutions" id="toc-advanced-preprocessing-challenges-and-solutions" class="nav-link" data-scroll-target="#advanced-preprocessing-challenges-and-solutions">Advanced Preprocessing Challenges and Solutions</a>
   <ul class="collapse">
-  <li><a href="#outlier-identification-methods" id="toc-outlier-identification-methods" class="nav-link" data-scroll-target="#outlier-identification-methods">Outlier Identification Methods</a></li>
-  <li><a href="#treatment-approaches" id="toc-treatment-approaches" class="nav-link" data-scroll-target="#treatment-approaches">Treatment Approaches</a></li>
+  <li><a href="#challenge-1-complex-geological-boundaries" id="toc-challenge-1-complex-geological-boundaries" class="nav-link" data-scroll-target="#challenge-1-complex-geological-boundaries"><strong>Challenge 1: Complex Geological Boundaries</strong></a></li>
+  <li><a href="#challenge-2-multi-campaign-data-integration" id="toc-challenge-2-multi-campaign-data-integration" class="nav-link" data-scroll-target="#challenge-2-multi-campaign-data-integration"><strong>Challenge 2: Multi-Campaign Data Integration</strong></a></li>
+  <li><a href="#challenge-3-extreme-value-populations" id="toc-challenge-3-extreme-value-populations" class="nav-link" data-scroll-target="#challenge-3-extreme-value-populations"><strong>Challenge 3: Extreme Value Populations</strong></a></li>
+  <li><a href="#challenge-4-multi-element-complexity" id="toc-challenge-4-multi-element-complexity" class="nav-link" data-scroll-target="#challenge-4-multi-element-complexity"><strong>Challenge 4: Multi-Element Complexity</strong></a></li>
   </ul></li>
-  <li><a href="#data-transformation-techniques" id="toc-data-transformation-techniques" class="nav-link" data-scroll-target="#data-transformation-techniques">5. Data Transformation Techniques</a>
-  <ul class="collapse">
-  <li><a href="#distribution-normalization" id="toc-distribution-normalization" class="nav-link" data-scroll-target="#distribution-normalization">Distribution Normalization</a></li>
-  <li><a href="#multi-element-considerations" id="toc-multi-element-considerations" class="nav-link" data-scroll-target="#multi-element-considerations">Multi-Element Considerations</a></li>
-  </ul></li>
-  <li><a href="#statistical-validation" id="toc-statistical-validation" class="nav-link" data-scroll-target="#statistical-validation">6. Statistical Validation</a>
-  <ul class="collapse">
-  <li><a href="#preprocessing-impact-assessment" id="toc-preprocessing-impact-assessment" class="nav-link" data-scroll-target="#preprocessing-impact-assessment">Preprocessing Impact Assessment</a></li>
-  </ul></li>
-  <li><a href="#practical-preprocessing-workflow" id="toc-practical-preprocessing-workflow" class="nav-link" data-scroll-target="#practical-preprocessing-workflow">Practical Preprocessing Workflow</a>
-  <ul class="collapse">
-  <li><a href="#phase-1-initial-assessment" id="toc-phase-1-initial-assessment" class="nav-link" data-scroll-target="#phase-1-initial-assessment">Phase 1: Initial Assessment</a></li>
-  <li><a href="#phase-2-domain-development" id="toc-phase-2-domain-development" class="nav-link" data-scroll-target="#phase-2-domain-development">Phase 2: Domain Development</a></li>
-  <li><a href="#phase-3-compositing-strategy" id="toc-phase-3-compositing-strategy" class="nav-link" data-scroll-target="#phase-3-compositing-strategy">Phase 3: Compositing Strategy</a></li>
-  <li><a href="#phase-4-data-conditioning" id="toc-phase-4-data-conditioning" class="nav-link" data-scroll-target="#phase-4-data-conditioning">Phase 4: Data Conditioning</a></li>
-  <li><a href="#phase-5-final-validation" id="toc-phase-5-final-validation" class="nav-link" data-scroll-target="#phase-5-final-validation">Phase 5: Final Validation</a></li>
-  </ul></li>
-  <li><a href="#common-preprocessing-challenges" id="toc-common-preprocessing-challenges" class="nav-link" data-scroll-target="#common-preprocessing-challenges">Common Preprocessing Challenges</a>
-  <ul class="collapse">
-  <li><a href="#challenge-1-complex-geological-boundaries" id="toc-challenge-1-complex-geological-boundaries" class="nav-link" data-scroll-target="#challenge-1-complex-geological-boundaries">Challenge 1: Complex Geological Boundaries</a></li>
-  <li><a href="#challenge-2-variable-sample-quality" id="toc-challenge-2-variable-sample-quality" class="nav-link" data-scroll-target="#challenge-2-variable-sample-quality">Challenge 2: Variable Sample Quality</a></li>
-  <li><a href="#challenge-3-sparse-drilling-patterns" id="toc-challenge-3-sparse-drilling-patterns" class="nav-link" data-scroll-target="#challenge-3-sparse-drilling-patterns">Challenge 3: Sparse Drilling Patterns</a></li>
-  <li><a href="#challenge-4-multi-element-correlation" id="toc-challenge-4-multi-element-correlation" class="nav-link" data-scroll-target="#challenge-4-multi-element-correlation">Challenge 4: Multi-Element Correlation</a></li>
-  </ul></li>
-  <li><a href="#integration-with-resource-estimation" id="toc-integration-with-resource-estimation" class="nav-link" data-scroll-target="#integration-with-resource-estimation">Integration with Resource Estimation</a></li>
-  <li><a href="#quality-assurance-checklist" id="toc-quality-assurance-checklist" class="nav-link" data-scroll-target="#quality-assurance-checklist">Quality Assurance Checklist</a></li>
-  <li><a href="#advanced-features-in-geodataviz-pro" id="toc-advanced-features-in-geodataviz-pro" class="nav-link" data-scroll-target="#advanced-features-in-geodataviz-pro">Advanced Features in GeoDataViz Pro</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#professional-development-through-preprocessing-mastery" id="toc-professional-development-through-preprocessing-mastery" class="nav-link" data-scroll-target="#professional-development-through-preprocessing-mastery">Professional Development Through Preprocessing Mastery</a></li>
+  <li><a href="#integration-with-resource-estimation-excellence" id="toc-integration-with-resource-estimation-excellence" class="nav-link" data-scroll-target="#integration-with-resource-estimation-excellence">Integration with Resource Estimation Excellence</a></li>
+  <li><a href="#advanced-geodataviz-pro-features" id="toc-advanced-geodataviz-pro-features" class="nav-link" data-scroll-target="#advanced-geodataviz-pro-features">Advanced GeoDataViz Pro Features</a></li>
+  <li><a href="#conclusion-preprocessing-as-the-foundation-of-professional-excellence" id="toc-conclusion-preprocessing-as-the-foundation-of-professional-excellence" class="nav-link" data-scroll-target="#conclusion-preprocessing-as-the-foundation-of-professional-excellence">Conclusion: Preprocessing as the Foundation of Professional Excellence</a></li>
+  <li><a href="#next-in-the-library" id="toc-next-in-the-library" class="nav-link" data-scroll-target="#next-in-the-library">Next in The Library</a></li>
   </ul>
 </nav>
     </div>
@@ -260,7 +243,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Kode</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Kode</button></div></div>
   <div class="quarto-categories">
     <div class="quarto-category">GeoDataViz</div>
     <div class="quarto-category">Preprocessing</div>
@@ -271,7 +254,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Master the art of drillhole data preprocessing using GeoDataViz. Learn compositing strategies, domain optimization, and data conditioning techniques for accurate resource estimation.
+    Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation.
   </div>
 </div>
 
@@ -300,229 +283,193 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>After completing exploratory data analysis (EDA), the next critical step is data preprocessing—transforming your raw drillhole data into a format suitable for resource estimation. This process significantly impacts the quality and reliability of your final resource model.</p>
-<p>GeoDataViz provides advanced tools for data preprocessing, from automated compositing to sophisticated domain analysis. This guide covers essential preprocessing techniques that will prepare your data for accurate resource estimation.</p>
+<section id="the-critical-bridge-between-data-and-reliable-estimates" class="level2">
+<h2 class="anchored" data-anchor-id="the-critical-bridge-between-data-and-reliable-estimates">The Critical Bridge Between Data and Reliable Estimates</h2>
+<p>Data preprocessing represents the most critical—and most commonly underestimated—phase of professional resource estimation. After signing off on mineral resource estimates as a <strong>Certified Competent Person</strong> and witnessing preprocessing failures that resulted in millions of dollars in misallocated capital, I can state definitively: <strong>the quality of your resource estimate is fundamentally limited by the quality of your data preprocessing.</strong></p>
+<p>This comprehensive guide presents the systematic preprocessing methodology I’ve developed through real-world mining projects, now implemented in GeoDataViz to provide every geoscientist with access to professional-grade data conditioning capabilities.</p>
 </section>
-<section id="the-preprocessing-pipeline" class="level2">
-<h2 class="anchored" data-anchor-id="the-preprocessing-pipeline">The Preprocessing Pipeline</h2>
-<p>Data preprocessing in geological contexts involves several key steps:</p>
-<ol type="1">
-<li><strong>Data Cleaning and Validation</strong></li>
-<li><strong>Geological Domain Definition</strong></li>
-<li><strong>Sample Compositing</strong></li>
-<li><strong>Outlier Treatment</strong></li>
-<li><strong>Data Transformation</strong></li>
-<li><strong>Statistical Validation</strong></li>
-</ol>
-<p>Let’s explore each step using GeoDataViz capabilities.</p>
+<section id="the-high-cost-of-inadequate-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="the-high-cost-of-inadequate-preprocessing">The High Cost of Inadequate Preprocessing</h2>
+<p>In my decade of resource evaluation experience, I’ve observed that preprocessing failures account for the majority of significant resource estimation errors:</p>
+<ul>
+<li><strong>Grade overestimation</strong> of 30% due to inappropriate composite length selection that smoothed high-grade boundaries</li>
+<li><strong>Resource misclassification</strong> resulting from unaddressed spatial bias that inflated confidence in sparsely drilled areas<br>
+</li>
+<li><strong>Domain boundary failures</strong> where inadequate geological conditioning created artificial grade continuity across distinct mineralization systems</li>
+<li><strong>Outlier treatment errors</strong> where statistical approaches ignored geological reality, resulting in either excessive conservatism or dangerous grade inflation</li>
+</ul>
+<p>These aren’t theoretical risks—they’re real challenges that I’ve helped companies resolve through proper preprocessing implementation.</p>
 </section>
-<section id="data-cleaning-and-validation" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning-and-validation">1. Data Cleaning and Validation</h2>
-<section id="automated-data-quality-checks" class="level3">
-<h3 class="anchored" data-anchor-id="automated-data-quality-checks">Automated Data Quality Checks</h3>
-<p>GeoDataViz performs comprehensive quality checks that identify:</p>
-<p><strong>Sample Interval Issues:</strong> - Overlapping intervals that create double-counting - Gaps in sampling that require handling strategies - Inconsistent sample lengths that affect estimation</p>
-<p><strong>Coordinate System Problems:</strong> - Inconsistent coordinate references between holes - Elevation discrepancies that affect 3D modeling - Survey closure errors that impact hole positioning</p>
-<p><strong>Assay Data Quality:</strong> - Below detection limit values requiring substitution - Missing assays that need interpolation or flagging - Duplicate samples for precision assessment</p>
+<section id="the-geodataviz-professional-preprocessing-framework" class="level2">
+<h2 class="anchored" data-anchor-id="the-geodataviz-professional-preprocessing-framework">The GeoDataViz Professional Preprocessing Framework</h2>
+<p>GeoDataViz implements a comprehensive preprocessing framework specifically designed for geological datasets, addressing the complex requirements of spatially distributed, geometrically constrained drillhole data.</p>
+<section id="phase-1-advanced-data-conditioning" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-advanced-data-conditioning"><strong>Phase 1: Advanced Data Conditioning</strong></h3>
+<p>Professional preprocessing begins with sophisticated data conditioning that goes far beyond simple cleaning:</p>
+<p><strong>Missing Data Intelligence:</strong> Rather than simple deletion or basic imputation, GeoDataViz provides geological context-aware solutions:</p>
+<ul>
+<li><strong>Geological interpolation</strong> using lithological and structural controls for short gaps</li>
+<li><strong>Statistical imputation</strong> with spatial weighting based on nearby samples within the same geological domain</li>
+<li><strong>Detection limit handling</strong> using distributional approaches that preserve the statistical character of trace element populations</li>
+<li><strong>Impact assessment</strong> quantifying how missing data treatment affects final resource estimates</li>
+</ul>
+<p><strong>Spatial Bias Correction:</strong> - <strong>Declustering weight calculation</strong> using multiple algorithms optimized for different geological environments - <strong>Preferential sampling detection</strong> identifying areas where drilling density correlates with grade - <strong>Campaign integration</strong> harmonizing data from different drilling programs with varying sampling protocols - <strong>Temporal bias assessment</strong> evaluating systematic changes in analytical procedures over time</p>
+<p><strong>Quality Assurance Integration:</strong> - <strong>Precision-based weighting</strong> incorporating analytical uncertainty into composite calculations - <strong>Accuracy assessment</strong> using control standards to identify and correct systematic analytical bias - <strong>Contamination detection</strong> through blank performance analysis with sample flagging - <strong>Method-specific conditioning</strong> accounting for different drilling and sampling techniques</p>
 </section>
-<section id="data-conditioning-strategies" class="level3">
-<h3 class="anchored" data-anchor-id="data-conditioning-strategies">Data Conditioning Strategies</h3>
-<p><strong>Missing Data Handling:</strong></p>
-<pre><code>- Geological interpolation for short gaps
-- Statistical imputation using nearby samples
-- Flagging of extensive missing intervals
-- Alternative sampling strategies for future programs</code></pre>
-<p><strong>Detection Limit Treatment:</strong></p>
-<pre><code>- Half detection limit substitution
-- Distributional approaches using fitted distributions
-- Conditional simulation for realistic value ranges
-- Impact assessment on resource estimates</code></pre>
+<section id="phase-2-geological-domain-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-geological-domain-optimization"><strong>Phase 2: Geological Domain Optimization</strong></h3>
+<p>Professional resource estimation requires geologically sensible and statistically validated domains:</p>
+<p><strong>Advanced Domain Validation:</strong> GeoDataViz provides sophisticated tools for domain boundary optimization:</p>
+<ul>
+<li><strong>Multivariate discriminant analysis</strong> using multiple elements to refine geological boundaries</li>
+<li><strong>Statistical significance testing</strong> ensuring grade population differences justify separate estimation</li>
+<li><strong>Contact sharpness analysis</strong> distinguishing hard boundaries requiring separate estimation from gradational contacts suitable for transition modeling</li>
+<li><strong>Boundary uncertainty quantification</strong> essential for appropriate resource classification</li>
+</ul>
+<p><strong>Structural Control Integration:</strong> - <strong>Fault influence analysis</strong> quantifying structural control on grade distribution and continuity - <strong>Fold-related grade analysis</strong> identifying structural controls on mineralization distribution patterns - <strong>Alteration intensity correlation</strong> with grade distribution for enhanced domain definition - <strong>Anisotropy assessment</strong> ensuring domain boundaries align with geological controls on grade continuity</p>
+<p><strong>Machine Learning Enhancement:</strong> - <strong>Cluster analysis</strong> for natural population identification using multiple geological and geochemical variables - <strong>Classification tree analysis</strong> for objective domain boundary identification - <strong>Principal component analysis</strong> revealing underlying geological controls not apparent in individual variables - <strong>Ensemble methods</strong> combining multiple approaches for robust domain identification</p>
 </section>
+<section id="phase-3-composite-optimization-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-composite-optimization-strategy"><strong>Phase 3: Composite Optimization Strategy</strong></h3>
+<p>Composite length selection represents one of the most critical preprocessing decisions:</p>
+<p><strong>Multi-Criteria Composite Optimization:</strong> GeoDataViz implements sophisticated approaches for composite length selection:</p>
+<p><strong>Geological Criteria:</strong> - <strong>Geological unit thickness analysis</strong> ensuring composites honor significant geological boundaries - <strong>Mineralization continuity assessment</strong> matching composite length to the scale of grade control - <strong>Contact preservation analysis</strong> ensuring geological boundaries aren’t artificially smoothed by compositing - <strong>Structural orientation integration</strong> aligning composite intervals with geological controls</p>
+<p><strong>Statistical Impact Assessment:</strong> - <strong>Distribution parameter sensitivity</strong> showing how composite length affects grade distribution characteristics - <strong>Spatial continuity preservation</strong> ensuring compositing doesn’t destroy important spatial relationships - <strong>Estimation variance analysis</strong> evaluating how composite length affects final resource estimate uncertainty - <strong>High-grade preservation</strong> ensuring important extreme values aren’t inappropriately diluted</p>
+<p><strong>Advanced Compositing Techniques:</strong> - <strong>Variable length compositing</strong> respecting geological boundaries while maintaining statistical consistency - <strong>Geological weighted compositing</strong> using geological quality indicators to weight sample contributions - <strong>Contact-aware compositing</strong> special handling for samples spanning geological domain boundaries - <strong>Recovery-weighted compositing</strong> incorporating core recovery data for enhanced reliability</p>
 </section>
-<section id="geological-domain-definition" class="level2">
-<h2 class="anchored" data-anchor-id="geological-domain-definition">2. Geological Domain Definition</h2>
-<section id="statistical-domain-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="statistical-domain-analysis">Statistical Domain Analysis</h3>
-<p>GeoDataViz provides tools for objective domain boundary definition:</p>
-<p><strong>Lithological Domain Assessment:</strong> - Grade distribution comparison between rock types - Statistical tests for population differences (t-tests, ANOVA) - Contact analysis using transitional statistics - Boundary optimization using grade continuity</p>
-<p><strong>Structural Domain Analysis:</strong> - Grade trend analysis along structural orientations - Fault and fracture impact on grade continuity - Fold-related grade distribution patterns - Alteration zone influence on mineralization</p>
+<section id="phase-4-outlier-treatment-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-outlier-treatment-strategy"><strong>Phase 4: Outlier Treatment Strategy</strong></h3>
+<p>Professional outlier treatment requires integration of statistical methods with geological understanding:</p>
+<p><strong>Multi-Method Outlier Identification:</strong> - <strong>Domain-specific statistical thresholds</strong> recognizing that outlier behavior varies by geological environment<br>
+- <strong>Spatial outlier analysis</strong> identifying samples that are inconsistent with their neighborhood - <strong>Geological context evaluation</strong> distinguishing true extreme values from analytical or sampling errors - <strong>Multi-element correlation analysis</strong> using element associations to validate extreme values</p>
+<p><strong>Advanced Treatment Approaches:</strong> <strong>Conservative Strategies:</strong> - <strong>Top-cutting with geological justification</strong> using geological controls to set appropriate thresholds - <strong>Indicator variable approaches</strong> preserving extreme value information while limiting estimation impact - <strong>Separate population estimation</strong> for geologically distinct extreme value populations - <strong>Conditional simulation</strong> for high-grade uncertainty modeling</p>
+<p><strong>Geological Integration Approaches:</strong> - <strong>Structural control correlation</strong> validating extreme values through structural geology relationships - <strong>Alteration intensity correlation</strong> using alteration mapping to validate high-grade occurrences - <strong>Multi-element consistency</strong> checking extreme values against expected geochemical associations - <strong>Spatial clustering analysis</strong> identifying systematic high-grade zones versus random occurrences</p>
 </section>
-<section id="advanced-domain-optimization" class="level3">
-<h3 class="anchored" data-anchor-id="advanced-domain-optimization">Advanced Domain Optimization</h3>
-<p><strong>Multivariate Analysis:</strong> - Principal component analysis for complex geology - Cluster analysis for natural population identification<br>
-- Discriminant analysis for boundary refinement - Machine learning approaches for domain recognition</p>
-<p><strong>Contact Analysis Tools:</strong> - Hard boundary identification using grade contrasts - Soft boundary modeling for gradational contacts - Transition zone characterization - Boundary uncertainty assessment</p>
+<section id="phase-5-data-transformation-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="phase-5-data-transformation-optimization"><strong>Phase 5: Data Transformation Optimization</strong></h3>
+<p>Many geostatistical techniques require appropriate data distribution characteristics:</p>
+<p><strong>Advanced Transformation Assessment:</strong> GeoDataViz provides comprehensive transformation evaluation:</p>
+<p><strong>Multi-Method Transformation Testing:</strong> - <strong>Log-normal transformation</strong> with back-transformation bias assessment for positively skewed distributions - <strong>Box-Cox optimization</strong> with automated parameter selection for flexible distribution modeling - <strong>Normal score transformation</strong> preserving rank relationships while achieving normality - <strong>Johnson transformation</strong> for complex distribution shapes requiring specialized approaches</p>
+<p><strong>Geological Constraint Integration:</strong> - <strong>Domain-specific transformations</strong> recognizing that optimal transformation varies by geological environment - <strong>Grade continuity preservation</strong> ensuring transformations don’t destroy important geological relationships - <strong>Multi-element consistency</strong> maintaining realistic element associations through transformation - <strong>Spatial structure preservation</strong> validating that transformations preserve spatial continuity patterns</p>
+<p><strong>Back-Transformation Validation:</strong> - <strong>Bias assessment</strong> quantifying potential errors introduced by transformation and back-transformation - <strong>Confidence interval accuracy</strong> ensuring uncertainty estimates remain valid after back-transformation - <strong>Extreme value handling</strong> ensuring transformation approaches appropriately handle high-grade populations - <strong>Resource classification impact</strong> evaluating how transformation uncertainty affects resource confidence</p>
 </section>
-</section>
-<section id="sample-compositing-strategies" class="level2">
-<h2 class="anchored" data-anchor-id="sample-compositing-strategies">3. Sample Compositing Strategies</h2>
-<section id="composite-length-optimization" class="level3">
-<h3 class="anchored" data-anchor-id="composite-length-optimization">Composite Length Optimization</h3>
-<p>Selecting appropriate composite length is crucial for resource estimation:</p>
-<p><strong>Length Selection Criteria:</strong> - Geological unit thickness consideration - Sampling interval harmonization - Estimation block size compatibility - Geostatistical range relationships</p>
-<p><strong>GeoDataViz Compositing Features:</strong></p>
-<pre><code>- Automated composite length testing
-- Visual comparison of different lengths
-- Statistical impact assessment
-- Geological boundary preservation</code></pre>
-</section>
-<section id="advanced-compositing-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="advanced-compositing-techniques">Advanced Compositing Techniques</h3>
-<p><strong>Geological Compositing:</strong> - Respecting geological boundaries - Variable length compositing by domain - Contact-aware compositing strategies - Weighted averaging by sample quality</p>
-<p><strong>Temporal Compositing:</strong> - Campaign-based composite analysis - Temporal trend assessment - Batch effect evaluation - Long-term data consistency checks</p>
-</section>
-</section>
-<section id="outlier-treatment-strategies" class="level2">
-<h2 class="anchored" data-anchor-id="outlier-treatment-strategies">4. Outlier Treatment Strategies</h2>
-<section id="outlier-identification-methods" class="level3">
-<h3 class="anchored" data-anchor-id="outlier-identification-methods">Outlier Identification Methods</h3>
-<p>GeoDataViz implements multiple outlier detection approaches:</p>
-<p><strong>Statistical Methods:</strong> - Interquartile Range (IQR) method - Standard deviation multiples (Z-score) - Modified Z-score for skewed distributions - Percentile-based thresholds</p>
-<p><strong>Spatial Methods:</strong> - Neighborhood analysis for spatial outliers - Local grade distribution comparison - Distance-weighted outlier scoring - Geological context consideration</p>
-</section>
-<section id="treatment-approaches" class="level3">
-<h3 class="anchored" data-anchor-id="treatment-approaches">Treatment Approaches</h3>
-<p><strong>Conservative Strategies:</strong></p>
-<pre><code>- Top-cutting using statistical thresholds
-- Indicator variable creation for high grades
-- Separate estimation for outlier populations
-- Conditional simulation for grade uncertainty</code></pre>
-<p><strong>Geological Approaches:</strong></p>
-<pre><code>- Domain-specific outlier treatment
-- Geological control consideration
-- Structural context evaluation
-- Alteration intensity correlation</code></pre>
+<section id="phase-6-multi-element-coordination" class="level3">
+<h3 class="anchored" data-anchor-id="phase-6-multi-element-coordination"><strong>Phase 6: Multi-Element Coordination</strong></h3>
+<p>Modern resource evaluation often requires consideration of multiple elements:</p>
+<p><strong>Advanced Multi-Element Analysis:</strong> - <strong>Correlation structure preservation</strong> through preprocessing to maintain realistic element associations - <strong>Independent component analysis</strong> identifying underlying geological processes controlling multi-element distributions - <strong>Compositional data analysis</strong> for whole-rock geochemical datasets where closure effects are important - <strong>Co-regionalization assessment</strong> preparing data for multi-element geostatistical estimation</p>
 </section>
 </section>
-<section id="data-transformation-techniques" class="level2">
-<h2 class="anchored" data-anchor-id="data-transformation-techniques">5. Data Transformation Techniques</h2>
-<section id="distribution-normalization" class="level3">
-<h3 class="anchored" data-anchor-id="distribution-normalization">Distribution Normalization</h3>
-<p>Many geostatistical techniques assume normal distributions:</p>
-<p><strong>Transformation Methods Available:</strong> - Log-normal transformation for positively skewed data - Box-Cox transformation for flexible distribution shaping - Normal score transformation for general normalization - Indicator transformation for categorical analysis</p>
-<p><strong>Transformation Assessment:</strong></p>
-<pre><code>- Pre/post transformation distribution comparison
-- Normality testing (Shapiro-Wilk, Anderson-Darling)
-- Spatial continuity preservation evaluation
-- Back-transformation validation</code></pre>
+<section id="practical-implementation-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="practical-implementation-workflow">Practical Implementation Workflow</h2>
+<section id="phase-1-comprehensive-data-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-comprehensive-data-assessment"><strong>Phase 1: Comprehensive Data Assessment</strong></h3>
+<pre><code>1. Execute complete data validation protocols from EDA phase
+2. Identify and prioritize all preprocessing requirements
+3. Develop geological domain optimization strategy
+4. Create quality assurance integration plan</code></pre>
 </section>
-<section id="multi-element-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="multi-element-considerations">Multi-Element Considerations</h3>
-<p><strong>Correlated Element Treatment:</strong> - Principal component analysis - Independent component analysis - Canonical correlation analysis - Multi-element compositional data analysis</p>
+<section id="phase-2-domain-conditioning" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-domain-conditioning"><strong>Phase 2: Domain Conditioning</strong></h3>
+<pre><code>1. Implement advanced geological domain validation
+2. Execute contact analysis and boundary optimization  
+3. Perform structural control integration
+4. Validate domain boundaries using multiple statistical approaches</code></pre>
 </section>
+<section id="phase-3-composite-strategy-implementation" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-composite-strategy-implementation"><strong>Phase 3: Composite Strategy Implementation</strong></h3>
+<pre><code>1. Execute multi-criteria composite length optimization
+2. Implement appropriate compositing methodology for each domain
+3. Validate composite quality through statistical and geological assessment
+4. Generate composite validation documentation</code></pre>
 </section>
-<section id="statistical-validation" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-validation">6. Statistical Validation</h2>
-<section id="preprocessing-impact-assessment" class="level3">
-<h3 class="anchored" data-anchor-id="preprocessing-impact-assessment">Preprocessing Impact Assessment</h3>
-<p>GeoDataViz provides tools to evaluate preprocessing impact:</p>
-<p><strong>Before/After Comparisons:</strong> - Statistical parameter changes - Distribution shape modifications - Spatial continuity alterations - Geological interpretation consistency</p>
-<p><strong>Validation Metrics:</strong></p>
-<pre><code>- Grade-tonnage curve stability
-- Spatial continuity preservation
-- Geological contact sharpness
-- Estimation variance validation</code></pre>
+<section id="phase-4-advanced-data-conditioning" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-advanced-data-conditioning"><strong>Phase 4: Advanced Data Conditioning</strong></h3>
+<pre><code>1. Implement sophisticated outlier treatment based on geological context
+2. Execute appropriate transformation strategies by domain
+3. Apply spatial bias correction where required
+4. Integrate quality assurance data into final conditioning</code></pre>
 </section>
-</section>
-<section id="practical-preprocessing-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="practical-preprocessing-workflow">Practical Preprocessing Workflow</h2>
-<section id="phase-1-initial-assessment" class="level3">
-<h3 class="anchored" data-anchor-id="phase-1-initial-assessment">Phase 1: Initial Assessment</h3>
-<pre><code>1. Import and validate raw drillhole data
-2. Perform comprehensive quality checks
-3. Identify and flag data quality issues
-4. Create initial geological interpretation</code></pre>
-</section>
-<section id="phase-2-domain-development" class="level3">
-<h3 class="anchored" data-anchor-id="phase-2-domain-development">Phase 2: Domain Development</h3>
-<pre><code>1. Statistical analysis of geological units
-2. Contact analysis and boundary optimization
-3. Structural control assessment
-4. Multi-element correlation analysis</code></pre>
-</section>
-<section id="phase-3-compositing-strategy" class="level3">
-<h3 class="anchored" data-anchor-id="phase-3-compositing-strategy">Phase 3: Compositing Strategy</h3>
-<pre><code>1. Composite length optimization testing
-2. Geological boundary preservation
-3. Statistical impact assessment
-4. Final composite generation</code></pre>
-</section>
-<section id="phase-4-data-conditioning" class="level3">
-<h3 class="anchored" data-anchor-id="phase-4-data-conditioning">Phase 4: Data Conditioning</h3>
-<pre><code>1. Outlier identification and treatment
-2. Data transformation assessment
-3. Missing data handling
-4. Quality assurance validation</code></pre>
-</section>
-<section id="phase-5-final-validation" class="level3">
-<h3 class="anchored" data-anchor-id="phase-5-final-validation">Phase 5: Final Validation</h3>
-<pre><code>1. Comprehensive statistical review
-2. Geological consistency check
-3. Spatial continuity validation
-4. Resource estimation readiness assessment</code></pre>
+<section id="phase-5-validation-and-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="phase-5-validation-and-documentation"><strong>Phase 5: Validation and Documentation</strong></h3>
+<pre><code>1. Comprehensive validation of preprocessing impact on resource estimation
+2. Generation of complete preprocessing documentation for professional reporting
+3. Uncertainty quantification for preprocessed data
+4. Resource estimation readiness certification</code></pre>
 </section>
 </section>
-<section id="common-preprocessing-challenges" class="level2">
-<h2 class="anchored" data-anchor-id="common-preprocessing-challenges">Common Preprocessing Challenges</h2>
-<section id="challenge-1-complex-geological-boundaries" class="level3">
-<h3 class="anchored" data-anchor-id="challenge-1-complex-geological-boundaries">Challenge 1: Complex Geological Boundaries</h3>
-<p><strong>Issue:</strong> Gradational contacts between geological domains <strong>Solution:</strong> - Use soft boundary modeling approaches - Implement transitional zone analysis - Apply distance-weighted domain assignment - Consider geological uncertainty in estimation</p>
-</section>
-<section id="challenge-2-variable-sample-quality" class="level3">
-<h3 class="anchored" data-anchor-id="challenge-2-variable-sample-quality">Challenge 2: Variable Sample Quality</h3>
-<p><strong>Issue:</strong> Mixed drilling methods with different sample qualities <strong>Solution:</strong> - Weight samples by quality metrics - Separate analysis by drilling method - Apply method-specific composite strategies - Include quality indicators in estimation</p>
-</section>
-<section id="challenge-3-sparse-drilling-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="challenge-3-sparse-drilling-patterns">Challenge 3: Sparse Drilling Patterns</h3>
-<p><strong>Issue:</strong> Irregular hole spacing affecting continuity analysis <strong>Solution:</strong> - Use directional continuity analysis - Apply sparse data geostatistical methods - Consider data augmentation techniques - Implement uncertainty quantification</p>
-</section>
-<section id="challenge-4-multi-element-correlation" class="level3">
-<h3 class="anchored" data-anchor-id="challenge-4-multi-element-correlation">Challenge 4: Multi-Element Correlation</h3>
-<p><strong>Issue:</strong> Complex relationships between multiple elements <strong>Solution:</strong> - Apply multivariate geostatistical methods - Use independent component analysis - Implement co-kriging strategies - Consider geological controls on correlation</p>
-</section>
-</section>
-<section id="integration-with-resource-estimation" class="level2">
-<h2 class="anchored" data-anchor-id="integration-with-resource-estimation">Integration with Resource Estimation</h2>
-<p>Proper preprocessing directly improves:</p>
-<p><strong>Estimation Accuracy:</strong> - Reduced bias from poor data quality - Improved spatial continuity modeling - Better geological domain representation - Enhanced outlier treatment</p>
-<p><strong>Model Reliability:</strong> - Consistent data support across estimation domain - Appropriate statistical distributions for kriging - Preserved geological relationships - Quantified uncertainty parameters</p>
-<p><strong>Practical Applications:</strong> - Grade control model accuracy - Long-term mine planning reliability - Resource classification confidence - Economic evaluation precision</p>
-</section>
-<section id="quality-assurance-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="quality-assurance-checklist">Quality Assurance Checklist</h2>
-<p>Before proceeding to resource estimation, ensure:</p>
+<section id="critical-quality-assurance-checkpoints" class="level2">
+<h2 class="anchored" data-anchor-id="critical-quality-assurance-checkpoints">Critical Quality Assurance Checkpoints</h2>
+<p>Before proceeding to resource estimation, comprehensive validation ensures preprocessing quality:</p>
+<section id="data-integrity-verification" class="level3">
+<h3 class="anchored" data-anchor-id="data-integrity-verification"><strong>Data Integrity Verification</strong></h3>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Data Quality:</strong> All critical data issues resolved</label></li>
-<li><label><input type="checkbox"><strong>Geological Consistency:</strong> Domain boundaries geologically reasonable</label></li>
-<li><label><input type="checkbox"><strong>Statistical Validity:</strong> Distributions appropriate for chosen methods</label></li>
-<li><label><input type="checkbox"><strong>Spatial Continuity:</strong> Preserved through preprocessing steps</label></li>
-<li><label><input type="checkbox"><strong>Documentation:</strong> All processing steps recorded and justified</label></li>
-<li><label><input type="checkbox"><strong>Validation:</strong> Independent check of processing results</label></li>
+<li><label><input type="checkbox"><strong>Geological Consistency:</strong> All domain boundaries geologically reasonable and statistically justified</label></li>
+<li><label><input type="checkbox"><strong>Statistical Validity:</strong> Distributions appropriate for selected geostatistical methods</label></li>
+<li><label><input type="checkbox"><strong>Spatial Continuity:</strong> Important geological relationships preserved through preprocessing</label></li>
+<li><label><input type="checkbox"><strong>Quality Integration:</strong> All QA/QC data appropriately incorporated into final dataset</label></li>
 </ul>
 </section>
-<section id="advanced-features-in-geodataviz-pro" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-features-in-geodataviz-pro">Advanced Features in GeoDataViz Pro</h2>
-<p>The upcoming Pro version will include:</p>
-<p><strong>Automated Preprocessing Workflows:</strong> - AI-driven domain boundary optimization - Automated composite length selection - Intelligent outlier detection - Adaptive transformation selection</p>
-<p><strong>Advanced Analytics:</strong> - Machine learning domain recognition - Uncertainty quantification tools - Batch processing capabilities - Integration with estimation software</p>
+<section id="professional-standards-compliance" class="level3">
+<h3 class="anchored" data-anchor-id="professional-standards-compliance"><strong>Professional Standards Compliance</strong></h3>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Documentation Completeness:</strong> All preprocessing decisions documented with geological and statistical justification</label></li>
+<li><label><input type="checkbox"><strong>Reproducibility:</strong> Complete methodology documentation enabling independent verification</label></li>
+<li><label><input type="checkbox"><strong>Uncertainty Quantification:</strong> Preprocessing uncertainty quantified and propagated to resource estimates</label></li>
+<li><label><input type="checkbox"><strong>Professional Review:</strong> Independent technical review of preprocessing methodology and implementation</label></li>
+</ul>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Effective drillhole data preprocessing is fundamental to reliable resource estimation. GeoDataViz provides comprehensive tools to transform raw geological data into estimation-ready datasets while preserving geological relationships and quantifying uncertainty.</p>
-<p>The investment in thorough preprocessing pays significant dividends in improved resource model accuracy, reduced estimation bias, and enhanced confidence in mining decisions.</p>
 </section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<p>In our upcoming posts, we’ll explore:</p>
-<ol type="1">
-<li><strong>“Variogram Modeling with GeoDataViz”</strong> - Advanced spatial continuity analysis</li>
-<li><strong>“Resource Estimation Workflows”</strong> - From preprocessing to final models</li>
-<li><strong>“Uncertainty Quantification Techniques”</strong> - Managing estimation risk</li>
-</ol>
+<section id="advanced-preprocessing-challenges-and-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-preprocessing-challenges-and-solutions">Advanced Preprocessing Challenges and Solutions</h2>
+<section id="challenge-1-complex-geological-boundaries" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-1-complex-geological-boundaries"><strong>Challenge 1: Complex Geological Boundaries</strong></h3>
+<p><strong>Issue:</strong> Gradational contacts between geological domains where traditional hard boundaries are inappropriate <strong>Professional Solution:</strong> - Implement soft boundary modeling using transitional probability approaches - Apply distance-weighted domain assignment with geological control integration - Use machine learning boundary optimization with geological constraint integration - Quantify boundary uncertainty for appropriate resource classification</p>
+</section>
+<section id="challenge-2-multi-campaign-data-integration" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-2-multi-campaign-data-integration"><strong>Challenge 2: Multi-Campaign Data Integration</strong></h3>
+<p><strong>Issue:</strong> Different drilling campaigns with varying sampling protocols, analytical methods, and quality standards <strong>Professional Solution:</strong> - Develop campaign-specific preprocessing protocols acknowledging methodological differences - Implement statistical harmonization techniques while preserving geological relationships - Apply weighted integration approaches based on data quality assessment - Document inter-campaign bias and incorporate uncertainty into resource estimates</p>
+</section>
+<section id="challenge-3-extreme-value-populations" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-3-extreme-value-populations"><strong>Challenge 3: Extreme Value Populations</strong></h3>
+<p><strong>Issue:</strong> High-grade populations requiring specialized treatment to balance geological reality with estimation stability <strong>Professional Solution:</strong> - Implement geological context-based outlier evaluation using multiple validation approaches - Apply indicator approaches preserving extreme value information while managing estimation risk - Use conditional simulation for extreme value uncertainty modeling - Develop high-grade zone modeling strategies based on geological controls</p>
+</section>
+<section id="challenge-4-multi-element-complexity" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-4-multi-element-complexity"><strong>Challenge 4: Multi-Element Complexity</strong></h3>
+<p><strong>Issue:</strong> Complex element associations requiring coordinated preprocessing across multiple variables <strong>Professional Solution:</strong> - Apply multivariate statistical approaches preserving element association patterns - Implement compositional data analysis where closure effects are significant - Use co-regionalization analysis for coordinated multi-element preprocessing - Develop element-specific strategies while maintaining overall geological consistency</p>
+</section>
+</section>
+<section id="professional-development-through-preprocessing-mastery" class="level2">
+<h2 class="anchored" data-anchor-id="professional-development-through-preprocessing-mastery">Professional Development Through Preprocessing Mastery</h2>
+<p>Advanced preprocessing capabilities provide significant professional differentiation:</p>
+<p><strong>Technical Excellence:</strong> - Ability to handle complex geological datasets that challenge standard approaches - Integration of geological knowledge with advanced statistical methods - Capability to quantify and manage uncertainty throughout the preprocessing workflow - Expertise in validating preprocessing decisions through multiple technical approaches</p>
+<p><strong>Professional Credibility:</strong> - Documentation standards meeting international resource reporting requirements - Methodology transparency enabling independent technical review and validation - Integration of quality assurance throughout the preprocessing workflow - Ability to explain and justify complex preprocessing decisions to diverse audiences</p>
+<p><strong>Economic Value:</strong> - Prevention of costly resource estimation errors through proper data conditioning - Optimization of geological domain boundaries enhancing resource estimate accuracy - Appropriate statistical treatment improving resource classification confidence - Risk management through comprehensive uncertainty quantification</p>
+</section>
+<section id="integration-with-resource-estimation-excellence" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-resource-estimation-excellence">Integration with Resource Estimation Excellence</h2>
+<p>Professional preprocessing directly enhances all aspects of resource estimation:</p>
+<p><strong>Estimation Accuracy:</strong> - Reduced bias through appropriate outlier treatment and spatial bias correction - Enhanced geological realism through proper domain conditioning and boundary treatment - Improved statistical reliability through optimal transformation and composite strategies - Better uncertainty quantification through comprehensive quality assurance integration</p>
+<p><strong>Model Reliability:</strong> - Consistent data support across the entire resource domain through proper composite optimization - Appropriate statistical distributions for selected geostatistical methods - Preserved geological relationships ensuring model geological consistency - Quantified uncertainty parameters enabling appropriate resource classification</p>
+<p><strong>Professional Applications:</strong> - Resource estimates meeting international reporting standards for quality and documentation - Models suitable for detailed mine planning and grade control applications - Uncertainty quantification supporting economic evaluation and risk assessment - Documentation standards enabling independent technical review and regulatory approval</p>
+</section>
+<section id="advanced-geodataviz-pro-features" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-geodataviz-pro-features">Advanced GeoDataViz Pro Features</h2>
+<p>The upcoming professional version includes enhanced preprocessing capabilities:</p>
+<p><strong>Automated Workflow Optimization:</strong> - Machine learning algorithms for optimal preprocessing parameter selection - Automated quality assurance integration throughout the preprocessing workflow - Intelligent outlier treatment using geological context and multiple validation methods - Adaptive transformation selection optimized for complex geological distributions</p>
+<p><strong>Enterprise Integration:</strong> - Database connectivity for large-scale preprocessing workflows - Batch processing capabilities for multiple deposits or mining operations - API integration enabling preprocessing workflow automation - Custom reporting for corporate and regulatory requirements</p>
+<p><strong>Advanced Analytics:</strong> - Multi-element preprocessing optimization maintaining element associations - Temporal analysis for deposits with time-varying mineralization or data quality - Uncertainty propagation throughout the preprocessing workflow - Machine learning domain optimization using geological and geochemical data</p>
+</section>
+<section id="conclusion-preprocessing-as-the-foundation-of-professional-excellence" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-preprocessing-as-the-foundation-of-professional-excellence">Conclusion: Preprocessing as the Foundation of Professional Excellence</h2>
+<p>Professional drillhole data preprocessing represents the critical bridge between raw geological data and reliable resource estimates. Through GeoDataViz, these sophisticated preprocessing capabilities are now accessible to every geoscientist, eliminating the traditional barriers of expensive software and limited technical resources.</p>
+<p>The investment in comprehensive preprocessing methodology pays enormous dividends: dramatically improved resource estimate accuracy, enhanced professional credibility, and the confidence that comes from knowing your data conditioning meets the highest professional standards.</p>
+<p>Remember: <strong>every preprocessing decision impacts final resource estimate quality.</strong> Make preprocessing excellence your competitive advantage and the foundation of your professional reputation.</p>
+</section>
+<section id="next-in-the-library" class="level2">
+<h2 class="anchored" data-anchor-id="next-in-the-library">Next in The Library</h2>
+<p>Our next definitive guide will explore <strong>“Variogram Modeling Mastery: Advanced Spatial Continuity Analysis with GeoDataViz”</strong>, where we’ll transform properly preprocessed data into sophisticated spatial continuity models for optimal resource estimation.</p>
 <hr>
-<p><em>Questions about preprocessing workflows or need specific guidance for your project? Connect with me on <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn</a> or contribute to <a href="https://github.com/ghoziankarami/geodataviz">GeoDataViz development</a>.</em></p>
+<p><em>Ready to implement professional-grade preprocessing workflows? Experience the <a href="https://geodataviz.shinyapps.io/geodataviz/">GeoDataViz interactive platform</a> where this entire preprocessing workflow can be executed interactively with comprehensive validation and documentation. For visual tutorials on these advanced techniques, follow our step-by-step guides on <a href="https://instagram.com/orebit.id">Instagram <span class="citation" data-cites="orebit.id">@orebit.id</span></a>.</em></p>
 
 
 <!-- -->
@@ -980,369 +927,340 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Kode Sumber</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Pre-Processing Drillhole Data for Resource Estimation: Advanced Techniques with GeoDataViz"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ghozian Islam Karami"</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-09-20"</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [GeoDataViz, Preprocessing, Resource-Estimation, Geostatistics]</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Master the art of drillhole data preprocessing using GeoDataViz. Learn compositing strategies, domain optimization, and data conditioning techniques for accurate resource estimation."</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "preprocessing-workflow.png"</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>After completing exploratory data analysis (EDA), the next critical step is data preprocessing—transforming your raw drillhole data into a format suitable for resource estimation. This process significantly impacts the quality and reliability of your final resource model.</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>GeoDataViz provides advanced tools for data preprocessing, from automated compositing to sophisticated domain analysis. This guide covers essential preprocessing techniques that will prepare your data for accurate resource estimation.</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Preprocessing Pipeline</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>Data preprocessing in geological contexts involves several key steps:</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Data Cleaning and Validation**</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Geological Domain Definition**</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Sample Compositing**</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Outlier Treatment**</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Data Transformation**</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Statistical Validation**</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>Let's explore each step using GeoDataViz capabilities.</span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Data Cleaning and Validation</span></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Automated Data Quality Checks</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>GeoDataViz performs comprehensive quality checks that identify:</span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>**Sample Interval Issues:**</span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Overlapping intervals that create double-counting</span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Gaps in sampling that require handling strategies</span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inconsistent sample lengths that affect estimation</span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>**Coordinate System Problems:**</span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inconsistent coordinate references between holes</span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Elevation discrepancies that affect 3D modeling</span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Survey closure errors that impact hole positioning</span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>**Assay Data Quality:**</span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Below detection limit values requiring substitution</span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Missing assays that need interpolation or flagging</span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Duplicate samples for precision assessment</span>
-<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Conditioning Strategies</span></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>**Missing Data Handling:**</span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="in">- Geological interpolation for short gaps</span></span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="in">- Statistical imputation using nearby samples</span></span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="in">- Flagging of extensive missing intervals</span></span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a><span class="in">- Alternative sampling strategies for future programs</span></span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>**Detection Limit Treatment:**</span>
-<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="in">- Half detection limit substitution</span></span>
-<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a><span class="in">- Distributional approaches using fitted distributions</span></span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="in">- Conditional simulation for realistic value ranges</span></span>
-<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a><span class="in">- Impact assessment on resource estimates</span></span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Geological Domain Definition</span></span>
-<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Statistical Domain Analysis</span></span>
-<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>GeoDataViz provides tools for objective domain boundary definition:</span>
-<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>**Lithological Domain Assessment:**</span>
-<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Grade distribution comparison between rock types</span>
-<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Statistical tests for population differences (t-tests, ANOVA)</span>
-<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contact analysis using transitional statistics</span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boundary optimization using grade continuity</span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>**Structural Domain Analysis:**</span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Grade trend analysis along structural orientations</span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fault and fracture impact on grade continuity</span>
-<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fold-related grade distribution patterns</span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alteration zone influence on mineralization</span>
-<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### Advanced Domain Optimization</span></span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>**Multivariate Analysis:**</span>
-<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Principal component analysis for complex geology</span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cluster analysis for natural population identification  </span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Discriminant analysis for boundary refinement</span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Machine learning approaches for domain recognition</span>
-<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>**Contact Analysis Tools:**</span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hard boundary identification using grade contrasts</span>
-<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Soft boundary modeling for gradational contacts</span>
-<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Transition zone characterization</span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boundary uncertainty assessment</span>
-<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Sample Compositing Strategies</span></span>
-<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Composite Length Optimization</span></span>
-<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>Selecting appropriate composite length is crucial for resource estimation:</span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a>**Length Selection Criteria:**</span>
-<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geological unit thickness consideration</span>
-<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sampling interval harmonization</span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Estimation block size compatibility</span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geostatistical range relationships</span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>**GeoDataViz Compositing Features:**</span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a><span class="in">- Automated composite length testing</span></span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="in">- Visual comparison of different lengths</span></span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a><span class="in">- Statistical impact assessment</span></span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a><span class="in">- Geological boundary preservation</span></span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a><span class="fu">### Advanced Compositing Techniques</span></span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>**Geological Compositing:**</span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Respecting geological boundaries</span>
-<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Variable length compositing by domain</span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contact-aware compositing strategies</span>
-<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Weighted averaging by sample quality</span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a>**Temporal Compositing:**</span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Campaign-based composite analysis</span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Temporal trend assessment</span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Batch effect evaluation</span>
-<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Long-term data consistency checks</span>
-<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Outlier Treatment Strategies</span></span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Outlier Identification Methods</span></span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>GeoDataViz implements multiple outlier detection approaches:</span>
-<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>**Statistical Methods:**</span>
-<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Interquartile Range (IQR) method</span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Standard deviation multiples (Z-score)</span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Modified Z-score for skewed distributions</span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Percentile-based thresholds</span>
-<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a>**Spatial Methods:**</span>
-<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Neighborhood analysis for spatial outliers</span>
-<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Local grade distribution comparison</span>
-<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Distance-weighted outlier scoring</span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geological context consideration</span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### Treatment Approaches</span></span>
-<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a>**Conservative Strategies:**</span>
-<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a><span class="in">- Top-cutting using statistical thresholds</span></span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a><span class="in">- Indicator variable creation for high grades</span></span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="in">- Separate estimation for outlier populations</span></span>
-<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a><span class="in">- Conditional simulation for grade uncertainty</span></span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a>**Geological Approaches:**</span>
-<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a><span class="in">- Domain-specific outlier treatment</span></span>
-<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a><span class="in">- Geological control consideration</span></span>
-<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a><span class="in">- Structural context evaluation</span></span>
-<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a><span class="in">- Alteration intensity correlation</span></span>
-<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Data Transformation Techniques</span></span>
-<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribution Normalization</span></span>
-<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a>Many geostatistical techniques assume normal distributions:</span>
-<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a>**Transformation Methods Available:**</span>
-<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Log-normal transformation for positively skewed data</span>
-<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Box-Cox transformation for flexible distribution shaping</span>
-<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Normal score transformation for general normalization</span>
-<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indicator transformation for categorical analysis</span>
-<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a>**Transformation Assessment:**</span>
-<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a><span class="in">- Pre/post transformation distribution comparison</span></span>
-<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a><span class="in">- Normality testing (Shapiro-Wilk, Anderson-Darling)</span></span>
-<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a><span class="in">- Spatial continuity preservation evaluation</span></span>
-<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a><span class="in">- Back-transformation validation</span></span>
-<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### Multi-Element Considerations</span></span>
-<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a>**Correlated Element Treatment:**</span>
-<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Principal component analysis</span>
-<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Independent component analysis</span>
-<span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Canonical correlation analysis</span>
-<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multi-element compositional data analysis</span>
-<span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a><span class="fu">## 6. Statistical Validation</span></span>
-<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a><span class="fu">### Preprocessing Impact Assessment</span></span>
-<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a>GeoDataViz provides tools to evaluate preprocessing impact:</span>
-<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a>**Before/After Comparisons:**</span>
-<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Statistical parameter changes</span>
-<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Distribution shape modifications</span>
-<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Spatial continuity alterations</span>
-<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geological interpretation consistency</span>
-<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a>**Validation Metrics:**</span>
-<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a><span class="in">- Grade-tonnage curve stability</span></span>
-<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a><span class="in">- Spatial continuity preservation</span></span>
-<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a><span class="in">- Geological contact sharpness</span></span>
-<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a><span class="in">- Estimation variance validation</span></span>
-<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-218"><a href="#cb13-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practical Preprocessing Workflow</span></span>
-<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 1: Initial Assessment</span></span>
-<span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a><span class="in">1. Import and validate raw drillhole data</span></span>
-<span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a><span class="in">2. Perform comprehensive quality checks</span></span>
-<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a><span class="in">3. Identify and flag data quality issues</span></span>
-<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a><span class="in">4. Create initial geological interpretation</span></span>
-<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 2: Domain Development</span></span>
-<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a><span class="in">1. Statistical analysis of geological units</span></span>
-<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a><span class="in">2. Contact analysis and boundary optimization</span></span>
-<span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a><span class="in">3. Structural control assessment</span></span>
-<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a><span class="in">4. Multi-element correlation analysis</span></span>
-<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 3: Compositing Strategy</span></span>
-<span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a><span class="in">1. Composite length optimization testing</span></span>
-<span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a><span class="in">2. Geological boundary preservation</span></span>
-<span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a><span class="in">3. Statistical impact assessment</span></span>
-<span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a><span class="in">4. Final composite generation</span></span>
-<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-244"><a href="#cb13-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 4: Data Conditioning</span></span>
-<span id="cb13-245"><a href="#cb13-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a><span class="in">1. Outlier identification and treatment</span></span>
-<span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a><span class="in">2. Data transformation assessment</span></span>
-<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a><span class="in">3. Missing data handling</span></span>
-<span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a><span class="in">4. Quality assurance validation</span></span>
-<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 5: Final Validation</span></span>
-<span id="cb13-253"><a href="#cb13-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a><span class="in">1. Comprehensive statistical review</span></span>
-<span id="cb13-255"><a href="#cb13-255" aria-hidden="true" tabindex="-1"></a><span class="in">2. Geological consistency check</span></span>
-<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a><span class="in">3. Spatial continuity validation</span></span>
-<span id="cb13-257"><a href="#cb13-257" aria-hidden="true" tabindex="-1"></a><span class="in">4. Resource estimation readiness assessment</span></span>
-<span id="cb13-258"><a href="#cb13-258" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-259"><a href="#cb13-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-260"><a href="#cb13-260" aria-hidden="true" tabindex="-1"></a><span class="fu">## Common Preprocessing Challenges</span></span>
-<span id="cb13-261"><a href="#cb13-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-262"><a href="#cb13-262" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge 1: Complex Geological Boundaries</span></span>
-<span id="cb13-263"><a href="#cb13-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-264"><a href="#cb13-264" aria-hidden="true" tabindex="-1"></a>**Issue:** Gradational contacts between geological domains</span>
-<span id="cb13-265"><a href="#cb13-265" aria-hidden="true" tabindex="-1"></a>**Solution:** </span>
-<span id="cb13-266"><a href="#cb13-266" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use soft boundary modeling approaches</span>
-<span id="cb13-267"><a href="#cb13-267" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implement transitional zone analysis</span>
-<span id="cb13-268"><a href="#cb13-268" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply distance-weighted domain assignment</span>
-<span id="cb13-269"><a href="#cb13-269" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consider geological uncertainty in estimation</span>
-<span id="cb13-270"><a href="#cb13-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-271"><a href="#cb13-271" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge 2: Variable Sample Quality</span></span>
-<span id="cb13-272"><a href="#cb13-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-273"><a href="#cb13-273" aria-hidden="true" tabindex="-1"></a>**Issue:** Mixed drilling methods with different sample qualities</span>
-<span id="cb13-274"><a href="#cb13-274" aria-hidden="true" tabindex="-1"></a>**Solution:**</span>
-<span id="cb13-275"><a href="#cb13-275" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Weight samples by quality metrics</span>
-<span id="cb13-276"><a href="#cb13-276" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Separate analysis by drilling method</span>
-<span id="cb13-277"><a href="#cb13-277" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply method-specific composite strategies</span>
-<span id="cb13-278"><a href="#cb13-278" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Include quality indicators in estimation</span>
-<span id="cb13-279"><a href="#cb13-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-280"><a href="#cb13-280" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge 3: Sparse Drilling Patterns</span></span>
-<span id="cb13-281"><a href="#cb13-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-282"><a href="#cb13-282" aria-hidden="true" tabindex="-1"></a>**Issue:** Irregular hole spacing affecting continuity analysis</span>
-<span id="cb13-283"><a href="#cb13-283" aria-hidden="true" tabindex="-1"></a>**Solution:**</span>
-<span id="cb13-284"><a href="#cb13-284" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use directional continuity analysis</span>
-<span id="cb13-285"><a href="#cb13-285" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply sparse data geostatistical methods</span>
-<span id="cb13-286"><a href="#cb13-286" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consider data augmentation techniques</span>
-<span id="cb13-287"><a href="#cb13-287" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implement uncertainty quantification</span>
-<span id="cb13-288"><a href="#cb13-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-289"><a href="#cb13-289" aria-hidden="true" tabindex="-1"></a><span class="fu">### Challenge 4: Multi-Element Correlation</span></span>
-<span id="cb13-290"><a href="#cb13-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-291"><a href="#cb13-291" aria-hidden="true" tabindex="-1"></a>**Issue:** Complex relationships between multiple elements</span>
-<span id="cb13-292"><a href="#cb13-292" aria-hidden="true" tabindex="-1"></a>**Solution:**</span>
-<span id="cb13-293"><a href="#cb13-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply multivariate geostatistical methods</span>
-<span id="cb13-294"><a href="#cb13-294" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use independent component analysis</span>
-<span id="cb13-295"><a href="#cb13-295" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implement co-kriging strategies</span>
-<span id="cb13-296"><a href="#cb13-296" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consider geological controls on correlation</span>
-<span id="cb13-297"><a href="#cb13-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-298"><a href="#cb13-298" aria-hidden="true" tabindex="-1"></a><span class="fu">## Integration with Resource Estimation</span></span>
-<span id="cb13-299"><a href="#cb13-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-300"><a href="#cb13-300" aria-hidden="true" tabindex="-1"></a>Proper preprocessing directly improves:</span>
-<span id="cb13-301"><a href="#cb13-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-302"><a href="#cb13-302" aria-hidden="true" tabindex="-1"></a>**Estimation Accuracy:**</span>
-<span id="cb13-303"><a href="#cb13-303" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reduced bias from poor data quality</span>
-<span id="cb13-304"><a href="#cb13-304" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Improved spatial continuity modeling</span>
-<span id="cb13-305"><a href="#cb13-305" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Better geological domain representation</span>
-<span id="cb13-306"><a href="#cb13-306" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Enhanced outlier treatment</span>
-<span id="cb13-307"><a href="#cb13-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-308"><a href="#cb13-308" aria-hidden="true" tabindex="-1"></a>**Model Reliability:**</span>
-<span id="cb13-309"><a href="#cb13-309" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consistent data support across estimation domain</span>
-<span id="cb13-310"><a href="#cb13-310" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Appropriate statistical distributions for kriging</span>
-<span id="cb13-311"><a href="#cb13-311" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Preserved geological relationships</span>
-<span id="cb13-312"><a href="#cb13-312" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantified uncertainty parameters</span>
-<span id="cb13-313"><a href="#cb13-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-314"><a href="#cb13-314" aria-hidden="true" tabindex="-1"></a>**Practical Applications:**</span>
-<span id="cb13-315"><a href="#cb13-315" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Grade control model accuracy</span>
-<span id="cb13-316"><a href="#cb13-316" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Long-term mine planning reliability</span>
-<span id="cb13-317"><a href="#cb13-317" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resource classification confidence</span>
-<span id="cb13-318"><a href="#cb13-318" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Economic evaluation precision</span>
-<span id="cb13-319"><a href="#cb13-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-320"><a href="#cb13-320" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quality Assurance Checklist</span></span>
-<span id="cb13-321"><a href="#cb13-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-322"><a href="#cb13-322" aria-hidden="true" tabindex="-1"></a>Before proceeding to resource estimation, ensure:</span>
-<span id="cb13-323"><a href="#cb13-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-324"><a href="#cb13-324" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Data Quality:** All critical data issues resolved</span>
-<span id="cb13-325"><a href="#cb13-325" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Geological Consistency:** Domain boundaries geologically reasonable</span>
-<span id="cb13-326"><a href="#cb13-326" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Statistical Validity:** Distributions appropriate for chosen methods</span>
-<span id="cb13-327"><a href="#cb13-327" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Spatial Continuity:** Preserved through preprocessing steps</span>
-<span id="cb13-328"><a href="#cb13-328" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Documentation:** All processing steps recorded and justified</span>
-<span id="cb13-329"><a href="#cb13-329" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Validation:** Independent check of processing results</span>
-<span id="cb13-330"><a href="#cb13-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-331"><a href="#cb13-331" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced Features in GeoDataViz Pro</span></span>
-<span id="cb13-332"><a href="#cb13-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-333"><a href="#cb13-333" aria-hidden="true" tabindex="-1"></a>The upcoming Pro version will include:</span>
-<span id="cb13-334"><a href="#cb13-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-335"><a href="#cb13-335" aria-hidden="true" tabindex="-1"></a>**Automated Preprocessing Workflows:**</span>
-<span id="cb13-336"><a href="#cb13-336" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>AI-driven domain boundary optimization</span>
-<span id="cb13-337"><a href="#cb13-337" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Automated composite length selection</span>
-<span id="cb13-338"><a href="#cb13-338" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Intelligent outlier detection</span>
-<span id="cb13-339"><a href="#cb13-339" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Adaptive transformation selection</span>
-<span id="cb13-340"><a href="#cb13-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-341"><a href="#cb13-341" aria-hidden="true" tabindex="-1"></a>**Advanced Analytics:**</span>
-<span id="cb13-342"><a href="#cb13-342" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Machine learning domain recognition</span>
-<span id="cb13-343"><a href="#cb13-343" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Uncertainty quantification tools</span>
-<span id="cb13-344"><a href="#cb13-344" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Batch processing capabilities</span>
-<span id="cb13-345"><a href="#cb13-345" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Integration with estimation software</span>
-<span id="cb13-346"><a href="#cb13-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-347"><a href="#cb13-347" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
-<span id="cb13-348"><a href="#cb13-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-349"><a href="#cb13-349" aria-hidden="true" tabindex="-1"></a>Effective drillhole data preprocessing is fundamental to reliable resource estimation. GeoDataViz provides comprehensive tools to transform raw geological data into estimation-ready datasets while preserving geological relationships and quantifying uncertainty.</span>
-<span id="cb13-350"><a href="#cb13-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-351"><a href="#cb13-351" aria-hidden="true" tabindex="-1"></a>The investment in thorough preprocessing pays significant dividends in improved resource model accuracy, reduced estimation bias, and enhanced confidence in mining decisions.</span>
-<span id="cb13-352"><a href="#cb13-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-353"><a href="#cb13-353" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
-<span id="cb13-354"><a href="#cb13-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-355"><a href="#cb13-355" aria-hidden="true" tabindex="-1"></a>In our upcoming posts, we'll explore:</span>
-<span id="cb13-356"><a href="#cb13-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-357"><a href="#cb13-357" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**"Variogram Modeling with GeoDataViz"** - Advanced spatial continuity analysis</span>
-<span id="cb13-358"><a href="#cb13-358" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**"Resource Estimation Workflows"** - From preprocessing to final models</span>
-<span id="cb13-359"><a href="#cb13-359" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**"Uncertainty Quantification Techniques"** - Managing estimation risk</span>
-<span id="cb13-360"><a href="#cb13-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-361"><a href="#cb13-361" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb13-362"><a href="#cb13-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-363"><a href="#cb13-363" aria-hidden="true" tabindex="-1"></a>*Questions about preprocessing workflows or need specific guidance for your project? Connect with me on [LinkedIn](https://www.linkedin.com/in/ghoziankarami/) or contribute to [GeoDataViz development](https://github.com/ghoziankarami/geodataviz).*</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ghozian Islam Karami"  </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-09-20"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [GeoDataViz, Preprocessing, Resource-Estimation, Geostatistics]</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation."</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "preprocessing-workflow.png"</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Critical Bridge Between Data and Reliable Estimates</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>Data preprocessing represents the most critical—and most commonly underestimated—phase of professional resource estimation. After signing off on mineral resource estimates as a **Certified Competent Person** and witnessing preprocessing failures that resulted in millions of dollars in misallocated capital, I can state definitively: **the quality of your resource estimate is fundamentally limited by the quality of your data preprocessing.**</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>This comprehensive guide presents the systematic preprocessing methodology I've developed through real-world mining projects, now implemented in GeoDataViz to provide every geoscientist with access to professional-grade data conditioning capabilities.</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## The High Cost of Inadequate Preprocessing</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>In my decade of resource evaluation experience, I've observed that preprocessing failures account for the majority of significant resource estimation errors:</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Grade overestimation** of 30% due to inappropriate composite length selection that smoothed high-grade boundaries</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Resource misclassification** resulting from unaddressed spatial bias that inflated confidence in sparsely drilled areas  </span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Domain boundary failures** where inadequate geological conditioning created artificial grade continuity across distinct mineralization systems</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Outlier treatment errors** where statistical approaches ignored geological reality, resulting in either excessive conservatism or dangerous grade inflation</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>These aren't theoretical risks—they're real challenges that I've helped companies resolve through proper preprocessing implementation.</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## The GeoDataViz Professional Preprocessing Framework</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>GeoDataViz implements a comprehensive preprocessing framework specifically designed for geological datasets, addressing the complex requirements of spatially distributed, geometrically constrained drillhole data.</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 1: Advanced Data Conditioning**</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>Professional preprocessing begins with sophisticated data conditioning that goes far beyond simple cleaning:</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>**Missing Data Intelligence:**</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>Rather than simple deletion or basic imputation, GeoDataViz provides geological context-aware solutions:</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Geological interpolation** using lithological and structural controls for short gaps</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Statistical imputation** with spatial weighting based on nearby samples within the same geological domain</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Detection limit handling** using distributional approaches that preserve the statistical character of trace element populations</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Impact assessment** quantifying how missing data treatment affects final resource estimates</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>**Spatial Bias Correction:**</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Declustering weight calculation** using multiple algorithms optimized for different geological environments</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Preferential sampling detection** identifying areas where drilling density correlates with grade</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Campaign integration** harmonizing data from different drilling programs with varying sampling protocols</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Temporal bias assessment** evaluating systematic changes in analytical procedures over time</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>**Quality Assurance Integration:**</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Precision-based weighting** incorporating analytical uncertainty into composite calculations</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Accuracy assessment** using control standards to identify and correct systematic analytical bias</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contamination detection** through blank performance analysis with sample flagging</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Method-specific conditioning** accounting for different drilling and sampling techniques</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 2: Geological Domain Optimization**</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>Professional resource estimation requires geologically sensible and statistically validated domains:</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>**Advanced Domain Validation:**</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>GeoDataViz provides sophisticated tools for domain boundary optimization:</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Multivariate discriminant analysis** using multiple elements to refine geological boundaries</span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Statistical significance testing** ensuring grade population differences justify separate estimation</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contact sharpness analysis** distinguishing hard boundaries requiring separate estimation from gradational contacts suitable for transition modeling</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Boundary uncertainty quantification** essential for appropriate resource classification</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>**Structural Control Integration:**</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fault influence analysis** quantifying structural control on grade distribution and continuity</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fold-related grade analysis** identifying structural controls on mineralization distribution patterns</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Alteration intensity correlation** with grade distribution for enhanced domain definition</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Anisotropy assessment** ensuring domain boundaries align with geological controls on grade continuity</span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>**Machine Learning Enhancement:**</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cluster analysis** for natural population identification using multiple geological and geochemical variables</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Classification tree analysis** for objective domain boundary identification</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Principal component analysis** revealing underlying geological controls not apparent in individual variables</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Ensemble methods** combining multiple approaches for robust domain identification</span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 3: Composite Optimization Strategy**</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>Composite length selection represents one of the most critical preprocessing decisions:</span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>**Multi-Criteria Composite Optimization:**</span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>GeoDataViz implements sophisticated approaches for composite length selection:</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>**Geological Criteria:**</span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Geological unit thickness analysis** ensuring composites honor significant geological boundaries</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Mineralization continuity assessment** matching composite length to the scale of grade control</span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contact preservation analysis** ensuring geological boundaries aren't artificially smoothed by compositing</span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Structural orientation integration** aligning composite intervals with geological controls</span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>**Statistical Impact Assessment:**</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Distribution parameter sensitivity** showing how composite length affects grade distribution characteristics</span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Spatial continuity preservation** ensuring compositing doesn't destroy important spatial relationships</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Estimation variance analysis** evaluating how composite length affects final resource estimate uncertainty</span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**High-grade preservation** ensuring important extreme values aren't inappropriately diluted</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>**Advanced Compositing Techniques:**</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Variable length compositing** respecting geological boundaries while maintaining statistical consistency</span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Geological weighted compositing** using geological quality indicators to weight sample contributions</span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contact-aware compositing** special handling for samples spanning geological domain boundaries</span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Recovery-weighted compositing** incorporating core recovery data for enhanced reliability</span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 4: Outlier Treatment Strategy**</span></span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>Professional outlier treatment requires integration of statistical methods with geological understanding:</span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>**Multi-Method Outlier Identification:**</span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Domain-specific statistical thresholds** recognizing that outlier behavior varies by geological environment  </span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Spatial outlier analysis** identifying samples that are inconsistent with their neighborhood</span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Geological context evaluation** distinguishing true extreme values from analytical or sampling errors</span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Multi-element correlation analysis** using element associations to validate extreme values</span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>**Advanced Treatment Approaches:**</span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>**Conservative Strategies:**</span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Top-cutting with geological justification** using geological controls to set appropriate thresholds</span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Indicator variable approaches** preserving extreme value information while limiting estimation impact</span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Separate population estimation** for geologically distinct extreme value populations</span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Conditional simulation** for high-grade uncertainty modeling</span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>**Geological Integration Approaches:**</span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Structural control correlation** validating extreme values through structural geology relationships</span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Alteration intensity correlation** using alteration mapping to validate high-grade occurrences</span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Multi-element consistency** checking extreme values against expected geochemical associations</span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Spatial clustering analysis** identifying systematic high-grade zones versus random occurrences</span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 5: Data Transformation Optimization**</span></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>Many geostatistical techniques require appropriate data distribution characteristics:</span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>**Advanced Transformation Assessment:**</span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>GeoDataViz provides comprehensive transformation evaluation:</span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>**Multi-Method Transformation Testing:**</span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Log-normal transformation** with back-transformation bias assessment for positively skewed distributions</span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Box-Cox optimization** with automated parameter selection for flexible distribution modeling</span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Normal score transformation** preserving rank relationships while achieving normality</span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Johnson transformation** for complex distribution shapes requiring specialized approaches</span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a>**Geological Constraint Integration:**</span>
+<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Domain-specific transformations** recognizing that optimal transformation varies by geological environment</span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Grade continuity preservation** ensuring transformations don't destroy important geological relationships</span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Multi-element consistency** maintaining realistic element associations through transformation</span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Spatial structure preservation** validating that transformations preserve spatial continuity patterns</span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>**Back-Transformation Validation:**</span>
+<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Bias assessment** quantifying potential errors introduced by transformation and back-transformation</span>
+<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Confidence interval accuracy** ensuring uncertainty estimates remain valid after back-transformation</span>
+<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Extreme value handling** ensuring transformation approaches appropriately handle high-grade populations</span>
+<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Resource classification impact** evaluating how transformation uncertainty affects resource confidence</span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 6: Multi-Element Coordination**</span></span>
+<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>Modern resource evaluation often requires consideration of multiple elements:</span>
+<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>**Advanced Multi-Element Analysis:**</span>
+<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Correlation structure preservation** through preprocessing to maintain realistic element associations</span>
+<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Independent component analysis** identifying underlying geological processes controlling multi-element distributions</span>
+<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Compositional data analysis** for whole-rock geochemical datasets where closure effects are important</span>
+<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Co-regionalization assessment** preparing data for multi-element geostatistical estimation</span>
+<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practical Implementation Workflow</span></span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 1: Comprehensive Data Assessment** </span></span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a><span class="in">1. Execute complete data validation protocols from EDA phase</span></span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a><span class="in">2. Identify and prioritize all preprocessing requirements</span></span>
+<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a><span class="in">3. Develop geological domain optimization strategy</span></span>
+<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a><span class="in">4. Create quality assurance integration plan</span></span>
+<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 2: Domain Conditioning**</span></span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a><span class="in">1. Implement advanced geological domain validation</span></span>
+<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a><span class="in">2. Execute contact analysis and boundary optimization  </span></span>
+<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a><span class="in">3. Perform structural control integration</span></span>
+<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a><span class="in">4. Validate domain boundaries using multiple statistical approaches</span></span>
+<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 3: Composite Strategy Implementation**</span></span>
+<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a><span class="in">1. Execute multi-criteria composite length optimization</span></span>
+<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a><span class="in">2. Implement appropriate compositing methodology for each domain</span></span>
+<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a><span class="in">3. Validate composite quality through statistical and geological assessment</span></span>
+<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a><span class="in">4. Generate composite validation documentation</span></span>
+<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 4: Advanced Data Conditioning**</span></span>
+<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a><span class="in">1. Implement sophisticated outlier treatment based on geological context</span></span>
+<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a><span class="in">2. Execute appropriate transformation strategies by domain</span></span>
+<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a><span class="in">3. Apply spatial bias correction where required</span></span>
+<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a><span class="in">4. Integrate quality assurance data into final conditioning</span></span>
+<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Phase 5: Validation and Documentation**</span></span>
+<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a><span class="in">1. Comprehensive validation of preprocessing impact on resource estimation</span></span>
+<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a><span class="in">2. Generation of complete preprocessing documentation for professional reporting</span></span>
+<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a><span class="in">3. Uncertainty quantification for preprocessed data</span></span>
+<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a><span class="in">4. Resource estimation readiness certification</span></span>
+<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Critical Quality Assurance Checkpoints</span></span>
+<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a>Before proceeding to resource estimation, comprehensive validation ensures preprocessing quality:</span>
+<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Data Integrity Verification**</span></span>
+<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Geological Consistency:** All domain boundaries geologically reasonable and statistically justified</span>
+<span id="cb6-210"><a href="#cb6-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Statistical Validity:** Distributions appropriate for selected geostatistical methods</span>
+<span id="cb6-211"><a href="#cb6-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Spatial Continuity:** Important geological relationships preserved through preprocessing</span>
+<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Quality Integration:** All QA/QC data appropriately incorporated into final dataset</span>
+<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Professional Standards Compliance**  </span></span>
+<span id="cb6-215"><a href="#cb6-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Documentation Completeness:** All preprocessing decisions documented with geological and statistical justification</span>
+<span id="cb6-216"><a href="#cb6-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Reproducibility:** Complete methodology documentation enabling independent verification</span>
+<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Uncertainty Quantification:** Preprocessing uncertainty quantified and propagated to resource estimates</span>
+<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> **Professional Review:** Independent technical review of preprocessing methodology and implementation</span>
+<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced Preprocessing Challenges and Solutions</span></span>
+<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Challenge 1: Complex Geological Boundaries**</span></span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>**Issue:** Gradational contacts between geological domains where traditional hard boundaries are inappropriate</span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a>**Professional Solution:** </span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implement soft boundary modeling using transitional probability approaches</span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply distance-weighted domain assignment with geological control integration</span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use machine learning boundary optimization with geological constraint integration</span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantify boundary uncertainty for appropriate resource classification</span>
+<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Challenge 2: Multi-Campaign Data Integration**</span></span>
+<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a>**Issue:** Different drilling campaigns with varying sampling protocols, analytical methods, and quality standards</span>
+<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a>**Professional Solution:**</span>
+<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Develop campaign-specific preprocessing protocols acknowledging methodological differences</span>
+<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implement statistical harmonization techniques while preserving geological relationships</span>
+<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply weighted integration approaches based on data quality assessment</span>
+<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Document inter-campaign bias and incorporate uncertainty into resource estimates</span>
+<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Challenge 3: Extreme Value Populations**</span></span>
+<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a>**Issue:** High-grade populations requiring specialized treatment to balance geological reality with estimation stability</span>
+<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>**Professional Solution:**</span>
+<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implement geological context-based outlier evaluation using multiple validation approaches</span>
+<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply indicator approaches preserving extreme value information while managing estimation risk</span>
+<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use conditional simulation for extreme value uncertainty modeling</span>
+<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Develop high-grade zone modeling strategies based on geological controls</span>
+<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Challenge 4: Multi-Element Complexity**</span></span>
+<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a>**Issue:** Complex element associations requiring coordinated preprocessing across multiple variables</span>
+<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a>**Professional Solution:**</span>
+<span id="cb6-249"><a href="#cb6-249" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply multivariate statistical approaches preserving element association patterns</span>
+<span id="cb6-250"><a href="#cb6-250" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Implement compositional data analysis where closure effects are significant</span>
+<span id="cb6-251"><a href="#cb6-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use co-regionalization analysis for coordinated multi-element preprocessing</span>
+<span id="cb6-252"><a href="#cb6-252" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Develop element-specific strategies while maintaining overall geological consistency</span>
+<span id="cb6-253"><a href="#cb6-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-254"><a href="#cb6-254" aria-hidden="true" tabindex="-1"></a><span class="fu">## Professional Development Through Preprocessing Mastery</span></span>
+<span id="cb6-255"><a href="#cb6-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-256"><a href="#cb6-256" aria-hidden="true" tabindex="-1"></a>Advanced preprocessing capabilities provide significant professional differentiation:</span>
+<span id="cb6-257"><a href="#cb6-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-258"><a href="#cb6-258" aria-hidden="true" tabindex="-1"></a>**Technical Excellence:**</span>
+<span id="cb6-259"><a href="#cb6-259" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ability to handle complex geological datasets that challenge standard approaches</span>
+<span id="cb6-260"><a href="#cb6-260" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Integration of geological knowledge with advanced statistical methods</span>
+<span id="cb6-261"><a href="#cb6-261" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Capability to quantify and manage uncertainty throughout the preprocessing workflow</span>
+<span id="cb6-262"><a href="#cb6-262" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Expertise in validating preprocessing decisions through multiple technical approaches</span>
+<span id="cb6-263"><a href="#cb6-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-264"><a href="#cb6-264" aria-hidden="true" tabindex="-1"></a>**Professional Credibility:**</span>
+<span id="cb6-265"><a href="#cb6-265" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Documentation standards meeting international resource reporting requirements</span>
+<span id="cb6-266"><a href="#cb6-266" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Methodology transparency enabling independent technical review and validation</span>
+<span id="cb6-267"><a href="#cb6-267" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Integration of quality assurance throughout the preprocessing workflow</span>
+<span id="cb6-268"><a href="#cb6-268" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ability to explain and justify complex preprocessing decisions to diverse audiences</span>
+<span id="cb6-269"><a href="#cb6-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-270"><a href="#cb6-270" aria-hidden="true" tabindex="-1"></a>**Economic Value:**</span>
+<span id="cb6-271"><a href="#cb6-271" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prevention of costly resource estimation errors through proper data conditioning</span>
+<span id="cb6-272"><a href="#cb6-272" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Optimization of geological domain boundaries enhancing resource estimate accuracy</span>
+<span id="cb6-273"><a href="#cb6-273" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Appropriate statistical treatment improving resource classification confidence</span>
+<span id="cb6-274"><a href="#cb6-274" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Risk management through comprehensive uncertainty quantification</span>
+<span id="cb6-275"><a href="#cb6-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-276"><a href="#cb6-276" aria-hidden="true" tabindex="-1"></a><span class="fu">## Integration with Resource Estimation Excellence</span></span>
+<span id="cb6-277"><a href="#cb6-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-278"><a href="#cb6-278" aria-hidden="true" tabindex="-1"></a>Professional preprocessing directly enhances all aspects of resource estimation:</span>
+<span id="cb6-279"><a href="#cb6-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-280"><a href="#cb6-280" aria-hidden="true" tabindex="-1"></a>**Estimation Accuracy:**</span>
+<span id="cb6-281"><a href="#cb6-281" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reduced bias through appropriate outlier treatment and spatial bias correction</span>
+<span id="cb6-282"><a href="#cb6-282" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Enhanced geological realism through proper domain conditioning and boundary treatment</span>
+<span id="cb6-283"><a href="#cb6-283" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Improved statistical reliability through optimal transformation and composite strategies</span>
+<span id="cb6-284"><a href="#cb6-284" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Better uncertainty quantification through comprehensive quality assurance integration</span>
+<span id="cb6-285"><a href="#cb6-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-286"><a href="#cb6-286" aria-hidden="true" tabindex="-1"></a>**Model Reliability:**</span>
+<span id="cb6-287"><a href="#cb6-287" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Consistent data support across the entire resource domain through proper composite optimization</span>
+<span id="cb6-288"><a href="#cb6-288" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Appropriate statistical distributions for selected geostatistical methods</span>
+<span id="cb6-289"><a href="#cb6-289" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Preserved geological relationships ensuring model geological consistency</span>
+<span id="cb6-290"><a href="#cb6-290" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantified uncertainty parameters enabling appropriate resource classification</span>
+<span id="cb6-291"><a href="#cb6-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-292"><a href="#cb6-292" aria-hidden="true" tabindex="-1"></a>**Professional Applications:**</span>
+<span id="cb6-293"><a href="#cb6-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resource estimates meeting international reporting standards for quality and documentation</span>
+<span id="cb6-294"><a href="#cb6-294" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Models suitable for detailed mine planning and grade control applications</span>
+<span id="cb6-295"><a href="#cb6-295" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Uncertainty quantification supporting economic evaluation and risk assessment</span>
+<span id="cb6-296"><a href="#cb6-296" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Documentation standards enabling independent technical review and regulatory approval</span>
+<span id="cb6-297"><a href="#cb6-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-298"><a href="#cb6-298" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced GeoDataViz Pro Features</span></span>
+<span id="cb6-299"><a href="#cb6-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-300"><a href="#cb6-300" aria-hidden="true" tabindex="-1"></a>The upcoming professional version includes enhanced preprocessing capabilities:</span>
+<span id="cb6-301"><a href="#cb6-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-302"><a href="#cb6-302" aria-hidden="true" tabindex="-1"></a>**Automated Workflow Optimization:**</span>
+<span id="cb6-303"><a href="#cb6-303" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Machine learning algorithms for optimal preprocessing parameter selection</span>
+<span id="cb6-304"><a href="#cb6-304" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Automated quality assurance integration throughout the preprocessing workflow</span>
+<span id="cb6-305"><a href="#cb6-305" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Intelligent outlier treatment using geological context and multiple validation methods</span>
+<span id="cb6-306"><a href="#cb6-306" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Adaptive transformation selection optimized for complex geological distributions</span>
+<span id="cb6-307"><a href="#cb6-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-308"><a href="#cb6-308" aria-hidden="true" tabindex="-1"></a>**Enterprise Integration:**</span>
+<span id="cb6-309"><a href="#cb6-309" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Database connectivity for large-scale preprocessing workflows</span>
+<span id="cb6-310"><a href="#cb6-310" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Batch processing capabilities for multiple deposits or mining operations</span>
+<span id="cb6-311"><a href="#cb6-311" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>API integration enabling preprocessing workflow automation</span>
+<span id="cb6-312"><a href="#cb6-312" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Custom reporting for corporate and regulatory requirements</span>
+<span id="cb6-313"><a href="#cb6-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-314"><a href="#cb6-314" aria-hidden="true" tabindex="-1"></a>**Advanced Analytics:**</span>
+<span id="cb6-315"><a href="#cb6-315" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multi-element preprocessing optimization maintaining element associations</span>
+<span id="cb6-316"><a href="#cb6-316" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Temporal analysis for deposits with time-varying mineralization or data quality</span>
+<span id="cb6-317"><a href="#cb6-317" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Uncertainty propagation throughout the preprocessing workflow</span>
+<span id="cb6-318"><a href="#cb6-318" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Machine learning domain optimization using geological and geochemical data</span>
+<span id="cb6-319"><a href="#cb6-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-320"><a href="#cb6-320" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion: Preprocessing as the Foundation of Professional Excellence</span></span>
+<span id="cb6-321"><a href="#cb6-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-322"><a href="#cb6-322" aria-hidden="true" tabindex="-1"></a>Professional drillhole data preprocessing represents the critical bridge between raw geological data and reliable resource estimates. Through GeoDataViz, these sophisticated preprocessing capabilities are now accessible to every geoscientist, eliminating the traditional barriers of expensive software and limited technical resources.</span>
+<span id="cb6-323"><a href="#cb6-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-324"><a href="#cb6-324" aria-hidden="true" tabindex="-1"></a>The investment in comprehensive preprocessing methodology pays enormous dividends: dramatically improved resource estimate accuracy, enhanced professional credibility, and the confidence that comes from knowing your data conditioning meets the highest professional standards.</span>
+<span id="cb6-325"><a href="#cb6-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-326"><a href="#cb6-326" aria-hidden="true" tabindex="-1"></a>Remember: **every preprocessing decision impacts final resource estimate quality.** Make preprocessing excellence your competitive advantage and the foundation of your professional reputation.</span>
+<span id="cb6-327"><a href="#cb6-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-328"><a href="#cb6-328" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next in The Library</span></span>
+<span id="cb6-329"><a href="#cb6-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-330"><a href="#cb6-330" aria-hidden="true" tabindex="-1"></a>Our next definitive guide will explore **"Variogram Modeling Mastery: Advanced Spatial Continuity Analysis with GeoDataViz"**, where we'll transform properly preprocessed data into sophisticated spatial continuity models for optimal resource estimation.</span>
+<span id="cb6-331"><a href="#cb6-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-332"><a href="#cb6-332" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb6-333"><a href="#cb6-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-334"><a href="#cb6-334" aria-hidden="true" tabindex="-1"></a>*Ready to implement professional-grade preprocessing workflows? Experience the [GeoDataViz interactive platform](https://geodataviz.shinyapps.io/geodataviz/) where this entire preprocessing workflow can be executed interactively with comprehensive validation and documentation. For visual tutorials on these advanced techniques, follow our step-by-step guides on [Instagram @orebit.id](https://instagram.com/orebit.id).*</span></code><button title="Salin ke Papan Klip" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
