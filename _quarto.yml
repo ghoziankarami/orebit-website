@@ -26,10 +26,6 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - href: services.qmd
-        text: Services
-      - href: portfolio.qmd
-        text: Portfolio
       - href: blog.qmd
         text: Blog
     right:

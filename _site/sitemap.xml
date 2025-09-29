@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://orebit.id/services.html</loc>
-    <lastmod>2025-09-20T13:51:21.967Z</lastmod>
+    <loc>https://orebit.id/posts/Welcome to Orebit/index.html</loc>
+    <lastmod>2025-09-23T06:03:00.014Z</lastmod>
   </url>
   <url>
-    <loc>https://orebit.id/posts/EDA with GeoDataViz/index.html</loc>
-    <lastmod>2025-09-23T06:03:22.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orebit.id/portfolio.html</loc>
-    <lastmod>2025-09-20T13:51:33.989Z</lastmod>
+    <loc>https://orebit.id/posts/Drillhole Data Preprocessing/index.html</loc>
+    <lastmod>2025-09-23T06:03:53.266Z</lastmod>
   </url>
   <url>
     <loc>https://orebit.id/blog.html</loc>
@@ -25,11 +21,7 @@
     <lastmod>2025-09-23T06:16:26.146Z</lastmod>
   </url>
   <url>
-    <loc>https://orebit.id/posts/Drillhole Data Preprocessing/index.html</loc>
-    <lastmod>2025-09-23T06:03:53.266Z</lastmod>
-  </url>
-  <url>
-    <loc>https://orebit.id/posts/Welcome to Orebit/index.html</loc>
-    <lastmod>2025-09-23T06:03:00.014Z</lastmod>
+    <loc>https://orebit.id/posts/EDA with GeoDataViz/index.html</loc>
+    <lastmod>2025-09-23T06:03:22.339Z</lastmod>
   </url>
 </urlset>
