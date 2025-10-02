@@ -186,7 +186,7 @@
     "href": "blog.html",
     "title": "Orebit Technical Resources",
     "section": "",
-    "text": "Comprehensive guides for mastering geological data analysis with Orebit’s R Shiny applications. Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization.\n\n\n50+ Technical Guides\n\n\n3 Product Suite\n\n\n100% Open Source"
+    "text": "Comprehensive guides for mastering geological data analysis with Orebit’s R Shiny applications. Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization.\n\n\n20+ R Packages\n\n\n3 Product Suite\n\n\n100% Open Source"
   },
   {
     "objectID": "blog.html#categories",
@@ -217,25 +217,11 @@
     "text": "Learning Paths by Product\n\n\n GeoDataViz Learning Path\nCurrent Application - Start Here\n\nBasics: Getting Started with GeoDataViz\nData Import: Loading Drillhole Data\nEDA: Exploratory Data Analysis Guide\nPreprocessing: Data Conditioning Workflows\nVisualization: Creating 3D Geological Models\nExport: Generating Reports\n\nLaunch Demo App →\n\n\n Resource Estimation Path\nComing Q2 2025\n\nFundamentals: Introduction to Resource Estimation\nVariography: Variogram Modeling Techniques\nKriging: Advanced Interpolation Methods\nValidation: Model Quality Assurance\nReporting: Industry-Standard Reports\n\nJoin Beta List →\n\n\n Pit Optimization Path\nComing Q3 2025\n\nIntroduction: Mine Planning Basics\nModeling: Pit Design Fundamentals\nOptimization: NPV Maximization\nConstraints: Operational & Environmental\nScenarios: Economic Planning\n\nGet Notified →"
   },
   {
-    "objectID": "blog.html#technical-topics",
-    "href": "blog.html#technical-topics",
-    "title": "Orebit Technical Resources",
-    "section": "Technical Topics",
-    "text": "Technical Topics\n\n\n Data Management\nImport, validate, and manage geological datasets efficiently using Orebit applications. Learn best practices for data structure and quality control.\n\n\n Statistical Analysis\nMaster statistical techniques for geological data including distribution analysis, outlier detection, and multivariate methods.\n\n\n Spatial Analysis\nUnderstand spatial patterns, variography, and geostatistical modeling for accurate resource estimation.\n\n\n 3D Visualization\nCreate interactive 3D geological models, cross-sections, and visualizations for better data understanding.\n\n\n R Shiny Development\nLearn to customize and extend Orebit applications or build your own geological R Shiny apps.\n\n\n Quality Assurance\nImplement robust QA/QC procedures for geological data analysis and resource modeling."
-  },
-  {
     "objectID": "blog.html#why-these-resources-matter",
     "href": "blog.html#why-these-resources-matter",
     "title": "Orebit Technical Resources",
     "section": "Why These Resources Matter",
     "text": "Why These Resources Matter\nProduct-Focused Learning\nEvery tutorial is designed specifically for Orebit applications, ensuring you can immediately apply what you learn.\nReal-World Workflows\nGuides based on actual geological projects, not theoretical examples. Learn workflows that work in production environments.\nProgressive Difficulty\nStart with basics and progress to advanced techniques. Each guide builds on previous knowledge.\nOpen Source Philosophy\nAll code examples and workflows are transparent, reproducible, and freely available."
-  },
-  {
-    "objectID": "blog.html#stay-updated",
-    "href": "blog.html#stay-updated",
-    "title": "Orebit Technical Resources",
-    "section": "Stay Updated",
-    "text": "Stay Updated\n\n\n📰 RSS Feed\nSubscribe to get notified of new tutorials and product updates automatically.\nSubscribe to RSS\n\n\n🚀 Product Updates\nGet early access to new features and beta testing opportunities for upcoming Orebit applications.\nJoin Beta Program"
   },
   {
     "objectID": "about.html",
@@ -301,18 +287,11 @@
     "text": "The Team Behind Orebit\nOrebit is led by Ghozian Islam Karami, Senior Geologist and Certified BNSP Competent Person (CP) with over a decade of mining industry experience. His expertise in offshore tin exploration, resource evaluation, and geological data analysis ensures that every Orebit application addresses real-world geological challenges.\nCore Expertise: - Geostatistics and resource modeling - R programming and Shiny application development - Quality assurance systems for mining operations - Geospatial analysis and 3D geological modeling\nProfessional Credentials: - Certified Competent Person (CP) - BNSP - M.Sc. Geological Sciences - KFUPM - B.Sc. Geology - Universitas Padjadjaran - Senior Geologist - PERHAPI\nThis combination of geological expertise and technical development skills ensures Orebit applications are both geologically sound and technically sophisticated."
   },
   {
-    "objectID": "about.html#get-involved",
-    "href": "about.html#get-involved",
-    "title": "About Orebit",
-    "section": "Get Involved",
-    "text": "Get Involved\n\nTry Our Applications\nExperience the power of professional geological analysis: Launch GeoDataViz Demo\n\n\nJoin Beta Testing\nGet early access to upcoming applications: Apply for Beta Program\n\n\nContribute to Development\nHelp shape the future of geological analysis tools: GitHub Repository\n\n\nEnterprise Solutions\nCustom deployment and support for organizations: Contact Us"
-  },
-  {
     "objectID": "about.html#contact-information",
     "href": "about.html#contact-information",
     "title": "About Orebit",
     "section": "Contact Information",
-    "text": "Contact Information\nEmail: contact@Orebit-geo.com\nGitHub: github.com/Orebit-geo\nLinkedIn: Ghozian Islam Karami"
+    "text": "Contact Information\nEmail: ghoziankarami@gmail.com\nGitHub: github.com/ghoziankarami\nLinkedIn: Ghozian Islam Karami"
   },
   {
     "objectID": "index.html",
@@ -340,7 +319,7 @@
     "href": "index.html#ready-to-transform-your-workflow",
     "title": "Orebit Geological Solutions",
     "section": "Ready to Transform Your Workflow?",
-    "text": "Ready to Transform Your Workflow?\n\n\nStart with GeoDataViz Today\n\nExperience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities.\n\n\n  Launch GeoDataViz Demo    Enterprise Solutions \n\n\n\nStay Updated on New Releases\n\n Get Notified\n\n\n\n\n\n\nOrebit Geological Solutions | Advanced R Shiny Applications for Professional Geology\n\n\nGitHub | Documentation | Contact"
+    "text": "Ready to Transform Your Workflow?\n\n\nStart with GeoDataViz Today\n\nExperience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities.\n\n\n  Launch GeoDataViz Demo    Enterprise Solutions \n\n\n\nStay Updated on New Releases\n\n Get Notified\n\n\n\n\n\n\nOrebit Geological Solutions | Advanced R Shiny Applications for Professional Geology | GitHub"
   },
   {
     "objectID": "posts/EDA with GeoDataViz/index.html",

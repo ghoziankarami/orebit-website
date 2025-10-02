@@ -46,7 +46,7 @@ margin-footer: |
 
 :::::: hero-stats
 ::: stat-item
-<strong>50+</strong> Technical Guides
+<strong>20+</strong> R Packages
 :::
 
 ::: stat-item
@@ -146,48 +146,6 @@ Discover how Orebit's suite of R Shiny applications transforms geological workfl
 
 ------------------------------------------------------------------------
 
-## Technical Topics
-
-::::::::: topics-grid
-::: topic-card
-### <i class="fas fa-database"></i> Data Management
-
-Import, validate, and manage geological datasets efficiently using Orebit applications. Learn best practices for data structure and quality control.
-:::
-
-::: topic-card
-### <i class="fas fa-chart-bar"></i> Statistical Analysis
-
-Master statistical techniques for geological data including distribution analysis, outlier detection, and multivariate methods.
-:::
-
-::: topic-card
-### <i class="fas fa-map"></i> Spatial Analysis
-
-Understand spatial patterns, variography, and geostatistical modeling for accurate resource estimation.
-:::
-
-::: topic-card
-### <i class="fas fa-cube"></i> 3D Visualization
-
-Create interactive 3D geological models, cross-sections, and visualizations for better data understanding.
-:::
-
-::: topic-card
-### <i class="fas fa-code"></i> R Shiny Development
-
-Learn to customize and extend Orebit applications or build your own geological R Shiny apps.
-:::
-
-::: topic-card
-### <i class="fas fa-check-circle"></i> Quality Assurance
-
-Implement robust QA/QC procedures for geological data analysis and resource modeling.
-:::
-:::::::::
-
-------------------------------------------------------------------------
-
 ## Why These Resources Matter
 
 **Product-Focused Learning**\
@@ -201,28 +159,6 @@ Start with basics and progress to advanced techniques. Each guide builds on prev
 
 **Open Source Philosophy**\
 All code examples and workflows are transparent, reproducible, and freely available.
-
-------------------------------------------------------------------------
-
-## Stay Updated
-
-::::: subscribe-section
-::: subscribe-card
-### 📰 RSS Feed
-
-Subscribe to get notified of new tutorials and product updates automatically.
-
-[Subscribe to RSS](/blog/index.xml){.btn .btn-primary target="_blank"}
-:::
-
-::: subscribe-card
-### 🚀 Product Updates
-
-Get early access to new features and beta testing opportunities for upcoming Orebit applications.
-
-[Join Beta Program](#beta-signup){.btn .btn-success}
-:::
-:::::
 
 ------------------------------------------------------------------------
 

@@ -5,142 +5,246 @@ description: "Advanced geological analysis suite - GeoDataViz, Resource Estimati
 toc: false
 page-layout: full
 title-block-banner: false
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-::: {.language-toggle}
-<button id="lang-en" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
-<button id="lang-id" class="lang-btn" onclick="switchLanguage('id')">ID</button>
+::: language-toggle
+<button id="lang-en" class="lang-btn active" onclick="switchLanguage(&#39;en&#39;)">
+
+EN
+
+</button>
+
+<button id="lang-id" class="lang-btn" onclick="switchLanguage(&#39;id&#39;)">
+
+ID
+
+</button>
 :::
 
-::: {.hero-Orebit}
-<h1 data-en="Advanced Geological Analysis Suite" data-id="Suite Analisis Geologi Lanjutan">Advanced Geological Analysis Suite</h1>
-<h2 data-en="From Exploration to Production" data-id="Dari Eksplorasi hingga Produksi">From Exploration to Production</h2>
+:::: hero-Orebit
+<h1 data-en="Advanced Geological Analysis Suite" data-id="Suite Analisis Geologi Lanjutan">
 
-<p class="hero-subtitle" data-en="Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization" data-id="Aplikasi R Shiny profesional untuk analisis data geologi, estimasi sumber daya, dan optimisasi tambang">Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization</p>
+Advanced Geological Analysis Suite
 
-<div class="hero-buttons">
+</h1>
+
+<h2 data-en="From Exploration to Production" data-id="Dari Eksplorasi hingga Produksi">
+
+From Exploration to Production
+
+</h2>
+
+<p class="hero-subtitle" data-en="Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization" data-id="Aplikasi R Shiny profesional untuk analisis data geologi, estimasi sumber daya, dan optimisasi tambang">
+
+Professional R Shiny applications for geological data analysis, resource
+estimation, and mine optimization
+
+</p>
+
+::: hero-buttons
 <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary" target="_blank" rel="noopener">
-  <i class="fas fa-rocket"></i> <span data-en="Try GeoDataViz Now" data-id="Coba GeoDataViz Sekarang">Try GeoDataViz Now</span>
-</a>
-<a href="/blog" class="btn btn-secondary">
-  <i class="fas fa-book"></i> <span data-en="Learn More" data-id="Pelajari Lebih Lanjut">Learn More</span>
-</a>
-</div>
+<i class="fas fa-rocket"></i> [Try GeoDataViz
+Now]{data-en="Try GeoDataViz Now" data-id="Coba GeoDataViz Sekarang"}
+</a> <a href="/blog" class="btn btn-secondary">
+<i class="fas fa-book"></i> [Learn More]{data-en="Learn More"
+data-id="Pelajari Lebih Lanjut"} </a>
+:::
+::::
+
+------------------------------------------------------------------------
+
+## [Our Product Suite]{data-en="Our Product Suite" data-id="Suite Produk Kami"}
+
+:::::: products-grid
+::: {.product-card .flagship}
+### <i class="fas fa-chart-line"></i> GeoDataViz
+
+[**Available Now - Free Demo**]{data-en="Available Now - Free Demo"
+data-id="Tersedia Sekarang - Demo Gratis"}
+
+<p data-en="Transform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data." data-id="Transformasi alur kerja geologi Anda dengan analisis data eksploratori dan visualisasi tingkat profesional. Dibangun khusus untuk dataset geologi, GeoDataViz merevolusi cara ahli geologi memahami data mereka.">
+
+Transform your geological workflow with professional-grade exploratory
+data analysis and visualization. Built specifically for geological
+datasets, GeoDataViz revolutionizes how geoscientists understand their
+data.
+
+</p>
+
+[**Key Features:**]{data-en="Key Features:" data-id="Fitur Utama:"} -
+[Interactive 3D geological
+visualization]{data-en="Interactive 3D geological visualization"
+data-id="Visualisasi geologi 3D interaktif"} - [Advanced statistical
+analysis for geological
+data]{data-en="Advanced statistical analysis for geological data"
+data-id="Analisis statistik lanjutan untuk data geologi"} -
+[Comprehensive QA/QC validation
+tools]{data-en="Comprehensive QA/QC validation tools"
+data-id="Alat validasi QA/QC komprehensif"} - [Professional reporting
+capabilities]{data-en="Professional reporting capabilities"
+data-id="Kemampuan pelaporan profesional"}
+
+[[**Launch Demo
+→**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success
+target="_blank" rel="noopener"}]{data-en="Launch Demo →"
+data-id="Buka Demo →"}
 :::
 
----
+::: {.product-card .upcoming}
+### <i class="fas fa-calculator"></i> [Resource Estimation App]{data-en="Resource Estimation App" data-id="Aplikasi Estimasi Sumber Daya"}
 
-## <span data-en="Our Product Suite" data-id="Suite Produk Kami">Our Product Suite</span>
+[**Coming Q2 2025**]{data-en="Coming Q2 2025" data-id="Hadir Q2 2025"}
 
-<div class="products-grid">
+<p data-en="Professional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools." data-id="Analisis geostatistik profesional dan pemodelan sumber daya di browser Anda. Algoritma kriging lanjutan, pemodelan variogram, dan alat kuantifikasi ketidakpastian.">
 
-<div class="product-card flagship">
-### <i class="fas fa-chart-line"></i> GeoDataViz
-**<span data-en="Available Now - Free Demo" data-id="Tersedia Sekarang - Demo Gratis">Available Now - Free Demo</span>**
+Professional geostatistical analysis and resource modeling in your
+browser. Advanced kriging algorithms, variogram modeling, and
+uncertainty quantification tools.
 
-<p data-en="Transform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data." data-id="Transformasi alur kerja geologi Anda dengan analisis data eksploratori dan visualisasi tingkat profesional. Dibangun khusus untuk dataset geologi, GeoDataViz merevolusi cara ahli geologi memahami data mereka.">Transform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data.</p>
+</p>
 
-**<span data-en="Key Features:" data-id="Fitur Utama:">Key Features:</span>**
-- <span data-en="Interactive 3D geological visualization" data-id="Visualisasi geologi 3D interaktif">Interactive 3D geological visualization</span>
-- <span data-en="Advanced statistical analysis for geological data" data-id="Analisis statistik lanjutan untuk data geologi">Advanced statistical analysis for geological data</span>
-- <span data-en="Comprehensive QA/QC validation tools" data-id="Alat validasi QA/QC komprehensif">Comprehensive QA/QC validation tools</span>
-- <span data-en="Professional reporting capabilities" data-id="Kemampuan pelaporan profesional">Professional reporting capabilities</span>
+[**Planned Features:**]{data-en="Planned Features:"
+data-id="Fitur yang Direncanakan:"} - [Automated variogram
+modeling]{data-en="Automated variogram modeling"
+data-id="Pemodelan variogram otomatis"} - [Advanced kriging
+techniques]{data-en="Advanced kriging techniques"
+data-id="Teknik kriging lanjutan"} - [Resource classification
+tools]{data-en="Resource classification tools"
+data-id="Alat klasifikasi sumber daya"} - [Industry-standard
+reporting]{data-en="Industry-standard reporting"
+data-id="Pelaporan standar industri"}
 
-[**<span data-en="Launch Demo →" data-id="Buka Demo →">Launch Demo →</span>**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success target="_blank" rel="noopener"}
-</div>
+[[**Join Beta List →**](#beta-signup){.btn
+.btn-outline}]{data-en="Join Beta List →" data-id="Daftar Beta →"}
+:::
 
-<div class="product-card upcoming">
-### <i class="fas fa-calculator"></i> <span data-en="Resource Estimation App" data-id="Aplikasi Estimasi Sumber Daya">Resource Estimation App</span>
-**<span data-en="Coming Q2 2025" data-id="Hadir Q2 2025">Coming Q2 2025</span>**
+::: {.product-card .upcoming}
+### <i class="fas fa-mountain"></i> [Pit Optimizer]{data-en="Pit Optimizer" data-id="Pengoptimal Pit"}
 
-<p data-en="Professional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools." data-id="Analisis geostatistik profesional dan pemodelan sumber daya di browser Anda. Algoritma kriging lanjutan, pemodelan variogram, dan alat kuantifikasi ketidakpastian.">Professional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools.</p>
+[**Coming Q3 2025**]{data-en="Coming Q3 2025" data-id="Hadir Q3 2025"}
 
-**<span data-en="Planned Features:" data-id="Fitur yang Direncanakan:">Planned Features:</span>**
-- <span data-en="Automated variogram modeling" data-id="Pemodelan variogram otomatis">Automated variogram modeling</span>
-- <span data-en="Advanced kriging techniques" data-id="Teknik kriging lanjutan">Advanced kriging techniques</span>
-- <span data-en="Resource classification tools" data-id="Alat klasifikasi sumber daya">Resource classification tools</span>
-- <span data-en="Industry-standard reporting" data-id="Pelaporan standar industri">Industry-standard reporting</span>
+<p data-en="Sophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors." data-id="Algoritma perencanaan tambang dan optimisasi pit yang canggih. Maksimalkan NPV sambil mempertimbangkan kendala operasional dan faktor lingkungan.">
 
-[**<span data-en="Join Beta List →" data-id="Daftar Beta →">Join Beta List →</span>**](#beta-signup){.btn .btn-outline}
-</div>
+Sophisticated mine planning and pit optimization algorithms. Maximize
+NPV while considering operational constraints and environmental factors.
 
-<div class="product-card upcoming">
-### <i class="fas fa-mountain"></i> <span data-en="Pit Optimizer" data-id="Pengoptimal Pit">Pit Optimizer</span>
-**<span data-en="Coming Q3 2025" data-id="Hadir Q3 2025">Coming Q3 2025</span>**
+</p>
 
-<p data-en="Sophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors." data-id="Algoritma perencanaan tambang dan optimisasi pit yang canggih. Maksimalkan NPV sambil mempertimbangkan kendala operasional dan faktor lingkungan.">Sophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.</p>
+[**Planned Features:**]{data-en="Planned Features:"
+data-id="Fitur yang Direncanakan:"} - [Multi-criteria
+optimization]{data-en="Multi-criteria optimization"
+data-id="Optimisasi multi-kriteria"} - [Operational constraint
+modeling]{data-en="Operational constraint modeling"
+data-id="Pemodelan kendala operasional"} - [Environmental impact
+assessment]{data-en="Environmental impact assessment"
+data-id="Penilaian dampak lingkungan"} - [Economic scenario
+planning]{data-en="Economic scenario planning"
+data-id="Perencanaan skenario ekonomi"}
 
-**<span data-en="Planned Features:" data-id="Fitur yang Direncanakan:">Planned Features:</span>**
-- <span data-en="Multi-criteria optimization" data-id="Optimisasi multi-kriteria">Multi-criteria optimization</span>
-- <span data-en="Operational constraint modeling" data-id="Pemodelan kendala operasional">Operational constraint modeling</span>
-- <span data-en="Environmental impact assessment" data-id="Penilaian dampak lingkungan">Environmental impact assessment</span>
-- <span data-en="Economic scenario planning" data-id="Perencanaan skenario ekonomi">Economic scenario planning</span>
+[[**Get Notified →**](#beta-signup){.btn
+.btn-outline}]{data-en="Get Notified →" data-id="Dapatkan Notifikasi →"}
+:::
+::::::
 
-[**<span data-en="Get Notified →" data-id="Dapatkan Notifikasi →">Get Notified →</span>**](#beta-signup){.btn .btn-outline}
-</div>
+------------------------------------------------------------------------
 
-</div>
+## [Why Choose Orebit Solutions?]{data-en="Why Choose Orebit Solutions?" data-id="Mengapa Memilih Solusi Orebit?"}
 
----
+::::::: value-props
+::: value-item
+### [**Cost-Effective Excellence**]{data-en="Cost-Effective Excellence" data-id="Keunggulan Hemat Biaya"}
 
-## <span data-en="Why Choose Orebit Solutions?" data-id="Mengapa Memilih Solusi Orebit?">Why Choose Orebit Solutions?</span>
+<p data-en="Access enterprise-level geological analysis tools without the $20,000+ annual licensing fees of traditional software." data-id="Akses alat analisis geologi tingkat enterprise tanpa biaya lisensi tahunan $20,000+ dari software tradisional.">
 
-<div class="value-props">
-<div class="value-item">
-### **<span data-en="Cost-Effective Excellence" data-id="Keunggulan Hemat Biaya">Cost-Effective Excellence</span>**
-<p data-en="Access enterprise-level geological analysis tools without the $20,000+ annual licensing fees of traditional software." data-id="Akses alat analisis geologi tingkat enterprise tanpa biaya lisensi tahunan $20,000+ dari software tradisional.">Access enterprise-level geological analysis tools without the $20,000+ annual licensing fees of traditional software.</p>
-</div>
+Access enterprise-level geological analysis tools without the \$20,000+
+annual licensing fees of traditional software.
 
-<div class="value-item">
-### **<span data-en="Built by Geologists" data-id="Dibangun oleh Ahli Geologi">Built by Geologists</span>**
-<p data-en="Developed by practicing geoscientists who understand real-world geological challenges and workflows." data-id="Dikembangkan oleh geosaintis praktisi yang memahami tantangan dan alur kerja geologi dunia nyata.">Developed by practicing geoscientists who understand real-world geological challenges and workflows.</p>
-</div>
+</p>
+:::
 
-<div class="value-item">
-### **<span data-en="Open & Transparent" data-id="Terbuka & Transparan">Open & Transparent</span>**
-<p data-en="Complete visibility into analytical methods ensures reproducibility and meets modern scientific standards." data-id="Visibilitas lengkap ke dalam metode analitik memastikan reproduksibilitas dan memenuhi standar ilmiah modern.">Complete visibility into analytical methods ensures reproducibility and meets modern scientific standards.</p>
-</div>
+::: value-item
+### [**Built by Geologists**]{data-en="Built by Geologists" data-id="Dibangun oleh Ahli Geologi"}
 
-<div class="value-item">
-### **<span data-en="Cloud-Native Performance" data-id="Performa Cloud-Native">Cloud-Native Performance</span>**
-<p data-en="Run sophisticated analyses directly in your browser - no installation, no maintenance, universal access." data-id="Jalankan analisis canggih langsung di browser Anda - tanpa instalasi, tanpa pemeliharaan, akses universal.">Run sophisticated analyses directly in your browser - no installation, no maintenance, universal access.</p>
-</div>
-</div>
+<p data-en="Developed by practicing geoscientists who understand real-world geological challenges and workflows." data-id="Dikembangkan oleh geosaintis praktisi yang memahami tantangan dan alur kerja geologi dunia nyata.">
 
----
+Developed by practicing geoscientists who understand real-world
+geological challenges and workflows.
 
-## <span data-en="Ready to Transform Your Workflow?" data-id="Siap Mentransformasi Alur Kerja Anda?">Ready to Transform Your Workflow?</span>
+</p>
+:::
 
-<div class="cta-section">
-### <span data-en="Start with GeoDataViz Today" data-id="Mulai dengan GeoDataViz Hari Ini">Start with GeoDataViz Today</span>
+::: value-item
+### [**Open & Transparent**]{data-en="Open & Transparent" data-id="Terbuka & Transparan"}
 
-<p data-en="Experience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities." data-id="Rasakan kekuatan analisis data geologi profesional dengan aplikasi unggulan kami. Bergabunglah dengan ratusan geosaintis yang sudah menggunakan solusi Orebit untuk meningkatkan kemampuan analitis mereka.">Experience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities.</p>
+<p data-en="Complete visibility into analytical methods ensures reproducibility and meets modern scientific standards." data-id="Visibilitas lengkap ke dalam metode analitik memastikan reproduksibilitas dan memenuhi standar ilmiah modern.">
 
-<div class="cta-buttons">
+Complete visibility into analytical methods ensures reproducibility and
+meets modern scientific standards.
+
+</p>
+:::
+
+::: value-item
+### [**Cloud-Native Performance**]{data-en="Cloud-Native Performance" data-id="Performa Cloud-Native"}
+
+<p data-en="Run sophisticated analyses directly in your browser - no installation, no maintenance, universal access." data-id="Jalankan analisis canggih langsung di browser Anda - tanpa instalasi, tanpa pemeliharaan, akses universal.">
+
+Run sophisticated analyses directly in your browser - no installation,
+no maintenance, universal access.
+
+</p>
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+## [Ready to Transform Your Workflow?]{data-en="Ready to Transform Your Workflow?" data-id="Siap Mentransformasi Alur Kerja Anda?"}
+
+::::: cta-section
+### [Start with GeoDataViz Today]{data-en="Start with GeoDataViz Today" data-id="Mulai dengan GeoDataViz Hari Ini"}
+
+<p data-en="Experience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities." data-id="Rasakan kekuatan analisis data geologi profesional dengan aplikasi unggulan kami. Bergabunglah dengan ratusan geosaintis yang sudah menggunakan solusi Orebit untuk meningkatkan kemampuan analitis mereka.">
+
+Experience the power of professional geological data analysis with our
+flagship application. Join hundreds of geoscientists already using
+Orebit solutions to enhance their analytical capabilities.
+
+</p>
+
+::: cta-buttons
 <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-  <i class="fas fa-play"></i> <span data-en="Launch GeoDataViz Demo" data-id="Buka Demo GeoDataViz">Launch GeoDataViz Demo</span>
+<i class="fas fa-play"></i> [Launch GeoDataViz
+Demo]{data-en="Launch GeoDataViz Demo" data-id="Buka Demo GeoDataViz"}
 </a>
-<a href="mailto:contact@Orebit-geo.com" class="btn btn-secondary btn-lg">
-  <i class="fas fa-envelope"></i> <span data-en="Enterprise Solutions" data-id="Solusi Enterprise">Enterprise Solutions</span>
+<a href="mailto:orebit.id@gmail.com" class="btn btn-secondary btn-lg">
+<i class="fas fa-envelope"></i> [Enterprise
+Solutions]{data-en="Enterprise Solutions" data-id="Solusi Enterprise"}
 </a>
-</div>
+:::
 
-### <span data-en="Stay Updated on New Releases" data-id="Tetap Update dengan Rilis Baru">Stay Updated on New Releases</span>
+### [Stay Updated on New Releases]{data-en="Stay Updated on New Releases" data-id="Tetap Update dengan Rilis Baru"}
 
-<div id="beta-signup" class="signup-form">
+::: {#beta-signup .signup-form}
 <input type="email" placeholder="Enter your email" data-placeholder-en="Enter your email for product updates" data-placeholder-id="Masukkan email untuk pembaruan produk" class="email-input">
-<button class="btn btn-success" data-en="Get Notified" data-id="Dapatkan Notifikasi">Get Notified</button>
-</div>
+<button class="btn btn-success" data-en="Get Notified" data-id="Dapatkan Notifikasi">Get
+Notified</button>
+:::
+:::::
 
-</div>
+------------------------------------------------------------------------
 
----
+::: footer-simple
+<p><strong>Orebit Geological Solutions</strong> \| [Advanced R Shiny
+Applications for Professional
+Geology]{data-en="Advanced R Shiny Applications for Professional Geology"
+data-id="Aplikasi R Shiny Lanjutan untuk Geologi Profesional"} \|
+[GitHub](https://github.com/Orebit-geo) </p>
+:::
 
-<div class="footer-simple">
-<p><strong>Orebit Geological Solutions</strong> | <span data-en="Advanced R Shiny Applications for Professional Geology" data-id="Aplikasi R Shiny Lanjutan untuk Geologi Profesional">Advanced R Shiny Applications for Professional Geology</span></p>
-<p>[GitHub](https://github.com/Orebit-geo) | [<span data-en="Documentation" data-id="Dokumentasi">Documentation</span>](/docs) | [<span data-en="Contact" data-id="Kontak">Contact</span>](mailto:contact@Orebit-geo.com)</p>
-</div>
-
+```{=html}
 <style>
 /* Language Toggle */
 .language-toggle {
@@ -469,7 +573,9 @@ title-block-banner: false
   }
 }
 </style>
+```
 
+```{=html}
 <script>
 // Language Switching Function
 function switchLanguage(lang) {
@@ -509,3 +615,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+```

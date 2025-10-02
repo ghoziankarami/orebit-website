@@ -1,230 +1,239 @@
 ---
 title: "About Orebit"
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 ## Advanced Geological Solutions for the Modern Mining Industry
 
-**Orebit Geological Solutions** develops professional R Shiny applications that transform how geoscientists and mining engineers approach data analysis. Our mission is to provide **cost-effective, transparent, and powerful analytical tools** that rival expensive proprietary software—without the prohibitive licensing fees.
+**Orebit Geological Solutions** develops professional R Shiny
+applications that transform how geoscientists and mining engineers
+approach data analysis. Our mission is to provide **cost-effective,
+transparent, and powerful analytical tools** that rival expensive
+proprietary software—without the prohibitive licensing fees.
 
----
+------------------------------------------------------------------------
 
 ## The Challenge We Address
 
-The mining industry faces a critical paradox: geological analysis demands increasingly sophisticated tools, yet traditional software solutions create barriers through:
+The mining industry faces a critical paradox: geological analysis
+demands increasingly sophisticated tools, yet traditional software
+solutions create barriers through:
 
-- **High Costs:** Enterprise geological software can exceed $50,000 per year in licensing fees
-- **Vendor Lock-in:** Proprietary systems limit flexibility and customization
-- **Limited Transparency:** Black-box algorithms make validation and reproducibility difficult
-- **Accessibility Gaps:** Small companies and consultants struggle to afford industry-standard tools
+-   **High Costs:** Enterprise geological software can exceed \$50,000
+    per year in licensing fees
+-   **Vendor Lock-in:** Proprietary systems limit flexibility and
+    customization
+-   **Limited Transparency:** Black-box algorithms make validation and
+    reproducibility difficult
+-   **Accessibility Gaps:** Small companies and consultants struggle to
+    afford industry-standard tools
 
 **Orebit exists to eliminate these barriers.**
 
----
+------------------------------------------------------------------------
 
 ## Our Product Philosophy
 
 ### Open-Source Foundation
-All Orebit applications are built on open-source technologies, ensuring:
-- Complete transparency in analytical methods
-- Full reproducibility of results
-- No vendor lock-in or hidden dependencies
-- Community-driven development and improvement
+
+All Orebit applications are built on open-source technologies,
+ensuring: - Complete transparency in analytical methods - Full
+reproducibility of results - No vendor lock-in or hidden dependencies -
+Community-driven development and improvement
 
 ### Practitioner-Built Design
-Our applications are developed by experienced geoscientists who understand real-world geological challenges. Every feature addresses actual industry needs, not theoretical requirements.
+
+Our applications are developed by experienced geoscientists who
+understand real-world geological challenges. Every feature addresses
+actual industry needs, not theoretical requirements.
 
 ### Professional-Grade Capabilities
-We don't compromise on quality. Orebit applications deliver enterprise-level functionality with:
-- Advanced statistical and geostatistical analysis
-- Interactive 3D visualization
-- Industry-standard reporting
-- Robust quality assurance protocols
+
+We don't compromise on quality. Orebit applications deliver
+enterprise-level functionality with: - Advanced statistical and
+geostatistical analysis - Interactive 3D visualization -
+Industry-standard reporting - Robust quality assurance protocols
 
 ### Universal Accessibility
-Cloud-native architecture means:
-- No installation required
-- Run directly in web browsers
-- Access from anywhere
-- Cross-platform compatibility
 
----
+Cloud-native architecture means: - No installation required - Run
+directly in web browsers - Access from anywhere - Cross-platform
+compatibility
+
+------------------------------------------------------------------------
 
 ## Product Suite
 
 ### GeoDataViz (Available Now)
+
 **The Comprehensive Geological Data Analysis Platform**
 
-Our flagship application revolutionizes exploratory data analysis for geological datasets:
+Our flagship application revolutionizes exploratory data analysis for
+geological datasets:
 
-**Core Capabilities:**
-- Interactive drillhole data visualization
-- Advanced statistical analysis and validation
-- 3D geological modeling
-- Comprehensive QA/QC tools
-- Automated reporting
+**Core Capabilities:** - Interactive drillhole data visualization -
+Advanced statistical analysis and validation - 3D geological modeling -
+Comprehensive QA/QC tools - Automated reporting
 
-**Industry Applications:**
-- Mineral exploration data analysis
-- Resource estimation preparation
-- Grade control monitoring
-- Geological database validation
+**Industry Applications:** - Mineral exploration data analysis -
+Resource estimation preparation - Grade control monitoring - Geological
+database validation
 
-[**Try GeoDataViz Demo →**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success target="_blank"}
+[**Try GeoDataViz Demo
+→**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success
+target="_blank"}
 
----
+------------------------------------------------------------------------
 
 ### Resource Estimation App (Coming Q2 2025)
+
 **Professional Geostatistical Analysis**
 
-Advanced resource modeling capabilities including:
-- Automated variogram modeling
-- Multiple kriging techniques
-- Block model generation
-- Resource classification
-- Uncertainty quantification
-- JORC/NI 43-101 compliant reporting
+Advanced resource modeling capabilities including: - Automated variogram
+modeling - Multiple kriging techniques - Block model generation -
+Resource classification - Uncertainty quantification - JORC/NI 43-101
+compliant reporting
 
 [**Join Beta Program →**](#beta-signup){.btn .btn-primary}
 
----
+------------------------------------------------------------------------
 
 ### Pit Optimizer (Coming Q3 2025)
+
 **Strategic Mine Planning**
 
-Sophisticated optimization algorithms for:
-- Ultimate pit limit determination
-- Multi-criteria optimization (NPV, volume, grade)
-- Operational constraint modeling
-- Environmental impact assessment
-- Economic scenario planning
-- Pushback sequencing
+Sophisticated optimization algorithms for: - Ultimate pit limit
+determination - Multi-criteria optimization (NPV, volume, grade) -
+Operational constraint modeling - Environmental impact assessment -
+Economic scenario planning - Pushback sequencing
 
 [**Get Early Access →**](#beta-signup){.btn .btn-primary}
 
----
+------------------------------------------------------------------------
 
 ## Technical Foundation
 
 ### Technology Stack
-- **Framework:** R Shiny for responsive web applications
-- **Data Processing:** tidyverse ecosystem for efficient data manipulation
-- **Spatial Analysis:** sf, sp packages for advanced geospatial operations
-- **Geostatistics:** gstat for comprehensive geostatistical modeling
-- **Visualization:** plotly for interactive, publication-ready graphics
-- **3D Rendering:** Custom three.js integration for geological modeling
+
+-   **Framework:** R Shiny for responsive web applications
+-   **Data Processing:** tidyverse ecosystem for efficient data
+    manipulation
+-   **Spatial Analysis:** sf, sp packages for advanced geospatial
+    operations
+-   **Geostatistics:** gstat for comprehensive geostatistical modeling
+-   **Visualization:** plotly for interactive, publication-ready
+    graphics
+-   **3D Rendering:** Custom three.js integration for geological
+    modeling
 
 ### Performance & Reliability
-- Optimized for large geological datasets (100,000+ samples)
-- Efficient memory management
-- Real-time interactive visualization
-- Robust error handling and data validation
-- Automated testing and quality assurance
+
+-   Optimized for large geological datasets (100,000+ samples)
+-   Efficient memory management
+-   Real-time interactive visualization
+-   Robust error handling and data validation
+-   Automated testing and quality assurance
 
 ### Enterprise Integration
-- Multi-format data import (CSV, Excel, databases)
-- Export to industry-standard formats
-- API-ready architecture
-- Customizable reporting templates
-- Scalable deployment options
 
----
+-   Multi-format data import (CSV, Excel, databases)
+-   Export to industry-standard formats
+-   API-ready architecture
+-   Customizable reporting templates
+-   Scalable deployment options
+
+------------------------------------------------------------------------
 
 ## Who We Serve
 
 ### Exploration Geologists
-Rapidly validate and analyze drilling data, identify trends, and optimize sampling strategies using professional-grade analytical tools.
+
+Rapidly validate and analyze drilling data, identify trends, and
+optimize sampling strategies using professional-grade analytical tools.
 
 ### Resource Geologists
-Prepare data for resource estimation with comprehensive preprocessing workflows, domain analysis, and geostatistical validation.
+
+Prepare data for resource estimation with comprehensive preprocessing
+workflows, domain analysis, and geostatistical validation.
 
 ### Mining Engineers
-Optimize mine planning with advanced pit optimization, economic modeling, and scenario analysis capabilities.
+
+Optimize mine planning with advanced pit optimization, economic
+modeling, and scenario analysis capabilities.
 
 ### Consulting Firms
-Deliver professional results to clients using transparent, reproducible analytical methods at a fraction of traditional software costs.
+
+Deliver professional results to clients using transparent, reproducible
+analytical methods at a fraction of traditional software costs.
 
 ### Educational Institutions
-Teach modern geological data analysis with free access to professional-grade tools and comprehensive learning resources.
+
+Teach modern geological data analysis with free access to
+professional-grade tools and comprehensive learning resources.
 
 ### Junior Mining Companies
-Access enterprise-level analytical capabilities without the capital requirements of expensive software licenses.
 
----
+Access enterprise-level analytical capabilities without the capital
+requirements of expensive software licenses.
+
+------------------------------------------------------------------------
 
 ## Our Commitment
 
 ### Quality Standards
-All Orebit applications meet or exceed industry standards for:
-- Analytical accuracy and precision
-- Data security and privacy
-- Reporting compliance (JORC, NI 43-101)
-- Professional documentation
+
+All Orebit applications meet or exceed industry standards for: -
+Analytical accuracy and precision - Data security and privacy -
+Reporting compliance (JORC, NI 43-101) - Professional documentation
 
 ### Continuous Improvement
-We actively develop new features based on:
-- User feedback and requests
-- Industry best practices
-- Technological advances
-- Regulatory requirements
+
+We actively develop new features based on: - User feedback and
+requests - Industry best practices - Technological advances - Regulatory
+requirements
 
 ### Community Support
-We believe in giving back:
-- Open-source code repositories
-- Comprehensive documentation
-- Tutorial videos and guides
-- Active user community
-- Responsive technical support
 
----
+We believe in giving back: - Open-source code repositories -
+Comprehensive documentation - Tutorial videos and guides - Active user
+community - Responsive technical support
+
+------------------------------------------------------------------------
 
 ## The Team Behind Orebit
 
-Orebit is led by **Ghozian Islam Karami**, Senior Geologist and Certified BNSP Competent Person (CP) with over a decade of mining industry experience. His expertise in offshore tin exploration, resource evaluation, and geological data analysis ensures that every Orebit application addresses real-world geological challenges.
+Orebit is led by **Ghozian Islam Karami**, Senior Geologist and
+Certified BNSP Competent Person (CP) with over a decade of mining
+industry experience. His expertise in offshore tin exploration, resource
+evaluation, and geological data analysis ensures that every Orebit
+application addresses real-world geological challenges.
 
-**Core Expertise:**
-- Geostatistics and resource modeling
-- R programming and Shiny application development
-- Quality assurance systems for mining operations
-- Geospatial analysis and 3D geological modeling
+**Core Expertise:** - Geostatistics and resource modeling - R
+programming and Shiny application development - Quality assurance
+systems for mining operations - Geospatial analysis and 3D geological
+modeling
 
-**Professional Credentials:**
-- Certified Competent Person (CP) - BNSP
-- M.Sc. Geological Sciences - KFUPM
-- B.Sc. Geology - Universitas Padjadjaran
-- Senior Geologist - PERHAPI
+**Professional Credentials:** - Certified Competent Person (CP) - BNSP -
+M.Sc. Geological Sciences - KFUPM - B.Sc. Geology - Universitas
+Padjadjaran - Senior Geologist - PERHAPI
 
-This combination of geological expertise and technical development skills ensures Orebit applications are both geologically sound and technically sophisticated.
+This combination of geological expertise and technical development
+skills ensures Orebit applications are both geologically sound and
+technically sophisticated.
 
----
-
-## Get Involved
-
-### Try Our Applications
-Experience the power of professional geological analysis:
-[**Launch GeoDataViz Demo**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success target="_blank"}
-
-### Join Beta Testing
-Get early access to upcoming applications:
-[**Apply for Beta Program**](#beta-signup){.btn .btn-primary}
-
-### Contribute to Development
-Help shape the future of geological analysis tools:
-[**GitHub Repository**](https://github.com/Orebit-geo){.btn .btn-secondary target="_blank"}
-
-### Enterprise Solutions
-Custom deployment and support for organizations:
-[**Contact Us**](mailto:contact@Orebit-geo.com){.btn .btn-outline}
-
----
+------------------------------------------------------------------------
 
 ## Contact Information
 
-**Email:** contact@Orebit-geo.com  
-**GitHub:** [github.com/Orebit-geo](https://github.com/Orebit-geo)  
-**LinkedIn:** [Ghozian Islam Karami](https://www.linkedin.com/in/ghoziankarami/)
+**Email:** ghoziankarami\@gmail.com\
+**GitHub:** [github.com/ghoziankarami](#0)\
+**LinkedIn:** [Ghozian Islam Karami](#0)
 
----
+------------------------------------------------------------------------
 
+```{=html}
 <style>
 .btn {
   display: inline-block;
@@ -280,3 +289,4 @@ Custom deployment and support for organizations:
   color: white;
 }
 </style>
+```
