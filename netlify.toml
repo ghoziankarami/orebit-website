@@ -71,13 +71,13 @@
 # Product Redirects
 [[redirects]]
   from = "/geodataviz"
-  to = "https://geodataviz.shinyapps.io/geodataviz/"
+  to = "https://ghoziankarami.shinyapps.io/GeodataViz/"
   status = 302
   force = false
 
 [[redirects]]
   from = "/demo"
-  to = "https://geodataviz.shinyapps.io/geodataviz/"
+  to = "https://ghoziankarami.shinyapps.io/GeodataViz/"
   status = 302
   force = false
 
