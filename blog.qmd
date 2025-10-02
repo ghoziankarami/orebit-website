@@ -1,7 +1,7 @@
 ---
 title: "Orebit Technical Resources"
 subtitle: "Comprehensive Guides for Geological Data Analysis"
-description: "Professional tutorials, workflows, and best practices for GeoDataViz, resource estimation, and geological data analysis using R Shiny applications"
+description: "Comprehensive guides for mastering geological data analysis with Orebit's R Shiny applications. Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization."
 page-layout: full
 sidebar: blog-sidebar
 toc: false
@@ -39,28 +39,6 @@ margin-footer: |
   - [Product Demo](https://ghoziankarami.shinyapps.io/GeodataViz/)
 ---
 
-::::::: blog-hero
-# Technical Resources & Tutorials
-
-**Comprehensive guides for mastering geological data analysis with Orebit's R Shiny applications.** Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization.
-
-:::::: hero-stats
-::: stat-item
-<strong>20+</strong> R Packages
-:::
-
-::: stat-item
-<strong>3</strong> Product Suite
-:::
-
-::: stat-item
-<strong>100%</strong> Open Source
-:::
-::::::
-:::::::
-
-------------------------------------------------------------------------
-
 ## Featured Application Guides
 
 :::::: featured-guides
@@ -69,9 +47,6 @@ margin-footer: |
 
 **Master Exploratory Data Analysis**\
 Learn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.
-
-*Categories: GeoDataViz, EDA, Tutorial*\
-[Read Guide →](/posts/EDA%20with%20GeoDataViz/){.btn .btn-sm .btn-success}
 :::
 
 ::: {.guide-card .product-geodataviz}
@@ -79,9 +54,6 @@ Learn how to use GeoDataViz for comprehensive geological data validation, statis
 
 **Prepare Data for Resource Estimation**\
 Complete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz's preprocessing tools.
-
-*Categories: GeoDataViz, Preprocessing, Resource-Estimation*\
-[Read Guide →](/posts/preprocessing-drillhole-data/){.btn .btn-sm .btn-success}
 :::
 
 ::: {.guide-card .product-general}
@@ -89,9 +61,6 @@ Complete workflow for transforming raw drillhole data into estimation-ready data
 
 **Introduction to Orebit Ecosystem**\
 Discover how Orebit's suite of R Shiny applications transforms geological workflows from exploration to production.
-
-*Categories: Welcome, Open-Source, Overview*\
-[Read Guide →](/posts/welcome-post/){.btn .btn-sm .btn-primary}
 :::
 ::::::
 

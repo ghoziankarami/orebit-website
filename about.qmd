@@ -43,19 +43,6 @@ ensuring: - Complete transparency in analytical methods - Full
 reproducibility of results - No vendor lock-in or hidden dependencies -
 Community-driven development and improvement
 
-### Practitioner-Built Design
-
-Our applications are developed by experienced geoscientists who
-understand real-world geological challenges. Every feature addresses
-actual industry needs, not theoretical requirements.
-
-### Professional-Grade Capabilities
-
-We don't compromise on quality. Orebit applications deliver
-enterprise-level functionality with: - Advanced statistical and
-geostatistical analysis - Interactive 3D visualization -
-Industry-standard reporting - Robust quality assurance protocols
-
 ### Universal Accessibility
 
 Cloud-native architecture means: - No installation required - Run
@@ -113,46 +100,7 @@ Economic scenario planning - Pushback sequencing
 
 ------------------------------------------------------------------------
 
-## Technical Foundation
-
-### Technology Stack
-
--   **Framework:** R Shiny for responsive web applications
--   **Data Processing:** tidyverse ecosystem for efficient data
-    manipulation
--   **Spatial Analysis:** sf, sp packages for advanced geospatial
-    operations
--   **Geostatistics:** gstat for comprehensive geostatistical modeling
--   **Visualization:** plotly for interactive, publication-ready
-    graphics
--   **3D Rendering:** Custom three.js integration for geological
-    modeling
-
-### Performance & Reliability
-
--   Optimized for large geological datasets (100,000+ samples)
--   Efficient memory management
--   Real-time interactive visualization
--   Robust error handling and data validation
--   Automated testing and quality assurance
-
-### Enterprise Integration
-
--   Multi-format data import (CSV, Excel, databases)
--   Export to industry-standard formats
--   API-ready architecture
--   Customizable reporting templates
--   Scalable deployment options
-
-------------------------------------------------------------------------
-
 ## Our Commitment
-
-### Quality Standards
-
-All Orebit applications meet or exceed industry standards for: -
-Analytical accuracy and precision - Data security and privacy -
-Reporting compliance (JORC, NI 43-101) - Professional documentation
 
 ### Continuous Improvement
 

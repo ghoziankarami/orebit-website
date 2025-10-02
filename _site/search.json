@@ -186,7 +186,7 @@
     "href": "blog.html",
     "title": "Orebit Technical Resources",
     "section": "",
-    "text": "Comprehensive guides for mastering geological data analysis with Orebit’s R Shiny applications. Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization.\n\n\n20+ R Packages\n\n\n3 Product Suite\n\n\n100% Open Source"
+    "text": "Master Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\n\n\n\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools.\n\n\n\nIntroduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production."
   },
   {
     "objectID": "blog.html#categories",
@@ -206,8 +206,8 @@
     "objectID": "blog.html#featured-application-guides",
     "href": "blog.html#featured-application-guides",
     "title": "Orebit Technical Resources",
-    "section": "Featured Application Guides",
-    "text": "Featured Application Guides\n\n\nGeoDataViz: Complete User Guide\nMaster Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\nCategories: GeoDataViz, EDA, Tutorial\nRead Guide →\n\n\nAdvanced Data Preprocessing with GeoDataViz\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools.\nCategories: GeoDataViz, Preprocessing, Resource-Estimation\nRead Guide →\n\n\nGetting Started with Orebit Solutions\nIntroduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production.\nCategories: Welcome, Open-Source, Overview\nRead Guide →"
+    "section": "",
+    "text": "Master Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\n\n\n\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools.\n\n\n\nIntroduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production."
   },
   {
     "objectID": "about.html",
@@ -235,7 +235,7 @@
     "href": "about.html#our-product-philosophy",
     "title": "About Orebit",
     "section": "Our Product Philosophy",
-    "text": "Our Product Philosophy\n\nOpen-Source Foundation\nAll Orebit applications are built on open-source technologies, ensuring: - Complete transparency in analytical methods - Full reproducibility of results - No vendor lock-in or hidden dependencies - Community-driven development and improvement\n\n\nPractitioner-Built Design\nOur applications are developed by experienced geoscientists who understand real-world geological challenges. Every feature addresses actual industry needs, not theoretical requirements.\n\n\nProfessional-Grade Capabilities\nWe don’t compromise on quality. Orebit applications deliver enterprise-level functionality with: - Advanced statistical and geostatistical analysis - Interactive 3D visualization - Industry-standard reporting - Robust quality assurance protocols\n\n\nUniversal Accessibility\nCloud-native architecture means: - No installation required - Run directly in web browsers - Access from anywhere - Cross-platform compatibility"
+    "text": "Our Product Philosophy\n\nOpen-Source Foundation\nAll Orebit applications are built on open-source technologies, ensuring: - Complete transparency in analytical methods - Full reproducibility of results - No vendor lock-in or hidden dependencies - Community-driven development and improvement\n\n\nUniversal Accessibility\nCloud-native architecture means: - No installation required - Run directly in web browsers - Access from anywhere - Cross-platform compatibility"
   },
   {
     "objectID": "about.html#product-suite",
@@ -245,18 +245,11 @@
     "text": "Product Suite\n\nGeoDataViz (Available Now)\nThe Comprehensive Geological Data Analysis Platform\nOur flagship application revolutionizes exploratory data analysis for geological datasets:\nCore Capabilities: - Interactive drillhole data visualization - Advanced statistical analysis and validation - 3D geological modeling - Comprehensive QA/QC tools - Automated reporting\nIndustry Applications: - Mineral exploration data analysis - Resource estimation preparation - Grade control monitoring - Geological database validation\nTry GeoDataViz Demo →\n\n\n\nResource Estimation App (Coming Q2 2025)\nProfessional Geostatistical Analysis\nAdvanced resource modeling capabilities including: - Automated variogram modeling - Multiple kriging techniques - Block model generation - Resource classification - Uncertainty quantification - JORC/NI 43-101 compliant reporting\nJoin Beta Program →\n\n\n\nPit Optimizer (Coming Q3 2025)\nStrategic Mine Planning\nSophisticated optimization algorithms for: - Ultimate pit limit determination - Multi-criteria optimization (NPV, volume, grade) - Operational constraint modeling - Environmental impact assessment - Economic scenario planning - Pushback sequencing\nGet Early Access →"
   },
   {
-    "objectID": "about.html#technical-foundation",
-    "href": "about.html#technical-foundation",
-    "title": "About Orebit",
-    "section": "Technical Foundation",
-    "text": "Technical Foundation\n\nTechnology Stack\n\nFramework: R Shiny for responsive web applications\nData Processing: tidyverse ecosystem for efficient data manipulation\nSpatial Analysis: sf, sp packages for advanced geospatial operations\nGeostatistics: gstat for comprehensive geostatistical modeling\nVisualization: plotly for interactive, publication-ready graphics\n3D Rendering: Custom three.js integration for geological modeling\n\n\n\nPerformance & Reliability\n\nOptimized for large geological datasets (100,000+ samples)\nEfficient memory management\nReal-time interactive visualization\nRobust error handling and data validation\nAutomated testing and quality assurance\n\n\n\nEnterprise Integration\n\nMulti-format data import (CSV, Excel, databases)\nExport to industry-standard formats\nAPI-ready architecture\nCustomizable reporting templates\nScalable deployment options"
-  },
-  {
     "objectID": "about.html#our-commitment",
     "href": "about.html#our-commitment",
     "title": "About Orebit",
     "section": "Our Commitment",
-    "text": "Our Commitment\n\nQuality Standards\nAll Orebit applications meet or exceed industry standards for: - Analytical accuracy and precision - Data security and privacy - Reporting compliance (JORC, NI 43-101) - Professional documentation\n\n\nContinuous Improvement\nWe actively develop new features based on: - User feedback and requests - Industry best practices - Technological advances - Regulatory requirements\n\n\nCommunity Support\nWe believe in giving back: - Open-source code repositories - Comprehensive documentation - Tutorial videos and guides - Active user community - Responsive technical support"
+    "text": "Our Commitment\n\nContinuous Improvement\nWe actively develop new features based on: - User feedback and requests - Industry best practices - Technological advances - Regulatory requirements\n\n\nCommunity Support\nWe believe in giving back: - Open-source code repositories - Comprehensive documentation - Tutorial videos and guides - Active user community - Responsive technical support"
   },
   {
     "objectID": "about.html#the-team-behind-orebit",
