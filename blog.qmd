@@ -11,6 +11,12 @@ toc: false
 ## Featured Application Guides
 
 :::::: featured-guides
+::: {.guide-card .product-general}
+### [Getting Started with Orebit Solutions](/posts/Welcome%20to%20Orebit/)
+
+**Introduction to Orebit Ecosystem**\
+Discover how Orebit's suite of R Shiny applications transforms geological workflows from exploration to production.
+:::
 ::: {.guide-card .product-geodataviz}
 ### [GeoDataViz: Complete User Guide](/posts/EDA%20with%20GeoDataViz/)
 
@@ -25,12 +31,7 @@ Learn how to use GeoDataViz for comprehensive geological data validation, statis
 Complete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz's preprocessing tools.
 :::
 
-::: {.guide-card .product-general}
-### [Getting Started with Orebit Solutions](/posts/Welcome%20to%20Orebit/)
 
-**Introduction to Orebit Ecosystem**\
-Discover how Orebit's suite of R Shiny applications transforms geological workflows from exploration to production.
-:::
 ::::::
 
 ------------------------------------------------------------------------

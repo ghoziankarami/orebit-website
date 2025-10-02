@@ -51,22 +51,6 @@ compatibility
 
 ------------------------------------------------------------------------
 
-## Our Commitment
-
-### Continuous Improvement
-
-We actively develop new features based on: - User feedback and
-requests - Industry best practices - Technological advances - Regulatory
-requirements
-
-### Community Support
-
-We believe in giving back: - Open-source code repositories -
-Comprehensive documentation - Tutorial videos and guides - Active user
-community - Responsive technical support
-
-------------------------------------------------------------------------
-
 ## The Team Behind Orebit
 
 Orebit is led by **Ghozian Islam Karami**, Senior Geologist and
