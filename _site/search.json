@@ -210,20 +210,6 @@
     "text": "Featured Application Guides\n\n\nGeoDataViz: Complete User Guide\nMaster Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\nCategories: GeoDataViz, EDA, Tutorial\nRead Guide →\n\n\nAdvanced Data Preprocessing with GeoDataViz\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools.\nCategories: GeoDataViz, Preprocessing, Resource-Estimation\nRead Guide →\n\n\nGetting Started with Orebit Solutions\nIntroduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production.\nCategories: Welcome, Open-Source, Overview\nRead Guide →"
   },
   {
-    "objectID": "blog.html#learning-paths-by-product",
-    "href": "blog.html#learning-paths-by-product",
-    "title": "Orebit Technical Resources",
-    "section": "Learning Paths by Product",
-    "text": "Learning Paths by Product\n\n\n GeoDataViz Learning Path\nCurrent Application - Start Here\n\nBasics: Getting Started with GeoDataViz\nData Import: Loading Drillhole Data\nEDA: Exploratory Data Analysis Guide\nPreprocessing: Data Conditioning Workflows\nVisualization: Creating 3D Geological Models\nExport: Generating Reports\n\nLaunch Demo App →\n\n\n Resource Estimation Path\nComing Q2 2025\n\nFundamentals: Introduction to Resource Estimation\nVariography: Variogram Modeling Techniques\nKriging: Advanced Interpolation Methods\nValidation: Model Quality Assurance\nReporting: Industry-Standard Reports\n\nJoin Beta List →\n\n\n Pit Optimization Path\nComing Q3 2025\n\nIntroduction: Mine Planning Basics\nModeling: Pit Design Fundamentals\nOptimization: NPV Maximization\nConstraints: Operational & Environmental\nScenarios: Economic Planning\n\nGet Notified →"
-  },
-  {
-    "objectID": "blog.html#why-these-resources-matter",
-    "href": "blog.html#why-these-resources-matter",
-    "title": "Orebit Technical Resources",
-    "section": "Why These Resources Matter",
-    "text": "Why These Resources Matter\nProduct-Focused Learning\nEvery tutorial is designed specifically for Orebit applications, ensuring you can immediately apply what you learn.\nReal-World Workflows\nGuides based on actual geological projects, not theoretical examples. Learn workflows that work in production environments.\nProgressive Difficulty\nStart with basics and progress to advanced techniques. Each guide builds on previous knowledge.\nOpen Source Philosophy\nAll code examples and workflows are transparent, reproducible, and freely available."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About Orebit",
@@ -264,13 +250,6 @@
     "title": "About Orebit",
     "section": "Technical Foundation",
     "text": "Technical Foundation\n\nTechnology Stack\n\nFramework: R Shiny for responsive web applications\nData Processing: tidyverse ecosystem for efficient data manipulation\nSpatial Analysis: sf, sp packages for advanced geospatial operations\nGeostatistics: gstat for comprehensive geostatistical modeling\nVisualization: plotly for interactive, publication-ready graphics\n3D Rendering: Custom three.js integration for geological modeling\n\n\n\nPerformance & Reliability\n\nOptimized for large geological datasets (100,000+ samples)\nEfficient memory management\nReal-time interactive visualization\nRobust error handling and data validation\nAutomated testing and quality assurance\n\n\n\nEnterprise Integration\n\nMulti-format data import (CSV, Excel, databases)\nExport to industry-standard formats\nAPI-ready architecture\nCustomizable reporting templates\nScalable deployment options"
-  },
-  {
-    "objectID": "about.html#who-we-serve",
-    "href": "about.html#who-we-serve",
-    "title": "About Orebit",
-    "section": "Who We Serve",
-    "text": "Who We Serve\n\nExploration Geologists\nRapidly validate and analyze drilling data, identify trends, and optimize sampling strategies using professional-grade analytical tools.\n\n\nResource Geologists\nPrepare data for resource estimation with comprehensive preprocessing workflows, domain analysis, and geostatistical validation.\n\n\nMining Engineers\nOptimize mine planning with advanced pit optimization, economic modeling, and scenario analysis capabilities.\n\n\nConsulting Firms\nDeliver professional results to clients using transparent, reproducible analytical methods at a fraction of traditional software costs.\n\n\nEducational Institutions\nTeach modern geological data analysis with free access to professional-grade tools and comprehensive learning resources.\n\n\nJunior Mining Companies\nAccess enterprise-level analytical capabilities without the capital requirements of expensive software licenses."
   },
   {
     "objectID": "about.html#our-commitment",

@@ -146,40 +146,6 @@ Economic scenario planning - Pushback sequencing
 
 ------------------------------------------------------------------------
 
-## Who We Serve
-
-### Exploration Geologists
-
-Rapidly validate and analyze drilling data, identify trends, and
-optimize sampling strategies using professional-grade analytical tools.
-
-### Resource Geologists
-
-Prepare data for resource estimation with comprehensive preprocessing
-workflows, domain analysis, and geostatistical validation.
-
-### Mining Engineers
-
-Optimize mine planning with advanced pit optimization, economic
-modeling, and scenario analysis capabilities.
-
-### Consulting Firms
-
-Deliver professional results to clients using transparent, reproducible
-analytical methods at a fraction of traditional software costs.
-
-### Educational Institutions
-
-Teach modern geological data analysis with free access to
-professional-grade tools and comprehensive learning resources.
-
-### Junior Mining Companies
-
-Access enterprise-level analytical capabilities without the capital
-requirements of expensive software licenses.
-
-------------------------------------------------------------------------
-
 ## Our Commitment
 
 ### Quality Standards
