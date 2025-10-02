@@ -19,7 +19,7 @@ title-block-banner: false
 <p class="hero-subtitle" data-en="Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization" data-id="Aplikasi R Shiny profesional untuk analisis data geologi, estimasi sumber daya, dan optimisasi tambang">Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization</p>
 
 <div class="hero-buttons">
-<a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary" target="_blank" rel="noopener">
+<a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary" target="_blank" rel="noopener">
   <i class="fas fa-rocket"></i> <span data-en="Try GeoDataViz Now" data-id="Coba GeoDataViz Sekarang">Try GeoDataViz Now</span>
 </a>
 <a href="/blog" class="btn btn-secondary">
@@ -46,7 +46,7 @@ title-block-banner: false
 - <span data-en="Comprehensive QA/QC validation tools" data-id="Alat validasi QA/QC komprehensif">Comprehensive QA/QC validation tools</span>
 - <span data-en="Professional reporting capabilities" data-id="Kemampuan pelaporan profesional">Professional reporting capabilities</span>
 
-[**<span data-en="Launch Demo →" data-id="Buka Demo →">Launch Demo →</span>**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank" rel="noopener"}
+[**<span data-en="Launch Demo →" data-id="Buka Demo →">Launch Demo →</span>**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success target="_blank" rel="noopener"}
 </div>
 
 <div class="product-card upcoming">
@@ -117,7 +117,7 @@ title-block-banner: false
 <p data-en="Experience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities." data-id="Rasakan kekuatan analisis data geologi profesional dengan aplikasi unggulan kami. Bergabunglah dengan ratusan geosaintis yang sudah menggunakan solusi Orebit untuk meningkatkan kemampuan analitis mereka.">Experience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities.</p>
 
 <div class="cta-buttons">
-<a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+<a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
   <i class="fas fa-play"></i> <span data-en="Launch GeoDataViz Demo" data-id="Buka Demo GeoDataViz">Launch GeoDataViz Demo</span>
 </a>
 <a href="mailto:contact@Orebit-geo.com" class="btn btn-secondary btn-lg">

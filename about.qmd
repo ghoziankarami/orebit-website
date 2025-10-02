@@ -69,7 +69,7 @@ Our flagship application revolutionizes exploratory data analysis for geological
 - Grade control monitoring
 - Geological database validation
 
-[**Try GeoDataViz Demo →**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank"}
+[**Try GeoDataViz Demo →**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success target="_blank"}
 
 ---
 
@@ -201,7 +201,7 @@ This combination of geological expertise and technical development skills ensure
 
 ### Try Our Applications
 Experience the power of professional geological analysis:
-[**Launch GeoDataViz Demo**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank"}
+[**Launch GeoDataViz Demo**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success target="_blank"}
 
 ### Join Beta Testing
 Get early access to upcoming applications:
