@@ -224,13 +224,6 @@
     "text": "Our Product Philosophy\n\nOpen-Source Foundation\nAll Orebit applications are built on open-source technologies, ensuring: - Complete transparency in analytical methods - Full reproducibility of results - No vendor lock-in or hidden dependencies - Community-driven development and improvement\n\n\nUniversal Accessibility\nCloud-native architecture means: - No installation required - Run directly in web browsers - Access from anywhere - Cross-platform compatibility"
   },
   {
-    "objectID": "about.html#product-suite",
-    "href": "about.html#product-suite",
-    "title": "About Orebit",
-    "section": "Product Suite",
-    "text": "Product Suite\n\nGeoDataViz (Available Now)\nThe Comprehensive Geological Data Analysis Platform\nOur flagship application revolutionizes exploratory data analysis for geological datasets:\nCore Capabilities: - Interactive drillhole data visualization - Advanced statistical analysis and validation - 3D geological modeling - Comprehensive QA/QC tools - Automated reporting\nIndustry Applications: - Mineral exploration data analysis - Resource estimation preparation - Grade control monitoring - Geological database validation\nTry GeoDataViz Demo →\n\n\n\nResource Estimation App (Coming Q2 2025)\nProfessional Geostatistical Analysis\nAdvanced resource modeling capabilities including: - Automated variogram modeling - Multiple kriging techniques - Block model generation - Resource classification - Uncertainty quantification - JORC/NI 43-101 compliant reporting\nJoin Beta Program →\n\n\n\nPit Optimizer (Coming Q3 2025)\nStrategic Mine Planning\nSophisticated optimization algorithms for: - Ultimate pit limit determination - Multi-criteria optimization (NPV, volume, grade) - Operational constraint modeling - Environmental impact assessment - Economic scenario planning - Pushback sequencing\nGet Early Access →"
-  },
-  {
     "objectID": "about.html#our-commitment",
     "href": "about.html#our-commitment",
     "title": "About Orebit",
