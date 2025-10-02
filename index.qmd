@@ -2,74 +2,133 @@
 title: "Orebit Geological Solutions"
 subtitle: "Professional R Shiny Applications for Modern Geology"
 description: "Advanced geological analysis suite - GeoDataViz, Resource Estimation, and Pit Optimization tools for professional geoscientists and mining engineers."
-toc: false
 page-layout: full
-title-block-banner: false
+toc: false
 ---
 
-:::: hero-Orebit
-<h1>Advanced Geological Analysis Suite</h1>
-<h2>From Exploration to Production</h2>
-<p class="hero-subtitle">
-Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization.
-</p>
-::: hero-buttons
-<a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary" target="_blank" rel="noopener">
-<i class="fas fa-rocket"></i> Try GeoDataViz Now
-</a> 
-<a href="/blog.html" class="btn btn-secondary">
-<i class="fas fa-book"></i> Learn More
-</a>
-:::
-::::
-
-------------------------------------------------------------------------
-
-## Our Product Suite
-
-:::::: products-grid
-::: {.product-card .flagship}
-### <i class="fas fa-chart-line"></i> GeoDataViz
-**Available Now - Free Demo**
-<p>
-Transform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data.
-</p>
-**Key Features:**
-- Interactive 3D geological visualization
-- Advanced statistical analysis for geological data
-- Comprehensive QA/QC validation tools
-- Professional reporting capabilities
-
-<a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-success" target="_blank" rel="noopener">Launch Demo →</a>
+::: {.hero-section}
+  <div class="container text-center">
+    <h1 class="display-4">Digitizing Geology, from Exploration to Production</h1>
+    <p class="lead">
+      Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization. Built by geologists, for geologists.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+        <i class="fas fa-rocket"></i> Launch GeoDataViz Demo
+      </a>
+      <a href="blog.html" class="btn btn-outline-light btn-lg">
+        <i class="fas fa-book"></i> Read Technical Guides
+      </a>
+    </div>
+  </div>
 :::
 
-::: {.product-card .upcoming}
-### <i class="fas fa-calculator"></i> Resource Estimation App
-**Coming Q2 2026**
-<p>
-Professional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools.
-</p>
-**Planned Features:**
-- Automated variogram modeling
-- Advanced kriging techniques
-- Resource classification tools
-- Industry-standard reporting
+<div class="container page-content">
 
-<a href="#beta-signup" class="btn btn-outline">Join Beta List →</a>
-:::
+  <div class="section-container text-center">
+    <h2 class="section-title">Why Orebit Solutions?</h2>
+    <p class="section-subtitle">
+      Access enterprise-level tools without the enterprise-level costs. We bridge the gap between powerful analytics and accessibility.
+    </p>
+    <div class="value-props-grid">
+      <div class="value-item">
+        <div class="value-icon"><i class="fas fa-dollar-sign"></i></div>
+        <h3>Cost-Effective Excellence</h3>
+        <p>Eliminate prohibitive $20,000+ annual licensing fees. Powerful tools should be accessible to all, not just the largest corporations.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon"><i class="fas fa-user-check"></i></div>
+        <h3>Built by Geologists</h3>
+        <p>Developed by a Certified Competent Person (CP) who understands the real-world challenges and workflows of the mining industry.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon"><i class="fas fa-cogs"></i></div>
+        <h3>Open & Transparent</h3>
+        <p>Built on open-source R technology. No black-box algorithms. Our methods are clear, ensuring reproducibility and scientific integrity.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon"><i class="fas fa-cloud"></i></div>
+        <h3>Cloud-Native Performance</h3>
+        <p>No installation, no maintenance. Run sophisticated analyses directly in your browser, anywhere, on any device.</p>
+      </div>
+    </div>
+  </div>
 
-::: {.product-card .upcoming}
-### <i class="fas fa-mountain"></i> Pit Optimizer
-**Coming Q3 2026**
-<p>
-Sophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.
-</p>
-**Planned Features:**
-- Multi-criteria optimization
-- Operational constraint modeling
-- Environmental impact assessment
-- Economic scenario planning
+  <div class="section-container section-light-bg">
+    <h2 class="section-title text-center">Our Product Suite</h2>
+    <div class="products-grid">
+      
+      <div class="product-card flagship">
+        <div class="product-header">
+          <h3><i class="fas fa-chart-line"></i> GeoDataViz</h3>
+          <span class="badge bg-success">Available Now</span>
+        </div>
+        <p>Transform your geological workflow with professional-grade exploratory data analysis and 3D visualization, built specifically for drillhole datasets.</p>
+        <ul class="features-list">
+          <li>Interactive 3D Visualization</li>
+          <li>Advanced Statistical Analysis</li>
+          <li>Comprehensive QA/QC Tools</li>
+        </ul>
+        <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-success w-100" target="_blank" rel="noopener">Launch Free Demo →</a>
+      </div>
 
-<a href="#beta-signup" class="btn btn-outline">Get Notified →</a>
-:::
-::::::
+      <div class="product-card upcoming">
+        <div class="product-header">
+          <h3><i class="fas fa-calculator"></i> Resource Estimation</h3>
+          <span class="badge bg-warning">Coming Q2 2026</span>
+        </div>
+        <p>Professional geostatistical analysis and resource modeling in your browser. Advanced kriging, variogram modeling, and uncertainty quantification.</p>
+        <ul class="features-list">
+          <li>Automated Variogram Modeling</li>
+          <li>Advanced Kriging Techniques</li>
+          <li>Industry-Standard Reporting</li>
+        </ul>
+        <a href="#cta-section" class="btn btn-outline-primary w-100">Join Beta List →</a>
+      </div>
+
+      <div class="product-card upcoming">
+        <div class="product-header">
+          <h3><i class="fas fa-mountain"></i> Pit Optimizer</h3>
+          <span class="badge bg-warning">Coming Q3 2026</span>
+        </div>
+        <p>Sophisticated mine planning and optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.</p>
+        <ul class="features-list">
+          <li>Multi-Criteria Optimization</li>
+          <li>Operational Constraint Modeling</li>
+          <li>Economic Scenario Planning</li>
+        </ul>
+        <a href="#cta-section" class="btn btn-outline-primary w-100">Get Notified →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-container text-center">
+      <h2 class="section-title">Trusted by Industry Professionals</h2>
+      <div class="testimonial">
+          <p class="testimonial-text">
+              "GeoDataViz has revolutionized our exploratory data analysis workflow. It's intuitive, powerful, and provides insights that were previously buried in spreadsheets. A must-have tool for any serious exploration geologist."
+          </p>
+          <p class="testimonial-author">
+              <strong>— Senior Exploration Geologist</strong>, Mining Corporation
+          </p>
+      </div>
+  </div>
+
+
+  <div id="cta-section" class="section-container cta-section">
+    <div class="row align-items-center">
+      <div class="col-lg-8 text-center text-lg-start">
+        <h3>Ready to Transform Your Workflow?</h3>
+        <p>
+          Experience the power of professional geological data analysis with our flagship application. Stay updated on our upcoming resource estimation and pit optimization tools.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center text-lg-end">
+        <input type="email" class="form-control mb-2" placeholder="Enter your email for updates">
+        <button class="btn btn-primary w-100">Get Notified</button>
+      </div>
+    </div>
+  </div>
+
+</div>
