@@ -27,7 +27,7 @@ website:
       - href: about.qmd
         text: About
       - href: blog.qmd
-        text: Blog
+        text: Technical Resources
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/ghoziankarami/

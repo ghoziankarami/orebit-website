@@ -184,219 +184,163 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "The Library",
+    "title": "Orebit Technical Resources",
     "section": "",
-    "text": "Comprehensive, professional-grade resources for geological data analysis. Each article serves as a definitive reference, providing the depth and practical guidance you need to confidently transform complex geological data into reliable, actionable intelligence.\n\n“To empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence.”"
+    "text": "Comprehensive guides for mastering geological data analysis with Orebit’s R Shiny applications. Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization.\n\n\n50+ Technical Guides\n\n\n3 Product Suite\n\n\n100% Open Source"
   },
   {
     "objectID": "blog.html#categories",
     "href": "blog.html#categories",
-    "title": "The Library",
+    "title": "Orebit Technical Resources",
     "section": "Categories",
-    "text": "Categories\nExplore by technical focus:\n\nExploratory Data Analysis\nResource Estimation\nGeostatistics\nGeoDataViz Tutorials\nOpen-Source Tools\nProfessional Workflows"
+    "text": "Categories\n\nGeoDataViz Tutorials\nResource Estimation\nGeostatistics\nData Analysis\nR Shiny Development"
   },
   {
-    "objectID": "blog.html#quick-access",
-    "href": "blog.html#quick-access",
-    "title": "The Library",
-    "section": "Quick Access",
-    "text": "Quick Access\n\nRSS Feed\nAll Categories\nGitHub Repository"
+    "objectID": "blog.html#quick-links",
+    "href": "blog.html#quick-links",
+    "title": "Orebit Technical Resources",
+    "section": "Quick Links",
+    "text": "Quick Links\n\nRSS Feed\nGitHub\nProduct Demo"
   },
   {
-    "objectID": "blog.html#professional-network",
-    "href": "blog.html#professional-network",
-    "title": "The Library",
-    "section": "Professional Network",
-    "text": "Professional Network\nConnect for industry insights and networking: - LinkedIn Profile - Visual Tutorials"
+    "objectID": "blog.html#featured-application-guides",
+    "href": "blog.html#featured-application-guides",
+    "title": "Orebit Technical Resources",
+    "section": "Featured Application Guides",
+    "text": "Featured Application Guides\n\n\nGeoDataViz: Complete User Guide\nMaster Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\nCategories: GeoDataViz, EDA, Tutorial\nRead Guide →\n\n\nAdvanced Data Preprocessing with GeoDataViz\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools.\nCategories: GeoDataViz, Preprocessing, Resource-Estimation\nRead Guide →\n\n\nGetting Started with Orebit Solutions\nIntroduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production.\nCategories: Welcome, Open-Source, Overview\nRead Guide →"
   },
   {
-    "objectID": "blog.html#featured-professional-guides",
-    "href": "blog.html#featured-professional-guides",
-    "title": "The Library",
-    "section": "Featured Professional Guides",
-    "text": "Featured Professional Guides\n\n\nWelcome to The Library: Where Geological Expertise Meets Open-Source Innovation\nThe Foundation of Our Mission\nDiscover the comprehensive ecosystem designed to democratize advanced geological analysis. Learn how practitioner-built solutions are transforming the industry by establishing open and transparent tools as the standard for every professional.\nCategories: Welcome, Open-Source, Data-Science\n\n\nMastering Exploratory Data Analysis with GeoDataViz\nThe Complete Professional Guide\nMaster comprehensive EDA techniques specifically designed for geological datasets. Learn professional-grade methods for data validation, spatial analysis, and geological insight extraction before resource estimation.\nCategories: GeoDataViz, EDA, Geostatistics, Tutorial\n\n\nPre-Processing Drillhole Data for Resource Estimation\nAdvanced Professional Techniques\nTransform raw geological data into estimation-ready datasets using sophisticated compositing strategies, domain optimization, and data conditioning methods that ensure accurate resource estimation.\nCategories: GeoDataViz, Preprocessing, Resource-Estimation, Geostatistics"
+    "objectID": "blog.html#learning-paths-by-product",
+    "href": "blog.html#learning-paths-by-product",
+    "title": "Orebit Technical Resources",
+    "section": "Learning Paths by Product",
+    "text": "Learning Paths by Product\n\n\n GeoDataViz Learning Path\nCurrent Application - Start Here\n\nBasics: Getting Started with GeoDataViz\nData Import: Loading Drillhole Data\nEDA: Exploratory Data Analysis Guide\nPreprocessing: Data Conditioning Workflows\nVisualization: Creating 3D Geological Models\nExport: Generating Reports\n\nLaunch Demo App →\n\n\n Resource Estimation Path\nComing Q2 2025\n\nFundamentals: Introduction to Resource Estimation\nVariography: Variogram Modeling Techniques\nKriging: Advanced Interpolation Methods\nValidation: Model Quality Assurance\nReporting: Industry-Standard Reports\n\nJoin Beta List →\n\n\n Pit Optimization Path\nComing Q3 2025\n\nIntroduction: Mine Planning Basics\nModeling: Pit Design Fundamentals\nOptimization: NPV Maximization\nConstraints: Operational & Environmental\nScenarios: Economic Planning\n\nGet Notified →"
   },
   {
-    "objectID": "blog.html#the-complete-geological-analysis-ecosystem",
-    "href": "blog.html#the-complete-geological-analysis-ecosystem",
-    "title": "The Library",
-    "section": "The Complete Geological Analysis Ecosystem",
-    "text": "The Complete Geological Analysis Ecosystem\n\nThe Library (You Are Here)\nComprehensive Technical Resources\nDeep-dive, professional-grade articles that serve as permanent references for geological data analysis techniques. Each post is designed to be the definitive guide on its topic—from basic exploratory data analysis to advanced geostatistical modeling.\n\n\nThe Workbench\nGeoDataViz Interactive Platform\nExperience these concepts in action through our open-source R Shiny application. The entire analytical workflow discussed in Library posts can be performed interactively using our comprehensive geological analysis platform.\nExperience GeoDataViz\n\n\nThe Professional Stage\nIndustry Leadership & Networking\nFollow LinkedIn insights for professional discussions, real-world case studies, and career development guidance in modern geological data analysis.\n\n\nThe Visual Classroom\nAccessible Learning Materials\nJoin @orebit.id for bite-sized, visual tutorials that make complex geological concepts accessible through compelling graphics and step-by-step visual guides."
+    "objectID": "blog.html#technical-topics",
+    "href": "blog.html#technical-topics",
+    "title": "Orebit Technical Resources",
+    "section": "Technical Topics",
+    "text": "Technical Topics\n\n\n Data Management\nImport, validate, and manage geological datasets efficiently using Orebit applications. Learn best practices for data structure and quality control.\n\n\n Statistical Analysis\nMaster statistical techniques for geological data including distribution analysis, outlier detection, and multivariate methods.\n\n\n Spatial Analysis\nUnderstand spatial patterns, variography, and geostatistical modeling for accurate resource estimation.\n\n\n 3D Visualization\nCreate interactive 3D geological models, cross-sections, and visualizations for better data understanding.\n\n\n R Shiny Development\nLearn to customize and extend Orebit applications or build your own geological R Shiny apps.\n\n\n Quality Assurance\nImplement robust QA/QC procedures for geological data analysis and resource modeling."
   },
   {
-    "objectID": "blog.html#professional-development-focus-areas",
-    "href": "blog.html#professional-development-focus-areas",
-    "title": "The Library",
-    "section": "Professional Development Focus Areas",
-    "text": "Professional Development Focus Areas"
+    "objectID": "blog.html#why-these-resources-matter",
+    "href": "blog.html#why-these-resources-matter",
+    "title": "Orebit Technical Resources",
+    "section": "Why These Resources Matter",
+    "text": "Why These Resources Matter\nProduct-Focused Learning\nEvery tutorial is designed specifically for Orebit applications, ensuring you can immediately apply what you learn.\nReal-World Workflows\nGuides based on actual geological projects, not theoretical examples. Learn workflows that work in production environments.\nProgressive Difficulty\nStart with basics and progress to advanced techniques. Each guide builds on previous knowledge.\nOpen Source Philosophy\nAll code examples and workflows are transparent, reproducible, and freely available."
   },
   {
-    "objectID": "blog.html#data-analysis-mastery",
-    "href": "blog.html#data-analysis-mastery",
-    "title": "The Library",
-    "section": "Data Analysis Mastery",
-    "text": "Data Analysis Mastery\nAdvanced techniques for understanding geological datasets, identifying data quality issues that compromise estimates, and extracting insights that inform sampling strategies.\nKey Topics: - Comprehensive exploratory data analysis workflows - Statistical validation and quality control protocols\n- Multi-element correlation and geochemical analysis - Spatial bias identification and correction methods"
-  },
-  {
-    "objectID": "blog.html#geostatistical-excellence",
-    "href": "blog.html#geostatistical-excellence",
-    "title": "The Library",
-    "section": "Geostatistical Excellence",
-    "text": "Geostatistical Excellence\nPractical applications of variogram modeling, kriging techniques, and uncertainty quantification—moving beyond textbook examples to handle complex spatial relationships in real geological environments.\nKey Topics: - Advanced variogram modeling and validation - Kriging optimization for complex geological domains - Uncertainty quantification and risk assessment - Multi-element co-estimation strategies"
-  },
-  {
-    "objectID": "blog.html#resource-estimation-workflows",
-    "href": "blog.html#resource-estimation-workflows",
-    "title": "The Library",
-    "section": "Resource Estimation Workflows",
-    "text": "Resource Estimation Workflows\nComplete methodologies from raw drillhole data through final resource models, including domain analysis, data preprocessing, estimation parameter selection, and model validation.\nKey Topics: - Domain optimization and boundary analysis - Composite length selection and validation - Search parameter optimization strategies - Model validation and uncertainty assessment"
-  },
-  {
-    "objectID": "blog.html#open-source-integration",
-    "href": "blog.html#open-source-integration",
-    "title": "The Library",
-    "section": "Open-Source Integration",
-    "text": "Open-Source Integration\nPractical approaches for integrating open-source tools with existing proprietary software environments, enabling transition to more transparent, cost-effective analytical workflows.\nKey Topics: - R ecosystem mastery for geological applications - GeoDataViz advanced features and customization - Workflow automation and best practices - Integration strategies with industry software"
-  },
-  {
-    "objectID": "blog.html#why-the-library-matters-for-your-professional-development",
-    "href": "blog.html#why-the-library-matters-for-your-professional-development",
-    "title": "The Library",
-    "section": "Why The Library Matters for Your Professional Development",
-    "text": "Why The Library Matters for Your Professional Development\nComprehensive Coverage\nEach article provides complete, professional-grade coverage of its topic—not superficial overviews, but definitive resources that serve as permanent professional references.\nReal-World Application\nEvery technique has been tested in actual mining projects by a Certified Competent Person with over a decade of resource evaluation experience.\nTransparent Methodology\nComplete visibility into every analytical step with no proprietary black boxes—essential for meeting modern standards of scientific reproducibility.\nCost-Effective Excellence\nAccess to enterprise-level analytical knowledge without expensive training courses or consulting fees.\nProfessional Credibility\nDocumentation standards and methodological rigor that meet international resource reporting requirements."
-  },
-  {
-    "objectID": "blog.html#content-strategy-maximizing-your-learning",
-    "href": "blog.html#content-strategy-maximizing-your-learning",
-    "title": "The Library",
-    "section": "Content Strategy: Maximizing Your Learning",
-    "text": "Content Strategy: Maximizing Your Learning\n\nThe Content Recycling Approach\nEach comprehensive Library article becomes the foundation for targeted learning across our ecosystem:\n\nLinkedIn insights highlighting key professional applications\nInstagram tutorials breaking techniques into visual, step-by-step guides\nGeoDataViz implementations providing immediate hands-on experience\n\nThis integrated approach ensures you can access geological expertise tailored to your specific learning style and professional needs.\n\n\nRecommended Learning Path\nFoundation Level: 1. Welcome to The Library - Understanding the ecosystem 2. Mastering Exploratory Data Analysis - Building analytical foundations\nProfessional Application: 3. Pre-Processing Drillhole Data - Data conditioning mastery\nAdvanced Specialization: - Upcoming: Variogram modeling and spatial continuity analysis - Upcoming: Resource estimation workflows and validation - Upcoming: Integration strategies for complex geological environments"
-  },
-  {
-    "objectID": "blog.html#join-the-professional-community",
-    "href": "blog.html#join-the-professional-community",
-    "title": "The Library",
-    "section": "Join the Professional Community",
-    "text": "Join the Professional Community\n\n\nTechnical Discussion\nEngage with comprehensive technical content and contribute to professional discussions about geological data analysis best practices.\nParticipate: Comment on articles, suggest topics, share your own experiences\n\n\nProfessional Networking\nConnect with geological professionals embracing open-source solutions and advanced analytical methods.\nConnect: LinkedIn Professional Network\n\n\nDevelopment Contribution\nShape the future of geological data analysis tools through community-driven development and feedback.\nContribute: GeoDataViz GitHub Repository\n\n\nVisual Learning\nAccess bite-sized, visual tutorials that make complex geological concepts immediately applicable.\nFollow: Instagram @orebit.id"
-  },
-  {
-    "objectID": "blog.html#stay-updated-with-professional-geological-analysis",
-    "href": "blog.html#stay-updated-with-professional-geological-analysis",
-    "title": "The Library",
-    "section": "Stay Updated with Professional Geological Analysis",
-    "text": "Stay Updated with Professional Geological Analysis\n\nRSS Feed\nSubscribe for automatic notifications of new professional resources and comprehensive guides.\nSubscribe to Feed\n\n\nProfessional Updates\nFollow for industry insights, case studies, and professional development guidance.\nLinkedIn Updates"
+    "objectID": "blog.html#stay-updated",
+    "href": "blog.html#stay-updated",
+    "title": "Orebit Technical Resources",
+    "section": "Stay Updated",
+    "text": "Stay Updated\n\n\n📰 RSS Feed\nSubscribe to get notified of new tutorials and product updates automatically.\nSubscribe to RSS\n\n\n🚀 Product Updates\nGet early access to new features and beta testing opportunities for upcoming Orebit applications.\nJoin Beta Program"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Orebit",
     "section": "",
-    "text": "I am Ghozian Islam Karami, and this is my story of bridging traditional geological expertise with the transformative power of open-source data science."
+    "text": "Orebit Geological Solutions develops professional R Shiny applications that transform how geoscientists and mining engineers approach data analysis. Our mission is to provide cost-effective, transparent, and powerful analytical tools that rival expensive proprietary software—without the prohibitive licensing fees."
   },
   {
-    "objectID": "about.html#the-practitioner-behind-the-vision",
-    "href": "about.html#the-practitioner-behind-the-vision",
-    "title": "About",
-    "section": "The Practitioner Behind the Vision",
-    "text": "The Practitioner Behind the Vision\nWith over a decade of hands-on experience in the mining industry—particularly in offshore tin exploration and resource evaluation—I’ve witnessed firsthand the challenges that geoscientists face when working with complex geological data. As a Senior Geologist & Geospatial Specialist and Certified BNSP Competent Person (CP), I’ve not only evaluated and signed off on mineral resource estimation documents but also lived through the frustrations of expensive, inflexible proprietary software that often creates more barriers than solutions.\nMy academic foundation includes a Master of Science in Geological Sciences from King Fahd University of Petroleum and Minerals (KFUPM) and a Bachelor’s degree in Geology from Universitas Padjadjaran. But more importantly, my expertise has been forged in the field—from analyzing drillhole data in remote offshore environments to developing quality control protocols that ensure reliable resource estimates."
+    "objectID": "about.html#advanced-geological-solutions-for-the-modern-mining-industry",
+    "href": "about.html#advanced-geological-solutions-for-the-modern-mining-industry",
+    "title": "About Orebit",
+    "section": "",
+    "text": "Orebit Geological Solutions develops professional R Shiny applications that transform how geoscientists and mining engineers approach data analysis. Our mission is to provide cost-effective, transparent, and powerful analytical tools that rival expensive proprietary software—without the prohibitive licensing fees."
   },
   {
-    "objectID": "about.html#the-open-source-catalyst",
-    "href": "about.html#the-open-source-catalyst",
-    "title": "About",
-    "section": "The Open-Source Catalyst",
-    "text": "The Open-Source Catalyst\nWhat drives me is a fundamental belief: every geoscientist should have access to powerful, transparent analytical tools—regardless of budget constraints or geographical location. Too many talented professionals in smaller companies, consulting practices, or developing regions are held back by software licensing costs that can exceed $50,000 annually.\nThis conviction led me to become an active advocate for open-source solutions in geology. I’ve mastered the R ecosystem (tidyverse, sf, tmap, gstat) not just as an alternative to proprietary software, but as a superior approach that offers transparency, reproducibility, and unlimited customization potential."
+    "objectID": "about.html#the-challenge-we-address",
+    "href": "about.html#the-challenge-we-address",
+    "title": "About Orebit",
+    "section": "The Challenge We Address",
+    "text": "The Challenge We Address\nThe mining industry faces a critical paradox: geological analysis demands increasingly sophisticated tools, yet traditional software solutions create barriers through:\n\nHigh Costs: Enterprise geological software can exceed $50,000 per year in licensing fees\nVendor Lock-in: Proprietary systems limit flexibility and customization\nLimited Transparency: Black-box algorithms make validation and reproducibility difficult\nAccessibility Gaps: Small companies and consultants struggle to afford industry-standard tools\n\nOrebit exists to eliminate these barriers."
   },
   {
-    "objectID": "about.html#technical-expertise-that-delivers-results",
-    "href": "about.html#technical-expertise-that-delivers-results",
-    "title": "About",
-    "section": "Technical Expertise That Delivers Results",
-    "text": "Technical Expertise That Delivers Results\nCore Competencies: - Geostatistics & Resource Modeling: Advanced variogram modeling, kriging techniques, and uncertainty quantification - Data Science Integration: R programming, statistical analysis, and machine learning applications in geology - Quality Assurance Systems: SOP development for exploration and grade control workflows - Geospatial Analysis: GIS integration, spatial interpolation, and 3D geological modeling\nProfessional Certifications: - Competent Person (CP) - BNSP Certified for Resource Estimation (authorized to evaluate and sign off on mineral resource documents) - Senior Geologist - Indonesian Geologist Association (PERHAPI) - Advanced Geostatistics & Resource Modeling - Multiple international certifications\nSoftware Proficiency: - Traditional Tools: Micromine, Net-Promine, SGEMS - Open-Source Mastery: R ecosystem, Python for geological applications, QGIS - Development Platforms: R Shiny, web application development, database management"
+    "objectID": "about.html#our-product-philosophy",
+    "href": "about.html#our-product-philosophy",
+    "title": "About Orebit",
+    "section": "Our Product Philosophy",
+    "text": "Our Product Philosophy\n\nOpen-Source Foundation\nAll Orebit applications are built on open-source technologies, ensuring: - Complete transparency in analytical methods - Full reproducibility of results - No vendor lock-in or hidden dependencies - Community-driven development and improvement\n\n\nPractitioner-Built Design\nOur applications are developed by experienced geoscientists who understand real-world geological challenges. Every feature addresses actual industry needs, not theoretical requirements.\n\n\nProfessional-Grade Capabilities\nWe don’t compromise on quality. Orebit applications deliver enterprise-level functionality with: - Advanced statistical and geostatistical analysis - Interactive 3D visualization - Industry-standard reporting - Robust quality assurance protocols\n\n\nUniversal Accessibility\nCloud-native architecture means: - No installation required - Run directly in web browsers - Access from anywhere - Cross-platform compatibility"
   },
   {
-    "objectID": "about.html#the-vision-in-action",
-    "href": "about.html#the-vision-in-action",
-    "title": "About",
-    "section": "The Vision in Action",
-    "text": "The Vision in Action\nMy current focus centers on GeoDataViz—an open-source R Shiny application that embodies everything I believe about democratizing geological analysis. This isn’t just another software project; it’s a proof-of-concept that demonstrates how practitioner-built tools can deliver enterprise-level capabilities while remaining completely accessible and transparent.\nGeoDataViz represents the first tangible step toward my larger vision: establishing open and transparent tools as the standard for every professional to unlock the full potential of their data."
+    "objectID": "about.html#product-suite",
+    "href": "about.html#product-suite",
+    "title": "About Orebit",
+    "section": "Product Suite",
+    "text": "Product Suite\n\nGeoDataViz (Available Now)\nThe Comprehensive Geological Data Analysis Platform\nOur flagship application revolutionizes exploratory data analysis for geological datasets:\nCore Capabilities: - Interactive drillhole data visualization - Advanced statistical analysis and validation - 3D geological modeling - Comprehensive QA/QC tools - Automated reporting\nIndustry Applications: - Mineral exploration data analysis - Resource estimation preparation - Grade control monitoring - Geological database validation\nTry GeoDataViz Demo →\n\n\n\nResource Estimation App (Coming Q2 2025)\nProfessional Geostatistical Analysis\nAdvanced resource modeling capabilities including: - Automated variogram modeling - Multiple kriging techniques - Block model generation - Resource classification - Uncertainty quantification - JORC/NI 43-101 compliant reporting\nJoin Beta Program →\n\n\n\nPit Optimizer (Coming Q3 2025)\nStrategic Mine Planning\nSophisticated optimization algorithms for: - Ultimate pit limit determination - Multi-criteria optimization (NPV, volume, grade) - Operational constraint modeling - Environmental impact assessment - Economic scenario planning - Pushback sequencing\nGet Early Access →"
   },
   {
-    "objectID": "about.html#why-this-matters",
-    "href": "about.html#why-this-matters",
-    "title": "About",
-    "section": "Why This Matters",
-    "text": "Why This Matters\nThe geological community faces unprecedented challenges—declining ore grades, increased environmental scrutiny, and growing demands for transparency in resource reporting. Meeting these challenges requires not just better technology, but fundamentally different approaches to how we analyze, validate, and communicate our findings.\nBy providing practical, practitioner-built workflows and expert guidance, I’m enabling geoscientists and mining engineers to confidently transform complex geological data into reliable, actionable intelligence. This isn’t about replacing established methods—it’s about enhancing them with modern data science techniques that any professional can access and modify."
+    "objectID": "about.html#technical-foundation",
+    "href": "about.html#technical-foundation",
+    "title": "About Orebit",
+    "section": "Technical Foundation",
+    "text": "Technical Foundation\n\nTechnology Stack\n\nFramework: R Shiny for responsive web applications\nData Processing: tidyverse ecosystem for efficient data manipulation\nSpatial Analysis: sf, sp packages for advanced geospatial operations\nGeostatistics: gstat for comprehensive geostatistical modeling\nVisualization: plotly for interactive, publication-ready graphics\n3D Rendering: Custom three.js integration for geological modeling\n\n\n\nPerformance & Reliability\n\nOptimized for large geological datasets (100,000+ samples)\nEfficient memory management\nReal-time interactive visualization\nRobust error handling and data validation\nAutomated testing and quality assurance\n\n\n\nEnterprise Integration\n\nMulti-format data import (CSV, Excel, databases)\nExport to industry-standard formats\nAPI-ready architecture\nCustomizable reporting templates\nScalable deployment options"
   },
   {
-    "objectID": "about.html#the-broader-impact",
-    "href": "about.html#the-broader-impact",
-    "title": "About",
-    "section": "The Broader Impact",
-    "text": "The Broader Impact\nThrough this platform, I’m building more than just software—I’m fostering a community where geological knowledge is shared openly, where analytical methods are transparent and reproducible, and where innovation comes from practitioners solving real-world problems.\nEvery blog post, every line of code, and every tutorial serves the ultimate goal: catalyzing a data-driven transformation in geoscience where open-source solutions become the foundation for more accurate, reliable, and accessible geological analysis.\n\nReady to join this transformation? Explore GeoDataViz, follow my insights on LinkedIn, or contribute to the future of geological data science on GitHub."
+    "objectID": "about.html#who-we-serve",
+    "href": "about.html#who-we-serve",
+    "title": "About Orebit",
+    "section": "Who We Serve",
+    "text": "Who We Serve\n\nExploration Geologists\nRapidly validate and analyze drilling data, identify trends, and optimize sampling strategies using professional-grade analytical tools.\n\n\nResource Geologists\nPrepare data for resource estimation with comprehensive preprocessing workflows, domain analysis, and geostatistical validation.\n\n\nMining Engineers\nOptimize mine planning with advanced pit optimization, economic modeling, and scenario analysis capabilities.\n\n\nConsulting Firms\nDeliver professional results to clients using transparent, reproducible analytical methods at a fraction of traditional software costs.\n\n\nEducational Institutions\nTeach modern geological data analysis with free access to professional-grade tools and comprehensive learning resources.\n\n\nJunior Mining Companies\nAccess enterprise-level analytical capabilities without the capital requirements of expensive software licenses."
+  },
+  {
+    "objectID": "about.html#our-commitment",
+    "href": "about.html#our-commitment",
+    "title": "About Orebit",
+    "section": "Our Commitment",
+    "text": "Our Commitment\n\nQuality Standards\nAll Orebit applications meet or exceed industry standards for: - Analytical accuracy and precision - Data security and privacy - Reporting compliance (JORC, NI 43-101) - Professional documentation\n\n\nContinuous Improvement\nWe actively develop new features based on: - User feedback and requests - Industry best practices - Technological advances - Regulatory requirements\n\n\nCommunity Support\nWe believe in giving back: - Open-source code repositories - Comprehensive documentation - Tutorial videos and guides - Active user community - Responsive technical support"
+  },
+  {
+    "objectID": "about.html#the-team-behind-orebit",
+    "href": "about.html#the-team-behind-orebit",
+    "title": "About Orebit",
+    "section": "The Team Behind Orebit",
+    "text": "The Team Behind Orebit\nOrebit is led by Ghozian Islam Karami, Senior Geologist and Certified BNSP Competent Person (CP) with over a decade of mining industry experience. His expertise in offshore tin exploration, resource evaluation, and geological data analysis ensures that every Orebit application addresses real-world geological challenges.\nCore Expertise: - Geostatistics and resource modeling - R programming and Shiny application development - Quality assurance systems for mining operations - Geospatial analysis and 3D geological modeling\nProfessional Credentials: - Certified Competent Person (CP) - BNSP - M.Sc. Geological Sciences - KFUPM - B.Sc. Geology - Universitas Padjadjaran - Senior Geologist - PERHAPI\nThis combination of geological expertise and technical development skills ensures Orebit applications are both geologically sound and technically sophisticated."
+  },
+  {
+    "objectID": "about.html#get-involved",
+    "href": "about.html#get-involved",
+    "title": "About Orebit",
+    "section": "Get Involved",
+    "text": "Get Involved\n\nTry Our Applications\nExperience the power of professional geological analysis: Launch GeoDataViz Demo\n\n\nJoin Beta Testing\nGet early access to upcoming applications: Apply for Beta Program\n\n\nContribute to Development\nHelp shape the future of geological analysis tools: GitHub Repository\n\n\nEnterprise Solutions\nCustom deployment and support for organizations: Contact Us"
+  },
+  {
+    "objectID": "about.html#contact-information",
+    "href": "about.html#contact-information",
+    "title": "About Orebit",
+    "section": "Contact Information",
+    "text": "Contact Information\nEmail: contact@Orebit-geo.com\nGitHub: github.com/Orebit-geo\nLinkedIn: Ghozian Islam Karami"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
+    "title": "Orebit Geological Solutions",
     "section": "",
-    "text": "Empowering geoscientists and mining engineers with practical, practitioner-built workflows and expert guidance—enabling you to confidently transform complex geological data into reliable, actionable intelligence.\n\n  Experience GeoDataViz    Explore The Library"
+    "text": "EN\n\n\nID"
   },
   {
-    "objectID": "index.html#our-vision-catalyzing-industry-wide-transformation",
-    "href": "index.html#our-vision-catalyzing-industry-wide-transformation",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "Our Vision: Catalyzing Industry-Wide Transformation",
-    "text": "Our Vision: Catalyzing Industry-Wide Transformation\n“To be the catalyst for a data-driven transformation in geoscience, establishing open and transparent tools as the standard for every professional to unlock the full potential of their data.”\nThe geological community stands at a critical juncture. While the industry demands increasingly sophisticated analysis to tackle declining ore grades and complex geological environments, powerful analytical tools remain locked behind expensive licenses, creating artificial barriers that divide professionals based on budget rather than expertise.\nThis divide isn’t just limiting individual careers—it’s constraining our entire industry’s ability to innovate and solve complex geological challenges."
+    "objectID": "index.html#our-product-suite",
+    "href": "index.html#our-product-suite",
+    "title": "Orebit Geological Solutions",
+    "section": "Our Product Suite",
+    "text": "Our Product Suite\n\n\n GeoDataViz\nAvailable Now - Free Demo\n\nTransform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data.\n\nKey Features: - Interactive 3D geological visualization - Advanced statistical analysis for geological data - Comprehensive QA/QC validation tools - Professional reporting capabilities\nLaunch Demo →\n\n\n Resource Estimation App\nComing Q2 2025\n\nProfessional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools.\n\nPlanned Features: - Automated variogram modeling - Advanced kriging techniques - Resource classification tools - Industry-standard reporting\nJoin Beta List →\n\n\n Pit Optimizer\nComing Q3 2025\n\nSophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.\n\nPlanned Features: - Multi-criteria optimization - Operational constraint modeling - Environmental impact assessment - Economic scenario planning\nGet Notified →"
   },
   {
-    "objectID": "index.html#our-mission-practical-empowerment-through-expert-guidance",
-    "href": "index.html#our-mission-practical-empowerment-through-expert-guidance",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "Our Mission: Practical Empowerment Through Expert Guidance",
-    "text": "Our Mission: Practical Empowerment Through Expert Guidance\n“To empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence.”\nEvery feature, every tutorial, and every line of code serves this mission. As a Certified Competent Person with over a decade of mining industry experience, I’ve witnessed firsthand the challenges that geoscientists face when working with complex geological data. This platform bridges that gap through:\n\nPractitioner-built solutions tested in real mining projects\nTransparent methodologies where every analytical step is visible and modifiable\nExpert guidance based on actual resource evaluation experience\nAccessible tools that deliver enterprise-level capabilities without enterprise-level costs"
+    "objectID": "index.html#why-choose-orebit-solutions",
+    "href": "index.html#why-choose-orebit-solutions",
+    "title": "Orebit Geological Solutions",
+    "section": "Why Choose Orebit Solutions?",
+    "text": "Why Choose Orebit Solutions?\n\n\nCost-Effective Excellence\n\nAccess enterprise-level geological analysis tools without the $20,000+ annual licensing fees of traditional software.\n\n\n\nBuilt by Geologists\n\nDeveloped by practicing geoscientists who understand real-world geological challenges and workflows.\n\n\n\nOpen & Transparent\n\nComplete visibility into analytical methods ensures reproducibility and meets modern scientific standards.\n\n\n\nCloud-Native Performance\n\nRun sophisticated analyses directly in your browser - no installation, no maintenance, universal access."
   },
   {
-    "objectID": "index.html#the-complete-geological-data-analysis-ecosystem",
-    "href": "index.html#the-complete-geological-data-analysis-ecosystem",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "The Complete Geological Data Analysis Ecosystem",
-    "text": "The Complete Geological Data Analysis Ecosystem\n\nThe Library: Your Comprehensive Knowledge Hub\nDeep-dive, professional-grade articles that serve as permanent references for geological data analysis techniques. Each post is designed to be the definitive guide on its topic:\n\n\nWelcome to The Library: Where Geological Expertise Meets Open-Source Innovation\nDiscover the vision behind this comprehensive geological data analysis ecosystem and how practitioner-built solutions are transforming the industry.\n\n\nMastering Exploratory Data Analysis with GeoDataViz\nThe complete professional guide to understanding geological datasets before modeling—covering everything from data validation through preliminary geostatistical analysis.\n\n\nPre-Processing Drillhole Data for Resource Estimation\nAdvanced professional techniques for transforming raw geological data into estimation-ready datasets, including compositing strategies and domain optimization.\n\n\n\n\nThe Workbench: GeoDataViz in Action\n\n\nGeoDataViz serves as the tangible proof-of-concept that demonstrates open-source solutions can deliver enterprise-level geological analysis capabilities. Built by a practicing geologist for real-world geological challenges, it embodies our core philosophy of transparency, accessibility, and practicality.\nCurrent Open-Source Capabilities: - Complete drillhole data visualization and analysis - Advanced statistical tools with geological context - Interactive 3D plotting and cross-sections - Comprehensive QA/QC and data validation - Export capabilities for reports and presentations\nComing in GeoDataViz Pro: - Automated resource estimation modules - Advanced geostatistical analysis and variogram modeling - Machine learning integration for pattern recognition - Enterprise deployment options and cloud integration\n\n\n\n\n\nAdvanced Statistical Dashboard\n\n\nExperience the transformation firsthand with real geological datasets showcasing the full range of analytical capabilities available to modern geoscientists.\nTry Interactive Demo\n\n\n\n\nThe Professional Stage: Industry Leadership\nFollow my LinkedIn profile for: - Industry insights and professional discussions - Real-world case studies connecting theory with practice - Professional networking with geological data analysis experts - Career development guidance for modern geoscientists\n\n\nThe Visual Classroom: Accessible Learning\nJoin @orebit.id for: - Bite-sized tutorials breaking down complex geological concepts - Visual step-by-step guides for GeoDataViz features - Student-friendly content making advanced techniques accessible - Quick reference materials for daily geological work"
-  },
-  {
-    "objectID": "index.html#why-open-source-geological-analysis-matters",
-    "href": "index.html#why-open-source-geological-analysis-matters",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "Why Open-Source Geological Analysis Matters",
-    "text": "Why Open-Source Geological Analysis Matters\nProfessional Independence Maintain complete control over your analytical workflows without vendor lock-in or feature limitations imposed by commercial software.\nScientific Transparency Every analytical step is visible and modifiable, ensuring your work meets the highest standards of scientific rigor and professional accountability.\nCost-Effective Excellence Access enterprise-level capabilities without the burden of expensive licensing fees that can exclude smaller firms and individual practitioners.\nCommunity-Driven Innovation Benefit from continuous improvements driven by real user needs rather than corporate development cycles, with direct input from practicing geoscientists.\nFuture-Proof Technology Open-source solutions evolve with your needs and integrate seamlessly with emerging technologies and industry standards."
-  },
-  {
-    "objectID": "index.html#the-technology-behind-the-transformation",
-    "href": "index.html#the-technology-behind-the-transformation",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "The Technology Behind the Transformation",
-    "text": "The Technology Behind the Transformation\n\n\nModern R Ecosystem - Shiny framework for responsive web applications - tidyverse for efficient data manipulation - sf and sp for advanced spatial operations - plotly for interactive visualizations\nGeological Specialization - gstat for comprehensive geostatistical analysis - Custom functions built from field experience - Industry-standard data format integration - Advanced spatial interpolation capabilities\n\n\nPerformance & Reliability - Optimized rendering for large datasets - Efficient memory management - Responsive design for field/office use - Robust error handling and validation\nEnterprise Integration - Multi-format data import capabilities - Export to geological software standards - API-ready architecture - Extensible framework for customization"
-  },
-  {
-    "objectID": "index.html#professional-development-through-advanced-capabilities",
-    "href": "index.html#professional-development-through-advanced-capabilities",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "Professional Development Through Advanced Capabilities",
-    "text": "Professional Development Through Advanced Capabilities\nTechnical Excellence - Identify and resolve data quality issues that compromise resource estimates - Integrate geological knowledge with advanced statistical methods - Quantify and manage uncertainty throughout analytical workflows - Handle complex geological datasets that challenge standard approaches\nProfessional Credibility - Documentation standards meeting international resource reporting requirements - Methodology transparency enabling independent technical reviews - Integration of geological knowledge with quantitative analysis - Ability to explain complex analytical decisions to diverse audiences\nEconomic Impact - Prevent costly resource estimation errors through proper data conditioning - Optimize geological domain boundaries enhancing estimate accuracy - Improve resource classification confidence through appropriate statistical treatment - Manage risk through comprehensive uncertainty quantification"
-  },
-  {
-    "objectID": "index.html#join-the-data-driven-transformation",
-    "href": "index.html#join-the-data-driven-transformation",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "Join the Data-Driven Transformation",
-    "text": "Join the Data-Driven Transformation\n\n\nExperience the Technology\nSee GeoDataViz capabilities with real geological datasets through our interactive demo platform.\nTry GeoDataViz\n\n\nConnect Professionally\nJoin a growing network of geological professionals embracing open-source solutions for advanced analysis.\nLinkedIn Network\n\n\nContribute to Innovation\nHelp shape the future of geological data analysis through community-driven development and feedback.\nGitHub Community"
-  },
-  {
-    "objectID": "index.html#ready-to-transform-your-geological-workflow",
-    "href": "index.html#ready-to-transform-your-geological-workflow",
-    "title": "Transforming Geological Data Analysis Through Open-Source Innovation",
-    "section": "Ready to Transform Your Geological Workflow?",
-    "text": "Ready to Transform Your Geological Workflow?\nThe future of geological data analysis is open, transparent, and accessible to every professional. Whether you’re an individual consultant, part of a small exploration company, or leading analysis teams at major mining operations, our ecosystem provides the capabilities you need to excel in today’s demanding geological environment.\nJoin the growing community of geoscientists who are leveraging practitioner-built tools to deliver more accurate, reliable results while maintaining complete analytical transparency.\n\n  Start Your Transformation    Explore The Library"
+    "objectID": "index.html#ready-to-transform-your-workflow",
+    "href": "index.html#ready-to-transform-your-workflow",
+    "title": "Orebit Geological Solutions",
+    "section": "Ready to Transform Your Workflow?",
+    "text": "Ready to Transform Your Workflow?\n\n\nStart with GeoDataViz Today\n\nExperience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities.\n\n\n  Launch GeoDataViz Demo    Enterprise Solutions \n\n\n\nStay Updated on New Releases\n\n Get Notified\n\n\n\n\n\n\nOrebit Geological Solutions | Advanced R Shiny Applications for Professional Geology\n\n\nGitHub | Documentation | Contact"
   },
   {
     "objectID": "posts/EDA with GeoDataViz/index.html",

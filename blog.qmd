@@ -1,7 +1,7 @@
 ---
-title: "The Library"
-subtitle: "Comprehensive Geological Data Analysis Resources"
-description: "Professional-grade technical insights, complete workflows, and expert guidance on geological data analysis, geostatistics, and open-source tools for geoscientists and mining engineers"
+title: "Orebit Technical Resources"
+subtitle: "Comprehensive Guides for Geological Data Analysis"
+description: "Professional tutorials, workflows, and best practices for GeoDataViz, resource estimation, and geological data analysis using R Shiny applications"
 page-layout: full
 sidebar: blog-sidebar
 toc: false
@@ -14,8 +14,8 @@ listing:
   sort-ui: true
   filter-ui: true
   feed: 
-    title: "The Library - Orebit.id Technical Resources"
-    description: "Professional geological data analysis guides and open-source workflows"
+    title: "Orebit Technical Resources"
+    description: "Latest guides on geological data analysis with R Shiny"
   page-size: 12
   date-format: "DD MMMM YYYY"
   image-height: "200px"
@@ -24,247 +24,207 @@ listing:
 margin-footer: |
   ## Categories
   
-  Explore by technical focus:
-  
-  - [Exploratory Data Analysis](/blog/categories/eda)
+  - [GeoDataViz Tutorials](/blog/categories/geodataviz)
   - [Resource Estimation](/blog/categories/resource-estimation) 
   - [Geostatistics](/blog/categories/geostatistics)
-  - [GeoDataViz Tutorials](/blog/categories/geodataviz)
-  - [Open-Source Tools](/blog/categories/open-source)
-  - [Professional Workflows](/blog/categories/workflows)
+  - [Data Analysis](/blog/categories/eda)
+  - [R Shiny Development](/blog/categories/shiny)
   
   ---
   
-  ## Quick Access
+  ## Quick Links
   
   - [RSS Feed](/blog/index.xml)
-  - [All Categories](/blog/categories)
-  - [GitHub Repository](https://github.com/ghoziankarami/geodataviz)
-  
-  ---
-  
-  ## Professional Network
-  
-  Connect for industry insights and networking:
-  - [LinkedIn Profile](https://linkedin.com/in/ghoziankarami)
-  - [Visual Tutorials](https://instagram.com/orebit.id)
+  - [GitHub](https://github.com/Orebit-geo)
+  - [Product Demo](https://geodataviz.shinyapps.io/geodataviz/)
 ---
 
-::: {.library-hero}
-# The Library: Where Geological Expertise Meets Data Science Excellence
+::: {.blog-hero}
+# Technical Resources & Tutorials
 
-**Comprehensive, professional-grade resources for geological data analysis.** Each article serves as a definitive reference, providing the depth and practical guidance you need to confidently transform complex geological data into reliable, actionable intelligence.
+**Comprehensive guides for mastering geological data analysis with Orebit's R Shiny applications.** Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization.
 
-::: {.mission-statement}
-**"To empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence."**
+::: {.hero-stats}
+<div class="stat-item">
+  <strong>50+</strong>
+  <span>Technical Guides</span>
+</div>
+<div class="stat-item">
+  <strong>3</strong>
+  <span>Product Suite</span>
+</div>
+<div class="stat-item">
+  <strong>100%</strong>
+  <span>Open Source</span>
+</div>
 :::
 :::
 
 ---
 
-## Featured Professional Guides
+## Featured Application Guides
 
 <div class="featured-guides">
-<div class="guide-card primary">
-### [Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation](/posts/welcome-post/)
+<div class="guide-card product-geodataviz">
+### [GeoDataViz: Complete User Guide](/posts/eda-geodataviz/)
 
-**The Foundation of Our Mission**  
-Discover the comprehensive ecosystem designed to democratize advanced geological analysis. Learn how practitioner-built solutions are transforming the industry by establishing open and transparent tools as the standard for every professional.
+**Master Exploratory Data Analysis**  
+Learn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.
 
-*Categories: Welcome, Open-Source, Data-Science*
+*Categories: GeoDataViz, EDA, Tutorial*  
+[Read Guide →](/posts/eda-geodataviz/){.btn .btn-sm .btn-success}
 </div>
 
-<div class="guide-card">
-### [Mastering Exploratory Data Analysis with GeoDataViz](/posts/eda-geodataviz/)
+<div class="guide-card product-geodataviz">
+### [Advanced Data Preprocessing with GeoDataViz](/posts/preprocessing-drillhole-data/)
 
-**The Complete Professional Guide**  
-Master comprehensive EDA techniques specifically designed for geological datasets. Learn professional-grade methods for data validation, spatial analysis, and geological insight extraction before resource estimation.
+**Prepare Data for Resource Estimation**  
+Complete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz's preprocessing tools.
 
-*Categories: GeoDataViz, EDA, Geostatistics, Tutorial*
+*Categories: GeoDataViz, Preprocessing, Resource-Estimation*  
+[Read Guide →](/posts/preprocessing-drillhole-data/){.btn .btn-sm .btn-success}
 </div>
 
-<div class="guide-card">
-### [Pre-Processing Drillhole Data for Resource Estimation](/posts/preprocessing-drillhole-data/)
+<div class="guide-card product-general">
+### [Getting Started with Orebit Solutions](/posts/welcome-post/)
 
-**Advanced Professional Techniques**  
-Transform raw geological data into estimation-ready datasets using sophisticated compositing strategies, domain optimization, and data conditioning methods that ensure accurate resource estimation.
+**Introduction to Orebit Ecosystem**  
+Discover how Orebit's suite of R Shiny applications transforms geological workflows from exploration to production.
 
-*Categories: GeoDataViz, Preprocessing, Resource-Estimation, Geostatistics*
-</div>
-</div>
-
----
-
-## The Complete Geological Analysis Ecosystem
-
-### The Library (You Are Here)
-**Comprehensive Technical Resources**  
-Deep-dive, professional-grade articles that serve as permanent references for geological data analysis techniques. Each post is designed to be the definitive guide on its topic—from basic exploratory data analysis to advanced geostatistical modeling.
-
-### The Workbench
-**GeoDataViz Interactive Platform**  
-Experience these concepts in action through our open-source R Shiny application. The entire analytical workflow discussed in Library posts can be performed interactively using our comprehensive geological analysis platform.
-
-[Experience GeoDataViz](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-primary target="_blank" rel="noopener"}
-
-### The Professional Stage
-**Industry Leadership & Networking**  
-Follow [LinkedIn insights](https://www.linkedin.com/in/ghoziankarami/) for professional discussions, real-world case studies, and career development guidance in modern geological data analysis.
-
-### The Visual Classroom
-**Accessible Learning Materials**  
-Join [@orebit.id](https://instagram.com/orebit.id) for bite-sized, visual tutorials that make complex geological concepts accessible through compelling graphics and step-by-step visual guides.
-
----
-
-## Professional Development Focus Areas
-
-<div class="focus-areas">
-<div class="focus-card">
-## Data Analysis Mastery
-Advanced techniques for understanding geological datasets, identifying data quality issues that compromise estimates, and extracting insights that inform sampling strategies.
-
-**Key Topics:**
-- Comprehensive exploratory data analysis workflows
-- Statistical validation and quality control protocols  
-- Multi-element correlation and geochemical analysis
-- Spatial bias identification and correction methods
-</div>
-
-<div class="focus-card">
-## Geostatistical Excellence
-Practical applications of variogram modeling, kriging techniques, and uncertainty quantification—moving beyond textbook examples to handle complex spatial relationships in real geological environments.
-
-**Key Topics:**
-- Advanced variogram modeling and validation
-- Kriging optimization for complex geological domains
-- Uncertainty quantification and risk assessment
-- Multi-element co-estimation strategies
-</div>
-
-<div class="focus-card">
-## Resource Estimation Workflows
-Complete methodologies from raw drillhole data through final resource models, including domain analysis, data preprocessing, estimation parameter selection, and model validation.
-
-**Key Topics:**
-- Domain optimization and boundary analysis
-- Composite length selection and validation
-- Search parameter optimization strategies
-- Model validation and uncertainty assessment
-</div>
-
-<div class="focus-card">
-## Open-Source Integration
-Practical approaches for integrating open-source tools with existing proprietary software environments, enabling transition to more transparent, cost-effective analytical workflows.
-
-**Key Topics:**
-- R ecosystem mastery for geological applications
-- GeoDataViz advanced features and customization
-- Workflow automation and best practices
-- Integration strategies with industry software
+*Categories: Welcome, Open-Source, Overview*  
+[Read Guide →](/posts/welcome-post/){.btn .btn-sm .btn-primary}
 </div>
 </div>
 
 ---
 
-## Why The Library Matters for Your Professional Development
+## Learning Paths by Product
 
-**Comprehensive Coverage**  
-Each article provides complete, professional-grade coverage of its topic—not superficial overviews, but definitive resources that serve as permanent professional references.
+<div class="learning-paths">
 
-**Real-World Application**  
-Every technique has been tested in actual mining projects by a **Certified Competent Person** with over a decade of resource evaluation experience.
+<div class="path-card">
+### <i class="fas fa-chart-line"></i> GeoDataViz Learning Path
 
-**Transparent Methodology**  
-Complete visibility into every analytical step with no proprietary black boxes—essential for meeting modern standards of scientific reproducibility.
+**Current Application - Start Here**
 
-**Cost-Effective Excellence**  
-Access to enterprise-level analytical knowledge without expensive training courses or consulting fees.
+1. **Basics:** [Getting Started with GeoDataViz](#)
+2. **Data Import:** [Loading Drillhole Data](#)
+3. **EDA:** [Exploratory Data Analysis Guide](/posts/eda-geodataviz/)
+4. **Preprocessing:** [Data Conditioning Workflows](/posts/preprocessing-drillhole-data/)
+5. **Visualization:** [Creating 3D Geological Models](#)
+6. **Export:** [Generating Reports](#)
 
-**Professional Credibility**  
-Documentation standards and methodological rigor that meet international resource reporting requirements.
-
----
-
-## Content Strategy: Maximizing Your Learning
-
-### The Content Recycling Approach
-Each comprehensive Library article becomes the foundation for targeted learning across our ecosystem:
-
-- **LinkedIn insights** highlighting key professional applications
-- **Instagram tutorials** breaking techniques into visual, step-by-step guides
-- **GeoDataViz implementations** providing immediate hands-on experience
-
-This integrated approach ensures you can access geological expertise tailored to your specific learning style and professional needs.
-
-### Recommended Learning Path
-
-**Foundation Level:**
-1. [Welcome to The Library](/posts/welcome-post/) - Understanding the ecosystem
-2. [Mastering Exploratory Data Analysis](/posts/eda-geodataviz/) - Building analytical foundations
-
-**Professional Application:**
-3. [Pre-Processing Drillhole Data](/posts/preprocessing-drillhole-data/) - Data conditioning mastery
-
-**Advanced Specialization:**
-- Upcoming: Variogram modeling and spatial continuity analysis
-- Upcoming: Resource estimation workflows and validation
-- Upcoming: Integration strategies for complex geological environments
-
----
-
-## Join the Professional Community
-
-<div class="community-grid">
-<div class="community-card">
-### Technical Discussion
-Engage with comprehensive technical content and contribute to professional discussions about geological data analysis best practices.
-
-**Participate:** Comment on articles, suggest topics, share your own experiences
+[Launch Demo App →](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank"}
 </div>
 
-<div class="community-card">
-### Professional Networking
-Connect with geological professionals embracing open-source solutions and advanced analytical methods.
+<div class="path-card upcoming">
+### <i class="fas fa-calculator"></i> Resource Estimation Path
 
-**Connect:** [LinkedIn Professional Network](https://www.linkedin.com/in/ghoziankarami/)
+**Coming Q2 2025**
+
+1. **Fundamentals:** Introduction to Resource Estimation
+2. **Variography:** Variogram Modeling Techniques
+3. **Kriging:** Advanced Interpolation Methods
+4. **Validation:** Model Quality Assurance
+5. **Reporting:** Industry-Standard Reports
+
+[Join Beta List →](#beta-signup){.btn .btn-outline}
 </div>
 
-<div class="community-card">
-### Development Contribution
-Shape the future of geological data analysis tools through community-driven development and feedback.
+<div class="path-card upcoming">
+### <i class="fas fa-mountain"></i> Pit Optimization Path
 
-**Contribute:** [GeoDataViz GitHub Repository](https://github.com/ghoziankarami/geodataviz)
+**Coming Q3 2025**
+
+1. **Introduction:** Mine Planning Basics
+2. **Modeling:** Pit Design Fundamentals
+3. **Optimization:** NPV Maximization
+4. **Constraints:** Operational & Environmental
+5. **Scenarios:** Economic Planning
+
+[Get Notified →](#beta-signup){.btn .btn-outline}
 </div>
 
-<div class="community-card">
-### Visual Learning
-Access bite-sized, visual tutorials that make complex geological concepts immediately applicable.
-
-**Follow:** [Instagram @orebit.id](https://instagram.com/orebit.id)
-</div>
 </div>
 
 ---
 
-::: {.subscribe-section}
-## Stay Updated with Professional Geological Analysis
+## Technical Topics
 
-### RSS Feed
-Subscribe for automatic notifications of new professional resources and comprehensive guides.
+<div class="topics-grid">
+<div class="topic-card">
+### <i class="fas fa-database"></i> Data Management
+Import, validate, and manage geological datasets efficiently using Orebit applications. Learn best practices for data structure and quality control.
+</div>
 
-[Subscribe to Feed](/blog/index.xml){.btn .btn-primary target="_blank"}
+<div class="topic-card">
+### <i class="fas fa-chart-bar"></i> Statistical Analysis
+Master statistical techniques for geological data including distribution analysis, outlier detection, and multivariate methods.
+</div>
 
-### Professional Updates
-Follow for industry insights, case studies, and professional development guidance.
+<div class="topic-card">
+### <i class="fas fa-map"></i> Spatial Analysis
+Understand spatial patterns, variography, and geostatistical modeling for accurate resource estimation.
+</div>
 
-[LinkedIn Updates](https://linkedin.com/in/ghoziankarami){.btn .btn-secondary target="_blank"}
-:::
+<div class="topic-card">
+### <i class="fas fa-cube"></i> 3D Visualization
+Create interactive 3D geological models, cross-sections, and visualizations for better data understanding.
+</div>
+
+<div class="topic-card">
+### <i class="fas fa-code"></i> R Shiny Development
+Learn to customize and extend Orebit applications or build your own geological R Shiny apps.
+</div>
+
+<div class="topic-card">
+### <i class="fas fa-check-circle"></i> Quality Assurance
+Implement robust QA/QC procedures for geological data analysis and resource modeling.
+</div>
+</div>
+
+---
+
+## Why These Resources Matter
+
+**Product-Focused Learning**  
+Every tutorial is designed specifically for Orebit applications, ensuring you can immediately apply what you learn.
+
+**Real-World Workflows**  
+Guides based on actual geological projects, not theoretical examples. Learn workflows that work in production environments.
+
+**Progressive Difficulty**  
+Start with basics and progress to advanced techniques. Each guide builds on previous knowledge.
+
+**Open Source Philosophy**  
+All code examples and workflows are transparent, reproducible, and freely available.
+
+---
+
+## Stay Updated
+
+<div class="subscribe-section">
+<div class="subscribe-card">
+### 📰 RSS Feed
+Subscribe to get notified of new tutorials and product updates automatically.
+
+[Subscribe to RSS](/blog/index.xml){.btn .btn-primary target="_blank"}
+</div>
+
+<div class="subscribe-card">
+### 🚀 Product Updates  
+Get early access to new features and beta testing opportunities for upcoming Orebit applications.
+
+[Join Beta Program](#beta-signup){.btn .btn-success}
+</div>
+</div>
+
+---
 
 <style>
-/* Enhanced Library Styling */
-.library-hero {
-  background: linear-gradient(135deg, #1E6CB8 0%, #4A9EE7 100%);
+/* Blog Hero */
+.blog-hero {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
   color: white;
   padding: 3rem 2rem;
   border-radius: 1rem;
@@ -272,24 +232,42 @@ Follow for industry insights, case studies, and professional development guidanc
   text-align: center;
 }
 
-.library-hero h1 {
+.blog-hero h1 {
   border: none;
-  margin-bottom: 1.5rem;
-  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 
-.mission-statement {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
   margin-top: 2rem;
-  backdrop-filter: blur(10px);
-  font-style: italic;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  flex-wrap: wrap;
 }
 
+.stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-item span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Featured Guides */
 .featured-guides {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -311,134 +289,206 @@ Follow for industry insights, case studies, and professional development guidanc
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
-.guide-card.primary {
-  border-left: 4px solid #1E6CB8;
+.guide-card.product-geodataviz {
+  border-left: 4px solid #28a745;
+}
+
+.guide-card.product-general {
+  border-left: 4px solid #007bff;
 }
 
 .guide-card h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #1E6CB8;
+  color: #1e3c72;
   border: none;
   font-size: 1.2rem;
   line-height: 1.4;
 }
 
 .guide-card h3 a {
-  color: #1E6CB8;
+  color: #1e3c72;
   text-decoration: none;
-}
-
-.guide-card h3 a:hover {
-  color: #4A9EE7;
 }
 
 .guide-card strong {
   color: #2E3A45;
   display: block;
   margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
-.focus-areas {
+/* Learning Paths */
+.learning-paths {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
-.focus-card {
+.path-card {
   background: white;
   padding: 2rem;
   border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid #28a745;
 }
 
-.focus-card h2 {
-  margin-top: 0;
+.path-card.upcoming {
+  border-left-color: #ffc107;
+  opacity: 0.85;
+}
+
+.path-card h3 {
+  color: #1e3c72;
   margin-bottom: 1rem;
-  color: #1E6CB8;
   border: none;
   font-size: 1.3rem;
 }
 
-.focus-card strong {
-  color: #2E3A45;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  display: block;
+.path-card h3 i {
+  margin-right: 0.5rem;
+  color: #28a745;
 }
 
-.community-grid {
+.path-card.upcoming h3 i {
+  color: #ffc107;
+}
+
+.path-card ol {
+  margin: 1.5rem 0;
+  padding-left: 1.2rem;
+}
+
+.path-card li {
+  margin: 0.5rem 0;
+}
+
+/* Topics Grid */
+.topics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
 }
 
-.community-card {
+.topic-card {
   background: white;
   padding: 1.5rem;
   border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.community-card:hover {
+.topic-card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.community-card h3 {
-  color: #1E6CB8;
+.topic-card h3 {
+  margin-top: 0;
   margin-bottom: 1rem;
+  color: #1e3c72;
   border: none;
   font-size: 1.1rem;
 }
 
+.topic-card h3 i {
+  color: #007bff;
+  margin-right: 0.5rem;
+}
+
+/* Subscribe Section */
 .subscribe-section {
-  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
-  padding: 2rem;
-  border-radius: 0.75rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   margin: 3rem 0;
 }
 
-.subscribe-section h2 {
-  color: #2E3A45;
-  margin-bottom: 2rem;
-  border: none;
+.subscribe-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
 }
 
-.subscribe-section h3 {
-  color: #1E6CB8;
+.subscribe-card h3 {
+  margin-top: 0;
   margin-bottom: 1rem;
+  color: #1e3c72;
   border: none;
-  font-size: 1.1rem;
 }
 
-/* Responsive adjustments */
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  color: white;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #218838;
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.btn-outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .library-hero {
-    padding: 2rem 1rem;
+  .blog-hero h1 {
+    font-size: 2rem;
   }
   
-  .library-hero h1 {
-    font-size: 1.8rem;
+  .hero-stats {
+    gap: 1rem;
   }
   
   .featured-guides,
-  .focus-areas {
+  .learning-paths,
+  .topics-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .community-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
-/* Listing customization */
+/* Listing Styles */
 .quarto-listing .list .list-item {
   background: white;
   border: 1px solid #e5e7eb;
@@ -454,31 +504,8 @@ Follow for industry insights, case studies, and professional development guidanc
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
-.listing-item .listing-title {
-  color: #1E6CB8;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
-
-.listing-item .listing-title:hover {
-  color: #4A9EE7;
-}
-
-.listing-item .listing-description {
-  color: #6B7280;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.listing-item .listing-date {
-  color: #9CA3AF;
-  font-size: 0.9rem;
-}
-
 .listing-categories .listing-category {
-  background: linear-gradient(135deg, #1E6CB8, #4A9EE7);
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -486,7 +513,6 @@ Follow for industry insights, case studies, and professional development guidanc
   font-weight: 500;
   text-decoration: none;
   margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
   display: inline-block;
   transition: all 0.2s ease;
 }

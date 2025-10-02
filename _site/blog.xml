@@ -5,11 +5,11 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>The Library - Orebit.id Technical Resources</title>
+<title>Orebit Technical Resources</title>
 <link>https://orebit.id/blog.html</link>
 <atom:link href="https://orebit.id/blog.xml" rel="self" type="application/rss+xml"/>
-<description>Professional geological data analysis guides and open-source workflows</description>
-<generator>quarto-1.8.21</generator>
+<description>Latest guides on geological data analysis with R Shiny</description>
+<generator>quarto-1.7.32</generator>
 <lastBuildDate>Fri, 19 Sep 2025 17:00:00 GMT</lastBuildDate>
 <item>
   <title>Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz</title>

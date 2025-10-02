@@ -1,249 +1,209 @@
 ---
-title: "Transforming Geological Data Analysis Through Open-Source Innovation"
-subtitle: "Empowering geoscientists with practical, transparent tools for reliable data-driven decisions"
-description: "Professional geological consulting, advanced data analysis workflows, and open-source tools by Ghozian Islam Karami - bridging traditional geology with modern data science."
+title: "Orebit Geological Solutions"
+subtitle: "Professional R Shiny Applications for Modern Geology"
+description: "Advanced geological analysis suite - GeoDataViz, Resource Estimation, and Pit Optimization tools for professional geoscientists and mining engineers."
 toc: false
 page-layout: full
 title-block-banner: false
 ---
 
-::: {.hero-section}
-# Transforming Geological Data Analysis Through Open-Source Innovation
+::: {.language-toggle}
+<button id="lang-en" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+<button id="lang-id" class="lang-btn" onclick="switchLanguage('id')">ID</button>
+:::
 
-**Empowering geoscientists and mining engineers with practical, practitioner-built workflows and expert guidance—enabling you to confidently transform complex geological data into reliable, actionable intelligence.**
+::: {.hero-Orebit}
+<h1 data-en="Advanced Geological Analysis Suite" data-id="Suite Analisis Geologi Lanjutan">Advanced Geological Analysis Suite</h1>
+<h2 data-en="From Exploration to Production" data-id="Dari Eksplorasi hingga Produksi">From Exploration to Production</h2>
+
+<p class="hero-subtitle" data-en="Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization" data-id="Aplikasi R Shiny profesional untuk analisis data geologi, estimasi sumber daya, dan optimisasi tambang">Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization</p>
 
 <div class="hero-buttons">
 <a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary" target="_blank" rel="noopener">
-  <i class="fas fa-play"></i> Experience GeoDataViz
+  <i class="fas fa-rocket"></i> <span data-en="Try GeoDataViz Now" data-id="Coba GeoDataViz Sekarang">Try GeoDataViz Now</span>
 </a>
 <a href="/blog" class="btn btn-secondary">
-  <i class="fas fa-book"></i> Explore The Library
+  <i class="fas fa-book"></i> <span data-en="Learn More" data-id="Pelajari Lebih Lanjut">Learn More</span>
 </a>
 </div>
 :::
 
 ---
 
-## Our Vision: Catalyzing Industry-Wide Transformation
+## <span data-en="Our Product Suite" data-id="Suite Produk Kami">Our Product Suite</span>
 
-**"To be the catalyst for a data-driven transformation in geoscience, establishing open and transparent tools as the standard for every professional to unlock the full potential of their data."**
+<div class="products-grid">
 
-The geological community stands at a critical juncture. While the industry demands increasingly sophisticated analysis to tackle declining ore grades and complex geological environments, powerful analytical tools remain locked behind expensive licenses, creating artificial barriers that divide professionals based on budget rather than expertise.
+<div class="product-card flagship">
+### <i class="fas fa-chart-line"></i> GeoDataViz
+**<span data-en="Available Now - Free Demo" data-id="Tersedia Sekarang - Demo Gratis">Available Now - Free Demo</span>**
 
-This divide isn't just limiting individual careers—it's constraining our entire industry's ability to innovate and solve complex geological challenges.
+<p data-en="Transform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data." data-id="Transformasi alur kerja geologi Anda dengan analisis data eksploratori dan visualisasi tingkat profesional. Dibangun khusus untuk dataset geologi, GeoDataViz merevolusi cara ahli geologi memahami data mereka.">Transform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data.</p>
+
+**<span data-en="Key Features:" data-id="Fitur Utama:">Key Features:</span>**
+- <span data-en="Interactive 3D geological visualization" data-id="Visualisasi geologi 3D interaktif">Interactive 3D geological visualization</span>
+- <span data-en="Advanced statistical analysis for geological data" data-id="Analisis statistik lanjutan untuk data geologi">Advanced statistical analysis for geological data</span>
+- <span data-en="Comprehensive QA/QC validation tools" data-id="Alat validasi QA/QC komprehensif">Comprehensive QA/QC validation tools</span>
+- <span data-en="Professional reporting capabilities" data-id="Kemampuan pelaporan profesional">Professional reporting capabilities</span>
+
+[**<span data-en="Launch Demo →" data-id="Buka Demo →">Launch Demo →</span>**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank" rel="noopener"}
+</div>
+
+<div class="product-card upcoming">
+### <i class="fas fa-calculator"></i> <span data-en="Resource Estimation App" data-id="Aplikasi Estimasi Sumber Daya">Resource Estimation App</span>
+**<span data-en="Coming Q2 2025" data-id="Hadir Q2 2025">Coming Q2 2025</span>**
+
+<p data-en="Professional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools." data-id="Analisis geostatistik profesional dan pemodelan sumber daya di browser Anda. Algoritma kriging lanjutan, pemodelan variogram, dan alat kuantifikasi ketidakpastian.">Professional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools.</p>
+
+**<span data-en="Planned Features:" data-id="Fitur yang Direncanakan:">Planned Features:</span>**
+- <span data-en="Automated variogram modeling" data-id="Pemodelan variogram otomatis">Automated variogram modeling</span>
+- <span data-en="Advanced kriging techniques" data-id="Teknik kriging lanjutan">Advanced kriging techniques</span>
+- <span data-en="Resource classification tools" data-id="Alat klasifikasi sumber daya">Resource classification tools</span>
+- <span data-en="Industry-standard reporting" data-id="Pelaporan standar industri">Industry-standard reporting</span>
+
+[**<span data-en="Join Beta List →" data-id="Daftar Beta →">Join Beta List →</span>**](#beta-signup){.btn .btn-outline}
+</div>
+
+<div class="product-card upcoming">
+### <i class="fas fa-mountain"></i> <span data-en="Pit Optimizer" data-id="Pengoptimal Pit">Pit Optimizer</span>
+**<span data-en="Coming Q3 2025" data-id="Hadir Q3 2025">Coming Q3 2025</span>**
+
+<p data-en="Sophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors." data-id="Algoritma perencanaan tambang dan optimisasi pit yang canggih. Maksimalkan NPV sambil mempertimbangkan kendala operasional dan faktor lingkungan.">Sophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.</p>
+
+**<span data-en="Planned Features:" data-id="Fitur yang Direncanakan:">Planned Features:</span>**
+- <span data-en="Multi-criteria optimization" data-id="Optimisasi multi-kriteria">Multi-criteria optimization</span>
+- <span data-en="Operational constraint modeling" data-id="Pemodelan kendala operasional">Operational constraint modeling</span>
+- <span data-en="Environmental impact assessment" data-id="Penilaian dampak lingkungan">Environmental impact assessment</span>
+- <span data-en="Economic scenario planning" data-id="Perencanaan skenario ekonomi">Economic scenario planning</span>
+
+[**<span data-en="Get Notified →" data-id="Dapatkan Notifikasi →">Get Notified →</span>**](#beta-signup){.btn .btn-outline}
+</div>
+
+</div>
 
 ---
 
-## Our Mission: Practical Empowerment Through Expert Guidance
+## <span data-en="Why Choose Orebit Solutions?" data-id="Mengapa Memilih Solusi Orebit?">Why Choose Orebit Solutions?</span>
 
-**"To empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence."**
-
-Every feature, every tutorial, and every line of code serves this mission. As a **Certified Competent Person** with over a decade of mining industry experience, I've witnessed firsthand the challenges that geoscientists face when working with complex geological data. This platform bridges that gap through:
-
-- **Practitioner-built solutions** tested in real mining projects
-- **Transparent methodologies** where every analytical step is visible and modifiable
-- **Expert guidance** based on actual resource evaluation experience
-- **Accessible tools** that deliver enterprise-level capabilities without enterprise-level costs
-
----
-
-## The Complete Geological Data Analysis Ecosystem
-
-### The Library: Your Comprehensive Knowledge Hub
-
-**Deep-dive, professional-grade articles** that serve as permanent references for geological data analysis techniques. Each post is designed to be the definitive guide on its topic:
-
-<div class="featured-posts">
-<div class="post-card">
-#### [Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation](/posts/welcome-post/)
-Discover the vision behind this comprehensive geological data analysis ecosystem and how practitioner-built solutions are transforming the industry.
+<div class="value-props">
+<div class="value-item">
+### **<span data-en="Cost-Effective Excellence" data-id="Keunggulan Hemat Biaya">Cost-Effective Excellence</span>**
+<p data-en="Access enterprise-level geological analysis tools without the $20,000+ annual licensing fees of traditional software." data-id="Akses alat analisis geologi tingkat enterprise tanpa biaya lisensi tahunan $20,000+ dari software tradisional.">Access enterprise-level geological analysis tools without the $20,000+ annual licensing fees of traditional software.</p>
 </div>
 
-<div class="post-card">
-#### [Mastering Exploratory Data Analysis with GeoDataViz](/posts/eda-geodataviz/)
-The complete professional guide to understanding geological datasets before modeling—covering everything from data validation through preliminary geostatistical analysis.
+<div class="value-item">
+### **<span data-en="Built by Geologists" data-id="Dibangun oleh Ahli Geologi">Built by Geologists</span>**
+<p data-en="Developed by practicing geoscientists who understand real-world geological challenges and workflows." data-id="Dikembangkan oleh geosaintis praktisi yang memahami tantangan dan alur kerja geologi dunia nyata.">Developed by practicing geoscientists who understand real-world geological challenges and workflows.</p>
 </div>
 
-<div class="post-card">
-#### [Pre-Processing Drillhole Data for Resource Estimation](/posts/preprocessing-drillhole-data/)
-Advanced professional techniques for transforming raw geological data into estimation-ready datasets, including compositing strategies and domain optimization.
-</div>
-</div>
-
-### The Workbench: GeoDataViz in Action
-
-<div class="grid grid-2">
-<div class="workbench-description">
-**GeoDataViz** serves as the tangible proof-of-concept that demonstrates open-source solutions can deliver enterprise-level geological analysis capabilities. Built by a practicing geologist for real-world geological challenges, it embodies our core philosophy of transparency, accessibility, and practicality.
-
-**Current Open-Source Capabilities:**
-- Complete drillhole data visualization and analysis
-- Advanced statistical tools with geological context
-- Interactive 3D plotting and cross-sections
-- Comprehensive QA/QC and data validation
-- Export capabilities for reports and presentations
-
-**Coming in GeoDataViz Pro:**
-- Automated resource estimation modules
-- Advanced geostatistical analysis and variogram modeling
-- Machine learning integration for pattern recognition
-- Enterprise deployment options and cloud integration
+<div class="value-item">
+### **<span data-en="Open & Transparent" data-id="Terbuka & Transparan">Open & Transparent</span>**
+<p data-en="Complete visibility into analytical methods ensures reproducibility and meets modern scientific standards." data-id="Visibilitas lengkap ke dalam metode analitik memastikan reproduksibilitas dan memenuhi standar ilmiah modern.">Complete visibility into analytical methods ensures reproducibility and meets modern scientific standards.</p>
 </div>
 
-<div class="workbench-demo">
-![Advanced Statistical Dashboard](images/plot-contoh.png){fig-alt="Comprehensive geological data analysis interface" .img-responsive}
-
-**Experience the transformation firsthand** with real geological datasets showcasing the full range of analytical capabilities available to modern geoscientists.
-
-[Try Interactive Demo](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-primary target="_blank" rel="noopener"}
-</div>
-</div>
-
-### The Professional Stage: Industry Leadership
-
-Follow my [LinkedIn profile](https://www.linkedin.com/in/ghoziankarami/) for:
-- **Industry insights** and professional discussions
-- **Real-world case studies** connecting theory with practice
-- **Professional networking** with geological data analysis experts
-- **Career development** guidance for modern geoscientists
-
-### The Visual Classroom: Accessible Learning
-
-Join [@orebit.id](https://instagram.com/orebit.id) for:
-- **Bite-sized tutorials** breaking down complex geological concepts
-- **Visual step-by-step guides** for GeoDataViz features
-- **Student-friendly content** making advanced techniques accessible
-- **Quick reference materials** for daily geological work
-
----
-
-## Why Open-Source Geological Analysis Matters
-
-**Professional Independence**
-Maintain complete control over your analytical workflows without vendor lock-in or feature limitations imposed by commercial software.
-
-**Scientific Transparency**
-Every analytical step is visible and modifiable, ensuring your work meets the highest standards of scientific rigor and professional accountability.
-
-**Cost-Effective Excellence**
-Access enterprise-level capabilities without the burden of expensive licensing fees that can exclude smaller firms and individual practitioners.
-
-**Community-Driven Innovation**
-Benefit from continuous improvements driven by real user needs rather than corporate development cycles, with direct input from practicing geoscientists.
-
-**Future-Proof Technology**
-Open-source solutions evolve with your needs and integrate seamlessly with emerging technologies and industry standards.
-
----
-
-## The Technology Behind the Transformation
-
-<div class="tech-showcase">
-<div class="tech-column">
-**Modern R Ecosystem**
-- Shiny framework for responsive web applications
-- tidyverse for efficient data manipulation
-- sf and sp for advanced spatial operations
-- plotly for interactive visualizations
-
-**Geological Specialization**
-- gstat for comprehensive geostatistical analysis
-- Custom functions built from field experience
-- Industry-standard data format integration
-- Advanced spatial interpolation capabilities
-</div>
-
-<div class="tech-column">
-**Performance & Reliability**
-- Optimized rendering for large datasets
-- Efficient memory management
-- Responsive design for field/office use
-- Robust error handling and validation
-
-**Enterprise Integration**
-- Multi-format data import capabilities
-- Export to geological software standards
-- API-ready architecture
-- Extensible framework for customization
+<div class="value-item">
+### **<span data-en="Cloud-Native Performance" data-id="Performa Cloud-Native">Cloud-Native Performance</span>**
+<p data-en="Run sophisticated analyses directly in your browser - no installation, no maintenance, universal access." data-id="Jalankan analisis canggih langsung di browser Anda - tanpa instalasi, tanpa pemeliharaan, akses universal.">Run sophisticated analyses directly in your browser - no installation, no maintenance, universal access.</p>
 </div>
 </div>
 
 ---
 
-## Professional Development Through Advanced Capabilities
+## <span data-en="Ready to Transform Your Workflow?" data-id="Siap Mentransformasi Alur Kerja Anda?">Ready to Transform Your Workflow?</span>
 
-**Technical Excellence**
-- Identify and resolve data quality issues that compromise resource estimates
-- Integrate geological knowledge with advanced statistical methods
-- Quantify and manage uncertainty throughout analytical workflows
-- Handle complex geological datasets that challenge standard approaches
+<div class="cta-section">
+### <span data-en="Start with GeoDataViz Today" data-id="Mulai dengan GeoDataViz Hari Ini">Start with GeoDataViz Today</span>
 
-**Professional Credibility**
-- Documentation standards meeting international resource reporting requirements
-- Methodology transparency enabling independent technical reviews
-- Integration of geological knowledge with quantitative analysis
-- Ability to explain complex analytical decisions to diverse audiences
-
-**Economic Impact**
-- Prevent costly resource estimation errors through proper data conditioning
-- Optimize geological domain boundaries enhancing estimate accuracy
-- Improve resource classification confidence through appropriate statistical treatment
-- Manage risk through comprehensive uncertainty quantification
-
----
-
-## Join the Data-Driven Transformation
-
-<div class="grid grid-3">
-<div class="involvement-card">
-### Experience the Technology
-See GeoDataViz capabilities with real geological datasets through our interactive demo platform.
-
-[Try GeoDataViz](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-primary target="_blank" rel="noopener"}
-</div>
-
-<div class="involvement-card">
-### Connect Professionally
-Join a growing network of geological professionals embracing open-source solutions for advanced analysis.
-
-[LinkedIn Network](https://www.linkedin.com/in/ghoziankarami/){.btn .btn-primary target="_blank" rel="noopener"}
-</div>
-
-<div class="involvement-card">
-### Contribute to Innovation
-Help shape the future of geological data analysis through community-driven development and feedback.
-
-[GitHub Community](https://github.com/ghoziankarami/geodataviz){.btn .btn-primary target="_blank" rel="noopener"}
-</div>
-</div>
-
----
-
-::: {.cta-section}
-## Ready to Transform Your Geological Workflow?
-
-**The future of geological data analysis is open, transparent, and accessible to every professional.** Whether you're an individual consultant, part of a small exploration company, or leading analysis teams at major mining operations, our ecosystem provides the capabilities you need to excel in today's demanding geological environment.
-
-Join the growing community of geoscientists who are leveraging practitioner-built tools to deliver more accurate, reliable results while maintaining complete analytical transparency.
+<p data-en="Experience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities." data-id="Rasakan kekuatan analisis data geologi profesional dengan aplikasi unggulan kami. Bergabunglah dengan ratusan geosaintis yang sudah menggunakan solusi Orebit untuk meningkatkan kemampuan analitis mereka.">Experience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities.</p>
 
 <div class="cta-buttons">
 <a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-  <i class="fas fa-rocket"></i> Start Your Transformation
+  <i class="fas fa-play"></i> <span data-en="Launch GeoDataViz Demo" data-id="Buka Demo GeoDataViz">Launch GeoDataViz Demo</span>
 </a>
-<a href="/blog" class="btn btn-secondary btn-lg">
-  <i class="fas fa-book"></i> Explore The Library
+<a href="mailto:contact@Orebit-geo.com" class="btn btn-secondary btn-lg">
+  <i class="fas fa-envelope"></i> <span data-en="Enterprise Solutions" data-id="Solusi Enterprise">Enterprise Solutions</span>
 </a>
 </div>
-:::
+
+### <span data-en="Stay Updated on New Releases" data-id="Tetap Update dengan Rilis Baru">Stay Updated on New Releases</span>
+
+<div id="beta-signup" class="signup-form">
+<input type="email" placeholder="Enter your email" data-placeholder-en="Enter your email for product updates" data-placeholder-id="Masukkan email untuk pembaruan produk" class="email-input">
+<button class="btn btn-success" data-en="Get Notified" data-id="Dapatkan Notifikasi">Get Notified</button>
+</div>
+
+</div>
+
+---
+
+<div class="footer-simple">
+<p><strong>Orebit Geological Solutions</strong> | <span data-en="Advanced R Shiny Applications for Professional Geology" data-id="Aplikasi R Shiny Lanjutan untuk Geologi Profesional">Advanced R Shiny Applications for Professional Geology</span></p>
+<p>[GitHub](https://github.com/Orebit-geo) | [<span data-en="Documentation" data-id="Dokumentasi">Documentation</span>](/docs) | [<span data-en="Contact" data-id="Kontak">Contact</span>](mailto:contact@Orebit-geo.com)</p>
+</div>
 
 <style>
-/* Custom styles for homepage */
-.hero-section {
+/* Language Toggle */
+.language-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.lang-btn:hover {
+  background: rgba(0,123,255,0.1);
+}
+
+.lang-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Hero Section */
+.hero-Orebit {
   text-align: center;
-  padding: 3rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
   border-radius: 1rem;
   margin-bottom: 3rem;
+}
+
+.hero-Orebit h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  border: none;
+}
+
+.hero-Orebit h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  font-weight: 400;
+  border: none;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  max-width: 800px;
+  margin: 0 auto 2rem;
 }
 
 .hero-buttons {
@@ -254,139 +214,298 @@ Join the growing community of geoscientists who are leveraging practitioner-buil
   flex-wrap: wrap;
 }
 
-.featured-posts {
+/* Products Grid */
+.products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.post-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.post-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-.post-card h4 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: #1E6CB8;
-  border: none;
-  font-size: 1.1rem;
-}
-
-.post-card h4 a {
-  color: #1E6CB8;
-  text-decoration: none;
-}
-
-.post-card h4 a:hover {
-  color: #4A9EE7;
-}
-
-.workbench-description, .workbench-demo {
-  background: white;
-  padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.workbench-demo {
-  text-align: center;
-}
-
-.workbench-demo img {
-  border-radius: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.tech-showcase {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin: 2rem 0;
-}
-
-.tech-column {
-  background: white;
-  padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.tech-column strong {
-  display: block;
-  color: #1E6CB8;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(30, 108, 184, 0.2);
-}
-
-.involvement-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 0.75rem;
-  text-align: center;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.involvement-card:hover {
-  transform: translateY(-2px);
-}
-
-.involvement-card h3 {
-  color: #1E6CB8;
-  margin-bottom: 1rem;
-  border: none;
-}
-
-.cta-section {
-  background: linear-gradient(135deg, #2E3A45 0%, #374151 100%);
-  color: white;
-  text-align: center;
-  padding: 3rem 2rem;
-  border-radius: 1rem;
   margin: 3rem 0;
 }
 
+.product-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.product-card.flagship {
+  border-left: 5px solid #28a745;
+}
+
+.product-card.upcoming {
+  border-left: 5px solid #ffc107;
+}
+
+.product-card h3 {
+  color: #1e3c72;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.product-card h3 i {
+  color: #1e3c72;
+  margin-right: 0.5rem;
+}
+
+.product-card strong {
+  color: #28a745;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-card.upcoming strong {
+  color: #ffc107;
+}
+
+.product-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.product-card li {
+  padding: 0.3rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.product-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Value Props */
+.value-props {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.value-item {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.value-item h3 {
+  color: #1e3c72;
+  margin-bottom: 1rem;
+  border: none;
+  font-size: 1.3rem;
+}
+
+.value-item p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.cta-section h3 {
+  color: #1e3c72;
+  margin-bottom: 1rem;
+  border: none;
+}
+
+.cta-section p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
 .cta-buttons {
-  margin-top: 2rem;
+  margin: 2rem 0;
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+.signup-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.email-input {
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  min-width: 300px;
+  font-size: 1rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  color: white;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+  color: white;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #218838;
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.btn-outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+.btn-lg {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.footer-simple {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 3rem;
+}
+
+.footer-simple a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-simple a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+  .hero-Orebit h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-Orebit h2 {
+    font-size: 1.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .value-props {
+    grid-template-columns: 1fr;
+  }
+  
   .hero-buttons,
-  .cta-buttons {
+  .cta-buttons,
+  .signup-form {
     flex-direction: column;
     align-items: center;
   }
   
-  .hero-section {
-    padding: 2rem 1rem;
-  }
-  
-  .cta-section {
-    padding: 2rem 1rem;
-  }
-  
-  .tech-showcase {
-    grid-template-columns: 1fr;
+  .email-input {
+    min-width: 100%;
   }
 }
 </style>
+
+<script>
+// Language Switching Function
+function switchLanguage(lang) {
+  // Update button states
+  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+  document.getElementById('lang-id').classList.toggle('active', lang === 'id');
+  
+  // Get all elements with data-en and data-id attributes
+  const elements = document.querySelectorAll('[data-en][data-id]');
+  
+  elements.forEach(element => {
+    const enText = element.getAttribute('data-en');
+    const idText = element.getAttribute('data-id');
+    
+    if (enText && idText) {
+      element.textContent = lang === 'en' ? enText : idText;
+    }
+  });
+  
+  // Update placeholder for email input
+  const emailInput = document.querySelector('.email-input');
+  if (emailInput) {
+    const placeholderEn = emailInput.getAttribute('data-placeholder-en');
+    const placeholderId = emailInput.getAttribute('data-placeholder-id');
+    emailInput.placeholder = lang === 'en' ? placeholderEn : placeholderId;
+  }
+  
+  // Store language preference
+  localStorage.setItem('preferredLanguage', lang);
+}
+
+// Load preferred language on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const preferredLang = localStorage.getItem('preferredLanguage') || 'en';
+  if (preferredLang === 'id') {
+    switchLanguage('id');
+  }
+});
+</script>
