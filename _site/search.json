@@ -184,16 +184,9 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Orebit Technical Resources",
+    "title": "Technical Resources",
     "section": "",
-    "text": "Introduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production.\n\n\n\nMaster Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\n\n\n\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools."
-  },
-  {
-    "objectID": "blog.html#featured-application-guides",
-    "href": "blog.html#featured-application-guides",
-    "title": "Orebit Technical Resources",
-    "section": "",
-    "text": "Introduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production.\n\n\n\nMaster Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\n\n\n\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools."
+    "text": "Welcome to the Orebit Knowledge Hub\n\n\nHere you’ll find in-depth articles, practical tutorials, and case studies designed to help you master modern geological data analysis. Whether you’re using our flagship application, GeoDataViz, or exploring advanced open-source workflows in R, these resources are here to support your work.\n\n\n\n\n\n\n\n\n   \n    \n    \n      Urut berdasar\n      Default\n      \n        Judul\n      \n      \n        Tanggal - Paling lama\n      \n      \n        Tanggal - Paling baru\n      \n      \n        Penulis\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz\n\n\n\nGeoDataViz\n\nPreprocessing\n\nResource-Estimation\n\nGeostatistics\n\n\n\nMaster advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that…\n\n\n\nGhozian Islam Karami\n\n\n20 Sep 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nMastering Exploratory Data Analysis with GeoDataViz: The Complete Professional Guide\n\n\n\nGeoDataViz\n\nEDA\n\nGeostatistics\n\nTutorial\n\n\n\nMaster comprehensive exploratory data analysis on geological datasets using GeoDataViz. Learn professional-grade techniques for data validation, spatial analysis, and…\n\n\n\nGhozian Islam Karami\n\n\n20 Sep 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to The Library: Where Geological Expertise Meets Open-Source Innovation\n\n\n\nWelcome\n\nOpen-Source\n\nGeology\n\nData-Science\n\n\n\nWelcome to Orebit’s comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data…\n\n\n\nGhozian Islam Karami\n\n\n20 Sep 2025\n\n\n\n\n\n\nTidak ada yang cocok"
   },
   {
     "objectID": "about.html",
@@ -242,28 +235,14 @@
     "href": "index.html",
     "title": "Orebit Geological Solutions",
     "section": "",
-    "text": "EN\n\n\nID"
+    "text": "Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization.\n\n\n  Try GeoDataViz Now    Learn More"
   },
   {
     "objectID": "index.html#our-product-suite",
     "href": "index.html#our-product-suite",
     "title": "Orebit Geological Solutions",
     "section": "Our Product Suite",
-    "text": "Our Product Suite\n\n\n GeoDataViz\nAvailable Now - Free Demo\n\nTransform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data.\n\nKey Features: - Interactive 3D geological visualization - Advanced statistical analysis for geological data - Comprehensive QA/QC validation tools - Professional reporting capabilities\nLaunch Demo →\n\n\n Resource Estimation App\nComing Q2 2025\n\nProfessional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools.\n\nPlanned Features: - Automated variogram modeling - Advanced kriging techniques - Resource classification tools - Industry-standard reporting\nJoin Beta List →\n\n\n Pit Optimizer\nComing Q3 2025\n\nSophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.\n\nPlanned Features: - Multi-criteria optimization - Operational constraint modeling - Environmental impact assessment - Economic scenario planning\nGet Notified →"
-  },
-  {
-    "objectID": "index.html#why-choose-orebit-solutions",
-    "href": "index.html#why-choose-orebit-solutions",
-    "title": "Orebit Geological Solutions",
-    "section": "Why Choose Orebit Solutions?",
-    "text": "Why Choose Orebit Solutions?\n\n\nCost-Effective Excellence\n\nAccess enterprise-level geological analysis tools without the $20,000+ annual licensing fees of traditional software.\n\n\n\nBuilt by Geologists\n\nDeveloped by practicing geoscientists who understand real-world geological challenges and workflows.\n\n\n\nOpen & Transparent\n\nComplete visibility into analytical methods ensures reproducibility and meets modern scientific standards.\n\n\n\nCloud-Native Performance\n\nRun sophisticated analyses directly in your browser - no installation, no maintenance, universal access."
-  },
-  {
-    "objectID": "index.html#ready-to-transform-your-workflow",
-    "href": "index.html#ready-to-transform-your-workflow",
-    "title": "Orebit Geological Solutions",
-    "section": "Ready to Transform Your Workflow?",
-    "text": "Ready to Transform Your Workflow?\n\n\nStart with GeoDataViz Today\n\nExperience the power of professional geological data analysis with our flagship application. Join hundreds of geoscientists already using Orebit solutions to enhance their analytical capabilities.\n\n\n  Launch GeoDataViz Demo    Enterprise Solutions \n\n\n\nStay Updated on New Releases\n\n Get Notified\n\n\n\n\n\n\nOrebit Geological Solutions | Advanced R Shiny Applications for Professional Geology | GitHub"
+    "text": "Our Product Suite\n\n\n GeoDataViz\nAvailable Now - Free Demo\n\nTransform your geological workflow with professional-grade exploratory data analysis and visualization. Built specifically for geological datasets, GeoDataViz revolutionizes how geoscientists understand their data.\n\nKey Features: - Interactive 3D geological visualization - Advanced statistical analysis for geological data - Comprehensive QA/QC validation tools - Professional reporting capabilities\nLaunch Demo →\n\n\n Resource Estimation App\nComing Q2 2026\n\nProfessional geostatistical analysis and resource modeling in your browser. Advanced kriging algorithms, variogram modeling, and uncertainty quantification tools.\n\nPlanned Features: - Automated variogram modeling - Advanced kriging techniques - Resource classification tools - Industry-standard reporting\nJoin Beta List →\n\n\n Pit Optimizer\nComing Q3 2026\n\nSophisticated mine planning and pit optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.\n\nPlanned Features: - Multi-criteria optimization - Operational constraint modeling - Environmental impact assessment - Economic scenario planning\nGet Notified →"
   },
   {
     "objectID": "posts/EDA with GeoDataViz/index.html",
