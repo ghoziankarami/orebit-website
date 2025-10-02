@@ -6,37 +6,6 @@ page-layout: full
 sidebar: blog-sidebar
 toc: false
 
-listing:
-  contents: "posts"
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: true
-  filter-ui: true
-  feed: 
-    title: "Orebit Technical Resources"
-    description: "Latest guides on geological data analysis with R Shiny"
-  page-size: 12
-  date-format: "DD MMMM YYYY"
-  image-height: "200px"
-  fields: [title, author, date, categories, description, image]
-
-margin-footer: |
-  ## Categories
-  
-  - [GeoDataViz Tutorials](/blog/categories/geodataviz)
-  - [Resource Estimation](/blog/categories/resource-estimation) 
-  - [Geostatistics](/blog/categories/geostatistics)
-  - [Data Analysis](/blog/categories/eda)
-  - [R Shiny Development](/blog/categories/shiny)
-  
-  ---
-  
-  ## Quick Links
-  
-  - [RSS Feed](/blog/index.xml)
-  - [GitHub](https://github.com/Orebit-geo)
-  - [Product Demo](https://ghoziankarami.shinyapps.io/GeodataViz/)
 ---
 
 ## Featured Application Guides

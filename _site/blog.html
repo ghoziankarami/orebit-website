@@ -32,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./Logo_favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Mencari"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-categories','listing-description','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 
 <script type="text/javascript">
@@ -111,52 +80,9 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Orebit Technical Resources" href="blog.xml" data-external="1"><meta property="og:title" content="Orebit.id - Geology, Digitized">
+<meta property="og:title" content="Orebit.id - Geology, Digitized">
 <meta property="og:description" content="Professional geological consulting and data analysis services">
 <meta property="og:image" content="https://orebit.id/Logo_banner.png">
 <meta property="og:site_name" content="Orebit.id - Geology, Digitized">
@@ -164,8 +90,7 @@ window.Quarto = {
 <meta property="og:image:width" content="1335">
 <meta name="twitter:title" content="Orebit Technical Resources – Orebit.id - Geology, Digitized">
 <meta name="twitter:description" content="Comprehensive guides for mastering geological data analysis with Orebit’s R Shiny applications. Learn workflows, best practices, and advanced techniques for GeoDataViz, resource estimation, and mine optimization.">
-<meta name="twitter:image" content="https://orebit.id/posts/Drillhole Data Preprocessing/preprocessing-workflow.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -225,30 +150,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Kategori</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Semua <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGF0YS1TY2llbmNl">Data-Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RURB">EDA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VvRGF0YVZpeg==">GeoDataViz <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R2VvbG9neQ==">Geology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2Vvc3RhdGlzdGljcw==">Geostatistics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="T3Blbi1Tb3VyY2U=">Open-Source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlcHJvY2Vzc2luZw==">Preprocessing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzb3VyY2UtRXN0aW1hdGlvbg==">Resource-Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div><div class="quarto-margin-footer"><div class="margin-footer-item">
-<section id="categories" class="level2">
-<h2 data-anchor-id="categories">Categories</h2>
-<ul>
-<li><a href=".\blog/categories/geodataviz">GeoDataViz Tutorials</a></li>
-<li><a href=".\blog/categories/resource-estimation">Resource Estimation</a></li>
-<li><a href=".\blog/categories/geostatistics">Geostatistics</a></li>
-<li><a href=".\blog/categories/eda">Data Analysis</a></li>
-<li><a href=".\blog/categories/shiny">R Shiny Development</a></li>
-</ul>
-<hr>
-</section>
-<section id="quick-links" class="level2">
-<h2 data-anchor-id="quick-links">Quick Links</h2>
-<ul>
-<li><a href=".\blog/index.xml">RSS Feed</a></li>
-<li><a href="https://github.com/Orebit-geo">GitHub</a></li>
-<li><a href="https://ghoziankarami.shinyapps.io/GeodataViz/">Product Demo</a></li>
-</ul>
-</section>
-</div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -263,7 +167,7 @@ window.Quarto = {
 </div>
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -598,147 +502,9 @@ Discover how Orebit’s suite of R Shiny applications transforms geological work
 </style>
 
 
-
 </section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Urut berdasar" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Urut berdasar</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-title" data-direction="asc">
-        Judul
-      </option>
-      <option value="listing-date-sort" data-direction="asc">
-        Tanggal - Paling lama
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Tanggal - Paling baru
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Penulis
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="R2VvRGF0YVZpeiUyQ1ByZXByb2Nlc3NpbmclMkNSZXNvdXJjZS1Fc3RpbWF0aW9uJTJDR2Vvc3RhdGlzdGljcw==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758607433266" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2014">
-<div class="thumbnail"><a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/Drillhole Data Preprocessing/preprocessing-workflow.png" class="thumbnail-image" style="height: 200px;">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2VvRGF0YVZpeg=='); return false;">GeoDataViz</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJlcHJvY2Vzc2luZw=='); return false;">Preprocessing</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmVzb3VyY2UtRXN0aW1hdGlvbg=='); return false;">Resource-Estimation</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2Vvc3RhdGlzdGljcw=='); return false;">Geostatistics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">
-<p>Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/Drillhole Data Preprocessing/index.html" class="no-external">
-<div class="listing-date">
-20 September 2025
-</div>
-<div class="listing-author">
-Ghozian Islam Karami
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="R2VvRGF0YVZpeiUyQ0VEQSUyQ0dlb3N0YXRpc3RpY3MlMkNUdXRvcmlhbA==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758607402339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1859">
-<div class="thumbnail"><a href="./posts/EDA with GeoDataViz/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/EDA with GeoDataViz/eda-workflow.png" class="thumbnail-image" style="height: 200px;">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/EDA with GeoDataViz/index.html" class="no-external">Mastering Exploratory Data Analysis with GeoDataViz: The Complete Professional Guide</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2VvRGF0YVZpeg=='); return false;">GeoDataViz</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RURB'); return false;">EDA</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2Vvc3RhdGlzdGljcw=='); return false;">Geostatistics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/EDA with GeoDataViz/index.html" class="no-external">
-<p>Master comprehensive exploratory data analysis on geological datasets using GeoDataViz. Learn professional-grade techniques for data validation, spatial analysis, and geological insight extraction before resource estimation.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/EDA with GeoDataViz/index.html" class="no-external">
-<div class="listing-date">
-20 September 2025
-</div>
-<div class="listing-author">
-Ghozian Islam Karami
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="V2VsY29tZSUyQ09wZW4tU291cmNlJTJDR2VvbG9neSUyQ0RhdGEtU2NpZW5jZQ==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1758607380014" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1590">
-<div class="thumbnail"><a href="./posts/Welcome to Orebit/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/Welcome to Orebit/welcome-banner.png" class="thumbnail-image" style="height: 200px;">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Welcome to Orebit/index.html" class="no-external">Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2VsY29tZQ=='); return false;">Welcome</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('T3Blbi1Tb3VyY2U='); return false;">Open-Source</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R2VvbG9neQ=='); return false;">Geology</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YS1TY2llbmNl'); return false;">Data-Science</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/Welcome to Orebit/index.html" class="no-external">
-<p>Welcome to Orebit’s comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/Welcome to Orebit/index.html" class="no-external">
-<div class="listing-date">
-20 September 2025
-</div>
-<div class="listing-author">
-Ghozian Islam Karami
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">Tidak ada yang cocok</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

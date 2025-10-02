@@ -189,20 +189,6 @@
     "text": "Master Exploratory Data Analysis\nLearn how to use GeoDataViz for comprehensive geological data validation, statistical analysis, and 3D visualization. Perfect for geologists working with drillhole datasets.\n\n\n\nPrepare Data for Resource Estimation\nComplete workflow for transforming raw drillhole data into estimation-ready datasets using GeoDataViz’s preprocessing tools.\n\n\n\nIntroduction to Orebit Ecosystem\nDiscover how Orebit’s suite of R Shiny applications transforms geological workflows from exploration to production."
   },
   {
-    "objectID": "blog.html#categories",
-    "href": "blog.html#categories",
-    "title": "Orebit Technical Resources",
-    "section": "Categories",
-    "text": "Categories\n\nGeoDataViz Tutorials\nResource Estimation\nGeostatistics\nData Analysis\nR Shiny Development"
-  },
-  {
-    "objectID": "blog.html#quick-links",
-    "href": "blog.html#quick-links",
-    "title": "Orebit Technical Resources",
-    "section": "Quick Links",
-    "text": "Quick Links\n\nRSS Feed\nGitHub\nProduct Demo"
-  },
-  {
     "objectID": "blog.html#featured-application-guides",
     "href": "blog.html#featured-application-guides",
     "title": "Orebit Technical Resources",
