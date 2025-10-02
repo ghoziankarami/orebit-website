@@ -51,55 +51,6 @@ compatibility
 
 ------------------------------------------------------------------------
 
-## Product Suite
-
-### GeoDataViz (Available Now)
-
-**The Comprehensive Geological Data Analysis Platform**
-
-Our flagship application revolutionizes exploratory data analysis for
-geological datasets:
-
-**Core Capabilities:** - Interactive drillhole data visualization -
-Advanced statistical analysis and validation - 3D geological modeling -
-Comprehensive QA/QC tools - Automated reporting
-
-**Industry Applications:** - Mineral exploration data analysis -
-Resource estimation preparation - Grade control monitoring - Geological
-database validation
-
-[**Try GeoDataViz Demo
-→**](https://ghoziankarami.shinyapps.io/GeodataViz/){.btn .btn-success
-target="_blank"}
-
-------------------------------------------------------------------------
-
-### Resource Estimation App (Coming Q2 2025)
-
-**Professional Geostatistical Analysis**
-
-Advanced resource modeling capabilities including: - Automated variogram
-modeling - Multiple kriging techniques - Block model generation -
-Resource classification - Uncertainty quantification - JORC/NI 43-101
-compliant reporting
-
-[**Join Beta Program →**](#beta-signup){.btn .btn-primary}
-
-------------------------------------------------------------------------
-
-### Pit Optimizer (Coming Q3 2025)
-
-**Strategic Mine Planning**
-
-Sophisticated optimization algorithms for: - Ultimate pit limit
-determination - Multi-criteria optimization (NPV, volume, grade) -
-Operational constraint modeling - Environmental impact assessment -
-Economic scenario planning - Pushback sequencing
-
-[**Get Early Access →**](#beta-signup){.btn .btn-primary}
-
-------------------------------------------------------------------------
-
 ## Our Commitment
 
 ### Continuous Improvement
