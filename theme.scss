@@ -1,4 +1,4 @@
-/*-- Orebit.id Theme v6.0 FONT AWESOME FIX --*/
+/*-- Orebit.id Theme v6.1 DEFINITIVE MOBILE FIX --*/
 
 /*-- scss:defaults --*/
 $orebit-dark: #2c3e50;
@@ -39,51 +39,47 @@ body {
     .navbar-brand img { max-height: 45px; }
   }
 
- @media (max-width: 991.98px) {
-    // 1. Jadikan navbar sebagai flex container untuk menyeimbangkan item kiri dan kanan
-    position: relative;
-    display: flex;
-    justify-content: space-between; // Mendorong item ke ujung
-    align-items: center;
-    width: 100%;
+  // === BLOK PERBAIKAN UNTUK MOBILE ===
+  @media (max-width: 991.98px) {
+    // 1. Targetkan container di dalam navbar, bukan navbar-nya
+    // Ini adalah kunci perbaikannya
+    .container, .container-fluid {
+      position: relative !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
 
-    // 2. Sempurnakan positioning logo di tengah
+    // 2. Sempurnakan positioning logo di tengah (aturan ini sudah benar)
     .navbar-brand {
       position: absolute !important;
       left: 50% !important;
       top: 50% !important;
       transform: translate(-50%, -50%) !important;
-      z-index: 999; // Pastikan logo di atas background tapi di bawah tombol
+      z-index: 999; 
 
       // 3. Kecilkan ukuran logo agar tidak terlalu ramai
       img {
-        max-height: 48px !important; // Sedikit lebih kecil dari 55px
+        max-height: 48px !important;
       }
     }
 
     // 4. Pastikan menu dropdown tetap berfungsi seperti sebelumnya
     .navbar-collapse {
       position: absolute !important;
-      top: 100% !important; // Muncul di bawah navbar
+      top: 100% !important; 
       left: 0 !important;
       right: 0 !important;
       background: $orebit-cream !important;
-      z-index: 998 !important; // Di bawah logo
+      z-index: 998 !important;
       padding: 1rem !important;
       margin-top: 0.25rem !important;
       border-radius: 0 0 12px 12px !important;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
     }
-
-    // 5. Pastikan tombol menu (toggler) berada di lapisan paling atas agar bisa diklik
-    .navbar-toggler {
-      z-index: 1001;
-    }
-    // Lakukan hal yang sama untuk item di kanan
-    .navbar-nav {
-      z-index: 1001;
-    }
   }
+  // === AKHIR BLOK PERBAIKAN ===
 
   // Navbar Links & Icons Color
   .navbar-nav .nav-link {
@@ -99,13 +95,18 @@ body {
 
   // === STYLING UNTUK IKON FONT AWESOME DI NAVBAR ===
   .navbar-toggler {
-    font-size: 1.5rem; // Mengatur ukuran ikon
+    font-size: 1.5rem; 
     color: $dark !important;
     border: none !important;
     padding-right: 0.5rem;
-    z-index: 1001;
+    z-index: 1001; // Pastikan tombol bisa diklik
     &:focus { box-shadow: none !important; }
     &:hover { color: $primary !important; }
+  }
+  
+  // Pastikan ikon di kanan juga bisa diklik
+  .navbar-nav {
+    z-index: 1001;
   }
 }
 
