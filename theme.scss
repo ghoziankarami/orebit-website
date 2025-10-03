@@ -1,233 +1,131 @@
-/*-- Orebit.id Theme v2.0 --*/
+/*-- Orebit.id Theme v4.0 FINAL Optimized --*/
 
 /*-- scss:defaults --*/
+$orebit-dark: #2c3e50;
+$orebit-blue: #3498db;
+$orebit-cream: #F5F1E8;
+$orebit-gray: #7f8c8d;
+$orebit-bg-light: #f8f9fa;
 
-// 1. PALET WARNA UTAMA
-$orebit-dark: #2c3e50;       // Warna gelap utama (untuk teks)
-$orebit-blue: #3498db;       // Biru primer yang lebih cerah
-$orebit-light-blue: #5dade2; // Biru sekunder
-$orebit-bg-light: #f8f9fa;   // Latar belakang terang
-$orebit-cream: #fdfefe;      // Latar belakang utama (putih gading)
-$orebit-gray: #7f8c8d;       // Abu-abu untuk teks sekunder
-
-// 2. BOOTSTRAP VARIABLE OVERRIDES
 $primary:       $orebit-blue;
 $secondary:     $orebit-gray;
 $dark:          $orebit-dark;
 $light:         $orebit-bg-light;
-$body-bg:       $orebit-cream;
-$body-color:    $orebit-dark;
+$body-bg:       #ffffff;
+$body-color:    $dark;
 $link-color:    $primary;
 $headings-color: $dark;
-
-// 3. TYPOGRAPHY & LAYOUT
-$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-$headings-font-weight: 700;
+$headings-font-weight: 600;
 $border-radius: 0.5rem;
-$border-radius-lg: 0.75rem;
 $box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 $box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
 /*-- scss:rules --*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 body {
   line-height: 1.7;
 }
 
-// GENERAL STYLING
-.page-content {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.section-container {
-  padding: 4rem 0;
-}
-
-.section-light-bg {
-  background-color: $light;
-  border-radius: $border-radius-lg;
-  padding: 4rem 2rem;
-  margin: 2rem 0;
-}
-
-.section-title {
-  font-weight: 700;
-  margin-bottom: 1rem;
-  border-bottom: 3px solid $primary;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-}
-
-.section-subtitle {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem;
-  color: $secondary;
-}
-
-// HERO SECTION STYLING
-.hero-section {
-  background: linear-gradient(135deg, $dark 0%, darken($dark, 5%) 100%);
-  color: white;
-  padding: 6rem 1rem;
+// ===================================
+// NAVBAR STYLING (FIXED & OPTIMIZED)
+// ===================================
+.navbar {
+  background: $orebit-cream;
+  border-bottom: 1px solid rgba($dark, 0.1);
+  padding: 0.75rem 0;
   
-  .display-4 {
-    font-weight: 700;
-  }
-  .lead {
-    font-size: 1.25rem;
-    opacity: 0.9;
-    max-width: 800px;
-    margin: 1rem auto 2rem;
-  }
-}
-
-.hero-buttons .btn {
-  margin: 0.5rem;
-  padding: 0.8rem 2rem;
-}
-
-// VALUE PROPOSITIONS STYLING
-.value-props-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.value-item {
-  .value-icon {
-    font-size: 2.5rem;
-    color: $primary;
-    margin-bottom: 1rem;
-  }
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  p {
-    color: $secondary;
-    line-height: 1.6;
-  }
-}
-
-// PRODUCTS GRID STYLING
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.product-card {
-  background-color: $body-bg;
-  border: 1px solid #dee2e6;
-  border-radius: $border-radius-lg;
-  padding: 2rem;
-  box-shadow: $box-shadow-sm;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $box-shadow;
+  @media (min-width: 992px) {
+    .navbar-brand img { max-height: 45px; }
   }
 
-  &.flagship { border-top: 4px solid #28a745; }
-  &.upcoming { border-top: 4px solid #ffc107; }
-
-  .product-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    h3 { font-size: 1.5rem; margin-bottom: 0; }
-  }
-
-  p {
-    color: $secondary;
-    margin-bottom: 1.5rem;
-  }
-}
-
-.features-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 2rem;
-  li {
-    padding-left: 1.5rem;
+  @media (max-width: 991.98px) {
     position: relative;
-    margin-bottom: 0.5rem;
-    &::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #28a745;
-      font-weight: bold;
+    .navbar-brand {
+      position: absolute !important; left: 50% !important; top: 50% !important;
+      transform: translate(-50%, -50%) !important; z-index: 999;
+      img { max-height: 55px !important; }
+    }
+    .navbar-toggler { z-index: 1001; }
+    .navbar-collapse {
+      position: absolute !important; top: 100% !important; left: 0 !important;
+      right: 0 !important; background: $orebit-cream !important; z-index: 998 !important;
+      padding: 1rem !important; margin-top: 0.25rem !important;
+      border-radius: 0 0 12px 12px !important;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
     }
   }
-}
 
-// TESTIMONIAL SECTION
-.testimonial {
-  max-width: 800px;
-  margin: 2rem auto 0;
-  background: $light;
-  padding: 2rem;
-  border-left: 5px solid $primary;
-  border-radius: $border-radius;
-}
-.testimonial-text {
-  font-style: italic;
-  font-size: 1.1rem;
-  color: $dark;
-  margin-bottom: 1rem;
-}
-.testimonial-author {
-  font-weight: 500;
-  color: $secondary;
-}
-
-// CTA SECTION
-.cta-section {
-  background: $dark;
-  color: white;
-  border-radius: $border-radius-lg;
-  padding: 3rem;
-  
-  h3 {
-    color: white;
-    border: none;
+  // Navbar Links & Icons Color
+  .navbar-nav .nav-link {
+    color: $dark !important;
+    font-weight: 500;
+    &:hover { color: $primary !important; }
   }
-  p {
-    color: rgba(255, 255, 255, 0.8);
+  .navbar-nav .nav-link > .bi {
+    color: $dark !important;
+    transition: all 0.2s ease;
+    &:hover { color: $primary !important; transform: scale(1.1); }
+  }
+
+  // === PERBAIKAN IKON HAMBURGER MENU ===
+  .navbar-toggler {
+    border: none !important;
+    background: transparent !important;
+    padding: 0.25rem 0.5rem;
+    &:focus { box-shadow: none !important; }
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='#2c3e50' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='#2c3e50' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M6 6l18 18M6 24l18-18'/%3e%3c/svg%3e") !important;
   }
 }
 
-// BUTTONS
-.btn-primary {
-  background: $primary;
-  border-color: $primary;
-  &:hover {
-    background: darken($primary, 10%);
-    border-color: darken($primary, 10%);
+// ===================================
+// LANDING PAGE SECTIONS
+// ===================================
+.page-content { padding-top: 2rem; }
+.hero-intro {
+  padding: 3rem 0;
+  h1 { font-weight: 700; font-size: 2.5rem; }
+  .lead {
+    font-size: 1.2rem; max-width: 800px; margin: 1rem auto 2rem; color: $secondary;
+  }
+  .hero-buttons .btn { margin: 0.5rem; }
+}
+
+.section-container { padding: 3rem 0; }
+.section-light-bg {
+  background-color: $light; border-radius: $border-radius; padding: 3rem 2rem; margin: 2rem 0;
+}
+.section-title { font-weight: 700; margin-bottom: 1rem; }
+.section-subtitle { max-width: 700px; margin: 0 auto 3rem; color: $secondary; }
+
+.value-props-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem; margin-top: 3rem;
+  .value-icon { font-size: 2.5rem; color: $primary; margin-bottom: 1rem; }
+  h3 { font-size: 1.25rem; font-weight: 600; }
+  p { color: $secondary; }
+}
+
+.products-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem; margin-top: 2rem;
+}
+.product-card {
+  background-color: #ffffff; border: 1px solid #dee2e6; border-radius: $border-radius;
+  padding: 2rem; box-shadow: $box-shadow-sm; transition: all 0.3s ease;
+  &:hover { transform: translateY(-5px); box-shadow: $box-shadow; }
+  &.flagship { border-top: 4px solid #28a745; }
+  &.upcoming { border-top: 4px solid #ffc107; }
+  .product-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1rem;
+    h3 { font-size: 1.5rem; margin: 0; }
   }
 }
 
-.btn-outline-light {
-  border-color: rgba(255,255,255,0.5);
-  color: white;
-  &:hover {
-    background: white;
-    color: $dark;
-  }
-}
-
-// NAVBAR FIX (dari sebelumnya, tetap dipertahankan)
-// (Kode navbar dari jawaban sebelumnya bisa disalin di sini)
-.navbar {
-  // ... salin kode navbar dari respons sebelumnya di sini ...
-}
+.cta-section h3 { font-weight: 700; }
