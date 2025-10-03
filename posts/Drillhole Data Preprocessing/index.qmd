@@ -4,7 +4,8 @@ author: "Ghozian Islam Karami"
 date: "2025-09-20"
 categories: [GeoDataViz, Preprocessing, Resource-Estimation, Geostatistics]
 description: "Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation."
-image: "preprocessing-workflow.png"
+image: "pre-drilling-thumb.png"
+image-alt: "Preprocessing workflow"
 ---
 
 ## The Critical Bridge Between Data and Reliable Estimates

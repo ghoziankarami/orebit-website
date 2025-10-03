@@ -4,7 +4,8 @@ author: "Ghozian Islam Karami"
 date: "2025-09-20"
 categories: [Welcome, Open-Source, Geology, Data-Science]
 description: "Welcome to Orebit's comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges."
-image: "welcome-banner.png"
+image: "Open-Source_thumb.png"
+image-alt: "Open Source"
 ---
 
 ## The Vision Behind The Library

@@ -220,7 +220,7 @@
   <category>Geostatistics</category>
   <guid>https://orebit.id/posts/Drillhole Data Preprocessing/</guid>
   <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
-  <media:content url="https://orebit.id/posts/Drillhole Data Preprocessing/preprocessing-workflow.png" medium="image" type="image/png"/>
+  <media:content url="https://orebit.id/posts/Drillhole Data Preprocessing/pre-drilling-thumb.png" medium="image" type="image/png" height="92" width="144"/>
 </item>
 <item>
   <title>Mastering Exploratory Data Analysis with GeoDataViz: The Complete Professional Guide</title>
@@ -478,7 +478,6 @@
   <category>Tutorial</category>
   <guid>https://orebit.id/posts/EDA with GeoDataViz/</guid>
   <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
-  <media:content url="https://orebit.id/posts/EDA with GeoDataViz/eda-workflow.png" medium="image" type="image/png"/>
 </item>
 <item>
   <title>Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation</title>
@@ -683,7 +682,7 @@
   <category>Data-Science</category>
   <guid>https://orebit.id/posts/Welcome to Orebit/</guid>
   <pubDate>Fri, 19 Sep 2025 17:00:00 GMT</pubDate>
-  <media:content url="https://orebit.id/posts/Welcome to Orebit/welcome-banner.png" medium="image" type="image/png"/>
+  <media:content url="https://orebit.id/posts/Welcome to Orebit/Open-Source_thumb.png" medium="image" type="image/png"/>
 </item>
 </channel>
 </rss>

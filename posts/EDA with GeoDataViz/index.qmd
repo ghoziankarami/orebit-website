@@ -4,7 +4,6 @@ author: "Ghozian Islam Karami"
 date: "2025-09-20"
 categories: [GeoDataViz, EDA, Geostatistics, Tutorial]
 description: "Master comprehensive exploratory data analysis on geological datasets using GeoDataViz. Learn professional-grade techniques for data validation, spatial analysis, and geological insight extraction before resource estimation."
-image: "eda-workflow.png"
 ---
 
 ## The Foundation of Reliable Resource Estimation
