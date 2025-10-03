@@ -1,349 +1,221 @@
 ---
-title: "Mastering Exploratory Data Analysis with GeoDataViz: The Complete Professional Guide"
+title: "Exploratory Data Analysis for Geological Data with GeoDataViz"
 author: "Ghozian Islam Karami"
 date: "2025-09-20"
-categories: [GeoDataViz, EDA, Geostatistics, Tutorial]
-description: "Master comprehensive exploratory data analysis on geological datasets using GeoDataViz. Learn professional-grade techniques for data validation, spatial analysis, and geological insight extraction before resource estimation."
+categories: [GeoDataViz, EDA, Tutorial]
+description: "Practical guide to exploratory data analysis for geological datasets using R and GeoDataViz workflows."
+image: "eda-workflow.png"
 ---
 
-## The Foundation of Reliable Resource Estimation
+## Why EDA Matters
 
-Exploratory Data Analysis (EDA) represents the critical foundation upon which all reliable geological analysis is built. After over a decade of resource evaluation projects and having signed off on mineral resource estimates as a **Certified Competent Person**, I can state unequivocally: **inadequate EDA is the primary cause of flawed resource models and costly mining decisions.**
+Inadequate exploratory data analysis is the primary cause of flawed resource models. Before resource estimation, you must understand:
 
-This comprehensive guide presents the systematic EDA methodology I've developed through real-world mining projects, now implemented in GeoDataViz to provide every geoscientist with access to professional-grade analytical capabilities.
+- Data quality and completeness
+- Statistical distributions
+- Spatial patterns and bias
+- Geological domains
+- Outlier populations
 
-## Why Professional EDA Matters: Lessons from the Field
+## The 5-Phase EDA Workflow
 
-In my experience evaluating offshore tin exploration projects and conducting resource assessments for major mining companies, I've encountered numerous cases where inadequate EDA led to serious consequences:
+### Phase 1: Data Validation
 
-- **Resource overestimation** of 25% due to unrecognized spatial bias in drilling patterns
-- **Geological domain misclassification** resulting in inappropriate estimation parameters
-- **Grade distribution assumptions** that ignored critical high-grade populations
-- **Data quality issues** that propagated through entire resource models
+First, check data integrity:
 
-These aren't abstract risks—they're real challenges that cost millions in misallocated capital and operational inefficiencies.
+```{r}
+#| label: setup
+#| message: false
 
-## The GeoDataViz EDA Framework
+library(tidyverse)
+library(plotly)
+library(DT)
 
-GeoDataViz implements a comprehensive EDA framework specifically designed for geological datasets, addressing the unique challenges of spatially distributed, geometrically complex drillhole data.
+# Sample drillhole data
+set.seed(123)
+drillhole_data <- tibble(
+  HoleID = rep(paste0("DH", 1:10), each = 10),
+  From = rep(seq(0, 90, 10), 10),
+  To = rep(seq(10, 100, 10), 10),
+  Grade = rlnorm(100, meanlog = 0.5, sdlog = 0.8),
+  X = rep(runif(10, 100, 200), each = 10),
+  Y = rep(runif(10, 100, 200), each = 10),
+  Z = rep(seq(50, 95, 5), 10)
+)
 
-### **Phase 1: Data Integrity Assessment**
-
-Before any analysis begins, GeoDataViz performs exhaustive data validation that goes far beyond simple format checking:
-
-**Spatial Validation:**
-- Coordinate system consistency across all drillholes
-- Survey data validation using closure error analysis
-- Collar position verification against survey control
-- Desurveying accuracy assessment for deviated holes
-
-**Geological Consistency Checks:**
-- Lithological code validation against established dictionaries
-- Structural measurement consistency (azimuth/dip relationships)
-- Alteration intensity scoring validation
-- Geological contact relationship verification
-
-**Assay Data Validation:**
-- Detection limit handling for trace elements
-- Analytical precision assessment through duplicate analysis
-- Batch effect identification using analytical sequence data
-- Standard reference material performance evaluation
-
-The application doesn't just identify issues—it provides specific recommendations for resolution and quantifies the potential impact on subsequent analysis.
-
-### **Phase 2: Statistical Population Analysis**
-
-Understanding grade populations is fundamental to appropriate modeling decisions:
-
-**Univariate Analysis:**
-GeoDataViz provides sophisticated tools for examining individual element distributions:
-
-- **Advanced distribution fitting** using multiple theoretical distributions (log-normal, gamma, Weibull)
-- **Population mixture analysis** to identify distinct grade populations
-- **Outlier identification** using multiple statistical methods with geological context
-- **Transformation assessment** to optimize data for geostatistical analysis
-
-**Key Insights for Practice:**
-When I analyze grade distributions, I'm not just looking at statistical parameters—I'm identifying geological processes. A bimodal distribution might indicate two distinct mineralization events. Extreme skewness could suggest supergene enrichment. These insights directly inform domain definition and estimation strategies.
-
-**Multivariate Relationships:**
-Understanding element associations reveals critical geological processes:
-
-- **Correlation matrix analysis** with statistical significance testing
-- **Principal component analysis** to identify underlying geological controls
-- **Cluster analysis** for natural population identification
-- **Geochemical ratio analysis** for process understanding
-
-### **Phase 3: Spatial Pattern Recognition**
-
-Geological data is inherently spatial, and GeoDataViz provides comprehensive tools for spatial analysis:
-
-**Drillhole Coverage Assessment:**
-- **Spatial density analysis** identifying over-sampled and under-sampled areas
-- **Directional bias identification** in drilling patterns
-- **Coverage uniformity evaluation** for different geological domains
-- **Sampling adequacy assessment** for reliable resource estimation
-
-**3D Geological Visualization:**
-The interactive 3D visualization capabilities allow for:
-
-- **Dynamic drillhole trace examination** with real-time grade coloring
-- **Cross-sectional analysis** along user-defined orientations
-- **Geological domain visualization** in 3D space
-- **High-grade zone identification** and continuity assessment
-
-**Spatial Continuity Preliminary Analysis:**
-Before formal variogram modeling:
-
-- **Directional grade trend analysis** to identify anisotropy
-- **Contact analysis** between geological domains
-- **Structural control assessment** on mineralization distribution
-- **Scale of continuity estimation** for different elements and domains
-
-### **Phase 4: Geological Domain Intelligence**
-
-Professional resource estimation requires geologically sensible domain boundaries:
-
-**Statistical Domain Validation:**
-- **Grade distribution comparison** between proposed domains using formal statistical tests
-- **Contact sharpness analysis** to distinguish hard from soft boundaries
-- **Transitional zone characterization** for gradational contacts
-- **Domain boundary optimization** using grade continuity metrics
-
-**Advanced Domain Analysis:**
-- **Multivariate discriminant analysis** for domain boundary refinement
-- **Machine learning clustering** for natural population identification
-- **Structural geology integration** with statistical domain analysis
-- **Alteration intensity correlation** with grade distribution patterns
-
-This analysis provides objective justification for geological domain boundaries—essential for professional resource reporting standards.
-
-### **Phase 5: Data Quality Intelligence**
-
-Understanding data quality is crucial for appropriate estimation parameter selection:
-
-**Sample Support Analysis:**
-- **Sample length distribution** evaluation by geological domain
-- **Recovery assessment** and its correlation with grade
-- **Core quality evaluation** impact on assay reliability
-- **Drilling method influence** on data quality and spatial bias
-
-**QA/QC Performance Evaluation:**
-- **Blank performance** indicating potential contamination
-- **Duplicate precision** assessment for sampling and analytical protocols
-- **Standard accuracy** evaluation for analytical bias detection
-- **Field duplicate analysis** for overall procedure assessment
-
-## Practical EDA Workflow Implementation
-
-### **Step 1: Data Loading and Initial Validation**
-```
-1. Import drillhole data (collar, survey, assay, geology tables)
-2. Execute comprehensive data validation protocols
-3. Generate automated data quality report with issue prioritization
-4. Address critical issues before proceeding (coordinate systems, major gaps)
+# Data summary
+cat("Total samples:", nrow(drillhole_data), "\n")
+cat("Unique holes:", n_distinct(drillhole_data$HoleID), "\n")
+cat("Grade range:", round(min(drillhole_data$Grade), 2), "-", 
+    round(max(drillhole_data$Grade), 2), "\n")
 ```
 
-### **Step 2: Statistical Foundation Analysis**
+### Phase 2: Statistical Analysis
+
+Understand grade distribution:
+
+```{r}
+#| label: fig-distribution
+#| fig-cap: "Grade distribution analysis"
+
+# Summary statistics
+summary_stats <- drillhole_data %>%
+  summarise(
+    Mean = mean(Grade),
+    Median = median(Grade),
+    SD = sd(Grade),
+    CV = sd(Grade)/mean(Grade),
+    Skewness = moments::skewness(Grade)
+  )
+
+print(summary_stats)
+
+# Histogram and boxplot
+p1 <- plot_ly(drillhole_data, x = ~Grade, type = "histogram", 
+              nbinsx = 30, name = "Distribution") %>%
+  layout(xaxis = list(title = "Grade"), 
+         yaxis = list(title = "Frequency"))
+
+p2 <- plot_ly(drillhole_data, y = ~Grade, type = "box", 
+              name = "Boxplot") %>%
+  layout(yaxis = list(title = "Grade"))
+
+subplot(p1, p2, nrows = 1, shareY = FALSE, titleX = TRUE) %>%
+  layout(title = "Grade Distribution Analysis")
 ```
-1. Generate comprehensive univariate statistics for all elements
-2. Identify and characterize outlier populations
-3. Perform distribution assessment and transformation evaluation
-4. Execute multivariate correlation analysis
+
+**Key Observations:**
+- Check for skewness (common in geological data)
+- Identify outliers using boxplot
+- Assess if transformation needed
+
+### Phase 3: Spatial Analysis
+
+Visualize spatial patterns:
+
+```{r}
+#| label: fig-spatial
+#| fig-cap: "Spatial distribution of drillholes"
+
+# Calculate average grade per hole
+collar_summary <- drillhole_data %>%
+  group_by(HoleID, X, Y) %>%
+  summarise(
+    AvgGrade = mean(Grade),
+    MaxGrade = max(Grade),
+    .groups = 'drop'
+  )
+
+# Interactive map
+plot_ly(collar_summary, x = ~X, y = ~Y, color = ~AvgGrade,
+        type = 'scatter', mode = 'markers',
+        marker = list(size = 15, colorscale = 'Viridis', 
+                     showscale = TRUE, colorbar = list(title = "Grade")),
+        text = ~paste("Hole:", HoleID, 
+                     "<br>Avg Grade:", round(AvgGrade, 2))) %>%
+  layout(title = "Drillhole Collar Map",
+         xaxis = list(title = "Easting (X)"),
+         yaxis = list(title = "Northing (Y)"))
 ```
 
-### **Step 3: Spatial Intelligence Development**
+**What to Look For:**
+- High-grade clustering
+- Spatial trends
+- Drilling density variations
+- Potential bias in sampling
+
+### Phase 4: Outlier Analysis
+
+Identify and understand outliers:
+
+```{r}
+#| label: outlier-analysis
+
+# Calculate IQR method thresholds
+Q1 <- quantile(drillhole_data$Grade, 0.25)
+Q3 <- quantile(drillhole_data$Grade, 0.75)
+IQR <- Q3 - Q1
+
+lower_bound <- Q1 - 1.5 * IQR
+upper_bound <- Q3 + 1.5 * IQR
+
+# Identify outliers
+outliers <- drillhole_data %>%
+  filter(Grade > upper_bound | Grade < lower_bound) %>%
+  arrange(desc(Grade))
+
+cat("Number of outliers:", nrow(outliers), "\n")
+cat("Outlier threshold:", round(upper_bound, 2), "\n")
+cat("Top 5 outliers:\n")
+print(head(outliers %>% select(HoleID, From, To, Grade), 5))
 ```
-1. Create interactive collar location maps with attribute overlays
-2. Generate 3D drillhole visualizations with grade coloring
-3. Perform drilling density and coverage assessment
-4. Identify spatial bias patterns in sampling
+
+**Decision Points:**
+- Are outliers geologically valid?
+- Do they represent high-grade zones?
+- Should they be capped or modeled separately?
+
+### Phase 5: 3D Visualization
+
+Visualize geological context:
+
+```{r}
+#| label: fig-3d
+#| fig-cap: "3D drillhole visualization"
+
+# Create 3D visualization
+plot_ly(drillhole_data, x = ~X, y = ~Y, z = ~Z,
+        color = ~Grade, type = 'scatter3d', mode = 'markers',
+        marker = list(size = 3, colorscale = 'Viridis',
+                     showscale = TRUE, colorbar = list(title = "Grade")),
+        text = ~paste("Hole:", HoleID, 
+                     "<br>Depth:", From, "-", To,
+                     "<br>Grade:", round(Grade, 2))) %>%
+  layout(title = "3D Drillhole View",
+         scene = list(
+           xaxis = list(title = "Easting"),
+           yaxis = list(title = "Northing"),
+           zaxis = list(title = "Elevation", autorange = "reversed")
+         ))
 ```
-
-### **Step 4: Geological Context Integration**
-```
-1. Analyze grade distributions by geological domain
-2. Perform statistical validation of domain boundaries
-3. Assess structural controls on mineralization
-4. Integrate geological and analytical data patterns
-```
-
-### **Step 5: Pre-Estimation Readiness Assessment**
-```
-1. Validate geological domain statistical integrity
-2. Assess data transformation requirements for geostatistics
-3. Evaluate spatial continuity patterns for estimation parameters
-4. Generate comprehensive EDA summary for resource estimation planning
-```
-
-## Advanced EDA Techniques in Professional Practice
-
-### **Composite Length Optimization Analysis**
-
-One of the most critical decisions in resource estimation is composite length selection. GeoDataViz provides sophisticated tools for this analysis:
-
-**Geological Control Integration:**
-- **Geological unit thickness analysis** to ensure composites don't span domain boundaries inappropriately
-- **Mineralization continuity assessment** to match composite length with geological control scale
-- **Statistical impact evaluation** showing how different composite lengths affect grade distribution parameters
-
-**Practical Implementation:**
-In offshore tin projects, I've found that 1-meter composites often provide optimal balance between geological detail and statistical stability. However, this varies significantly with geological complexity and drilling density.
-
-### **Contact Analysis for Domain Definition**
-
-Professional resource estimation requires geologically justified domains:
-
-**Quantitative Contact Analysis:**
-- **Grade transition analysis** across proposed geological boundaries
-- **Statistical significance testing** for population differences between domains
-- **Transitional zone characterization** where gradational contacts exist
-- **Boundary uncertainty quantification** for resource classification decisions
-
-**Advanced Techniques:**
-- **Moving window analysis** to identify optimal boundary locations
-- **Machine learning boundary optimization** using gradient-based methods
-- **Multivariate boundary analysis** considering multiple elements simultaneously
-
-### **Spatial Bias Assessment**
-
-Understanding sampling bias is crucial for reliable resource estimation:
-
-**Drilling Pattern Analysis:**
-- **Preferential sampling identification** where high-grade areas are over-drilled
-- **Spatial clustering assessment** affecting sample independence assumptions
-- **Coverage uniformity evaluation** for different geological environments
-- **Declustering weight calculation** for unbiased statistical analysis
-
-**Temporal Bias Evaluation:**
-- **Campaign-based analysis** identifying systematic differences between drilling programs
-- **Seasonal effects** in drilling accessibility affecting spatial coverage
-- **Technology evolution impact** on data quality and reliability over time
-
-## Critical EDA Outputs for Resource Estimation
-
-After completing comprehensive EDA using GeoDataViz, you should have:
-
-### **Data Quality Documentation**
-- **Validated, clean dataset** with documented resolution of all critical issues
-- **Quality assurance metrics** quantifying reliability of different data subsets
-- **Spatial bias characterization** informing appropriate estimation parameters
-- **Sample support assessment** guiding block size selection for resource models
-
-### **Geological Intelligence**
-- **Statistically validated geological domains** with documented boundary justification
-- **Grade population characterization** informing appropriate estimation methodologies
-- **Structural control understanding** guiding anisotropy parameters for variogram modeling
-- **High-grade zone identification** requiring specific estimation strategies
-
-### **Statistical Foundation**
-- **Distribution parameters** for all elements by geological domain
-- **Transformation recommendations** for geostatistical analysis
-- **Correlation matrices** identifying elements suitable for co-estimation
-- **Outlier treatment strategies** based on geological context and statistical behavior
-
-### **Spatial Continuity Insights**
-- **Preliminary continuity assessment** providing starting parameters for variogram modeling
-- **Anisotropy identification** indicating preferential directions for spatial modeling
-- **Scale of continuity estimates** informing search parameters for estimation
-- **Contact behavior analysis** guiding estimation approach at domain boundaries
-
-## Common EDA Mistakes and How GeoDataViz Prevents Them
-
-### **Mistake 1: Inadequate Data Validation**
-**Problem:** Proceeding with analysis despite fundamental data quality issues
-**GeoDataViz Solution:** Comprehensive automated validation with clear issue prioritization and impact assessment
-
-### **Mistake 2: Statistical Analysis Without Geological Context**
-**Problem:** Applying purely statistical approaches without considering geological processes
-**GeoDataViz Solution:** Integration of geological data with statistical analysis, providing geological context for all statistical interpretations
-
-### **Mistake 3: Ignoring Spatial Relationships**
-**Problem:** Treating geological data as independent observations when spatial correlation is strong
-**GeoDataViz Solution:** Spatial analysis tools that reveal clustering, trends, and continuity patterns essential for appropriate modeling
-
-### **Mistake 4: Inappropriate Domain Boundaries**
-**Problem:** Using geological boundaries without statistical validation of grade population differences
-**GeoDataViz Solution:** Quantitative domain validation tools that test statistical significance of proposed boundaries
-
-### **Mistake 5: Insufficient Outlier Analysis**
-**Problem:** Generic outlier treatment without considering geological context and estimation impact
-**GeoDataViz Solution:** Multiple outlier identification methods with geological context assessment and estimation impact evaluation
-
-## Integration with Resource Estimation Workflow
-
-The EDA insights from GeoDataViz directly inform every aspect of subsequent resource estimation:
-
-**Domain Strategy:**
-- Validated geological domains with statistical justification
-- Contact behavior analysis informing boundary treatment in estimation
-- Transitional zone identification requiring special handling
-
-**Estimation Parameters:**
-- Search parameters based on spatial continuity analysis
-- Minimum and maximum sample requirements informed by data density assessment
-- Anisotropy parameters guided by directional continuity analysis
-
-**Data Treatment:**
-- Outlier strategies based on geological context and statistical behavior
-- Transformation approaches optimized for each geological domain
-- Composite length selection justified by geological and statistical analysis
-
-**Quality Assurance:**
-- Data quality metrics informing confidence in different areas
-- Bias assessment guiding declustering and validation approaches
-- Uncertainty quantification based on data quality and spatial coverage
-
-## Advanced GeoDataViz Pro Features
-
-The upcoming professional version will include enhanced EDA capabilities:
-
-**Automated Domain Optimization:**
-- Machine learning algorithms for optimal geological domain boundary identification
-- Multi-element domain analysis using advanced clustering techniques
-- Temporal evolution analysis for domains defined by different drilling campaigns
-
-**Advanced Statistical Analysis:**
-- Robust statistical methods for heavily skewed distributions
-- Compositional data analysis for whole-rock geochemical datasets
-- Time series analysis for deposits with temporal mineralization patterns
-
-**Integrated Uncertainty Assessment:**
-- Data quality uncertainty propagation through EDA results
-- Spatial sampling uncertainty quantification
-- Geological interpretation uncertainty incorporation
-
-## Professional Development Through EDA Mastery
-
-Understanding EDA at this level provides significant professional advantages:
-
-**Technical Competency:**
-- Ability to identify and resolve data quality issues that compromise resource estimates
-- Statistical and geological integration skills essential for modern resource geology
-- Spatial analysis capabilities that distinguish professional from basic geological analysis
-
-**Professional Credibility:**
-- Documentation standards that meet international resource reporting requirements
-- Transparency in analytical methods essential for independent technical reviews
-- Integration of geological knowledge with quantitative analysis demonstrating modern professional capabilities
-
-**Economic Impact:**
-- Early identification of data quality issues preventing costly modeling errors
-- Optimal geological domain definition improving resource estimate accuracy
-- Appropriate statistical treatment enhancing resource classification confidence
-
-## Conclusion: EDA as the Foundation of Excellence
-
-Professional exploratory data analysis represents the difference between competent and exceptional geological practice. Through GeoDataViz, these sophisticated analytical capabilities are now accessible to every geoscientist, regardless of software budget or institutional resources.
-
-The investment in thorough EDA pays significant dividends: more accurate resource models, enhanced professional credibility, and the confidence that comes from understanding your data completely before making critical estimation decisions.
-
-Remember: **every major resource estimation error I've encountered could have been prevented by more thorough exploratory data analysis.** Make EDA your competitive advantage.
-
-## Next in The Library
-
-Our next comprehensive guide will cover **"Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques"**, where we'll transform the insights from EDA into estimation-ready datasets through sophisticated data conditioning workflows.
 
 ---
 
-*Ready to experience professional-grade EDA capabilities? Try the [GeoDataViz interactive demo](https://geodataviz.shinyapps.io/geodataviz/) and see how these concepts transform your geological data analysis workflow. For visual, step-by-step tutorials on these techniques, check out our guides on [Instagram @orebit.id](https://instagram.com/orebit.id).*
+## Quick EDA Checklist
+
+Before proceeding to resource estimation:
+
+- [ ] Data validated (no gaps, coordinates correct)
+- [ ] Statistical distribution understood
+- [ ] Outliers identified and assessed
+- [ ] Spatial patterns reviewed
+- [ ] Geological domains preliminary defined
+- [ ] QA/QC results reviewed
+
+---
+
+## Using GeoDataViz
+
+All these analyses can be performed interactively in GeoDataViz:
+
+1. **Upload Data:** CSV/Excel with collar, survey, assay tables
+2. **Auto-Validation:** Instant data quality report
+3. **Interactive EDA:** Click-and-explore interface
+4. **Export Results:** PDF reports and processed data
+
+[**Try GeoDataViz Demo →**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank"}
+
+---
+
+## Next Steps
+
+After completing EDA:
+1. **Data Preprocessing:** Compositing and domain definition
+2. **Variogram Modeling:** Spatial continuity analysis
+3. **Resource Estimation:** Block modeling and kriging
+
+**Next Guide:** [Pre-Processing Drillhole Data →](/posts/preprocessing-drillhole-data/)
+
+---
+
+*For visual tutorials on these techniques, check [@orebit.id](https://instagram.com/orebit.id) on Instagram.*

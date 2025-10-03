@@ -1,174 +1,113 @@
 ---
-title: "Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation"
+title: "Welcome to Orbit: Open-Source Geological Analysis Tools"
 author: "Ghozian Islam Karami"
 date: "2025-09-20"
-categories: [Welcome, Open-Source, Geology, Data-Science]
-description: "Welcome to Orebit's comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges."
-image: "Open-Source_thumb.png"
-image-alt: "Open Source"
+categories: [Welcome, Open-Source, GeoDataViz]
+description: "Discover Orbit's suite of R Shiny applications for geological data analysis - from exploration to resource estimation."
+image: "welcome-banner.png"
 ---
 
-## The Vision Behind The Library
+## Professional Geological Analysis, Accessible to Everyone
 
-Welcome to what I call "The Library"—the definitive resource hub where traditional geological expertise meets cutting-edge data science innovation. I'm Ghozian Islam Karami, and after over a decade in the mining industry as a **Senior Geologist and Certified Competent Person (CP)**, I've built this platform to serve a critical mission: **democratizing access to advanced geological analysis tools and knowledge.**
+**Orbit Geological Solutions** develops open-source R Shiny applications that transform geological data analysis. Our mission: provide enterprise-level analytical tools without expensive licensing fees.
 
-This isn't just another technical blog. It's the centerpiece of a comprehensive content ecosystem designed to transform how geological professionals approach data analysis, from exploration through resource estimation to mine planning.
+### The Challenge
 
-## The Problem We're Solving
+Traditional geological software costs $20,000+ annually, creating barriers for:
+- Small exploration companies
+- Independent consultants
+- Geologists in developing regions
+- Educational institutions
 
-Throughout my career—from offshore tin exploration projects to resource evaluation for major mining companies—I've witnessed a persistent challenge: **powerful geological analysis capabilities locked behind expensive proprietary software, creating artificial barriers that exclude talented professionals based on budget rather than expertise.**
+### Our Solution: Three Integrated Products
 
-The result? Geoscientists in smaller companies, independent consultants, and professionals in developing regions often lack access to the same analytical tools used by major mining corporations. This disparity doesn't just limit individual careers—it constrains the entire industry's ability to innovate and solve complex geological challenges.
+#### 1. GeoDataViz (Available Now)
+**Complete geological data analysis platform**
 
-## The Solution: Practitioner-Built, Open-Source Excellence
+- Interactive 3D drillhole visualization
+- Advanced statistical analysis & EDA
+- Comprehensive QA/QC validation
+- Professional reporting tools
 
-My vision is straightforward but transformative: **to be the catalyst for a data-driven transformation in geoscience, establishing open and transparent tools as the standard for every professional to unlock the full potential of their data.**
+[**Try Demo →**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank"}
 
-This platform serves as the foundation for that transformation, providing:
+#### 2. Resource Estimation App (Coming Q2 2025)
+Professional geostatistical analysis with automated variogram modeling, kriging, and uncertainty quantification.
 
-### **Comprehensive Technical Guidance**
-Every post in The Library is designed as a definitive resource—not superficial overviews, but deep-dive analyses that serve as permanent references for specific geological data analysis challenges. These are the guides I wished I had when tackling complex analytical problems in real mining projects.
-
-### **Practitioner-Built Solutions**
-Unlike purely academic resources or vendor-specific tutorials, every technique and tool discussed here has been tested in actual mining industry applications. My mission is **to empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence.**
-
-### **Transparent, Reproducible Methods**
-Every analytical approach emphasizes transparency and reproducibility. When I share a geostatistical technique or data validation workflow, you get complete visibility into every step—no black boxes, no proprietary algorithms you can't examine or modify.
-
-## The Content Ecosystem Strategy
-
-The Library operates as the centerpiece of an integrated content ecosystem, each platform serving a distinct purpose:
-
-### **The Library (This Website)**
-Long-form, comprehensive articles that establish the highest level of technical authority. Each post is designed to be the ultimate guide on its topic, serving as long-term SEO assets and permanent professional references.
-
-### **The Professional Stage (LinkedIn)**
-My [LinkedIn profile](https://www.linkedin.com/in/ghoziankarami/) serves as the primary platform for building professional authority, sharing industry insights, and leveraging my existing network to connect with geological professionals worldwide.
-
-### **The Visual Classroom (Instagram)**
-[@orebit.id](https://instagram.com/orebit.id) provides bite-sized, visual tutorials aimed at students and junior professionals, making complex geological concepts accessible through compelling graphics and step-by-step visual guides.
-
-### **The Workbench (GeoDataViz)**
-The tangible proof-of-concept that demonstrates our philosophy in action—a fully functional, open-source R Shiny application that provides enterprise-level geological analysis capabilities without enterprise-level costs.
-
-This integrated approach ensures that whether you need in-depth technical knowledge, professional networking opportunities, quick visual learning, or practical analytical tools, you have access to geological expertise tailored to your specific needs and learning style.
-
-## What Makes This Different
-
-### **Real-World Validation**
-Every technique discussed has been applied in actual mining projects. When I write about drillhole data validation, it's based on identifying critical data quality issues that could have resulted in millions of dollars in misallocated resources. When I discuss geostatistical modeling, it's grounded in resource estimates I've personally signed off on as a Certified Competent Person.
-
-### **Complete Transparency**
-No proprietary black boxes. Every analytical approach can be examined, understood, and modified to meet your specific requirements. This transparency isn't just philosophical—it's essential for meeting modern standards of scientific reproducibility and professional accountability.
-
-### **Practical Applicability**
-Rather than theoretical examples with perfect datasets, I focus on the messy, complex reality of geological data analysis. How do you handle missing assay values in resource estimation? What's the best approach for dealing with highly skewed grade distributions? How do you validate resource models when drilling is sparse?
-
-### **Cost-Effective Excellence**
-Every solution emphasizes open-source approaches that deliver professional-grade results without requiring expensive software licenses. This democratizes access to advanced analytical capabilities for individual consultants, small exploration companies, and geologists in emerging economies.
-
-## The Technical Focus Areas
-
-### **Exploratory Data Analysis Mastery**
-Comprehensive guides to understanding geological datasets before modeling, identifying data quality issues that could compromise resource estimates, and extracting geological insights that inform sampling strategies.
-
-### **Advanced Geostatistics**
-Practical applications of variogram modeling, kriging techniques, and uncertainty quantification—moving beyond textbook examples to handle the complex spatial relationships found in real geological environments.
-
-### **Resource Estimation Workflows**
-Complete workflows from raw drillhole data through final resource models, including domain analysis, data preprocessing, estimation parameter selection, and model validation techniques.
-
-### **Quality Assurance Systems**
-Development of robust QA/QC protocols that ensure data integrity throughout the geological analysis workflow, based on procedures I've implemented in actual mining operations.
-
-### **Integration Strategies**
-Practical approaches for integrating open-source tools with existing proprietary software environments, enabling gradual transition to more transparent, cost-effective analytical workflows.
-
-### **Modern Visualization Techniques**
-Creating compelling, publication-ready geological visualizations that communicate complex analytical results to diverse audiences—from technical peers to executive management.
-
-## The GeoDataViz Connection
-
-Central to this ecosystem is **GeoDataViz**, my open-source R Shiny application that serves as the practical implementation of everything discussed in The Library. This isn't just a supporting tool—it's the tangible demonstration that open-source solutions can deliver enterprise-level geological analysis capabilities.
-
-Every major technique discussed in The Library posts can be performed using GeoDataViz, creating a seamless connection between theoretical understanding and practical application. Want to understand advanced exploratory data analysis? Read the comprehensive guide in The Library, then implement the techniques immediately using GeoDataViz's interactive interface.
-
-For visual, step-by-step tutorials on GeoDataViz features, you can find simplified guides on our [@orebit.id Instagram](https://instagram.com/orebit.id), while professional applications and case studies are regularly shared on my [LinkedIn profile](https://www.linkedin.com/in/ghoziankarami/).
-
-## Who Benefits from This Platform
-
-### **Individual Geologists**
-Access to advanced analytical techniques without expensive software investments, plus comprehensive training resources for professional development.
-
-### **Small Exploration Companies**  
-Enterprise-level analytical capabilities that compete with major mining companies, without the associated software licensing costs.
-
-### **Independent Consultants**
-Differentiation through advanced analytical capabilities and transparent, reproducible methodologies that enhance client confidence.
-
-### **Educational Institutions**
-Complete curriculum resources for teaching modern geological data analysis, with free access to professional-grade analytical tools.
-
-### **International Professionals**
-Elimination of geographic and economic barriers to advanced geological analysis capabilities, fostering global knowledge sharing and professional development.
-
-## The Content Recycling Strategy
-
-Each comprehensive Library post becomes the foundation for targeted content across other platforms:
-
-- **LinkedIn articles** highlighting key insights and professional applications
-- **Instagram tutorials** breaking down complex techniques into visual, step-by-step guides  
-- **GeoDataViz feature development** implementing discussed techniques in the application interface
-
-This approach ensures maximum knowledge dissemination while driving traffic back to The Library for deeper technical understanding and to GeoDataViz for practical application.
-
-## What's Coming in The Library
-
-The next series of posts will establish The Library as the definitive resource for geological data analysis:
-
-### **"Exploratory Data Analysis with GeoDataViz: A Complete Professional Guide"**
-The comprehensive resource for understanding geological datasets before modeling—covering everything from data validation through preliminary geostatistical analysis.
-
-### **"Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques"**
-A complete workflow for transforming raw geological data into estimation-ready datasets, including compositing strategies, outlier treatment, and domain optimization.
-
-### **"Variogram Modeling in Practice: Beyond Textbook Examples"**
-Real-world approaches to spatial continuity analysis, handling geological complexity, and validating geostatistical models in challenging environments.
-
-### **"Resource Estimation Workflows: From Data to Reliable Models"**
-Complete resource estimation methodologies using open-source tools, including uncertainty quantification and model validation techniques.
-
-### **"Integration Strategies: Connecting Open-Source and Proprietary Workflows"**
-Practical approaches for incorporating open-source tools into existing geological workflows without disrupting established procedures.
-
-## Join the Transformation
-
-This platform represents more than technical knowledge sharing—it's building a community that values transparency, accessibility, and innovation in geological analysis. The mining industry faces unprecedented challenges, from declining ore grades to increased environmental scrutiny. Meeting these challenges requires not just better technology, but fundamentally different approaches to knowledge sharing and collaboration.
-
-### **How to Engage**
-
-**Explore The Library:** Each post is designed as a comprehensive reference. Bookmark the techniques relevant to your work and return when facing similar analytical challenges.
-
-**Experience the Technology:** Try [GeoDataViz](https://geodataviz.shinyapps.io/geodataviz/) to see these concepts in action. The entire validation process discussed in these posts can be performed interactively in seconds using our open-source application.
-
-**Connect Professionally:** Follow my [LinkedIn profile](https://www.linkedin.com/in/ghoziankarami/) for industry insights, professional networking, and real-world case studies.
-
-**Visual Learning:** Check [@orebit.id](https://instagram.com/orebit.id) for visual, step-by-step tutorials that make complex geological techniques accessible.
-
-**Contribute to Innovation:** Join the [GitHub community](https://github.com/ghoziankarami/geodataviz) to contribute code, suggest features, or provide feedback that shapes the future of geological analysis tools.
-
-## The Long-Term Vision
-
-My goal extends beyond individual posts or software tools. I'm working toward **a fundamental shift in how the geological community approaches data analysis**—from proprietary, expensive, black-box solutions toward transparent, accessible, community-driven innovation.
-
-Every comprehensive guide in The Library, every feature in GeoDataViz, and every professional connection made through this platform contributes to this larger transformation. Together, we're building the foundation for more accurate, reliable, and accessible geological analysis that serves professionals regardless of their economic circumstances or geographic location.
-
-## Ready to Begin?
-
-The intersection of traditional geological expertise and modern data science offers unprecedented opportunities for innovation and professional growth. Whether you're looking to modernize existing workflows, reduce software costs, or simply access better analytical tools, The Library provides the roadmap and GeoDataViz provides the practical implementation.
-
-Welcome to this transformation. The future of geological data analysis is open, transparent, and accessible to every professional willing to embrace it.
+#### 3. Pit Optimizer (Coming Q3 2025)
+Strategic mine planning with NPV optimization and constraint modeling.
 
 ---
 
-*Ready to see these concepts in action? Explore the [GeoDataViz live demo](https://geodataviz.shinyapps.io/geodataviz/) and discover how open-source tools can transform your geological workflows.*
+## Why Choose Orbit?
+
+**Cost-Effective:** Enterprise capabilities without enterprise costs  
+**Transparent:** Complete visibility into analytical methods  
+**Professional:** Built by practicing geoscientists for real-world challenges  
+**Accessible:** Cloud-native, runs in any browser
+
+---
+
+## Quick Start with R
+
+Orbit applications are built with R. Here's a simple example of geological data visualization:
+
+```{r}
+#| label: setup
+#| message: false
+
+library(tidyverse)
+library(plotly)
+
+# Sample drillhole data
+collar_data <- tibble(
+  HoleID = paste0("DH", 1:20),
+  X = runif(20, 100, 500),
+  Y = runif(20, 100, 500),
+  Z = runif(20, 50, 200),
+  Grade = rlnorm(20, 0, 0.5)
+)
+
+# Interactive 3D visualization
+plot_ly(collar_data, x = ~X, y = ~Y, z = ~Z, 
+        color = ~Grade, type = 'scatter3d', mode = 'markers',
+        marker = list(size = 8, colorscale = 'Viridis'),
+        text = ~paste("Hole:", HoleID, "<br>Grade:", round(Grade, 2))) %>%
+  layout(title = "Drillhole Collar Map",
+         scene = list(
+           xaxis = list(title = "Easting"),
+           yaxis = list(title = "Northing"),
+           zaxis = list(title = "Elevation")
+         ))
+```
+
+---
+
+## Learning Resources
+
+### Technical Blog
+Comprehensive guides on:
+- Exploratory data analysis workflows
+- Data preprocessing techniques
+- Geostatistical modeling
+- Resource estimation best practices
+
+### Community
+- **GitHub:** [github.com/orbit-geo](https://github.com/orbit-geo)
+- **LinkedIn:** Professional networking and updates
+- **Instagram:** [@orebit.id](https://instagram.com/orebit.id) - Visual tutorials
+
+---
+
+## Get Started
+
+**For Individuals:** Try GeoDataViz demo and explore tutorials  
+**For Companies:** Contact us for enterprise deployment  
+**For Developers:** Contribute to open-source development
+
+[**Launch GeoDataViz**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-primary target="_blank"}
+[**View Documentation**](/blog){.btn .btn-secondary}
+
+---
+
+*Orbit Geological Solutions - Making professional geological analysis accessible to everyone.*

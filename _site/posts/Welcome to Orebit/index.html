@@ -8,9 +8,9 @@
 
 <meta name="author" content="Ghozian Islam Karami">
 <meta name="dcterms.date" content="2025-09-20">
-<meta name="description" content="Welcome to Orebit’s comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges.">
+<meta name="description" content="Discover Orbit’s suite of R Shiny applications for geological data analysis - from exploration to resource estimation.">
 
-<title>Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation – Orebit.id - Geology, Digitized</title>
+<title>Welcome to Orbit: Open-Source Geological Analysis Tools – Orebit.id - Geology, Digitized</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,18 +116,34 @@ gtag('js', new Date());
 gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="../../site_libs/plotly-binding-4.11.0/plotly.js"></script>
+
+<script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="../../site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="../../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="../../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="../../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="../../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
 
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Orebit.id - Geology, Digitized">
 <meta property="og:description" content="Professional geological consulting and data analysis services">
-<meta property="og:image" content="https://orebit.id/posts/Welcome to Orebit/Open-Source_thumb.png">
+<meta property="og:image" content="https://orebit.id/posts/Welcome to Orebit/welcome-banner.png">
 <meta property="og:site_name" content="Orebit.id - Geology, Digitized">
-<meta property="og:image:alt" content="Open Source">
-<meta name="twitter:title" content="Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation – Orebit.id - Geology, Digitized">
-<meta name="twitter:description" content="Welcome to Orebit’s comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges.">
-<meta name="twitter:image" content="https://orebit.id/posts/Welcome to Orebit/Open-Source_thumb.png">
-<meta name="twitter:image:alt" content="Open Source">
+<meta name="twitter:title" content="Welcome to Orbit: Open-Source Geological Analysis Tools – Orebit.id - Geology, Digitized">
+<meta name="twitter:description" content="Discover Orbit’s suite of R Shiny applications for geological data analysis - from exploration to resource estimation.">
+<meta name="twitter:image" content="https://orebit.id/posts/Welcome to Orebit/welcome-banner.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -193,61 +209,19 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
     <h2 id="toc-title">Di halaman ini</h2>
    
   <ul>
-  <li><a href="#the-vision-behind-the-library" id="toc-the-vision-behind-the-library" class="nav-link active" data-scroll-target="#the-vision-behind-the-library">The Vision Behind The Library</a></li>
-  <li><a href="#the-problem-were-solving" id="toc-the-problem-were-solving" class="nav-link" data-scroll-target="#the-problem-were-solving">The Problem We’re Solving</a></li>
-  <li><a href="#the-solution-practitioner-built-open-source-excellence" id="toc-the-solution-practitioner-built-open-source-excellence" class="nav-link" data-scroll-target="#the-solution-practitioner-built-open-source-excellence">The Solution: Practitioner-Built, Open-Source Excellence</a>
+  <li><a href="#professional-geological-analysis-accessible-to-everyone" id="toc-professional-geological-analysis-accessible-to-everyone" class="nav-link active" data-scroll-target="#professional-geological-analysis-accessible-to-everyone">Professional Geological Analysis, Accessible to Everyone</a>
   <ul class="collapse">
-  <li><a href="#comprehensive-technical-guidance" id="toc-comprehensive-technical-guidance" class="nav-link" data-scroll-target="#comprehensive-technical-guidance"><strong>Comprehensive Technical Guidance</strong></a></li>
-  <li><a href="#practitioner-built-solutions" id="toc-practitioner-built-solutions" class="nav-link" data-scroll-target="#practitioner-built-solutions"><strong>Practitioner-Built Solutions</strong></a></li>
-  <li><a href="#transparent-reproducible-methods" id="toc-transparent-reproducible-methods" class="nav-link" data-scroll-target="#transparent-reproducible-methods"><strong>Transparent, Reproducible Methods</strong></a></li>
+  <li><a href="#the-challenge" id="toc-the-challenge" class="nav-link" data-scroll-target="#the-challenge">The Challenge</a></li>
+  <li><a href="#our-solution-three-integrated-products" id="toc-our-solution-three-integrated-products" class="nav-link" data-scroll-target="#our-solution-three-integrated-products">Our Solution: Three Integrated Products</a></li>
   </ul></li>
-  <li><a href="#the-content-ecosystem-strategy" id="toc-the-content-ecosystem-strategy" class="nav-link" data-scroll-target="#the-content-ecosystem-strategy">The Content Ecosystem Strategy</a>
+  <li><a href="#why-choose-orbit" id="toc-why-choose-orbit" class="nav-link" data-scroll-target="#why-choose-orbit">Why Choose Orbit?</a></li>
+  <li><a href="#quick-start-with-r" id="toc-quick-start-with-r" class="nav-link" data-scroll-target="#quick-start-with-r">Quick Start with R</a></li>
+  <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link" data-scroll-target="#learning-resources">Learning Resources</a>
   <ul class="collapse">
-  <li><a href="#the-library-this-website" id="toc-the-library-this-website" class="nav-link" data-scroll-target="#the-library-this-website"><strong>The Library (This Website)</strong></a></li>
-  <li><a href="#the-professional-stage-linkedin" id="toc-the-professional-stage-linkedin" class="nav-link" data-scroll-target="#the-professional-stage-linkedin"><strong>The Professional Stage (LinkedIn)</strong></a></li>
-  <li><a href="#the-visual-classroom-instagram" id="toc-the-visual-classroom-instagram" class="nav-link" data-scroll-target="#the-visual-classroom-instagram"><strong>The Visual Classroom (Instagram)</strong></a></li>
-  <li><a href="#the-workbench-geodataviz" id="toc-the-workbench-geodataviz" class="nav-link" data-scroll-target="#the-workbench-geodataviz"><strong>The Workbench (GeoDataViz)</strong></a></li>
+  <li><a href="#technical-blog" id="toc-technical-blog" class="nav-link" data-scroll-target="#technical-blog">Technical Blog</a></li>
+  <li><a href="#community" id="toc-community" class="nav-link" data-scroll-target="#community">Community</a></li>
   </ul></li>
-  <li><a href="#what-makes-this-different" id="toc-what-makes-this-different" class="nav-link" data-scroll-target="#what-makes-this-different">What Makes This Different</a>
-  <ul class="collapse">
-  <li><a href="#real-world-validation" id="toc-real-world-validation" class="nav-link" data-scroll-target="#real-world-validation"><strong>Real-World Validation</strong></a></li>
-  <li><a href="#complete-transparency" id="toc-complete-transparency" class="nav-link" data-scroll-target="#complete-transparency"><strong>Complete Transparency</strong></a></li>
-  <li><a href="#practical-applicability" id="toc-practical-applicability" class="nav-link" data-scroll-target="#practical-applicability"><strong>Practical Applicability</strong></a></li>
-  <li><a href="#cost-effective-excellence" id="toc-cost-effective-excellence" class="nav-link" data-scroll-target="#cost-effective-excellence"><strong>Cost-Effective Excellence</strong></a></li>
-  </ul></li>
-  <li><a href="#the-technical-focus-areas" id="toc-the-technical-focus-areas" class="nav-link" data-scroll-target="#the-technical-focus-areas">The Technical Focus Areas</a>
-  <ul class="collapse">
-  <li><a href="#exploratory-data-analysis-mastery" id="toc-exploratory-data-analysis-mastery" class="nav-link" data-scroll-target="#exploratory-data-analysis-mastery"><strong>Exploratory Data Analysis Mastery</strong></a></li>
-  <li><a href="#advanced-geostatistics" id="toc-advanced-geostatistics" class="nav-link" data-scroll-target="#advanced-geostatistics"><strong>Advanced Geostatistics</strong></a></li>
-  <li><a href="#resource-estimation-workflows" id="toc-resource-estimation-workflows" class="nav-link" data-scroll-target="#resource-estimation-workflows"><strong>Resource Estimation Workflows</strong></a></li>
-  <li><a href="#quality-assurance-systems" id="toc-quality-assurance-systems" class="nav-link" data-scroll-target="#quality-assurance-systems"><strong>Quality Assurance Systems</strong></a></li>
-  <li><a href="#integration-strategies" id="toc-integration-strategies" class="nav-link" data-scroll-target="#integration-strategies"><strong>Integration Strategies</strong></a></li>
-  <li><a href="#modern-visualization-techniques" id="toc-modern-visualization-techniques" class="nav-link" data-scroll-target="#modern-visualization-techniques"><strong>Modern Visualization Techniques</strong></a></li>
-  </ul></li>
-  <li><a href="#the-geodataviz-connection" id="toc-the-geodataviz-connection" class="nav-link" data-scroll-target="#the-geodataviz-connection">The GeoDataViz Connection</a></li>
-  <li><a href="#who-benefits-from-this-platform" id="toc-who-benefits-from-this-platform" class="nav-link" data-scroll-target="#who-benefits-from-this-platform">Who Benefits from This Platform</a>
-  <ul class="collapse">
-  <li><a href="#individual-geologists" id="toc-individual-geologists" class="nav-link" data-scroll-target="#individual-geologists"><strong>Individual Geologists</strong></a></li>
-  <li><a href="#small-exploration-companies" id="toc-small-exploration-companies" class="nav-link" data-scroll-target="#small-exploration-companies"><strong>Small Exploration Companies</strong></a></li>
-  <li><a href="#independent-consultants" id="toc-independent-consultants" class="nav-link" data-scroll-target="#independent-consultants"><strong>Independent Consultants</strong></a></li>
-  <li><a href="#educational-institutions" id="toc-educational-institutions" class="nav-link" data-scroll-target="#educational-institutions"><strong>Educational Institutions</strong></a></li>
-  <li><a href="#international-professionals" id="toc-international-professionals" class="nav-link" data-scroll-target="#international-professionals"><strong>International Professionals</strong></a></li>
-  </ul></li>
-  <li><a href="#the-content-recycling-strategy" id="toc-the-content-recycling-strategy" class="nav-link" data-scroll-target="#the-content-recycling-strategy">The Content Recycling Strategy</a></li>
-  <li><a href="#whats-coming-in-the-library" id="toc-whats-coming-in-the-library" class="nav-link" data-scroll-target="#whats-coming-in-the-library">What’s Coming in The Library</a>
-  <ul class="collapse">
-  <li><a href="#exploratory-data-analysis-with-geodataviz-a-complete-professional-guide" id="toc-exploratory-data-analysis-with-geodataviz-a-complete-professional-guide" class="nav-link" data-scroll-target="#exploratory-data-analysis-with-geodataviz-a-complete-professional-guide"><strong>“Exploratory Data Analysis with GeoDataViz: A Complete Professional Guide”</strong></a></li>
-  <li><a href="#pre-processing-drillhole-data-for-resource-estimation-advanced-professional-techniques" id="toc-pre-processing-drillhole-data-for-resource-estimation-advanced-professional-techniques" class="nav-link" data-scroll-target="#pre-processing-drillhole-data-for-resource-estimation-advanced-professional-techniques"><strong>“Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques”</strong></a></li>
-  <li><a href="#variogram-modeling-in-practice-beyond-textbook-examples" id="toc-variogram-modeling-in-practice-beyond-textbook-examples" class="nav-link" data-scroll-target="#variogram-modeling-in-practice-beyond-textbook-examples"><strong>“Variogram Modeling in Practice: Beyond Textbook Examples”</strong></a></li>
-  <li><a href="#resource-estimation-workflows-from-data-to-reliable-models" id="toc-resource-estimation-workflows-from-data-to-reliable-models" class="nav-link" data-scroll-target="#resource-estimation-workflows-from-data-to-reliable-models"><strong>“Resource Estimation Workflows: From Data to Reliable Models”</strong></a></li>
-  <li><a href="#integration-strategies-connecting-open-source-and-proprietary-workflows" id="toc-integration-strategies-connecting-open-source-and-proprietary-workflows" class="nav-link" data-scroll-target="#integration-strategies-connecting-open-source-and-proprietary-workflows"><strong>“Integration Strategies: Connecting Open-Source and Proprietary Workflows”</strong></a></li>
-  </ul></li>
-  <li><a href="#join-the-transformation" id="toc-join-the-transformation" class="nav-link" data-scroll-target="#join-the-transformation">Join the Transformation</a>
-  <ul class="collapse">
-  <li><a href="#how-to-engage" id="toc-how-to-engage" class="nav-link" data-scroll-target="#how-to-engage"><strong>How to Engage</strong></a></li>
-  </ul></li>
-  <li><a href="#the-long-term-vision" id="toc-the-long-term-vision" class="nav-link" data-scroll-target="#the-long-term-vision">The Long-Term Vision</a></li>
-  <li><a href="#ready-to-begin" id="toc-ready-to-begin" class="nav-link" data-scroll-target="#ready-to-begin">Ready to Begin?</a></li>
+  <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get Started</a></li>
   </ul>
 </nav>
     </div>
@@ -256,18 +230,17 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Kode</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Welcome to Orbit: Open-Source Geological Analysis Tools</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Kode</button></div></div>
   <div class="quarto-categories">
     <div class="quarto-category">Welcome</div>
     <div class="quarto-category">Open-Source</div>
-    <div class="quarto-category">Geology</div>
-    <div class="quarto-category">Data-Science</div>
+    <div class="quarto-category">GeoDataViz</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Welcome to Orebit’s comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges.
+    Discover Orbit’s suite of R Shiny applications for geological data analysis - from exploration to resource estimation.
   </div>
 </div>
 
@@ -296,187 +269,103 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </header>
 
 
-<section id="the-vision-behind-the-library" class="level2">
-<h2 class="anchored" data-anchor-id="the-vision-behind-the-library">The Vision Behind The Library</h2>
-<p>Welcome to what I call “The Library”—the definitive resource hub where traditional geological expertise meets cutting-edge data science innovation. I’m Ghozian Islam Karami, and after over a decade in the mining industry as a <strong>Senior Geologist and Certified Competent Person (CP)</strong>, I’ve built this platform to serve a critical mission: <strong>democratizing access to advanced geological analysis tools and knowledge.</strong></p>
-<p>This isn’t just another technical blog. It’s the centerpiece of a comprehensive content ecosystem designed to transform how geological professionals approach data analysis, from exploration through resource estimation to mine planning.</p>
+<section id="professional-geological-analysis-accessible-to-everyone" class="level2">
+<h2 class="anchored" data-anchor-id="professional-geological-analysis-accessible-to-everyone">Professional Geological Analysis, Accessible to Everyone</h2>
+<p><strong>Orbit Geological Solutions</strong> develops open-source R Shiny applications that transform geological data analysis. Our mission: provide enterprise-level analytical tools without expensive licensing fees.</p>
+<section id="the-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="the-challenge">The Challenge</h3>
+<p>Traditional geological software costs $20,000+ annually, creating barriers for: - Small exploration companies - Independent consultants - Geologists in developing regions - Educational institutions</p>
 </section>
-<section id="the-problem-were-solving" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-were-solving">The Problem We’re Solving</h2>
-<p>Throughout my career—from offshore tin exploration projects to resource evaluation for major mining companies—I’ve witnessed a persistent challenge: <strong>powerful geological analysis capabilities locked behind expensive proprietary software, creating artificial barriers that exclude talented professionals based on budget rather than expertise.</strong></p>
-<p>The result? Geoscientists in smaller companies, independent consultants, and professionals in developing regions often lack access to the same analytical tools used by major mining corporations. This disparity doesn’t just limit individual careers—it constrains the entire industry’s ability to innovate and solve complex geological challenges.</p>
-</section>
-<section id="the-solution-practitioner-built-open-source-excellence" class="level2">
-<h2 class="anchored" data-anchor-id="the-solution-practitioner-built-open-source-excellence">The Solution: Practitioner-Built, Open-Source Excellence</h2>
-<p>My vision is straightforward but transformative: <strong>to be the catalyst for a data-driven transformation in geoscience, establishing open and transparent tools as the standard for every professional to unlock the full potential of their data.</strong></p>
-<p>This platform serves as the foundation for that transformation, providing:</p>
-<section id="comprehensive-technical-guidance" class="level3">
-<h3 class="anchored" data-anchor-id="comprehensive-technical-guidance"><strong>Comprehensive Technical Guidance</strong></h3>
-<p>Every post in The Library is designed as a definitive resource—not superficial overviews, but deep-dive analyses that serve as permanent references for specific geological data analysis challenges. These are the guides I wished I had when tackling complex analytical problems in real mining projects.</p>
-</section>
-<section id="practitioner-built-solutions" class="level3">
-<h3 class="anchored" data-anchor-id="practitioner-built-solutions"><strong>Practitioner-Built Solutions</strong></h3>
-<p>Unlike purely academic resources or vendor-specific tutorials, every technique and tool discussed here has been tested in actual mining industry applications. My mission is <strong>to empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence.</strong></p>
-</section>
-<section id="transparent-reproducible-methods" class="level3">
-<h3 class="anchored" data-anchor-id="transparent-reproducible-methods"><strong>Transparent, Reproducible Methods</strong></h3>
-<p>Every analytical approach emphasizes transparency and reproducibility. When I share a geostatistical technique or data validation workflow, you get complete visibility into every step—no black boxes, no proprietary algorithms you can’t examine or modify.</p>
-</section>
-</section>
-<section id="the-content-ecosystem-strategy" class="level2">
-<h2 class="anchored" data-anchor-id="the-content-ecosystem-strategy">The Content Ecosystem Strategy</h2>
-<p>The Library operates as the centerpiece of an integrated content ecosystem, each platform serving a distinct purpose:</p>
-<section id="the-library-this-website" class="level3">
-<h3 class="anchored" data-anchor-id="the-library-this-website"><strong>The Library (This Website)</strong></h3>
-<p>Long-form, comprehensive articles that establish the highest level of technical authority. Each post is designed to be the ultimate guide on its topic, serving as long-term SEO assets and permanent professional references.</p>
-</section>
-<section id="the-professional-stage-linkedin" class="level3">
-<h3 class="anchored" data-anchor-id="the-professional-stage-linkedin"><strong>The Professional Stage (LinkedIn)</strong></h3>
-<p>My <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn profile</a> serves as the primary platform for building professional authority, sharing industry insights, and leveraging my existing network to connect with geological professionals worldwide.</p>
-</section>
-<section id="the-visual-classroom-instagram" class="level3">
-<h3 class="anchored" data-anchor-id="the-visual-classroom-instagram"><strong>The Visual Classroom (Instagram)</strong></h3>
-<p><a href="https://instagram.com/orebit.id"><span class="citation" data-cites="orebit.id">@orebit.id</span></a> provides bite-sized, visual tutorials aimed at students and junior professionals, making complex geological concepts accessible through compelling graphics and step-by-step visual guides.</p>
-</section>
-<section id="the-workbench-geodataviz" class="level3">
-<h3 class="anchored" data-anchor-id="the-workbench-geodataviz"><strong>The Workbench (GeoDataViz)</strong></h3>
-<p>The tangible proof-of-concept that demonstrates our philosophy in action—a fully functional, open-source R Shiny application that provides enterprise-level geological analysis capabilities without enterprise-level costs.</p>
-<p>This integrated approach ensures that whether you need in-depth technical knowledge, professional networking opportunities, quick visual learning, or practical analytical tools, you have access to geological expertise tailored to your specific needs and learning style.</p>
-</section>
-</section>
-<section id="what-makes-this-different" class="level2">
-<h2 class="anchored" data-anchor-id="what-makes-this-different">What Makes This Different</h2>
-<section id="real-world-validation" class="level3">
-<h3 class="anchored" data-anchor-id="real-world-validation"><strong>Real-World Validation</strong></h3>
-<p>Every technique discussed has been applied in actual mining projects. When I write about drillhole data validation, it’s based on identifying critical data quality issues that could have resulted in millions of dollars in misallocated resources. When I discuss geostatistical modeling, it’s grounded in resource estimates I’ve personally signed off on as a Certified Competent Person.</p>
-</section>
-<section id="complete-transparency" class="level3">
-<h3 class="anchored" data-anchor-id="complete-transparency"><strong>Complete Transparency</strong></h3>
-<p>No proprietary black boxes. Every analytical approach can be examined, understood, and modified to meet your specific requirements. This transparency isn’t just philosophical—it’s essential for meeting modern standards of scientific reproducibility and professional accountability.</p>
-</section>
-<section id="practical-applicability" class="level3">
-<h3 class="anchored" data-anchor-id="practical-applicability"><strong>Practical Applicability</strong></h3>
-<p>Rather than theoretical examples with perfect datasets, I focus on the messy, complex reality of geological data analysis. How do you handle missing assay values in resource estimation? What’s the best approach for dealing with highly skewed grade distributions? How do you validate resource models when drilling is sparse?</p>
-</section>
-<section id="cost-effective-excellence" class="level3">
-<h3 class="anchored" data-anchor-id="cost-effective-excellence"><strong>Cost-Effective Excellence</strong></h3>
-<p>Every solution emphasizes open-source approaches that deliver professional-grade results without requiring expensive software licenses. This democratizes access to advanced analytical capabilities for individual consultants, small exploration companies, and geologists in emerging economies.</p>
-</section>
-</section>
-<section id="the-technical-focus-areas" class="level2">
-<h2 class="anchored" data-anchor-id="the-technical-focus-areas">The Technical Focus Areas</h2>
-<section id="exploratory-data-analysis-mastery" class="level3">
-<h3 class="anchored" data-anchor-id="exploratory-data-analysis-mastery"><strong>Exploratory Data Analysis Mastery</strong></h3>
-<p>Comprehensive guides to understanding geological datasets before modeling, identifying data quality issues that could compromise resource estimates, and extracting geological insights that inform sampling strategies.</p>
-</section>
-<section id="advanced-geostatistics" class="level3">
-<h3 class="anchored" data-anchor-id="advanced-geostatistics"><strong>Advanced Geostatistics</strong></h3>
-<p>Practical applications of variogram modeling, kriging techniques, and uncertainty quantification—moving beyond textbook examples to handle the complex spatial relationships found in real geological environments.</p>
-</section>
-<section id="resource-estimation-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="resource-estimation-workflows"><strong>Resource Estimation Workflows</strong></h3>
-<p>Complete workflows from raw drillhole data through final resource models, including domain analysis, data preprocessing, estimation parameter selection, and model validation techniques.</p>
-</section>
-<section id="quality-assurance-systems" class="level3">
-<h3 class="anchored" data-anchor-id="quality-assurance-systems"><strong>Quality Assurance Systems</strong></h3>
-<p>Development of robust QA/QC protocols that ensure data integrity throughout the geological analysis workflow, based on procedures I’ve implemented in actual mining operations.</p>
-</section>
-<section id="integration-strategies" class="level3">
-<h3 class="anchored" data-anchor-id="integration-strategies"><strong>Integration Strategies</strong></h3>
-<p>Practical approaches for integrating open-source tools with existing proprietary software environments, enabling gradual transition to more transparent, cost-effective analytical workflows.</p>
-</section>
-<section id="modern-visualization-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="modern-visualization-techniques"><strong>Modern Visualization Techniques</strong></h3>
-<p>Creating compelling, publication-ready geological visualizations that communicate complex analytical results to diverse audiences—from technical peers to executive management.</p>
-</section>
-</section>
-<section id="the-geodataviz-connection" class="level2">
-<h2 class="anchored" data-anchor-id="the-geodataviz-connection">The GeoDataViz Connection</h2>
-<p>Central to this ecosystem is <strong>GeoDataViz</strong>, my open-source R Shiny application that serves as the practical implementation of everything discussed in The Library. This isn’t just a supporting tool—it’s the tangible demonstration that open-source solutions can deliver enterprise-level geological analysis capabilities.</p>
-<p>Every major technique discussed in The Library posts can be performed using GeoDataViz, creating a seamless connection between theoretical understanding and practical application. Want to understand advanced exploratory data analysis? Read the comprehensive guide in The Library, then implement the techniques immediately using GeoDataViz’s interactive interface.</p>
-<p>For visual, step-by-step tutorials on GeoDataViz features, you can find simplified guides on our <a href="https://instagram.com/orebit.id"><span class="citation" data-cites="orebit.id">@orebit.id</span> Instagram</a>, while professional applications and case studies are regularly shared on my <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn profile</a>.</p>
-</section>
-<section id="who-benefits-from-this-platform" class="level2">
-<h2 class="anchored" data-anchor-id="who-benefits-from-this-platform">Who Benefits from This Platform</h2>
-<section id="individual-geologists" class="level3">
-<h3 class="anchored" data-anchor-id="individual-geologists"><strong>Individual Geologists</strong></h3>
-<p>Access to advanced analytical techniques without expensive software investments, plus comprehensive training resources for professional development.</p>
-</section>
-<section id="small-exploration-companies" class="level3">
-<h3 class="anchored" data-anchor-id="small-exploration-companies"><strong>Small Exploration Companies</strong></h3>
-<p>Enterprise-level analytical capabilities that compete with major mining companies, without the associated software licensing costs.</p>
-</section>
-<section id="independent-consultants" class="level3">
-<h3 class="anchored" data-anchor-id="independent-consultants"><strong>Independent Consultants</strong></h3>
-<p>Differentiation through advanced analytical capabilities and transparent, reproducible methodologies that enhance client confidence.</p>
-</section>
-<section id="educational-institutions" class="level3">
-<h3 class="anchored" data-anchor-id="educational-institutions"><strong>Educational Institutions</strong></h3>
-<p>Complete curriculum resources for teaching modern geological data analysis, with free access to professional-grade analytical tools.</p>
-</section>
-<section id="international-professionals" class="level3">
-<h3 class="anchored" data-anchor-id="international-professionals"><strong>International Professionals</strong></h3>
-<p>Elimination of geographic and economic barriers to advanced geological analysis capabilities, fostering global knowledge sharing and professional development.</p>
-</section>
-</section>
-<section id="the-content-recycling-strategy" class="level2">
-<h2 class="anchored" data-anchor-id="the-content-recycling-strategy">The Content Recycling Strategy</h2>
-<p>Each comprehensive Library post becomes the foundation for targeted content across other platforms:</p>
+<section id="our-solution-three-integrated-products" class="level3">
+<h3 class="anchored" data-anchor-id="our-solution-three-integrated-products">Our Solution: Three Integrated Products</h3>
+<section id="geodataviz-available-now" class="level4">
+<h4 class="anchored" data-anchor-id="geodataviz-available-now">1. GeoDataViz (Available Now)</h4>
+<p><strong>Complete geological data analysis platform</strong></p>
 <ul>
-<li><strong>LinkedIn articles</strong> highlighting key insights and professional applications</li>
-<li><strong>Instagram tutorials</strong> breaking down complex techniques into visual, step-by-step guides<br>
-</li>
-<li><strong>GeoDataViz feature development</strong> implementing discussed techniques in the application interface</li>
+<li>Interactive 3D drillhole visualization</li>
+<li>Advanced statistical analysis &amp; EDA</li>
+<li>Comprehensive QA/QC validation</li>
+<li>Professional reporting tools</li>
 </ul>
-<p>This approach ensures maximum knowledge dissemination while driving traffic back to The Library for deeper technical understanding and to GeoDataViz for practical application.</p>
+<p><a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-success" target="_blank"><strong>Try Demo →</strong></a></p>
 </section>
-<section id="whats-coming-in-the-library" class="level2">
-<h2 class="anchored" data-anchor-id="whats-coming-in-the-library">What’s Coming in The Library</h2>
-<p>The next series of posts will establish The Library as the definitive resource for geological data analysis:</p>
-<section id="exploratory-data-analysis-with-geodataviz-a-complete-professional-guide" class="level3">
-<h3 class="anchored" data-anchor-id="exploratory-data-analysis-with-geodataviz-a-complete-professional-guide"><strong>“Exploratory Data Analysis with GeoDataViz: A Complete Professional Guide”</strong></h3>
-<p>The comprehensive resource for understanding geological datasets before modeling—covering everything from data validation through preliminary geostatistical analysis.</p>
+<section id="resource-estimation-app-coming-q2-2025" class="level4">
+<h4 class="anchored" data-anchor-id="resource-estimation-app-coming-q2-2025">2. Resource Estimation App (Coming Q2 2025)</h4>
+<p>Professional geostatistical analysis with automated variogram modeling, kriging, and uncertainty quantification.</p>
 </section>
-<section id="pre-processing-drillhole-data-for-resource-estimation-advanced-professional-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="pre-processing-drillhole-data-for-resource-estimation-advanced-professional-techniques"><strong>“Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques”</strong></h3>
-<p>A complete workflow for transforming raw geological data into estimation-ready datasets, including compositing strategies, outlier treatment, and domain optimization.</p>
-</section>
-<section id="variogram-modeling-in-practice-beyond-textbook-examples" class="level3">
-<h3 class="anchored" data-anchor-id="variogram-modeling-in-practice-beyond-textbook-examples"><strong>“Variogram Modeling in Practice: Beyond Textbook Examples”</strong></h3>
-<p>Real-world approaches to spatial continuity analysis, handling geological complexity, and validating geostatistical models in challenging environments.</p>
-</section>
-<section id="resource-estimation-workflows-from-data-to-reliable-models" class="level3">
-<h3 class="anchored" data-anchor-id="resource-estimation-workflows-from-data-to-reliable-models"><strong>“Resource Estimation Workflows: From Data to Reliable Models”</strong></h3>
-<p>Complete resource estimation methodologies using open-source tools, including uncertainty quantification and model validation techniques.</p>
-</section>
-<section id="integration-strategies-connecting-open-source-and-proprietary-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="integration-strategies-connecting-open-source-and-proprietary-workflows"><strong>“Integration Strategies: Connecting Open-Source and Proprietary Workflows”</strong></h3>
-<p>Practical approaches for incorporating open-source tools into existing geological workflows without disrupting established procedures.</p>
-</section>
-</section>
-<section id="join-the-transformation" class="level2">
-<h2 class="anchored" data-anchor-id="join-the-transformation">Join the Transformation</h2>
-<p>This platform represents more than technical knowledge sharing—it’s building a community that values transparency, accessibility, and innovation in geological analysis. The mining industry faces unprecedented challenges, from declining ore grades to increased environmental scrutiny. Meeting these challenges requires not just better technology, but fundamentally different approaches to knowledge sharing and collaboration.</p>
-<section id="how-to-engage" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-engage"><strong>How to Engage</strong></h3>
-<p><strong>Explore The Library:</strong> Each post is designed as a comprehensive reference. Bookmark the techniques relevant to your work and return when facing similar analytical challenges.</p>
-<p><strong>Experience the Technology:</strong> Try <a href="https://geodataviz.shinyapps.io/geodataviz/">GeoDataViz</a> to see these concepts in action. The entire validation process discussed in these posts can be performed interactively in seconds using our open-source application.</p>
-<p><strong>Connect Professionally:</strong> Follow my <a href="https://www.linkedin.com/in/ghoziankarami/">LinkedIn profile</a> for industry insights, professional networking, and real-world case studies.</p>
-<p><strong>Visual Learning:</strong> Check <a href="https://instagram.com/orebit.id"><span class="citation" data-cites="orebit.id">@orebit.id</span></a> for visual, step-by-step tutorials that make complex geological techniques accessible.</p>
-<p><strong>Contribute to Innovation:</strong> Join the <a href="https://github.com/ghoziankarami/geodataviz">GitHub community</a> to contribute code, suggest features, or provide feedback that shapes the future of geological analysis tools.</p>
-</section>
-</section>
-<section id="the-long-term-vision" class="level2">
-<h2 class="anchored" data-anchor-id="the-long-term-vision">The Long-Term Vision</h2>
-<p>My goal extends beyond individual posts or software tools. I’m working toward <strong>a fundamental shift in how the geological community approaches data analysis</strong>—from proprietary, expensive, black-box solutions toward transparent, accessible, community-driven innovation.</p>
-<p>Every comprehensive guide in The Library, every feature in GeoDataViz, and every professional connection made through this platform contributes to this larger transformation. Together, we’re building the foundation for more accurate, reliable, and accessible geological analysis that serves professionals regardless of their economic circumstances or geographic location.</p>
-</section>
-<section id="ready-to-begin" class="level2">
-<h2 class="anchored" data-anchor-id="ready-to-begin">Ready to Begin?</h2>
-<p>The intersection of traditional geological expertise and modern data science offers unprecedented opportunities for innovation and professional growth. Whether you’re looking to modernize existing workflows, reduce software costs, or simply access better analytical tools, The Library provides the roadmap and GeoDataViz provides the practical implementation.</p>
-<p>Welcome to this transformation. The future of geological data analysis is open, transparent, and accessible to every professional willing to embrace it.</p>
+<section id="pit-optimizer-coming-q3-2025" class="level4">
+<h4 class="anchored" data-anchor-id="pit-optimizer-coming-q3-2025">3. Pit Optimizer (Coming Q3 2025)</h4>
+<p>Strategic mine planning with NPV optimization and constraint modeling.</p>
 <hr>
-<p><em>Ready to see these concepts in action? Explore the <a href="https://geodataviz.shinyapps.io/geodataviz/">GeoDataViz live demo</a> and discover how open-source tools can transform your geological workflows.</em></p>
+</section>
+</section>
+</section>
+<section id="why-choose-orbit" class="level2">
+<h2 class="anchored" data-anchor-id="why-choose-orbit">Why Choose Orbit?</h2>
+<p><strong>Cost-Effective:</strong> Enterprise capabilities without enterprise costs<br>
+<strong>Transparent:</strong> Complete visibility into analytical methods<br>
+<strong>Professional:</strong> Built by practicing geoscientists for real-world challenges<br>
+<strong>Accessible:</strong> Cloud-native, runs in any browser</p>
+<hr>
+</section>
+<section id="quick-start-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start-with-r">Quick Start with R</h2>
+<p>Orbit applications are built with R. Here’s a simple example of geological data visualization:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample drillhole data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>collar_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">HoleID =</span> <span class="fu">paste0</span>(<span class="st">"DH"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">500</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y =</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">500</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Z =</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">200</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Grade =</span> <span class="fu">rlnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Interactive 3D visualization</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(collar_data, <span class="at">x =</span> <span class="sc">~</span>X, <span class="at">y =</span> <span class="sc">~</span>Y, <span class="at">z =</span> <span class="sc">~</span>Z, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">'scatter3d'</span>, <span class="at">mode =</span> <span class="st">'markers'</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">colorscale =</span> <span class="st">'Viridis'</span>),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Hole:"</span>, HoleID, <span class="st">"&lt;br&gt;Grade:"</span>, <span class="fu">round</span>(Grade, <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Drillhole Collar Map"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">scene =</span> <span class="fu">list</span>(</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Easting"</span>),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>           <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Northing"</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">zaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Elevation"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>         ))</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-50a7174221ff2e1044e8" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-50a7174221ff2e1044e8">{"x":{"visdat":{"17004cbd5195":["function () ","plotlyVisDat"]},"cur_data":"17004cbd5195","attrs":{"17004cbd5195":{"x":{},"y":{},"z":{},"mode":"markers","marker":{"size":8,"colorscale":"Viridis"},"text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Drillhole Collar Map","scene":{"xaxis":{"title":"Easting"},"yaxis":{"title":"Northing"},"zaxis":{"title":"Elevation"}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[348.93751842901111,393.75827061012387,438.33467196673155,429.85721724107862,130.73549065738916,381.04017125442624,200.5977138876915,236.8994896300137,353.10380347073078,351.40110878273845,177.44179610162973,390.12682931497693,283.30405987799168,216.50928854942322,407.0973421446979,312.22245264798403,452.75277411565185,170.54216992110014,470.7233589142561,492.89385415613651],"y":[337.7575152553618,188.59702050685883,451.2199186719954,337.98925904557109,437.75007845833898,124.90643709897995,328.81815759465098,403.67691516876221,460.71507846936584,151.42946504056454,271.09694248065352,337.10344014689326,381.94742929190397,287.51460229977965,265.51532531157136,428.18425036966801,342.27035995572805,491.62742374464869,141.63836231455207,257.34510123729706],"z":[59.216539247427136,53.480476536788046,105.33107341034338,84.981690545100719,121.03397032478824,99.304971739184111,179.69231109600514,139.9936365778558,108.78599265124649,147.85496894037351,179.07406453741714,126.22456713579595,118.52035201154649,112.58914790814742,169.88522311439738,179.3439447064884,101.17221068358049,100.39006868610159,199.30761260911822,174.11924165207893],"mode":"markers","marker":{"colorbar":{"title":"Grade","ticklen":2},"cmin":0.31534848978555263,"cmax":3.2072892395778596,"colorscale":"Viridis","showscale":false,"color":[0.77742709648042418,0.56875949844266038,0.86741994160645308,0.7552083524283788,1.5578630987962423,0.59045309949307545,0.3314889123540562,0.47214199240784155,0.98840564056763325,1.5090409913012097,0.44287737326312998,1.9341792970738572,2.0158061306030368,1.089131636555843,1.4070180318842451,3.2072892395778596,0.31534848978555263,0.72029003710634421,1.0566973389244063,0.42259627665692562],"size":8,"line":{"colorbar":{"title":"","ticklen":2},"cmin":0.31534848978555263,"cmax":3.2072892395778596,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[0.77742709648042418,0.56875949844266038,0.86741994160645308,0.7552083524283788,1.5578630987962423,0.59045309949307545,0.3314889123540562,0.47214199240784155,0.98840564056763325,1.5090409913012097,0.44287737326312998,1.9341792970738572,2.0158061306030368,1.089131636555843,1.4070180318842451,3.2072892395778596,0.31534848978555263,0.72029003710634421,1.0566973389244063,0.42259627665692562]}},"text":["Hole: DH1 <br>Grade: 0.78","Hole: DH2 <br>Grade: 0.57","Hole: DH3 <br>Grade: 0.87","Hole: DH4 <br>Grade: 0.76","Hole: DH5 <br>Grade: 1.56","Hole: DH6 <br>Grade: 0.59","Hole: DH7 <br>Grade: 0.33","Hole: DH8 <br>Grade: 0.47","Hole: DH9 <br>Grade: 0.99","Hole: DH10 <br>Grade: 1.51","Hole: DH11 <br>Grade: 0.44","Hole: DH12 <br>Grade: 1.93","Hole: DH13 <br>Grade: 2.02","Hole: DH14 <br>Grade: 1.09","Hole: DH15 <br>Grade: 1.41","Hole: DH16 <br>Grade: 3.21","Hole: DH17 <br>Grade: 0.32","Hole: DH18 <br>Grade: 0.72","Hole: DH19 <br>Grade: 1.06","Hole: DH20 <br>Grade: 0.42"],"type":"scatter3d","frame":null},{"x":[130.73549065738916,492.89385415613651],"y":[124.90643709897995,491.62742374464869],"type":"scatter3d","mode":"markers","opacity":0,"hoverinfo":"none","showlegend":false,"marker":{"colorbar":{"title":"Grade","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"cmin":0.31534848978555263,"cmax":3.2072892395778596,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"color":[0.31534848978555263,3.2072892395778596],"line":{"color":"rgba(255,127,14,1)"}},"z":[53.480476536788046,199.30761260911822],"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<hr>
+</section>
+<section id="learning-resources" class="level2">
+<h2 class="anchored" data-anchor-id="learning-resources">Learning Resources</h2>
+<section id="technical-blog" class="level3">
+<h3 class="anchored" data-anchor-id="technical-blog">Technical Blog</h3>
+<p>Comprehensive guides on: - Exploratory data analysis workflows - Data preprocessing techniques - Geostatistical modeling - Resource estimation best practices</p>
+</section>
+<section id="community" class="level3">
+<h3 class="anchored" data-anchor-id="community">Community</h3>
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com/orbit-geo">github.com/orbit-geo</a></li>
+<li><strong>LinkedIn:</strong> Professional networking and updates</li>
+<li><strong>Instagram:</strong> <a href="https://instagram.com/orebit.id"><span class="citation" data-cites="orebit.id">@orebit.id</span></a> - Visual tutorials</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="get-started" class="level2">
+<h2 class="anchored" data-anchor-id="get-started">Get Started</h2>
+<p><strong>For Individuals:</strong> Try GeoDataViz demo and explore tutorials<br>
+<strong>For Companies:</strong> Contact us for enterprise deployment<br>
+<strong>For Developers:</strong> Contribute to open-source development</p>
+<p><a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-primary" target="_blank"><strong>Launch GeoDataViz</strong></a> <a href="../..\blog" class="btn btn-secondary"><strong>View Documentation</strong></a></p>
+<hr>
+<p><em>Orbit Geological Solutions - Making professional geological analysis accessible to everyone.</em></p>
 
 
 <!-- -->
@@ -934,180 +823,120 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Kode Sumber</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Welcome to The Library: Where Geological Expertise Meets Open-Source Innovation"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ghozian Islam Karami"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-09-20"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Welcome, Open-Source, Geology, Data-Science]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Welcome to Orebit's comprehensive geological data analysis library. Discover how practitioner-built solutions are transforming the way geoscientists approach complex data challenges."</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "Open-Source_thumb.png"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">image-alt:</span><span class="co"> "Open Source"</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Vision Behind The Library</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Welcome to what I call "The Library"—the definitive resource hub where traditional geological expertise meets cutting-edge data science innovation. I'm Ghozian Islam Karami, and after over a decade in the mining industry as a **Senior Geologist and Certified Competent Person (CP)**, I've built this platform to serve a critical mission: **democratizing access to advanced geological analysis tools and knowledge.**</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>This isn't just another technical blog. It's the centerpiece of a comprehensive content ecosystem designed to transform how geological professionals approach data analysis, from exploration through resource estimation to mine planning.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Problem We're Solving</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Throughout my career—from offshore tin exploration projects to resource evaluation for major mining companies—I've witnessed a persistent challenge: **powerful geological analysis capabilities locked behind expensive proprietary software, creating artificial barriers that exclude talented professionals based on budget rather than expertise.**</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The result? Geoscientists in smaller companies, independent consultants, and professionals in developing regions often lack access to the same analytical tools used by major mining corporations. This disparity doesn't just limit individual careers—it constrains the entire industry's ability to innovate and solve complex geological challenges.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Solution: Practitioner-Built, Open-Source Excellence</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>My vision is straightforward but transformative: **to be the catalyst for a data-driven transformation in geoscience, establishing open and transparent tools as the standard for every professional to unlock the full potential of their data.**</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>This platform serves as the foundation for that transformation, providing:</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Comprehensive Technical Guidance**</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Every post in The Library is designed as a definitive resource—not superficial overviews, but deep-dive analyses that serve as permanent references for specific geological data analysis challenges. These are the guides I wished I had when tackling complex analytical problems in real mining projects.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Practitioner-Built Solutions**</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Unlike purely academic resources or vendor-specific tutorials, every technique and tool discussed here has been tested in actual mining industry applications. My mission is **to empower geoscientists and mining engineers by providing practical, practitioner-built workflows and expert guidance, enabling them to confidently transform complex geological data into reliable, actionable intelligence.**</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Transparent, Reproducible Methods**</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Every analytical approach emphasizes transparency and reproducibility. When I share a geostatistical technique or data validation workflow, you get complete visibility into every step—no black boxes, no proprietary algorithms you can't examine or modify.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Content Ecosystem Strategy</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>The Library operates as the centerpiece of an integrated content ecosystem, each platform serving a distinct purpose:</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### **The Library (This Website)**</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Long-form, comprehensive articles that establish the highest level of technical authority. Each post is designed to be the ultimate guide on its topic, serving as long-term SEO assets and permanent professional references.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">### **The Professional Stage (LinkedIn)**</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>My <span class="co">[</span><span class="ot">LinkedIn profile</span><span class="co">](https://www.linkedin.com/in/ghoziankarami/)</span> serves as the primary platform for building professional authority, sharing industry insights, and leveraging my existing network to connect with geological professionals worldwide.</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### **The Visual Classroom (Instagram)**</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@orebit.id</span><span class="co">](https://instagram.com/orebit.id)</span> provides bite-sized, visual tutorials aimed at students and junior professionals, making complex geological concepts accessible through compelling graphics and step-by-step visual guides.</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### **The Workbench (GeoDataViz)**</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>The tangible proof-of-concept that demonstrates our philosophy in action—a fully functional, open-source R Shiny application that provides enterprise-level geological analysis capabilities without enterprise-level costs.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>This integrated approach ensures that whether you need in-depth technical knowledge, professional networking opportunities, quick visual learning, or practical analytical tools, you have access to geological expertise tailored to your specific needs and learning style.</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## What Makes This Different</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Real-World Validation**</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Every technique discussed has been applied in actual mining projects. When I write about drillhole data validation, it's based on identifying critical data quality issues that could have resulted in millions of dollars in misallocated resources. When I discuss geostatistical modeling, it's grounded in resource estimates I've personally signed off on as a Certified Competent Person.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Complete Transparency**</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>No proprietary black boxes. Every analytical approach can be examined, understood, and modified to meet your specific requirements. This transparency isn't just philosophical—it's essential for meeting modern standards of scientific reproducibility and professional accountability.</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Practical Applicability**</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Rather than theoretical examples with perfect datasets, I focus on the messy, complex reality of geological data analysis. How do you handle missing assay values in resource estimation? What's the best approach for dealing with highly skewed grade distributions? How do you validate resource models when drilling is sparse?</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Cost-Effective Excellence**</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Every solution emphasizes open-source approaches that deliver professional-grade results without requiring expensive software licenses. This democratizes access to advanced analytical capabilities for individual consultants, small exploration companies, and geologists in emerging economies.</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Technical Focus Areas</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Exploratory Data Analysis Mastery**</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Comprehensive guides to understanding geological datasets before modeling, identifying data quality issues that could compromise resource estimates, and extracting geological insights that inform sampling strategies.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Advanced Geostatistics**</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Practical applications of variogram modeling, kriging techniques, and uncertainty quantification—moving beyond textbook examples to handle the complex spatial relationships found in real geological environments.</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Resource Estimation Workflows**</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Complete workflows from raw drillhole data through final resource models, including domain analysis, data preprocessing, estimation parameter selection, and model validation techniques.</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Quality Assurance Systems**</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>Development of robust QA/QC protocols that ensure data integrity throughout the geological analysis workflow, based on procedures I've implemented in actual mining operations.</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Integration Strategies**</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Practical approaches for integrating open-source tools with existing proprietary software environments, enabling gradual transition to more transparent, cost-effective analytical workflows.</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Modern Visualization Techniques**</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Creating compelling, publication-ready geological visualizations that communicate complex analytical results to diverse audiences—from technical peers to executive management.</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## The GeoDataViz Connection</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Central to this ecosystem is **GeoDataViz**, my open-source R Shiny application that serves as the practical implementation of everything discussed in The Library. This isn't just a supporting tool—it's the tangible demonstration that open-source solutions can deliver enterprise-level geological analysis capabilities.</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Every major technique discussed in The Library posts can be performed using GeoDataViz, creating a seamless connection between theoretical understanding and practical application. Want to understand advanced exploratory data analysis? Read the comprehensive guide in The Library, then implement the techniques immediately using GeoDataViz's interactive interface.</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>For visual, step-by-step tutorials on GeoDataViz features, you can find simplified guides on our <span class="co">[</span><span class="ot">@orebit.id Instagram</span><span class="co">](https://instagram.com/orebit.id)</span>, while professional applications and case studies are regularly shared on my <span class="co">[</span><span class="ot">LinkedIn profile</span><span class="co">](https://www.linkedin.com/in/ghoziankarami/)</span>.</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Who Benefits from This Platform</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Individual Geologists**</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Access to advanced analytical techniques without expensive software investments, plus comprehensive training resources for professional development.</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Small Exploration Companies**  </span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>Enterprise-level analytical capabilities that compete with major mining companies, without the associated software licensing costs.</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Independent Consultants**</span></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Differentiation through advanced analytical capabilities and transparent, reproducible methodologies that enhance client confidence.</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Educational Institutions**</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Complete curriculum resources for teaching modern geological data analysis, with free access to professional-grade analytical tools.</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="fu">### **International Professionals**</span></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Elimination of geographic and economic barriers to advanced geological analysis capabilities, fostering global knowledge sharing and professional development.</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Content Recycling Strategy</span></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>Each comprehensive Library post becomes the foundation for targeted content across other platforms:</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**LinkedIn articles** highlighting key insights and professional applications</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Instagram tutorials** breaking down complex techniques into visual, step-by-step guides  </span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**GeoDataViz feature development** implementing discussed techniques in the application interface</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>This approach ensures maximum knowledge dissemination while driving traffic back to The Library for deeper technical understanding and to GeoDataViz for practical application.</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="fu">## What's Coming in The Library</span></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>The next series of posts will establish The Library as the definitive resource for geological data analysis:</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="fu">### **"Exploratory Data Analysis with GeoDataViz: A Complete Professional Guide"**</span></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>The comprehensive resource for understanding geological datasets before modeling—covering everything from data validation through preliminary geostatistical analysis.</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="fu">### **"Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques"**</span></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>A complete workflow for transforming raw geological data into estimation-ready datasets, including compositing strategies, outlier treatment, and domain optimization.</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="fu">### **"Variogram Modeling in Practice: Beyond Textbook Examples"**</span></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>Real-world approaches to spatial continuity analysis, handling geological complexity, and validating geostatistical models in challenging environments.</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="fu">### **"Resource Estimation Workflows: From Data to Reliable Models"**</span></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>Complete resource estimation methodologies using open-source tools, including uncertainty quantification and model validation techniques.</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="fu">### **"Integration Strategies: Connecting Open-Source and Proprietary Workflows"**</span></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Practical approaches for incorporating open-source tools into existing geological workflows without disrupting established procedures.</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="fu">## Join the Transformation</span></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>This platform represents more than technical knowledge sharing—it's building a community that values transparency, accessibility, and innovation in geological analysis. The mining industry faces unprecedented challenges, from declining ore grades to increased environmental scrutiny. Meeting these challenges requires not just better technology, but fundamentally different approaches to knowledge sharing and collaboration.</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="fu">### **How to Engage**</span></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>**Explore The Library:** Each post is designed as a comprehensive reference. Bookmark the techniques relevant to your work and return when facing similar analytical challenges.</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>**Experience the Technology:** Try <span class="co">[</span><span class="ot">GeoDataViz</span><span class="co">](https://geodataviz.shinyapps.io/geodataviz/)</span> to see these concepts in action. The entire validation process discussed in these posts can be performed interactively in seconds using our open-source application.</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>**Connect Professionally:** Follow my <span class="co">[</span><span class="ot">LinkedIn profile</span><span class="co">](https://www.linkedin.com/in/ghoziankarami/)</span> for industry insights, professional networking, and real-world case studies.</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>**Visual Learning:** Check <span class="co">[</span><span class="ot">@orebit.id</span><span class="co">](https://instagram.com/orebit.id)</span> for visual, step-by-step tutorials that make complex geological techniques accessible.</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>**Contribute to Innovation:** Join the <span class="co">[</span><span class="ot">GitHub community</span><span class="co">](https://github.com/ghoziankarami/geodataviz)</span> to contribute code, suggest features, or provide feedback that shapes the future of geological analysis tools.</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Long-Term Vision</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>My goal extends beyond individual posts or software tools. I'm working toward **a fundamental shift in how the geological community approaches data analysis**—from proprietary, expensive, black-box solutions toward transparent, accessible, community-driven innovation.</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Every comprehensive guide in The Library, every feature in GeoDataViz, and every professional connection made through this platform contributes to this larger transformation. Together, we're building the foundation for more accurate, reliable, and accessible geological analysis that serves professionals regardless of their economic circumstances or geographic location.</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ready to Begin?</span></span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>The intersection of traditional geological expertise and modern data science offers unprecedented opportunities for innovation and professional growth. Whether you're looking to modernize existing workflows, reduce software costs, or simply access better analytical tools, The Library provides the roadmap and GeoDataViz provides the practical implementation.</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>Welcome to this transformation. The future of geological data analysis is open, transparent, and accessible to every professional willing to embrace it.</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>*Ready to see these concepts in action? Explore the [GeoDataViz live demo](https://geodataviz.shinyapps.io/geodataviz/) and discover how open-source tools can transform your geological workflows.*</span></code><button title="Salin ke Papan Klip" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Welcome to Orbit: Open-Source Geological Analysis Tools"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ghozian Islam Karami"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-09-20"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Welcome, Open-Source, GeoDataViz]</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Discover Orbit's suite of R Shiny applications for geological data analysis - from exploration to resource estimation."</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "welcome-banner.png"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Professional Geological Analysis, Accessible to Everyone</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>**Orbit Geological Solutions** develops open-source R Shiny applications that transform geological data analysis. Our mission: provide enterprise-level analytical tools without expensive licensing fees.</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Challenge</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Traditional geological software costs $20,000+ annually, creating barriers for:</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Small exploration companies</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Independent consultants</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geologists in developing regions</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Educational institutions</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Our Solution: Three Integrated Products</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. GeoDataViz (Available Now)</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>**Complete geological data analysis platform**</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Interactive 3D drillhole visualization</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Advanced statistical analysis &amp; EDA</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comprehensive QA/QC validation</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Professional reporting tools</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Try Demo →**</span><span class="co">](https://geodataviz.shinyapps.io/geodataviz/)</span>{.btn .btn-success target="_blank"}</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Resource Estimation App (Coming Q2 2025)</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>Professional geostatistical analysis with automated variogram modeling, kriging, and uncertainty quantification.</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. Pit Optimizer (Coming Q3 2025)</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>Strategic mine planning with NPV optimization and constraint modeling.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Choose Orbit?</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>**Cost-Effective:** Enterprise capabilities without enterprise costs  </span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>**Transparent:** Complete visibility into analytical methods  </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>**Professional:** Built by practicing geoscientists for real-world challenges  </span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>**Accessible:** Cloud-native, runs in any browser</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick Start with R</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>Orbit applications are built with R. Here's a simple example of geological data visualization:</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample drillhole data</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>collar_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">HoleID =</span> <span class="fu">paste0</span>(<span class="st">"DH"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>),</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">500</span>),</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y =</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">500</span>),</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">Z =</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">200</span>),</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">Grade =</span> <span class="fu">rlnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Interactive 3D visualization</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(collar_data, <span class="at">x =</span> <span class="sc">~</span>X, <span class="at">y =</span> <span class="sc">~</span>Y, <span class="at">z =</span> <span class="sc">~</span>Z, </span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">'scatter3d'</span>, <span class="at">mode =</span> <span class="st">'markers'</span>,</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">colorscale =</span> <span class="st">'Viridis'</span>),</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Hole:"</span>, HoleID, <span class="st">"&lt;br&gt;Grade:"</span>, <span class="fu">round</span>(Grade, <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Drillhole Collar Map"</span>,</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>         <span class="at">scene =</span> <span class="fu">list</span>(</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>           <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Easting"</span>),</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>           <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Northing"</span>),</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>           <span class="at">zaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Elevation"</span>)</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>         ))</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Resources</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### Technical Blog</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Comprehensive guides on:</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exploratory data analysis workflows</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Data preprocessing techniques</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geostatistical modeling</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resource estimation best practices</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="fu">### Community</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**GitHub:** <span class="co">[</span><span class="ot">github.com/orbit-geo</span><span class="co">](https://github.com/orbit-geo)</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**LinkedIn:** Professional networking and updates</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Instagram:** <span class="co">[</span><span class="ot">@orebit.id</span><span class="co">](https://instagram.com/orebit.id)</span> - Visual tutorials</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Get Started</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>**For Individuals:** Try GeoDataViz demo and explore tutorials  </span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>**For Companies:** Contact us for enterprise deployment  </span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>**For Developers:** Contribute to open-source development</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Launch GeoDataViz**</span><span class="co">](https://geodataviz.shinyapps.io/geodataviz/)</span>{.btn .btn-primary target="_blank"}</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**View Documentation**</span><span class="co">](/blog)</span>{.btn .btn-secondary}</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>*Orbit Geological Solutions - Making professional geological analysis accessible to everyone.*</span>
+</code><button title="Salin ke Papan Klip" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

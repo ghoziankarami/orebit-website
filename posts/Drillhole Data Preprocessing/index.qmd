@@ -1,335 +1,335 @@
 ---
-title: "Pre-Processing Drillhole Data for Resource Estimation: Advanced Professional Techniques with GeoDataViz"
-author: "Ghozian Islam Karami"  
+title: "Pre-Processing Drillhole Data for Resource Estimation"
+author: "Ghozian Islam Karami"
 date: "2025-09-20"
-categories: [GeoDataViz, Preprocessing, Resource-Estimation, Geostatistics]
-description: "Master advanced drillhole data preprocessing using professional-grade techniques. Learn compositing optimization, domain conditioning, and data transformation methods that ensure accurate resource estimation."
-image: "pre-drilling-thumb.png"
-image-alt: "Preprocessing workflow"
+categories: [GeoDataViz, Preprocessing, Resource-Estimation]
+description: "Complete workflow for transforming raw drillhole data into estimation-ready datasets using R."
+image: "preprocessing-workflow.png"
 ---
 
-## The Critical Bridge Between Data and Reliable Estimates
+## Why Preprocessing Matters
 
-Data preprocessing represents the most critical—and most commonly underestimated—phase of professional resource estimation. After signing off on mineral resource estimates as a **Certified Competent Person** and witnessing preprocessing failures that resulted in millions of dollars in misallocated capital, I can state definitively: **the quality of your resource estimate is fundamentally limited by the quality of your data preprocessing.**
+**Poor preprocessing = Poor resource estimates**
 
-This comprehensive guide presents the systematic preprocessing methodology I've developed through real-world mining projects, now implemented in GeoDataViz to provide every geoscientist with access to professional-grade data conditioning capabilities.
+Preprocessing failures account for most resource estimation errors:
+- 30% grade overestimation from wrong composite lengths
+- Domain boundary failures creating artificial continuity
+- Outlier treatment errors causing bias
 
-## The High Cost of Inadequate Preprocessing
+## The 4-Step Preprocessing Workflow
 
-In my decade of resource evaluation experience, I've observed that preprocessing failures account for the majority of significant resource estimation errors:
+### Step 1: Desurveying
 
-- **Grade overestimation** of 30% due to inappropriate composite length selection that smoothed high-grade boundaries
-- **Resource misclassification** resulting from unaddressed spatial bias that inflated confidence in sparsely drilled areas  
-- **Domain boundary failures** where inadequate geological conditioning created artificial grade continuity across distinct mineralization systems
-- **Outlier treatment errors** where statistical approaches ignored geological reality, resulting in either excessive conservatism or dangerous grade inflation
+Transform survey data into 3D coordinates:
 
-These aren't theoretical risks—they're real challenges that I've helped companies resolve through proper preprocessing implementation.
+```{r}
+#| label: setup
+#| message: false
 
-## The GeoDataViz Professional Preprocessing Framework
+library(tidyverse)
+library(plotly)
 
-GeoDataViz implements a comprehensive preprocessing framework specifically designed for geological datasets, addressing the complex requirements of spatially distributed, geometrically constrained drillhole data.
+# Sample data
+collar <- tibble(
+  HoleID = "DH001",
+  X = 1000, Y = 2000, Z = 500
+)
 
-### **Phase 1: Advanced Data Conditioning**
+survey <- tibble(
+  HoleID = "DH001",
+  Depth = c(0, 50, 100, 150),
+  Azimuth = c(0, 0, 5, 10),
+  Dip = c(-90, -85, -80, -75)
+)
 
-Professional preprocessing begins with sophisticated data conditioning that goes far beyond simple cleaning:
+assay <- tibble(
+  HoleID = "DH001",
+  From = seq(0, 145, 5),
+  To = seq(5, 150, 5),
+  Grade = rlnorm(30, meanlog = 0.3, sdlog = 0.6)
+)
 
-**Missing Data Intelligence:**
-Rather than simple deletion or basic imputation, GeoDataViz provides geological context-aware solutions:
+# Desurveying function
+desurvey_hole <- function(collar, survey, assay) {
+  
+  # Interpolate survey at sample midpoints
+  assay_3d <- assay %>%
+    mutate(
+      Midpoint = (From + To) / 2,
+      # Find survey interval
+      Survey_Idx = findInterval(Midpoint, survey$Depth),
+      # Get survey values
+      Azimuth = survey$Azimuth[pmin(Survey_Idx + 1, nrow(survey))],
+      Dip = survey$Dip[pmin(Survey_Idx + 1, nrow(survey))],
+      # Convert to radians
+      Az_rad = Azimuth * pi / 180,
+      Dip_rad = Dip * pi / 180,
+      # Calculate displacement
+      Length = To - From,
+      DX = Length * sin(Az_rad) * cos(Dip_rad),
+      DY = Length * cos(Az_rad) * cos(Dip_rad),
+      DZ = Length * sin(Dip_rad)
+    ) %>%
+    mutate(
+      # Calculate cumulative coordinates
+      X = collar$X + cumsum(DX),
+      Y = collar$Y + cumsum(DY),
+      Z = collar$Z + cumsum(DZ)
+    )
+  
+  return(assay_3d)
+}
 
-- **Geological interpolation** using lithological and structural controls for short gaps
-- **Statistical imputation** with spatial weighting based on nearby samples within the same geological domain
-- **Detection limit handling** using distributional approaches that preserve the statistical character of trace element populations
-- **Impact assessment** quantifying how missing data treatment affects final resource estimates
+# Apply desurveying
+desurveyed <- desurvey_hole(collar, survey, assay)
 
-**Spatial Bias Correction:**
-- **Declustering weight calculation** using multiple algorithms optimized for different geological environments
-- **Preferential sampling detection** identifying areas where drilling density correlates with grade
-- **Campaign integration** harmonizing data from different drilling programs with varying sampling protocols
-- **Temporal bias assessment** evaluating systematic changes in analytical procedures over time
-
-**Quality Assurance Integration:**
-- **Precision-based weighting** incorporating analytical uncertainty into composite calculations
-- **Accuracy assessment** using control standards to identify and correct systematic analytical bias
-- **Contamination detection** through blank performance analysis with sample flagging
-- **Method-specific conditioning** accounting for different drilling and sampling techniques
-
-### **Phase 2: Geological Domain Optimization**
-
-Professional resource estimation requires geologically sensible and statistically validated domains:
-
-**Advanced Domain Validation:**
-GeoDataViz provides sophisticated tools for domain boundary optimization:
-
-- **Multivariate discriminant analysis** using multiple elements to refine geological boundaries
-- **Statistical significance testing** ensuring grade population differences justify separate estimation
-- **Contact sharpness analysis** distinguishing hard boundaries requiring separate estimation from gradational contacts suitable for transition modeling
-- **Boundary uncertainty quantification** essential for appropriate resource classification
-
-**Structural Control Integration:**
-- **Fault influence analysis** quantifying structural control on grade distribution and continuity
-- **Fold-related grade analysis** identifying structural controls on mineralization distribution patterns
-- **Alteration intensity correlation** with grade distribution for enhanced domain definition
-- **Anisotropy assessment** ensuring domain boundaries align with geological controls on grade continuity
-
-**Machine Learning Enhancement:**
-- **Cluster analysis** for natural population identification using multiple geological and geochemical variables
-- **Classification tree analysis** for objective domain boundary identification
-- **Principal component analysis** revealing underlying geological controls not apparent in individual variables
-- **Ensemble methods** combining multiple approaches for robust domain identification
-
-### **Phase 3: Composite Optimization Strategy**
-
-Composite length selection represents one of the most critical preprocessing decisions:
-
-**Multi-Criteria Composite Optimization:**
-GeoDataViz implements sophisticated approaches for composite length selection:
-
-**Geological Criteria:**
-- **Geological unit thickness analysis** ensuring composites honor significant geological boundaries
-- **Mineralization continuity assessment** matching composite length to the scale of grade control
-- **Contact preservation analysis** ensuring geological boundaries aren't artificially smoothed by compositing
-- **Structural orientation integration** aligning composite intervals with geological controls
-
-**Statistical Impact Assessment:**
-- **Distribution parameter sensitivity** showing how composite length affects grade distribution characteristics
-- **Spatial continuity preservation** ensuring compositing doesn't destroy important spatial relationships
-- **Estimation variance analysis** evaluating how composite length affects final resource estimate uncertainty
-- **High-grade preservation** ensuring important extreme values aren't inappropriately diluted
-
-**Advanced Compositing Techniques:**
-- **Variable length compositing** respecting geological boundaries while maintaining statistical consistency
-- **Geological weighted compositing** using geological quality indicators to weight sample contributions
-- **Contact-aware compositing** special handling for samples spanning geological domain boundaries
-- **Recovery-weighted compositing** incorporating core recovery data for enhanced reliability
-
-### **Phase 4: Outlier Treatment Strategy**
-
-Professional outlier treatment requires integration of statistical methods with geological understanding:
-
-**Multi-Method Outlier Identification:**
-- **Domain-specific statistical thresholds** recognizing that outlier behavior varies by geological environment  
-- **Spatial outlier analysis** identifying samples that are inconsistent with their neighborhood
-- **Geological context evaluation** distinguishing true extreme values from analytical or sampling errors
-- **Multi-element correlation analysis** using element associations to validate extreme values
-
-**Advanced Treatment Approaches:**
-**Conservative Strategies:**
-- **Top-cutting with geological justification** using geological controls to set appropriate thresholds
-- **Indicator variable approaches** preserving extreme value information while limiting estimation impact
-- **Separate population estimation** for geologically distinct extreme value populations
-- **Conditional simulation** for high-grade uncertainty modeling
-
-**Geological Integration Approaches:**
-- **Structural control correlation** validating extreme values through structural geology relationships
-- **Alteration intensity correlation** using alteration mapping to validate high-grade occurrences
-- **Multi-element consistency** checking extreme values against expected geochemical associations
-- **Spatial clustering analysis** identifying systematic high-grade zones versus random occurrences
-
-### **Phase 5: Data Transformation Optimization**
-
-Many geostatistical techniques require appropriate data distribution characteristics:
-
-**Advanced Transformation Assessment:**
-GeoDataViz provides comprehensive transformation evaluation:
-
-**Multi-Method Transformation Testing:**
-- **Log-normal transformation** with back-transformation bias assessment for positively skewed distributions
-- **Box-Cox optimization** with automated parameter selection for flexible distribution modeling
-- **Normal score transformation** preserving rank relationships while achieving normality
-- **Johnson transformation** for complex distribution shapes requiring specialized approaches
-
-**Geological Constraint Integration:**
-- **Domain-specific transformations** recognizing that optimal transformation varies by geological environment
-- **Grade continuity preservation** ensuring transformations don't destroy important geological relationships
-- **Multi-element consistency** maintaining realistic element associations through transformation
-- **Spatial structure preservation** validating that transformations preserve spatial continuity patterns
-
-**Back-Transformation Validation:**
-- **Bias assessment** quantifying potential errors introduced by transformation and back-transformation
-- **Confidence interval accuracy** ensuring uncertainty estimates remain valid after back-transformation
-- **Extreme value handling** ensuring transformation approaches appropriately handle high-grade populations
-- **Resource classification impact** evaluating how transformation uncertainty affects resource confidence
-
-### **Phase 6: Multi-Element Coordination**
-
-Modern resource evaluation often requires consideration of multiple elements:
-
-**Advanced Multi-Element Analysis:**
-- **Correlation structure preservation** through preprocessing to maintain realistic element associations
-- **Independent component analysis** identifying underlying geological processes controlling multi-element distributions
-- **Compositional data analysis** for whole-rock geochemical datasets where closure effects are important
-- **Co-regionalization assessment** preparing data for multi-element geostatistical estimation
-
-## Practical Implementation Workflow
-
-### **Phase 1: Comprehensive Data Assessment** 
-```
-1. Execute complete data validation protocols from EDA phase
-2. Identify and prioritize all preprocessing requirements
-3. Develop geological domain optimization strategy
-4. Create quality assurance integration plan
+# Visualize
+plot_ly(desurveyed, x = ~X, y = ~Y, z = ~Z,
+        color = ~Grade, type = 'scatter3d', mode = 'markers',
+        marker = list(size = 5, colorscale = 'Viridis', 
+                     colorbar = list(title = "Grade"))) %>%
+  layout(title = "Desurveyed Drillhole",
+         scene = list(
+           xaxis = list(title = "X"),
+           yaxis = list(title = "Y"),
+           zaxis = list(title = "Z", autorange = "reversed")
+         ))
 ```
 
-### **Phase 2: Domain Conditioning**
+### Step 2: Compositing
+
+Regularize sample lengths:
+
+```{r}
+#| label: compositing
+
+# Compositing function (5m length)
+composite_data <- function(data, comp_length = 5) {
+  
+  composites <- data %>%
+    mutate(
+      # Assign composite interval
+      Comp_ID = floor(From / comp_length)
+    ) %>%
+    group_by(Comp_ID) %>%
+    summarise(
+      From = min(From),
+      To = max(To),
+      Length = To - From,
+      Grade = weighted.mean(Grade, To - From),
+      X = mean(X),
+      Y = mean(Y),
+      Z = mean(Z),
+      N_Samples = n(),
+      .groups = 'drop'
+    ) %>%
+    filter(Length >= comp_length * 0.5)  # Keep composites > 50% target length
+  
+  return(composites)
+}
+
+# Create composites
+composites <- composite_data(desurveyed, comp_length = 5)
+
+cat("Original samples:", nrow(desurveyed), "\n")
+cat("Composites:", nrow(composites), "\n")
+cat("Average composite length:", round(mean(composites$Length), 2), "m\n")
+
+# Display
+head(composites %>% select(Comp_ID, From, To, Length, Grade, X, Y, Z))
 ```
-1. Implement advanced geological domain validation
-2. Execute contact analysis and boundary optimization  
-3. Perform structural control integration
-4. Validate domain boundaries using multiple statistical approaches
+
+**Composite Length Selection:**
+- **Too short:** Excessive smoothing, lose geological detail
+- **Too long:** Sample non-stationarity, poor statistics
+- **Typical:** 1-5m for most deposits
+
+### Step 3: Outlier Treatment
+
+Identify and handle extreme values:
+
+```{r}
+#| label: outliers
+#| fig-cap: "Outlier analysis and capping"
+
+# Calculate percentile thresholds
+P95 <- quantile(composites$Grade, 0.95)
+P99 <- quantile(composites$Grade, 0.99)
+
+# Identify outliers
+outlier_summary <- composites %>%
+  summarise(
+    Mean = mean(Grade),
+    Median = median(Grade),
+    P95 = P95,
+    P99 = P99,
+    N_Above_P95 = sum(Grade > P95),
+    N_Above_P99 = sum(Grade > P99)
+  )
+
+print(outlier_summary)
+
+# Top-cutting demonstration
+composites_capped <- composites %>%
+  mutate(
+    Grade_Original = Grade,
+    Grade_Capped = pmin(Grade, P95)  # Cap at 95th percentile
+  )
+
+# Comparison plot
+p1 <- plot_ly(composites, x = ~Grade, type = "histogram", 
+              name = "Original", nbinsx = 20) %>%
+  layout(xaxis = list(title = "Grade"))
+
+p2 <- plot_ly(composites_capped, x = ~Grade_Capped, type = "histogram",
+              name = "Capped (P95)", nbinsx = 20) %>%
+  layout(xaxis = list(title = "Grade"))
+
+subplot(p1, p2, nrows = 2, shareX = TRUE) %>%
+  layout(title = "Effect of Grade Capping")
 ```
 
-### **Phase 3: Composite Strategy Implementation**
+**Capping Strategies:**
+- **Statistical:** Percentile-based (95th, 98th)
+- **Geological:** Based on domain/mineralization type
+- **Spatial:** Consider outlier distribution
+
+### Step 4: Domain Assignment
+
+Assign samples to geological domains:
+
+```{r}
+#| label: domains
+
+# Simple domain assignment (by elevation)
+composites_domains <- composites %>%
+  mutate(
+    Domain = case_when(
+      Z > 480 ~ "Oxide",
+      Z > 460 ~ "Transition",
+      TRUE ~ "Fresh"
+    )
+  )
+
+# Domain statistics
+domain_stats <- composites_domains %>%
+  group_by(Domain) %>%
+  summarise(
+    N_Samples = n(),
+    Mean_Grade = mean(Grade),
+    SD_Grade = sd(Grade),
+    Min_Grade = min(Grade),
+    Max_Grade = max(Grade),
+    .groups = 'drop'
+  )
+
+print(domain_stats)
+
+# Visualize domains
+plot_ly(composites_domains, x = ~X, y = ~Y, z = ~Z,
+        color = ~Domain, colors = c("orange", "yellow", "green"),
+        type = 'scatter3d', mode = 'markers',
+        marker = list(size = 5)) %>%
+  layout(title = "Geological Domains",
+         scene = list(
+           xaxis = list(title = "X"),
+           yaxis = list(title = "Y"),
+           zaxis = list(title = "Z", autorange = "reversed")
+         ))
 ```
-1. Execute multi-criteria composite length optimization
-2. Implement appropriate compositing methodology for each domain
-3. Validate composite quality through statistical and geological assessment
-4. Generate composite validation documentation
-```
-
-### **Phase 4: Advanced Data Conditioning**
-```
-1. Implement sophisticated outlier treatment based on geological context
-2. Execute appropriate transformation strategies by domain
-3. Apply spatial bias correction where required
-4. Integrate quality assurance data into final conditioning
-```
-
-### **Phase 5: Validation and Documentation**
-```
-1. Comprehensive validation of preprocessing impact on resource estimation
-2. Generation of complete preprocessing documentation for professional reporting
-3. Uncertainty quantification for preprocessed data
-4. Resource estimation readiness certification
-```
-
-## Critical Quality Assurance Checkpoints
-
-Before proceeding to resource estimation, comprehensive validation ensures preprocessing quality:
-
-### **Data Integrity Verification**
-- [ ] **Geological Consistency:** All domain boundaries geologically reasonable and statistically justified
-- [ ] **Statistical Validity:** Distributions appropriate for selected geostatistical methods
-- [ ] **Spatial Continuity:** Important geological relationships preserved through preprocessing
-- [ ] **Quality Integration:** All QA/QC data appropriately incorporated into final dataset
-
-### **Professional Standards Compliance**  
-- [ ] **Documentation Completeness:** All preprocessing decisions documented with geological and statistical justification
-- [ ] **Reproducibility:** Complete methodology documentation enabling independent verification
-- [ ] **Uncertainty Quantification:** Preprocessing uncertainty quantified and propagated to resource estimates
-- [ ] **Professional Review:** Independent technical review of preprocessing methodology and implementation
-
-## Advanced Preprocessing Challenges and Solutions
-
-### **Challenge 1: Complex Geological Boundaries**
-**Issue:** Gradational contacts between geological domains where traditional hard boundaries are inappropriate
-**Professional Solution:** 
-- Implement soft boundary modeling using transitional probability approaches
-- Apply distance-weighted domain assignment with geological control integration
-- Use machine learning boundary optimization with geological constraint integration
-- Quantify boundary uncertainty for appropriate resource classification
-
-### **Challenge 2: Multi-Campaign Data Integration**
-**Issue:** Different drilling campaigns with varying sampling protocols, analytical methods, and quality standards
-**Professional Solution:**
-- Develop campaign-specific preprocessing protocols acknowledging methodological differences
-- Implement statistical harmonization techniques while preserving geological relationships
-- Apply weighted integration approaches based on data quality assessment
-- Document inter-campaign bias and incorporate uncertainty into resource estimates
-
-### **Challenge 3: Extreme Value Populations**
-**Issue:** High-grade populations requiring specialized treatment to balance geological reality with estimation stability
-**Professional Solution:**
-- Implement geological context-based outlier evaluation using multiple validation approaches
-- Apply indicator approaches preserving extreme value information while managing estimation risk
-- Use conditional simulation for extreme value uncertainty modeling
-- Develop high-grade zone modeling strategies based on geological controls
-
-### **Challenge 4: Multi-Element Complexity**
-**Issue:** Complex element associations requiring coordinated preprocessing across multiple variables
-**Professional Solution:**
-- Apply multivariate statistical approaches preserving element association patterns
-- Implement compositional data analysis where closure effects are significant
-- Use co-regionalization analysis for coordinated multi-element preprocessing
-- Develop element-specific strategies while maintaining overall geological consistency
-
-## Professional Development Through Preprocessing Mastery
-
-Advanced preprocessing capabilities provide significant professional differentiation:
-
-**Technical Excellence:**
-- Ability to handle complex geological datasets that challenge standard approaches
-- Integration of geological knowledge with advanced statistical methods
-- Capability to quantify and manage uncertainty throughout the preprocessing workflow
-- Expertise in validating preprocessing decisions through multiple technical approaches
-
-**Professional Credibility:**
-- Documentation standards meeting international resource reporting requirements
-- Methodology transparency enabling independent technical review and validation
-- Integration of quality assurance throughout the preprocessing workflow
-- Ability to explain and justify complex preprocessing decisions to diverse audiences
-
-**Economic Value:**
-- Prevention of costly resource estimation errors through proper data conditioning
-- Optimization of geological domain boundaries enhancing resource estimate accuracy
-- Appropriate statistical treatment improving resource classification confidence
-- Risk management through comprehensive uncertainty quantification
-
-## Integration with Resource Estimation Excellence
-
-Professional preprocessing directly enhances all aspects of resource estimation:
-
-**Estimation Accuracy:**
-- Reduced bias through appropriate outlier treatment and spatial bias correction
-- Enhanced geological realism through proper domain conditioning and boundary treatment
-- Improved statistical reliability through optimal transformation and composite strategies
-- Better uncertainty quantification through comprehensive quality assurance integration
-
-**Model Reliability:**
-- Consistent data support across the entire resource domain through proper composite optimization
-- Appropriate statistical distributions for selected geostatistical methods
-- Preserved geological relationships ensuring model geological consistency
-- Quantified uncertainty parameters enabling appropriate resource classification
-
-**Professional Applications:**
-- Resource estimates meeting international reporting standards for quality and documentation
-- Models suitable for detailed mine planning and grade control applications
-- Uncertainty quantification supporting economic evaluation and risk assessment
-- Documentation standards enabling independent technical review and regulatory approval
-
-## Advanced GeoDataViz Pro Features
-
-The upcoming professional version includes enhanced preprocessing capabilities:
-
-**Automated Workflow Optimization:**
-- Machine learning algorithms for optimal preprocessing parameter selection
-- Automated quality assurance integration throughout the preprocessing workflow
-- Intelligent outlier treatment using geological context and multiple validation methods
-- Adaptive transformation selection optimized for complex geological distributions
-
-**Enterprise Integration:**
-- Database connectivity for large-scale preprocessing workflows
-- Batch processing capabilities for multiple deposits or mining operations
-- API integration enabling preprocessing workflow automation
-- Custom reporting for corporate and regulatory requirements
-
-**Advanced Analytics:**
-- Multi-element preprocessing optimization maintaining element associations
-- Temporal analysis for deposits with time-varying mineralization or data quality
-- Uncertainty propagation throughout the preprocessing workflow
-- Machine learning domain optimization using geological and geochemical data
-
-## Conclusion: Preprocessing as the Foundation of Professional Excellence
-
-Professional drillhole data preprocessing represents the critical bridge between raw geological data and reliable resource estimates. Through GeoDataViz, these sophisticated preprocessing capabilities are now accessible to every geoscientist, eliminating the traditional barriers of expensive software and limited technical resources.
-
-The investment in comprehensive preprocessing methodology pays enormous dividends: dramatically improved resource estimate accuracy, enhanced professional credibility, and the confidence that comes from knowing your data conditioning meets the highest professional standards.
-
-Remember: **every preprocessing decision impacts final resource estimate quality.** Make preprocessing excellence your competitive advantage and the foundation of your professional reputation.
-
-## Next in The Library
-
-Our next definitive guide will explore **"Variogram Modeling Mastery: Advanced Spatial Continuity Analysis with GeoDataViz"**, where we'll transform properly preprocessed data into sophisticated spatial continuity models for optimal resource estimation.
 
 ---
 
-*Ready to implement professional-grade preprocessing workflows? Experience the [GeoDataViz interactive platform](https://geodataviz.shinyapps.io/geodataviz/) where this entire preprocessing workflow can be executed interactively with comprehensive validation and documentation. For visual tutorials on these advanced techniques, follow our step-by-step guides on [Instagram @orebit.id](https://instagram.com/orebit.id).*
+## Quality Checks Before Estimation
+
+### Checklist:
+
+```{r}
+#| label: qa-checks
+
+# Automated QA checks
+qa_results <- list(
+  "Total composites" = nrow(composites),
+  "Composite length CV" = round(sd(composites$Length)/mean(composites$Length), 2),
+  "Grade CV" = round(sd(composites$Grade)/mean(composites$Grade), 2),
+  "Domains defined" = n_distinct(composites_domains$Domain),
+  "Outliers (>P95)" = sum(composites$Grade > P95),
+  "Missing coords" = sum(is.na(composites$X) | is.na(composites$Y) | is.na(composites$Z))
+)
+
+cat("QA/QC Summary:\n")
+for(i in seq_along(qa_results)) {
+  cat(sprintf("- %s: %s\n", names(qa_results)[i], qa_results[[i]]))
+}
+```
+
+**Pass Criteria:**
+- [ ] Composite length CV < 0.3
+- [ ] All coordinates valid
+- [ ] Outliers documented and justified
+- [ ] Domains statistically different
+
+---
+
+## Using GeoDataViz for Preprocessing
+
+GeoDataViz automates this entire workflow:
+
+**Features:**
+1. **Auto-desurveying:** Multiple survey interpolation methods
+2. **Smart compositing:** Geological boundary preservation
+3. **Outlier detection:** Multiple statistical methods
+4. **Domain tools:** Interactive 3D domain definition
+5. **Export:** CSV, Excel, or database formats
+
+[**Try GeoDataViz →**](https://geodataviz.shinyapps.io/geodataviz/){.btn .btn-success target="_blank"}
+
+---
+
+## Next Steps
+
+After preprocessing:
+1. **Variogram Modeling** → Spatial continuity analysis
+2. **Block Modeling** → Create estimation grid
+3. **Kriging** → Resource estimation
+4. **Validation** → Model quality checks
+
+**Next Guide:** Coming soon - "Variogram Modeling with GeoDataViz"
+
+---
+
+## Summary Code
+
+Complete preprocessing pipeline:
+
+```{r}
+#| label: summary-pipeline
+#| eval: false
+
+# Complete workflow
+preprocessing_pipeline <- function(collar, survey, assay, comp_length = 5) {
+  
+  # 1. Desurvey
+  desurveyed <- desurvey_hole(collar, survey, assay)
+  
+  # 2. Composite
+  composites <- composite_data(desurveyed, comp_length)
+  
+  # 3. Cap outliers
+  P95 <- quantile(composites$Grade, 0.95)
+  composites$Grade_Capped <- pmin(composites$Grade, P95)
+  
+  # 4. Assign domains
+  composites$Domain <- case_when(
+    composites$Z > 480 ~ "Oxide",
+    composites$Z > 460 ~ "Transition",
+    TRUE ~ "Fresh"
+  )
+  
+  return(composites)
+}
+```
+
+---
+
+*For step-by-step video tutorials, visit [@orebit.id](https://instagram.com/orebit.id)*
