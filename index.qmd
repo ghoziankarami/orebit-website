@@ -1,9 +1,6 @@
 ---
-title: "Orebit Geological Solutions"
-subtitle: "Professional R Shiny Applications for Modern Geology"
-description: "Advanced geological analysis suite - GeoDataViz, Resource Estimation, and Pit Optimization tools for professional geoscientists and mining engineers."
 page-layout: full
-toc: false
+title-block-banner: false
 ---
 
 ::: {.container .page-content}
@@ -11,7 +8,7 @@ toc: false
 ::: {.text-center .hero-intro}
 # Digitizing Geology, From Exploration to Production
 
-Professional R Shiny applications for geological data analysis, resource estimation, and mine optimization. Built by geologists, for geologists.
+Professional R Shiny applications for modern geology. We provide an advanced geological analysis suite—including GeoDataViz, Resource Estimation, and Pit Optimization tools—for professional geoscientists and mining engineers. Built by geologists, for geologists.
 
 <div class="hero-buttons">
 <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener"><i class="fas fa-rocket"></i> Launch GeoDataViz Demo</a>
