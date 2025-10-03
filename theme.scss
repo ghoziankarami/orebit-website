@@ -1,4 +1,4 @@
-/*-- Orebit.id Theme v6.1 DEFINITIVE MOBILE FIX --*/
+/*-- Orebit.id Theme v6.2 MOBILE SECTION FIX --*/
 
 /*-- scss:defaults --*/
 $orebit-dark: #2c3e50;
@@ -39,10 +39,8 @@ body {
     .navbar-brand img { max-height: 45px; }
   }
 
-  // === BLOK PERBAIKAN UNTUK MOBILE ===
+  // === BLOK PERBAIKAN UNTUK MOBILE NAVBAR ===
   @media (max-width: 991.98px) {
-    // 1. Targetkan container di dalam navbar, bukan navbar-nya
-    // Ini adalah kunci perbaikannya
     .container, .container-fluid {
       position: relative !important;
       display: flex !important;
@@ -50,22 +48,16 @@ body {
       align-items: center !important;
       width: 100% !important;
     }
-
-    // 2. Sempurnakan positioning logo di tengah (aturan ini sudah benar)
     .navbar-brand {
       position: absolute !important;
       left: 50% !important;
       top: 50% !important;
       transform: translate(-50%, -50%) !important;
       z-index: 999; 
-
-      // 3. Kecilkan ukuran logo agar tidak terlalu ramai
       img {
         max-height: 48px !important;
       }
     }
-
-    // 4. Pastikan menu dropdown tetap berfungsi seperti sebelumnya
     .navbar-collapse {
       position: absolute !important;
       top: 100% !important; 
@@ -79,7 +71,6 @@ body {
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
     }
   }
-  // === AKHIR BLOK PERBAIKAN ===
 
   // Navbar Links & Icons Color
   .navbar-nav .nav-link {
@@ -93,18 +84,16 @@ body {
     &:hover { color: $primary !important; transform: scale(1.1); }
   }
 
-  // === STYLING UNTUK IKON FONT AWESOME DI NAVBAR ===
+  // Styling untuk ikon di navbar
   .navbar-toggler {
     font-size: 1.5rem; 
     color: $dark !important;
     border: none !important;
     padding-right: 0.5rem;
-    z-index: 1001; // Pastikan tombol bisa diklik
+    z-index: 1001;
     &:focus { box-shadow: none !important; }
     &:hover { color: $primary !important; }
   }
-  
-  // Pastikan ikon di kanan juga bisa diklik
   .navbar-nav {
     z-index: 1001;
   }
@@ -153,3 +142,15 @@ body {
   }
 }
 .cta-section h3 { font-weight: 700; }
+
+
+// ======================================================
+// == KODE TAMBAHAN UNTUK MEMPERBAIKI 'OUR PRODUCT SUITE' ==
+// ======================================================
+@media (max-width: 767.98px) {
+  // Kurangi padding horizontal pada section di mobile agar tidak terlalu sempit
+  .section-light-bg {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
