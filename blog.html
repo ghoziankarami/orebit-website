@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.7.32" />
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-<title>Orebit.id - Geology, Digitized</title>
+<meta name="description" content="Explore comprehensive guides, tutorials, and case studies on geological data analysis, resource estimation, and open-source workflows with R." />
+
+<title>Technical Resources – Orebit.id - Geology, Digitized</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,25 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./Logo_favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fbdd3f49dc072424b9437925e0bf985.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +53,36 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Mencari"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 
 <script type="text/javascript">
 
@@ -78,62 +92,103 @@ gtag('js', new Date());
 gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Orebit.id - Geology, Digitized">
-<meta property="og:description" content="Professional geological consulting and data analysis services">
-<meta property="og:image" content="https://orebit.id/Logo_banner.png">
-<meta property="og:site_name" content="Orebit.id - Geology, Digitized">
-<meta property="og:image:height" content="428">
-<meta property="og:image:width" content="1335">
-<meta name="twitter:title" content="Orebit.id - Geology, Digitized">
-<meta name="twitter:card" content="summary">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="nav-fixed quarto-light">
+<body>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Logo_banner.png" alt="" class="navbar-logo">
+    <a href="/index.html" class="navbar-brand navbar-brand-logo">
+    <img src="/Logo_banner.png" alt="" class="navbar-logo" />
     </a>
   </div>
             <div id="quarto-search" class="" title="Mencari"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alihkan navigasi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alihkan navigasi"
+  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="/index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="/about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="/blog.html"> 
 <span class="menu-text">Technical Resources</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn Profile">
+    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i 
+  class="bi bi-linkedin" 
+  role="img" 
+  aria-label="LinkedIn Profile" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ghoziankarami"> <i class="bi bi-github" role="img" aria-label="GitHub Profile">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="./#"> <i class="bi bi-search" role="img" aria-label="Search">
+    <a class="nav-link" href="https://github.com/ghoziankarami"> <i 
+  class="bi bi-github" 
+  role="img" 
+  aria-label="GitHub Profile" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -148,114 +203,209 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <div id="quarto-toc-target"></div>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Digitizing Geology, From Exploration to Production</h1></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Technical Resources</h1>
+<p class="subtitle lead">Comprehensive Guides for Geological Data Analysis</p>
+</div>
+
+<div>
+  <div class="description">
+    Explore comprehensive guides, tutorials, and case studies on geological data analysis, resource estimation, and open-source workflows with R.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<div class="container page-content">
-<section id="digitizing-geology-from-exploration-to-production" class="level1 text-center hero-intro">
+</header>
 
-<p>Professional R Shiny applications for modern geology. We provide an advanced geological analysis suite—including GeoDataViz, Resource Estimation, and Pit Optimization tools—for professional geoscientists and mining engineers. Built by geologists, for geologists.</p>
-<div class="hero-buttons">
-<p><a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener"><i class="fas fa-rocket"></i> Launch GeoDataViz Demo</a> <a href="blog.html" class="btn btn-secondary btn-lg"><i class="fas fa-book"></i> Read Technical Guides</a></p>
-</div>
-</section>
-<section id="why-orebit-solutions" class="level2 section-container text-center">
-<h2 class="anchored" data-anchor-id="why-orebit-solutions">Why Orebit Solutions?</h2>
-<p>Access enterprise-level tools without the enterprise-level costs. We bridge the gap between powerful analytics and accessibility.</p>
-<div class="value-props-grid">
-<div class="value-item">
-<div class="value-icon">
-<i class="fas fa-dollar-sign"></i>
-</div>
-<section id="cost-effective-excellence" class="level3">
-<h3 class="anchored" data-anchor-id="cost-effective-excellence">Cost-Effective Excellence</h3>
-<p>Eliminate prohibitive $20,000+ annual licensing fees. Powerful tools should be accessible to all, not just the largest corporations.</p>
-</section>
-</div>
-<div class="value-item">
-<div class="value-icon">
-<i class="fas fa-user-check"></i>
-</div>
-<section id="built-by-geologists" class="level3">
-<h3 class="anchored" data-anchor-id="built-by-geologists">Built by Geologists</h3>
-<p>Developed by a Certified Competent Person (CP) who understands the real-world challenges and workflows of the mining industry.</p>
-</section>
-</div>
-<div class="value-item">
-<div class="value-icon">
-<i class="fas fa-cogs"></i>
-</div>
-<section id="open-transparent" class="level3">
-<h3 class="anchored" data-anchor-id="open-transparent">Open &amp; Transparent</h3>
-<p>Built on open-source R technology. No black-box algorithms. Our methods are clear, ensuring reproducibility and scientific integrity.</p>
-</section>
-</div>
-<div class="value-item">
-<div class="value-icon">
-<i class="fas fa-cloud"></i>
-</div>
-<section id="cloud-native-performance" class="level3">
-<h3 class="anchored" data-anchor-id="cloud-native-performance">Cloud-Native Performance</h3>
-<p>No installation, no maintenance. Run sophisticated analyses directly in your browser, anywhere, on any device.</p>
-</section>
-</div>
-</div>
-</section>
-<div class="section-container section-light-bg">
-<h2 class="section-title text-center anchored">
-Our Product Suite
+
+<div class="blog-intro">
+<h2>
+Welcome to the Orebit Knowledge Hub
 </h2>
-<div class="products-grid">
-<div class="product-card flagship">
-<div class="product-header">
-<h3 class="anchored">
-<i class="fas fa-chart-line"></i> GeoDataViz
-</h3>
-<p><span class="badge bg-success">Available Now</span></p>
+<p>
+Here you’ll find in-depth articles, practical tutorials, and case studies designed to help you master modern geological data analysis. Whether you’re using our flagship application, <strong>GeoDataViz</strong>, or exploring advanced open-source workflows in R, these resources are here to support your work.
+</p>
 </div>
-<p>Transform your geological workflow with professional-grade exploratory data analysis and 3D visualization, built specifically for drillhole datasets. <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-success w-100 mt-3" target="_blank" rel="noopener">Launch Free Demo →</a></p>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Orebit.id - Geology, Digitized</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Orebit.id - Geology, Digitized</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG9tZQ==">Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QWJvdXQ=">About</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Fib3V0Lmh0bWw=">/about.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVjaG5pY2FsIFJlc291cmNlcw==">Technical Resources</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Jsb2cuaHRtbA==">/blog.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2dob3ppYW5rYXJhbWkv">https://www.linkedin.com/in/ghoziankarami/</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6aHR0cHM6Ly9naXRodWIuY29tL2dob3ppYW5rYXJhbWk=">https://github.com/ghoziankarami</span></p>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWxlZnQ=">
+<p>© 2025 <a href="https://orebit.id">Orebit.id</a> by Ghozian Islam Karami<br />
+All rights reserved.</p>
 </div>
-<div class="product-card upcoming">
-<div class="product-header">
-<h3 class="anchored">
-<i class="fas fa-calculator"></i> Resource Estimation
-</h3>
-<p><span class="badge bg-warning">Coming Q2 2026</span></p>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWNlbnRlcg==">
+<p>Built with <a href="https://quarto.org">Quarto</a> &amp; ❤️</p>
 </div>
-<p>Professional geostatistical analysis and resource modeling. Advanced kriging, variogram modeling, and uncertainty quantification. <a href="#cta-section" class="btn btn-outline-primary w-100 mt-3">Join Beta List →</a></p>
-</div>
-<div class="product-card upcoming">
-<div class="product-header">
-<h3 class="anchored">
-<i class="fas fa-mountain"></i> Pit Optimizer
-</h3>
-<p><span class="badge bg-warning">Coming Q3 2026</span></p>
-</div>
-<p>Sophisticated mine planning and optimization algorithms. Maximize NPV while considering operational constraints and environmental factors. <a href="#cta-section" class="btn btn-outline-primary w-100 mt-3">Get Notified →</a></p>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLXJpZ2h0">
+<p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
 </div>
 </div>
+<div id="quarto-listing-pipeline" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWVuYWJsZS1tYXRoLWlubGluZQ=="><span class="math inline">e = mC^2</span></span></p>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="cGlwZWxpbmUtbGlzdGluZy1saXN0aW5n">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select
+      id="listing-listing-sort"
+      class="form-select"
+      aria-label="Urut berdasar"
+      onChange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})"
+    >
+      <option value="" disabled selected hidden>Urut berdasar</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option
+        value="listing-title"
+        data-direction="asc">
+        Judul
+      </option>
+      <option
+        value="listing-date-sort"
+        data-direction="asc">
+        Tanggal - Paling lama
+      </option>
+      <option
+        value="listing-date-sort"
+        data-direction="desc">
+        Tanggal - Paling baru
+      </option>
+      <option
+        value="listing-author"
+        data-direction="asc">
+        Penulis
+      </option>
+    </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter" />
+    </div>
 </div>
-<div id="cta-section" class="section-container cta-section text-center">
-<section id="ready-to-transform-your-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="ready-to-transform-your-workflow">Ready to Transform Your Workflow?</h3>
-<p>Stay updated on our upcoming resource estimation and pit optimization tools.</p>
-<form class="d-flex justify-content-center mt-4">
-<input type="email" class="form-control me-2" placeholder="Enter your email for updates" style="max-width: 300px;"> <button type="submit" class="btn btn-primary">Get Notified</button>
-</form>
-</section>
-</div>
-</div>
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="R2VvRGF0YVZpeiUyQ1ByZXByb2Nlc3NpbmclMkNSZXNvdXJjZS1Fc3RpbWF0aW9u" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1759474166469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1397">
+<a href="/posts\Drillhole Data Preprocessing\index.qmd" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading='lazy' src="/posts/Drillhole Data Preprocessing/pre-drilling-thumb.png" class="thumbnail-image card-img" style="height: 150px;" >
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Pre-Processing Drillhole Data for Resource Estimation
+</h5>
+<div class="listing-categories">
 
+<div class="listing-category" onclick="window.quartoListingCategory('R2VvRGF0YVZpeg=='); return false;">GeoDataViz</div>
 
+<div class="listing-category" onclick="window.quartoListingCategory('UHJlcHJvY2Vzc2luZw=='); return false;">Preprocessing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzb3VyY2UtRXN0aW1hdGlvbg=='); return false;">Resource-Estimation</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Complete workflow for transforming raw drillhole data into estimation-ready datasets using R.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Ghozian Islam Karami
+</div>
+<div class="listing-date">
+20 Sep 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="R2VvRGF0YVZpeiUyQ0VEQSUyQ1R1dG9yaWFs" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1759474276825" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="914">
+<a href="/posts\EDA with GeoDataViz\index.qmd" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading='lazy' src="/posts/EDA with GeoDataViz/EDA-thumb.png" class="thumbnail-image card-img" style="height: 150px;" >
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exploratory Data Analysis for Geological Data with GeoDataViz
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('R2VvRGF0YVZpeg=='); return false;">GeoDataViz</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RURB'); return false;">EDA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VHV0b3JpYWw='); return false;">Tutorial</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Practical guide to exploratory data analysis for geological datasets using R and GeoDataViz workflows.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Ghozian Islam Karami
+</div>
+<div class="listing-date">
+20 Sep 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="V2VsY29tZSUyQ09wZW4tU291cmNlJTJDR2VvRGF0YVZpeg==" data-listing-date-sort="1758301200000" data-listing-file-modified-sort="1759474189511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="394">
+<a href="/posts\Welcome to Orebit\index.qmd" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading='lazy' src="/posts/Welcome to Orebit/Open-Source-thumb.png" class="thumbnail-image card-img" style="height: 150px;" >
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Welcome to Orbit: Open-Source Geological Analysis Tools
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('V2VsY29tZQ=='); return false;">Welcome</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('T3Blbi1Tb3VyY2U='); return false;">Open-Source</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R2VvRGF0YVZpeg=='); return false;">GeoDataViz</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Discover Orbit’s suite of R Shiny applications for geological data analysis - from exploration to resource estimation.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Ghozian Islam Karami
+</div>
+<div class="listing-date">
+20 Sep 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">Tidak ada yang cocok</div>
+</div>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Technical Resources – Orebit.id - Geology, Digitized</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Technical Resources – Orebit.id - Geology, Digitized</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Orebit.id - Geology, Digitized</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Orebit.id - Geology, Digitized</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw==">Explore comprehensive guides, tutorials, and case studies on geological data analysis, resource estimation, and open-source workflows with R.</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj">Professional geological consulting and data analysis services</span></p>
+</div>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -658,20 +808,21 @@ Our Product Suite
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025 <a href="https://orebit.id">Orebit.id</a> by Ghozian Islam Karami<br>
-All rights reserved.</p>
-</div>   
+      <div class='footer-contents'>© 2025 [Orebit.id](https://orebit.id) by Ghozian Islam Karami  
+All rights reserved.
+</div>  
+    </div>   
     <div class="nav-footer-center">
-<p>Built with <a href="https://quarto.org">Quarto</a> &amp; ❤️</p>
-</div>
+      <div class='footer-contents'>Built with [Quarto](https://quarto.org) & ❤️
+</div>  
+    </div>
     <div class="nav-footer-right">
-<p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-</div>
+      <div class='footer-contents'>[Privacy Policy](#) | [Terms of Service](#)
+</div>  
+    </div>
   </div>
 </footer>
 
+</body>
 
-
-
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
-</body></html>
+</html>

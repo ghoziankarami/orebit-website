@@ -4,7 +4,7 @@ author: "Ghozian Islam Karami"
 date: "2025-09-20"
 categories: [Welcome, Open-Source, GeoDataViz]
 description: "Discover Orbit's suite of R Shiny applications for geological data analysis - from exploration to resource estimation."
-image: "welcome-banner.png"
+image: "Open-Source-thumb.png"
 ---
 
 ## Professional Geological Analysis, Accessible to Everyone

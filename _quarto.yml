@@ -11,7 +11,6 @@ website:
   favicon: Logo_favicon.png
   description: "Professional geological consulting, data analysis, and open-source tools by Ghozian Islam Karami"
   
-  # Open Graph metadata untuk social sharing
   open-graph:
     title: "Orebit.id - Geology, Digitized"
     description: "Professional geological consulting and data analysis services"
@@ -35,9 +34,6 @@ website:
       - icon: github
         href: https://github.com/ghoziankarami
         aria-label: "GitHub Profile"
-      - icon: search
-        href: "#"
-        aria-label: "Search"
             
   page-footer:
     left: |
@@ -48,8 +44,7 @@ website:
     right: |
       [Privacy Policy](#) | [Terms of Service](#)
 
-  # SEO dan performance
-  google-analytics: "G-XXXXXXXXXX" # Ganti dengan GA ID Anda
+  google-analytics: "G-XXXXXXXXXX"
   
 format:
   html:
@@ -58,7 +53,11 @@ format:
       - theme.scss
     css: 
       - styles.css
-    js: custom.js 
+    js: custom.js
+    # TAMBAHKAN INI - Font Awesome CDN
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     html-math-method: katex
     code-copy: true
     code-overflow: wrap

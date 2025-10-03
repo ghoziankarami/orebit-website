@@ -4,7 +4,7 @@ author: "Ghozian Islam Karami"
 date: "2025-09-20"
 categories: [GeoDataViz, Preprocessing, Resource-Estimation]
 description: "Complete workflow for transforming raw drillhole data into estimation-ready datasets using R."
-image: "preprocessing-workflow.png"
+image: "pre-drilling-thumb.png"
 ---
 
 ## Why Preprocessing Matters
