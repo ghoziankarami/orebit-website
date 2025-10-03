@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ghozian Islam Karami">
+<meta name="dcterms.date" content="2025-09-20">
+<meta name="description" content="Practical guide to exploratory data analysis for geological datasets using R and GeoDataViz workflows.">
+
+<title>Exploratory Data Analysis for Geological Data with GeoDataViz – Orebit.id - Geology, Digitized</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../Logo_favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8fbdd3f49dc072424b9437925e0bf985.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Tidak ada hasil",
+    "search-matching-documents-text": "dokumen cocok",
+    "search-copy-link-title": "Salin tautan untuk mencari",
+    "search-hide-matches-text": "Sembunyikan kecocokan lainnya",
+    "search-more-match-text": "kecocokan lainnya di dokumen ini",
+    "search-more-matches-text": "kecocokan lainnya di dokumen ini",
+    "search-clear-button-title": "Hapus",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Batal",
+    "search-submit-button-title": "Kirim",
+    "search-label": "Mencari"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="../../site_libs/plotly-binding-4.11.0/plotly.js"></script>
+
+<script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="../../site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="../../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="../../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="../../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="../../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Orebit.id - Geology, Digitized">
+<meta property="og:description" content="Professional geological consulting and data analysis services">
+<meta property="og:image" content="https://orebit.id/posts/EDA with GeoDataViz/EDA-thumbsrs.png">
+<meta property="og:site_name" content="Orebit.id - Geology, Digitized">
+<meta name="twitter:title" content="Exploratory Data Analysis for Geological Data with GeoDataViz – Orebit.id - Geology, Digitized">
+<meta name="twitter:description" content="Practical guide to exploratory data analysis for geological datasets using R and GeoDataViz workflows.">
+<meta name="twitter:image" content="https://orebit.id/posts/EDA with GeoDataViz/EDA-thumbsrs.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../Logo_banner.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Mencari"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alihkan navigasi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Technical Resources</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ghoziankarami/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn Profile">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ghoziankarami"> <i class="bi bi-github" role="img" aria-label="GitHub Profile">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Di halaman ini</h2>
+   
+  <ul>
+  <li><a href="#why-eda-matters" id="toc-why-eda-matters" class="nav-link active" data-scroll-target="#why-eda-matters">Why EDA Matters</a></li>
+  <li><a href="#the-5-phase-eda-workflow" id="toc-the-5-phase-eda-workflow" class="nav-link" data-scroll-target="#the-5-phase-eda-workflow">The 5-Phase EDA Workflow</a>
+  <ul class="collapse">
+  <li><a href="#phase-1-data-validation" id="toc-phase-1-data-validation" class="nav-link" data-scroll-target="#phase-1-data-validation">Phase 1: Data Validation</a></li>
+  <li><a href="#phase-2-statistical-analysis" id="toc-phase-2-statistical-analysis" class="nav-link" data-scroll-target="#phase-2-statistical-analysis">Phase 2: Statistical Analysis</a></li>
+  <li><a href="#phase-3-spatial-analysis" id="toc-phase-3-spatial-analysis" class="nav-link" data-scroll-target="#phase-3-spatial-analysis">Phase 3: Spatial Analysis</a></li>
+  <li><a href="#phase-4-outlier-analysis" id="toc-phase-4-outlier-analysis" class="nav-link" data-scroll-target="#phase-4-outlier-analysis">Phase 4: Outlier Analysis</a></li>
+  <li><a href="#phase-5-3d-visualization" id="toc-phase-5-3d-visualization" class="nav-link" data-scroll-target="#phase-5-3d-visualization">Phase 5: 3D Visualization</a></li>
+  </ul></li>
+  <li><a href="#quick-eda-checklist" id="toc-quick-eda-checklist" class="nav-link" data-scroll-target="#quick-eda-checklist">Quick EDA Checklist</a></li>
+  <li><a href="#using-geodataviz" id="toc-using-geodataviz" class="nav-link" data-scroll-target="#using-geodataviz">Using GeoDataViz</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Exploratory Data Analysis for Geological Data with GeoDataViz</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Kode</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">GeoDataViz</div>
+    <div class="quarto-category">EDA</div>
+    <div class="quarto-category">Tutorial</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Practical guide to exploratory data analysis for geological datasets using R and GeoDataViz workflows.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Penulis</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ghozian Islam Karami </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Diterbitkan</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">20 September 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="why-eda-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-eda-matters">Why EDA Matters</h2>
+<p>Inadequate exploratory data analysis is the primary cause of flawed resource models. Before resource estimation, you must understand:</p>
+<ul>
+<li>Data quality and completeness</li>
+<li>Statistical distributions</li>
+<li>Spatial patterns and bias</li>
+<li>Geological domains</li>
+<li>Outlier populations</li>
+</ul>
+</section>
+<section id="the-5-phase-eda-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-5-phase-eda-workflow">The 5-Phase EDA Workflow</h2>
+<section id="phase-1-data-validation" class="level3">
+<h3 class="anchored" data-anchor-id="phase-1-data-validation">Phase 1: Data Validation</h3>
+<p>First, check data integrity:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample drillhole data</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>drillhole_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">HoleID =</span> <span class="fu">rep</span>(<span class="fu">paste0</span>(<span class="st">"DH"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">From =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">10</span>), <span class="dv">10</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">To =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">10</span>), <span class="dv">10</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Grade =</span> <span class="fu">rlnorm</span>(<span class="dv">100</span>, <span class="at">meanlog =</span> <span class="fl">0.5</span>, <span class="at">sdlog =</span> <span class="fl">0.8</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">rep</span>(<span class="fu">runif</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">200</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y =</span> <span class="fu">rep</span>(<span class="fu">runif</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">200</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">Z =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">95</span>, <span class="dv">5</span>), <span class="dv">10</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Data summary</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Total samples:"</span>, <span class="fu">nrow</span>(drillhole_data), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total samples: 100 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Unique holes:"</span>, <span class="fu">n_distinct</span>(drillhole_data<span class="sc">$</span>HoleID), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Unique holes: 10 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Grade range:"</span>, <span class="fu">round</span>(<span class="fu">min</span>(drillhole_data<span class="sc">$</span>Grade), <span class="dv">2</span>), <span class="st">"-"</span>, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">max</span>(drillhole_data<span class="sc">$</span>Grade), <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Grade range: 0.26 - 9.49 </code></pre>
+</div>
+</div>
+</section>
+<section id="phase-2-statistical-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-2-statistical-analysis">Phase 2: Statistical Analysis</h3>
+<p>Understand grade distribution:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> drillhole_data <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="fu">mean</span>(Grade),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median =</span> <span class="fu">median</span>(Grade),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">SD =</span> <span class="fu">sd</span>(Grade),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">CV =</span> <span class="fu">sd</span>(Grade)<span class="sc">/</span><span class="fu">mean</span>(Grade),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Skewness =</span> moments<span class="sc">::</span><span class="fu">skewness</span>(Grade)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(summary_stats)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 5
+   Mean Median    SD    CV Skewness
+  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+1  2.31   1.73  1.86 0.805     1.90</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram and boxplot</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(drillhole_data, <span class="at">x =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">"histogram"</span>, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">nbinsx =</span> <span class="dv">30</span>, <span class="at">name =</span> <span class="st">"Distribution"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>), </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Frequency"</span>))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(drillhole_data, <span class="at">y =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">"box"</span>, </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">name =</span> <span class="st">"Boxplot"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>))</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu">subplot</span>(p1, p2, <span class="at">nrows =</span> <span class="dv">1</span>, <span class="at">shareY =</span> <span class="cn">FALSE</span>, <span class="at">titleX =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Grade Distribution Analysis"</span>)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-distribution" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-530a78b6872d546cc16a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-530a78b6872d546cc16a">{"x":{"data":[{"x":[1.0529749911325166,1.371435509496268,5.7371734074590739,1.7443931203671847,1.8283797426347219,6.5016239847702053,2.3838884685713948,0.59926643045120676,0.9517220210595938,1.1542726714414222,4.389719974626491,2.1986665470958076,2.2719015327821359,1.8013676334355826,1.0568862573915294,6.8862764407556902,2.4553771693519968,0.34188060013004939,2.8895035959134807,1.1294907572170285,0.7016932299850398,1.3848891055979684,0.72556576811360984,0.92024716866206491,0.99996858621401796,0.42769085379973576,3.2227326076855078,1.863951122843666,0.6633121735511901,4.495387795578063,2.3190819059941892,1.302053734414184,3.3740052118631274,3.328450199248425,3.1812202999673063,2.8602590660948968,2.5680173006803284,1.5690504563802223,1.2907582921020821,1.2160686033608135,0.94576081219034946,1.3960770239736315,0.59910579250881668,9.3480220201205029,4.3334742983118888,0.67133509747146669,1.1944575290855937,1.1350488811533013,3.0770523043033347,1.542346174184414,2.0191059434751453,1.6114954450173771,1.593134778661059,4.927746712140582,1.3762786296253247,5.5465520560717199,0.47759019665356001,2.6318604714974025,1.8204494025314251,1.9596252480662406,2.2338165638745235,1.1031185758302087,1.2629295893289132,0.72989082816260475,0.69946957499714157,2.1018605173135363,2.3597786515047914,1.7201360411412658,3.4480676556038303,8.5000134725569598,1.1131291097685883,0.25993203122372144,3.6861804721654838,0.93485802133248563,0.95084245447415483,3.7451328704187472,1.3128253813500763,0.62090687390252675,1.9060685763829253,1.4753376960303035,1.6563416560447017,2.2439199652192383,1.225650807764143,2.7607468441055549,1.3821092171411349,2.149909119255744,3.9648626366699844,2.3353112798569162,1.2703020814234942,4.1331759010459592,3.6502771082083316,2.5567005194466952,1.9956810850393194,0.99767783956435885,4.8965063392347856,1.0199894970999155,9.4864683065217044,5.6186335903159836,1.3653894683247947,0.72532407772488006],"nbinsx":30,"name":"Distribution","type":"histogram","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(255,127,14,0.498)","y":[1.0529749911325166,1.371435509496268,5.7371734074590739,1.7443931203671847,1.8283797426347219,6.5016239847702053,2.3838884685713948,0.59926643045120676,0.9517220210595938,1.1542726714414222,4.389719974626491,2.1986665470958076,2.2719015327821359,1.8013676334355826,1.0568862573915294,6.8862764407556902,2.4553771693519968,0.34188060013004939,2.8895035959134807,1.1294907572170285,0.7016932299850398,1.3848891055979684,0.72556576811360984,0.92024716866206491,0.99996858621401796,0.42769085379973576,3.2227326076855078,1.863951122843666,0.6633121735511901,4.495387795578063,2.3190819059941892,1.302053734414184,3.3740052118631274,3.328450199248425,3.1812202999673063,2.8602590660948968,2.5680173006803284,1.5690504563802223,1.2907582921020821,1.2160686033608135,0.94576081219034946,1.3960770239736315,0.59910579250881668,9.3480220201205029,4.3334742983118888,0.67133509747146669,1.1944575290855937,1.1350488811533013,3.0770523043033347,1.542346174184414,2.0191059434751453,1.6114954450173771,1.593134778661059,4.927746712140582,1.3762786296253247,5.5465520560717199,0.47759019665356001,2.6318604714974025,1.8204494025314251,1.9596252480662406,2.2338165638745235,1.1031185758302087,1.2629295893289132,0.72989082816260475,0.69946957499714157,2.1018605173135363,2.3597786515047914,1.7201360411412658,3.4480676556038303,8.5000134725569598,1.1131291097685883,0.25993203122372144,3.6861804721654838,0.93485802133248563,0.95084245447415483,3.7451328704187472,1.3128253813500763,0.62090687390252675,1.9060685763829253,1.4753376960303035,1.6563416560447017,2.2439199652192383,1.225650807764143,2.7607468441055549,1.3821092171411349,2.149909119255744,3.9648626366699844,2.3353112798569162,1.2703020814234942,4.1331759010459592,3.6502771082083316,2.5567005194466952,1.9956810850393194,0.99767783956435885,4.8965063392347856,1.0199894970999155,9.4864683065217044,5.6186335903159836,1.3653894683247947,0.72532407772488006],"name":"Boxplot","type":"box","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x2","yaxis":"y2","frame":null}],"layout":{"xaxis":{"domain":[0,0.47999999999999998],"automargin":true,"title":"Grade","anchor":"y"},"xaxis2":{"domain":[0.52000000000000002,1],"automargin":true,"anchor":"y2"},"yaxis2":{"domain":[0,1],"automargin":true,"anchor":"x2"},"yaxis":{"domain":[0,1],"automargin":true,"anchor":"x"},"annotations":[],"shapes":[],"images":[],"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Grade Distribution Analysis"},"attrs":{"5f9c591721c9":{"x":{},"nbinsx":30,"name":"Distribution","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"histogram"},"5f9c7f12390f":{"y":{},"name":"Boxplot","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;1: Grade distribution analysis
+</figcaption>
+</figure>
+</div>
+</div>
+<p><strong>Key Observations:</strong> - Check for skewness (common in geological data) - Identify outliers using boxplot - Assess if transformation needed</p>
+</section>
+<section id="phase-3-spatial-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-3-spatial-analysis">Phase 3: Spatial Analysis</h3>
+<p>Visualize spatial patterns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average grade per hole</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>collar_summary <span class="ot">&lt;-</span> drillhole_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(HoleID, X, Y) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgGrade =</span> <span class="fu">mean</span>(Grade),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">MaxGrade =</span> <span class="fu">max</span>(Grade),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Interactive map</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(collar_summary, <span class="at">x =</span> <span class="sc">~</span>X, <span class="at">y =</span> <span class="sc">~</span>Y, <span class="at">color =</span> <span class="sc">~</span>AvgGrade,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'markers'</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">15</span>, <span class="at">colorscale =</span> <span class="st">'Viridis'</span>, </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">showscale =</span> <span class="cn">TRUE</span>, <span class="at">colorbar =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>)),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Hole:"</span>, HoleID, </span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"&lt;br&gt;Avg Grade:"</span>, <span class="fu">round</span>(AvgGrade, <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Drillhole Collar Map"</span>,</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Easting (X)"</span>),</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Northing (Y)"</span>))</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-spatial" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spatial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-4cadc5f8c7ab9ff923ac" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4cadc5f8c7ab9ff923ac">{"x":{"visdat":{"5f9c71815382":["function () ","plotlyVisDat"]},"cur_data":"5f9c71815382","attrs":{"5f9c71815382":{"x":{},"y":{},"mode":"markers","marker":{"size":15,"colorscale":"Viridis","showscale":true,"colorbar":{"title":"Grade"}},"text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Drillhole Collar Map","xaxis":{"domain":[0,1],"automargin":true,"title":"Easting (X)"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Northing (Y)"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[123.87260268442333,117.21717463806272,196.23589364346117,160.13657259754837,151.5029727248475,140.25733422022313,188.0246541230008,136.40918647870421,128.8239280693233,117.0645235106349],"y":[148.204260552302,191.8857348151505,125.29649285133928,121.625478961505,167.43763880804181,104.76636274252087,170.08530874736607,135.18886384554207,140.89439979288727,182.09513239562511],"mode":"markers","marker":{"colorbar":{"title":"Grade","ticklen":2},"cmin":1.5405438412030863,"cmax":3.231264783148077,"colorscale":"Viridis","showscale":true,"color":[2.3325130347383589,3.231264783148077,2.542107050869979,1.5405438412030863,2.3008965070105574,2.4242679933303299,2.3963838883739834,2.4159081470313777,1.6005213487049013,2.3122329508526871],"size":15,"line":{"colorbar":{"title":"","ticklen":2},"cmin":1.5405438412030863,"cmax":3.231264783148077,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666666","rgba(70,19,97,1)"],["0.0833333333333334","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[2.3325130347383589,3.231264783148077,2.542107050869979,1.5405438412030863,2.3008965070105574,2.4242679933303299,2.3963838883739834,2.4159081470313777,1.6005213487049013,2.3122329508526871]}},"text":["Hole: DH1 <br>Avg Grade: 2.33","Hole: DH10 <br>Avg Grade: 3.23","Hole: DH2 <br>Avg Grade: 2.54","Hole: DH3 <br>Avg Grade: 1.54","Hole: DH4 <br>Avg Grade: 2.3","Hole: DH5 <br>Avg Grade: 2.42","Hole: DH6 <br>Avg Grade: 2.4","Hole: DH7 <br>Avg Grade: 2.42","Hole: DH8 <br>Avg Grade: 1.6","Hole: DH9 <br>Avg Grade: 2.31"],"type":"scatter","xaxis":"x","yaxis":"y","frame":null},{"x":[117.0645235106349,196.23589364346117],"y":[104.76636274252087,191.8857348151505],"type":"scatter","mode":"markers","opacity":0,"hoverinfo":"none","showlegend":false,"marker":{"colorbar":{"title":"AvgGrade","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"cmin":1.5405438412030863,"cmax":3.231264783148077,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666666","rgba(70,19,97,1)"],["0.0833333333333334","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"color":[1.5405438412030863,3.231264783148077],"line":{"color":"rgba(255,127,14,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spatial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;2: Spatial distribution of drillholes
+</figcaption>
+</figure>
+</div>
+</div>
+<p><strong>What to Look For:</strong> - High-grade clustering - Spatial trends - Drilling density variations - Potential bias in sampling</p>
+</section>
+<section id="phase-4-outlier-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="phase-4-outlier-analysis">Phase 4: Outlier Analysis</h3>
+<p>Identify and understand outliers:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate IQR method thresholds</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(drillhole_data<span class="sc">$</span>Grade, <span class="fl">0.25</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(drillhole_data<span class="sc">$</span>Grade, <span class="fl">0.75</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>IQR <span class="ot">&lt;-</span> Q3 <span class="sc">-</span> Q1</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>lower_bound <span class="ot">&lt;-</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>upper_bound <span class="ot">&lt;-</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify outliers</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> drillhole_data <span class="sc">%&gt;%</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Grade <span class="sc">&gt;</span> upper_bound <span class="sc">|</span> Grade <span class="sc">&lt;</span> lower_bound) <span class="sc">%&gt;%</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Grade))</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Number of outliers:"</span>, <span class="fu">nrow</span>(outliers), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of outliers: 8 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Outlier threshold:"</span>, <span class="fu">round</span>(upper_bound, <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Outlier threshold: 5.5 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Top 5 outliers:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Top 5 outliers:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(outliers <span class="sc">%&gt;%</span> <span class="fu">select</span>(HoleID, From, To, Grade), <span class="dv">5</span>))</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  HoleID  From    To Grade
+  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 DH10      60    70  9.49
+2 DH5       30    40  9.35
+3 DH7       90   100  8.50
+4 DH2       50    60  6.89
+5 DH1       50    60  6.50</code></pre>
+</div>
+</div>
+<p><strong>Decision Points:</strong> - Are outliers geologically valid? - Do they represent high-grade zones? - Should they be capped or modeled separately?</p>
+</section>
+<section id="phase-5-3d-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="phase-5-3d-visualization">Phase 5: 3D Visualization</h3>
+<p>Visualize geological context:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 3D visualization</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(drillhole_data, <span class="at">x =</span> <span class="sc">~</span>X, <span class="at">y =</span> <span class="sc">~</span>Y, <span class="at">z =</span> <span class="sc">~</span>Z,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">'scatter3d'</span>, <span class="at">mode =</span> <span class="st">'markers'</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">colorscale =</span> <span class="st">'Viridis'</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">showscale =</span> <span class="cn">TRUE</span>, <span class="at">colorbar =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>)),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Hole:"</span>, HoleID, </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"&lt;br&gt;Depth:"</span>, From, <span class="st">"-"</span>, To,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"&lt;br&gt;Grade:"</span>, <span class="fu">round</span>(Grade, <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"3D Drillhole View"</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">scene =</span> <span class="fu">list</span>(</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Easting"</span>),</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Northing"</span>),</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">zaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Elevation"</span>, <span class="at">autorange =</span> <span class="st">"reversed"</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>         ))</span></code><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-3d" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-fc8df40fd67c2027a709" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-fc8df40fd67c2027a709">{"x":{"visdat":{"5f9c22207fd0":["function () ","plotlyVisDat"]},"cur_data":"5f9c22207fd0","attrs":{"5f9c22207fd0":{"x":{},"y":{},"z":{},"mode":"markers","marker":{"size":3,"colorscale":"Viridis","showscale":true,"colorbar":{"title":"Grade"}},"text":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"3D Drillhole View","scene":{"xaxis":{"title":"Easting"},"yaxis":{"title":"Northing"},"zaxis":{"title":"Elevation","autorange":"reversed"}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[123.87260268442333,123.87260268442333,123.87260268442333,123.87260268442333,123.87260268442333,123.87260268442333,123.87260268442333,123.87260268442333,123.87260268442333,123.87260268442333,196.23589364346117,196.23589364346117,196.23589364346117,196.23589364346117,196.23589364346117,196.23589364346117,196.23589364346117,196.23589364346117,196.23589364346117,196.23589364346117,160.13657259754837,160.13657259754837,160.13657259754837,160.13657259754837,160.13657259754837,160.13657259754837,160.13657259754837,160.13657259754837,160.13657259754837,160.13657259754837,151.5029727248475,151.5029727248475,151.5029727248475,151.5029727248475,151.5029727248475,151.5029727248475,151.5029727248475,151.5029727248475,151.5029727248475,151.5029727248475,140.25733422022313,140.25733422022313,140.25733422022313,140.25733422022313,140.25733422022313,140.25733422022313,140.25733422022313,140.25733422022313,140.25733422022313,140.25733422022313,188.0246541230008,188.0246541230008,188.0246541230008,188.0246541230008,188.0246541230008,188.0246541230008,188.0246541230008,188.0246541230008,188.0246541230008,188.0246541230008,136.40918647870421,136.40918647870421,136.40918647870421,136.40918647870421,136.40918647870421,136.40918647870421,136.40918647870421,136.40918647870421,136.40918647870421,136.40918647870421,128.8239280693233,128.8239280693233,128.8239280693233,128.8239280693233,128.8239280693233,128.8239280693233,128.8239280693233,128.8239280693233,128.8239280693233,128.8239280693233,117.0645235106349,117.0645235106349,117.0645235106349,117.0645235106349,117.0645235106349,117.0645235106349,117.0645235106349,117.0645235106349,117.0645235106349,117.0645235106349,117.21717463806272,117.21717463806272,117.21717463806272,117.21717463806272,117.21717463806272,117.21717463806272,117.21717463806272,117.21717463806272,117.21717463806272,117.21717463806272],"y":[148.204260552302,148.204260552302,148.204260552302,148.204260552302,148.204260552302,148.204260552302,148.204260552302,148.204260552302,148.204260552302,148.204260552302,125.29649285133928,125.29649285133928,125.29649285133928,125.29649285133928,125.29649285133928,125.29649285133928,125.29649285133928,125.29649285133928,125.29649285133928,125.29649285133928,121.625478961505,121.625478961505,121.625478961505,121.625478961505,121.625478961505,121.625478961505,121.625478961505,121.625478961505,121.625478961505,121.625478961505,167.43763880804181,167.43763880804181,167.43763880804181,167.43763880804181,167.43763880804181,167.43763880804181,167.43763880804181,167.43763880804181,167.43763880804181,167.43763880804181,104.76636274252087,104.76636274252087,104.76636274252087,104.76636274252087,104.76636274252087,104.76636274252087,104.76636274252087,104.76636274252087,104.76636274252087,104.76636274252087,170.08530874736607,170.08530874736607,170.08530874736607,170.08530874736607,170.08530874736607,170.08530874736607,170.08530874736607,170.08530874736607,170.08530874736607,170.08530874736607,135.18886384554207,135.18886384554207,135.18886384554207,135.18886384554207,135.18886384554207,135.18886384554207,135.18886384554207,135.18886384554207,135.18886384554207,135.18886384554207,140.89439979288727,140.89439979288727,140.89439979288727,140.89439979288727,140.89439979288727,140.89439979288727,140.89439979288727,140.89439979288727,140.89439979288727,140.89439979288727,182.09513239562511,182.09513239562511,182.09513239562511,182.09513239562511,182.09513239562511,182.09513239562511,182.09513239562511,182.09513239562511,182.09513239562511,182.09513239562511,191.8857348151505,191.8857348151505,191.8857348151505,191.8857348151505,191.8857348151505,191.8857348151505,191.8857348151505,191.8857348151505,191.8857348151505,191.8857348151505],"z":[50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95,50,55,60,65,70,75,80,85,90,95],"mode":"markers","marker":{"colorbar":{"title":"Grade","ticklen":2},"cmin":0.25993203122372144,"cmax":9.4864683065217044,"colorscale":"Viridis","showscale":true,"color":[1.0529749911325166,1.371435509496268,5.7371734074590739,1.7443931203671847,1.8283797426347219,6.5016239847702053,2.3838884685713948,0.59926643045120676,0.9517220210595938,1.1542726714414222,4.389719974626491,2.1986665470958076,2.2719015327821359,1.8013676334355826,1.0568862573915294,6.8862764407556902,2.4553771693519968,0.34188060013004939,2.8895035959134807,1.1294907572170285,0.7016932299850398,1.3848891055979684,0.72556576811360984,0.92024716866206491,0.99996858621401796,0.42769085379973576,3.2227326076855078,1.863951122843666,0.6633121735511901,4.495387795578063,2.3190819059941892,1.302053734414184,3.3740052118631274,3.328450199248425,3.1812202999673063,2.8602590660948968,2.5680173006803284,1.5690504563802223,1.2907582921020821,1.2160686033608135,0.94576081219034946,1.3960770239736315,0.59910579250881668,9.3480220201205029,4.3334742983118888,0.67133509747146669,1.1944575290855937,1.1350488811533013,3.0770523043033347,1.542346174184414,2.0191059434751453,1.6114954450173771,1.593134778661059,4.927746712140582,1.3762786296253247,5.5465520560717199,0.47759019665356001,2.6318604714974025,1.8204494025314251,1.9596252480662406,2.2338165638745235,1.1031185758302087,1.2629295893289132,0.72989082816260475,0.69946957499714157,2.1018605173135363,2.3597786515047914,1.7201360411412658,3.4480676556038303,8.5000134725569598,1.1131291097685883,0.25993203122372144,3.6861804721654838,0.93485802133248563,0.95084245447415483,3.7451328704187472,1.3128253813500763,0.62090687390252675,1.9060685763829253,1.4753376960303035,1.6563416560447017,2.2439199652192383,1.225650807764143,2.7607468441055549,1.3821092171411349,2.149909119255744,3.9648626366699844,2.3353112798569162,1.2703020814234942,4.1331759010459592,3.6502771082083316,2.5567005194466952,1.9956810850393194,0.99767783956435885,4.8965063392347856,1.0199894970999155,9.4864683065217044,5.6186335903159836,1.3653894683247947,0.72532407772488006],"size":3,"line":{"colorbar":{"title":"","ticklen":2},"cmin":0.25993203122372144,"cmax":9.4864683065217044,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":false,"color":[1.0529749911325166,1.371435509496268,5.7371734074590739,1.7443931203671847,1.8283797426347219,6.5016239847702053,2.3838884685713948,0.59926643045120676,0.9517220210595938,1.1542726714414222,4.389719974626491,2.1986665470958076,2.2719015327821359,1.8013676334355826,1.0568862573915294,6.8862764407556902,2.4553771693519968,0.34188060013004939,2.8895035959134807,1.1294907572170285,0.7016932299850398,1.3848891055979684,0.72556576811360984,0.92024716866206491,0.99996858621401796,0.42769085379973576,3.2227326076855078,1.863951122843666,0.6633121735511901,4.495387795578063,2.3190819059941892,1.302053734414184,3.3740052118631274,3.328450199248425,3.1812202999673063,2.8602590660948968,2.5680173006803284,1.5690504563802223,1.2907582921020821,1.2160686033608135,0.94576081219034946,1.3960770239736315,0.59910579250881668,9.3480220201205029,4.3334742983118888,0.67133509747146669,1.1944575290855937,1.1350488811533013,3.0770523043033347,1.542346174184414,2.0191059434751453,1.6114954450173771,1.593134778661059,4.927746712140582,1.3762786296253247,5.5465520560717199,0.47759019665356001,2.6318604714974025,1.8204494025314251,1.9596252480662406,2.2338165638745235,1.1031185758302087,1.2629295893289132,0.72989082816260475,0.69946957499714157,2.1018605173135363,2.3597786515047914,1.7201360411412658,3.4480676556038303,8.5000134725569598,1.1131291097685883,0.25993203122372144,3.6861804721654838,0.93485802133248563,0.95084245447415483,3.7451328704187472,1.3128253813500763,0.62090687390252675,1.9060685763829253,1.4753376960303035,1.6563416560447017,2.2439199652192383,1.225650807764143,2.7607468441055549,1.3821092171411349,2.149909119255744,3.9648626366699844,2.3353112798569162,1.2703020814234942,4.1331759010459592,3.6502771082083316,2.5567005194466952,1.9956810850393194,0.99767783956435885,4.8965063392347856,1.0199894970999155,9.4864683065217044,5.6186335903159836,1.3653894683247947,0.72532407772488006]}},"text":["Hole: DH1 <br>Depth: 0 - 10 <br>Grade: 1.05","Hole: DH1 <br>Depth: 10 - 20 <br>Grade: 1.37","Hole: DH1 <br>Depth: 20 - 30 <br>Grade: 5.74","Hole: DH1 <br>Depth: 30 - 40 <br>Grade: 1.74","Hole: DH1 <br>Depth: 40 - 50 <br>Grade: 1.83","Hole: DH1 <br>Depth: 50 - 60 <br>Grade: 6.5","Hole: DH1 <br>Depth: 60 - 70 <br>Grade: 2.38","Hole: DH1 <br>Depth: 70 - 80 <br>Grade: 0.6","Hole: DH1 <br>Depth: 80 - 90 <br>Grade: 0.95","Hole: DH1 <br>Depth: 90 - 100 <br>Grade: 1.15","Hole: DH2 <br>Depth: 0 - 10 <br>Grade: 4.39","Hole: DH2 <br>Depth: 10 - 20 <br>Grade: 2.2","Hole: DH2 <br>Depth: 20 - 30 <br>Grade: 2.27","Hole: DH2 <br>Depth: 30 - 40 <br>Grade: 1.8","Hole: DH2 <br>Depth: 40 - 50 <br>Grade: 1.06","Hole: DH2 <br>Depth: 50 - 60 <br>Grade: 6.89","Hole: DH2 <br>Depth: 60 - 70 <br>Grade: 2.46","Hole: DH2 <br>Depth: 70 - 80 <br>Grade: 0.34","Hole: DH2 <br>Depth: 80 - 90 <br>Grade: 2.89","Hole: DH2 <br>Depth: 90 - 100 <br>Grade: 1.13","Hole: DH3 <br>Depth: 0 - 10 <br>Grade: 0.7","Hole: DH3 <br>Depth: 10 - 20 <br>Grade: 1.38","Hole: DH3 <br>Depth: 20 - 30 <br>Grade: 0.73","Hole: DH3 <br>Depth: 30 - 40 <br>Grade: 0.92","Hole: DH3 <br>Depth: 40 - 50 <br>Grade: 1","Hole: DH3 <br>Depth: 50 - 60 <br>Grade: 0.43","Hole: DH3 <br>Depth: 60 - 70 <br>Grade: 3.22","Hole: DH3 <br>Depth: 70 - 80 <br>Grade: 1.86","Hole: DH3 <br>Depth: 80 - 90 <br>Grade: 0.66","Hole: DH3 <br>Depth: 90 - 100 <br>Grade: 4.5","Hole: DH4 <br>Depth: 0 - 10 <br>Grade: 2.32","Hole: DH4 <br>Depth: 10 - 20 <br>Grade: 1.3","Hole: DH4 <br>Depth: 20 - 30 <br>Grade: 3.37","Hole: DH4 <br>Depth: 30 - 40 <br>Grade: 3.33","Hole: DH4 <br>Depth: 40 - 50 <br>Grade: 3.18","Hole: DH4 <br>Depth: 50 - 60 <br>Grade: 2.86","Hole: DH4 <br>Depth: 60 - 70 <br>Grade: 2.57","Hole: DH4 <br>Depth: 70 - 80 <br>Grade: 1.57","Hole: DH4 <br>Depth: 80 - 90 <br>Grade: 1.29","Hole: DH4 <br>Depth: 90 - 100 <br>Grade: 1.22","Hole: DH5 <br>Depth: 0 - 10 <br>Grade: 0.95","Hole: DH5 <br>Depth: 10 - 20 <br>Grade: 1.4","Hole: DH5 <br>Depth: 20 - 30 <br>Grade: 0.6","Hole: DH5 <br>Depth: 30 - 40 <br>Grade: 9.35","Hole: DH5 <br>Depth: 40 - 50 <br>Grade: 4.33","Hole: DH5 <br>Depth: 50 - 60 <br>Grade: 0.67","Hole: DH5 <br>Depth: 60 - 70 <br>Grade: 1.19","Hole: DH5 <br>Depth: 70 - 80 <br>Grade: 1.14","Hole: DH5 <br>Depth: 80 - 90 <br>Grade: 3.08","Hole: DH5 <br>Depth: 90 - 100 <br>Grade: 1.54","Hole: DH6 <br>Depth: 0 - 10 <br>Grade: 2.02","Hole: DH6 <br>Depth: 10 - 20 <br>Grade: 1.61","Hole: DH6 <br>Depth: 20 - 30 <br>Grade: 1.59","Hole: DH6 <br>Depth: 30 - 40 <br>Grade: 4.93","Hole: DH6 <br>Depth: 40 - 50 <br>Grade: 1.38","Hole: DH6 <br>Depth: 50 - 60 <br>Grade: 5.55","Hole: DH6 <br>Depth: 60 - 70 <br>Grade: 0.48","Hole: DH6 <br>Depth: 70 - 80 <br>Grade: 2.63","Hole: DH6 <br>Depth: 80 - 90 <br>Grade: 1.82","Hole: DH6 <br>Depth: 90 - 100 <br>Grade: 1.96","Hole: DH7 <br>Depth: 0 - 10 <br>Grade: 2.23","Hole: DH7 <br>Depth: 10 - 20 <br>Grade: 1.1","Hole: DH7 <br>Depth: 20 - 30 <br>Grade: 1.26","Hole: DH7 <br>Depth: 30 - 40 <br>Grade: 0.73","Hole: DH7 <br>Depth: 40 - 50 <br>Grade: 0.7","Hole: DH7 <br>Depth: 50 - 60 <br>Grade: 2.1","Hole: DH7 <br>Depth: 60 - 70 <br>Grade: 2.36","Hole: DH7 <br>Depth: 70 - 80 <br>Grade: 1.72","Hole: DH7 <br>Depth: 80 - 90 <br>Grade: 3.45","Hole: DH7 <br>Depth: 90 - 100 <br>Grade: 8.5","Hole: DH8 <br>Depth: 0 - 10 <br>Grade: 1.11","Hole: DH8 <br>Depth: 10 - 20 <br>Grade: 0.26","Hole: DH8 <br>Depth: 20 - 30 <br>Grade: 3.69","Hole: DH8 <br>Depth: 30 - 40 <br>Grade: 0.93","Hole: DH8 <br>Depth: 40 - 50 <br>Grade: 0.95","Hole: DH8 <br>Depth: 50 - 60 <br>Grade: 3.75","Hole: DH8 <br>Depth: 60 - 70 <br>Grade: 1.31","Hole: DH8 <br>Depth: 70 - 80 <br>Grade: 0.62","Hole: DH8 <br>Depth: 80 - 90 <br>Grade: 1.91","Hole: DH8 <br>Depth: 90 - 100 <br>Grade: 1.48","Hole: DH9 <br>Depth: 0 - 10 <br>Grade: 1.66","Hole: DH9 <br>Depth: 10 - 20 <br>Grade: 2.24","Hole: DH9 <br>Depth: 20 - 30 <br>Grade: 1.23","Hole: DH9 <br>Depth: 30 - 40 <br>Grade: 2.76","Hole: DH9 <br>Depth: 40 - 50 <br>Grade: 1.38","Hole: DH9 <br>Depth: 50 - 60 <br>Grade: 2.15","Hole: DH9 <br>Depth: 60 - 70 <br>Grade: 3.96","Hole: DH9 <br>Depth: 70 - 80 <br>Grade: 2.34","Hole: DH9 <br>Depth: 80 - 90 <br>Grade: 1.27","Hole: DH9 <br>Depth: 90 - 100 <br>Grade: 4.13","Hole: DH10 <br>Depth: 0 - 10 <br>Grade: 3.65","Hole: DH10 <br>Depth: 10 - 20 <br>Grade: 2.56","Hole: DH10 <br>Depth: 20 - 30 <br>Grade: 2","Hole: DH10 <br>Depth: 30 - 40 <br>Grade: 1","Hole: DH10 <br>Depth: 40 - 50 <br>Grade: 4.9","Hole: DH10 <br>Depth: 50 - 60 <br>Grade: 1.02","Hole: DH10 <br>Depth: 60 - 70 <br>Grade: 9.49","Hole: DH10 <br>Depth: 70 - 80 <br>Grade: 5.62","Hole: DH10 <br>Depth: 80 - 90 <br>Grade: 1.37","Hole: DH10 <br>Depth: 90 - 100 <br>Grade: 0.73"],"type":"scatter3d","frame":null},{"x":[117.0645235106349,196.23589364346117],"y":[104.76636274252087,191.8857348151505],"type":"scatter3d","mode":"markers","opacity":0,"hoverinfo":"none","showlegend":false,"marker":{"colorbar":{"title":"Grade","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"cmin":0.25993203122372144,"cmax":9.4864683065217044,"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"color":[0.25993203122372144,9.4864683065217044],"line":{"color":"rgba(255,127,14,1)"}},"z":[50,95],"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;3: 3D drillhole visualization
+</figcaption>
+</figure>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="quick-eda-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="quick-eda-checklist">Quick EDA Checklist</h2>
+<p>Before proceeding to resource estimation:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Data validated (no gaps, coordinates correct)</label></li>
+<li><label><input type="checkbox">Statistical distribution understood</label></li>
+<li><label><input type="checkbox">Outliers identified and assessed</label></li>
+<li><label><input type="checkbox">Spatial patterns reviewed</label></li>
+<li><label><input type="checkbox">Geological domains preliminary defined</label></li>
+<li><label><input type="checkbox">QA/QC results reviewed</label></li>
+</ul>
+<hr>
+</section>
+<section id="using-geodataviz" class="level2">
+<h2 class="anchored" data-anchor-id="using-geodataviz">Using GeoDataViz</h2>
+<p>All these analyses can be performed interactively in GeoDataViz:</p>
+<ol type="1">
+<li><strong>Upload Data:</strong> CSV/Excel with collar, survey, assay tables</li>
+<li><strong>Auto-Validation:</strong> Instant data quality report</li>
+<li><strong>Interactive EDA:</strong> Click-and-explore interface</li>
+<li><strong>Export Results:</strong> PDF reports and processed data</li>
+</ol>
+<p><a href="https://geodataviz.shinyapps.io/geodataviz/" class="btn btn-success" target="_blank"><strong>Try GeoDataViz Demo →</strong></a></p>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>After completing EDA: 1. <strong>Data Preprocessing:</strong> Compositing and domain definition 2. <strong>Variogram Modeling:</strong> Spatial continuity analysis 3. <strong>Resource Estimation:</strong> Block modeling and kriging</p>
+<p><strong>Next Guide:</strong> <a href="../..\posts/preprocessing-drillhole-data/">Pre-Processing Drillhole Data →</a></p>
+<hr>
+<p><em>For visual tutorials on these techniques, check <a href="https://instagram.com/orebit.id"><span class="citation" data-cites="orebit.id">@orebit.id</span></a> on Instagram.</em></p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Disalin!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Disalin!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/orebit\.id\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Kode Sumber</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Exploratory Data Analysis for Geological Data with GeoDataViz"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ghozian Islam Karami"</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-09-20"</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [GeoDataViz, EDA, Tutorial]</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Practical guide to exploratory data analysis for geological datasets using R and GeoDataViz workflows."</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "EDA-thumbsrs.png"</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why EDA Matters</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>Inadequate exploratory data analysis is the primary cause of flawed resource models. Before resource estimation, you must understand:</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Data quality and completeness</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Statistical distributions</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Spatial patterns and bias</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Geological domains</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Outlier populations</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## The 5-Phase EDA Workflow</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 1: Data Validation</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>First, check data integrity:</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample drillhole data</span></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>drillhole_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">HoleID =</span> <span class="fu">rep</span>(<span class="fu">paste0</span>(<span class="st">"DH"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">From =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">10</span>), <span class="dv">10</span>),</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">To =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">10</span>), <span class="dv">10</span>),</span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">Grade =</span> <span class="fu">rlnorm</span>(<span class="dv">100</span>, <span class="at">meanlog =</span> <span class="fl">0.5</span>, <span class="at">sdlog =</span> <span class="fl">0.8</span>),</span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">rep</span>(<span class="fu">runif</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">200</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y =</span> <span class="fu">rep</span>(<span class="fu">runif</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">200</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">Z =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">95</span>, <span class="dv">5</span>), <span class="dv">10</span>)</span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Data summary</span></span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Total samples:"</span>, <span class="fu">nrow</span>(drillhole_data), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Unique holes:"</span>, <span class="fu">n_distinct</span>(drillhole_data<span class="sc">$</span>HoleID), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Grade range:"</span>, <span class="fu">round</span>(<span class="fu">min</span>(drillhole_data<span class="sc">$</span>Grade), <span class="dv">2</span>), <span class="st">"-"</span>, </span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">max</span>(drillhole_data<span class="sc">$</span>Grade), <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 2: Statistical Analysis</span></span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a>Understand grade distribution:</span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-distribution</span></span>
+<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Grade distribution analysis"</span></span>
+<span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> drillhole_data <span class="sc">%&gt;%</span></span>
+<span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">Mean =</span> <span class="fu">mean</span>(Grade),</span>
+<span id="cb20-69"><a href="#cb20-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">Median =</span> <span class="fu">median</span>(Grade),</span>
+<span id="cb20-70"><a href="#cb20-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">SD =</span> <span class="fu">sd</span>(Grade),</span>
+<span id="cb20-71"><a href="#cb20-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">CV =</span> <span class="fu">sd</span>(Grade)<span class="sc">/</span><span class="fu">mean</span>(Grade),</span>
+<span id="cb20-72"><a href="#cb20-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">Skewness =</span> moments<span class="sc">::</span><span class="fu">skewness</span>(Grade)</span>
+<span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb20-74"><a href="#cb20-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-75"><a href="#cb20-75" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(summary_stats)</span>
+<span id="cb20-76"><a href="#cb20-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-77"><a href="#cb20-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram and boxplot</span></span>
+<span id="cb20-78"><a href="#cb20-78" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(drillhole_data, <span class="at">x =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">"histogram"</span>, </span>
+<span id="cb20-79"><a href="#cb20-79" aria-hidden="true" tabindex="-1"></a>              <span class="at">nbinsx =</span> <span class="dv">30</span>, <span class="at">name =</span> <span class="st">"Distribution"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-80"><a href="#cb20-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>), </span>
+<span id="cb20-81"><a href="#cb20-81" aria-hidden="true" tabindex="-1"></a>         <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Frequency"</span>))</span>
+<span id="cb20-82"><a href="#cb20-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-83"><a href="#cb20-83" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(drillhole_data, <span class="at">y =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">"box"</span>, </span>
+<span id="cb20-84"><a href="#cb20-84" aria-hidden="true" tabindex="-1"></a>              <span class="at">name =</span> <span class="st">"Boxplot"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-85"><a href="#cb20-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>))</span>
+<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-87"><a href="#cb20-87" aria-hidden="true" tabindex="-1"></a><span class="fu">subplot</span>(p1, p2, <span class="at">nrows =</span> <span class="dv">1</span>, <span class="at">shareY =</span> <span class="cn">FALSE</span>, <span class="at">titleX =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-88"><a href="#cb20-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Grade Distribution Analysis"</span>)</span>
+<span id="cb20-89"><a href="#cb20-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-90"><a href="#cb20-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-91"><a href="#cb20-91" aria-hidden="true" tabindex="-1"></a>**Key Observations:**</span>
+<span id="cb20-92"><a href="#cb20-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Check for skewness (common in geological data)</span>
+<span id="cb20-93"><a href="#cb20-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Identify outliers using boxplot</span>
+<span id="cb20-94"><a href="#cb20-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assess if transformation needed</span>
+<span id="cb20-95"><a href="#cb20-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-96"><a href="#cb20-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 3: Spatial Analysis</span></span>
+<span id="cb20-97"><a href="#cb20-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-98"><a href="#cb20-98" aria-hidden="true" tabindex="-1"></a>Visualize spatial patterns:</span>
+<span id="cb20-99"><a href="#cb20-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-102"><a href="#cb20-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-103"><a href="#cb20-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-spatial</span></span>
+<span id="cb20-104"><a href="#cb20-104" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Spatial distribution of drillholes"</span></span>
+<span id="cb20-105"><a href="#cb20-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-106"><a href="#cb20-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate average grade per hole</span></span>
+<span id="cb20-107"><a href="#cb20-107" aria-hidden="true" tabindex="-1"></a>collar_summary <span class="ot">&lt;-</span> drillhole_data <span class="sc">%&gt;%</span></span>
+<span id="cb20-108"><a href="#cb20-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(HoleID, X, Y) <span class="sc">%&gt;%</span></span>
+<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb20-110"><a href="#cb20-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgGrade =</span> <span class="fu">mean</span>(Grade),</span>
+<span id="cb20-111"><a href="#cb20-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">MaxGrade =</span> <span class="fu">max</span>(Grade),</span>
+<span id="cb20-112"><a href="#cb20-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb20-113"><a href="#cb20-113" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb20-114"><a href="#cb20-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-115"><a href="#cb20-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Interactive map</span></span>
+<span id="cb20-116"><a href="#cb20-116" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(collar_summary, <span class="at">x =</span> <span class="sc">~</span>X, <span class="at">y =</span> <span class="sc">~</span>Y, <span class="at">color =</span> <span class="sc">~</span>AvgGrade,</span>
+<span id="cb20-117"><a href="#cb20-117" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">'scatter'</span>, <span class="at">mode =</span> <span class="st">'markers'</span>,</span>
+<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a>        <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">15</span>, <span class="at">colorscale =</span> <span class="st">'Viridis'</span>, </span>
+<span id="cb20-119"><a href="#cb20-119" aria-hidden="true" tabindex="-1"></a>                     <span class="at">showscale =</span> <span class="cn">TRUE</span>, <span class="at">colorbar =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>)),</span>
+<span id="cb20-120"><a href="#cb20-120" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Hole:"</span>, HoleID, </span>
+<span id="cb20-121"><a href="#cb20-121" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"&lt;br&gt;Avg Grade:"</span>, <span class="fu">round</span>(AvgGrade, <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb20-122"><a href="#cb20-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Drillhole Collar Map"</span>,</span>
+<span id="cb20-123"><a href="#cb20-123" aria-hidden="true" tabindex="-1"></a>         <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Easting (X)"</span>),</span>
+<span id="cb20-124"><a href="#cb20-124" aria-hidden="true" tabindex="-1"></a>         <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Northing (Y)"</span>))</span>
+<span id="cb20-125"><a href="#cb20-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-126"><a href="#cb20-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-127"><a href="#cb20-127" aria-hidden="true" tabindex="-1"></a>**What to Look For:**</span>
+<span id="cb20-128"><a href="#cb20-128" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>High-grade clustering</span>
+<span id="cb20-129"><a href="#cb20-129" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Spatial trends</span>
+<span id="cb20-130"><a href="#cb20-130" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Drilling density variations</span>
+<span id="cb20-131"><a href="#cb20-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Potential bias in sampling</span>
+<span id="cb20-132"><a href="#cb20-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-133"><a href="#cb20-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 4: Outlier Analysis</span></span>
+<span id="cb20-134"><a href="#cb20-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-135"><a href="#cb20-135" aria-hidden="true" tabindex="-1"></a>Identify and understand outliers:</span>
+<span id="cb20-136"><a href="#cb20-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-139"><a href="#cb20-139" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-140"><a href="#cb20-140" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: outlier-analysis</span></span>
+<span id="cb20-141"><a href="#cb20-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-142"><a href="#cb20-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate IQR method thresholds</span></span>
+<span id="cb20-143"><a href="#cb20-143" aria-hidden="true" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(drillhole_data<span class="sc">$</span>Grade, <span class="fl">0.25</span>)</span>
+<span id="cb20-144"><a href="#cb20-144" aria-hidden="true" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(drillhole_data<span class="sc">$</span>Grade, <span class="fl">0.75</span>)</span>
+<span id="cb20-145"><a href="#cb20-145" aria-hidden="true" tabindex="-1"></a>IQR <span class="ot">&lt;-</span> Q3 <span class="sc">-</span> Q1</span>
+<span id="cb20-146"><a href="#cb20-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-147"><a href="#cb20-147" aria-hidden="true" tabindex="-1"></a>lower_bound <span class="ot">&lt;-</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb20-148"><a href="#cb20-148" aria-hidden="true" tabindex="-1"></a>upper_bound <span class="ot">&lt;-</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb20-149"><a href="#cb20-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-150"><a href="#cb20-150" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify outliers</span></span>
+<span id="cb20-151"><a href="#cb20-151" aria-hidden="true" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> drillhole_data <span class="sc">%&gt;%</span></span>
+<span id="cb20-152"><a href="#cb20-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Grade <span class="sc">&gt;</span> upper_bound <span class="sc">|</span> Grade <span class="sc">&lt;</span> lower_bound) <span class="sc">%&gt;%</span></span>
+<span id="cb20-153"><a href="#cb20-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Grade))</span>
+<span id="cb20-154"><a href="#cb20-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-155"><a href="#cb20-155" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Number of outliers:"</span>, <span class="fu">nrow</span>(outliers), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-156"><a href="#cb20-156" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Outlier threshold:"</span>, <span class="fu">round</span>(upper_bound, <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-157"><a href="#cb20-157" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Top 5 outliers:</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb20-158"><a href="#cb20-158" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(outliers <span class="sc">%&gt;%</span> <span class="fu">select</span>(HoleID, From, To, Grade), <span class="dv">5</span>))</span>
+<span id="cb20-159"><a href="#cb20-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-160"><a href="#cb20-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-161"><a href="#cb20-161" aria-hidden="true" tabindex="-1"></a>**Decision Points:**</span>
+<span id="cb20-162"><a href="#cb20-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Are outliers geologically valid?</span>
+<span id="cb20-163"><a href="#cb20-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Do they represent high-grade zones?</span>
+<span id="cb20-164"><a href="#cb20-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Should they be capped or modeled separately?</span>
+<span id="cb20-165"><a href="#cb20-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-166"><a href="#cb20-166" aria-hidden="true" tabindex="-1"></a><span class="fu">### Phase 5: 3D Visualization</span></span>
+<span id="cb20-167"><a href="#cb20-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-168"><a href="#cb20-168" aria-hidden="true" tabindex="-1"></a>Visualize geological context:</span>
+<span id="cb20-169"><a href="#cb20-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-172"><a href="#cb20-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-173"><a href="#cb20-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-3d</span></span>
+<span id="cb20-174"><a href="#cb20-174" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "3D drillhole visualization"</span></span>
+<span id="cb20-175"><a href="#cb20-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-176"><a href="#cb20-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 3D visualization</span></span>
+<span id="cb20-177"><a href="#cb20-177" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(drillhole_data, <span class="at">x =</span> <span class="sc">~</span>X, <span class="at">y =</span> <span class="sc">~</span>Y, <span class="at">z =</span> <span class="sc">~</span>Z,</span>
+<span id="cb20-178"><a href="#cb20-178" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="sc">~</span>Grade, <span class="at">type =</span> <span class="st">'scatter3d'</span>, <span class="at">mode =</span> <span class="st">'markers'</span>,</span>
+<span id="cb20-179"><a href="#cb20-179" aria-hidden="true" tabindex="-1"></a>        <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">colorscale =</span> <span class="st">'Viridis'</span>,</span>
+<span id="cb20-180"><a href="#cb20-180" aria-hidden="true" tabindex="-1"></a>                     <span class="at">showscale =</span> <span class="cn">TRUE</span>, <span class="at">colorbar =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Grade"</span>)),</span>
+<span id="cb20-181"><a href="#cb20-181" aria-hidden="true" tabindex="-1"></a>        <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste</span>(<span class="st">"Hole:"</span>, HoleID, </span>
+<span id="cb20-182"><a href="#cb20-182" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"&lt;br&gt;Depth:"</span>, From, <span class="st">"-"</span>, To,</span>
+<span id="cb20-183"><a href="#cb20-183" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"&lt;br&gt;Grade:"</span>, <span class="fu">round</span>(Grade, <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb20-184"><a href="#cb20-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"3D Drillhole View"</span>,</span>
+<span id="cb20-185"><a href="#cb20-185" aria-hidden="true" tabindex="-1"></a>         <span class="at">scene =</span> <span class="fu">list</span>(</span>
+<span id="cb20-186"><a href="#cb20-186" aria-hidden="true" tabindex="-1"></a>           <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Easting"</span>),</span>
+<span id="cb20-187"><a href="#cb20-187" aria-hidden="true" tabindex="-1"></a>           <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Northing"</span>),</span>
+<span id="cb20-188"><a href="#cb20-188" aria-hidden="true" tabindex="-1"></a>           <span class="at">zaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Elevation"</span>, <span class="at">autorange =</span> <span class="st">"reversed"</span>)</span>
+<span id="cb20-189"><a href="#cb20-189" aria-hidden="true" tabindex="-1"></a>         ))</span>
+<span id="cb20-190"><a href="#cb20-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-191"><a href="#cb20-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-192"><a href="#cb20-192" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb20-193"><a href="#cb20-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-194"><a href="#cb20-194" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick EDA Checklist</span></span>
+<span id="cb20-195"><a href="#cb20-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-196"><a href="#cb20-196" aria-hidden="true" tabindex="-1"></a>Before proceeding to resource estimation:</span>
+<span id="cb20-197"><a href="#cb20-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-198"><a href="#cb20-198" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Data validated (no gaps, coordinates correct)</span>
+<span id="cb20-199"><a href="#cb20-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Statistical distribution understood</span>
+<span id="cb20-200"><a href="#cb20-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Outliers identified and assessed</span>
+<span id="cb20-201"><a href="#cb20-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Spatial patterns reviewed</span>
+<span id="cb20-202"><a href="#cb20-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Geological domains preliminary defined</span>
+<span id="cb20-203"><a href="#cb20-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> QA/QC results reviewed</span>
+<span id="cb20-204"><a href="#cb20-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-205"><a href="#cb20-205" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb20-206"><a href="#cb20-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-207"><a href="#cb20-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Using GeoDataViz</span></span>
+<span id="cb20-208"><a href="#cb20-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-209"><a href="#cb20-209" aria-hidden="true" tabindex="-1"></a>All these analyses can be performed interactively in GeoDataViz:</span>
+<span id="cb20-210"><a href="#cb20-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-211"><a href="#cb20-211" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Upload Data:** CSV/Excel with collar, survey, assay tables</span>
+<span id="cb20-212"><a href="#cb20-212" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Auto-Validation:** Instant data quality report</span>
+<span id="cb20-213"><a href="#cb20-213" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Interactive EDA:** Click-and-explore interface</span>
+<span id="cb20-214"><a href="#cb20-214" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Export Results:** PDF reports and processed data</span>
+<span id="cb20-215"><a href="#cb20-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-216"><a href="#cb20-216" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Try GeoDataViz Demo →**</span><span class="co">](https://geodataviz.shinyapps.io/geodataviz/)</span>{.btn .btn-success target="_blank"}</span>
+<span id="cb20-217"><a href="#cb20-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-218"><a href="#cb20-218" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb20-219"><a href="#cb20-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-220"><a href="#cb20-220" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next Steps</span></span>
+<span id="cb20-221"><a href="#cb20-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-222"><a href="#cb20-222" aria-hidden="true" tabindex="-1"></a>After completing EDA:</span>
+<span id="cb20-223"><a href="#cb20-223" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Data Preprocessing:** Compositing and domain definition</span>
+<span id="cb20-224"><a href="#cb20-224" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Variogram Modeling:** Spatial continuity analysis</span>
+<span id="cb20-225"><a href="#cb20-225" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Resource Estimation:** Block modeling and kriging</span>
+<span id="cb20-226"><a href="#cb20-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-227"><a href="#cb20-227" aria-hidden="true" tabindex="-1"></a>**Next Guide:** <span class="co">[</span><span class="ot">Pre-Processing Drillhole Data →</span><span class="co">](/posts/preprocessing-drillhole-data/)</span></span>
+<span id="cb20-228"><a href="#cb20-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-229"><a href="#cb20-229" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb20-230"><a href="#cb20-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-231"><a href="#cb20-231" aria-hidden="true" tabindex="-1"></a>*For visual tutorials on these techniques, check [@orebit.id](https://instagram.com/orebit.id) on Instagram.*</span>
+</code><button title="Salin ke Papan Klip" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 <a href="https://orebit.id">Orebit.id</a> by Ghozian Islam Karami<br>
+All rights reserved.</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Built with <a href="https://quarto.org">Quarto</a> &amp; ❤️</p>
+</div>
+    <div class="nav-footer-right">
+<p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

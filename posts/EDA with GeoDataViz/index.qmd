@@ -4,7 +4,7 @@ author: "Ghozian Islam Karami"
 date: "2025-09-20"
 categories: [GeoDataViz, EDA, Tutorial]
 description: "Practical guide to exploratory data analysis for geological datasets using R and GeoDataViz workflows."
-image: "EDA-thumb.png"
+image: "EDA-thumbsrs.png"
 ---
 
 ## Why EDA Matters
