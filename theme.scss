@@ -1,72 +1,43 @@
-/*-- Orebit.id Theme v6.1 CORRECTED --*/
+/*-- Orebit.id Theme v6.0 FONT AWESOME FIX --*/
 
 /*-- scss:defaults --*/
-// 1. PALET WARNA & FONT
-$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 $orebit-dark: #2c3e50;
 $orebit-blue: #3498db;
 $orebit-cream: #F5F1E8;
 $orebit-gray: #7f8c8d;
 $orebit-bg-light: #f8f9fa;
 
-// 2. BOOTSTRAP VARIABLE OVERRIDES
 $primary:       $orebit-blue;
 $secondary:     $orebit-gray;
-$dark:          $orebit-dark; // << INI BARIS YANG DIPERBAIKI
+$dark:          $orebit-dark;
 $light:         $orebit-bg-light;
 $body-bg:       #ffffff;
-$body-color:    $orebit-dark;
+$body-color:    $dark;
 $link-color:    $primary;
-$headings-color: $orebit-dark;
-$headings-font-weight: 700;
+$headings-color: $dark;
+$headings-font-weight: 600;
 $border-radius: 0.5rem;
-$btn-border-radius: 25px;
 $box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 $box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 
 /*-- scss:rules --*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-// Gaya dasar
 body {
   line-height: 1.7;
 }
 
-.btn-primary {
-  background-color: $primary;
-  border-color: $primary;
-  color: #fff;
-  padding: 10px 25px;
-  transition: all 0.3s ease;
-  &:hover {
-    background-color: darken($primary, 10%);
-    border-color: darken($primary, 10%);
-    transform: translateY(-2px);
-  }
-}
-
-.btn-secondary {
-  background-color: $secondary;
-  border-color: $secondary;
-  color: #fff;
-  padding: 10px 25px;
-  transition: all 0.3s ease;
-  &:hover {
-    background-color: darken($secondary, 10%);
-    border-color: darken($secondary, 10%);
-    transform: translateY(-2px);
-  }
-}
-
 // ===================================
-// NAVBAR STYLING (TANPA KONFLIK)
+// NAVBAR STYLING (FINAL)
 // ===================================
 .navbar {
   background: $orebit-cream;
   border-bottom: 1px solid rgba($dark, 0.1);
   padding: 0.75rem 0;
   
-  @media (min-width: 992px) { .navbar-brand img { max-height: 45px; } }
+  @media (min-width: 992px) {
+    .navbar-brand img { max-height: 45px; }
+  }
 
   @media (max-width: 991.98px) {
     position: relative;
@@ -84,65 +55,47 @@ body {
     }
   }
 
+  // Navbar Links & Icons Color
   .navbar-nav .nav-link {
-    color: $dark !important; font-weight: 500;
+    color: $dark !important;
+    font-weight: 500;
     &:hover { color: $primary !important; }
   }
   .navbar-nav .nav-link > .bi {
-    color: $dark !important; transition: all 0.2s ease;
+    color: $dark !important;
+    transition: all 0.2s ease;
     &:hover { color: $primary !important; transform: scale(1.1); }
   }
 
-  // Ikon Hamburger
+  // === STYLING UNTUK IKON FONT AWESOME DI NAVBAR ===
   .navbar-toggler {
+    font-size: 1.5rem; // Mengatur ukuran ikon
+    color: $dark !important;
     border: none !important;
-    background: transparent !important;
-    width: 30px;
-    height: 30px;
-    position: relative;
+    padding-right: 0.5rem;
     z-index: 1001;
     &:focus { box-shadow: none !important; }
-  }
-  
-  .navbar-toggler-icon {
-    display: none;
-  }
-  
-  .navbar-toggler::before, .navbar-toggler::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: $dark;
-    transition: all 0.3s ease;
-  }
-  .navbar-toggler::before { transform: translateY(-8px); }
-  .navbar-toggler::after { transform: translateY(8px); }
-  
-  .navbar-toggler:not(.collapsed)::before {
-    transform: rotate(45deg);
-  }
-  .navbar-toggler:not(.collapsed)::after {
-    transform: rotate(-45deg);
-  }
-  .navbar-toggler:not(.collapsed) .middle-bar {
-    opacity: 0;
+    &:hover { color: $primary !important; }
   }
 }
 
 // ===================================
-// LANDING PAGE SECTIONS
+// LANDING PAGE SECTIONS (Tetap Sama)
 // ===================================
 .page-content { padding-top: 2rem; }
 .hero-intro {
   padding: 3rem 0;
   h1 { font-weight: 700; font-size: 2.5rem; }
-  .lead { font-size: 1.2rem; max-width: 800px; margin: 1rem auto 2rem; color: $secondary; }
+  .lead {
+    font-size: 1.2rem; max-width: 800px; margin: 1rem auto 2rem; color: $secondary;
+  }
   .hero-buttons .btn { margin: 0.5rem; }
 }
+
 .section-container { padding: 3rem 0; }
-.section-light-bg { background-color: $light; border-radius: $border-radius; padding: 3rem 2rem; margin: 2rem 0; }
+.section-light-bg {
+  background-color: $light; border-radius: $border-radius; padding: 3rem 2rem; margin: 2rem 0;
+}
 .section-title { font-weight: 700; margin-bottom: 1rem; }
 .section-subtitle { max-width: 700px; margin: 0 auto 3rem; color: $secondary; }
 .value-props-grid {
