@@ -4,7 +4,7 @@ subtitle: "Connecting Numbers to Rocks - The Path to Robust Estimation Domains"
 author: "Ghozian Islam Karami"
 date: "2025-01-29"
 categories: [EDA, Geological Domains, Domaining, Resource Estimation]
-image: "Part3A.png"
+image: "images/pillar4.png"
 format:
   html:
     code-fold: true
@@ -15,7 +15,7 @@ format:
 
 ## Introduction
 
-We've validated our data ([Part 1](/posts/Data Validation/)), explored spatial patterns, and characterized statistical distributions ([Part 2](../Spatial Statistics/)). Now comes the most critical step: **connecting numbers to geology**.
+We've validated our data ([Part 1](../Data Validation/)), explored spatial patterns, and characterized statistical distributions ([Part 2](../Spatial Statistics/)). Now comes the most critical step: **connecting numbers to geology**.
 
 **Pillar 4: Geological Controls Analysis** transforms statistical insights into geologically defensible estimation domains - the backbone of reliable resource models.
 
@@ -124,6 +124,7 @@ The most fundamental control: **which rocks contain ore?**
 ```{r}
 #| fig-width: 10
 #| fig-height: 6
+#| warning: false
 
 # Calculate statistics by lithology
 litho_summary <- combined_data %>%
@@ -140,8 +141,8 @@ litho_summary <- combined_data %>%
 # Create color palette
 n_litho <- length(unique(combined_data$lithology))
 litho_colors <- setNames(
-  brewer.pal(min(n_litho, 9), "Set1"),
-  unique(combined_data$lithology)
+  brewer.pal(max(3, min(n_litho, 9)), "Set1")[1:n_litho],
+  sort(unique(combined_data$lithology))
 )
 
 # Boxplot with statistical annotations
@@ -203,6 +204,7 @@ Understanding the economic potential of each rock type.
 ```{r}
 #| fig-width: 10
 #| fig-height: 6
+#| warning: false
 
 # Calculate grade-tonnage curves
 cutoffs <- seq(0, 5, by = 0.1)
@@ -254,24 +256,25 @@ Understanding element associations reveals mineralization processes.
 #| fig-width: 10
 #| fig-height: 8
 #| warning: false
-
-
+#| message: false
 
 # Select grade variables for correlation
 grade_vars <- c("au_ppm", "ag_ppm", "cu_pct")
 
 # Create scatter plot matrix
-ggpairs(
-  combined_data %>% select(all_of(grade_vars), lithology),
-  mapping = aes(color = lithology, alpha = 0.5),
-  upper = list(continuous = wrap("cor", size = 3)),
-  lower = list(continuous = wrap("points", alpha = 0.3, size = 0.5)),
-  diag = list(continuous = wrap("densityDiag", alpha = 0.5))
-) +
-  scale_color_manual(values = litho_colors) +
-  scale_fill_manual(values = litho_colors) +
-  theme_minimal() +
-  labs(title = "Element Correlation Matrix by Lithology")
+suppressWarnings({
+  ggpairs(
+    combined_data %>% select(all_of(grade_vars), lithology),
+    mapping = aes(color = lithology, alpha = 0.5),
+    upper = list(continuous = wrap("cor", size = 3)),
+    lower = list(continuous = wrap("points", alpha = 0.3, size = 0.5)),
+    diag = list(continuous = wrap("densityDiag", alpha = 0.5))
+  ) +
+    scale_color_manual(values = litho_colors) +
+    scale_fill_manual(values = litho_colors) +
+    theme_minimal() +
+    labs(title = "Element Correlation Matrix by Lithology")
+})
 ```
 
 ### Regression Analysis: Au vs Ag
@@ -279,6 +282,7 @@ ggpairs(
 ```{r}
 #| fig-width: 10
 #| fig-height: 6
+#| warning: false
 
 # Calculate regression by lithology
 regression_data <- combined_data %>%
@@ -359,6 +363,7 @@ How does grade change across lithology contacts?
 ```{r}
 #| fig-width: 10
 #| fig-height: 6
+#| warning: false
 
 # Identify contact zones (simplified approach)
 contact_zones <- combined_data %>%
@@ -412,25 +417,48 @@ Sharp grade changes at contacts may indicate:
 Now we synthesize findings from all analyses:
 
 ```{r}
-#| fig-width: 10
-#| fig-height: 8
+#| warning: false
 
-# Create domain classification based on lithology and grade
+# IMPROVED: More realistic domain classification
+# Step 1: Classify each interval
 domain_definition <- combined_data %>%
   mutate(
-    # Define domains based on lithology and grade thresholds
-    domain = case_when(
-      lithology == "Mineralized_Zone" & au_ppm >= 2.0 ~ "High Grade Ore",
-      lithology == "Mineralized_Zone" & au_ppm >= 0.5 ~ "Low Grade Ore",
-      lithology == "Altered_Volcanics" & au_ppm >= 1.0 ~ "Altered Ore",
-      lithology %in% c("Andesite", "Diorite") ~ "Waste",
+    interval_domain = case_when(
+      lithology == "Mineralized_Zone" & au_ppm >= 1.5 ~ "High Grade Ore",
+      lithology == "Mineralized_Zone" & au_ppm >= 0.3 ~ "Low Grade Ore",
+      lithology == "Altered_Volcanics" & au_ppm >= 0.8 ~ "Altered Ore",
+      au_ppm < 0.3 ~ "Waste",
       TRUE ~ "Transitional"
+    )
+  )
+
+# Step 2: Summarize by hole (dominant domain approach)
+hole_summary <- domain_definition %>%
+  group_by(hole_id) %>%
+  summarise(
+    n_intervals = n(),
+    avg_au = mean(au_ppm, na.rm = TRUE),
+    max_au = max(au_ppm, na.rm = TRUE),
+    has_high_grade = any(interval_domain == "High Grade Ore"),
+    pct_ore = sum(interval_domain %in% c("High Grade Ore", "Low Grade Ore", "Altered Ore")) / n() * 100,
+    .groups = 'drop'
+  )
+
+# Step 3: Final hole-level domain classification
+hole_domains <- hole_summary %>%
+  mutate(
+    hole_domain = case_when(
+      has_high_grade & avg_au >= 1.0 ~ "High Grade Ore",
+      avg_au >= 0.8 ~ "Low Grade Ore",
+      avg_au >= 0.5 | pct_ore >= 30 ~ "Altered Ore",
+      avg_au >= 0.3 ~ "Transitional",
+      TRUE ~ "Waste"
     )
   )
 
 # Summary by domain
 domain_summary <- domain_definition %>%
-  group_by(domain) %>%
+  group_by(interval_domain) %>%
   summarise(
     Intervals = n(),
     `Mean Au` = mean(au_ppm, na.rm = TRUE),
@@ -443,7 +471,23 @@ domain_summary <- domain_definition %>%
   mutate(across(where(is.numeric) & !Intervals, ~round(.x, 3)))
 
 datatable(domain_summary,
-          caption = "Table 3: Proposed Estimation Domains",
+          caption = "Table 3: Proposed Estimation Domains (Interval-Based)",
+          options = list(pageLength = 10, dom = 't'))
+
+# Hole-level summary
+hole_domain_summary <- hole_domains %>%
+  group_by(hole_domain) %>%
+  summarise(
+    Holes = n(),
+    `Avg Au (ppm)` = mean(avg_au),
+    `Max Au (ppm)` = max(max_au),
+    .groups = 'drop'
+  ) %>%
+  arrange(desc(`Avg Au (ppm)`)) %>%
+  mutate(across(where(is.numeric) & !Holes, ~round(.x, 3)))
+
+datatable(hole_domain_summary,
+          caption = "Table 4: Domain Classification by Drillhole",
           options = list(pageLength = 10, dom = 't'))
 ```
 
@@ -452,6 +496,7 @@ datatable(domain_summary,
 ```{r}
 #| fig-width: 10
 #| fig-height: 6
+#| warning: false
 
 # Create color palette for domains
 domain_colors <- c(
@@ -462,17 +507,11 @@ domain_colors <- c(
   "Waste" = "#e0e0e0"
 )
 
-# Plot domains in plan view
-domain_spatial <- domain_definition %>%
-  group_by(hole_id) %>%
-  summarise(
-    x = first(x),
-    y = first(y),
-    dominant_domain = names(sort(table(domain), decreasing = TRUE))[1],
-    .groups = 'drop'
-  )
+# Merge hole domains with collar data
+domain_spatial <- hole_domains %>%
+  left_join(collar_std, by = "hole_id")
 
-p_domain_map <- ggplot(domain_spatial, aes(x = x, y = y, color = dominant_domain)) +
+p_domain_map <- ggplot(domain_spatial, aes(x = x, y = y, color = hole_domain)) +
   geom_point(size = 4, alpha = 0.8) +
   scale_color_manual(values = domain_colors) +
   coord_equal() +
@@ -586,16 +625,6 @@ Good EDA and domaining directly impact:
 **Every successful operation starts with understanding the data.**
 :::
 
-## Common Pitfalls Recap
-
-Across all 4 pillars, avoid:
-
-1. **Rushing validation** - Always leads to problems
-2. **Ignoring spatial patterns** - Statistics alone insufficient
-3. **Arbitrary decisions** - Document geological justification
-4. **Over-relying on automation** - Tools assist, don't replace thinking
-5. **Poor documentation** - Makes auditing impossible
-
 ## Tools and Resources
 
 ### GeoDataViz Application
@@ -605,12 +634,6 @@ All analyses demonstrated here are available in GeoDataViz:
 - **GitHub**: [github.com/ghoziankarami/GeoDataViz](https://github.com/ghoziankarami/GeoDataViz/)
 - **Zenodo**: [doi.org/10.5281/zenodo.17142676](https://doi.org/10.5281/zenodo.17142676)
 - **License**: MIT (Open Source)
-
-### Further Reading
-
-- **JORC Code 2012**: Resource classification standards
-- **SNI 5012:2019**: Indonesian resource reporting
-- **Geostatistics literature**: Variography and kriging
 
 ### Contact
 
@@ -622,7 +645,7 @@ All analyses demonstrated here are available in GeoDataViz:
 
 ## Series Complete
 
-Congratulations! You've completed the comprehensive EDA workflow:
+You've completed the comprehensive EDA workflow:
 
 - [← Part 1: Foundation & Data Validation](../Data Validation/)
 - [← Part 2: Spatial & Statistical Analysis](../Spatial Statistics/)
