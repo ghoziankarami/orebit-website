@@ -373,4 +373,260 @@ contact_zones <- combined_data %>%
 
 # Plot grade at contacts
 if(nrow(contact_zones) > 0) {
-  p_contacts <- ggplot(contact_zones, aes(x = contact
+  p_contacts <- ggplot(contact_zones, aes(x = contact_type, y = au_ppm)) +
+    geom_boxplot(fill = "lightcoral", alpha = 0.7) +
+    geom_jitter(width = 0.2, alpha = 0.5, size = 2) +
+    labs(
+      title = "Gold Grades at Lithology Contacts",
+      subtitle = "Understanding grade behavior at geological boundaries",
+      x = "Contact Type",
+      y = "Au (ppm)"
+    ) +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  print(p_contacts)
+} else {
+  cat("No contact zones identified in the dataset.\n")
+}
+```
+
+::: {.callout-note}
+## Contact Zone Interpretation
+
+Sharp grade changes at contacts may indicate:
+
+- **Structural controls**: Faults or shears
+- **Alteration halos**: Gradational vs sharp boundaries
+- **Domain boundaries**: Where to draw estimation domains
+- **Dilution zones**: Material to exclude from ore domains
+:::
+
+## Domain Definition Workflow
+
+### Combining All Evidence
+
+Now we synthesize findings from all analyses:
+
+```{r}
+#| fig-width: 10
+#| fig-height: 8
+
+# Create domain classification based on lithology and grade
+domain_definition <- combined_data %>%
+  mutate(
+    # Define domains based on lithology and grade thresholds
+    domain = case_when(
+      lithology == "Mineralized_Zone" & au_ppm >= 2.0 ~ "High Grade Ore",
+      lithology == "Mineralized_Zone" & au_ppm >= 0.5 ~ "Low Grade Ore",
+      lithology == "Altered_Volcanics" & au_ppm >= 1.0 ~ "Altered Ore",
+      lithology %in% c("Andesite", "Diorite") ~ "Waste",
+      TRUE ~ "Transitional"
+    )
+  )
+
+# Summary by domain
+domain_summary <- domain_definition %>%
+  group_by(domain) %>%
+  summarise(
+    Intervals = n(),
+    `Mean Au` = mean(au_ppm, na.rm = TRUE),
+    `Median Au` = median(au_ppm, na.rm = TRUE),
+    `Mean Ag` = mean(ag_ppm, na.rm = TRUE),
+    `Mean Cu` = mean(cu_pct, na.rm = TRUE),
+    .groups = 'drop'
+  ) %>%
+  arrange(desc(`Mean Au`)) %>%
+  mutate(across(where(is.numeric) & !Intervals, ~round(.x, 3)))
+
+datatable(domain_summary,
+          caption = "Table 3: Proposed Estimation Domains",
+          options = list(pageLength = 10, dom = 't'))
+```
+
+### Domain Spatial Distribution
+
+```{r}
+#| fig-width: 10
+#| fig-height: 6
+
+# Create color palette for domains
+domain_colors <- c(
+  "High Grade Ore" = "#d32f2f",
+  "Low Grade Ore" = "#ff9800",
+  "Altered Ore" = "#ffd54f",
+  "Transitional" = "#9e9e9e",
+  "Waste" = "#e0e0e0"
+)
+
+# Plot domains in plan view
+domain_spatial <- domain_definition %>%
+  group_by(hole_id) %>%
+  summarise(
+    x = first(x),
+    y = first(y),
+    dominant_domain = names(sort(table(domain), decreasing = TRUE))[1],
+    .groups = 'drop'
+  )
+
+p_domain_map <- ggplot(domain_spatial, aes(x = x, y = y, color = dominant_domain)) +
+  geom_point(size = 4, alpha = 0.8) +
+  scale_color_manual(values = domain_colors) +
+  coord_equal() +
+  labs(
+    title = "Proposed Domain Distribution - Plan View",
+    subtitle = "Dominant domain per drillhole",
+    x = "Easting (m)",
+    y = "Northing (m)",
+    color = "Domain"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+p_domain_map
+```
+
+## The Birth of Robust Geological Domains
+
+### Before EDA
+
+Without systematic EDA:
+
+- Random data points without geological context
+- Mixed populations in estimation
+- Unreliable variograms
+- Poor mining selectivity
+
+### After EDA: The 4 Pillars Converge
+
+```{mermaid}
+flowchart TB
+    P1[Pillar 1:<br/>Clean, Validated Data] --> D[Robust<br/>Geological<br/>Domains]
+    P2[Pillar 2:<br/>Spatial Understanding] --> D
+    P3[Pillar 3:<br/>Statistical Populations] --> D
+    P4[Pillar 4:<br/>Geological Controls] --> D
+    
+    D --> E1[Reliable Estimation]
+    D --> E2[Realistic Mine Plans]
+    D --> E3[Confident Classification]
+    
+    style D fill:#4caf50,color:#fff
+    style P1 fill:#e3f2fd
+    style P2 fill:#fff3e0
+    style P3 fill:#f3e5f5
+    style P4 fill:#e8f5e9
+```
+
+### Domain Validation Checklist
+
+::: {.callout-important}
+## Defensible Domains Must Have:
+
+✓ **Geological justification**: Rock types, alteration, structure
+✓ **Statistical support**: Distinct populations, different variability
+✓ **Spatial continuity**: Mappable in 3D space
+✓ **Grade differences**: Economically meaningful
+✓ **Sample support**: Adequate data density
+✓ **Clear boundaries**: Definable contacts
+:::
+
+## Summary: From Data to Domains
+
+### What We Accomplished
+
+Through the 4 Pillar EDA framework, we:
+
+1. **Validated data integrity** (Pillar 1)
+2. **Understood spatial distribution** (Pillar 2)
+3. **Characterized grade populations** (Pillar 3)
+4. **Identified geological controls** (Pillar 4)
+
+**Result**: Scientifically defensible estimation domains ready for resource modeling.
+
+### Next Steps in Resource Estimation
+
+With robust domains defined, you can proceed to:
+
+1. **Compositioning**: Regularize sample support within domains
+2. **Variography**: Model spatial continuity per domain
+3. **Estimation**: Kriging with appropriate search parameters
+4. **Classification**: Measured, Indicated, Inferred categories
+5. **Validation**: Check estimates against reality
+
+### Key Takeaways
+
+::: {.callout-tip}
+## Remember These Principles
+
+1. **EDA is not optional** - It's mandatory for JORC compliance
+2. **Data quality = Model reliability** - GIGO always applies
+3. **Geology drives domains** - Statistics support, geology defines
+4. **Document everything** - Auditors will ask for justification
+5. **Use modern tools** - Automate routine tasks, focus on interpretation
+:::
+
+## Impact on Business Decisions
+
+Good EDA and domaining directly impact:
+
+- **Resource confidence**: Better classification categories
+- **Mine planning**: Realistic extraction sequences
+- **Grade control**: Achievable selectivity
+- **Investor confidence**: Defensible, auditable reports
+- **Project value**: Reduced risk = higher valuations
+
+::: {.callout-important}
+## The Foundation of Trust
+
+"In mining, we don't get second chances. The quality of our EDA determines whether we build a mine or lose millions in poor decisions."
+
+**Every successful operation starts with understanding the data.**
+:::
+
+## Common Pitfalls Recap
+
+Across all 4 pillars, avoid:
+
+1. **Rushing validation** - Always leads to problems
+2. **Ignoring spatial patterns** - Statistics alone insufficient
+3. **Arbitrary decisions** - Document geological justification
+4. **Over-relying on automation** - Tools assist, don't replace thinking
+5. **Poor documentation** - Makes auditing impossible
+
+## Tools and Resources
+
+### GeoDataViz Application
+
+All analyses demonstrated here are available in GeoDataViz:
+
+- **GitHub**: [github.com/ghoziankarami/GeoDataViz](https://github.com/ghoziankarami/GeoDataViz/)
+- **Zenodo**: [doi.org/10.5281/zenodo.17142676](https://doi.org/10.5281/zenodo.17142676)
+- **License**: MIT (Open Source)
+
+### Further Reading
+
+- **JORC Code 2012**: Resource classification standards
+- **SNI 5012:2019**: Indonesian resource reporting
+- **Geostatistics literature**: Variography and kriging
+
+### Contact
+
+- **Author**: Ghozian Islam Karami
+- **Email**: ghoziankarami@gmail.com
+- **LinkedIn**: [linkedin.com/in/ghoziankarami](https://linkedin.com/in/ghoziankarami)
+
+---
+
+## Series Complete
+
+Congratulations! You've completed the comprehensive EDA workflow:
+
+- [← Part 1: Foundation & Data Validation](../Data Validation/)
+- [← Part 2: Spatial & Statistical Analysis](../Spatial Statistics/)
+- **Part 3: Geological Controls & Domain Definition** (You are here)
+
+You now have the tools and knowledge to build **trusted geological models** from raw drilling data.
+
+---
+
+*"Quality data, systematic analysis, geological thinking - the foundation of every successful mine."*

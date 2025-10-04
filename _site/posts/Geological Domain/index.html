@@ -115,6 +115,9 @@ gtag('js', new Date());
 gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 
 <script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
@@ -228,9 +231,33 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#grade-behavior-at-geological-boundaries" id="toc-grade-behavior-at-geological-boundaries" class="nav-link" data-scroll-target="#grade-behavior-at-geological-boundaries">Grade Behavior at Geological Boundaries</a></li>
   </ul></li>
+  <li><a href="#domain-definition-workflow" id="toc-domain-definition-workflow" class="nav-link" data-scroll-target="#domain-definition-workflow">Domain Definition Workflow</a>
+  <ul class="collapse">
+  <li><a href="#combining-all-evidence" id="toc-combining-all-evidence" class="nav-link" data-scroll-target="#combining-all-evidence">Combining All Evidence</a></li>
+  <li><a href="#domain-spatial-distribution" id="toc-domain-spatial-distribution" class="nav-link" data-scroll-target="#domain-spatial-distribution">Domain Spatial Distribution</a></li>
   </ul></li>
-  <li><a href="#identify-contact-zones-simplified-approach" id="toc-identify-contact-zones-simplified-approach" class="nav-link" data-scroll-target="#identify-contact-zones-simplified-approach">Identify contact zones (simplified approach)</a></li>
-  <li><a href="#plot-grade-at-contacts" id="toc-plot-grade-at-contacts" class="nav-link" data-scroll-target="#plot-grade-at-contacts">Plot grade at contacts</a></li>
+  <li><a href="#the-birth-of-robust-geological-domains" id="toc-the-birth-of-robust-geological-domains" class="nav-link" data-scroll-target="#the-birth-of-robust-geological-domains">The Birth of Robust Geological Domains</a>
+  <ul class="collapse">
+  <li><a href="#before-eda" id="toc-before-eda" class="nav-link" data-scroll-target="#before-eda">Before EDA</a></li>
+  <li><a href="#after-eda-the-4-pillars-converge" id="toc-after-eda-the-4-pillars-converge" class="nav-link" data-scroll-target="#after-eda-the-4-pillars-converge">After EDA: The 4 Pillars Converge</a></li>
+  <li><a href="#domain-validation-checklist" id="toc-domain-validation-checklist" class="nav-link" data-scroll-target="#domain-validation-checklist">Domain Validation Checklist</a></li>
+  </ul></li>
+  <li><a href="#summary-from-data-to-domains" id="toc-summary-from-data-to-domains" class="nav-link" data-scroll-target="#summary-from-data-to-domains">Summary: From Data to Domains</a>
+  <ul class="collapse">
+  <li><a href="#what-we-accomplished" id="toc-what-we-accomplished" class="nav-link" data-scroll-target="#what-we-accomplished">What We Accomplished</a></li>
+  <li><a href="#next-steps-in-resource-estimation" id="toc-next-steps-in-resource-estimation" class="nav-link" data-scroll-target="#next-steps-in-resource-estimation">Next Steps in Resource Estimation</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  </ul></li>
+  <li><a href="#impact-on-business-decisions" id="toc-impact-on-business-decisions" class="nav-link" data-scroll-target="#impact-on-business-decisions">Impact on Business Decisions</a></li>
+  <li><a href="#common-pitfalls-recap" id="toc-common-pitfalls-recap" class="nav-link" data-scroll-target="#common-pitfalls-recap">Common Pitfalls Recap</a></li>
+  <li><a href="#tools-and-resources" id="toc-tools-and-resources" class="nav-link" data-scroll-target="#tools-and-resources">Tools and Resources</a>
+  <ul class="collapse">
+  <li><a href="#geodataviz-application" id="toc-geodataviz-application" class="nav-link" data-scroll-target="#geodataviz-application">GeoDataViz Application</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  </ul></li>
+  <li><a href="#series-complete" id="toc-series-complete" class="nav-link" data-scroll-target="#series-complete">Series Complete</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -767,21 +794,352 @@ data's colour values.</code></pre>
 <section id="grade-behavior-at-geological-boundaries" class="level3">
 <h3 class="anchored" data-anchor-id="grade-behavior-at-geological-boundaries">Grade Behavior at Geological Boundaries</h3>
 <p>How does grade change across lithology contacts?</p>
-<p>#| fig-width: 10 #| fig-height: 6</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Kode</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify contact zones (simplified approach)</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>contact_zones <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(hole_id, from) <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hole_id) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">next_litho =</span> <span class="fu">lead</span>(lithology),</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_contact =</span> lithology <span class="sc">!=</span> next_litho <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(next_litho),</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">contact_type =</span> <span class="fu">if_else</span>(is_contact, </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">paste</span>(lithology, <span class="st">"→"</span>, next_litho), </span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                          <span class="cn">NA_character_</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_contact) <span class="sc">%&gt;%</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot grade at contacts</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(contact_zones) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>  p_contacts <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(contact_zones, <span class="fu">aes</span>(<span class="at">x =</span> contact_type, <span class="at">y =</span> au_ppm)) <span class="sc">+</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"lightcoral"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Gold Grades at Lithology Contacts"</span>,</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"Understanding grade behavior at geological boundaries"</span>,</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Contact Type"</span>,</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Au (ppm)"</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p_contacts)</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"No contact zones identified in the dataset.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Catatan</span>Contact Zone Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sharp grade changes at contacts may indicate:</p>
+<ul>
+<li><strong>Structural controls</strong>: Faults or shears</li>
+<li><strong>Alteration halos</strong>: Gradational vs sharp boundaries</li>
+<li><strong>Domain boundaries</strong>: Where to draw estimation domains</li>
+<li><strong>Dilution zones</strong>: Material to exclude from ore domains</li>
+</ul>
+</div>
+</div>
 </section>
 </section>
+<section id="domain-definition-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="domain-definition-workflow">Domain Definition Workflow</h2>
+<section id="combining-all-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="combining-all-evidence">Combining All Evidence</h3>
+<p>Now we synthesize findings from all analyses:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Kode</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create domain classification based on lithology and grade</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>domain_definition <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define domains based on lithology and grade thresholds</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">domain =</span> <span class="fu">case_when</span>(</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">==</span> <span class="st">"Mineralized_Zone"</span> <span class="sc">&amp;</span> au_ppm <span class="sc">&gt;=</span> <span class="fl">2.0</span> <span class="sc">~</span> <span class="st">"High Grade Ore"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">==</span> <span class="st">"Mineralized_Zone"</span> <span class="sc">&amp;</span> au_ppm <span class="sc">&gt;=</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">"Low Grade Ore"</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">==</span> <span class="st">"Altered_Volcanics"</span> <span class="sc">&amp;</span> au_ppm <span class="sc">&gt;=</span> <span class="fl">1.0</span> <span class="sc">~</span> <span class="st">"Altered Ore"</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Andesite"</span>, <span class="st">"Diorite"</span>) <span class="sc">~</span> <span class="st">"Waste"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Transitional"</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary by domain</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>domain_summary <span class="ot">&lt;-</span> domain_definition <span class="sc">%&gt;%</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(domain) <span class="sc">%&gt;%</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Intervals =</span> <span class="fu">n</span>(),</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Mean Au</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Median Au</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">median</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Mean Ag</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(ag_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Mean Cu</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(cu_pct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="st">`</span><span class="at">Mean Au</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric) <span class="sc">&amp;</span> <span class="sc">!</span>Intervals, <span class="sc">~</span><span class="fu">round</span>(.x, <span class="dv">3</span>)))</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(domain_summary,</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">"Table 3: Proposed Estimation Domains"</span>,</span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>, <span class="at">dom =</span> <span class="st">'t'</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-4a7776f1de1dafe8ed14" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4a7776f1de1dafe8ed14">{"x":{"filter":"none","vertical":false,"caption":"<caption>Table 3: Proposed Estimation Domains<\/caption>","data":[["1","2","3","4","5"],["High Grade Ore","Altered Ore","Low Grade Ore","Waste","Transitional"],[230,119,43,483,62],[3.89,2.721,1.338,1.005,0.351],[3.758,2.583,1.411,0.622,0.335],[39.205,27.917,13.148,10.885,3.863],[1.169,0.797,0.374,0.364,0.187]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>domain<\/th>\n      <th>Intervals<\/th>\n      <th>Mean Au<\/th>\n      <th>Median Au<\/th>\n      <th>Mean Ag<\/th>\n      <th>Mean Cu<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"domain","targets":1},{"name":"Intervals","targets":2},{"name":"Mean Au","targets":3},{"name":"Median Au","targets":4},{"name":"Mean Ag","targets":5},{"name":"Mean Cu","targets":6}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
-<section id="identify-contact-zones-simplified-approach" class="level1">
-<h1>Identify contact zones (simplified approach)</h1>
-<p>contact_zones &lt;- combined_data %&gt;% arrange(hole_id, from) %&gt;% group_by(hole_id) %&gt;% mutate( next_litho = lead(lithology), is_contact = lithology != next_litho &amp; !is.na(next_litho), contact_type = if_else(is_contact, paste(lithology, “→”, next_litho), NA_character_) ) %&gt;% filter(is_contact) %&gt;% ungroup()</p>
+<section id="domain-spatial-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="domain-spatial-distribution">Domain Spatial Distribution</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Kode</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create color palette for domains</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>domain_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"High Grade Ore"</span> <span class="ot">=</span> <span class="st">"#d32f2f"</span>,</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Low Grade Ore"</span> <span class="ot">=</span> <span class="st">"#ff9800"</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Altered Ore"</span> <span class="ot">=</span> <span class="st">"#ffd54f"</span>,</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Transitional"</span> <span class="ot">=</span> <span class="st">"#9e9e9e"</span>,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Waste"</span> <span class="ot">=</span> <span class="st">"#e0e0e0"</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot domains in plan view</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>domain_spatial <span class="ot">&lt;-</span> domain_definition <span class="sc">%&gt;%</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hole_id) <span class="sc">%&gt;%</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">first</span>(x),</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">first</span>(y),</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">dominant_domain =</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(domain), <span class="at">decreasing =</span> <span class="cn">TRUE</span>))[<span class="dv">1</span>],</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>p_domain_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(domain_spatial, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> dominant_domain)) <span class="sc">+</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> domain_colors) <span class="sc">+</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Proposed Domain Distribution - Plan View"</span>,</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Dominant domain per drillhole"</span>,</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Easting (m)"</span>,</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Northing (m)"</span>,</span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Domain"</span></span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>p_domain_map</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="plot-grade-at-contacts" class="level1">
-<h1>Plot grade at contacts</h1>
-<p>if(nrow(contact_zones) &gt; 0) { p_contacts &lt;- ggplot(contact_zones, aes(x = contact</p>
+</section>
+<section id="the-birth-of-robust-geological-domains" class="level2">
+<h2 class="anchored" data-anchor-id="the-birth-of-robust-geological-domains">The Birth of Robust Geological Domains</h2>
+<section id="before-eda" class="level3">
+<h3 class="anchored" data-anchor-id="before-eda">Before EDA</h3>
+<p>Without systematic EDA:</p>
+<ul>
+<li>Random data points without geological context</li>
+<li>Mixed populations in estimation</li>
+<li>Unreliable variograms</li>
+<li>Poor mining selectivity</li>
+</ul>
+</section>
+<section id="after-eda-the-4-pillars-converge" class="level3">
+<h3 class="anchored" data-anchor-id="after-eda-the-4-pillars-converge">After EDA: The 4 Pillars Converge</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    P1[Pillar 1:&lt;br/&gt;Clean, Validated Data] --&gt; D[Robust&lt;br/&gt;Geological&lt;br/&gt;Domains]
+    P2[Pillar 2:&lt;br/&gt;Spatial Understanding] --&gt; D
+    P3[Pillar 3:&lt;br/&gt;Statistical Populations] --&gt; D
+    P4[Pillar 4:&lt;br/&gt;Geological Controls] --&gt; D
+    
+    D --&gt; E1[Reliable Estimation]
+    D --&gt; E2[Realistic Mine Plans]
+    D --&gt; E3[Confident Classification]
+    
+    style D fill:#4caf50,color:#fff
+    style P1 fill:#e3f2fd
+    style P2 fill:#fff3e0
+    style P3 fill:#f3e5f5
+    style P4 fill:#e8f5e9
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="domain-validation-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="domain-validation-checklist">Domain Validation Checklist</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Penting</span>Defensible Domains Must Have:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>✓ <strong>Geological justification</strong>: Rock types, alteration, structure ✓ <strong>Statistical support</strong>: Distinct populations, different variability ✓ <strong>Spatial continuity</strong>: Mappable in 3D space ✓ <strong>Grade differences</strong>: Economically meaningful ✓ <strong>Sample support</strong>: Adequate data density ✓ <strong>Clear boundaries</strong>: Definable contacts</p>
+</div>
+</div>
+</section>
+</section>
+<section id="summary-from-data-to-domains" class="level2">
+<h2 class="anchored" data-anchor-id="summary-from-data-to-domains">Summary: From Data to Domains</h2>
+<section id="what-we-accomplished" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-accomplished">What We Accomplished</h3>
+<p>Through the 4 Pillar EDA framework, we:</p>
+<ol type="1">
+<li><strong>Validated data integrity</strong> (Pillar 1)</li>
+<li><strong>Understood spatial distribution</strong> (Pillar 2)</li>
+<li><strong>Characterized grade populations</strong> (Pillar 3)</li>
+<li><strong>Identified geological controls</strong> (Pillar 4)</li>
+</ol>
+<p><strong>Result</strong>: Scientifically defensible estimation domains ready for resource modeling.</p>
+</section>
+<section id="next-steps-in-resource-estimation" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps-in-resource-estimation">Next Steps in Resource Estimation</h3>
+<p>With robust domains defined, you can proceed to:</p>
+<ol type="1">
+<li><strong>Compositioning</strong>: Regularize sample support within domains</li>
+<li><strong>Variography</strong>: Model spatial continuity per domain</li>
+<li><strong>Estimation</strong>: Kriging with appropriate search parameters</li>
+<li><strong>Classification</strong>: Measured, Indicated, Inferred categories</li>
+<li><strong>Validation</strong>: Check estimates against reality</li>
+</ol>
+</section>
+<section id="key-takeaways" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remember These Principles
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>EDA is not optional</strong> - It’s mandatory for JORC compliance</li>
+<li><strong>Data quality = Model reliability</strong> - GIGO always applies</li>
+<li><strong>Geology drives domains</strong> - Statistics support, geology defines</li>
+<li><strong>Document everything</strong> - Auditors will ask for justification</li>
+<li><strong>Use modern tools</strong> - Automate routine tasks, focus on interpretation</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="impact-on-business-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="impact-on-business-decisions">Impact on Business Decisions</h2>
+<p>Good EDA and domaining directly impact:</p>
+<ul>
+<li><strong>Resource confidence</strong>: Better classification categories</li>
+<li><strong>Mine planning</strong>: Realistic extraction sequences</li>
+<li><strong>Grade control</strong>: Achievable selectivity</li>
+<li><strong>Investor confidence</strong>: Defensible, auditable reports</li>
+<li><strong>Project value</strong>: Reduced risk = higher valuations</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Penting</span>The Foundation of Trust
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“In mining, we don’t get second chances. The quality of our EDA determines whether we build a mine or lose millions in poor decisions.”</p>
+<p><strong>Every successful operation starts with understanding the data.</strong></p>
+</div>
+</div>
+</section>
+<section id="common-pitfalls-recap" class="level2">
+<h2 class="anchored" data-anchor-id="common-pitfalls-recap">Common Pitfalls Recap</h2>
+<p>Across all 4 pillars, avoid:</p>
+<ol type="1">
+<li><strong>Rushing validation</strong> - Always leads to problems</li>
+<li><strong>Ignoring spatial patterns</strong> - Statistics alone insufficient</li>
+<li><strong>Arbitrary decisions</strong> - Document geological justification</li>
+<li><strong>Over-relying on automation</strong> - Tools assist, don’t replace thinking</li>
+<li><strong>Poor documentation</strong> - Makes auditing impossible</li>
+</ol>
+</section>
+<section id="tools-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="tools-and-resources">Tools and Resources</h2>
+<section id="geodataviz-application" class="level3">
+<h3 class="anchored" data-anchor-id="geodataviz-application">GeoDataViz Application</h3>
+<p>All analyses demonstrated here are available in GeoDataViz:</p>
+<ul>
+<li><strong>GitHub</strong>: <a href="https://github.com/ghoziankarami/GeoDataViz/">github.com/ghoziankarami/GeoDataViz</a></li>
+<li><strong>Zenodo</strong>: <a href="https://doi.org/10.5281/zenodo.17142676">doi.org/10.5281/zenodo.17142676</a></li>
+<li><strong>License</strong>: MIT (Open Source)</li>
+</ul>
+</section>
+<section id="further-reading" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading">Further Reading</h3>
+<ul>
+<li><strong>JORC Code 2012</strong>: Resource classification standards</li>
+<li><strong>SNI 5012:2019</strong>: Indonesian resource reporting</li>
+<li><strong>Geostatistics literature</strong>: Variography and kriging</li>
+</ul>
+</section>
+<section id="contact" class="level3">
+<h3 class="anchored" data-anchor-id="contact">Contact</h3>
+<ul>
+<li><strong>Author</strong>: Ghozian Islam Karami</li>
+<li><strong>Email</strong>: ghoziankarami@gmail.com</li>
+<li><strong>LinkedIn</strong>: <a href="https://linkedin.com/in/ghoziankarami">linkedin.com/in/ghoziankarami</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="series-complete" class="level2">
+<h2 class="anchored" data-anchor-id="series-complete">Series Complete</h2>
+<p>Congratulations! You’ve completed the comprehensive EDA workflow:</p>
+<ul>
+<li><a href="../Data Validation/">← Part 1: Foundation &amp; Data Validation</a></li>
+<li><a href="../Spatial Statistics/">← Part 2: Spatial &amp; Statistical Analysis</a></li>
+<li><strong>Part 3: Geological Controls &amp; Domain Definition</strong> (You are here)</li>
+</ul>
+<p>You now have the tools and knowledge to build <strong>trusted geological models</strong> from raw drilling data.</p>
+<hr>
+<p><em>“Quality data, systematic analysis, geological thinking - the foundation of every successful mine.”</em></p>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1235,382 +1593,638 @@ data's colour values.</code></pre>
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Kode Sumber</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Part 3: Geological Controls &amp; Domain Definition"</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Connecting Numbers to Rocks - The Path to Robust Estimation Domains"</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ghozian Islam Karami"</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-01-29"</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [EDA, Geological Domains, Domaining, Resource Estimation]</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/pillar4.png"</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>We've validated our data (<span class="co">[</span><span class="ot">Part 1</span><span class="co">](post-01-data-validation.qmd)</span>), explored spatial patterns, and characterized statistical distributions (<span class="co">[</span><span class="ot">Part 2</span><span class="co">](post-02-spatial-statistical.qmd)</span>). Now comes the most critical step: **connecting numbers to geology**.</span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>**Pillar 4: Geological Controls Analysis** transforms statistical insights into geologically defensible estimation domains - the backbone of reliable resource models.</span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Critical Question</span></span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **"Where is mineralization located and WHY?"**</span></span>
-<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>This isn't just about mapping high grades. It's about understanding the **geological controls** that govern mineralization:</span>
-<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which rock types host mineralization?</span>
-<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Are there geochemical relationships between elements?</span>
-<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How does grade behave at geological contacts?</span>
-<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What structural controls exist?</span>
-<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Geological Domains Matter</span></span>
-<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>Poor domaining is a leading cause of resource estimation failure:</span>
-<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mixed populations create unrealistic variograms</span>
-<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inappropriate kriging produces smoothing artifacts</span>
-<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Classification confidence is compromised</span>
-<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mining selectively targets become unrealistic</span>
-<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>**Good domains = Reliable estimates**</span>
-<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup</span></span>
-<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
-<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Create simulated drilling data with geological controls</span></span>
-<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a>n_holes <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a>collar <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">hole_id =</span> <span class="fu">paste0</span>(<span class="st">"DDH"</span>, <span class="fu">sprintf</span>(<span class="st">"%03d"</span>, <span class="dv">1</span><span class="sc">:</span>n_holes)),</span>
-<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">runif</span>(n_holes, <span class="dv">500000</span>, <span class="dv">501000</span>),</span>
-<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">runif</span>(n_holes, <span class="dv">9000000</span>, <span class="dv">9001000</span>),</span>
-<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">rl =</span> <span class="fu">runif</span>(n_holes, <span class="dv">100</span>, <span class="dv">200</span>)</span>
-<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate assay data with lithology-controlled grades</span></span>
-<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a>litho_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Andesite"</span>, <span class="st">"Diorite"</span>, <span class="st">"Mineralized_Zone"</span>, <span class="st">"Altered_Volcanics"</span>)</span>
-<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a>litho_grade_means <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">3.5</span>, <span class="fl">2.0</span>)  <span class="co"># Different grades by lithology</span></span>
-<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a>assay_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>n_holes, <span class="cf">function</span>(i) {</span>
-<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a>  n_intervals <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">15</span><span class="sc">:</span><span class="dv">25</span>, <span class="dv">1</span>)</span>
-<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a>  depths <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="at">by =</span> <span class="dv">2</span>, <span class="at">length.out =</span> n_intervals)</span>
-<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Assign lithology to each interval</span></span>
-<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a>  litho_idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(litho_codes), n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a>                     <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>))</span>
-<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Generate grades based on lithology</span></span>
-<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a>  au_grades <span class="ot">&lt;-</span> <span class="fu">sapply</span>(litho_idx, <span class="cf">function</span>(idx) {</span>
-<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">max</span>(<span class="dv">0</span>, <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> litho_grade_means[idx], <span class="at">sd =</span> <span class="fl">1.5</span>))</span>
-<span id="cb28-89"><a href="#cb28-89" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb28-90"><a href="#cb28-90" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-91"><a href="#cb28-91" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Correlated Ag and Cu</span></span>
-<span id="cb28-92"><a href="#cb28-92" aria-hidden="true" tabindex="-1"></a>  ag_grades <span class="ot">&lt;-</span> au_grades <span class="sc">*</span> <span class="fu">runif</span>(n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">12</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
-<span id="cb28-93"><a href="#cb28-93" aria-hidden="true" tabindex="-1"></a>  cu_grades <span class="ot">&lt;-</span> au_grades <span class="sc">*</span> <span class="fl">0.3</span> <span class="sc">+</span> <span class="fu">rnorm</span>(n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">0.3</span>)</span>
-<span id="cb28-94"><a href="#cb28-94" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb28-95"><a href="#cb28-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb28-96"><a href="#cb28-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">hole_id =</span> collar<span class="sc">$</span>hole_id[i],</span>
-<span id="cb28-97"><a href="#cb28-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">from =</span> depths[<span class="sc">-</span><span class="fu">length</span>(depths)],</span>
-<span id="cb28-98"><a href="#cb28-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">to =</span> depths[<span class="sc">-</span><span class="dv">1</span>],</span>
-<span id="cb28-99"><a href="#cb28-99" aria-hidden="true" tabindex="-1"></a>    <span class="at">au_ppm =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, au_grades),</span>
-<span id="cb28-100"><a href="#cb28-100" aria-hidden="true" tabindex="-1"></a>    <span class="at">ag_ppm =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, ag_grades),</span>
-<span id="cb28-101"><a href="#cb28-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">cu_pct =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, cu_grades),</span>
-<span id="cb28-102"><a href="#cb28-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">lithology =</span> litho_codes[litho_idx]</span>
-<span id="cb28-103"><a href="#cb28-103" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-104"><a href="#cb28-104" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb28-105"><a href="#cb28-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-106"><a href="#cb28-106" aria-hidden="true" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, assay_list) <span class="sc">%&gt;%</span></span>
-<span id="cb28-107"><a href="#cb28-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(collar, <span class="at">by =</span> <span class="st">"hole_id"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-108"><a href="#cb28-108" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
-<span id="cb28-109"><a href="#cb28-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-110"><a href="#cb28-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare standard formats</span></span>
-<span id="cb28-111"><a href="#cb28-111" aria-hidden="true" tabindex="-1"></a>collar_std <span class="ot">&lt;-</span> collar <span class="sc">%&gt;%</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
-<span id="cb28-112"><a href="#cb28-112" aria-hidden="true" tabindex="-1"></a>assay_std <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(hole_id, from, to, au_ppm, ag_ppm, cu_pct)</span>
-<span id="cb28-113"><a href="#cb28-113" aria-hidden="true" tabindex="-1"></a>lithology_std <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(hole_id, from, to, lithology)</span>
-<span id="cb28-114"><a href="#cb28-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb28-115"><a href="#cb28-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-116"><a href="#cb28-116" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb28-117"><a href="#cb28-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-118"><a href="#cb28-118" aria-hidden="true" tabindex="-1"></a><span class="fu"># PILLAR 4: Geological Controls Analysis</span></span>
-<span id="cb28-119"><a href="#cb28-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-120"><a href="#cb28-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part A: Lithology Analysis</span></span>
-<span id="cb28-121"><a href="#cb28-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-122"><a href="#cb28-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### Grade Distribution by Rock Type</span></span>
-<span id="cb28-123"><a href="#cb28-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-124"><a href="#cb28-124" aria-hidden="true" tabindex="-1"></a>The most fundamental control: **which rocks contain ore?**</span>
-<span id="cb28-125"><a href="#cb28-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-128"><a href="#cb28-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-129"><a href="#cb28-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb28-130"><a href="#cb28-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb28-131"><a href="#cb28-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-132"><a href="#cb28-132" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate statistics by lithology</span></span>
-<span id="cb28-133"><a href="#cb28-133" aria-hidden="true" tabindex="-1"></a>litho_summary <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb28-134"><a href="#cb28-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lithology) <span class="sc">%&gt;%</span></span>
-<span id="cb28-135"><a href="#cb28-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb28-136"><a href="#cb28-136" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb28-137"><a href="#cb28-137" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_au =</span> <span class="fu">mean</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb28-138"><a href="#cb28-138" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_au =</span> <span class="fu">median</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb28-139"><a href="#cb28-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_au =</span> <span class="fu">max</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb28-140"><a href="#cb28-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_au =</span> <span class="fu">sd</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb28-141"><a href="#cb28-141" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb28-142"><a href="#cb28-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_au))</span>
-<span id="cb28-143"><a href="#cb28-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-144"><a href="#cb28-144" aria-hidden="true" tabindex="-1"></a><span class="co"># Create color palette</span></span>
-<span id="cb28-145"><a href="#cb28-145" aria-hidden="true" tabindex="-1"></a>n_litho <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(combined_data<span class="sc">$</span>lithology))</span>
-<span id="cb28-146"><a href="#cb28-146" aria-hidden="true" tabindex="-1"></a>litho_colors <span class="ot">&lt;-</span> <span class="fu">setNames</span>(</span>
-<span id="cb28-147"><a href="#cb28-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brewer.pal</span>(<span class="fu">min</span>(n_litho, <span class="dv">9</span>), <span class="st">"Set1"</span>),</span>
-<span id="cb28-148"><a href="#cb28-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>(combined_data<span class="sc">$</span>lithology)</span>
-<span id="cb28-149"><a href="#cb28-149" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb28-150"><a href="#cb28-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-151"><a href="#cb28-151" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot with statistical annotations</span></span>
-<span id="cb28-152"><a href="#cb28-152" aria-hidden="true" tabindex="-1"></a>p_litho_box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(combined_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(lithology, au_ppm, <span class="at">FUN =</span> median), </span>
-<span id="cb28-153"><a href="#cb28-153" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">y =</span> au_ppm, </span>
-<span id="cb28-154"><a href="#cb28-154" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">fill =</span> lithology)) <span class="sc">+</span></span>
-<span id="cb28-155"><a href="#cb28-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb28-156"><a href="#cb28-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">shape =</span> <span class="dv">23</span>, <span class="at">size =</span> <span class="dv">3</span>, </span>
-<span id="cb28-157"><a href="#cb28-157" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
-<span id="cb28-158"><a href="#cb28-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
-<span id="cb28-159"><a href="#cb28-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb28-160"><a href="#cb28-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gold Grade Distribution by Lithology"</span>,</span>
-<span id="cb28-161"><a href="#cb28-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Box = IQR, Diamond = Mean, Line = Median"</span>,</span>
-<span id="cb28-162"><a href="#cb28-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Lithology (ordered by median grade)"</span>,</span>
-<span id="cb28-163"><a href="#cb28-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Au (ppm)"</span></span>
-<span id="cb28-164"><a href="#cb28-164" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb28-165"><a href="#cb28-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb28-166"><a href="#cb28-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb28-167"><a href="#cb28-167" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb28-168"><a href="#cb28-168" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
-<span id="cb28-169"><a href="#cb28-169" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-170"><a href="#cb28-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-171"><a href="#cb28-171" aria-hidden="true" tabindex="-1"></a>p_litho_box</span>
-<span id="cb28-172"><a href="#cb28-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb28-173"><a href="#cb28-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-174"><a href="#cb28-174" aria-hidden="true" tabindex="-1"></a><span class="fu">### Statistical Summary by Lithology</span></span>
-<span id="cb28-175"><a href="#cb28-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-178"><a href="#cb28-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-179"><a href="#cb28-179" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(litho_summary,</span>
-<span id="cb28-180"><a href="#cb28-180" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">"Table 1: Gold Statistics by Lithology"</span>,</span>
-<span id="cb28-181"><a href="#cb28-181" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-182"><a href="#cb28-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatRound</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="st">'mean_au'</span>, <span class="st">'median_au'</span>, <span class="st">'max_au'</span>, <span class="st">'sd_au'</span>), <span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-183"><a href="#cb28-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
-<span id="cb28-184"><a href="#cb28-184" aria-hidden="true" tabindex="-1"></a>    <span class="st">'mean_au'</span>,</span>
-<span id="cb28-185"><a href="#cb28-185" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">styleColorBar</span>(litho_summary<span class="sc">$</span>mean_au, <span class="st">'lightblue'</span>),</span>
-<span id="cb28-186"><a href="#cb28-186" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundSize =</span> <span class="st">'100% 90%'</span>,</span>
-<span id="cb28-187"><a href="#cb28-187" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundRepeat =</span> <span class="st">'no-repeat'</span>,</span>
-<span id="cb28-188"><a href="#cb28-188" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundPosition =</span> <span class="st">'center'</span></span>
-<span id="cb28-189"><a href="#cb28-189" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-190"><a href="#cb28-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb28-191"><a href="#cb28-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-192"><a href="#cb28-192" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb28-193"><a href="#cb28-193" aria-hidden="true" tabindex="-1"></a><span class="fu">## Geological Interpretation</span></span>
-<span id="cb28-194"><a href="#cb28-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-195"><a href="#cb28-195" aria-hidden="true" tabindex="-1"></a>From this analysis, identify:</span>
-<span id="cb28-196"><a href="#cb28-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-197"><a href="#cb28-197" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Primary ore hosts**: Lithologies with highest mean/median grades</span>
-<span id="cb28-198"><a href="#cb28-198" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Barren waste**: Low-grade lithologies to exclude</span>
-<span id="cb28-199"><a href="#cb28-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Grade variance**: High CV suggests mixed mineralization styles</span>
-<span id="cb28-200"><a href="#cb28-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Outlier behavior**: Which rocks have extreme values?</span>
-<span id="cb28-201"><a href="#cb28-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-202"><a href="#cb28-202" aria-hidden="true" tabindex="-1"></a>**Action**: Candidate lithologies for separate estimation domains</span>
-<span id="cb28-203"><a href="#cb28-203" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb28-204"><a href="#cb28-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-205"><a href="#cb28-205" aria-hidden="true" tabindex="-1"></a><span class="fu">### Grade-Tonnage Curves by Lithology</span></span>
-<span id="cb28-206"><a href="#cb28-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-207"><a href="#cb28-207" aria-hidden="true" tabindex="-1"></a>Understanding the economic potential of each rock type.</span>
-<span id="cb28-208"><a href="#cb28-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-211"><a href="#cb28-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-212"><a href="#cb28-212" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb28-213"><a href="#cb28-213" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb28-214"><a href="#cb28-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-215"><a href="#cb28-215" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate grade-tonnage curves</span></span>
-<span id="cb28-216"><a href="#cb28-216" aria-hidden="true" tabindex="-1"></a>cutoffs <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb28-217"><a href="#cb28-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-218"><a href="#cb28-218" aria-hidden="true" tabindex="-1"></a>gt_curves <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb28-219"><a href="#cb28-219" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expand_grid</span>(<span class="at">cutoff =</span> cutoffs) <span class="sc">%&gt;%</span></span>
-<span id="cb28-220"><a href="#cb28-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(au_ppm <span class="sc">&gt;=</span> cutoff) <span class="sc">%&gt;%</span></span>
-<span id="cb28-221"><a href="#cb28-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lithology, cutoff) <span class="sc">%&gt;%</span></span>
-<span id="cb28-222"><a href="#cb28-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb28-223"><a href="#cb28-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">tonnage_pct =</span> <span class="fu">n</span>() <span class="sc">/</span> <span class="fu">nrow</span>(combined_data) <span class="sc">*</span> <span class="dv">100</span>,</span>
-<span id="cb28-224"><a href="#cb28-224" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_grade =</span> <span class="fu">mean</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb28-225"><a href="#cb28-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
-<span id="cb28-226"><a href="#cb28-226" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-227"><a href="#cb28-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-228"><a href="#cb28-228" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot tonnage vs cutoff</span></span>
-<span id="cb28-229"><a href="#cb28-229" aria-hidden="true" tabindex="-1"></a>p_tonnage <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gt_curves, <span class="fu">aes</span>(<span class="at">x =</span> cutoff, <span class="at">y =</span> tonnage_pct, <span class="at">color =</span> lithology)) <span class="sc">+</span></span>
-<span id="cb28-230"><a href="#cb28-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb28-231"><a href="#cb28-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
-<span id="cb28-232"><a href="#cb28-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb28-233"><a href="#cb28-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Tonnage vs Cut-off Grade"</span>,</span>
-<span id="cb28-234"><a href="#cb28-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cut-off Grade (ppm Au)"</span>,</span>
-<span id="cb28-235"><a href="#cb28-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Tonnage (% of total)"</span></span>
-<span id="cb28-236"><a href="#cb28-236" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb28-237"><a href="#cb28-237" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb28-238"><a href="#cb28-238" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
-<span id="cb28-239"><a href="#cb28-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-240"><a href="#cb28-240" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot grade vs cutoff</span></span>
-<span id="cb28-241"><a href="#cb28-241" aria-hidden="true" tabindex="-1"></a>p_grade <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gt_curves, <span class="fu">aes</span>(<span class="at">x =</span> cutoff, <span class="at">y =</span> avg_grade, <span class="at">color =</span> lithology)) <span class="sc">+</span></span>
-<span id="cb28-242"><a href="#cb28-242" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb28-243"><a href="#cb28-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
-<span id="cb28-244"><a href="#cb28-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb28-245"><a href="#cb28-245" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Grade vs Cut-off"</span>,</span>
-<span id="cb28-246"><a href="#cb28-246" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cut-off Grade (ppm Au)"</span>,</span>
-<span id="cb28-247"><a href="#cb28-247" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade (ppm)"</span></span>
-<span id="cb28-248"><a href="#cb28-248" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb28-249"><a href="#cb28-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb28-250"><a href="#cb28-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
-<span id="cb28-251"><a href="#cb28-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-252"><a href="#cb28-252" aria-hidden="true" tabindex="-1"></a>p_tonnage <span class="sc">/</span> p_grade</span>
-<span id="cb28-253"><a href="#cb28-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb28-254"><a href="#cb28-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-255"><a href="#cb28-255" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part B: Element Correlation Analysis</span></span>
-<span id="cb28-256"><a href="#cb28-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-257"><a href="#cb28-257" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bivariate Relationships</span></span>
-<span id="cb28-258"><a href="#cb28-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-259"><a href="#cb28-259" aria-hidden="true" tabindex="-1"></a>Understanding element associations reveals mineralization processes.</span>
-<span id="cb28-260"><a href="#cb28-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-263"><a href="#cb28-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-264"><a href="#cb28-264" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb28-265"><a href="#cb28-265" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
-<span id="cb28-266"><a href="#cb28-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-267"><a href="#cb28-267" aria-hidden="true" tabindex="-1"></a><span class="co"># Select grade variables for correlation</span></span>
-<span id="cb28-268"><a href="#cb28-268" aria-hidden="true" tabindex="-1"></a>grade_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"au_ppm"</span>, <span class="st">"ag_ppm"</span>, <span class="st">"cu_pct"</span>)</span>
-<span id="cb28-269"><a href="#cb28-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-270"><a href="#cb28-270" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot matrix</span></span>
-<span id="cb28-271"><a href="#cb28-271" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(</span>
-<span id="cb28-272"><a href="#cb28-272" aria-hidden="true" tabindex="-1"></a>  combined_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">all_of</span>(grade_vars), lithology),</span>
-<span id="cb28-273"><a href="#cb28-273" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> lithology, <span class="at">alpha =</span> <span class="fl">0.5</span>),</span>
-<span id="cb28-274"><a href="#cb28-274" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"cor"</span>, <span class="at">size =</span> <span class="dv">3</span>)),</span>
-<span id="cb28-275"><a href="#cb28-275" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"points"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>)),</span>
-<span id="cb28-276"><a href="#cb28-276" aria-hidden="true" tabindex="-1"></a>  <span class="at">diag =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"densityDiag"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>))</span>
-<span id="cb28-277"><a href="#cb28-277" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb28-278"><a href="#cb28-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
-<span id="cb28-279"><a href="#cb28-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
-<span id="cb28-280"><a href="#cb28-280" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb28-281"><a href="#cb28-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Element Correlation Matrix by Lithology"</span>)</span>
-<span id="cb28-282"><a href="#cb28-282" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb28-283"><a href="#cb28-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-284"><a href="#cb28-284" aria-hidden="true" tabindex="-1"></a><span class="fu">### Regression Analysis: Au vs Ag</span></span>
-<span id="cb28-285"><a href="#cb28-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-288"><a href="#cb28-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-289"><a href="#cb28-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb28-290"><a href="#cb28-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb28-291"><a href="#cb28-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-292"><a href="#cb28-292" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate regression by lithology</span></span>
-<span id="cb28-293"><a href="#cb28-293" aria-hidden="true" tabindex="-1"></a>regression_data <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb28-294"><a href="#cb28-294" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(au_ppm) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(ag_ppm)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-295"><a href="#cb28-295" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lithology) <span class="sc">%&gt;%</span></span>
-<span id="cb28-296"><a href="#cb28-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-297"><a href="#cb28-297" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb28-298"><a href="#cb28-298" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb28-299"><a href="#cb28-299" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> purrr<span class="sc">::</span><span class="fu">map</span>(data, <span class="sc">~</span><span class="fu">lm</span>(ag_ppm <span class="sc">~</span> au_ppm, <span class="at">data =</span> .x)),</span>
-<span id="cb28-300"><a href="#cb28-300" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_squared =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span><span class="fu">summary</span>(.x)<span class="sc">$</span>r.squared),</span>
-<span id="cb28-301"><a href="#cb28-301" aria-hidden="true" tabindex="-1"></a>    <span class="at">slope =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span><span class="fu">coef</span>(.x)[<span class="dv">2</span>]),</span>
-<span id="cb28-302"><a href="#cb28-302" aria-hidden="true" tabindex="-1"></a>    <span class="at">intercept =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span><span class="fu">coef</span>(.x)[<span class="dv">1</span>])</span>
-<span id="cb28-303"><a href="#cb28-303" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-304"><a href="#cb28-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-305"><a href="#cb28-305" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot with regression lines</span></span>
-<span id="cb28-306"><a href="#cb28-306" aria-hidden="true" tabindex="-1"></a>p_regression <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(combined_data, <span class="fu">aes</span>(<span class="at">x =</span> au_ppm, <span class="at">y =</span> ag_ppm)) <span class="sc">+</span></span>
-<span id="cb28-307"><a href="#cb28-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> lithology), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb28-308"><a href="#cb28-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">color =</span> lithology), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb28-309"><a href="#cb28-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
-<span id="cb28-310"><a href="#cb28-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb28-311"><a href="#cb28-311" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gold vs Silver: Correlation by Lithology"</span>,</span>
-<span id="cb28-312"><a href="#cb28-312" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Different slopes suggest different mineralization styles"</span>,</span>
-<span id="cb28-313"><a href="#cb28-313" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Au (ppm)"</span>,</span>
-<span id="cb28-314"><a href="#cb28-314" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ag (ppm)"</span></span>
-<span id="cb28-315"><a href="#cb28-315" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb28-316"><a href="#cb28-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb28-317"><a href="#cb28-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
-<span id="cb28-318"><a href="#cb28-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-319"><a href="#cb28-319" aria-hidden="true" tabindex="-1"></a>p_regression</span>
-<span id="cb28-320"><a href="#cb28-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb28-321"><a href="#cb28-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-322"><a href="#cb28-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### Correlation Summary Table</span></span>
-<span id="cb28-323"><a href="#cb28-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-326"><a href="#cb28-326" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-327"><a href="#cb28-327" aria-hidden="true" tabindex="-1"></a>regression_summary <span class="ot">&lt;-</span> regression_data <span class="sc">%&gt;%</span></span>
-<span id="cb28-328"><a href="#cb28-328" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(lithology, r_squared, slope, intercept) <span class="sc">%&gt;%</span></span>
-<span id="cb28-329"><a href="#cb28-329" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(r_squared)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-330"><a href="#cb28-330" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb28-331"><a href="#cb28-331" aria-hidden="true" tabindex="-1"></a>    <span class="at">equation =</span> <span class="fu">paste0</span>(<span class="st">"Ag = "</span>, <span class="fu">round</span>(slope, <span class="dv">2</span>), <span class="st">" × Au + "</span>, <span class="fu">round</span>(intercept, <span class="dv">2</span>)),</span>
-<span id="cb28-332"><a href="#cb28-332" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_squared =</span> <span class="fu">round</span>(r_squared, <span class="dv">3</span>)</span>
-<span id="cb28-333"><a href="#cb28-333" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb28-334"><a href="#cb28-334" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(lithology, r_squared, equation)</span>
-<span id="cb28-335"><a href="#cb28-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-336"><a href="#cb28-336" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(regression_summary,</span>
-<span id="cb28-337"><a href="#cb28-337" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">"Table 2: Au-Ag Correlation by Lithology"</span>,</span>
-<span id="cb28-338"><a href="#cb28-338" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>, <span class="at">dom =</span> <span class="st">'t'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-339"><a href="#cb28-339" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
-<span id="cb28-340"><a href="#cb28-340" aria-hidden="true" tabindex="-1"></a>    <span class="st">'r_squared'</span>,</span>
-<span id="cb28-341"><a href="#cb28-341" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">styleColorBar</span>(regression_summary<span class="sc">$</span>r_squared, <span class="st">'lightgreen'</span>),</span>
-<span id="cb28-342"><a href="#cb28-342" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundSize =</span> <span class="st">'100% 90%'</span>,</span>
-<span id="cb28-343"><a href="#cb28-343" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundRepeat =</span> <span class="st">'no-repeat'</span>,</span>
-<span id="cb28-344"><a href="#cb28-344" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundPosition =</span> <span class="st">'center'</span></span>
-<span id="cb28-345"><a href="#cb28-345" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb28-346"><a href="#cb28-346" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb28-347"><a href="#cb28-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-348"><a href="#cb28-348" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb28-349"><a href="#cb28-349" aria-hidden="true" tabindex="-1"></a><span class="fu">## Geochemical Insights</span></span>
-<span id="cb28-350"><a href="#cb28-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-351"><a href="#cb28-351" aria-hidden="true" tabindex="-1"></a>Strong correlations indicate:</span>
-<span id="cb28-352"><a href="#cb28-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-353"><a href="#cb28-353" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Coupled mineralization**: Elements deposited together</span>
-<span id="cb28-354"><a href="#cb28-354" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Common sources**: Shared ore fluids or processes</span>
-<span id="cb28-355"><a href="#cb28-355" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Domain boundaries**: Changes in correlation suggest domain breaks</span>
-<span id="cb28-356"><a href="#cb28-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-357"><a href="#cb28-357" aria-hidden="true" tabindex="-1"></a>Weak correlations may indicate:</span>
-<span id="cb28-358"><a href="#cb28-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-359"><a href="#cb28-359" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Different mineralization events**: Overprinting</span>
-<span id="cb28-360"><a href="#cb28-360" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Remobilization**: Secondary processes</span>
-<span id="cb28-361"><a href="#cb28-361" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Mixed populations**: Need for further domain subdivision</span>
-<span id="cb28-362"><a href="#cb28-362" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb28-363"><a href="#cb28-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-364"><a href="#cb28-364" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part C: Contact Analysis</span></span>
-<span id="cb28-365"><a href="#cb28-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-366"><a href="#cb28-366" aria-hidden="true" tabindex="-1"></a><span class="fu">### Grade Behavior at Geological Boundaries</span></span>
-<span id="cb28-367"><a href="#cb28-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-368"><a href="#cb28-368" aria-hidden="true" tabindex="-1"></a>How does grade change across lithology contacts?</span>
-<span id="cb28-369"><a href="#cb28-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-372"><a href="#cb28-372" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-373"><a href="#cb28-373" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb28-374"><a href="#cb28-374" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb28-375"><a href="#cb28-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-376"><a href="#cb28-376" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify contact zones (simplified approach)</span></span>
-<span id="cb28-377"><a href="#cb28-377" aria-hidden="true" tabindex="-1"></a>contact_zones <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
-<span id="cb28-378"><a href="#cb28-378" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(hole_id, from) <span class="sc">%&gt;%</span></span>
-<span id="cb28-379"><a href="#cb28-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hole_id) <span class="sc">%&gt;%</span></span>
-<span id="cb28-380"><a href="#cb28-380" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb28-381"><a href="#cb28-381" aria-hidden="true" tabindex="-1"></a>    <span class="at">next_litho =</span> <span class="fu">lead</span>(lithology),</span>
-<span id="cb28-382"><a href="#cb28-382" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_contact =</span> lithology <span class="sc">!=</span> next_litho <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(next_litho),</span>
-<span id="cb28-383"><a href="#cb28-383" aria-hidden="true" tabindex="-1"></a>    <span class="at">contact_type =</span> <span class="fu">if_else</span>(is_contact, </span>
-<span id="cb28-384"><a href="#cb28-384" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">paste</span>(lithology, <span class="st">"→"</span>, next_litho), </span>
-<span id="cb28-385"><a href="#cb28-385" aria-hidden="true" tabindex="-1"></a>                          <span class="cn">NA_character_</span>)</span>
-<span id="cb28-386"><a href="#cb28-386" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb28-387"><a href="#cb28-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_contact) <span class="sc">%&gt;%</span></span>
-<span id="cb28-388"><a href="#cb28-388" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
-<span id="cb28-389"><a href="#cb28-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-390"><a href="#cb28-390" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot grade at contacts</span></span>
-<span id="cb28-391"><a href="#cb28-391" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(contact_zones) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb28-392"><a href="#cb28-392" aria-hidden="true" tabindex="-1"></a>  p_contacts <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(contact_zones, <span class="fu">aes</span>(<span class="at">x =</span> contact</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Part 3: Geological Controls &amp; Domain Definition"</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Connecting Numbers to Rocks - The Path to Robust Estimation Domains"</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Ghozian Islam Karami"</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-01-29"</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [EDA, Geological Domains, Domaining, Resource Estimation]</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/pillar4.png"</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>We've validated our data (<span class="co">[</span><span class="ot">Part 1</span><span class="co">](post-01-data-validation.qmd)</span>), explored spatial patterns, and characterized statistical distributions (<span class="co">[</span><span class="ot">Part 2</span><span class="co">](post-02-spatial-statistical.qmd)</span>). Now comes the most critical step: **connecting numbers to geology**.</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>**Pillar 4: Geological Controls Analysis** transforms statistical insights into geologically defensible estimation domains - the backbone of reliable resource models.</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Critical Question</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **"Where is mineralization located and WHY?"**</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>This isn't just about mapping high grades. It's about understanding the **geological controls** that govern mineralization:</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which rock types host mineralization?</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Are there geochemical relationships between elements?</span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How does grade behave at geological contacts?</span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What structural controls exist?</span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Geological Domains Matter</span></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a>Poor domaining is a leading cause of resource estimation failure:</span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mixed populations create unrealistic variograms</span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inappropriate kriging produces smoothing artifacts</span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Classification confidence is compromised</span>
+<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mining selectively targets become unrealistic</span>
+<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>**Good domains = Reliable estimates**</span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup</span></span>
+<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-51"><a href="#cb31-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb31-61"><a href="#cb31-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb31-62"><a href="#cb31-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-63"><a href="#cb31-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Create simulated drilling data with geological controls</span></span>
+<span id="cb31-64"><a href="#cb31-64" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb31-65"><a href="#cb31-65" aria-hidden="true" tabindex="-1"></a>n_holes <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb31-66"><a href="#cb31-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-67"><a href="#cb31-67" aria-hidden="true" tabindex="-1"></a>collar <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb31-68"><a href="#cb31-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">hole_id =</span> <span class="fu">paste0</span>(<span class="st">"DDH"</span>, <span class="fu">sprintf</span>(<span class="st">"%03d"</span>, <span class="dv">1</span><span class="sc">:</span>n_holes)),</span>
+<span id="cb31-69"><a href="#cb31-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">runif</span>(n_holes, <span class="dv">500000</span>, <span class="dv">501000</span>),</span>
+<span id="cb31-70"><a href="#cb31-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">runif</span>(n_holes, <span class="dv">9000000</span>, <span class="dv">9001000</span>),</span>
+<span id="cb31-71"><a href="#cb31-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">rl =</span> <span class="fu">runif</span>(n_holes, <span class="dv">100</span>, <span class="dv">200</span>)</span>
+<span id="cb31-72"><a href="#cb31-72" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-73"><a href="#cb31-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-74"><a href="#cb31-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate assay data with lithology-controlled grades</span></span>
+<span id="cb31-75"><a href="#cb31-75" aria-hidden="true" tabindex="-1"></a>litho_codes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Andesite"</span>, <span class="st">"Diorite"</span>, <span class="st">"Mineralized_Zone"</span>, <span class="st">"Altered_Volcanics"</span>)</span>
+<span id="cb31-76"><a href="#cb31-76" aria-hidden="true" tabindex="-1"></a>litho_grade_means <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.8</span>, <span class="fl">3.5</span>, <span class="fl">2.0</span>)  <span class="co"># Different grades by lithology</span></span>
+<span id="cb31-77"><a href="#cb31-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-78"><a href="#cb31-78" aria-hidden="true" tabindex="-1"></a>assay_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>n_holes, <span class="cf">function</span>(i) {</span>
+<span id="cb31-79"><a href="#cb31-79" aria-hidden="true" tabindex="-1"></a>  n_intervals <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">15</span><span class="sc">:</span><span class="dv">25</span>, <span class="dv">1</span>)</span>
+<span id="cb31-80"><a href="#cb31-80" aria-hidden="true" tabindex="-1"></a>  depths <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="at">by =</span> <span class="dv">2</span>, <span class="at">length.out =</span> n_intervals)</span>
+<span id="cb31-81"><a href="#cb31-81" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-82"><a href="#cb31-82" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Assign lithology to each interval</span></span>
+<span id="cb31-83"><a href="#cb31-83" aria-hidden="true" tabindex="-1"></a>  litho_idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(litho_codes), n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb31-84"><a href="#cb31-84" aria-hidden="true" tabindex="-1"></a>                     <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>))</span>
+<span id="cb31-85"><a href="#cb31-85" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-86"><a href="#cb31-86" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Generate grades based on lithology</span></span>
+<span id="cb31-87"><a href="#cb31-87" aria-hidden="true" tabindex="-1"></a>  au_grades <span class="ot">&lt;-</span> <span class="fu">sapply</span>(litho_idx, <span class="cf">function</span>(idx) {</span>
+<span id="cb31-88"><a href="#cb31-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">max</span>(<span class="dv">0</span>, <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> litho_grade_means[idx], <span class="at">sd =</span> <span class="fl">1.5</span>))</span>
+<span id="cb31-89"><a href="#cb31-89" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb31-90"><a href="#cb31-90" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-91"><a href="#cb31-91" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Correlated Ag and Cu</span></span>
+<span id="cb31-92"><a href="#cb31-92" aria-hidden="true" tabindex="-1"></a>  ag_grades <span class="ot">&lt;-</span> au_grades <span class="sc">*</span> <span class="fu">runif</span>(n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">12</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb31-93"><a href="#cb31-93" aria-hidden="true" tabindex="-1"></a>  cu_grades <span class="ot">&lt;-</span> au_grades <span class="sc">*</span> <span class="fl">0.3</span> <span class="sc">+</span> <span class="fu">rnorm</span>(n_intervals <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">0.3</span>)</span>
+<span id="cb31-94"><a href="#cb31-94" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-95"><a href="#cb31-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb31-96"><a href="#cb31-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">hole_id =</span> collar<span class="sc">$</span>hole_id[i],</span>
+<span id="cb31-97"><a href="#cb31-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">from =</span> depths[<span class="sc">-</span><span class="fu">length</span>(depths)],</span>
+<span id="cb31-98"><a href="#cb31-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">to =</span> depths[<span class="sc">-</span><span class="dv">1</span>],</span>
+<span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a>    <span class="at">au_ppm =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, au_grades),</span>
+<span id="cb31-100"><a href="#cb31-100" aria-hidden="true" tabindex="-1"></a>    <span class="at">ag_ppm =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, ag_grades),</span>
+<span id="cb31-101"><a href="#cb31-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">cu_pct =</span> <span class="fu">pmax</span>(<span class="dv">0</span>, cu_grades),</span>
+<span id="cb31-102"><a href="#cb31-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">lithology =</span> litho_codes[litho_idx]</span>
+<span id="cb31-103"><a href="#cb31-103" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-104"><a href="#cb31-104" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb31-105"><a href="#cb31-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-106"><a href="#cb31-106" aria-hidden="true" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, assay_list) <span class="sc">%&gt;%</span></span>
+<span id="cb31-107"><a href="#cb31-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(collar, <span class="at">by =</span> <span class="st">"hole_id"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-108"><a href="#cb31-108" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb31-109"><a href="#cb31-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-110"><a href="#cb31-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare standard formats</span></span>
+<span id="cb31-111"><a href="#cb31-111" aria-hidden="true" tabindex="-1"></a>collar_std <span class="ot">&lt;-</span> collar <span class="sc">%&gt;%</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb31-112"><a href="#cb31-112" aria-hidden="true" tabindex="-1"></a>assay_std <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(hole_id, from, to, au_ppm, ag_ppm, cu_pct)</span>
+<span id="cb31-113"><a href="#cb31-113" aria-hidden="true" tabindex="-1"></a>lithology_std <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(hole_id, from, to, lithology)</span>
+<span id="cb31-114"><a href="#cb31-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-115"><a href="#cb31-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-116"><a href="#cb31-116" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb31-117"><a href="#cb31-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-118"><a href="#cb31-118" aria-hidden="true" tabindex="-1"></a><span class="fu"># PILLAR 4: Geological Controls Analysis</span></span>
+<span id="cb31-119"><a href="#cb31-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-120"><a href="#cb31-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part A: Lithology Analysis</span></span>
+<span id="cb31-121"><a href="#cb31-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-122"><a href="#cb31-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### Grade Distribution by Rock Type</span></span>
+<span id="cb31-123"><a href="#cb31-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-124"><a href="#cb31-124" aria-hidden="true" tabindex="-1"></a>The most fundamental control: **which rocks contain ore?**</span>
+<span id="cb31-125"><a href="#cb31-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-128"><a href="#cb31-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-129"><a href="#cb31-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb31-130"><a href="#cb31-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb31-131"><a href="#cb31-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-132"><a href="#cb31-132" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate statistics by lithology</span></span>
+<span id="cb31-133"><a href="#cb31-133" aria-hidden="true" tabindex="-1"></a>litho_summary <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-134"><a href="#cb31-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lithology) <span class="sc">%&gt;%</span></span>
+<span id="cb31-135"><a href="#cb31-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb31-136"><a href="#cb31-136" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb31-137"><a href="#cb31-137" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_au =</span> <span class="fu">mean</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-138"><a href="#cb31-138" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_au =</span> <span class="fu">median</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-139"><a href="#cb31-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_au =</span> <span class="fu">max</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-140"><a href="#cb31-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_au =</span> <span class="fu">sd</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb31-141"><a href="#cb31-141" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb31-142"><a href="#cb31-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_au))</span>
+<span id="cb31-143"><a href="#cb31-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-144"><a href="#cb31-144" aria-hidden="true" tabindex="-1"></a><span class="co"># Create color palette</span></span>
+<span id="cb31-145"><a href="#cb31-145" aria-hidden="true" tabindex="-1"></a>n_litho <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(combined_data<span class="sc">$</span>lithology))</span>
+<span id="cb31-146"><a href="#cb31-146" aria-hidden="true" tabindex="-1"></a>litho_colors <span class="ot">&lt;-</span> <span class="fu">setNames</span>(</span>
+<span id="cb31-147"><a href="#cb31-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brewer.pal</span>(<span class="fu">min</span>(n_litho, <span class="dv">9</span>), <span class="st">"Set1"</span>),</span>
+<span id="cb31-148"><a href="#cb31-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>(combined_data<span class="sc">$</span>lithology)</span>
+<span id="cb31-149"><a href="#cb31-149" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-150"><a href="#cb31-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-151"><a href="#cb31-151" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot with statistical annotations</span></span>
+<span id="cb31-152"><a href="#cb31-152" aria-hidden="true" tabindex="-1"></a>p_litho_box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(combined_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(lithology, au_ppm, <span class="at">FUN =</span> median), </span>
+<span id="cb31-153"><a href="#cb31-153" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">y =</span> au_ppm, </span>
+<span id="cb31-154"><a href="#cb31-154" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">fill =</span> lithology)) <span class="sc">+</span></span>
+<span id="cb31-155"><a href="#cb31-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb31-156"><a href="#cb31-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">shape =</span> <span class="dv">23</span>, <span class="at">size =</span> <span class="dv">3</span>, </span>
+<span id="cb31-157"><a href="#cb31-157" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
+<span id="cb31-158"><a href="#cb31-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
+<span id="cb31-159"><a href="#cb31-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-160"><a href="#cb31-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gold Grade Distribution by Lithology"</span>,</span>
+<span id="cb31-161"><a href="#cb31-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Box = IQR, Diamond = Mean, Line = Median"</span>,</span>
+<span id="cb31-162"><a href="#cb31-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Lithology (ordered by median grade)"</span>,</span>
+<span id="cb31-163"><a href="#cb31-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Au (ppm)"</span></span>
+<span id="cb31-164"><a href="#cb31-164" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-165"><a href="#cb31-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-166"><a href="#cb31-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb31-167"><a href="#cb31-167" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb31-168"><a href="#cb31-168" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb31-169"><a href="#cb31-169" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-170"><a href="#cb31-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-171"><a href="#cb31-171" aria-hidden="true" tabindex="-1"></a>p_litho_box</span>
+<span id="cb31-172"><a href="#cb31-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-173"><a href="#cb31-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-174"><a href="#cb31-174" aria-hidden="true" tabindex="-1"></a><span class="fu">### Statistical Summary by Lithology</span></span>
+<span id="cb31-175"><a href="#cb31-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-178"><a href="#cb31-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-179"><a href="#cb31-179" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(litho_summary,</span>
+<span id="cb31-180"><a href="#cb31-180" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">"Table 1: Gold Statistics by Lithology"</span>,</span>
+<span id="cb31-181"><a href="#cb31-181" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-182"><a href="#cb31-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatRound</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="st">'mean_au'</span>, <span class="st">'median_au'</span>, <span class="st">'max_au'</span>, <span class="st">'sd_au'</span>), <span class="at">digits =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-183"><a href="#cb31-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
+<span id="cb31-184"><a href="#cb31-184" aria-hidden="true" tabindex="-1"></a>    <span class="st">'mean_au'</span>,</span>
+<span id="cb31-185"><a href="#cb31-185" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">styleColorBar</span>(litho_summary<span class="sc">$</span>mean_au, <span class="st">'lightblue'</span>),</span>
+<span id="cb31-186"><a href="#cb31-186" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundSize =</span> <span class="st">'100% 90%'</span>,</span>
+<span id="cb31-187"><a href="#cb31-187" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundRepeat =</span> <span class="st">'no-repeat'</span>,</span>
+<span id="cb31-188"><a href="#cb31-188" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundPosition =</span> <span class="st">'center'</span></span>
+<span id="cb31-189"><a href="#cb31-189" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-190"><a href="#cb31-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-191"><a href="#cb31-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-192"><a href="#cb31-192" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb31-193"><a href="#cb31-193" aria-hidden="true" tabindex="-1"></a><span class="fu">## Geological Interpretation</span></span>
+<span id="cb31-194"><a href="#cb31-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-195"><a href="#cb31-195" aria-hidden="true" tabindex="-1"></a>From this analysis, identify:</span>
+<span id="cb31-196"><a href="#cb31-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-197"><a href="#cb31-197" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Primary ore hosts**: Lithologies with highest mean/median grades</span>
+<span id="cb31-198"><a href="#cb31-198" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Barren waste**: Low-grade lithologies to exclude</span>
+<span id="cb31-199"><a href="#cb31-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Grade variance**: High CV suggests mixed mineralization styles</span>
+<span id="cb31-200"><a href="#cb31-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Outlier behavior**: Which rocks have extreme values?</span>
+<span id="cb31-201"><a href="#cb31-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-202"><a href="#cb31-202" aria-hidden="true" tabindex="-1"></a>**Action**: Candidate lithologies for separate estimation domains</span>
+<span id="cb31-203"><a href="#cb31-203" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-204"><a href="#cb31-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-205"><a href="#cb31-205" aria-hidden="true" tabindex="-1"></a><span class="fu">### Grade-Tonnage Curves by Lithology</span></span>
+<span id="cb31-206"><a href="#cb31-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-207"><a href="#cb31-207" aria-hidden="true" tabindex="-1"></a>Understanding the economic potential of each rock type.</span>
+<span id="cb31-208"><a href="#cb31-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-211"><a href="#cb31-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-212"><a href="#cb31-212" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb31-213"><a href="#cb31-213" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb31-214"><a href="#cb31-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-215"><a href="#cb31-215" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate grade-tonnage curves</span></span>
+<span id="cb31-216"><a href="#cb31-216" aria-hidden="true" tabindex="-1"></a>cutoffs <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb31-217"><a href="#cb31-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-218"><a href="#cb31-218" aria-hidden="true" tabindex="-1"></a>gt_curves <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-219"><a href="#cb31-219" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expand_grid</span>(<span class="at">cutoff =</span> cutoffs) <span class="sc">%&gt;%</span></span>
+<span id="cb31-220"><a href="#cb31-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(au_ppm <span class="sc">&gt;=</span> cutoff) <span class="sc">%&gt;%</span></span>
+<span id="cb31-221"><a href="#cb31-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lithology, cutoff) <span class="sc">%&gt;%</span></span>
+<span id="cb31-222"><a href="#cb31-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb31-223"><a href="#cb31-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">tonnage_pct =</span> <span class="fu">n</span>() <span class="sc">/</span> <span class="fu">nrow</span>(combined_data) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb31-224"><a href="#cb31-224" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_grade =</span> <span class="fu">mean</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-225"><a href="#cb31-225" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb31-226"><a href="#cb31-226" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-227"><a href="#cb31-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-228"><a href="#cb31-228" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot tonnage vs cutoff</span></span>
+<span id="cb31-229"><a href="#cb31-229" aria-hidden="true" tabindex="-1"></a>p_tonnage <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gt_curves, <span class="fu">aes</span>(<span class="at">x =</span> cutoff, <span class="at">y =</span> tonnage_pct, <span class="at">color =</span> lithology)) <span class="sc">+</span></span>
+<span id="cb31-230"><a href="#cb31-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb31-231"><a href="#cb31-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
+<span id="cb31-232"><a href="#cb31-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-233"><a href="#cb31-233" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Tonnage vs Cut-off Grade"</span>,</span>
+<span id="cb31-234"><a href="#cb31-234" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cut-off Grade (ppm Au)"</span>,</span>
+<span id="cb31-235"><a href="#cb31-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Tonnage (% of total)"</span></span>
+<span id="cb31-236"><a href="#cb31-236" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-237"><a href="#cb31-237" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-238"><a href="#cb31-238" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb31-239"><a href="#cb31-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-240"><a href="#cb31-240" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot grade vs cutoff</span></span>
+<span id="cb31-241"><a href="#cb31-241" aria-hidden="true" tabindex="-1"></a>p_grade <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gt_curves, <span class="fu">aes</span>(<span class="at">x =</span> cutoff, <span class="at">y =</span> avg_grade, <span class="at">color =</span> lithology)) <span class="sc">+</span></span>
+<span id="cb31-242"><a href="#cb31-242" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb31-243"><a href="#cb31-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
+<span id="cb31-244"><a href="#cb31-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-245"><a href="#cb31-245" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Grade vs Cut-off"</span>,</span>
+<span id="cb31-246"><a href="#cb31-246" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cut-off Grade (ppm Au)"</span>,</span>
+<span id="cb31-247"><a href="#cb31-247" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average Grade (ppm)"</span></span>
+<span id="cb31-248"><a href="#cb31-248" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-249"><a href="#cb31-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-250"><a href="#cb31-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb31-251"><a href="#cb31-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-252"><a href="#cb31-252" aria-hidden="true" tabindex="-1"></a>p_tonnage <span class="sc">/</span> p_grade</span>
+<span id="cb31-253"><a href="#cb31-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-254"><a href="#cb31-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-255"><a href="#cb31-255" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part B: Element Correlation Analysis</span></span>
+<span id="cb31-256"><a href="#cb31-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-257"><a href="#cb31-257" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bivariate Relationships</span></span>
+<span id="cb31-258"><a href="#cb31-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-259"><a href="#cb31-259" aria-hidden="true" tabindex="-1"></a>Understanding element associations reveals mineralization processes.</span>
+<span id="cb31-260"><a href="#cb31-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-263"><a href="#cb31-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-264"><a href="#cb31-264" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb31-265"><a href="#cb31-265" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb31-266"><a href="#cb31-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-267"><a href="#cb31-267" aria-hidden="true" tabindex="-1"></a><span class="co"># Select grade variables for correlation</span></span>
+<span id="cb31-268"><a href="#cb31-268" aria-hidden="true" tabindex="-1"></a>grade_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"au_ppm"</span>, <span class="st">"ag_ppm"</span>, <span class="st">"cu_pct"</span>)</span>
+<span id="cb31-269"><a href="#cb31-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-270"><a href="#cb31-270" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot matrix</span></span>
+<span id="cb31-271"><a href="#cb31-271" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(</span>
+<span id="cb31-272"><a href="#cb31-272" aria-hidden="true" tabindex="-1"></a>  combined_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">all_of</span>(grade_vars), lithology),</span>
+<span id="cb31-273"><a href="#cb31-273" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> lithology, <span class="at">alpha =</span> <span class="fl">0.5</span>),</span>
+<span id="cb31-274"><a href="#cb31-274" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"cor"</span>, <span class="at">size =</span> <span class="dv">3</span>)),</span>
+<span id="cb31-275"><a href="#cb31-275" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"points"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>)),</span>
+<span id="cb31-276"><a href="#cb31-276" aria-hidden="true" tabindex="-1"></a>  <span class="at">diag =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"densityDiag"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>))</span>
+<span id="cb31-277"><a href="#cb31-277" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb31-278"><a href="#cb31-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
+<span id="cb31-279"><a href="#cb31-279" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
+<span id="cb31-280"><a href="#cb31-280" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-281"><a href="#cb31-281" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Element Correlation Matrix by Lithology"</span>)</span>
+<span id="cb31-282"><a href="#cb31-282" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-283"><a href="#cb31-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-284"><a href="#cb31-284" aria-hidden="true" tabindex="-1"></a><span class="fu">### Regression Analysis: Au vs Ag</span></span>
+<span id="cb31-285"><a href="#cb31-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-288"><a href="#cb31-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-289"><a href="#cb31-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb31-290"><a href="#cb31-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb31-291"><a href="#cb31-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-292"><a href="#cb31-292" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate regression by lithology</span></span>
+<span id="cb31-293"><a href="#cb31-293" aria-hidden="true" tabindex="-1"></a>regression_data <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-294"><a href="#cb31-294" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(au_ppm) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(ag_ppm)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-295"><a href="#cb31-295" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(lithology) <span class="sc">%&gt;%</span></span>
+<span id="cb31-296"><a href="#cb31-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-297"><a href="#cb31-297" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nest</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb31-298"><a href="#cb31-298" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-299"><a href="#cb31-299" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> purrr<span class="sc">::</span><span class="fu">map</span>(data, <span class="sc">~</span><span class="fu">lm</span>(ag_ppm <span class="sc">~</span> au_ppm, <span class="at">data =</span> .x)),</span>
+<span id="cb31-300"><a href="#cb31-300" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_squared =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span><span class="fu">summary</span>(.x)<span class="sc">$</span>r.squared),</span>
+<span id="cb31-301"><a href="#cb31-301" aria-hidden="true" tabindex="-1"></a>    <span class="at">slope =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span><span class="fu">coef</span>(.x)[<span class="dv">2</span>]),</span>
+<span id="cb31-302"><a href="#cb31-302" aria-hidden="true" tabindex="-1"></a>    <span class="at">intercept =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span><span class="fu">coef</span>(.x)[<span class="dv">1</span>])</span>
+<span id="cb31-303"><a href="#cb31-303" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-304"><a href="#cb31-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-305"><a href="#cb31-305" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot with regression lines</span></span>
+<span id="cb31-306"><a href="#cb31-306" aria-hidden="true" tabindex="-1"></a>p_regression <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(combined_data, <span class="fu">aes</span>(<span class="at">x =</span> au_ppm, <span class="at">y =</span> ag_ppm)) <span class="sc">+</span></span>
+<span id="cb31-307"><a href="#cb31-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> lithology), <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb31-308"><a href="#cb31-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">color =</span> lithology), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb31-309"><a href="#cb31-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> litho_colors) <span class="sc">+</span></span>
+<span id="cb31-310"><a href="#cb31-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-311"><a href="#cb31-311" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gold vs Silver: Correlation by Lithology"</span>,</span>
+<span id="cb31-312"><a href="#cb31-312" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Different slopes suggest different mineralization styles"</span>,</span>
+<span id="cb31-313"><a href="#cb31-313" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Au (ppm)"</span>,</span>
+<span id="cb31-314"><a href="#cb31-314" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ag (ppm)"</span></span>
+<span id="cb31-315"><a href="#cb31-315" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-316"><a href="#cb31-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-317"><a href="#cb31-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb31-318"><a href="#cb31-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-319"><a href="#cb31-319" aria-hidden="true" tabindex="-1"></a>p_regression</span>
+<span id="cb31-320"><a href="#cb31-320" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-321"><a href="#cb31-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-322"><a href="#cb31-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### Correlation Summary Table</span></span>
+<span id="cb31-323"><a href="#cb31-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-326"><a href="#cb31-326" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-327"><a href="#cb31-327" aria-hidden="true" tabindex="-1"></a>regression_summary <span class="ot">&lt;-</span> regression_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-328"><a href="#cb31-328" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(lithology, r_squared, slope, intercept) <span class="sc">%&gt;%</span></span>
+<span id="cb31-329"><a href="#cb31-329" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(r_squared)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-330"><a href="#cb31-330" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-331"><a href="#cb31-331" aria-hidden="true" tabindex="-1"></a>    <span class="at">equation =</span> <span class="fu">paste0</span>(<span class="st">"Ag = "</span>, <span class="fu">round</span>(slope, <span class="dv">2</span>), <span class="st">" × Au + "</span>, <span class="fu">round</span>(intercept, <span class="dv">2</span>)),</span>
+<span id="cb31-332"><a href="#cb31-332" aria-hidden="true" tabindex="-1"></a>    <span class="at">r_squared =</span> <span class="fu">round</span>(r_squared, <span class="dv">3</span>)</span>
+<span id="cb31-333"><a href="#cb31-333" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb31-334"><a href="#cb31-334" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(lithology, r_squared, equation)</span>
+<span id="cb31-335"><a href="#cb31-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-336"><a href="#cb31-336" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(regression_summary,</span>
+<span id="cb31-337"><a href="#cb31-337" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">"Table 2: Au-Ag Correlation by Lithology"</span>,</span>
+<span id="cb31-338"><a href="#cb31-338" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>, <span class="at">dom =</span> <span class="st">'t'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-339"><a href="#cb31-339" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(</span>
+<span id="cb31-340"><a href="#cb31-340" aria-hidden="true" tabindex="-1"></a>    <span class="st">'r_squared'</span>,</span>
+<span id="cb31-341"><a href="#cb31-341" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">styleColorBar</span>(regression_summary<span class="sc">$</span>r_squared, <span class="st">'lightgreen'</span>),</span>
+<span id="cb31-342"><a href="#cb31-342" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundSize =</span> <span class="st">'100% 90%'</span>,</span>
+<span id="cb31-343"><a href="#cb31-343" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundRepeat =</span> <span class="st">'no-repeat'</span>,</span>
+<span id="cb31-344"><a href="#cb31-344" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundPosition =</span> <span class="st">'center'</span></span>
+<span id="cb31-345"><a href="#cb31-345" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-346"><a href="#cb31-346" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-347"><a href="#cb31-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-348"><a href="#cb31-348" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb31-349"><a href="#cb31-349" aria-hidden="true" tabindex="-1"></a><span class="fu">## Geochemical Insights</span></span>
+<span id="cb31-350"><a href="#cb31-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-351"><a href="#cb31-351" aria-hidden="true" tabindex="-1"></a>Strong correlations indicate:</span>
+<span id="cb31-352"><a href="#cb31-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-353"><a href="#cb31-353" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Coupled mineralization**: Elements deposited together</span>
+<span id="cb31-354"><a href="#cb31-354" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Common sources**: Shared ore fluids or processes</span>
+<span id="cb31-355"><a href="#cb31-355" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Domain boundaries**: Changes in correlation suggest domain breaks</span>
+<span id="cb31-356"><a href="#cb31-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-357"><a href="#cb31-357" aria-hidden="true" tabindex="-1"></a>Weak correlations may indicate:</span>
+<span id="cb31-358"><a href="#cb31-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-359"><a href="#cb31-359" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Different mineralization events**: Overprinting</span>
+<span id="cb31-360"><a href="#cb31-360" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Remobilization**: Secondary processes</span>
+<span id="cb31-361"><a href="#cb31-361" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Mixed populations**: Need for further domain subdivision</span>
+<span id="cb31-362"><a href="#cb31-362" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-363"><a href="#cb31-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-364"><a href="#cb31-364" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part C: Contact Analysis</span></span>
+<span id="cb31-365"><a href="#cb31-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-366"><a href="#cb31-366" aria-hidden="true" tabindex="-1"></a><span class="fu">### Grade Behavior at Geological Boundaries</span></span>
+<span id="cb31-367"><a href="#cb31-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-368"><a href="#cb31-368" aria-hidden="true" tabindex="-1"></a>How does grade change across lithology contacts?</span>
+<span id="cb31-369"><a href="#cb31-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-372"><a href="#cb31-372" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-373"><a href="#cb31-373" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb31-374"><a href="#cb31-374" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb31-375"><a href="#cb31-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-376"><a href="#cb31-376" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify contact zones (simplified approach)</span></span>
+<span id="cb31-377"><a href="#cb31-377" aria-hidden="true" tabindex="-1"></a>contact_zones <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-378"><a href="#cb31-378" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(hole_id, from) <span class="sc">%&gt;%</span></span>
+<span id="cb31-379"><a href="#cb31-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hole_id) <span class="sc">%&gt;%</span></span>
+<span id="cb31-380"><a href="#cb31-380" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-381"><a href="#cb31-381" aria-hidden="true" tabindex="-1"></a>    <span class="at">next_litho =</span> <span class="fu">lead</span>(lithology),</span>
+<span id="cb31-382"><a href="#cb31-382" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_contact =</span> lithology <span class="sc">!=</span> next_litho <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(next_litho),</span>
+<span id="cb31-383"><a href="#cb31-383" aria-hidden="true" tabindex="-1"></a>    <span class="at">contact_type =</span> <span class="fu">if_else</span>(is_contact, </span>
+<span id="cb31-384"><a href="#cb31-384" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">paste</span>(lithology, <span class="st">"→"</span>, next_litho), </span>
+<span id="cb31-385"><a href="#cb31-385" aria-hidden="true" tabindex="-1"></a>                          <span class="cn">NA_character_</span>)</span>
+<span id="cb31-386"><a href="#cb31-386" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb31-387"><a href="#cb31-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(is_contact) <span class="sc">%&gt;%</span></span>
+<span id="cb31-388"><a href="#cb31-388" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb31-389"><a href="#cb31-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-390"><a href="#cb31-390" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot grade at contacts</span></span>
+<span id="cb31-391"><a href="#cb31-391" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(contact_zones) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb31-392"><a href="#cb31-392" aria-hidden="true" tabindex="-1"></a>  p_contacts <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(contact_zones, <span class="fu">aes</span>(<span class="at">x =</span> contact_type, <span class="at">y =</span> au_ppm)) <span class="sc">+</span></span>
+<span id="cb31-393"><a href="#cb31-393" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"lightcoral"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb31-394"><a href="#cb31-394" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb31-395"><a href="#cb31-395" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb31-396"><a href="#cb31-396" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Gold Grades at Lithology Contacts"</span>,</span>
+<span id="cb31-397"><a href="#cb31-397" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"Understanding grade behavior at geological boundaries"</span>,</span>
+<span id="cb31-398"><a href="#cb31-398" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Contact Type"</span>,</span>
+<span id="cb31-399"><a href="#cb31-399" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Au (ppm)"</span></span>
+<span id="cb31-400"><a href="#cb31-400" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb31-401"><a href="#cb31-401" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-402"><a href="#cb31-402" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb31-403"><a href="#cb31-403" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-404"><a href="#cb31-404" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p_contacts)</span>
+<span id="cb31-405"><a href="#cb31-405" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb31-406"><a href="#cb31-406" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"No contact zones identified in the dataset.</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb31-407"><a href="#cb31-407" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-408"><a href="#cb31-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-409"><a href="#cb31-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-410"><a href="#cb31-410" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb31-411"><a href="#cb31-411" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contact Zone Interpretation</span></span>
+<span id="cb31-412"><a href="#cb31-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-413"><a href="#cb31-413" aria-hidden="true" tabindex="-1"></a>Sharp grade changes at contacts may indicate:</span>
+<span id="cb31-414"><a href="#cb31-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-415"><a href="#cb31-415" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Structural controls**: Faults or shears</span>
+<span id="cb31-416"><a href="#cb31-416" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Alteration halos**: Gradational vs sharp boundaries</span>
+<span id="cb31-417"><a href="#cb31-417" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Domain boundaries**: Where to draw estimation domains</span>
+<span id="cb31-418"><a href="#cb31-418" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Dilution zones**: Material to exclude from ore domains</span>
+<span id="cb31-419"><a href="#cb31-419" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-420"><a href="#cb31-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-421"><a href="#cb31-421" aria-hidden="true" tabindex="-1"></a><span class="fu">## Domain Definition Workflow</span></span>
+<span id="cb31-422"><a href="#cb31-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-423"><a href="#cb31-423" aria-hidden="true" tabindex="-1"></a><span class="fu">### Combining All Evidence</span></span>
+<span id="cb31-424"><a href="#cb31-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-425"><a href="#cb31-425" aria-hidden="true" tabindex="-1"></a>Now we synthesize findings from all analyses:</span>
+<span id="cb31-426"><a href="#cb31-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-429"><a href="#cb31-429" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-430"><a href="#cb31-430" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb31-431"><a href="#cb31-431" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb31-432"><a href="#cb31-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-433"><a href="#cb31-433" aria-hidden="true" tabindex="-1"></a><span class="co"># Create domain classification based on lithology and grade</span></span>
+<span id="cb31-434"><a href="#cb31-434" aria-hidden="true" tabindex="-1"></a>domain_definition <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-435"><a href="#cb31-435" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-436"><a href="#cb31-436" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define domains based on lithology and grade thresholds</span></span>
+<span id="cb31-437"><a href="#cb31-437" aria-hidden="true" tabindex="-1"></a>    <span class="at">domain =</span> <span class="fu">case_when</span>(</span>
+<span id="cb31-438"><a href="#cb31-438" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">==</span> <span class="st">"Mineralized_Zone"</span> <span class="sc">&amp;</span> au_ppm <span class="sc">&gt;=</span> <span class="fl">2.0</span> <span class="sc">~</span> <span class="st">"High Grade Ore"</span>,</span>
+<span id="cb31-439"><a href="#cb31-439" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">==</span> <span class="st">"Mineralized_Zone"</span> <span class="sc">&amp;</span> au_ppm <span class="sc">&gt;=</span> <span class="fl">0.5</span> <span class="sc">~</span> <span class="st">"Low Grade Ore"</span>,</span>
+<span id="cb31-440"><a href="#cb31-440" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">==</span> <span class="st">"Altered_Volcanics"</span> <span class="sc">&amp;</span> au_ppm <span class="sc">&gt;=</span> <span class="fl">1.0</span> <span class="sc">~</span> <span class="st">"Altered Ore"</span>,</span>
+<span id="cb31-441"><a href="#cb31-441" aria-hidden="true" tabindex="-1"></a>      lithology <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Andesite"</span>, <span class="st">"Diorite"</span>) <span class="sc">~</span> <span class="st">"Waste"</span>,</span>
+<span id="cb31-442"><a href="#cb31-442" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Transitional"</span></span>
+<span id="cb31-443"><a href="#cb31-443" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb31-444"><a href="#cb31-444" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-445"><a href="#cb31-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-446"><a href="#cb31-446" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary by domain</span></span>
+<span id="cb31-447"><a href="#cb31-447" aria-hidden="true" tabindex="-1"></a>domain_summary <span class="ot">&lt;-</span> domain_definition <span class="sc">%&gt;%</span></span>
+<span id="cb31-448"><a href="#cb31-448" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(domain) <span class="sc">%&gt;%</span></span>
+<span id="cb31-449"><a href="#cb31-449" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb31-450"><a href="#cb31-450" aria-hidden="true" tabindex="-1"></a>    <span class="at">Intervals =</span> <span class="fu">n</span>(),</span>
+<span id="cb31-451"><a href="#cb31-451" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Mean Au</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-452"><a href="#cb31-452" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Median Au</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">median</span>(au_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-453"><a href="#cb31-453" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Mean Ag</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(ag_ppm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-454"><a href="#cb31-454" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Mean Cu</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(cu_pct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-455"><a href="#cb31-455" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb31-456"><a href="#cb31-456" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb31-457"><a href="#cb31-457" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="st">`</span><span class="at">Mean Au</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-458"><a href="#cb31-458" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric) <span class="sc">&amp;</span> <span class="sc">!</span>Intervals, <span class="sc">~</span><span class="fu">round</span>(.x, <span class="dv">3</span>)))</span>
+<span id="cb31-459"><a href="#cb31-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-460"><a href="#cb31-460" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(domain_summary,</span>
+<span id="cb31-461"><a href="#cb31-461" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">"Table 3: Proposed Estimation Domains"</span>,</span>
+<span id="cb31-462"><a href="#cb31-462" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>, <span class="at">dom =</span> <span class="st">'t'</span>))</span>
+<span id="cb31-463"><a href="#cb31-463" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-464"><a href="#cb31-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-465"><a href="#cb31-465" aria-hidden="true" tabindex="-1"></a><span class="fu">### Domain Spatial Distribution</span></span>
+<span id="cb31-466"><a href="#cb31-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-469"><a href="#cb31-469" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-470"><a href="#cb31-470" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb31-471"><a href="#cb31-471" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb31-472"><a href="#cb31-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-473"><a href="#cb31-473" aria-hidden="true" tabindex="-1"></a><span class="co"># Create color palette for domains</span></span>
+<span id="cb31-474"><a href="#cb31-474" aria-hidden="true" tabindex="-1"></a>domain_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb31-475"><a href="#cb31-475" aria-hidden="true" tabindex="-1"></a>  <span class="st">"High Grade Ore"</span> <span class="ot">=</span> <span class="st">"#d32f2f"</span>,</span>
+<span id="cb31-476"><a href="#cb31-476" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Low Grade Ore"</span> <span class="ot">=</span> <span class="st">"#ff9800"</span>,</span>
+<span id="cb31-477"><a href="#cb31-477" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Altered Ore"</span> <span class="ot">=</span> <span class="st">"#ffd54f"</span>,</span>
+<span id="cb31-478"><a href="#cb31-478" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Transitional"</span> <span class="ot">=</span> <span class="st">"#9e9e9e"</span>,</span>
+<span id="cb31-479"><a href="#cb31-479" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Waste"</span> <span class="ot">=</span> <span class="st">"#e0e0e0"</span></span>
+<span id="cb31-480"><a href="#cb31-480" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-481"><a href="#cb31-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-482"><a href="#cb31-482" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot domains in plan view</span></span>
+<span id="cb31-483"><a href="#cb31-483" aria-hidden="true" tabindex="-1"></a>domain_spatial <span class="ot">&lt;-</span> domain_definition <span class="sc">%&gt;%</span></span>
+<span id="cb31-484"><a href="#cb31-484" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(hole_id) <span class="sc">%&gt;%</span></span>
+<span id="cb31-485"><a href="#cb31-485" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb31-486"><a href="#cb31-486" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">first</span>(x),</span>
+<span id="cb31-487"><a href="#cb31-487" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">first</span>(y),</span>
+<span id="cb31-488"><a href="#cb31-488" aria-hidden="true" tabindex="-1"></a>    <span class="at">dominant_domain =</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(domain), <span class="at">decreasing =</span> <span class="cn">TRUE</span>))[<span class="dv">1</span>],</span>
+<span id="cb31-489"><a href="#cb31-489" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb31-490"><a href="#cb31-490" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-491"><a href="#cb31-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-492"><a href="#cb31-492" aria-hidden="true" tabindex="-1"></a>p_domain_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(domain_spatial, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> dominant_domain)) <span class="sc">+</span></span>
+<span id="cb31-493"><a href="#cb31-493" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb31-494"><a href="#cb31-494" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> domain_colors) <span class="sc">+</span></span>
+<span id="cb31-495"><a href="#cb31-495" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb31-496"><a href="#cb31-496" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-497"><a href="#cb31-497" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Proposed Domain Distribution - Plan View"</span>,</span>
+<span id="cb31-498"><a href="#cb31-498" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Dominant domain per drillhole"</span>,</span>
+<span id="cb31-499"><a href="#cb31-499" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Easting (m)"</span>,</span>
+<span id="cb31-500"><a href="#cb31-500" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Northing (m)"</span>,</span>
+<span id="cb31-501"><a href="#cb31-501" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Domain"</span></span>
+<span id="cb31-502"><a href="#cb31-502" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-503"><a href="#cb31-503" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-504"><a href="#cb31-504" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)</span>
+<span id="cb31-505"><a href="#cb31-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-506"><a href="#cb31-506" aria-hidden="true" tabindex="-1"></a>p_domain_map</span>
+<span id="cb31-507"><a href="#cb31-507" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-508"><a href="#cb31-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-509"><a href="#cb31-509" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Birth of Robust Geological Domains</span></span>
+<span id="cb31-510"><a href="#cb31-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-511"><a href="#cb31-511" aria-hidden="true" tabindex="-1"></a><span class="fu">### Before EDA</span></span>
+<span id="cb31-512"><a href="#cb31-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-513"><a href="#cb31-513" aria-hidden="true" tabindex="-1"></a>Without systematic EDA:</span>
+<span id="cb31-514"><a href="#cb31-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-515"><a href="#cb31-515" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Random data points without geological context</span>
+<span id="cb31-516"><a href="#cb31-516" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mixed populations in estimation</span>
+<span id="cb31-517"><a href="#cb31-517" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Unreliable variograms</span>
+<span id="cb31-518"><a href="#cb31-518" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Poor mining selectivity</span>
+<span id="cb31-519"><a href="#cb31-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-520"><a href="#cb31-520" aria-hidden="true" tabindex="-1"></a><span class="fu">### After EDA: The 4 Pillars Converge</span></span>
+<span id="cb31-521"><a href="#cb31-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-524"><a href="#cb31-524" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb31-525"><a href="#cb31-525" aria-hidden="true" tabindex="-1"></a>flowchart TB</span>
+<span id="cb31-526"><a href="#cb31-526" aria-hidden="true" tabindex="-1"></a>    P1[Pillar <span class="dv">1</span>:&lt;br/&gt;Clean, Validated Data] --&gt; D[Robust&lt;br/&gt;Geological&lt;br/&gt;Domains]</span>
+<span id="cb31-527"><a href="#cb31-527" aria-hidden="true" tabindex="-1"></a>    P2[Pillar <span class="dv">2</span>:&lt;br/&gt;Spatial Understanding] --&gt; D</span>
+<span id="cb31-528"><a href="#cb31-528" aria-hidden="true" tabindex="-1"></a>    P3[Pillar <span class="dv">3</span>:&lt;br/&gt;Statistical Populations] --&gt; D</span>
+<span id="cb31-529"><a href="#cb31-529" aria-hidden="true" tabindex="-1"></a>    P4[Pillar <span class="dv">4</span>:&lt;br/&gt;Geological Controls] --&gt; D</span>
+<span id="cb31-530"><a href="#cb31-530" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-531"><a href="#cb31-531" aria-hidden="true" tabindex="-1"></a>    D --&gt; E1[Reliable Estimation]</span>
+<span id="cb31-532"><a href="#cb31-532" aria-hidden="true" tabindex="-1"></a>    D --&gt; E2[Realistic Mine Plans]</span>
+<span id="cb31-533"><a href="#cb31-533" aria-hidden="true" tabindex="-1"></a>    D --&gt; E3[Confident Classification]</span>
+<span id="cb31-534"><a href="#cb31-534" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb31-535"><a href="#cb31-535" aria-hidden="true" tabindex="-1"></a>    style D fill:<span class="co">#4caf50,color:#fff</span></span>
+<span id="cb31-536"><a href="#cb31-536" aria-hidden="true" tabindex="-1"></a>    style P1 fill:<span class="co">#e3f2fd</span></span>
+<span id="cb31-537"><a href="#cb31-537" aria-hidden="true" tabindex="-1"></a>    style P2 fill:<span class="co">#fff3e0</span></span>
+<span id="cb31-538"><a href="#cb31-538" aria-hidden="true" tabindex="-1"></a>    style P3 fill:<span class="co">#f3e5f5</span></span>
+<span id="cb31-539"><a href="#cb31-539" aria-hidden="true" tabindex="-1"></a>    style P4 fill:<span class="co">#e8f5e9</span></span>
+<span id="cb31-540"><a href="#cb31-540" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-541"><a href="#cb31-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-542"><a href="#cb31-542" aria-hidden="true" tabindex="-1"></a><span class="fu">### Domain Validation Checklist</span></span>
+<span id="cb31-543"><a href="#cb31-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-544"><a href="#cb31-544" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb31-545"><a href="#cb31-545" aria-hidden="true" tabindex="-1"></a><span class="fu">## Defensible Domains Must Have:</span></span>
+<span id="cb31-546"><a href="#cb31-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-547"><a href="#cb31-547" aria-hidden="true" tabindex="-1"></a>✓ **Geological justification**: Rock types, alteration, structure</span>
+<span id="cb31-548"><a href="#cb31-548" aria-hidden="true" tabindex="-1"></a>✓ **Statistical support**: Distinct populations, different variability</span>
+<span id="cb31-549"><a href="#cb31-549" aria-hidden="true" tabindex="-1"></a>✓ **Spatial continuity**: Mappable in 3D space</span>
+<span id="cb31-550"><a href="#cb31-550" aria-hidden="true" tabindex="-1"></a>✓ **Grade differences**: Economically meaningful</span>
+<span id="cb31-551"><a href="#cb31-551" aria-hidden="true" tabindex="-1"></a>✓ **Sample support**: Adequate data density</span>
+<span id="cb31-552"><a href="#cb31-552" aria-hidden="true" tabindex="-1"></a>✓ **Clear boundaries**: Definable contacts</span>
+<span id="cb31-553"><a href="#cb31-553" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-554"><a href="#cb31-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-555"><a href="#cb31-555" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary: From Data to Domains</span></span>
+<span id="cb31-556"><a href="#cb31-556" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-557"><a href="#cb31-557" aria-hidden="true" tabindex="-1"></a><span class="fu">### What We Accomplished</span></span>
+<span id="cb31-558"><a href="#cb31-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-559"><a href="#cb31-559" aria-hidden="true" tabindex="-1"></a>Through the 4 Pillar EDA framework, we:</span>
+<span id="cb31-560"><a href="#cb31-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-561"><a href="#cb31-561" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Validated data integrity** (Pillar 1)</span>
+<span id="cb31-562"><a href="#cb31-562" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Understood spatial distribution** (Pillar 2)</span>
+<span id="cb31-563"><a href="#cb31-563" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Characterized grade populations** (Pillar 3)</span>
+<span id="cb31-564"><a href="#cb31-564" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Identified geological controls** (Pillar 4)</span>
+<span id="cb31-565"><a href="#cb31-565" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-566"><a href="#cb31-566" aria-hidden="true" tabindex="-1"></a>**Result**: Scientifically defensible estimation domains ready for resource modeling.</span>
+<span id="cb31-567"><a href="#cb31-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-568"><a href="#cb31-568" aria-hidden="true" tabindex="-1"></a><span class="fu">### Next Steps in Resource Estimation</span></span>
+<span id="cb31-569"><a href="#cb31-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-570"><a href="#cb31-570" aria-hidden="true" tabindex="-1"></a>With robust domains defined, you can proceed to:</span>
+<span id="cb31-571"><a href="#cb31-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-572"><a href="#cb31-572" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Compositioning**: Regularize sample support within domains</span>
+<span id="cb31-573"><a href="#cb31-573" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Variography**: Model spatial continuity per domain</span>
+<span id="cb31-574"><a href="#cb31-574" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Estimation**: Kriging with appropriate search parameters</span>
+<span id="cb31-575"><a href="#cb31-575" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Classification**: Measured, Indicated, Inferred categories</span>
+<span id="cb31-576"><a href="#cb31-576" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Validation**: Check estimates against reality</span>
+<span id="cb31-577"><a href="#cb31-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-578"><a href="#cb31-578" aria-hidden="true" tabindex="-1"></a><span class="fu">### Key Takeaways</span></span>
+<span id="cb31-579"><a href="#cb31-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-580"><a href="#cb31-580" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb31-581"><a href="#cb31-581" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remember These Principles</span></span>
+<span id="cb31-582"><a href="#cb31-582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-583"><a href="#cb31-583" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**EDA is not optional** - It's mandatory for JORC compliance</span>
+<span id="cb31-584"><a href="#cb31-584" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Data quality = Model reliability** - GIGO always applies</span>
+<span id="cb31-585"><a href="#cb31-585" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Geology drives domains** - Statistics support, geology defines</span>
+<span id="cb31-586"><a href="#cb31-586" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Document everything** - Auditors will ask for justification</span>
+<span id="cb31-587"><a href="#cb31-587" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Use modern tools** - Automate routine tasks, focus on interpretation</span>
+<span id="cb31-588"><a href="#cb31-588" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-589"><a href="#cb31-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-590"><a href="#cb31-590" aria-hidden="true" tabindex="-1"></a><span class="fu">## Impact on Business Decisions</span></span>
+<span id="cb31-591"><a href="#cb31-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-592"><a href="#cb31-592" aria-hidden="true" tabindex="-1"></a>Good EDA and domaining directly impact:</span>
+<span id="cb31-593"><a href="#cb31-593" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-594"><a href="#cb31-594" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Resource confidence**: Better classification categories</span>
+<span id="cb31-595"><a href="#cb31-595" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Mine planning**: Realistic extraction sequences</span>
+<span id="cb31-596"><a href="#cb31-596" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Grade control**: Achievable selectivity</span>
+<span id="cb31-597"><a href="#cb31-597" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Investor confidence**: Defensible, auditable reports</span>
+<span id="cb31-598"><a href="#cb31-598" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Project value**: Reduced risk = higher valuations</span>
+<span id="cb31-599"><a href="#cb31-599" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-600"><a href="#cb31-600" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb31-601"><a href="#cb31-601" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Foundation of Trust</span></span>
+<span id="cb31-602"><a href="#cb31-602" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-603"><a href="#cb31-603" aria-hidden="true" tabindex="-1"></a>"In mining, we don't get second chances. The quality of our EDA determines whether we build a mine or lose millions in poor decisions."</span>
+<span id="cb31-604"><a href="#cb31-604" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-605"><a href="#cb31-605" aria-hidden="true" tabindex="-1"></a>**Every successful operation starts with understanding the data.**</span>
+<span id="cb31-606"><a href="#cb31-606" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-607"><a href="#cb31-607" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-608"><a href="#cb31-608" aria-hidden="true" tabindex="-1"></a><span class="fu">## Common Pitfalls Recap</span></span>
+<span id="cb31-609"><a href="#cb31-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-610"><a href="#cb31-610" aria-hidden="true" tabindex="-1"></a>Across all 4 pillars, avoid:</span>
+<span id="cb31-611"><a href="#cb31-611" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-612"><a href="#cb31-612" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Rushing validation** - Always leads to problems</span>
+<span id="cb31-613"><a href="#cb31-613" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Ignoring spatial patterns** - Statistics alone insufficient</span>
+<span id="cb31-614"><a href="#cb31-614" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Arbitrary decisions** - Document geological justification</span>
+<span id="cb31-615"><a href="#cb31-615" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Over-relying on automation** - Tools assist, don't replace thinking</span>
+<span id="cb31-616"><a href="#cb31-616" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Poor documentation** - Makes auditing impossible</span>
+<span id="cb31-617"><a href="#cb31-617" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-618"><a href="#cb31-618" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tools and Resources</span></span>
+<span id="cb31-619"><a href="#cb31-619" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-620"><a href="#cb31-620" aria-hidden="true" tabindex="-1"></a><span class="fu">### GeoDataViz Application</span></span>
+<span id="cb31-621"><a href="#cb31-621" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-622"><a href="#cb31-622" aria-hidden="true" tabindex="-1"></a>All analyses demonstrated here are available in GeoDataViz:</span>
+<span id="cb31-623"><a href="#cb31-623" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-624"><a href="#cb31-624" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**GitHub**: <span class="co">[</span><span class="ot">github.com/ghoziankarami/GeoDataViz</span><span class="co">](https://github.com/ghoziankarami/GeoDataViz/)</span></span>
+<span id="cb31-625"><a href="#cb31-625" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Zenodo**: <span class="co">[</span><span class="ot">doi.org/10.5281/zenodo.17142676</span><span class="co">](https://doi.org/10.5281/zenodo.17142676)</span></span>
+<span id="cb31-626"><a href="#cb31-626" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**License**: MIT (Open Source)</span>
+<span id="cb31-627"><a href="#cb31-627" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-628"><a href="#cb31-628" aria-hidden="true" tabindex="-1"></a><span class="fu">### Further Reading</span></span>
+<span id="cb31-629"><a href="#cb31-629" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-630"><a href="#cb31-630" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**JORC Code 2012**: Resource classification standards</span>
+<span id="cb31-631"><a href="#cb31-631" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**SNI 5012:2019**: Indonesian resource reporting</span>
+<span id="cb31-632"><a href="#cb31-632" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Geostatistics literature**: Variography and kriging</span>
+<span id="cb31-633"><a href="#cb31-633" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-634"><a href="#cb31-634" aria-hidden="true" tabindex="-1"></a><span class="fu">### Contact</span></span>
+<span id="cb31-635"><a href="#cb31-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-636"><a href="#cb31-636" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Author**: Ghozian Islam Karami</span>
+<span id="cb31-637"><a href="#cb31-637" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Email**: ghoziankarami@gmail.com</span>
+<span id="cb31-638"><a href="#cb31-638" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**LinkedIn**: <span class="co">[</span><span class="ot">linkedin.com/in/ghoziankarami</span><span class="co">](https://linkedin.com/in/ghoziankarami)</span></span>
+<span id="cb31-639"><a href="#cb31-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-640"><a href="#cb31-640" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb31-641"><a href="#cb31-641" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-642"><a href="#cb31-642" aria-hidden="true" tabindex="-1"></a><span class="fu">## Series Complete</span></span>
+<span id="cb31-643"><a href="#cb31-643" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-644"><a href="#cb31-644" aria-hidden="true" tabindex="-1"></a>Congratulations! You've completed the comprehensive EDA workflow:</span>
+<span id="cb31-645"><a href="#cb31-645" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-646"><a href="#cb31-646" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">← Part 1: Foundation &amp; Data Validation</span><span class="co">](../Data Validation/)</span></span>
+<span id="cb31-647"><a href="#cb31-647" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">← Part 2: Spatial &amp; Statistical Analysis</span><span class="co">](../Spatial Statistics/)</span></span>
+<span id="cb31-648"><a href="#cb31-648" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Part 3: Geological Controls &amp; Domain Definition** (You are here)</span>
+<span id="cb31-649"><a href="#cb31-649" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-650"><a href="#cb31-650" aria-hidden="true" tabindex="-1"></a>You now have the tools and knowledge to build **trusted geological models** from raw drilling data.</span>
+<span id="cb31-651"><a href="#cb31-651" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-652"><a href="#cb31-652" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb31-653"><a href="#cb31-653" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-654"><a href="#cb31-654" aria-hidden="true" tabindex="-1"></a>*"Quality data, systematic analysis, geological thinking - the foundation of every successful mine."*</span>
 </code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

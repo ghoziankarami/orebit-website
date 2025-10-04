@@ -773,6 +773,6 @@ For JORC compliance, document:
 
 ---
 
-*Previous: [← Part 1 - Data Validation](post-01-data-validation.qmd)*
+*Previous: [← Part 1 - Data Validation](/posts/Data Validation/)*
 
-*Next: [Part 3 - Geological Controls & Domain Definition →](/posts/Geological Domain)*
+*Next: [Part 3 - Geological Controls & Domain Definition →](/posts/Geological Domain/)*
