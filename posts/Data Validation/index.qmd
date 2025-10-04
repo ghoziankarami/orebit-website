@@ -2,7 +2,7 @@
 title: "Part 1: Foundation & Data Validation"
 subtitle: "Building Trust Through Systematic QA/QC"
 author: "Ghozian Islam Karami"
-date: "2025-01-15"
+date: "2025-10-01"
 categories: [EDA, Data Validation, QAQC, Resource Estimation]
 image: "Part1.png"
 format:

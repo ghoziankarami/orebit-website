@@ -2,7 +2,7 @@
 title: "Part 3: Geological Controls & Domain Definition"
 subtitle: "Connecting Numbers to Rocks - The Path to Robust Estimation Domains"
 author: "Ghozian Islam Karami"
-date: "2025-01-29"
+date: "2025-10-05"
 categories: [EDA, Geological Domains, Domaining, Resource Estimation]
 image: "Part3.png"
 format:
