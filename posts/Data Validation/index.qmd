@@ -4,7 +4,7 @@ subtitle: "Building Trust Through Systematic QA/QC"
 author: "Ghozian Islam Karami"
 date: "2025-01-15"
 categories: [EDA, Data Validation, QAQC, Resource Estimation]
-image: "images/pillar1.png"
+image: "Part1.png"
 format:
   html:
     code-fold: true

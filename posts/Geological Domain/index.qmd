@@ -4,7 +4,7 @@ subtitle: "Connecting Numbers to Rocks - The Path to Robust Estimation Domains"
 author: "Ghozian Islam Karami"
 date: "2025-01-29"
 categories: [EDA, Geological Domains, Domaining, Resource Estimation]
-image: "images/pillar4.png"
+image: "Part3A.png"
 format:
   html:
     code-fold: true
@@ -253,15 +253,10 @@ Understanding element associations reveals mineralization processes.
 ```{r}
 #| fig-width: 10
 #| fig-height: 8
+#| warning: false
 
 
-# Ensure all lithologies have colors
-unique_lithos <- unique(combined_data$lithology)
-if(length(litho_colors) < length(unique_lithos)) {
-  missing_lithos <- setdiff(unique_lithos, names(litho_colors))
-  new_colors <- RColorBrewer::brewer.pal(length(missing_lithos), "Set2")
-  litho_colors <- c(litho_colors, setNames(new_colors, missing_lithos))
-}
+
 # Select grade variables for correlation
 grade_vars <- c("au_ppm", "ag_ppm", "cu_pct")
 
