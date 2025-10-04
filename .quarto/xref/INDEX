@@ -55,5 +55,14 @@
   },
   "posts/Welcome to Orebit/index.qmd": {
     "index.html": "a53f3c85"
+  },
+  "posts/Data Validation/index.qmd": {
+    "index.html": "3b13264a"
+  },
+  "posts/Geological Domain/index.qmd": {
+    "index.html": "93cb69d1"
+  },
+  "posts/Spatial Statistics/index.qmd": {
+    "index.html": "be210b27"
   }
 }

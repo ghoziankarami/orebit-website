@@ -1,0 +1,518 @@
+---
+title: "Part 1: Foundation & Data Validation"
+subtitle: "Building Trust Through Systematic QA/QC"
+author: "Ghozian Islam Karami"
+date: "2025-01-15"
+categories: [EDA, Data Validation, QAQC, Resource Estimation]
+image: "images/pillar1.png"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    toc: true
+    toc-depth: 3
+---
+
+## Why EDA is Not Optional
+
+Before diving into the technical details, let's address a fundamental question: **Why do mining projects fail?**
+
+The answer often lies in the quality of the foundational data. Research shows that up to **70% of errors in resource estimation** stem from inadequate data validation and EDA processes.
+
+### The GIGO Principle
+
+**Garbage In, Garbage Out (GIGO)** - This principle is fundamental to all data analysis work. Poor quality data will always produce poor models, leading to:
+
+- Inaccurate resource estimates
+- Failed mine plans
+- Investor confidence loss
+- Regulatory non-compliance
+- Millions in losses
+
+::: {.callout-important}
+## Industry Reality
+In mining, we don't get second chances. The quality of our EDA determines whether we build a mine or lose millions in poor decisions.
+:::
+
+## EDA as an Industry Standard
+
+EDA is not just "best practice" - it's a **mandatory requirement** for professional resource estimation.
+
+### JORC Code Compliance
+
+The JORC Code requires that all resource reports be:
+
+- **Transparent**: Methods and data quality must be clearly documented
+- **Material**: All relevant information affecting value must be disclosed
+- **Competent**: Prepared by qualified professionals
+
+EDA directly supports these requirements by:
+
+1. Documenting data quality and limitations
+2. Identifying material data issues
+3. Providing evidence for geological interpretations
+
+### Competent Person Responsibilities
+
+As a Competent Person (CP), thorough EDA is part of your due diligence. You are responsible for:
+
+- Verifying data integrity
+- Documenting QA/QC procedures
+- Ensuring estimation assumptions are data-supported
+- Defending your resource model to auditors and regulators
+
+## The 4 Pillar EDA Framework
+
+This series follows a systematic 4-pillar approach to EDA:
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(DiagrammeR)
+
+DiagrammeR::grViz("
+digraph eda_framework {
+  
+  graph [rankdir = TB, fontname = Arial, bgcolor = transparent]
+  
+  node [shape = box, style = filled, fontname = Arial, fontsize = 12]
+  
+  pillar1 [label = 'Pillar 1:\nData Validation &\nIntegrity (QA/QC)', fillcolor = '#E3F2FD']
+  pillar2 [label = 'Pillar 2:\nSpatial Distribution\nAnalysis', fillcolor = '#FFF3E0']
+  pillar3 [label = 'Pillar 3:\nStatistical\nCharacterization', fillcolor = '#F3E5F5']
+  pillar4 [label = 'Pillar 4:\nGeological Controls\nAnalysis', fillcolor = '#E8F5E9']
+  domains [label = 'Robust Geological\nDomains', fillcolor = '#FFEBEE', shape = ellipse]
+  
+  pillar1 -> pillar2 -> pillar3 -> pillar4 -> domains
+  
+}
+", height = 400)
+```
+
+Each pillar builds upon the previous, creating a comprehensive understanding of your dataset.
+
+## Pillar 1: Data Validation & Integrity
+
+The first pillar is the **foundation** of all subsequent analysis. Without proper data validation, all downstream work becomes meaningless.
+
+### What We Check
+
+A comprehensive data validation workflow includes:
+
+1. **File Integration Checks**
+   - Collar file completeness
+   - Assay file completeness
+   - Lithology file completeness
+   - Cross-file consistency
+
+2. **Missing Data Detection**
+   - Collars without assay data
+   - Assays without collar coordinates
+   - Lithology gaps
+
+3. **Interval Validation**
+   - Overlapping intervals
+   - Gaps in sampling
+   - Depth consistency
+
+4. **Geometric Validation**
+   - Data above/below topography
+   - Survey data quality
+   - Coordinate system consistency
+
+::: {.callout-warning}
+## Critical Principle
+One bad data point can invalidate an entire block model if not caught early. Data integrity issues compound through every step of the modeling process.
+:::
+
+## Practical Implementation with GeoDataViz
+
+Let's see how these validation checks are implemented using real drilling data.
+
+### Step 1: Load Required Libraries
+
+```{r}
+#| message: false
+#| warning: false
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(DT)
+library(plotly)
+library(janitor)
+```
+
+### Step 2: Create Sample Data
+
+For this demonstration, we'll create simulated drilling data that mimics real geological scenarios:
+
+```{r}
+#| message: false
+#| warning: false
+
+# Create simulated collar data
+set.seed(123)
+n_holes <- 50
+
+collar <- data.frame(
+  hole_id = paste0("DDH", sprintf("%03d", 1:n_holes)),
+  x = runif(n_holes, 500000, 501000),
+  y = runif(n_holes, 9000000, 9001000),
+  rl = runif(n_holes, 100, 200)
+)
+
+# Create simulated assay data (multiple intervals per hole)
+assay_list <- lapply(collar$hole_id, function(hid) {
+  n_intervals <- sample(15:25, 1)
+  depths <- seq(0, by = 2, length.out = n_intervals)
+  
+  data.frame(
+    hole_id = hid,
+    from = depths[-length(depths)],
+    to = depths[-1],
+    au_ppm = pmax(0, rnorm(n_intervals - 1, mean = 1.5, sd = 2)),
+    ag_ppm = pmax(0, rnorm(n_intervals - 1, mean = 15, sd = 20)),
+    cu_pct = pmax(0, rnorm(n_intervals - 1, mean = 0.5, sd = 0.8))
+  )
+})
+assay <- do.call(rbind, assay_list)
+
+# Create simulated lithology data
+litho_codes <- c("Andesite", "Diorite", "Mineralized_Zone", "Altered_Volcanics")
+lithology_list <- lapply(collar$hole_id, function(hid) {
+  n_litho <- sample(4:8, 1)
+  depths <- sort(c(0, sample(5:40, n_litho - 1), 50))
+  
+  data.frame(
+    hole_id = hid,
+    from = depths[-length(depths)],
+    to = depths[-1],
+    lithology = sample(litho_codes, n_litho, replace = TRUE)
+  )
+})
+lithology <- do.call(rbind, lithology_list)
+
+# Clean names
+collar <- janitor::clean_names(collar)
+assay <- janitor::clean_names(assay)
+lithology <- janitor::clean_names(lithology)
+
+# Display structure
+cat("Collar records:", nrow(collar), "\n")
+cat("Assay records:", nrow(assay), "\n")
+cat("Lithology records:", nrow(lithology), "\n")
+```
+
+::: {.callout-note}
+## About the Sample Data
+This is simulated data designed to demonstrate EDA workflows. In practice, you would load your own drilling data from CSV files or databases.
+:::
+
+### Step 3: File Record Count Validation
+
+The first check: do we have data in all files?
+
+```{r}
+file_counts <- data.frame(
+  File = c("Collar", "Assay", "Lithology"),
+  Records = c(nrow(collar), nrow(assay), nrow(lithology))
+)
+
+datatable(file_counts, 
+          options = list(dom = 't'),
+          caption = "Table 1: File Record Counts")
+```
+
+::: {.callout-tip}
+## Interpretation
+All three files should have records. Empty files indicate data loading issues that must be resolved before proceeding.
+:::
+
+### Step 4: Cross-File Consistency Checks
+
+#### Check 1: Collars Missing Assay Data
+
+```{r}
+# Identify collars without assay data
+missing_assay <- anti_join(
+  collar %>% distinct(hole_id),
+  assay %>% distinct(hole_id),
+  by = "hole_id"
+)
+
+if(nrow(missing_assay) > 0) {
+  datatable(missing_assay,
+            caption = "Table 2: Collars Missing Assay Data",
+            options = list(pageLength = 5))
+} else {
+  cat("✓ All collars have corresponding assay data.\n")
+}
+```
+
+#### Check 2: Assays Missing Collar Data
+
+```{r}
+# Identify assays without collar coordinates
+missing_collar <- anti_join(
+  assay %>% distinct(hole_id),
+  collar %>% distinct(hole_id),
+  by = "hole_id"
+)
+
+if(nrow(missing_collar) > 0) {
+  datatable(missing_collar,
+            caption = "Table 3: Assays Missing Collar Data",
+            options = list(pageLength = 5))
+} else {
+  cat("✓ All assays have corresponding collar coordinates.\n")
+}
+```
+
+::: {.callout-note}
+## Common Causes
+Mismatches often result from:
+
+- Typos in hole IDs (e.g., "DDH001" vs "DDH-001")
+- Incomplete data transfers
+- Holes logged but not yet assayed
+- Data entry errors
+:::
+
+### Step 5: Interval Validation
+
+One of the most critical checks: ensuring assay intervals are continuous without gaps or overlaps.
+
+```{r}
+# Check for interval errors (gaps/overlaps)
+interval_errors <- assay %>%
+  arrange(hole_id, from) %>%
+  group_by(hole_id) %>%
+  mutate(
+    prev_to = lag(to),
+    has_error = !is.na(prev_to) & (from != prev_to)
+  ) %>%
+  ungroup() %>%
+  filter(has_error) %>%
+  select(hole_id, prev_to, from, to)
+
+if(nrow(interval_errors) > 0) {
+  datatable(interval_errors,
+            caption = "Table 4: Interval Errors (Gaps/Overlaps)",
+            options = list(pageLength = 10, scrollX = TRUE)) %>%
+    formatStyle('from', backgroundColor = '#ffebee') %>%
+    formatStyle('prev_to', backgroundColor = '#fff9c4')
+} else {
+  cat("✓ No interval gaps or overlaps detected.\n")
+}
+```
+
+::: {.callout-important}
+## Why This Matters
+Interval errors can cause:
+
+- Incorrect composite calculations
+- Grade dilution or concentration artifacts
+- Inaccurate tonnage estimates
+- Biased variography
+:::
+
+### Visualization: Interval Error Example
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4
+
+# Create example visualization if errors exist
+if(nrow(interval_errors) > 0) {
+  # Take first hole with errors as example
+  example_hole <- interval_errors$hole_id[1]
+  example_data <- assay %>%
+    filter(hole_id == example_hole) %>%
+    arrange(from) %>%
+    head(10)
+  
+  ggplot(example_data, aes(y = from, yend = to)) +
+    geom_segment(aes(x = 0, xend = 1), size = 8, color = "steelblue", alpha = 0.7) +
+    geom_text(aes(x = 0.5, y = (from + to)/2, label = paste0(from, "-", to)), 
+              color = "white", fontface = "bold", size = 3) +
+    scale_y_reverse() +
+    coord_flip() +
+    labs(
+      title = paste("Interval Visualization:", example_hole),
+      subtitle = "Look for gaps (white space) or overlaps (segments touching)",
+      x = NULL,
+      y = "Depth (m)"
+    ) +
+    theme_minimal() +
+    theme(
+      axis.text.y = element_blank(),
+      axis.ticks.y = element_blank(),
+      panel.grid.major.y = element_blank()
+    )
+}
+```
+
+## Data Validation Summary
+
+### Key Metrics Dashboard
+
+```{r}
+# Create validation summary
+validation_summary <- data.frame(
+  Check = c(
+    "Total Collars",
+    "Total Assay Intervals",
+    "Total Lithology Intervals",
+    "Collars Missing Assays",
+    "Assays Missing Collars",
+    "Interval Errors"
+  ),
+  Count = c(
+    nrow(collar),
+    nrow(assay),
+    nrow(lithology),
+    nrow(missing_assay),
+    nrow(missing_collar),
+    nrow(interval_errors)
+  ),
+  Status = c(
+    "✓", "✓", "✓",
+    ifelse(nrow(missing_assay) == 0, "✓", "⚠"),
+    ifelse(nrow(missing_collar) == 0, "✓", "⚠"),
+    ifelse(nrow(interval_errors) == 0, "✓", "⚠")
+  )
+)
+
+datatable(validation_summary,
+          options = list(dom = 't', ordering = FALSE),
+          caption = "Table 5: Data Validation Summary",
+          rownames = FALSE) %>%
+  formatStyle(
+    'Status',
+    color = styleEqual(c('✓', '⚠'), c('green', 'orange')),
+    fontWeight = 'bold'
+  )
+```
+
+## Best Practices for Data Validation
+
+### Documentation Requirements
+
+For JORC compliance, document:
+
+1. **Data Sources**
+   - Who collected the data?
+   - When was it collected?
+   - What QA/QC protocols were followed in the field?
+
+2. **Validation Process**
+   - What checks were performed?
+   - What issues were found?
+   - How were issues resolved?
+
+3. **Data Limitations**
+   - Known gaps or uncertainties
+   - Data quality issues that couldn't be resolved
+   - Impact on estimation confidence
+
+### Common Pitfalls to Avoid
+
+::: {.callout-warning}
+## Don't Skip These Steps
+
+1. **Rushing validation to meet deadlines** - Always leads to problems later
+2. **Assuming data is clean** - Always validate, even from trusted sources
+3. **Fixing issues without documentation** - Record all changes for audit trail
+4. **Ignoring "small" errors** - Small errors compound in complex workflows
+:::
+
+## Integration and Data Merging
+
+Once validation is complete, we can safely merge our datasets:
+
+```{r}
+#| message: false
+#| warning: false
+
+# Standardize column names
+collar_std <- collar %>%
+  select(hole_id, x = x, y = y, z = rl) %>%
+  mutate(hole_id = as.character(hole_id))
+
+assay_std <- assay %>%
+  select(hole_id, from, to, everything()) %>%
+  mutate(hole_id = as.character(hole_id))
+
+lithology_std <- lithology %>%
+  select(hole_id, from, to, lithology) %>%
+  mutate(hole_id = as.character(hole_id))
+
+# Merge data
+combined_data <- assay_std %>%
+  left_join(collar_std, by = "hole_id") %>%
+  mutate(mid_point = from + (to - from) / 2) %>%
+  left_join(
+    lithology_std %>% rename(litho_from = from, litho_to = to),
+    by = join_by(hole_id, between(mid_point, litho_from, litho_to))
+  ) %>%
+  select(-mid_point, -litho_from, -litho_to)
+
+cat("Combined dataset rows:", nrow(combined_data), "\n")
+cat("Columns:", paste(names(combined_data), collapse = ", "), "\n")
+```
+
+### Preview Combined Data
+
+```{r}
+datatable(head(combined_data, 50),
+          options = list(
+            pageLength = 10,
+            scrollX = TRUE,
+            scrollY = "400px"
+          ),
+          caption = "Table 6: Combined Dataset Preview") %>%
+  formatRound(columns = c('from', 'to', 'x', 'y', 'z'), digits = 2)
+```
+
+## Checklist: Before Moving to Pillar 2
+
+Before proceeding to spatial analysis, ensure:
+
+- [ ] All data files loaded successfully
+- [ ] No unexpected missing collars or assays
+- [ ] Interval errors identified and resolved
+- [ ] Data merge completed without warnings
+- [ ] Validation results documented
+- [ ] Known limitations noted
+
+::: {.callout-tip}
+## Ready for the Next Step?
+With clean, validated data, you're ready to explore spatial patterns in [Part 2: Spatial & Statistical Analysis](post-02-spatial-statistical.qmd).
+:::
+
+## Summary
+
+Data validation is the **foundation** of reliable resource estimation. Key takeaways:
+
+1. **Never skip validation** - It's mandatory for JORC compliance
+2. **Check everything** - Files, intervals, cross-references
+3. **Document thoroughly** - Create audit trails
+4. **Fix issues early** - Problems compound downstream
+5. **Validate assumptions** - Don't trust data blindly
+
+Remember the GIGO principle: **Quality data is the only path to quality models**.
+
+---
+
+## Tools and Resources
+
+- **GeoDataViz**: [GitHub Repository](https://github.com/ghoziankarami/GeoDataViz/)
+- **JORC Code**: [2012 Edition](https://www.jorc.org/)
+- **Contact**: ghoziankarami@gmail.com
+
+---
+
+*Next: [Part 2 - Spatial & Statistical Analysis →](/posts/Spatial Statistics/)*

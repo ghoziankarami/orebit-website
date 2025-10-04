@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="id-ID" xml:lang="id-ID"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.21">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,14 +36,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8fbdd3f49dc072424b9437925e0bf985.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3ee8baefdffb67ae451e639e99e6a872.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,7 +141,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -177,7 +178,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./Logo_banner.png" alt="" class="navbar-logo">
+    <img src="./Logo_banner.png" alt="" class="navbar-logo light-content">
+    <img src="./Logo_banner.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Mencari"></div>
@@ -223,7 +225,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Kategori</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Semua <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RURB">EDA <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2VvRGF0YVZpeg==">GeoDataViz <span class="quarto-category-count">(3)</span></div><div class="category" data-category="T3Blbi1Tb3VyY2U=">Open-Source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlcHJvY2Vzc2luZw==">Preprocessing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzb3VyY2UtRXN0aW1hdGlvbg==">Resource-Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Kategori</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Semua <span class="quarto-category-count">(6)</span></div><div class="category" data-category="RGF0YSUyMFZhbGlkYXRpb24=">Data Validation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RG9tYWluaW5n">Domaining <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RURB">EDA <span class="quarto-category-count">(4)</span></div><div class="category" data-category="R2VvRGF0YVZpeg==">GeoDataViz <span class="quarto-category-count">(3)</span></div><div class="category" data-category="R2VvbG9naWNhbCUyMERvbWFpbnM=">Geological Domains <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3Blbi1Tb3VyY2U=">Open-Source <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJlcHJvY2Vzc2luZw==">Preprocessing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UUFRQw==">QAQC <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVzb3VyY2UlMjBFc3RpbWF0aW9u">Resource Estimation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UmVzb3VyY2UtRXN0aW1hdGlvbg==">Resource-Estimation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3BhdGlhbCUyMEFuYWx5c2lz">Spatial Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VHV0b3JpYWw=">Tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VmlzdWFsaXphdGlvbg==">Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2VsY29tZQ==">Welcome <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -385,6 +387,111 @@ Ghozian Islam Karami
 </div>
 <div class="listing-date">
 20 Sep 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="RURBJTJDR2VvbG9naWNhbCUyMERvbWFpbnMlMkNEb21haW5pbmclMkNSZXNvdXJjZSUyMEVzdGltYXRpb24=" data-listing-date-sort="1738083600000" data-listing-file-modified-sort="1759544807554" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1594">
+<a href="./posts/Geological Domain/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/Geological Domain/images/pillar4.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Part 3: Geological Controls &amp; Domain Definition
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RURB'); return false;">EDA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R2VvbG9naWNhbCUyMERvbWFpbnM='); return false;">Geological Domains</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RG9tYWluaW5n'); return false;">Domaining</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzb3VyY2UlMjBFc3RpbWF0aW9u'); return false;">Resource Estimation</div>
+
+</div>
+<div class="card-text listing-description delink">
+We’ve validated our data (Part 1), explored spatial patterns, and characterized statistical distributions (Part 2). Now comes the most critical step: <strong>connecting numbers to…</strong>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Ghozian Islam Karami
+</div>
+<div class="listing-date">
+29 Jan 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="RURBJTJDU3BhdGlhbCUyMEFuYWx5c2lzJTJDU3RhdGlzdGljcyUyQ1Zpc3VhbGl6YXRpb24=" data-listing-date-sort="1737478800000" data-listing-file-modified-sort="1759545169372" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3467">
+<a href="./posts/Spatial Statistics/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/Spatial Statistics/images/pillar2-3.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Part 2: Spatial &amp; Statistical Analysis
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RURB'); return false;">EDA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3BhdGlhbCUyMEFuYWx5c2lz'); return false;">Spatial Analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VmlzdWFsaXphdGlvbg=='); return false;">Visualization</div>
+
+</div>
+<div class="card-text listing-description delink">
+With validated data from Part 1, we now explore <strong>where</strong> the data is located and <strong>what</strong> it tells us statistically. This post covers:
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Ghozian Islam Karami
+</div>
+<div class="listing-date">
+22 Jan 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="RURBJTJDRGF0YSUyMFZhbGlkYXRpb24lMkNRQVFDJTJDUmVzb3VyY2UlMjBFc3RpbWF0aW9u" data-listing-date-sort="1736874000000" data-listing-file-modified-sort="1759545168752" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2117">
+<a href="./posts/Data Validation/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/Data Validation/images/pillar1.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Part 1: Foundation &amp; Data Validation
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RURB'); return false;">EDA</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFZhbGlkYXRpb24='); return false;">Data Validation</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UUFRQw=='); return false;">QAQC</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVzb3VyY2UlMjBFc3RpbWF0aW9u'); return false;">Resource Estimation</div>
+
+</div>
+<div class="card-text listing-description delink">
+Before diving into the technical details, let’s address a fundamental question: <strong>Why do mining projects fail?</strong>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Ghozian Islam Karami
+</div>
+<div class="listing-date">
+15 Jan 2025
 </div>
 </div>
 </div>
