@@ -4,18 +4,18 @@ subtitle: "Comprehensive Guides for Geological Data Analysis"
 description: "Explore comprehensive guides, tutorials, and case studies on geological data analysis, resource estimation, and open-source workflows with R."
 page-layout: full
 listing:
-  contents: posts # Memberitahu Quarto untuk mencari konten di folder 'posts'
-  sort: "date desc" # Mengurutkan post terbaru di atas
-  type: grid # Tampilan dalam bentuk grid
-  categories: true # Menampilkan filter kategori
-  sort-ui: true # Menampilkan UI untuk sorting
-  filter-ui: true # Menampilkan UI untuk filter
-  feed: true # Membuat RSS feed secara otomatis
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  feed: true
 ---
 
 <div class="blog-intro">
-  <h2>Welcome to the Orebit Knowledge Hub</h2>
+  <h2>The Orebit Methodology Hub</h2>
   <p>
-    Here you'll find in-depth articles, practical tutorials, and case studies designed to help you master modern geological data analysis. Whether you're using our flagship application, <strong>GeoDataViz</strong>, or exploring advanced open-source workflows in R, these resources are here to support your work.
+    Welcome to our knowledge base, structured around the <strong>Four Pillars of Effective Exploratory Data Analysis (EDA)</strong>. Here you'll find in-depth articles and practical tutorials demonstrating our practitioner-built approach to Data Validation, Univariate/Bivariate Analysis, Spatial Analysis, and Reporting. Master the workflows that power our tools and transform your data into reliable intelligence.
   </p>
 </div>

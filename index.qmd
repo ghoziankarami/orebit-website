@@ -6,50 +6,52 @@ title-block-banner: false
 ::: {.container .page-content}
 
 ::: {.text-center .hero-intro}
-# Digitizing Geology, From Exploration to Production
-
-Professional R Shiny applications for modern geology. We provide an advanced geological analysis suite—including GeoDataViz, Resource Estimation, and Pit Optimization tools—for professional geoscientists and mining engineers. Built by geologists, for geologists.
+# From Raw Ore to Reliable Bits.
+We transform complex geological data into digital clarity. Our "glass box" approach, built on open-source tools, provides the transparent and powerful process to turn your raw data into your most valuable strategic asset.
 
 <div class="hero-buttons">
 <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-primary btn-lg" target="_blank" rel="noopener"><i class="fas fa-rocket"></i> Launch GeoDataViz Demo</a>
-<a href="blog.html" class="btn btn-secondary btn-lg"><i class="fas fa-book"></i> Read Technical Guides</a>
+<a href="blog.html" class="btn btn-secondary btn-lg"><i class="fas fa-book"></i> Explore Our Methodology</a>
 </div>
 :::
 
 ::: {.section-container .text-center}
-## Why Orebit Solutions?
-
-Access enterprise-level tools without the enterprise-level costs. We bridge the gap between powerful analytics and accessibility.
+## The Four Pillars of Effective EDA
+Our tools and resources are built around a core methodology designed to ensure robust and reliable geological analysis. Each pillar represents a critical stage in transforming data into insight.
 
 ::: {.value-props-grid}
 ::: {.value-item}
-<div class="value-icon"><i class="fas fa-dollar-sign"></i></div>
-### Cost-Effective Excellence
-Eliminate prohibitive $20,000+ annual licensing fees. Powerful tools should be accessible to all, not just the largest corporations.
+<div class="value-icon"><i class="fas fa-database"></i></div>
+### Data Validation
+Ensuring data integrity from the start. We focus on identifying outliers, errors, and inconsistencies before they impact your model.
 :::
 
 ::: {.value-item}
-<div class="value-icon"><i class="fas fa-user-check"></i></div>
-### Built by Geologists
-Developed by a Certified Competent Person (CP) who understands the real-world challenges and workflows of the mining industry.
+<div class="value-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+### Univariate & Bivariate Analysis
+Understanding the character of each variable and the relationships between them. This is the foundation of geological domaining.
 :::
 
 ::: {.value-item}
-<div class="value-icon"><i class="fas fa-cogs"></i></div>
-### Open & Transparent
-Built on open-source R technology. No black-box algorithms. Our methods are clear, ensuring reproducibility and scientific integrity.
+<div class="value-icon"><i class="fas fa-map-location-dot"></i></div>
+### Spatial Analysis
+Analyzing how your data behaves in 3D space. We investigate trends, continuity, and spatial relationships critical for geostatistics.
 :::
 
 ::: {.value-item}
-<div class="value-icon"><i class="fas fa-cloud"></i></div>
-### Cloud-Native Performance
-No installation, no maintenance. Run sophisticated analyses directly in your browser, anywhere, on any device.
+<div class="value-icon"><i class="fas fa-file-alt"></i></div>
+### Comprehensive Reporting
+Delivering clear, reproducible reports that document every step of the analysis, ensuring transparency and auditability.
 :::
 :::
 :::
+
 
 ::: {.section-container .section-light-bg}
 <h2 class="section-title text-center">Our Product Suite</h2>
+<p class="section-subtitle text-center" style="max-width: 800px;">
+  Our applications are designed to implement the Four Pillars methodology seamlessly, empowering you with cost-effective and transparent tools.
+</p>
 
 ::: {.products-grid}
 ::: {.product-card .flagship}
@@ -57,7 +59,7 @@ No installation, no maintenance. Run sophisticated analyses directly in your bro
 <h3><i class="fas fa-chart-line"></i> GeoDataViz</h3>
 <span class="badge bg-success">Available Now</span>
 </div>
-Transform your geological workflow with professional-grade exploratory data analysis and 3D visualization, built specifically for drillhole datasets.
+[cite_start]Transform your geological workflow with professional-grade exploratory data analysis and 3D visualization, built specifically for drillhole datasets. [cite: 12]
 <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-success w-100 mt-3" target="_blank" rel="noopener">Launch Free Demo →</a>
 :::
 
@@ -66,7 +68,7 @@ Transform your geological workflow with professional-grade exploratory data anal
 <h3><i class="fas fa-calculator"></i> Resource Estimation</h3>
 <span class="badge bg-warning">Coming Q2 2026</span>
 </div>
-Professional geostatistical analysis and resource modeling. Advanced kriging, variogram modeling, and uncertainty quantification.
+[cite_start]Professional geostatistical analysis and resource modeling. [cite: 13] Advanced kriging, variogram modeling, and uncertainty quantification.
 <a href="#cta-section" class="btn btn-outline-primary w-100 mt-3">Join Beta List →</a>
 :::
 
@@ -75,7 +77,7 @@ Professional geostatistical analysis and resource modeling. Advanced kriging, va
 <h3><i class="fas fa-mountain"></i> Pit Optimizer</h3>
 <span class="badge bg-warning">Coming Q3 2026</span>
 </div>
-Sophisticated mine planning and optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.
+[cite_start]Sophisticated mine planning and optimization algorithms. [cite: 14] Maximize NPV while considering operational constraints and environmental factors.
 <a href="#cta-section" class="btn btn-outline-primary w-100 mt-3">Get Notified →</a>
 :::
 :::
@@ -83,9 +85,7 @@ Sophisticated mine planning and optimization algorithms. Maximize NPV while cons
 
 ::: {#cta-section .section-container .cta-section .text-center}
 ### Ready to Transform Your Workflow?
-
-Stay updated on our upcoming resource estimation and pit optimization tools.
-
+[cite_start]Stay updated on our upcoming resource estimation and pit optimization tools. [cite: 15]
 <form class="d-flex justify-content-center mt-4">
     <input type="email" class="form-control me-2" placeholder="Enter your email for updates" style="max-width: 300px;">
     <button type="submit" class="btn btn-primary">Get Notified</button>
