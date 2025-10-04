@@ -59,7 +59,7 @@ Delivering clear, reproducible reports that document every step of the analysis,
 <h3><i class="fas fa-chart-line"></i> GeoDataViz</h3>
 <span class="badge bg-success">Available Now</span>
 </div>
-[cite_start]Transform your geological workflow with professional-grade exploratory data analysis and 3D visualization, built specifically for drillhole datasets. [cite: 12]
+Transform your geological workflow with professional-grade exploratory data analysis and 3D visualization, built specifically for drillhole datasets.
 <a href="https://ghoziankarami.shinyapps.io/GeodataViz/" class="btn btn-success w-100 mt-3" target="_blank" rel="noopener">Launch Free Demo →</a>
 :::
 
@@ -68,8 +68,8 @@ Delivering clear, reproducible reports that document every step of the analysis,
 <h3><i class="fas fa-calculator"></i> Resource Estimation</h3>
 <span class="badge bg-warning">Coming Q2 2026</span>
 </div>
-[cite_start]Professional geostatistical analysis and resource modeling. [cite: 13] Advanced kriging, variogram modeling, and uncertainty quantification.
-<a href="#cta-section" class="btn btn-outline-primary w-100 mt-3">Join Beta List →</a>
+Professional geostatistical analysis and resource modeling. Advanced kriging, variogram modeling, and uncertainty quantification.
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfAB_mnRKFRwpyXAioJo0yukyiWkbtN1q-8_zUmNiVUd3REqQ/viewform?usp=header" class="btn btn-outline-primary w-100 mt-3" target="_blank" rel="noopener">Join Beta List →</a>
 :::
 
 ::: {.product-card .upcoming}
@@ -77,19 +77,18 @@ Delivering clear, reproducible reports that document every step of the analysis,
 <h3><i class="fas fa-mountain"></i> Pit Optimizer</h3>
 <span class="badge bg-warning">Coming Q3 2026</span>
 </div>
-[cite_start]Sophisticated mine planning and optimization algorithms. [cite: 14] Maximize NPV while considering operational constraints and environmental factors.
-<a href="#cta-section" class="btn btn-outline-primary w-100 mt-3">Get Notified →</a>
+Sophisticated mine planning and optimization algorithms. Maximize NPV while considering operational constraints and environmental factors.
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfAB_mnRKFRwpyXAioJo0yukyiWkbtN1q-8_zUmNiVUd3REqQ/viewform?usp=header" class="btn btn-outline-primary w-100 mt-3" target="_blank" rel="noopener">Get Notified →</a>
 :::
 :::
 :::
 
 ::: {#cta-section .section-container .cta-section .text-center}
 ### Ready to Transform Your Workflow?
-[cite_start]Stay updated on our upcoming resource estimation and pit optimization tools. [cite: 15]
-<form class="d-flex justify-content-center mt-4">
-    <input type="email" class="form-control me-2" placeholder="Enter your email for updates" style="max-width: 300px;">
-    <button type="submit" class="btn btn-primary">Get Notified</button>
-</form>
+Stay updated on our upcoming resource estimation and pit optimization tools.
+<div class="mt-4">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfAB_mnRKFRwpyXAioJo0yukyiWkbtN1q-8_zUmNiVUd3REqQ/viewform?usp=header" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Join Our Waiting List →</a>
+</div>
 :::
 
 :::
