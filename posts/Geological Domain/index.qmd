@@ -4,7 +4,7 @@ subtitle: "Connecting Numbers to Rocks - The Path to Robust Estimation Domains"
 author: "Ghozian Islam Karami"
 date: "2025-01-29"
 categories: [EDA, Geological Domains, Domaining, Resource Estimation]
-image: "images/pillar4.png"
+image: "images/Part3.png"
 format:
   html:
     code-fold: true
