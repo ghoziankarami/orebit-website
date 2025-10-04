@@ -15,7 +15,7 @@ format:
 
 ## Introduction
 
-We've validated our data ([Part 1](post-01-data-validation.qmd)), explored spatial patterns, and characterized statistical distributions ([Part 2](post-02-spatial-statistical.qmd)). Now comes the most critical step: **connecting numbers to geology**.
+We've validated our data ([Part 1](/posts/Data Validation/)), explored spatial patterns, and characterized statistical distributions ([Part 2](../Spatial Statistics/)). Now comes the most critical step: **connecting numbers to geology**.
 
 **Pillar 4: Geological Controls Analysis** transforms statistical insights into geologically defensible estimation domains - the backbone of reliable resource models.
 
@@ -254,6 +254,14 @@ Understanding element associations reveals mineralization processes.
 #| fig-width: 10
 #| fig-height: 8
 
+
+# Ensure all lithologies have colors
+unique_lithos <- unique(combined_data$lithology)
+if(length(litho_colors) < length(unique_lithos)) {
+  missing_lithos <- setdiff(unique_lithos, names(litho_colors))
+  new_colors <- RColorBrewer::brewer.pal(length(missing_lithos), "Set2")
+  litho_colors <- c(litho_colors, setNames(new_colors, missing_lithos))
+}
 # Select grade variables for correlation
 grade_vars <- c("au_ppm", "ag_ppm", "cu_pct")
 

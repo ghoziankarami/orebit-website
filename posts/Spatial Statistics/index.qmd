@@ -15,7 +15,7 @@ format:
 
 ## Introduction
 
-With validated data from [Part 1](post-01-data-validation.qmd), we now explore **where** the data is located and **what** it tells us statistically. This post covers:
+With validated data from [Part 1](/posts/Data Validation/), we now explore **where** the data is located and **what** it tells us statistically. This post covers:
 
 - **Pillar 2**: Spatial Distribution Analysis
 - **Pillar 3**: Statistical Characterization
@@ -749,7 +749,7 @@ This analysis reveals:
 ::: {.callout-tip}
 ## Ready for Geological Controls?
 
-With spatial and statistical understanding complete, you're ready to connect these patterns to geology in [Part 3: Geological Controls & Domain Definition](post-03-geological-domains.qmd).
+With spatial and statistical understanding complete, you're ready to connect these patterns to geology in [Part 3: Geological Controls & Domain Definition](/posts/Geological Domain/).
 :::
 
 ## Best Practices Recap
