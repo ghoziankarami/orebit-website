@@ -47,7 +47,7 @@ website:
     right: |
       [Privacy Policy](/privacy-policy.qmd) | [Terms of Service](/terms-of-service.qmd)
 
-  google-analytics: "G-XXXXXXXXXX"
+  google-analytics: "G-4PGVVEK08Q"
   
 format:
   html:
