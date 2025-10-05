@@ -1,0 +1,208 @@
+---
+title: "Terms of Service"
+date-modified: "2025-01-29"
+---
+
+**Last Updated:** January 29, 2025
+
+## Agreement to Terms
+
+By accessing or using Orebit services, including the website [orebit.id](https://orebit.id) and the GeoDataViz application, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+
+## Description of Services
+
+Orebit provides:
+
+1. **GeoDataViz**: A web-based application for exploratory data analysis of geological drilling data
+2. **Educational Content**: Blog posts, tutorials, and resources on geological data analysis
+3. **Future Products**: Resource Estimation and Pit Optimizer tools (in development)
+
+## Use License
+
+### Permitted Use
+
+You are granted a limited, non-exclusive, non-transferable license to:
+
+- Access and use GeoDataViz for geological data analysis
+- Access and read our educational content
+- Download open-source code for personal or commercial use under MIT License
+
+### Restrictions
+
+You agree NOT to:
+
+- Use our services for any illegal or unauthorized purpose
+- Attempt to gain unauthorized access to our systems or networks
+- Interfere with or disrupt the operation of our services
+- Use automated tools (bots, scrapers) without permission
+- Reverse engineer, decompile, or disassemble our proprietary software
+- Remove or modify any copyright notices or proprietary markings
+- Misrepresent your identity or affiliation
+
+## GeoDataViz Specific Terms
+
+### Data Handling
+
+- **Your Data Remains Yours**: You retain all rights to data you upload to GeoDataViz
+- **No Storage Warranty**: We do NOT store your data on our servers after your session ends
+- **Processing Only**: Your data is processed in temporary memory during active sessions only
+- **Session Termination**: All data is permanently deleted when you close your browser or session expires
+
+### Availability and Performance
+
+- **"As Is" Service**: GeoDataViz is provided "as is" without warranties of any kind
+- **No Uptime Guarantee**: We do not guarantee 100% uptime or availability
+- **Service Modifications**: We may modify, suspend, or discontinue features at any time
+- **No Liability**: We are not liable for data loss, processing errors, or service interruptions
+
+### Beta Programs
+
+For upcoming products (Resource Estimation, Pit Optimizer):
+
+- Beta access is provided on an invitation-only basis
+- Beta versions may contain bugs or errors
+- Features may change or be removed before official release
+- Feedback from beta testers helps improve final products
+
+## Open Source Software
+
+### GeoDataViz Open Source Code
+
+- Licensed under **MIT License**
+- Source code available on [GitHub](https://github.com/ghoziankarami/GeoDataViz)
+- Citable via [Zenodo](https://doi.org/10.5281/zenodo.17142676)
+
+### MIT License Summary
+
+You are free to:
+
+- Use the code commercially
+- Modify the code
+- Distribute the code
+- Use the code privately
+
+Under these conditions:
+
+- Include original copyright notice and license
+- Provide "as is" without warranty
+
+## Intellectual Property
+
+### Our Content
+
+All content on orebit.id, including:
+
+- Blog posts and articles
+- Code examples and tutorials
+- Graphics, logos, and designs
+- Application interfaces
+
+Are protected by copyright and other intellectual property laws.
+
+### User-Generated Content
+
+If you provide feedback, suggestions, or other content:
+
+- You grant us a non-exclusive, worldwide, royalty-free license to use, modify, and incorporate your feedback
+- You warrant that you have the right to provide such content
+- You agree we are not obligated to use or compensate you for your feedback
+
+## Disclaimer of Warranties
+
+**IMPORTANT**: GeoDataViz and all Orebit services are provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied, including but not limited to:
+
+- **Fitness for Purpose**: No guarantee the services meet your specific requirements
+- **Accuracy**: No guarantee of error-free operation or accurate results
+- **Reliability**: No guarantee of continuous, uninterrupted access
+- **Data Integrity**: No guarantee against data loss or corruption during processing
+
+**Professional Responsibility**: You are solely responsible for:
+
+- Validating all analysis results from GeoDataViz
+- Making independent decisions based on your professional judgment
+- Complying with applicable regulations (JORC, NI 43-101, etc.)
+- Backing up your original data before processing
+
+## Limitation of Liability
+
+To the maximum extent permitted by law:
+
+- Orebit and its developers shall NOT be liable for any indirect, incidental, special, consequential, or punitive damages
+- This includes damages for lost profits, data loss, business interruption, or loss of goodwill
+- Our total liability shall not exceed the amount you paid for our services (which is currently $0 for GeoDataViz)
+
+**Critical Decisions**: Do NOT rely solely on GeoDataViz for critical business or investment decisions. Always:
+
+- Verify results with independent tools
+- Consult with qualified professionals
+- Perform due diligence appropriate to your use case
+
+## Indemnification
+
+You agree to indemnify and hold harmless Orebit, its developers, and affiliates from any claims, damages, or expenses arising from:
+
+- Your use or misuse of our services
+- Your violation of these Terms of Service
+- Your violation of any third-party rights
+- Your provision of false or misleading information
+
+## Third-Party Links and Services
+
+Our website may contain links to third-party websites or services:
+
+- GitHub, Google Forms, Zenodo, LinkedIn
+- We are not responsible for third-party content or practices
+- Your use of third-party services is at your own risk
+
+## Termination
+
+We reserve the right to:
+
+- Terminate or suspend your access immediately, without notice, for any reason
+- Refuse service to anyone for any reason at any time
+
+Upon termination:
+
+- Your right to use our services ceases immediately
+- Provisions regarding intellectual property, disclaimers, and limitations of liability survive
+
+## Modifications to Terms
+
+We may modify these Terms of Service at any time:
+
+- Changes will be posted on this page with an updated "Last Updated" date
+- Significant changes will be communicated via email to registered users
+- Continued use after changes constitutes acceptance of new terms
+
+## Governing Law
+
+These Terms shall be governed by and construed in accordance with the laws of Indonesia, without regard to its conflict of law provisions.
+
+Any disputes shall be resolved through:
+
+1. Good faith negotiation
+2. Mediation (if negotiation fails)
+3. Arbitration or courts in Indonesia (as a last resort)
+
+## Contact Information
+
+For questions about these Terms of Service:
+
+- **Email**: ghoziankarami@gmail.com
+- **LinkedIn**: [Ghozian Islam Karami](https://linkedin.com/in/ghoziankarami)
+- **GitHub**: [github.com/ghoziankarami](https://github.com/ghoziankarami)
+
+## Acknowledgment
+
+By using Orebit services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy.
+
+---
+
+## Key Points Summary
+
+✓ **GeoDataViz is free** and provided "as is" without warranties  
+✓ **Your data is yours** - we don't store it after your session  
+✓ **Open source** - code available under MIT License  
+✓ **Professional responsibility** - you must validate all results  
+✓ **No liability** - use at your own risk for critical decisions  
+✓ **Can be modified** - we may update terms with notice

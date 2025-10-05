@@ -82,3 +82,8 @@ technically sophisticated.
 Karami](https://www.linkedin.com/in/ghoziankarami/)
 
 ---------------------------------------------------------------------
+
+## Legal
+
+- [Privacy Policy](/privacy-policy.qmd)
+- [Terms of Service](/terms-of-service.qmd)

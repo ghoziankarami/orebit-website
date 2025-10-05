@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://orebit.id/terms-of-service.html</loc>
+    <lastmod>2025-10-05T01:48:47.230Z</lastmod>
+  </url>
+  <url>
     <loc>https://orebit.id/posts/Spatial Statistics/index.html</loc>
     <lastmod>2025-10-04T17:07:05.177Z</lastmod>
   </url>
@@ -14,7 +18,7 @@
   </url>
   <url>
     <loc>https://orebit.id/about.html</loc>
-    <lastmod>2025-10-04T17:05:37.525Z</lastmod>
+    <lastmod>2025-10-05T01:57:36.931Z</lastmod>
   </url>
   <url>
     <loc>https://orebit.id/index.html</loc>
@@ -23,5 +27,9 @@
   <url>
     <loc>https://orebit.id/posts/Geological Domain/index.html</loc>
     <lastmod>2025-10-04T17:07:05.454Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orebit.id/privacy-policy.html</loc>
+    <lastmod>2025-10-05T01:48:37.006Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,139 @@
+---
+title: "Privacy Policy"
+date-modified: "2025-01-29"
+---
+
+**Last Updated:** January 29, 2025
+
+## Introduction
+
+Orebit ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [orebit.id](https://orebit.id) and use our applications, including GeoDataViz.
+
+## Information We Collect
+
+### Information You Provide
+
+- **Contact Information**: Name, email address, phone number when you register for beta programs or contact us
+- **Professional Information**: Company name, job title, role in industry (optional)
+- **Feedback**: Comments, suggestions, or feedback you provide about our services
+
+### Automatically Collected Information
+
+- **Usage Data**: Information about how you interact with our website and applications
+- **Device Information**: Browser type, operating system, IP address
+- **Cookies**: Small data files stored on your device (see Cookie Policy below)
+
+### GeoDataViz Application Data
+
+- **No Data Storage**: GeoDataViz does **NOT** store your uploaded geological data on our servers
+- **Session-Based Processing**: All data processing occurs in temporary server memory during your active session only
+- **No Database Connection**: We do not maintain any database to store your drilling data or analysis results
+- **Local Sessions Only**: When you close your browser or session ends, all your data is permanently deleted
+
+## How We Use Your Information
+
+We use collected information to:
+
+- Provide and maintain our services
+- Notify you about updates to our products (Resource Estimation, Pit Optimizer beta programs)
+- Respond to your inquiries and support requests
+- Improve our website and applications
+- Send periodic emails about new features or updates (you can opt-out anytime)
+- Analyze usage patterns to enhance user experience
+
+## Data Security
+
+We implement appropriate technical and organizational measures to protect your information:
+
+- Secure HTTPS connections for all data transmission
+- Session-based processing without permanent data storage in GeoDataViz
+- Regular security assessments and updates
+- Limited access to personal information by authorized personnel only
+
+However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.
+
+## Data Sharing and Disclosure
+
+We do **NOT** sell, trade, or rent your personal information to third parties.
+
+We may share information only in these circumstances:
+
+- **With your consent**: When you explicitly authorize us to share information
+- **Service Providers**: Third-party services that help us operate our website (e.g., hosting, email services) under strict confidentiality agreements
+- **Legal Requirements**: When required by law, court order, or governmental authority
+- **Business Transfers**: In the event of a merger, acquisition, or sale of assets
+
+## Your Rights
+
+Depending on your location, you may have the following rights:
+
+- **Access**: Request a copy of your personal information
+- **Correction**: Request correction of inaccurate information
+- **Deletion**: Request deletion of your personal information
+- **Objection**: Object to processing of your information
+- **Data Portability**: Request transfer of your data to another service
+- **Withdraw Consent**: Withdraw consent for data processing at any time
+
+To exercise these rights, contact us at: **ghoziankarami@gmail.com**
+
+## Cookie Policy
+
+We use cookies to:
+
+- Remember your preferences and settings
+- Analyze website traffic and usage patterns
+- Improve website functionality
+
+You can control cookies through your browser settings. Note that disabling cookies may affect website functionality.
+
+**Types of Cookies We Use:**
+
+- **Essential Cookies**: Required for website operation
+- **Analytics Cookies**: Help us understand how visitors use our site
+- **Preference Cookies**: Remember your settings and preferences
+
+## Third-Party Services
+
+Our website may contain links to third-party websites or services:
+
+- GitHub (for open-source code repositories)
+- Google Forms (for beta program registration)
+- Zenodo (for software citations)
+
+These third parties have their own privacy policies. We are not responsible for their practices.
+
+## Children's Privacy
+
+Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.
+
+## International Data Transfers
+
+Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place for such transfers.
+
+## Data Retention
+
+- **Contact Information**: Retained until you request deletion or unsubscribe from our mailing list
+- **GeoDataViz Session Data**: Automatically deleted when your session ends
+- **Website Analytics**: Aggregated data retained for up to 24 months
+
+## Changes to This Privacy Policy
+
+We may update this Privacy Policy periodically. Changes will be posted on this page with an updated "Last Updated" date. Continued use of our services after changes constitutes acceptance of the updated policy.
+
+## Contact Us
+
+For questions about this Privacy Policy or our data practices:
+
+- **Email**: ghoziankarami@gmail.com
+- **LinkedIn**: [Ghozian Islam Karami](https://linkedin.com/in/ghoziankarami)
+- **Website**: [orebit.id](https://orebit.id)
+
+---
+
+## Summary
+
+- ✓ GeoDataViz does NOT store your uploaded geological data
+- ✓ All processing is session-based and temporary
+- ✓ We collect minimal personal information for service provision only
+- ✓ We do NOT sell or rent your information
+- ✓ You have full control over your data and can request deletion anytime

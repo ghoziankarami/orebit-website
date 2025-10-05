@@ -9,11 +9,11 @@ website:
   title: "Orebit.id - Geology, Digitized"
   site-url: https://orebit.id/
   favicon: Logo_favicon.png
-  description: "Professional geological consulting, data analysis, and open-source tools by Ghozian Islam Karami"
+  description: "Practical Solutions for Mining by Ghozian Islam Karami"
   
   open-graph:
     title: "Orebit.id - Geology, Digitized"
-    description: "Professional geological consulting and data analysis services"
+    description: "Practical Solutions for Mining Using Open-Source"
     image: "Logo_banner.png"
   
   navbar:
@@ -31,6 +31,9 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/ghoziankarami/
         aria-label: "LinkedIn Profile"
+      - icon: instagram
+        href: https://www.instagram.com//orebit.id
+        aria-label: "Instagram Profile"
       - icon: github
         href: https://github.com/ghoziankarami
         aria-label: "GitHub Profile"
@@ -40,9 +43,9 @@ website:
       © 2025 [Orebit.id](https://orebit.id) by Ghozian Islam Karami  
       All rights reserved.
     center: |
-      Built with [Quarto](https://quarto.org) & ❤️
+      Built with [Quarto](https://quarto.org) 
     right: |
-      [Privacy Policy](#) | [Terms of Service](#)
+      [Privacy Policy](/privacy-policy.qmd) | [Terms of Service](/terms-of-service.qmd)
 
   google-analytics: "G-XXXXXXXXXX"
   

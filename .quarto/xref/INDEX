@@ -64,5 +64,11 @@
   },
   "posts/Spatial Statistics/index.qmd": {
     "index.html": "be210b27"
+  },
+  "privacy-policy.qmd": {
+    "privacy-policy.html": "859b2c40"
+  },
+  "terms-of-service.qmd": {
+    "terms-of-service.html": "e4d56d3b"
   }
 }

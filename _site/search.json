@@ -1,5 +1,124 @@
 [
   {
+    "objectID": "terms-of-service.html",
+    "href": "terms-of-service.html",
+    "title": "Terms of Service",
+    "section": "",
+    "text": "Last Updated: January 29, 2025"
+  },
+  {
+    "objectID": "terms-of-service.html#agreement-to-terms",
+    "href": "terms-of-service.html#agreement-to-terms",
+    "title": "Terms of Service",
+    "section": "Agreement to Terms",
+    "text": "Agreement to Terms\nBy accessing or using Orebit services, including the website orebit.id and the GeoDataViz application, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+  },
+  {
+    "objectID": "terms-of-service.html#description-of-services",
+    "href": "terms-of-service.html#description-of-services",
+    "title": "Terms of Service",
+    "section": "Description of Services",
+    "text": "Description of Services\nOrebit provides:\n\nGeoDataViz: A web-based application for exploratory data analysis of geological drilling data\nEducational Content: Blog posts, tutorials, and resources on geological data analysis\nFuture Products: Resource Estimation and Pit Optimizer tools (in development)"
+  },
+  {
+    "objectID": "terms-of-service.html#use-license",
+    "href": "terms-of-service.html#use-license",
+    "title": "Terms of Service",
+    "section": "Use License",
+    "text": "Use License\n\nPermitted Use\nYou are granted a limited, non-exclusive, non-transferable license to:\n\nAccess and use GeoDataViz for geological data analysis\nAccess and read our educational content\nDownload open-source code for personal or commercial use under MIT License\n\n\n\nRestrictions\nYou agree NOT to:\n\nUse our services for any illegal or unauthorized purpose\nAttempt to gain unauthorized access to our systems or networks\nInterfere with or disrupt the operation of our services\nUse automated tools (bots, scrapers) without permission\nReverse engineer, decompile, or disassemble our proprietary software\nRemove or modify any copyright notices or proprietary markings\nMisrepresent your identity or affiliation"
+  },
+  {
+    "objectID": "terms-of-service.html#geodataviz-specific-terms",
+    "href": "terms-of-service.html#geodataviz-specific-terms",
+    "title": "Terms of Service",
+    "section": "GeoDataViz Specific Terms",
+    "text": "GeoDataViz Specific Terms\n\nData Handling\n\nYour Data Remains Yours: You retain all rights to data you upload to GeoDataViz\nNo Storage Warranty: We do NOT store your data on our servers after your session ends\nProcessing Only: Your data is processed in temporary memory during active sessions only\nSession Termination: All data is permanently deleted when you close your browser or session expires\n\n\n\nAvailability and Performance\n\n“As Is” Service: GeoDataViz is provided “as is” without warranties of any kind\nNo Uptime Guarantee: We do not guarantee 100% uptime or availability\nService Modifications: We may modify, suspend, or discontinue features at any time\nNo Liability: We are not liable for data loss, processing errors, or service interruptions\n\n\n\nBeta Programs\nFor upcoming products (Resource Estimation, Pit Optimizer):\n\nBeta access is provided on an invitation-only basis\nBeta versions may contain bugs or errors\nFeatures may change or be removed before official release\nFeedback from beta testers helps improve final products"
+  },
+  {
+    "objectID": "terms-of-service.html#open-source-software",
+    "href": "terms-of-service.html#open-source-software",
+    "title": "Terms of Service",
+    "section": "Open Source Software",
+    "text": "Open Source Software\n\nGeoDataViz Open Source Code\n\nLicensed under MIT License\nSource code available on GitHub\nCitable via Zenodo\n\n\n\nMIT License Summary\nYou are free to:\n\nUse the code commercially\nModify the code\nDistribute the code\nUse the code privately\n\nUnder these conditions:\n\nInclude original copyright notice and license\nProvide “as is” without warranty"
+  },
+  {
+    "objectID": "terms-of-service.html#intellectual-property",
+    "href": "terms-of-service.html#intellectual-property",
+    "title": "Terms of Service",
+    "section": "Intellectual Property",
+    "text": "Intellectual Property\n\nOur Content\nAll content on orebit.id, including:\n\nBlog posts and articles\nCode examples and tutorials\nGraphics, logos, and designs\nApplication interfaces\n\nAre protected by copyright and other intellectual property laws.\n\n\nUser-Generated Content\nIf you provide feedback, suggestions, or other content:\n\nYou grant us a non-exclusive, worldwide, royalty-free license to use, modify, and incorporate your feedback\nYou warrant that you have the right to provide such content\nYou agree we are not obligated to use or compensate you for your feedback"
+  },
+  {
+    "objectID": "terms-of-service.html#disclaimer-of-warranties",
+    "href": "terms-of-service.html#disclaimer-of-warranties",
+    "title": "Terms of Service",
+    "section": "Disclaimer of Warranties",
+    "text": "Disclaimer of Warranties\nIMPORTANT: GeoDataViz and all Orebit services are provided “AS IS” and “AS AVAILABLE” without warranties of any kind, either express or implied, including but not limited to:\n\nFitness for Purpose: No guarantee the services meet your specific requirements\nAccuracy: No guarantee of error-free operation or accurate results\nReliability: No guarantee of continuous, uninterrupted access\nData Integrity: No guarantee against data loss or corruption during processing\n\nProfessional Responsibility: You are solely responsible for:\n\nValidating all analysis results from GeoDataViz\nMaking independent decisions based on your professional judgment\nComplying with applicable regulations (JORC, NI 43-101, etc.)\nBacking up your original data before processing"
+  },
+  {
+    "objectID": "terms-of-service.html#limitation-of-liability",
+    "href": "terms-of-service.html#limitation-of-liability",
+    "title": "Terms of Service",
+    "section": "Limitation of Liability",
+    "text": "Limitation of Liability\nTo the maximum extent permitted by law:\n\nOrebit and its developers shall NOT be liable for any indirect, incidental, special, consequential, or punitive damages\nThis includes damages for lost profits, data loss, business interruption, or loss of goodwill\nOur total liability shall not exceed the amount you paid for our services (which is currently $0 for GeoDataViz)\n\nCritical Decisions: Do NOT rely solely on GeoDataViz for critical business or investment decisions. Always:\n\nVerify results with independent tools\nConsult with qualified professionals\nPerform due diligence appropriate to your use case"
+  },
+  {
+    "objectID": "terms-of-service.html#indemnification",
+    "href": "terms-of-service.html#indemnification",
+    "title": "Terms of Service",
+    "section": "Indemnification",
+    "text": "Indemnification\nYou agree to indemnify and hold harmless Orebit, its developers, and affiliates from any claims, damages, or expenses arising from:\n\nYour use or misuse of our services\nYour violation of these Terms of Service\nYour violation of any third-party rights\nYour provision of false or misleading information"
+  },
+  {
+    "objectID": "terms-of-service.html#third-party-links-and-services",
+    "href": "terms-of-service.html#third-party-links-and-services",
+    "title": "Terms of Service",
+    "section": "Third-Party Links and Services",
+    "text": "Third-Party Links and Services\nOur website may contain links to third-party websites or services:\n\nGitHub, Google Forms, Zenodo, LinkedIn\nWe are not responsible for third-party content or practices\nYour use of third-party services is at your own risk"
+  },
+  {
+    "objectID": "terms-of-service.html#termination",
+    "href": "terms-of-service.html#termination",
+    "title": "Terms of Service",
+    "section": "Termination",
+    "text": "Termination\nWe reserve the right to:\n\nTerminate or suspend your access immediately, without notice, for any reason\nRefuse service to anyone for any reason at any time\n\nUpon termination:\n\nYour right to use our services ceases immediately\nProvisions regarding intellectual property, disclaimers, and limitations of liability survive"
+  },
+  {
+    "objectID": "terms-of-service.html#modifications-to-terms",
+    "href": "terms-of-service.html#modifications-to-terms",
+    "title": "Terms of Service",
+    "section": "Modifications to Terms",
+    "text": "Modifications to Terms\nWe may modify these Terms of Service at any time:\n\nChanges will be posted on this page with an updated “Last Updated” date\nSignificant changes will be communicated via email to registered users\nContinued use after changes constitutes acceptance of new terms"
+  },
+  {
+    "objectID": "terms-of-service.html#governing-law",
+    "href": "terms-of-service.html#governing-law",
+    "title": "Terms of Service",
+    "section": "Governing Law",
+    "text": "Governing Law\nThese Terms shall be governed by and construed in accordance with the laws of Indonesia, without regard to its conflict of law provisions.\nAny disputes shall be resolved through:\n\nGood faith negotiation\nMediation (if negotiation fails)\nArbitration or courts in Indonesia (as a last resort)"
+  },
+  {
+    "objectID": "terms-of-service.html#contact-information",
+    "href": "terms-of-service.html#contact-information",
+    "title": "Terms of Service",
+    "section": "Contact Information",
+    "text": "Contact Information\nFor questions about these Terms of Service:\n\nEmail: ghoziankarami@gmail.com\nLinkedIn: Ghozian Islam Karami\nGitHub: github.com/ghoziankarami"
+  },
+  {
+    "objectID": "terms-of-service.html#acknowledgment",
+    "href": "terms-of-service.html#acknowledgment",
+    "title": "Terms of Service",
+    "section": "Acknowledgment",
+    "text": "Acknowledgment\nBy using Orebit services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy."
+  },
+  {
+    "objectID": "terms-of-service.html#key-points-summary",
+    "href": "terms-of-service.html#key-points-summary",
+    "title": "Terms of Service",
+    "section": "Key Points Summary",
+    "text": "Key Points Summary\n✓ GeoDataViz is free and provided “as is” without warranties\n✓ Your data is yours - we don’t store it after your session\n✓ Open source - code available under MIT License\n✓ Professional responsibility - you must validate all results\n✓ No liability - use at your own risk for critical decisions\n✓ Can be modified - we may update terms with notice"
+  },
+  {
     "objectID": "posts/Spatial Statistics/index.html",
     "href": "posts/Spatial Statistics/index.html",
     "title": "Part 2: Spatial & Statistical Analysis",
@@ -238,6 +357,13 @@
     "text": "Contact Information\nEmail: orebit.id@gmail.com GitHub: github.com/ghoziankarami LinkedIn: Ghozian Islam Karami"
   },
   {
+    "objectID": "about.html#legal",
+    "href": "about.html#legal",
+    "title": "About Orebit",
+    "section": "Legal",
+    "text": "Legal\n\nPrivacy Policy\nTerms of Service"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "From Raw Ore to Reliable Bits.",
@@ -341,5 +467,110 @@
     "title": "Part 3: Geological Controls & Domain Definition",
     "section": "Series Complete",
     "text": "Series Complete\nYou’ve completed the comprehensive EDA workflow:\n\n← Part 1: Foundation & Data Validation\n← Part 2: Spatial & Statistical Analysis\nPart 3: Geological Controls & Domain Definition (You are here)\n\nYou now have the tools and knowledge to build trusted geological models from raw drilling data.\n\n“Quality data, systematic analysis, geological thinking - the foundation of every successful mine.”"
+  },
+  {
+    "objectID": "privacy-policy.html",
+    "href": "privacy-policy.html",
+    "title": "Privacy Policy",
+    "section": "",
+    "text": "Last Updated: January 29, 2025"
+  },
+  {
+    "objectID": "privacy-policy.html#introduction",
+    "href": "privacy-policy.html#introduction",
+    "title": "Privacy Policy",
+    "section": "Introduction",
+    "text": "Introduction\nOrebit (“we”, “our”, or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website orebit.id and use our applications, including GeoDataViz."
+  },
+  {
+    "objectID": "privacy-policy.html#information-we-collect",
+    "href": "privacy-policy.html#information-we-collect",
+    "title": "Privacy Policy",
+    "section": "Information We Collect",
+    "text": "Information We Collect\n\nInformation You Provide\n\nContact Information: Name, email address, phone number when you register for beta programs or contact us\nProfessional Information: Company name, job title, role in industry (optional)\nFeedback: Comments, suggestions, or feedback you provide about our services\n\n\n\nAutomatically Collected Information\n\nUsage Data: Information about how you interact with our website and applications\nDevice Information: Browser type, operating system, IP address\nCookies: Small data files stored on your device (see Cookie Policy below)\n\n\n\nGeoDataViz Application Data\n\nNo Data Storage: GeoDataViz does NOT store your uploaded geological data on our servers\nSession-Based Processing: All data processing occurs in temporary server memory during your active session only\nNo Database Connection: We do not maintain any database to store your drilling data or analysis results\nLocal Sessions Only: When you close your browser or session ends, all your data is permanently deleted"
+  },
+  {
+    "objectID": "privacy-policy.html#how-we-use-your-information",
+    "href": "privacy-policy.html#how-we-use-your-information",
+    "title": "Privacy Policy",
+    "section": "How We Use Your Information",
+    "text": "How We Use Your Information\nWe use collected information to:\n\nProvide and maintain our services\nNotify you about updates to our products (Resource Estimation, Pit Optimizer beta programs)\nRespond to your inquiries and support requests\nImprove our website and applications\nSend periodic emails about new features or updates (you can opt-out anytime)\nAnalyze usage patterns to enhance user experience"
+  },
+  {
+    "objectID": "privacy-policy.html#data-security",
+    "href": "privacy-policy.html#data-security",
+    "title": "Privacy Policy",
+    "section": "Data Security",
+    "text": "Data Security\nWe implement appropriate technical and organizational measures to protect your information:\n\nSecure HTTPS connections for all data transmission\nSession-based processing without permanent data storage in GeoDataViz\nRegular security assessments and updates\nLimited access to personal information by authorized personnel only\n\nHowever, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security."
+  },
+  {
+    "objectID": "privacy-policy.html#data-sharing-and-disclosure",
+    "href": "privacy-policy.html#data-sharing-and-disclosure",
+    "title": "Privacy Policy",
+    "section": "Data Sharing and Disclosure",
+    "text": "Data Sharing and Disclosure\nWe do NOT sell, trade, or rent your personal information to third parties.\nWe may share information only in these circumstances:\n\nWith your consent: When you explicitly authorize us to share information\nService Providers: Third-party services that help us operate our website (e.g., hosting, email services) under strict confidentiality agreements\nLegal Requirements: When required by law, court order, or governmental authority\nBusiness Transfers: In the event of a merger, acquisition, or sale of assets"
+  },
+  {
+    "objectID": "privacy-policy.html#your-rights",
+    "href": "privacy-policy.html#your-rights",
+    "title": "Privacy Policy",
+    "section": "Your Rights",
+    "text": "Your Rights\nDepending on your location, you may have the following rights:\n\nAccess: Request a copy of your personal information\nCorrection: Request correction of inaccurate information\nDeletion: Request deletion of your personal information\nObjection: Object to processing of your information\nData Portability: Request transfer of your data to another service\nWithdraw Consent: Withdraw consent for data processing at any time\n\nTo exercise these rights, contact us at: ghoziankarami@gmail.com"
+  },
+  {
+    "objectID": "privacy-policy.html#cookie-policy",
+    "href": "privacy-policy.html#cookie-policy",
+    "title": "Privacy Policy",
+    "section": "Cookie Policy",
+    "text": "Cookie Policy\nWe use cookies to:\n\nRemember your preferences and settings\nAnalyze website traffic and usage patterns\nImprove website functionality\n\nYou can control cookies through your browser settings. Note that disabling cookies may affect website functionality.\nTypes of Cookies We Use:\n\nEssential Cookies: Required for website operation\nAnalytics Cookies: Help us understand how visitors use our site\nPreference Cookies: Remember your settings and preferences"
+  },
+  {
+    "objectID": "privacy-policy.html#third-party-services",
+    "href": "privacy-policy.html#third-party-services",
+    "title": "Privacy Policy",
+    "section": "Third-Party Services",
+    "text": "Third-Party Services\nOur website may contain links to third-party websites or services:\n\nGitHub (for open-source code repositories)\nGoogle Forms (for beta program registration)\nZenodo (for software citations)\n\nThese third parties have their own privacy policies. We are not responsible for their practices."
+  },
+  {
+    "objectID": "privacy-policy.html#childrens-privacy",
+    "href": "privacy-policy.html#childrens-privacy",
+    "title": "Privacy Policy",
+    "section": "Children’s Privacy",
+    "text": "Children’s Privacy\nOur services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13."
+  },
+  {
+    "objectID": "privacy-policy.html#international-data-transfers",
+    "href": "privacy-policy.html#international-data-transfers",
+    "title": "Privacy Policy",
+    "section": "International Data Transfers",
+    "text": "International Data Transfers\nYour information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place for such transfers."
+  },
+  {
+    "objectID": "privacy-policy.html#data-retention",
+    "href": "privacy-policy.html#data-retention",
+    "title": "Privacy Policy",
+    "section": "Data Retention",
+    "text": "Data Retention\n\nContact Information: Retained until you request deletion or unsubscribe from our mailing list\nGeoDataViz Session Data: Automatically deleted when your session ends\nWebsite Analytics: Aggregated data retained for up to 24 months"
+  },
+  {
+    "objectID": "privacy-policy.html#changes-to-this-privacy-policy",
+    "href": "privacy-policy.html#changes-to-this-privacy-policy",
+    "title": "Privacy Policy",
+    "section": "Changes to This Privacy Policy",
+    "text": "Changes to This Privacy Policy\nWe may update this Privacy Policy periodically. Changes will be posted on this page with an updated “Last Updated” date. Continued use of our services after changes constitutes acceptance of the updated policy."
+  },
+  {
+    "objectID": "privacy-policy.html#contact-us",
+    "href": "privacy-policy.html#contact-us",
+    "title": "Privacy Policy",
+    "section": "Contact Us",
+    "text": "Contact Us\nFor questions about this Privacy Policy or our data practices:\n\nEmail: ghoziankarami@gmail.com\nLinkedIn: Ghozian Islam Karami\nWebsite: orebit.id"
+  },
+  {
+    "objectID": "privacy-policy.html#summary",
+    "href": "privacy-policy.html#summary",
+    "title": "Privacy Policy",
+    "section": "Summary",
+    "text": "Summary\n\n✓ GeoDataViz does NOT store your uploaded geological data\n✓ All processing is session-based and temporary\n✓ We collect minimal personal information for service provision only\n✓ We do NOT sell or rent your information\n✓ You have full control over your data and can request deletion anytime"
   }
 ]
